@@ -1,32 +1,112 @@
-Library Overview
-================
+Integration Services Overview
+=============================
+
+You can interact with Integration Services (IS) at two different levels:
+
+* As stand-alone application.
+* As library to link against.
+
+When using IS as a library, you must provide the configuration xml file programatically.
+
+Integration Services architecture
+---------------------------------
+
+IS provides three interfaces that must be implemented by any bridge that you want to use. This classes are
+:ref:`isbridge`, :ref:`ispublisher` and :ref:`issubscriber`. There is a :ref:`rtps bridge`
+implementation as default, that uses Fast-RTPS libraries.
+
+Any :ref:`connector` must have at least one endpoint configured as a Fast-RTPS participant, as IS is intended to communicate
+Fast-RTPS with others protocols when using bridges.
 
 
-You can interact with Fast RTPS at two different levels:
+ISBridge
+^^^^^^^^
+This component must communicate subscribers with publishers, applying the transformation functions if any.
+It's default implementation must be enough for the mayority of cases.
 
-* Publisher-Subscriber: Simplified abstraction over RTPS.
-* Writer-Reader: Direct control over RTPS endpoints.
+Custom bridges must inherit from it:
 
-.. image:: architecture.png
+.. code-block:: cpp
 
-In red, the Publisher-Subscriber layer offers a convenient abstraction for most use cases. It allows you to define Publishers and Subscribers associated to a topic, and a simple way to transmit topic data. You may remember this from the example we generated in the "Getting Started" section, where we updated our local copy of the topic data, and called a write() method on it.
-In blue, the Writer-Reader layer is closer to the concepts defined in the RTPS standard, and allows a finer control, but requires you to interact directly with history caches for each endpoint.
+    class ISBridge
+    {
+    public:
+        virtual void onTerminate();
+        virtual void addSubscriber(ISSubscriber *sub);
+        virtual void addFunction(const std::string &sub, const std::string &fname, userf_t func);
+        virtual void addFunction(const std::string &sub, const std::string &fname, userdynf_t func);
+        virtual void addPublisher(const std::string &sub, const std::string &funcName, ISPublisher* pub);
+        virtual ISPublisher* removePublisher(ISPublisher* pub);
+        virtual void on_received_data(const ISSubscriber *sub, SerializedPayload_t *data);
+        virtual void on_received_data(const ISSubscriber *sub, DynamicData *data);
+    };
 
-Fast RTPS architecture
-----------------------
+ISBridge.h and ISBridge.cpp implements the default behaviour. There is no need to implement any function from any
+subclass, but all of the above could be implemented if needed. Be careful to implement the full functionallity.
+It is recommended to copy the standard implementation and modify with your needs.
+After that, simply remove unmodified methods.
+*addFunction* and *on_received_data* methods have two flavours, with static and with dynamic data.
 
-Threads
-^^^^^^^
+ISPublisher
+^^^^^^^^^^^
+This component must be able to publish data to the destination protocol. The default implementation uses a Fast-RTPS
+publisher.
 
-eProsima Fast RTPS is concurrent and event-based. Each participant spawns a set of threads to take care of background tasks such as logging, message reception and asynchronous communication.
-This should not impact the way you use the library: the public API is thread safe, so you can fearlessly call any methods on the same participant from different threads. However, it is still useful to know how Fast RTPS schedules work:
+.. code-block:: cpp
 
-* Main thread: Managed by the application.
-* Event thread: Each participant owns one of these, and it processes periodic and triggered events.
-* Asynchronous writer thread: This thread manages asynchronous writes for all participants. Even for synchronous writers, some forms of communication must be initiated in the background.
-* Reception threads: Participants spawn a thread for each reception channel, where the concept of channel depends on the transport layer (e.g. an UDP port).
+    class ISPublisher
+    {
+    public:
+        virtual bool publish(eprosima::fastrtps::rtps::SerializedPayload_t* /*data*/) = 0;
+        virtual bool publish(eprosima::fastrtps::types::DynamicData* /*data*/) = 0;
+        virtual ISBridge* setBridge(ISBridge *);
+    };
 
-Events
-^^^^^^
+ISPublisher doesn't have a default implementation, so this default behaviour is provided by the builtin RTPS Bridge.
+Any custom bridge that needs to define its publisher, must implement at least both *publish* methods. If one of them
+isn't needed, just implement as follows:
 
-There is an event system that enables Fast RTPS to respond to certain conditions, as well as schedule periodic activities. Few of them are visible to the user, since most are related to RTPS metadata. However, you can define your own periodic events by inheriting from the TimedEvent class.
+.. code-block:: cpp
+
+    bool publish([...]) override { return false; }
+
+This is useful if you're sure that version of the method will be never called.
+
+ISSubscriber
+^^^^^^^^^^^^
+This component is in charge of receive data from the origin protocol. Its default implementation uses a Fast-RTPS
+subscriber.
+
+.. code-block:: cpp
+
+    class ISSubscriber
+    {
+    public:
+        virtual void addBridge(ISBridge* bridge);
+        virtual void on_received_data(eprosima::fastrtps::rtps::SerializedPayload_t* payload);
+        virtual void on_received_data(eprosima::fastrtps::types::DynamicData* data);
+    };
+
+ISSubscriber doesn't have a default implementation, so this default behaviour is provided by the builtin RTPS Bridge.
+Any custom bridge that needs to define its subscriber, must implement at least both *on_received_data* methods.
+If one of them isn't needed, just implement as follows:
+
+.. code-block:: cpp
+
+    void on_received_data([...]) override { }
+
+
+RTPS Bridge
+-----------
+
+Implements a full bridge using Fast-RTPS publisher and subscriber. Its bridge implementation is able to communicate
+several subscribers with several publishers, stablishing routes, and applying transformation functions in function
+of each connector configuration.
+
+
+Connector
+---------
+
+A connector is a pair subscriber/publisher with an optional transformation function. Internally represents a route
+that the data will follow. If a transformation function was defined, then it will be applyed before the data is
+sent to the publishers.
