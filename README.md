@@ -262,7 +262,7 @@ As reference, let's take this configuration file:
     </is>
 
 In this file there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
-Relationship between *participants* and *subscribers*/*publishers* defined in the *profiles* section are stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
+The relationships between *participants* and *subscribers*/*publishers* defined in the *profiles* section are stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
 There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes_protocol* and *protocol_shapes*.
 
 There are several possible types of connectors depending of the kind of its participants.
