@@ -121,7 +121,7 @@ Then the bridges will apply each respective transformation functions to the data
 All this behaviour will only occurs with the declared connectors in the XML configuration file.
 
 
-**Transformation Library**: This *optional* library must implement transformation functions for the received data.
+**Transformation Library**: This *optional* library must implement the transformation functions for the received data.
 This *Transformation Libraries* are indicated in each connector.
 The *Bridge* connector will be configured with the function to call in each case.
 There is a prototype in *resource/templatelib.cpp*:
