@@ -138,7 +138,7 @@ May be necessary generate data types from IDL files to communicate with *Fast-RT
 The **config.xml** file must be adapted to each protocol. **ISManager** will provide the parsed *properties* node inside *bridge* node to the *create_bridge* function as a vector of pairs, as defined in the *Bridge Libraries*.
 The same applies for each publisher and subscriber inside *bridge* node and its *property* nodes.
 
-Your custom publisher/subscriber must inherit ISPublisher/ISSubscriber respectively.
+Your custom publisher/subscriber must inherit from ISPublisher/ISSubscriber respectively.
 
 How to instantiate your bridge, publisher and/or subscriber is responsability of your *Bridge Library*, but remember that "RTPS" publisher and subscribers will be filled automatically by ISManager with the configuration from the *participant* node of the *config.xml*.
 
