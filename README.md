@@ -14,7 +14,7 @@ Some of the possibilities offered by *Integration Services* are:
 
 #### Installation
 
-Before compiling *eProsima Integration Services* you need to have installed *Fast RTPS* as described in its [documentation ](http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html>). For cloning this project execute:
+Before compiling *eProsima Integration Services* you need to have installed *Fast RTPS* as described in its [documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html). For cloning this project execute:
 
 
     $ git clone --recursive https://github.com/eProsima/integration-services
