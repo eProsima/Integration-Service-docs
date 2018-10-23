@@ -299,7 +299,7 @@ UserLibrary -left-> Subscriber
 
 This connector will communicate a RTPS environment with another protocol. Just like our *shapes_protocol* connector.
 
-Your *Bridge Library* must define at least a publisher to your desired protocol and it is responsible to communicate with it and follow the ISPublisher interface. By default, the transformation function will be applied after the instance of ISBridge is called in the on_received_data method. If you want to change this behaviour you will need to override the complete data flow.
+Your *Bridge Library* must define at least a publisher to your desired protocol and it is responsible to communicate with it and follow the ISPublisher interface. By default, the transformation function is applied after *on_received_data* method calls to the instance of ISBridge. If you want to change this behaviour you will need to override the complete data flow.
 
 *Bridge_configuration* node can contain configuration information that *Bridge Library* must understand. ISManager will parse the *property* nodes of each element and will call the respective *create_* function of the library with a vector of pairs with the data contained.
 If no *bridge_configuration* is provided, then your createBridge will be called with nullptr or an empty vector as parameter config.
