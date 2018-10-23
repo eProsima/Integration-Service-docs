@@ -309,7 +309,7 @@ Of course, you can add built in transformation functions inside your *bridge lib
 
 * Other procotol -> RTPS
 
-Similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
+This is a similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
 
 The same logic applies in this connectors as in the RTPS -> Other protocol case, but in this case the RTPS participant is the publisher. An example of this can be found on [FIROS2](https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2).
 
