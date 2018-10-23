@@ -89,7 +89,7 @@ Let's take a look to these interfaces:
 	    virtual void onTerminate() override;
 	};
 
-When implementing your ISBridge derived class, you must take in account:
+When you implement your ISBridge derived class, you must take in account:
 
 - Only ISPublisher::publish is mandatory to implement.
 - When your subscriber receives data, you must call on_received_data function with the data properly converted into SerializedPayload_t.
