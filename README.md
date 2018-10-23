@@ -142,7 +142,7 @@ Your custom publisher/subscriber must inherit from ISPublisher/ISSubscriber resp
 
 The responsability of how to instantiate your bridge, publisher and/or subscriber is on your *Bridge Library*, but remember that "RTPS" publisher and subscribers will be filled automatically by ISManager with the configuration from the *participant* node of the *config.xml*.
 
-**Data Types Libraries**: This *optional* libraries must implement a single function *GetTopicType* that will return a new instance of the desired data type. The library could support multiple types or be integrated in other libraries such as the *Transformation Library*.
+**Data Types Libraries**: These *optional* libraries must implement a single function *GetTopicType* that will return a new instance of the desired data type. The library could support multiple types or be integrated in other libraries such as the *Transformation Library*.
 There is a prototype in *resource/typelib.cpp*:
 
 	extern "C" TopicDataType* SHAPES_LIB_EXPORT GetTopicType(const char *name)
