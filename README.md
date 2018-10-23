@@ -51,7 +51,7 @@ The function *create_subscriber* must return a pointer to an instance of a deriv
 The function *create_publisher* must return a pointer to an instance of a derived class of ISPublisher, or nullptr if it has failed.
 Integration Services will deallocate these objects from memory when the bridge is stopped.
 
-Let's take a look to this interfaces:
+Let's take a look to these interfaces:
 
 	/** Base class for publishers. Must know how to write into the destination protocol */
 	class ISPublisher
