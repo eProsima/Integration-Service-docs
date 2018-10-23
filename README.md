@@ -157,7 +157,7 @@ There is a prototype in *resource/typelib.cpp*:
 #### Configuration options in **config.xml**
 
 The configuration files define *topic_types*, *profiles*, *bridges* and *connectors*.
-The *topic_types* are the Topic Data Types that will be used by the participants. If these data types uses Keys or you want to define how to instante them, *topic_types* allows to define *data types libraries*.
+The *topic_types* are the Topic Data Types that will be used by the participants. If these data types use Keys or you want to define how to instante them, *topic_types* allows to define *data types libraries*.
 The *profiles* define participants, subscribers, publishers, etc, following the format used by **FastRTPS XML configuration files**.
 The *bridges* are the defined by the *bridge library* that implements the bridge and the definitions of the subscribers and publishers that we want to instantiate.
 Finally, the *connectors* are just relationhips between subscribers and publishers, and optionally, transformation functions.
