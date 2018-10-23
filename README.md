@@ -305,7 +305,7 @@ Your *Bridge Library* must define at least a publisher to your desired protocol 
 If no *bridge_configuration* is provided, then your createBridge will be called with nullptr or an empty vector as parameter config.
 
 *Transformation* library could be reused by your bridge library, with the same or another transformation function inside the same transformation library (an example of reusing the transformation library can be found on [FIROS2](https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2).
-Of course, you can add builted in transformation functions inside your *bridge library*.
+Of course, you can add built in transformation functions inside your *bridge library*.
 
 * Other procotol -> RTPS
 
