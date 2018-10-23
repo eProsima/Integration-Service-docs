@@ -131,7 +131,7 @@ There is a prototype in *resource/templatelib.cpp*:
 		SerializedPayload_t *serialized_output)
 
 
-For both types of libraries, there are examples in each example folder of [FIROS2](https://github.com/eProsima/FIROS2/tree/master/examples) project.
+For both types of libraries, there are examples in the *examples* folder of [FIROS2](https://github.com/eProsima/FIROS2/tree/master/examples) project.
 
 May be necessary generate data types from IDL files to communicate with *Fast-RTPS*.
 
