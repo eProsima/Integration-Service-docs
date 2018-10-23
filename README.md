@@ -116,7 +116,7 @@ ISPublisher ->] : write
 @enduml
 ```
 
-When the subscriber calls it self to *on_received_data*, it will call all the *bridges* it belongs, calling the method *on_received_data* of each bridge.
+When the subscriber calls to its method *on_received_data*, it will call all the *bridges* it belongs, calling the method *on_received_data* of each bridge.
 Then the bridges will apply each respective transformation functions to the data and will call the *publish* method of each of their publishers.
 All this behaviour will only accors with the declared connectors in the XML configuration file.
 
