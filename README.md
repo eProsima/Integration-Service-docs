@@ -118,7 +118,7 @@ ISPublisher ->] : write
 
 When the subscriber calls to its method *on_received_data*, it will call all the *bridges* it belongs, calling the method *on_received_data* of each bridge.
 Then the bridges will apply each respective transformation functions to the data and will call the *publish* method of each of their publishers.
-All this behaviour will only accors with the declared connectors in the XML configuration file.
+All this behaviour will only occurs with the declared connectors in the XML configuration file.
 
 
 **Transformation Library**: This *optional* library must implement transformation functions for the received data.
