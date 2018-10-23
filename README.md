@@ -47,7 +47,7 @@ There are two kind of libraries that the user can implement:
     	std::vector<std::pair<std::string, std::string>> *configuration);
 
 The function *create_bridge* must return a pointer to an instance of a derived class of ISBridge, or nullptr if it has failed.
-The function *create_subscriber* must return a pointer to an instance of a derived class of ISSubscriber, or nullptr if failed.
+The function *create_subscriber* must return a pointer to an instance of a derived class of ISSubscriber, or nullptr if it has failed.
 The function *create_publisher* must return a pointer to an instance of a derived class of ISPublisher, or nullptr if failed.
 Integration Services will deallocate this objects from memory when the bridge is stopped.
 
