@@ -4,7 +4,7 @@
 
 *eProsima Integration Services* is a library and an utility based on *Fast RTPS* for making communication bridges between different systems, services and protocols. With *Integration Services* the user can create parametric communication bridges between applications. At the same time, it is able to perform some transformations over the messages such as customized routing, mapping between input and output attributes or data modification.
 
-Some of the possibilities offered by the *Integration Services* are:
+Some of the possibilities offered by *Integration Services* are:
 
 -   Connections for jumping from topics which are running on different domains.
 -   Adapters for mapping the attributes from types with different IDL definitions.
