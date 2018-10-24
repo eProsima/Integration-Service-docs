@@ -1,0 +1,96 @@
+<is>
+    <topic_types>
+        <type name="ShapeType">
+            <library>libshapelib.so</library> <!-- Library for ShapeType -->
+            <participants> <!-- Participants who will register it -->
+                <participant name="2Dshapes"/>
+                <participant name="3Dshapes"/>
+            </participants>
+        </type>
+        <type name="Unused type"/>
+        <!-- Can be used to pack types or types without their own library -->
+        <types_library>libotherlib.so</types_library>
+    </topic_types>
+
+    <profiles>
+        <participant profile_name="2Dshapes">
+            <!-- RTPS participant attributes -->
+        </participant>
+
+        <participant profile_name="3Dshapes">
+            <!-- RTPS participant attributes -->
+        </participant>
+
+        <subscriber profile_name="2d_subscriber">
+            <!-- RTPS subscriber attributes -->
+        </subscriber>
+
+        <subscriber profile_name="3d_subscriber">
+            <!-- RTPS subscriber attributes -->
+        </subscriber>
+
+        <publisher profile_name="2d_publisher">
+            <!-- RTPS publisher attributes -->
+        </publisher>
+
+        <publisher profile_name="3d_publisher">
+            <!-- RTPS publisher attributes -->
+        </publisher>
+    </profiles>
+
+    <bridge name="protocol">
+    <library>/path/to/bridge/library/libprotocol.so</library>
+    <properties>
+        <property>
+            <name>property1</name>
+            <value>value1</value>
+        </property>
+    </properties>
+
+    <publisher name="protocol_publisher">
+        <property>
+            <name>property1</name>
+            <value>value1</value>
+        </property>
+        <property>
+            <name>property2</name>
+            <value>value2</value>
+        </property>
+    </publisher>
+
+    <subscriber name="protocol_subscriber">
+        <property>
+            <name>property1</name>
+            <value>value1</value>
+        </property>
+        <property>
+            <name>property2</name>
+            <value>value2</value>
+        </property>
+    </subscriber>
+    </bridge>
+
+    <connector name="shapes_projection">
+    <subscriber participant_name="3Dshapes" subscriber_name="3d_subscriber"/>
+    <publisher participant_name="2Dshapes" publisher_name="2d_publisher"/>
+    <transformation file="/path/to/transform/libuserlib.so" function="transform3D_to_2D"/>
+    </connector>
+
+    <connector name="shapes_stereo">
+    <subscriber participant_name="2Dshapes" subscriber_name="2d_subscriber"/>
+    <publisher participant_name="3Dshapes" publisher_name="3d_publisher"/>
+    <transformation file="/path/to/transform/libuserlib.so" function="transform2D_to_3D"/>
+    </connector>
+
+    <connector name="shapes_protocol">
+    <subscriber participant_name="2Dshapes" subscriber_name="2d_subscriber"/>
+    <publisher participant_name="protocol" publisher_name="protocol_publisher"/>
+    <transformation file="/path/to/transform/libprotocoltransf.so" function="transformFrom2D"/>
+    </connector>
+
+    <connector name="protocol_shapes">
+    <subscriber participant_name="protocol" subscriber_name="protocol_subscriber"/>
+    <publisher participant_name="2Dshapes" publisher_name="2d_publisher"/>
+    <transformation file="/path/to/transform/libprotocoltransf.so" function="transformTo2D"/>
+    </connector>
+</is>

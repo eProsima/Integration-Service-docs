@@ -1,6 +1,5 @@
 # eProsima Integration Services
 ![http://www.eprosima.com](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ)
-<!-- ![eProsima](/home/luisgp/Documentos/doc-generada/eProsima.png) -->
 
 *eProsima Integration Services* is a library and an utility based on *Fast RTPS* for making communication bridges between different systems, services and protocols. With *Integration Services* the user can create parametric communication bridges between applications. At the same time, it is able to perform some transformations over the messages such as customized routing, mapping between input and output attributes or data modification.
 
@@ -10,6 +9,19 @@ Some of the possibilities offered by *Integration Services* are:
 -   Adapters for mapping the attributes from types with different IDL definitions.
 -   User-defined operations over the circulating messages.
 -   Communication with others environments, as *ROS2*.
+
+<p align="center"> <img src="docs/IS-main.png" alt="Default behaviour"/> </p>
+
+
+[Installation](#installation)
+
+[Steps to allow other protocols than RTPS](#steps-to-allow-other-protocols-than-rtps)
+
+[Configuration options in configuration file](#configuration-options-in-configuration-file)
+
+[Documentation](#documentation)
+
+[Getting Help](#getting-help)
 
 
 #### Installation
@@ -95,26 +107,7 @@ When you implement your ISBridge derived class, you must take in account:
 - When your subscriber receives data, you must call on_received_data function with the data properly converted into SerializedPayload_t.
 - You can override the default behaviour, but isn't recommended in general. This behaviour follows this diagram:
 
-```plantuml
-@startuml
-hide footbox
-
-participant ISSubscriber
-participant ISBridge
-participant TransformationLibrary
-participant ISPublisher
-
-[-> ISSubscriber : receive
-
-ISSubscriber -> ISSubscriber : on_received_data
-ISSubscriber -> ISBridge : on_received_data
-ISBridge -> TransformationLibrary : transform
-TransformationLibrary --> ISBridge : <<transform_return>>
-ISBridge -> ISPublisher : publish
-
-ISPublisher ->] : write
-@enduml
-```
+<p align="center"> <img src="docs/flow.png" alt="Default behaviour"/> </p>
 
 When the subscriber calls to its method *on_received_data*, it will call all the *bridges* it belongs, calling the method *on_received_data* of each bridge.
 Then the bridges will apply each respective transformation functions to the data and will call the *publish* method of each of their publishers.
@@ -154,7 +147,7 @@ There is a prototype in *resource/typelib.cpp*:
 		return nullptr;
 	}
 
-#### Configuration options in **config.xml**
+#### Configuration options in configuration file
 
 The configuration files define *topic_types*, *profiles*, *bridges* and *connectors*.
 The *topic_types* are the Topic Data Types that will be used by the participants. If these data types use Keys or you want to define how to instante them, *topic_types* allows to define *data types libraries*.
@@ -164,102 +157,8 @@ Finally, the *connectors* are just relationhips between subscribers and publishe
 
 As reference, let's take this configuration file:
 
-    <is>
-        <topic_types>
-            <type name="ShapeType">
-                <library>libshapelib.so</library> <!-- Library for ShapeType -->
-                <participants> <!-- Participants who will register it -->
-                    <participant name="2Dshapes"/>
-                    <participant name="3Dshapes"/>
-                </participants>
-            </type>
-            <type name="Unused type"/>
-            <!-- Can be used to pack types or types without their own library -->
-            <types_library>libotherlib.so</types_library>
-        </topic_types>
+<p align="center"> <a href="docs/example_config.xml"> <img src="docs/Config.png" alt="Config file"/> </a> <font size="2">Click on the image to open the code.</font> </p>
 
-        <profiles>
-            <participant profile_name="2Dshapes">
-                <!-- RTPS participant attributes -->
-            </participant>
-
-            <participant profile_name="3Dshapes">
-                <!-- RTPS participant attributes -->
-            </participant>
-
-            <subscriber profile_name="2d_subscriber">
-                <!-- RTPS subscriber attributes -->
-            </subscriber>
-
-            <subscriber profile_name="3d_subscriber">
-                <!-- RTPS subscriber attributes -->
-            </subscriber>
-
-            <publisher profile_name="2d_publisher">
-                <!-- RTPS publisher attributes -->
-            </publisher>
-
-            <publisher profile_name="3d_publisher">
-                <!-- RTPS publisher attributes -->
-            </publisher>
-        </profiles>
-
-        <bridge name="protocol">
-        <library>/path/to/bridge/library/libprotocol.so</library>
-        <properties>
-            <property>
-                <name>property1</name>
-                <value>value1</value>
-            </property>
-        </properties>
-
-        <publisher name="protocol_publisher">
-            <property>
-                <name>property1</name>
-                <value>value1</value>
-            </property>
-            <property>
-                <name>property2</name>
-                <value>value2</value>
-            </property>
-        </publisher>
-
-        <subscriber name="protocol_subscriber">
-            <property>
-                <name>property1</name>
-                <value>value1</value>
-            </property>
-            <property>
-                <name>property2</name>
-                <value>value2</value>
-            </property>
-        </subscriber>
-        </bridge>
-
-        <connector name="shapes_projection">
-        <subscriber participant_name="3Dshapes" subscriber_name="3d_subscriber"/>
-        <publisher participant_name="2Dshapes" publisher_name="2d_publisher"/>
-        <transformation file="/path/to/transform/libuserlib.so" function="transform3D_to_2D"/>
-        </connector>
-
-        <connector name="shapes_stereo">
-        <subscriber participant_name="2Dshapes" subscriber_name="2d_subscriber"/>
-        <publisher participant_name="3Dshapes" publisher_name="3d_publisher"/>
-        <transformation file="/path/to/transform/libuserlib.so" function="transform2D_to_3D"/>
-        </connector>
-
-        <connector name="shapes_protocol">
-        <subscriber participant_name="2Dshapes" subscriber_name="2d_subscriber"/>
-        <publisher participant_name="protocol" publisher_name="protocol_publisher"/>
-        <transformation file="/path/to/transform/libprotocoltransf.so" function="transformFrom2D"/>
-        </connector>
-
-        <connector name="protocol_shapes">
-        <subscriber participant_name="protocol" subscriber_name="protocol_subscriber"/>
-        <publisher participant_name="2Dshapes" publisher_name="2d_publisher"/>
-        <transformation file="/path/to/transform/libprotocoltransf.so" function="transformTo2D"/>
-        </connector>
-    </is>
 
 In this file there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
 The relationships between *participants* and *subscribers*/*publishers* defined in the *profiles* section are stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
@@ -271,29 +170,7 @@ There are several possible types of connectors depending of the kind of its part
 
 In this kind of connector, both participant are RTPS compliant, like *shapes_projection* and *shapes_stereo* in our example file.
 
-```plantuml
-@startuml
-
-package "RTPS-Publisher" <<Cloud>> {
-    class Publisher
-}
-
-package "Integration Services" <<Rectangle>> {
-    class UserLibrary {
-        +NodeA_t transform(NodeB_t)
-    }
-}
-
-Publisher -right-> UserLibrary
-
-package "RTPS-Subscriber" <<Cloud>> {
-    class Subscriber
-}
-
-UserLibrary -left-> Subscriber
-
-@enduml
-```
+<p align="center"> <img src="docs/RTPS-bridge.png" alt="RTPS Bridge"/> </p>
 
 * RTPS -> Other protocol
 
@@ -307,11 +184,15 @@ If no *bridge_configuration* is provided, then your createBridge will be called 
 *Transformation* library could be reused by your bridge library, with the same or another transformation function inside the same transformation library (an example of reusing the transformation library can be found on [FIROS2](https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2).
 Of course, you can add built in transformation functions inside your *bridge library*.
 
+<p align="center"> <img src="docs/IS-RTPS-to-Other.png" alt="RTPS to Other Bridge"/> </p>
+
 * Other procotol -> RTPS
 
 This is a similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
 
 The same logic applies in this connectors as in the RTPS -> Other protocol case, but in this case the RTPS participant is the publisher. An example of this can be found on [FIROS2](https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2).
+
+<p align="center"> <img src="docs/IS-Other-to-RTPS.png" alt="Other to RTPS Bridge"/> </p>
 
 * Bidirectional bridge (RTPS <--> Other protocol)
 
@@ -320,32 +201,7 @@ This case is not a connector, but the consecuence of set two connectors with the
 A combination of both logics RTPS->Other and Other->RTPS applies here. The example [TIS_NGSIv2](https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2) of FIROS2 uses a bridge of this type.
 
 
-```plantuml
-@startuml
-
-package "RTPS" <<Cloud>> {
-    class PubSub
-}
-
-package "Integration Services" <<Rectangle>> {
-    class UserLibrary {
-        +Other_t transform(RTPS_t)
-        +RTPS_t transformFromA(Other_t)
-    }
-}
-
-PubSub -right-> UserLibrary
-PubSub <-right- UserLibrary
-
-package "Other Protocol" <<Cloud>> {
-    class Other
-}
-
-UserLibrary -left-> Other
-UserLibrary <-left- Other
-
-@enduml
-```
+<p align="center"> <img src="docs/IS-RTPS-Other.png" alt="RTPS-Other Bridge"/> </p>
 
 
 ## Documentation
@@ -355,5 +211,3 @@ You can access the documentation online, which is hosted on [Read the Docs](http
 ## Getting Help
 
 If you need support you can reach us by mail at `support@eProsima.com` or by phone at `+34 91 804 34 48`.
-
-
