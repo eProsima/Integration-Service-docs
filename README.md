@@ -12,6 +12,8 @@ Some of the possibilities offered by *Integration Services* are:
 
 <p align="center"> <img src="docs/IS-main.png" alt="Default behaviour"/> </p>
 
+<hr></hr>
+#### Table Of Contents
 
 [Installation](#installation)
 
@@ -22,7 +24,7 @@ Some of the possibilities offered by *Integration Services* are:
 [Documentation](#documentation)
 
 [Getting Help](#getting-help)
-
+<hr></hr>
 
 #### Installation
 
@@ -43,24 +45,33 @@ If you are on Windows choose your version of Visual Studio:
     > cmake ..  -G "Visual Studio 14 2015 Win64"
     > cmake --build .
 
+<hr></hr>
 ### Steps to allow other protocols than RTPS
 
 *Integration Services* has a builtin RTPS bridge, but you can specify any other procotol implementing your own libraries.
 
-There are two kind of libraries that the user can implement:
+There are three kind of libraries that the user can implement, **Bridge Library**, **Transformation Library** and **Data Types Library**.
 
-**Bridge Library**: This library must export the following functions as defined in the *resource/templatebridgelib.cpp* file:
+
+**Bridge Library**:
+
+This library must export the following functions as defined in the *resource/templatebridgelib.cpp* file:
 
     ISBridge* create_bridge(const char* name,
     	std::vector<std::pair<std::string, std::string>> *configuration);
+
     ISSubscriber* create_subscriber(ISBridge* bridge, const char* name,
     	std::vector<std::pair<std::string, std::string>> *configuration);
+
     ISPublisher* create_publisher(ISBridge* bridge, const char* name,
     	std::vector<std::pair<std::string, std::string>> *configuration);
 
-The function *create_bridge* must return a pointer to an instance of a derived class of ISBridge, or nullptr if it has failed.
-The function *create_subscriber* must return a pointer to an instance of a derived class of ISSubscriber, or nullptr if it has failed.
-The function *create_publisher* must return a pointer to an instance of a derived class of ISPublisher, or nullptr if it has failed.
+- The function *create_bridge* must return a pointer to an instance of a derived class of ISBridge, or nullptr if it has failed.
+
+- The function *create_subscriber* must return a pointer to an instance of a derived class of ISSubscriber, or nullptr if it has failed.
+
+- The function *create_publisher* must return a pointer to an instance of a derived class of ISPublisher, or nullptr if it has failed.
+
 Integration Services will deallocate these objects from memory when the bridge is stopped.
 
 Let's take a look to these interfaces:
@@ -114,7 +125,9 @@ Then the bridges will apply each respective transformation functions to the data
 All this behaviour will only occurs with the declared connectors in the XML configuration file.
 
 
-**Transformation Library**: This *optional* library must implement the transformation functions for the received data.
+**Transformation Library**: 
+
+This *optional* library must implement the transformation functions for the received data.
 These *Transformation Libraries* are indicated in each connector.
 The *Bridge* connector will be configured with the function to call in each case.
 There is a prototype in *resource/templatelib.cpp*:
@@ -135,7 +148,9 @@ Your custom publisher/subscriber must inherit from ISPublisher/ISSubscriber resp
 
 The responsability of how to instantiate your bridge, publisher and/or subscriber is on your *Bridge Library*, but remember that "RTPS" publisher and subscribers will be filled automatically by ISManager with the configuration from the *participant* node of the *config.xml*.
 
-**Data Types Libraries**: These *optional* libraries must implement a single function *GetTopicType* that will return a new instance of the desired data type. The library could support multiple types or be integrated in other libraries such as the *Transformation Library*.
+**Data Types Library**:
+
+These *optional* libraries must implement a single function *GetTopicType* that will return a new instance of the desired data type. The library could support multiple types or be integrated in other libraries such as the *Transformation Library*.
 There is a prototype in *resource/typelib.cpp*:
 
 	extern "C" TopicDataType* SHAPES_LIB_EXPORT GetTopicType(const char *name)
@@ -146,6 +161,8 @@ There is a prototype in *resource/typelib.cpp*:
 		}
 		return nullptr;
 	}
+
+<hr></hr>
 
 #### Configuration options in configuration file
 
@@ -203,11 +220,13 @@ A combination of both logics RTPS->Other and Other->RTPS applies here. The examp
 
 <p align="center"> <img src="docs/IS-RTPS-Other.png" alt="RTPS-Other Bridge"/> </p>
 
+<hr></hr>
 
 ## Documentation
 
 You can access the documentation online, which is hosted on [Read the Docs](http://eprosima-fast-rtps.readthedocs.io).
 
+<hr></hr>
 ## Getting Help
 
 If you need support you can reach us by mail at `support@eProsima.com` or by phone at `+34 91 804 34 48`.
