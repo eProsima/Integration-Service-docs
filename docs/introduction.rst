@@ -5,14 +5,17 @@ Getting Started
 Brief introduction to Integration Services
 ------------------------------------------
 
-Integration Services allows to intercommunicate different systems, services and protocol using a common interface.
+Integration Services allows to intercommunicate different systems, services and protocols using a common interface.
 
 .. image:: IS-RTPS-Other.png
+   :align: center
 
 Integration Services defines *connectors* which are a pair of *subscriber* and *publisher*, and optionally a *transformation function*.
-Each connector, will communicate the data received from its *subscriber* with its *publisher*. If a *transformation function* was defined, the data will travel from *subscriber* to the *transformation function* which will apply its transformations, and the result will go to the *publisher*.
+Each connector, will communicate the data received from its *subscriber* with its *publisher*. 
+If a *transformation function* was defined, the data will travel from *subscriber* to the *transformation function* which will apply its transformations, and the result will go to the *publisher*.
 
 .. image:: fullconnector.png
+   :align: center
 
 Executing your first Integration Services
 -----------------------------------------

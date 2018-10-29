@@ -19,4 +19,5 @@ If you are on Linux, execute: ::
 If you are on Windows, choose your version of Visual Studio using CMake option *-G*: ::
 
     > cmake -G "Visual Studio 14 2015 Win64" ..
-    > cmake --build . --target install
+	> cmake --build . --target install --config Release
+

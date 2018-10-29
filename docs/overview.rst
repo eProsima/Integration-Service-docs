@@ -110,3 +110,6 @@ Connector
 A connector is a pair subscriber/publisher with an optional transformation function. Internally represents a route
 that the data will follow. If a transformation function was defined, then it will be applyed before the data is
 sent to the publishers.
+
+.. image:: fullconnector.png
+   :align: center

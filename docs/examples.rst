@@ -15,12 +15,23 @@ This example shows how IS can communicate two participants that belongs to diffe
 
 To execute the example properly, we must first compile the example itself, from the `domain_change example location <https://github.com/eProsima/Integration-Services/tree/feature/TCP_DynTypes/examples/domain_change>`_.
 
+Linux:
+
 ::
 
     $ mkdir build
     $ cd build
     $ cmake ..
     $ make
+
+Windows:
+
+::
+
+    $ mkdir build
+    $ cd build
+    $ cmake -G "Visual Studio 14 2015 Win64" ..
+    $ cmake --build .
 
 The compilation will generate an example application named *DomainChange* in build directory.
 When we execute *DomainChange* as publisher, it will create its participant in the domain **0**.
@@ -52,7 +63,6 @@ Here, we can see a schema that represents the internal flow in this example.
 
 .. image:: DomainChange.png
     :align: center
-
 
 
 Dynamic Types
@@ -91,12 +101,23 @@ You need to have `HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/
 
 Then, you must compile the example itself, from the `dynamic_types example location <https://github.com/eProsima/Integration-Services/tree/feature/TCP_DynTypes/examples/dynamic_types>`_.
 
+Linux:
+
 ::
 
     $ mkdir build
     $ cd build
     $ cmake ..
     $ make
+
+Windows:
+
+::
+
+    $ mkdir build
+    $ cd build
+    $ cmake -G "Visual Studio 14 2015 Win64" ..
+    $ cmake --build .
 
 The build process will generate the binaries of the two libraries.
 
@@ -144,12 +165,23 @@ You need to have `HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/
 
 Then, you must compile the example itself, from the `helloworld_to_file example location <https://github.com/eProsima/Integration-Services/tree/feature/TCP_DynTypes/examples/helloworld_to_file>`_.
 
+Linux:
+
 ::
 
     $ mkdir build
     $ cd build
     $ cmake ..
     $ make
+
+Windows:
+
+::
+
+    $ mkdir build
+    $ cd build
+    $ cmake -G "Visual Studio 14 2015 Win64" ..
+    $ cmake --build .
 
 The build process will generate the binary of the bridge library.
 
@@ -205,12 +237,23 @@ You need to have a `ShapesDemo <https://github.com/eProsima/ShapesDemo>`__ worki
 
 Then, you must compile the example itself, from the `shapes_demo_tcp example location <https://github.com/eProsima/Integration-Services/tree/feature/TCP_DynTypes/examples/shapes_demo_tcp>`_.
 
+Linux:
+
 ::
 
     $ mkdir build
     $ cd build
     $ cmake ..
     $ make
+
+Windows:
+
+::
+
+    $ mkdir build
+    $ cd build
+    $ cmake -G "Visual Studio 14 2015 Win64" ..
+    $ cmake --build .
 
 The build process will generate the binary of the types library.
 
