@@ -155,7 +155,7 @@ HelloWorld to file
 In this example we create a new bridge to save all received data from the Fast-RTPS HelloWorldExample into a file.
 
 To achieve that target, we need the bridge library `isfile <https://github.com/eProsima/Integration-Services/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
-The library only instantiate `FilePublisher <https://github.com/eProsima/Integration-Services/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FilePublisher.cpp>`_ that implements the logic to save the data to a file.
+The library only instantiates `FilePublisher <https://github.com/eProsima/Integration-Services/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FilePublisher.cpp>`_ that implements the logic to save the data to a file.
 
 The `config.xml <https://github.com/eProsima/Integration-Services/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ file of the example configures IS with the bridge library in a connector that receives data from HelloWorldExample.
 
@@ -200,7 +200,7 @@ Launch IS in another terminal with the *config.xml* file from the example folder
     $ cd <path_to_is_source>/examples/helloworld_to_file
     $ integration_services config.xml
 
-Once IS is running, HelloWorldExample will match and a file named output.txt will be created with the received data
+Once IS is running, HelloWorldExample will match and a file named *output.txt* will be created with the received data
 from HelloWorldExample.
 
 .. image:: HelloWorldFile.png
@@ -228,7 +228,7 @@ In our case, we will use *config.xml* to test it in one machine.
 
 The example uses a types library named `shapelib <https://github.com/eProsima/Integration-Services/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/shapelib.cpp>`__ that allow us to create the keyed type "shape" that ShapesDemo uses to communicate.
 
-The ShapesDemos to communicate, will be bound to different domains to allow execute the example in the same machine, and
+To allow execute the example in the same machine, each ShapesDemo instance will be bound to different domains,
 allowing IS to do some useful work.
 
 **Preparation**

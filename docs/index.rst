@@ -44,9 +44,7 @@ This documentation is organized into the following sections:
    introduction
    overview
    xml-config-file
-   transformation
-   types
-   bridge
+   libraries
    examples
 
 
