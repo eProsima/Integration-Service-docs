@@ -8,7 +8,7 @@ There are three kind of libraries that the user can implement, **Bridge Library*
 and **Data Types Library**.
 
 May be necessary generate data types from IDL files to communicate with *Fast-RTPS*,
-or make use of Fast-RTPS dynamic types.
+or make use of `Fast-RTPS dynamic types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__.
 
 The :ref:`Integration Services XML Configuration` file must be adapted to each protocol.
 **ISManager** will provide the parsed *properties* node inside *bridge* node to the :class:`create_bridge`

@@ -153,7 +153,7 @@ but at least one is needed to make IS perform any work.
 They must contain a subscriber and a publisher.
 Each of them is configured by a participant or bridge name and the subscriber's or publisher's name respectively.
 
-In the follow example, we define a connector whose subscriber receives data from Fast-RTPS, and its publisher
+In the following example, we define a connector whose subscriber receives data from Fast-RTPS, and its publisher
 writes that data to a text file.
 A :ref:`transformation libraries`'s function that adds the timestamp before the data is wrote is defined too.
 
