@@ -135,12 +135,21 @@ In another terminal, launch Keys example as subscriber:
 
     $ keys subscriber
 
-Finally, launch IS in another terminal with *dyn_dyn_config.xml* file from the example folder:
+Finally, launch IS in another terminal with *dyn_dyn_config.xml* (*dyn_dyn_config_win.xml* if you are on Windows) file from the example folder:
+
+Linux:
 
 ::
 
     $ cd <path_to_is_source>/examples/dynamic_types
     $ integration_services dyn_dyn_config.xml
+
+Windows:
+
+::
+
+    $ cd <path_to_is_source>/examples/dynamic_types
+    $ integration_services dyn_dyn_config_win.xml
 
 Once IS is running, both examples will start to communicate.
 
@@ -193,12 +202,21 @@ In one terminal, launch HelloWorldExample as publisher:
 
     $ HelloWorldExample publisher
 
-Launch IS in another terminal with the *config.xml* file from the example folder:
+Launch IS in another terminal with the *config.xml* (*config_win.xml* if you are on Windows) file from the example folder:
+
+Linux:
 
 ::
 
     $ cd <path_to_is_source>/examples/helloworld_to_file
     $ integration_services config.xml
+
+Windows:
+
+::
+
+    $ cd <path_to_is_source>/examples/helloworld_to_file
+    $ integration_services config_win.xml
 
 Once IS is running, HelloWorldExample will match and a file named *output.txt* will be created with the received data
 from HelloWorldExample.
@@ -271,12 +289,21 @@ In the other ShapesDemo, subscribe to that kind of shape.
 
 The *subscriber* ShapesDemo shouldn't received any data as they belong to different domains.
 
-Launch IS in another terminal with the *config.xml* file from the example folder:
+Launch IS in another terminal with the *config.xml* (*config_win.xml* if you are on Windows) file from the example folder:
+
+Linux:
 
 ::
 
     $ cd <path_to_is_source>/examples/shapes_demo_tcp
     $ integration_services config.xml
+
+Windows:
+
+::
+
+    $ cd <path_to_is_source>/examples/shapes_demo_tcp
+    $ integration_services config_win.xml
 
 Once IS is running, both ShapesDemo must start to communicate and the *subscriber* ShapesDemo should begin to receive
 data from the *publisher*
