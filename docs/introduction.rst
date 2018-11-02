@@ -37,15 +37,15 @@ To create our first application we will just create a new one with the followed 
                         <domainId>0</domainId>
                     </builtin>
                 </rtps>
-
-                <subscriber profile_name="is_subscriber">
-                    <topic>
-                        <name>TextPubSubTopic</name>
-                        <dataType>Text</dataType>
-                    </topic>
-                    <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
-                </subscriber>
             </participant>
+
+            <subscriber profile_name="is_subscriber">
+                <topic>
+                    <name>TextPubSubTopic</name>
+                    <dataType>Text</dataType>
+                </topic>
+                <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+            </subscriber>
 
             <participant profile_name="domain5">
                 <rtps>
@@ -53,20 +53,20 @@ To create our first application we will just create a new one with the followed 
                         <domainId>5</domainId>
                     </builtin>
                 </rtps>
-
-                <publisher profile_name="is_publisher">
-                    <topic>
-                        <name>TextPubSubTopic</name>
-                        <dataType>Text</dataType>
-                    </topic>
-                    <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
-                </publisher>
             </participant>
+
+            <publisher profile_name="is_publisher">
+                <topic>
+                    <name>TextPubSubTopic</name>
+                    <dataType>Text</dataType>
+                </topic>
+                <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+            </publisher>
         </profiles>
 
         <connector name="domain_change">
-            <subscriber participant_name="domain0" subscriber_name="is_subscriber"/>
-            <publisher participant_name="domain5" publisher_name="is_publisher"/>
+            <subscriber participant_profile="domain0" subscriber_profile="is_subscriber"/>
+            <publisher participant_profile="domain5" publisher_profile="is_publisher"/>
         </connector>
     </is>
 

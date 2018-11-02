@@ -14,8 +14,8 @@ eProsima Integration Services Documentation
 
 Some of the main features of *Integration Services* are:
 
-* Connections for jumping from topics which are running on different domains.
-* Adapters for mapping the attributes from types with different IDL definitions.
+* Connects two different domains.
+* Mapping between different data types.
 * User-defined operations over the circulating messages (:ref:`transformation libraries`).
 * Communication with others environments, as *ROS2*.
 

@@ -19,7 +19,7 @@ This XML file can contain the following sections, all inside a root <is> label.
 Types
 -----
 
-The types section follows the format of Fast-RTPS XML Types. Dynamic types can be defined in this section to be used
+The types section follows the format of `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__. Dynamic types can be defined in this section to be used
 by the participants declared in the :ref:`profiles` section.
 
 For example:
@@ -83,14 +83,6 @@ The profiles define participants, subscribers, publishers, etc, following the fo
                     <domainId>0</domainId>
                 </builtin>
             </rtps>
-
-            <subscriber profile_name="is_subscriber">
-                <topic>
-                    <name>TextPubSubTopic</name>
-                    <dataType>Text</dataType>
-                </topic>
-                <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
-            </subscriber>
         </participant>
 
         <participant profile_name="domain5">
@@ -99,15 +91,23 @@ The profiles define participants, subscribers, publishers, etc, following the fo
                     <domainId>5</domainId>
                 </builtin>
             </rtps>
-
-            <publisher profile_name="is_publisher">
-                <topic>
-                    <name>TextPubSubTopic</name>
-                    <dataType>Text</dataType>
-                </topic>
-                <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
-            </publisher>
         </participant>
+
+        <subscriber profile_name="is_subscriber">
+            <topic>
+                <name>TextPubSubTopic</name>
+                <dataType>Text</dataType>
+            </topic>
+            <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+        </subscriber>
+
+        <publisher profile_name="is_publisher">
+            <topic>
+                <name>TextPubSubTopic</name>
+                <dataType>Text</dataType>
+            </topic>
+            <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+        </publisher>
     </profiles>
 
 Bridges
@@ -160,13 +160,13 @@ A :ref:`transformation libraries`'s function that adds the timestamp before the 
 .. code-block:: xml
 
     <connector name="dump_to_file">
-        <subscriber participant_name="rtps" subscriber_name="fastrtps_subscriber"/>
+        <subscriber participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
         <publisher bridge_name="file" publisher_name="file_publisher"/>
         <transformation file="libfile.so" function="addTimestamp"/>
     </connector>
 
 There are several possible types of connectors depending of the kind of its participants.
-Each connector type will refer to :ref:`example`.
+Each connector type will refer to the bottom :ref:`example`.
 
 RTPS Bridge
 ^^^^^^^^^^^
