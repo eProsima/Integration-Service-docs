@@ -7,6 +7,10 @@ implementing your own libraries.
 There are three kind of libraries that the user can implement, **Bridge Library**, **Transformation Library**
 and **Data Types Library**.
 
+All these libraries can be mixed in the same library, including adding several libraries of the same kind
+(an example of several the transformation libraries
+can be found on `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__).
+
 May be necessary generate data types from IDL files to communicate with *Fast-RTPS*,
 or make use of `Fast-RTPS dynamic types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__.
 

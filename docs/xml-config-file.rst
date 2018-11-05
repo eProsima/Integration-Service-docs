@@ -118,14 +118,28 @@ Inside the bridge, a :ref:`bridge libraries` must be defined. It contains the me
 :ref:`isbridge`), the publishers (implementing :ref:`ispublisher`) and the subscribers (implementing :ref:`issubscriber`).
 If any of them uses the default implementation, its method can simply return :class:`nullptr`.
 
-A properties label with any number of property sections (which are pairs *name* and *value* as shown in the example) can be defined for the bridge.
-Properties that apply to participants and subscribers are defined directly inside their sections.
+A properties label with any number of property sections (which are pairs *name* and *value* as shown in the example)
+can be defined for the bridge.
+Properties that apply to participants, publishers and subscribers are defined directly inside their sections.
 Each property set will be sent to its component as a vector of pairs of strings.
+
+If no properties are provided, then your :class:`create_` method will be called with :class:`nullptr` or an empty
+vector as parameter config.
 
 .. code-block:: xml
 
     <bridge name="file">
         <library>build/libisfile.so</library>
+        <properties>
+            <property>
+                <name>propertyA</name>
+                <value>valueA</value>
+            </property>
+            <property>
+                <name>propertyB</name>
+                <value>valueB</value>
+            </property>
+        </properties>
 
         <publisher name="file_publisher">
             <property>
@@ -185,15 +199,6 @@ Your *Bridge Library* must define at least a publisher to your desired protocol 
 communicate with it and follow the ISPublisher interface. By default, the transformation function is applied after
 :class:`on_received_data` method calls to the instance of ISBridge.
 If you want to change this behaviour you will need to override the complete data flow.
-
-*Bridge_configuration* node can contain configuration information that *Bridge Library* must understand.
-ISManager will parse the *property* nodes of each element and will call the respective :class:`create_`
-function of the library with a vector of pairs with the data contained.
-If no *bridge_configuration* is provided, then your createBridge will be called with :class:`nullptr` or an empty
-vector as parameter config.
-
-*Transformation* library could be reused by your bridge library, with the same or another transformation function inside the same transformation library (an example of reusing the transformation library can be found on `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__.
-Of course, you can add built in transformation functions inside your *bridge library*.
 
 .. image:: IS-RTPS-to-Other.png
     :align: center
