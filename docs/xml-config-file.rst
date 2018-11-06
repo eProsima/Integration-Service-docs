@@ -190,6 +190,34 @@ In this kind of connector, both participant are RTPS compliant, like *shapes_pro
 .. image:: RTPS-bridge.png
     :align: center
 
+.. code-block:: xml
+
+    <is>
+        <profiles>
+            <participant profile_name="RTPS-Publisher">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <participant profile_name="RTPS-Subscriber">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <subscriber profile_name="Subscriber">
+                <!-- RTPS subscriber attributes -->
+            </subscriber>
+
+            <publisher profile_name="Publisher">
+                <!-- RTPS publisher attributes -->
+            </publisher>
+        </profiles>
+
+        <connector name="connector">
+            <subscriber participant_profile="RTPS-Subscriber" subscriber_profile="Subscriber"/>
+            <publisher participant_profile="RTPS-Publisher" publisher_profile="Publisher"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
+        </connector>
+    </is>
+
 RTPS to Other protocol
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -203,6 +231,35 @@ If you want to change this behaviour you will need to override the complete data
 .. image:: IS-RTPS-to-Other.png
     :align: center
 
+.. code-block:: xml
+
+    <is>
+        <profiles>
+            <participant profile_name="RTPS">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <subscriber profile_name="Subscriber">
+                <!-- RTPS subscriber attributes -->
+            </subscriber>
+        </profiles>
+
+        <bridge name="Other protocol">
+            <library>/path/to/bridge/library/libprotocol.so</library>
+            <!-- Other protocol properties -->
+
+            <publisher name="Other">
+                <!-- Other protocol publisher properties -->
+            </publisher>
+        </bridge>
+
+        <connector name="connector">
+            <subscriber participant_profile="RTPS" subscriber_profile="Subscriber"/>
+            <publisher bridge_name="Other protocol" publisher_name="Other"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
+        </connector>
+    </is>
+
 Other procotol to RTPS
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -214,6 +271,35 @@ but in this case the RTPS participant is the publisher. An example of this can b
 
 .. image:: IS-Other-to-RTPS.png
     :align: center
+
+.. code-block:: xml
+
+    <is>
+        <profiles>
+            <participant profile_name="RTPS">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <publisher profile_name="Publisher">
+                <!-- RTPS publisher attributes -->
+            </publisher>
+        </profiles>
+
+        <bridge name="Other protocol">
+            <library>/path/to/bridge/library/libprotocol.so</library>
+            <!-- Other protocol properties -->
+
+            <subscriber name="Other">
+                <!-- Other protocol subscriber properties -->
+            </subscriber>
+        </bridge>
+
+        <connector name="connector">
+            <subscriber bridge_name="Other protocol" subscriber_name="Other"/>
+            <publisher participant_profile="RTPS" publisher_profile="Publisher"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transformFromA"/>
+        </connector>
+    </is>
 
 Bidirectional bridge
 ^^^^^^^^^^^^^^^^^^^^
@@ -229,6 +315,49 @@ bridge of this type.
 .. image:: IS-RTPS-Other.png
     :align: center
 
+.. code-block:: xml
+
+    <is>
+        <profiles>
+            <participant profile_name="RTPS">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <subscriber profile_name="Subscriber">
+                <!-- RTPS subscriber attributes -->
+            </subscriber>
+
+            <publisher profile_name="Publisher">
+                <!-- RTPS publisher attributes -->
+            </publisher>
+        </profiles>
+
+        <bridge name="Other protocol">
+            <library>/path/to/bridge/library/libprotocol.so</library>
+            <!-- Other protocol properties -->
+
+            <subscriber name="OtherSub">
+                <!-- Other protocol subscriber properties -->
+            </subscriber>
+
+            <publisher name="OtherPub">
+                <!-- Other protocol publisher properties -->
+            </publisher>
+        </bridge>
+
+        <connector name="connector">
+            <subscriber bridge_name="Other protocol" subscriber_name="OtherSub"/>
+            <publisher participant_profile="RTPS" publisher_profile="Publisher"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transformFromA"/>
+        </connector>
+
+        <connector name="connector">
+            <subscriber participant_profile="RTPS" subscriber_profile="Subscriber"/>
+            <publisher bridge_name="Other protocol" publisher_name="OtherPub"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
+        </connector>
+    </is>
+
 Example
 -------
 
@@ -243,3 +372,102 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
     :alt: Click on the image to open the code.
 
     Click on the image to open the code.
+
+.. code-block:: xml
+
+    <is>
+        <topic_types>
+            <type name="ShapeType">
+                <library>libshapelib.so</library> <!-- Library for ShapeType -->
+                <participants> <!-- Participants who will register it -->
+                    <participant name="2Dshapes"/>
+                    <participant name="3Dshapes"/>
+                </participants>
+            </type>
+            <type name="Unused type"/>
+            <!-- Can be used to pack types or types without their own library -->
+            <types_library>libotherlib.so</types_library>
+        </topic_types>
+
+        <profiles>
+            <participant profile_name="2Dshapes">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <participant profile_name="3Dshapes">
+                <!-- RTPS participant attributes -->
+            </participant>
+
+            <subscriber profile_name="2d_subscriber">
+                <!-- RTPS subscriber attributes -->
+            </subscriber>
+
+            <subscriber profile_name="3d_subscriber">
+                <!-- RTPS subscriber attributes -->
+            </subscriber>
+
+            <publisher profile_name="2d_publisher">
+                <!-- RTPS publisher attributes -->
+            </publisher>
+
+            <publisher profile_name="3d_publisher">
+                <!-- RTPS publisher attributes -->
+            </publisher>
+        </profiles>
+
+        <bridge name="protocol">
+            <library>/path/to/bridge/library/libprotocol.so</library>
+            <properties>
+                <property>
+                    <name>property1</name>
+                    <value>value1</value>
+                </property>
+            </properties>
+
+            <publisher name="protocol_publisher">
+                <property>
+                    <name>property1</name>
+                    <value>value1</value>
+                </property>
+                <property>
+                    <name>property2</name>
+                    <value>value2</value>
+                </property>
+            </publisher>
+
+            <subscriber name="protocol_subscriber">
+                <property>
+                    <name>property1</name>
+                    <value>value1</value>
+                </property>
+                <property>
+                    <name>property2</name>
+                    <value>value2</value>
+                </property>
+            </subscriber>
+        </bridge>
+
+        <connector name="shapes_projection">
+            <subscriber participant_profile="3Dshapes" subscriber_profile="3d_subscriber"/>
+            <publisher participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transform3D_to_2D"/>
+        </connector>
+
+        <connector name="shapes_stereo">
+            <subscriber participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
+            <publisher participant_profile="3Dshapes" publisher_profile="3d_publisher"/>
+            <transformation file="/path/to/transform/libuserlib.so" function="transform2D_to_3D"/>
+        </connector>
+
+        <connector name="shapes_protocol">
+            <subscriber participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
+            <publisher bridge_name="protocol" publisher_name="protocol_publisher"/>
+            <transformation file="/path/to/transform/libprotocoltransf.so" function="transformFrom2D"/>
+        </connector>
+
+        <connector name="protocol_shapes">
+            <subscriber bridge_name="protocol" subscriber_name="protocol_subscriber"/>
+            <publisher participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
+            <transformation file="/path/to/transform/libprotocoltransf.so" function="transformTo2D"/>
+        </connector>
+    </is>
