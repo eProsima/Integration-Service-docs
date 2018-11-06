@@ -3,71 +3,62 @@ Integration Services XML Configuration
 
 Integration Services (IS) uses a XML configuration file to create its connectors.
 
-This XML file can contain the following sections, all inside a root <is> label.
+This XML file can contain the following sections, all inside a root :class:`<is>` label.
 
 .. code-block:: xml
 
     <is>
-        <types/>
-        <topic_types/>
+        <is_types/>
         <profiles/>
         <bridge/>
         <connector/>
     </is>
 
 
-Types
------
+IS Types
+--------
 
-The types section follows the format of `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__. Dynamic types can be defined in this section to be used
-by the participants declared in the :ref:`profiles` section.
+IS Types section allows you to specify which topic data types will be loaded through :ref:`types libraries` and define
+topic data types with `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__.
 
-For example:
+If a data type use Keys or you want to define how to build them, you must use :ref:`types libraries` to
+instantiate them. In most cases, you can ignore type details and IS will use :class:`GenericPubSubType` as default,
+which encapsulates any kind of type without keys defined.
 
-.. code-block:: xml
-
-    <types>
-        <type>
-            <struct name="HelloWorld">
-                <unsignedlong name="index"/>
-                <string name="message"/>
-            </struct>
-        </type>
-    </types>
-
-Types section is optional.
-
-
-Topic Types
------------
-
-Topic Types section allows you to specify which topic data types will be used by each participant
-and :ref:`types libraries`.
-If these data types use Keys or you want to define how to instante them, *topic_types* allows you to
-relate *data types libraries* with your types.
+If you want to make use of `Fast-RTPS Dynamic Types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__ you
+can use Fast-RTPS API in a :ref:`types libraries` or use
+`Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__ as said before.
 
 .. code-block:: xml
 
-    <topic_types>
+    <is_types>
+        <!-- Fast-RTPS XML Types -->
+        <types>
+            <type>
+                <struct name="HelloWorld">
+                    <unsignedlong name="index"/>
+                    <string name="message"/>
+                </struct>
+            </type>
+        </types>
+
+        <!-- IS Types Libraries -->
         <type name="ShapeType">
             <library>libshape.so</library>
-            <participants>
-                <participant name="2Dshapes"/>
-                <participant name="3Dshapes"/>
-            </participants>
         </type>
         <types_library>libdefault.so</types_library>
-    </topic_types>
+    </is_types>
 
-Participants subsection, which is optional, is used to link topic data types with each participant in a direct way.
-If ommited, the link will be resolve using the publisher/subscriber attributes.
 
-Library subsection, allows to define a types library for the upper type name. This library is detailed in :ref:`types libraries`.
+As you can see in the example xml code, you can define :ref:`types libraries` for each type like :class:`ShapeType` and
+:class:`libshape.so`, or use a default library that will try to load the rest of types
+(:class:`libdefault.so` in the example).
 
-Finally, a default library for other types can be defined through the types_library subsection, similary to the library
-subsection.
+If no library is defined by a type declared by a participant in :ref:`profiles`, and it wasn't declared through
+*Fast-RTPS XML Types*, then IS will use :class:`GenericPubSubType` to manage it.
 
-By default, any used type will be instantiate as :class:`GenericPubSubType`.
+If **IS Types** is omitted, IS will use :class:`GenericPubSubType` to manage all topic data types declared in the
+:ref:`profiles` section.
 
 Profiles
 --------
@@ -376,18 +367,14 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
 .. code-block:: xml
 
     <is>
-        <topic_types>
+        <is_types>
             <type name="ShapeType">
                 <library>libshapelib.so</library> <!-- Library for ShapeType -->
-                <participants> <!-- Participants who will register it -->
-                    <participant name="2Dshapes"/>
-                    <participant name="3Dshapes"/>
-                </participants>
             </type>
             <type name="Unused type"/>
             <!-- Can be used to pack types or types without their own library -->
             <types_library>libotherlib.so</types_library>
-        </topic_types>
+        </is_types>
 
         <profiles>
             <participant profile_name="2Dshapes">
