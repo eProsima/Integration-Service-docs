@@ -21,7 +21,7 @@ IS Types
 IS Types section allows you to specify which topic data types will be loaded through :ref:`types libraries` and define
 topic data types with `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__.
 
-If a data type use Keys or you want to define how to build them, you must use :ref:`types libraries` to
+If a data type uses Keys or you want to define how to build them, you must use :ref:`types libraries` to
 instantiate them. In most cases, you can ignore type details and IS will use :class:`GenericPubSubType` as default,
 which encapsulates any kind of type without keys defined.
 
