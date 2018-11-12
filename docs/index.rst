@@ -1,38 +1,29 @@
-.. eProsima Fast RTPS documentation master file.
+.. eProsima Integration Services documentation master file.
 
-eProsima Fast RTPS Documentation
-=======================================
+eProsima Integration Services Documentation
+===========================================
 
 .. image:: logo.png
-   :height: 100px
-   :width: 100px
+   :height: 80px
+   :width: 80px
    :align: left
    :alt: eProsima
    :target: http://www.eprosima.com/
 
-*eprosima Fast RTPS* is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
-as defined and maintained by the Object Management Group (OMG) consortium. RTPS is also the wire interoperability protocol defined for the Data Distribution
-Service (DDS) standard, again by the OMG. *eProsima Fast RTPS* holds the benefit of being standalone and up-to-date, as most vendor solutions either implement RTPS as a tool to implement 
-DDS or use past versions of the specification.
+*eProsima Integration Services* is a library and an utility based on *Fast RTPS* for making communication bridges between different systems, services and protocols. With *Integration Services* the user can create parametric communication bridges between applications. At the same time, it is able to perform some transformations over the messages such as customized routing, mapping between input and output attributes or data modification.
 
-Some of the main features of this library are:
+Some of the main features of *Integration Services* are:
 
-* Configurable best-effort and reliable publish-subscribe communication policies for real-time applications.
-* Plug and play connectivity so that any new applications are automatically discovered by any other members of the network.
-* Modularity and scalability to allow continuous growth with complex and simple devices in the network.
-* Configurable network behavior and interchangeable transport layer: Choose the best protocol and system input/output channel combination for each deployment.
-* Two API Layers: a high-level Publisher-Subscriber one focused on usability and a lower-level Writer-Reader one that provides finer access to the inner workings of the RTPS protocol.
+* Connects two different domains.
+* Mapping between different data types.
+* User-defined operations over the circulating messages (:ref:`transformation libraries`).
+* Communication with others environments, as *ROS2*.
 
-eProsima Fast RTPS has been adopted by multiple organizations in many sectors including these important cases:
-
-* Robotics: ROS (Robotic Operating System) as their default middleware for ROS2.
-* EU R&D: FIWARE Incubated GE.
 
 This documentation is organized into the following sections:
 
 * :ref:`installation`
 * :ref:`user`
-* :ref:`gen`
 * :ref:`notes`
 
 .. _installation:
@@ -52,22 +43,9 @@ This documentation is organized into the following sections:
 
    introduction
    overview
-   list
-   pubsub
-   rtps
-   advanced
-   security
-   persistence
-   fastrtpsgen
-
-
-.. _gen:
-
-.. toctree::
-   :caption: FastRTPSGen Manual
-
-   geninfo
-   genuse
+   xml-config-file
+   libraries
+   examples
 
 
 .. _notes:
@@ -76,4 +54,3 @@ This documentation is organized into the following sections:
    :caption: Release Notes
 
    notes
-

@@ -1,85 +1,119 @@
 Getting Started
-================
+===============
 
 
-Brief introduction to the RTPS protocol
----------------------------------------
+Brief introduction to Integration Services
+------------------------------------------
 
-At the top of RTPS we find the Domain, which defines a separate plane of communication. Several domains can coexist at
-the same time independently. A domain contains any number of Participants, elements capable of sending and receiving data. To do this, the participants use their Endpoints:
+Integration Services allows to intercommunicate different systems, services and protocols using a common interface.
 
-* Reader: Endpoint able to receive data.
-* Writer: Endpoint able to send data.
+.. image:: IS-RTPS-Other.png
+   :align: center
 
-A Participant can have any number of writer and reader endpoints.
+Integration Services defines *connectors* which are a pair of *subscriber* and *publisher*,
+and optionally a *transformation function*.
+Each connector, will communicate the data received from its *subscriber* with its *publisher*.
+If a *transformation function* was defined, the data will travel from *subscriber* to the *transformation function*
+which will apply its transformations, and the result will go to the *publisher*.
 
-.. image:: RTPS-structure.png
+.. image:: fullconnector.png
+   :align: center
 
-Communication revolves around Topics, which define the data being exchanged. Topics don’t belong to any participant in particular; instead, all interested participants keep track of changes to the topic data, and make sure to keep each other up to date.
-The unit of communication is called a Change, which represents an update to a topic. Endpoints register these changes on their History, a data structure that serves as a cache for recent changes.
-When you publish a change through a writer endpoint, the following steps happen behind the scenes:
+Executing your first Integration Services
+-----------------------------------------
 
-* The change is added to the writer’s history cache.
-* The writer informs any readers it knows about.
-* Any interested (subscribed) readers request the change.
-* After receiving data, readers update their history cache with the new change.
+Integration Services uses a xml configuration file to create its connectors.
+The complete format of this file is explained in :ref:`Integration Services XML Configuration`.
 
-By choosing Quality of Service policies, you can affect how these history caches are managed in several ways, but the
-communication loop remains the same. You can read more information in :ref:`configuration`.
+To create our first application we will just create a new one with the followed content:
 
-Building your first application
--------------------------------
+.. code-block:: xml
 
-To build a minimal application, you must first define the topic. Interface Definition Language (IDL) is
-used to define the data type of the topic and you have more information about IDL in :ref:`fastrtpsgen-intro`. Write an
-IDL file containing the specification you want. In this case, a single string is sufficient.
+    <is>
+        <profiles>
+            <participant profile_name="domain0">
+                <rtps>
+                    <builtin>
+                        <domainId>0</domainId>
+                    </builtin>
+                </rtps>
+            </participant>
 
-.. code-block:: idl
+            <subscriber profile_name="is_subscriber">
+                <topic>
+                    <name>TextPubSubTopic</name>
+                    <dataType>Text</dataType>
+                </topic>
+                <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+            </subscriber>
 
-    // HelloWorld.idl
-    struct HelloWorld
-    {
-        string msg;
-    };
+            <participant profile_name="domain5">
+                <rtps>
+                    <builtin>
+                        <domainId>5</domainId>
+                    </builtin>
+                </rtps>
+            </participant>
 
-Now we need to translate this file to something Fast RTPS understands. For this we have a code generation tool called
-fastrtpsgen (see :ref:`fastrtpsgen-intro`), which can do two different things:
+            <publisher profile_name="is_publisher">
+                <topic>
+                    <name>TextPubSubTopic</name>
+                    <dataType>Text</dataType>
+                </topic>
+                <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+            </publisher>
+        </profiles>
 
-* Generate C++ definitions for your custom topic.
-* Optionally, generate a working example that uses your topic data.
+        <connector name="domain_change">
+            <subscriber participant_profile="domain0" subscriber_profile="is_subscriber"/>
+            <publisher participant_profile="domain5" publisher_profile="is_publisher"/>
+        </connector>
+    </is>
 
-You may want to check out the fastrtpsgen user manual, which comes with the distribution of the library. But for now the following commands will do:
+Let's name this new file as **config.xml**. In the *examples* folder of Integration Services, there is an example named
+*domain_change*. Building this example there is generated an application called DomainExample.
 
-On Windows: ::
-    
-    fastrtpsgen.bat -example x64Win64VS2015 HelloWorld.idl
+If you didn't build the example yet execute the following commands in the example folder.
 
-On Linux: ::
+::
 
-    fastrtpsgen -example x64Linux2.6gcc HelloWorld.idl
+    $ mkdir build && cd build
+    $ cmake ..
+    $ make
 
-The `-example` option creates an example application, which you can use to spawn any number of publishers and a subscribers associated with your topic. ::
+If you execute the DomainExample application as publisher a FastRTPS publisher at domain 0 will be created.
 
-    ./HelloWorldPublisherSubscriber publisher
-    ./HelloWorldPublisherSubscriber subscriber
+::
 
-On Windows: ::
+    $ ./DomainExample publisher
 
-    HelloWorldPublisherSubscriber.exe publisher
-    HelloWorldPublisherSubscriber.exe subscriber
-	
-You may need to set up a special rule in your Firewall for *eprosima Fast RTPS* to work correctly on Windows.
+In the same way, executing DomainExample as subscriber will create a FastRTPS subscriber at domain 5.
 
-Each time you press <Enter\> on the Publisher, a new datagram is generated, sent over the network
-and receiver by Subscribers currently online. If more than one subscriber is available, it can be seen that the
-message is equally received on all listening nodes.
+::
 
-You can modify any values on your custom, IDL-generated data type before sending.
+    $ ./DomainExample subscriber
 
-.. code-block:: c++
+This mechanism is very similar to the FastRTPS HelloWorldExample, but this publisher and subscriber didn't communicate
+because they belong to different domains. Keep both DomainExample instances running in different terminals.
 
-        HelloWorld myHelloWorld;
-        myHelloWorld.msg("HelloWorld");
-        mp_publisher->write((void*)&myHelloWorld);
+We can use Integration Services to allow communication between both DomainExample participants.
+We just need to open the folder where we saved our **config.xml** file and execute Integration Services with the file
+as argument in another terminal.
 
-Take a look at the `examples/` folder for ideas on how to improve this basic application through different configuration options, and for examples of advanced Fast RTPS features.
+::
+
+    $ integration-services config.xml
+
+Once Integration Services parses the configuration file and both participants matches, they will start to communicate.
+
+But this is only a very simple example of what Integration Services can do.
+With Integration Services we can communicate different protocols and services just implementing a few methods
+from an interface in our own :ref:`bridge libraries`.
+Or we can define custom data transformation making use of :ref:`transformation libraries`.
+Integration Services allow us to define and use our own **TopicDataTypes**
+through :ref:`types libraries` or  Fast-RTPS **XML Types**.
+Another interesting functionallity is to replicate data from one subcriber to many publishers, or listen from many
+subscriber while writing to one publisher, or just define a N to M relationship between publishers and subscribers.
+Finally, Integration Services is able to communicate two applications that belong to different subnetworks,
+or through internet and behind Firewalls and NAT using Fast-RTPS **TCP Transport**.
+And of course, we can use all of these features at the same time.

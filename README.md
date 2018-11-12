@@ -1,65 +1,89 @@
-# eProsima Fast RTPS
+# eProsima Integration Services
+![http://www.eprosima.com](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ)
 
-<a href="http://www.eprosima.com"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ" align="left" hspace="8" vspace="2" width="100" height="100" ></a>
+*eProsima Integration Services* is a library and an utility based on *Fast RTPS* for making 
+communication bridges between different systems, services and protocols. 
+With *Integration Services* the user can create parameterized communication bridges between applications. 
+At the same time, it is able to perform some transformations over the messages such as 
+customized routing, mapping between input and output attributes or data modification.
 
-*eprosima Fast RTPS* is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
-as defined and maintained by the Object Management Group (OMG) consortium. RTPS is also the wire interoperability protocol defined for the Data Distribution
-Service (DDS) standard, again by the OMG. *eProsima Fast RTPS* holds the benefit of being standalone and up-to-date, as most vendor solutions either implement RTPS as a tool to implement 
-DDS or use past versions of the specification.
+Some of the possibilities offered by *Integration Services* are:
 
-Some of the main features of this library are:
+-   Connects two different domains.
+-   Mapping between different data types.
+-   User-defined operations over the circulating messages.
+-   Communication with others environments, as *ROS2*.
 
-* Configurable best-effort and reliable publish-subscribe communication policies for real-time
-applications.
-* Plug and play connectivity so that any new applications are automatically discovered by any other
-members of the network.
-* Modularity and scalability to allow continuous growth with complex and simple devices in the
-network.
-* Configurable network behavior and interchangeable transport layer: Choose the best protocol and
-system input/output channel combination for each deployment.
-* Two API Layers: a high-level Publisher-Subscriber one focused on usability and a lower-level Writer-Reader one that provides finer access to the inner workings of the RTPS protocol.
+<p align="center"> <img src="docs/IS-main.png" alt="Default behaviour"/> </p>
 
-*eProsima Fast RTPS* has been adopted by multiple organizations in many sectors including these important cases:
-* Robotics: ROS (Robotic Operating System) as their default middleware for ROS2.
-* EU R&D: FIWARE Incubated GE.
+<hr></hr>
 
-## Installation Guide
-You can get either a binary distribution of *eprosima Fast RTPS* or compile the library yourself from source.
+#### Table Of Contents
 
-### Installation from binaries
-The latest, up to date binary release of *eprosima Fast RTPS* can be obtained from the <a href='http://www.eprosima.com'>company website</a>.
+[Installation](#installation)
 
-### Installation from Source
-To compile *eprosima Fast RTPS* from source, at least Cmake version 2.8.12 and Boost 1.61 are needed.
-Clone the project from GitHub:
+[Documentation](#documentation)
 
-    $ git clone https://github.com/eProsima/Fast-RTPS
+[Getting Help](#getting-help)
+<hr></hr>
 
-If you are on Linux, execute:
+#### Installation
 
-    $ cmake ../ -DEPROSIMA_BUILD=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install
+Before compiling *eProsima Integration Services* you need to have installed *Fast RTPS* as described 
+in its [documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html). 
+For cloning this project execute:
+
+```bash
+    $ git clone --recursive https://github.com/eProsima/integration-services
+```
+
+IMPORTANT: *eProsima Integration Services* is using new features that aren't released 
+on the master branch of FastRTPS yet. 
+To compile it you must swith to the *Develop* branch.
+
+Now, for compiling, if you are on Linux execute:
+
+```bash
+    $ mkdir build && cd build
+    $ cmake ..
     $ make
-    $ make install 
+```
 
-If you are on Windows, choose your version of Visual Studio:
+If you are on Windows choose your version of Visual Studio:
 
-    > cmake ../  -G"Visual Studio 14 2015 Win64" -DEPROSIMA_BUILD=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=installationpath
-    > cmake --build . --target install
-	
-If you want to compile the performance tests, you will need to add the argument `-DPERFORMANCE_TESTS=ON` when calling Cmake.
+```bash
+    > mkdir build && cd build
+    > cmake ..  -G "Visual Studio 14 2015 Win64"
+    > cmake --build .
+```
 
-## Documentation 
+If you want to compile *eProsima Integration Services* without an installed version of *Fast RTPS* you can add 
+an additional parameter that downloads it as a third party library.
+
+If you are on Linux execute:
+
+```bash
+    $ mkdir build && cd build
+    $ cmake -DTHIRDPARTY=ON ..
+    $ make
+```
+
+If you are on Windows choose your version of Visual Studio:
+
+```bash
+    > mkdir build && cd build
+    > cmake ..  -G "Visual Studio 14 2015 Win64" -DTHIRDPARTY=ON
+    > cmake --build .
+```
+
+<hr></hr>
+
+## Documentation
 
 You can access the documentation online, which is hosted on [Read the Docs](http://eprosima-fast-rtps.readthedocs.io).
 
-* [Start Page](http://eprosima-fast-rtps.readthedocs.io)
-* [Installation manual](http://eprosima-fast-rtps.readthedocs.io/en/latest/requirements.html)
-* [User manual](http://eprosima-fast-rtps.readthedocs.io/en/latest/introduction.html)
-* [FastRTPSGen manual](http://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html)
-* [Release notes](http://eprosima-fast-rtps.readthedocs.io/notes.html)
+<hr></hr>
 
 ## Getting Help
 
 If you need support you can reach us by mail at `support@eProsima.com` or by phone at `+34 91 804 34 48`.
-
-
