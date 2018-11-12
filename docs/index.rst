@@ -17,7 +17,7 @@ Some of the main features of *Integration Services* are:
 * Connects two different domains.
 * Mapping between different data types.
 * User-defined operations over the circulating messages (:ref:`transformation libraries`).
-* Communication with others environments, as *ROS2*.
+* Communication with other environments, as *ROS2*.
 
 
 This documentation is organized into the following sections:
