@@ -9,7 +9,7 @@ Mandatory Dependencies
 Fast-RTPS
 ^^^^^^^^^
 
-Fast-RTPS is needed to allow communication with RTPS protocol, XML configuration parsing, and other core functionallity.
+`Fast-RTPS <https://github.com/eProsima/Fast-RTPS>`__ is needed to allow communication with RTPS protocol, XML configuration parsing, and other core functionallity.
 
 Optional Dependencies
 ---------------------
