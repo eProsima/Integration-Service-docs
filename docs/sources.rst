@@ -3,12 +3,12 @@
 Installation from Sources
 =========================
 
-Before compiling eProsima Integration Services you need to have installed Fast RTPS as described in its `documentation <http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html>`_. For cloning this project execute:
+Before compiling eProsima Integration Service you need to have installed Fast RTPS as described in its `documentation <http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html>`_. For cloning this project execute:
 
 Clone the project from Github: ::
 
-    $ git clone --recursive https://github.com/eProsima/integration-services
-    $ mkdir integration-services/build && cd integration-services/build
+    $ git clone --recursive https://github.com/eProsima/integration-service
+    $ mkdir integration-service/build && cd integration-service/build
 
 If you are on Linux, execute: ::
 

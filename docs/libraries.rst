@@ -1,7 +1,7 @@
 Libraries
 =========
 
-*Integration Services* has a builtin RTPS bridge, but you can specify any other procotol
+*Integration Service* has a builtin RTPS bridge, but you can specify any other procotol
 implementing your own libraries.
 
 There are three kind of libraries that the user can implement, **Bridge Library**, **Transformation Library**
@@ -14,7 +14,7 @@ can be found on `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples
 May be necessary generate data types from IDL files to communicate with *Fast-RTPS*,
 or make use of `Fast-RTPS dynamic types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__.
 
-The :ref:`Integration Services XML Configuration` file must be adapted to each protocol.
+The :ref:`Integration Service XML Configuration` file must be adapted to each protocol.
 **ISManager** will provide the parsed *properties* node inside *bridge* node to the :class:`create_bridge`
 function as a vector of pairs, as defined in the :ref:`Bridge Libraries`.
 The same applies for each publisher and subscriber inside *bridge* node and its *property* nodes.
@@ -23,12 +23,12 @@ The same applies for each publisher and subscriber inside *bridge* node and its 
 Transformation Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Integration Services allows us to define transformation functions that will be applied on each :ref:`connector`.
+Integration Service allows us to define transformation functions that will be applied on each :ref:`connector`.
 Transformation functions are static functions that receives the input data,
 apply some transformation and stores the result in the output data.
 The connector will be configured with the function to call in each case.
 There is a static data prototype in
-`resource/templatelib.cpp <https://github.com/eProsima/Integration-Services/blob/master/resource/templatelib.cpp>`__:
+`resource/templatelib.cpp <https://github.com/eProsima/Integration-Service/blob/master/resource/templatelib.cpp>`__:
 
 
 These functions must have one of following interfaces:
@@ -79,7 +79,7 @@ See the :ref:`examples` for some already working implementations.
 Types Libraries
 ^^^^^^^^^^^^^^^
 
-Integration Services allows us to define types libraries to create custom data types.
+Integration Service allows us to define types libraries to create custom data types.
 These libraries must offer a function with the following declaration:
 
 .. code-block:: cpp
@@ -132,7 +132,7 @@ See the :ref:`examples` for some already working implementations.
 Bridge Libraries
 ^^^^^^^^^^^^^^^^
 
-Integration Services allows us to define bridge libraries to integrate new protocols.
+Integration Service allows us to define bridge libraries to integrate new protocols.
 These libraries must offer the following function declarations:
 
 * create_bridge:
@@ -181,17 +181,17 @@ Publishers must be able to send data to the destination protocol.
 
 
 In all functions, a vector of pairs of strings is provided if any property exists for each node in the xml
-configuration file (see :ref:`Integration Services XML Configuration` for more information).
+configuration file (see :ref:`Integration Service XML Configuration` for more information).
 
 If some functions want to use the default implementation (RTPS), they must return :class:`nullptr`.
 
-Integration Services will deallocate these objects from memory when the bridge is stopped.
+Integration Service will deallocate these objects from memory when the bridge is stopped.
 
-See :ref:`Integration Services architecture` section for more information about the interfaces that any *Bridge Library*
+See :ref:`Integration Service architecture` section for more information about the interfaces that any *Bridge Library*
 must implement.
 
 The responsability of how to instantiate your bridge, publisher and/or subscriber is on your *Bridge Library*,
 but remember that "RTPS" publisher and subscribers will be filled automatically by ISManager with the configuration
-from the *participant* node of the :ref:`Integration Services XML Configuration`.
+from the *participant* node of the :ref:`Integration Service XML Configuration`.
 
 See the :ref:`examples` for some already working implementations.

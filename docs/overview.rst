@@ -1,14 +1,14 @@
-Integration Services Overview
+Integration Service Overview
 =============================
 
-You can interact with Integration Services (IS) at two different levels:
+You can interact with Integration Service (IS) at two different levels:
 
 * As stand-alone application.
 * As library to link against.
 
 When using IS as a library, you must provide the configuration xml file programatically.
 
-Integration Services architecture
+Integration Service architecture
 ---------------------------------
 
 IS provides three interfaces that must be implemented by any bridge that you want to use. This classes are

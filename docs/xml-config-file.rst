@@ -1,7 +1,7 @@
-Integration Services XML Configuration
+Integration Service XML Configuration
 ======================================
 
-Integration Services (IS) uses a XML configuration file to create its connectors.
+Integration Service (IS) uses a XML configuration file to create its connectors.
 
 This XML file can contain the following sections, all inside a root :class:`<is>` label.
 

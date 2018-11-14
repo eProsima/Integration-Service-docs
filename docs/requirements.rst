@@ -1,7 +1,7 @@
 Requirements
 ============
 
-*eProsima Integration Services* requires the following packages to work.
+*eProsima Integration Service* requires the following packages to work.
 
 Mandatory Dependencies
 ----------------------
@@ -31,4 +31,4 @@ Windows 7 32-bit and 64-bit
 Visual C++ 2013 or 2015 Redistributable Package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*eProsima Integration Services* requires the Visual C++ Redistributable packages for the Visual Studio version you choose during the installation or compilation. The installer gives you the option of downloading and installing them.
+*eProsima Integration Service* requires the Visual C++ Redistributable packages for the Visual Studio version you choose during the installation or compilation. The installer gives you the option of downloading and installing them.
