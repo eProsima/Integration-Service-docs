@@ -35,35 +35,35 @@
     </profiles>
 
     <bridge name="protocol">
-    <library>/path/to/bridge/library/libprotocol.so</library>
-    <properties>
-        <property>
-            <name>property1</name>
-            <value>value1</value>
-        </property>
-    </properties>
+        <library>/path/to/bridge/library/libprotocol.so</library>
+        <properties>
+            <property>
+                <name>property1</name>
+                <value>value1</value>
+            </property>
+        </properties>
 
-    <writer name="protocol_publisher">
-        <property>
-            <name>property1</name>
-            <value>value1</value>
-        </property>
-        <property>
-            <name>property2</name>
-            <value>value2</value>
-        </property>
-    </publisher>
+        <writer name="protocol_publisher">
+            <property>
+                <name>property1</name>
+                <value>value1</value>
+            </property>
+            <property>
+                <name>property2</name>
+                <value>value2</value>
+            </property>
+        </writer>
 
-    <reader name="protocol_subscriber">
-        <property>
-            <name>property1</name>
-            <value>value1</value>
-        </property>
-        <property>
-            <name>property2</name>
-            <value>value2</value>
-        </property>
-    </subscriber>
+        <reader name="protocol_subscriber">
+            <property>
+                <name>property1</name>
+                <value>value1</value>
+            </property>
+            <property>
+                <name>property2</name>
+                <value>value2</value>
+            </property>
+        </reader>
     </bridge>
 
     <connector name="shapes_projection">

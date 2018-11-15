@@ -145,7 +145,7 @@ vector as parameter config.
                 <name>append</name>
                 <value>true</value>
             </property>
-        </publisher>
+        </writer>
     </bridge>
 
 
@@ -240,8 +240,8 @@ If you want to change this behaviour you will need to override the complete data
             <!-- Other protocol properties -->
 
             <writer name="Other">
-                <!-- Other protocol publisher properties -->
-            </publisher>
+                <!-- Other protocol writer properties -->
+            </writer>
         </bridge>
 
         <connector name="connector">
@@ -281,8 +281,8 @@ but in this case, the RTPS participant is the publisher. An example of this can 
             <!-- Other protocol properties -->
 
             <reader name="Other">
-                <!-- Other protocol subscriber properties -->
-            </subscriber>
+                <!-- Other protocol reader properties -->
+            </reader>
         </bridge>
 
         <connector name="connector">
@@ -328,12 +328,12 @@ bridge of this type.
             <!-- Other protocol properties -->
 
             <reader name="OtherSub">
-                <!-- Other protocol subscriber properties -->
-            </subscriber>
+                <!-- Other protocol reader properties -->
+            </reader>
 
             <writer name="OtherPub">
-                <!-- Other protocol publisher properties -->
-            </publisher>
+                <!-- Other protocol writer properties -->
+            </writer>
         </bridge>
 
         <connector name="connector">
@@ -420,7 +420,7 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                     <name>property2</name>
                     <value>value2</value>
                 </property>
-            </publisher>
+            </writer>
 
             <reader name="protocol_subscriber">
                 <property>
@@ -431,7 +431,7 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                     <name>property2</name>
                     <value>value2</value>
                 </property>
-            </subscriber>
+            </reader>
         </bridge>
 
         <connector name="shapes_projection">
