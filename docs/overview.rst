@@ -20,7 +20,7 @@ as IS is intended to communicate Fast-RTPS with others protocols when using brid
 
 When you implement your ISBridge derived class, you must take in account:
 
-- Only :class:`ISPublisher::publish` is mandatory to implement.
+- Only :class:`ISWriter::publish` is mandatory to implement.
 - When your subscriber receives data, you must call :class:`on_received_data` function with the data properly converted into :class:`SerializedPayload_t`.
 - You can override the default behaviour, but isn't recommended in general. This behaviour follows this diagram:
 
@@ -47,13 +47,13 @@ Custom bridges must inherit from it:
     {
     public:
         virtual void onTerminate();
-        virtual void addSubscriber(ISSubscriber *sub);
+        virtual void addSubscriber(ISReader *sub);
         virtual void addFunction(const std::string &sub, const std::string &fname, userf_t func);
         virtual void addFunction(const std::string &sub, const std::string &fname, userdynf_t func);
-        virtual void addPublisher(const std::string &sub, const std::string &funcName, ISPublisher* pub);
-        virtual ISPublisher* removePublisher(ISPublisher* pub);
-        virtual void on_received_data(const ISSubscriber *sub, SerializedPayload_t *data);
-        virtual void on_received_data(const ISSubscriber *sub, DynamicData *data);
+        virtual void addPublisher(const std::string &sub, const std::string &funcName, ISWriter* pub);
+        virtual ISWriter* removePublisher(ISWriter* pub);
+        virtual void on_received_data(const ISReader *sub, SerializedPayload_t *data);
+        virtual void on_received_data(const ISReader *sub, DynamicData *data);
     };
 
 ISBridge.h and ISBridge.cpp implements the default behaviour. There is no need to implement any function from any
@@ -62,14 +62,14 @@ It is recommended to copy the standard implementation and modify with your needs
 After that, simply remove unmodified methods.
 :class:`addFunction` and :class:`on_received_data` methods have two flavours, with static and with dynamic data.
 
-ISPublisher
+ISWriter
 ^^^^^^^^^^^
 This component must be able to publish data to the destination protocol. The default implementation uses a Fast-RTPS
 publisher.
 
 .. code-block:: cpp
 
-    class ISPublisher
+    class ISWriter
     {
     public:
         virtual bool publish(eprosima::fastrtps::rtps::SerializedPayload_t* /*data*/) = 0;
@@ -77,7 +77,7 @@ publisher.
         virtual ISBridge* setBridge(ISBridge *);
     };
 
-ISPublisher doesn't have a default implementation, so this default behaviour is provided by the builtin RTPS Bridge.
+ISWriter doesn't have a default implementation, so this default behaviour is provided by the builtin RTPS Bridge.
 Any custom bridge that needs to define its publisher, must implement at least both :class:`publish` methods.
 If one of them isn't needed, just implement as follows:
 
@@ -87,14 +87,14 @@ If one of them isn't needed, just implement as follows:
 
 This is useful if you're sure that version of the method will be never called.
 
-ISSubscriber
+ISReader
 ^^^^^^^^^^^^
 This component is in charge of receive data from the origin protocol. Its default implementation uses a Fast-RTPS
 subscriber.
 
 .. code-block:: cpp
 
-    class ISSubscriber
+    class ISReader
     {
     public:
         virtual void addBridge(ISBridge* bridge);
@@ -102,7 +102,7 @@ subscriber.
         virtual void on_received_data(eprosima::fastrtps::types::DynamicData* data);
     };
 
-ISSubscriber doesn't have a default implementation, so this default behaviour is provided by the builtin RTPS Bridge.
+ISReader doesn't have a default implementation, so this default behaviour is provided by the builtin RTPS Bridge.
 Any custom bridge that needs to define its subscriber, must implement at least both :class:`on_received_data` methods.
 If one of them isn't needed, just implement as follows:
 

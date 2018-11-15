@@ -65,8 +65,8 @@ To create our first application we will just create a new one with the followed 
         </profiles>
 
         <connector name="domain_change">
-            <subscriber participant_profile="domain0" subscriber_profile="is_subscriber"/>
-            <publisher participant_profile="domain5" publisher_profile="is_publisher"/>
+            <reader participant_profile="domain0" subscriber_profile="is_subscriber"/>
+            <writer participant_profile="domain5" publisher_profile="is_publisher"/>
         </connector>
     </is>
 

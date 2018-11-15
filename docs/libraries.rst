@@ -150,11 +150,11 @@ As you can see, the instantiated bridge must implement :ref:`isbridge`.
 Bridges are in charge of communicating subscribers with publisher and apply transformation functions as defined in
 the :ref:`connector`.
 
-* create_subscriber:
+* create_reader:
 
 .. code-block:: cpp
 
-	extern "C" USER_LIB_EXPORT ISSubscriber* create_subscriber(ISBridge *bridge, const char* name,
+	extern "C" USER_LIB_EXPORT ISReader* create_reader(ISBridge *bridge, const char* name,
 		const std::vector<std::pair<std::string, std::string>> *config)
 	{
 		CustomSubscriber* subscriber = new CustomSubscriber(name, config);
@@ -165,11 +165,11 @@ The subscriber returned must implement :ref:`issubscriber`.
 Subscribers must be able to receive data from the origin protocol.
 
 
-* create_publisher:
+* create_writer:
 
 .. code-block:: cpp
 
-	extern "C" USER_LIB_EXPORT ISPublisher* create_publisher(ISBridge *bridge, const char* name,
+	extern "C" USER_LIB_EXPORT ISWriter* create_writer(ISBridge *bridge, const char* name,
 		const std::vector<std::pair<std::string, std::string>> *config)
 	{
 		CustomPublisher* publisher = new CustomPublisher(name, config);

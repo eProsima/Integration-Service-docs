@@ -132,7 +132,7 @@ vector as parameter config.
             </property>
         </properties>
 
-        <publisher name="file_publisher">
+        <writer name="file_publisher">
             <property>
                 <name>filename</name>
                 <value>output.txt</value>
@@ -165,8 +165,8 @@ A :ref:`transformation libraries`'s function that adds the timestamp before the 
 .. code-block:: xml
 
     <connector name="dump_to_file">
-        <subscriber participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
-        <publisher bridge_name="file" publisher_name="file_publisher"/>
+        <reader participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
+        <writer bridge_name="file" writer_name="file_publisher"/>
         <transformation file="libfile.so" function="addTimestamp"/>
     </connector>
 
@@ -203,8 +203,8 @@ In this kind of connector, both participant are RTPS compliant, like *shapes_pro
         </profiles>
 
         <connector name="connector">
-            <subscriber participant_profile="RTPS-Subscriber" subscriber_profile="Subscriber"/>
-            <publisher participant_profile="RTPS-Publisher" publisher_profile="Publisher"/>
+            <reader participant_profile="RTPS-Subscriber" subscriber_profile="Subscriber"/>
+            <writer participant_profile="RTPS-Publisher" publisher_profile="Publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
         </connector>
     </is>
@@ -215,7 +215,7 @@ RTPS to Other protocol
 This connector will communicate a RTPS environment with another protocol. Just like our *shapes_protocol* connector.
 
 Your *Bridge Library* must define at least a publisher to your desired protocol and it is responsible to
-communicate with it and follow the ISPublisher interface. By default, the transformation function is applied after
+communicate with it and follow the ISWriter interface. By default, the transformation function is applied after
 :class:`on_received_data` method calls to the instance of ISBridge.
 If you want to change this behaviour you will need to override the complete data flow.
 
@@ -239,14 +239,14 @@ If you want to change this behaviour you will need to override the complete data
             <library>/path/to/bridge/library/libprotocol.so</library>
             <!-- Other protocol properties -->
 
-            <publisher name="Other">
+            <writer name="Other">
                 <!-- Other protocol publisher properties -->
             </publisher>
         </bridge>
 
         <connector name="connector">
-            <subscriber participant_profile="RTPS" subscriber_profile="Subscriber"/>
-            <publisher bridge_name="Other protocol" publisher_name="Other"/>
+            <reader participant_profile="RTPS" subscriber_profile="Subscriber"/>
+            <writer bridge_name="Other protocol" writer_name="Other"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
         </connector>
     </is>
@@ -280,14 +280,14 @@ but in this case the RTPS participant is the publisher. An example of this can b
             <library>/path/to/bridge/library/libprotocol.so</library>
             <!-- Other protocol properties -->
 
-            <subscriber name="Other">
+            <reader name="Other">
                 <!-- Other protocol subscriber properties -->
             </subscriber>
         </bridge>
 
         <connector name="connector">
-            <subscriber bridge_name="Other protocol" subscriber_name="Other"/>
-            <publisher participant_profile="RTPS" publisher_profile="Publisher"/>
+            <reader bridge_name="Other protocol" reader_name="Other"/>
+            <writer participant_profile="RTPS" publisher_profile="Publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transformFromA"/>
         </connector>
     </is>
@@ -327,24 +327,24 @@ bridge of this type.
             <library>/path/to/bridge/library/libprotocol.so</library>
             <!-- Other protocol properties -->
 
-            <subscriber name="OtherSub">
+            <reader name="OtherSub">
                 <!-- Other protocol subscriber properties -->
             </subscriber>
 
-            <publisher name="OtherPub">
+            <writer name="OtherPub">
                 <!-- Other protocol publisher properties -->
             </publisher>
         </bridge>
 
         <connector name="connector">
-            <subscriber bridge_name="Other protocol" subscriber_name="OtherSub"/>
-            <publisher participant_profile="RTPS" publisher_profile="Publisher"/>
+            <reader bridge_name="Other protocol" reader_name="OtherSub"/>
+            <writer participant_profile="RTPS" publisher_profile="Publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transformFromA"/>
         </connector>
 
         <connector name="connector">
-            <subscriber participant_profile="RTPS" subscriber_profile="Subscriber"/>
-            <publisher bridge_name="Other protocol" publisher_name="OtherPub"/>
+            <reader participant_profile="RTPS" subscriber_profile="Subscriber"/>
+            <writer bridge_name="Other protocol" writer_name="OtherPub"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
         </connector>
     </is>
@@ -411,7 +411,7 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                 </property>
             </properties>
 
-            <publisher name="protocol_publisher">
+            <writer name="protocol_publisher">
                 <property>
                     <name>property1</name>
                     <value>value1</value>
@@ -422,7 +422,7 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                 </property>
             </publisher>
 
-            <subscriber name="protocol_subscriber">
+            <reader name="protocol_subscriber">
                 <property>
                     <name>property1</name>
                     <value>value1</value>
@@ -435,26 +435,26 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
         </bridge>
 
         <connector name="shapes_projection">
-            <subscriber participant_profile="3Dshapes" subscriber_profile="3d_subscriber"/>
-            <publisher participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
+            <reader participant_profile="3Dshapes" subscriber_profile="3d_subscriber"/>
+            <writer participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform3D_to_2D"/>
         </connector>
 
         <connector name="shapes_stereo">
-            <subscriber participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
-            <publisher participant_profile="3Dshapes" publisher_profile="3d_publisher"/>
+            <reader participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
+            <writer participant_profile="3Dshapes" publisher_profile="3d_publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform2D_to_3D"/>
         </connector>
 
         <connector name="shapes_protocol">
-            <subscriber participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
-            <publisher bridge_name="protocol" publisher_name="protocol_publisher"/>
+            <reader participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
+            <writer bridge_name="protocol" writer_name="protocol_publisher"/>
             <transformation file="/path/to/transform/libprotocoltransf.so" function="transformFrom2D"/>
         </connector>
 
         <connector name="protocol_shapes">
-            <subscriber bridge_name="protocol" subscriber_name="protocol_subscriber"/>
-            <publisher participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
+            <reader bridge_name="protocol" reader_name="protocol_subscriber"/>
+            <writer participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
             <transformation file="/path/to/transform/libprotocoltransf.so" function="transformTo2D"/>
         </connector>
     </is>
