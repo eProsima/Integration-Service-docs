@@ -78,7 +78,7 @@ In this case, there are two configuration files provided with the example, `stat
 
 HelloWorld and sample types are not directly compatible, so our library must apply a transformation function,
 in this case, to transform from HelloWorld to the samples. The other transformation is also implemented if you want to
-reverse the communication (remember to change the connector in the XML file too and launch Keys as publisher and HelloWorldExample as a subscriber).
+reverse the communication (remember to change the connector in the XML file too and launch Keys as a publisher and HelloWorldExample as a subscriber).
 
 .. code-block:: cpp
 
@@ -90,7 +90,7 @@ reverse the communication (remember to change the connector in the XML file too 
         keysData->SetByteValue(temp % 256, 1);
     }
 
-Static versions (configuration file and library) are included to ease comparation with their dynamic counterpart, but the example will focus on the dynamic versions.
+Static versions (configuration file and library) are included to ease comparison with their dynamic counterpart, but the example will focus on the dynamic versions.
 
 **Preparation**
 
@@ -120,13 +120,13 @@ The build process will generate the binaries of the two libraries.
 
 **Execution**
 
-In one terminal, launch HelloWorldExample as publisher:
+In one terminal, launch HelloWorldExample as a publisher:
 
 ::
 
     $ HelloWorldExample publisher
 
-In another terminal, launch Keys example as subscriber:
+In another terminal, launch Keys example as a subscriber:
 
 ::
 
@@ -193,7 +193,7 @@ The build process will generate the binary of the bridge library.
 
 **Execution**
 
-In one terminal, launch HelloWorldExample as publisher:
+In one terminal, launch HelloWorldExample as a publisher:
 
 ::
 
@@ -234,7 +234,7 @@ There are included several configuration files:
 
 - `config_server.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config_server.xml>`__: Configures IS as a TCP server and acts as a shapes subscriber.
 
-- `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config.xml>`__: Configures two IS connectors, one like config_client and the other as config_server.
+- `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config.xml>`__: Configures two IS connectors, one as a config_client and the other as a config_server.
 
 *config.xml* is intended to execute this test using one machine, and client plus server versions, to allow executions on
 different machines.
@@ -284,7 +284,7 @@ In one of the ShapesDemo, change the domain in its configuration window to **1**
 
 In the other ShapesDemo, subscribe to that kind of shape.
 
-The *subscriber* ShapesDemo shouldn't received any data as they belong to different domains.
+The *subscriber* ShapesDemo shouldn't receive any data as they belong to different domains.
 
 Launch IS in another terminal with the *config.xml* (*config_win.xml* if you are on Windows) file from the example folder:
 

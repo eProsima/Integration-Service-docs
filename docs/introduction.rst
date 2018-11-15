@@ -22,7 +22,7 @@ which will apply its transformations, and the result will go to the *writer*.
 Executing your first Integration Service
 -----------------------------------------
 
-Integration Service uses a XML configuration file to create its connectors.
+Integration Service uses an XML configuration file to create its connectors.
 The complete format of this file is explained in :ref:`Integration Service XML Configuration`.
 
 To create our first application we will just create a new one with the followed content:

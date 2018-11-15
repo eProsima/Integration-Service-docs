@@ -3,22 +3,22 @@ Integration Service Overview
 
 You can interact with Integration Service (IS) at two different levels:
 
-* As stand-alone application.
-* As library to link against.
+* As a stand-alone application.
+* As a library.
 
-When using IS as a library, you must provide the configuration XML file programmatically.
+If you use IS as a library, you must provide the configuration XML file programmatically.
 
 Integration Service architecture
 ---------------------------------
 
 IS provides three interfaces that must be implemented by any bridge that you want to use. This classes are
-:ref:`isbridge`, :ref:`iswriter` and :ref:`isreader`. There is a :ref:`rtps-bridge`
+:ref:`isbridge`, :ref:`iswriter` and :ref:`isreader`. There is an :ref:`rtps-bridge`
 implementation as default, that uses Fast-RTPS libraries.
 
-Any :ref:`connector` must have at least one endpoint configured as a Fast-RTPS participant,
-as IS is intended to communicate Fast-RTPS with others protocols when using bridges.
+IS is intended to communicate Fast-RTPS with others protocols when using bridges, so any :ref:`connector` 
+must have at least one endpoint configured as a Fast-RTPS participant.
 
-When you implement your ISBridge derived class, you must take in account:
+When you implement your ISBridge derived class, you must take into account:
 
 - Only :class:`ISWriter::write` is mandatory to implement.
 - When your reader receives data, you must call :class:`on_received_data` function with the data properly converted into :class:`SerializedPayload_t`.
@@ -31,7 +31,7 @@ When the reader calls to its method :class:`on_received_data`, it will call all 
 calling the method :class:`on_received_data` of each bridge.
 Then the bridges will apply each respective transformation functions to the data and will call the :class:`write`
 method of each of their writers.
-Note that the flavour of these called methods will be always the same depending of the use of dynamic data or not.
+Note that the flavour of these called methods will be always the same depending on the use of dynamic data or not.
 This behaviour will only occur with the declared connectors in the XML configuration file.
 
 Connector
@@ -47,7 +47,7 @@ sent to the writers.
 ISBridge
 ^^^^^^^^
 This component must communicate readers with writers, applying the transformation functions if any.
-It's default implementation must be enough for the majority of cases.
+Its default implementation must be enough for the majority of cases.
 
 Custom bridges must inherit from it:
 
@@ -76,8 +76,8 @@ RTPS-Bridge
 ^^^^^^^^^^^
 
 Implements a full bridge using Fast-RTPS publisher and subscriber. Its bridge implementation is able to communicate
-several subscribers with several publishers, establishing routes, and applying transformation functions in function
-of each connector configuration.
+several subscribers with several publishers, establishing routes and applying transformation functions depending 
+on each connector configuration.
 
 The connector :ref:`rtps bridge` uses this kind of bridge.
 

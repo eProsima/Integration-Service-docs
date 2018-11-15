@@ -250,7 +250,7 @@ If you want to change this behaviour you will need to override the complete data
         </connector>
     </is>
 
-Other procotol to RTPS
+Other protocol to RTPS
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This is a similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
@@ -298,7 +298,7 @@ This case is not a connector, but the consequence of set two connectors with the
 In our example, the combination of *shapes_projection* and *shapes_stereo* is a bidirectional bridge,
 as well as, *shapes_protocol* and *protocol_shapes*.
 
-A combination of both logics :ref:`RTPS to Other protocol` and :ref:`Other procotol to RTPS` applies here.
+A combination of both logics :ref:`RTPS to Other protocol` and :ref:`Other protocol to RTPS` applies here.
 The example `TIS_NGSIv2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__ of FIROS2 uses a
 bridge of this type.
 
