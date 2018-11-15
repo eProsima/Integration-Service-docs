@@ -1,7 +1,7 @@
 Examples
 ========
 
-Integration Service (IS) ships with a folder with examples and they suppose that you have IS already installed on your machine. 
+Integration Service (IS) ships with a folder with examples and they suppose that you have IS already installed on your machine.
 In addition, there is another project derived from IS named `FIROS2 <https://github.com/eProsima/FIROS2>`_ with more examples.
 In IS you can find the following examples:
 
@@ -161,7 +161,7 @@ HelloWorld to file
 In this example, we create a new bridge to save all received data from the Fast-RTPS HelloWorldExample into a file.
 
 To achieve that target, we need the bridge library `isfile <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
-The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to write the data to a file.
+The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to save the data to a file.
 
 The file `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ of the example configures IS with the bridge library in a connector that receives data from HelloWorldExample.
 
