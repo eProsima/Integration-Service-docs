@@ -132,7 +132,7 @@ vector as parameter config.
             </property>
         </properties>
 
-        <writer name="file_publisher">
+        <writer name="file_writer">
             <property>
                 <name>filename</name>
                 <value>output.txt</value>
@@ -166,7 +166,7 @@ Also, there is defined a function of A :ref:`transformation libraries` that adds
 
     <connector name="dump_to_file">
         <reader participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
-        <writer bridge_name="file" writer_name="file_publisher"/>
+        <writer bridge_name="file" writer_name="file_writer"/>
         <transformation file="libfile.so" function="addTimestamp"/>
     </connector>
 
