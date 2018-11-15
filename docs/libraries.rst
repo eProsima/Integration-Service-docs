@@ -17,7 +17,7 @@ or make use of `Fast-RTPS dynamic types <http://docs.eprosima.com/en/latest/dyna
 The :ref:`Integration Service XML Configuration` file must be adapted to each protocol.
 **ISManager** will provide the parsed *properties* node inside *bridge* node to the :class:`create_bridge`
 function as a vector of pairs, as defined in the :ref:`Bridge Libraries`.
-The same applies for each publisher and subscriber inside *bridge* node and its *property* nodes.
+The same applies for each writer and reader inside *bridge* node and its *property* nodes.
 
 
 Transformation Libraries
@@ -147,7 +147,7 @@ These libraries must offer the following function declarations:
 	}
 
 As you can see, the instantiated bridge must implement :ref:`isbridge`.
-Bridges are in charge of communicating subscribers with publishers and apply transformation functions as defined in
+Bridges are in charge of communicating readers with writers and apply transformation functions as defined in
 the :ref:`connector`.
 
 * create_reader:
@@ -157,12 +157,12 @@ the :ref:`connector`.
 	extern "C" USER_LIB_EXPORT ISReader* create_reader(ISBridge *bridge, const char* name,
 		const std::vector<std::pair<std::string, std::string>> *config)
 	{
-		CustomSubscriber* subscriber = new CustomSubscriber(name, config);
-		return subscriber;
+		CustomReader* reader = new CustomReader(name, config);
+		return reader;
 	}
 
-The subscriber returned must implement :ref:`issubscriber`.
-Subscribers must be able to receive data from the input protocol.
+The reader returned must implement :ref:`isreader`.
+Readers must be able to receive data from the input protocol.
 
 
 * create_writer:
@@ -172,12 +172,12 @@ Subscribers must be able to receive data from the input protocol.
 	extern "C" USER_LIB_EXPORT ISWriter* create_writer(ISBridge *bridge, const char* name,
 		const std::vector<std::pair<std::string, std::string>> *config)
 	{
-		CustomPublisher* publisher = new CustomPublisher(name, config);
-		return publisher;
+		CustomWriter* writer = new CustomWriter(name, config);
+		return writer;
 	}
 
-The publisher returned must implement :ref:`ispublisher`.
-Publishers must be able to send data to the destination protocol.
+The writer returned must implement :ref:`iswriter`.
+Writers must be able to send data to the destination protocol.
 
 
 In all functions, a vector of pairs of strings is provided if any property exists for each node in the XML
@@ -190,7 +190,7 @@ Integration Service will deallocate these objects from memory when the bridge is
 See :ref:`Integration Service architecture` section for more information about the interfaces that any *Bridge Library*
 must implement.
 
-The responsibility of how to instantiate your bridge, publisher and/or subscriber is on your *Bridge Library*,
+The responsibility of how to instantiate your bridge, writer and/or reader is on your *Bridge Library*,
 but remember that "RTPS" publishers and subscribers will be filled automatically by ISManager with the configuration
 from the *participant* node of the :ref:`Integration Service XML Configuration`.
 

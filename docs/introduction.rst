@@ -10,11 +10,11 @@ Integration Service allows intercommunicating different systems, services, and p
 .. image:: IS-RTPS-Other.png
    :align: center
 
-Integration Service defines *connectors* which are a pair of *subscriber* and *publisher*,
+Integration Service defines *connectors* which are a pair of *reader* and *writer*,
 and optionally a *transformation function*.
-Each connector will communicate the data received from its *subscriber* with its *publisher*.
-If a *transformation function* was defined, the data will travel from *subscriber* to the *transformation function*
-which will apply its transformations, and the result will go to the *publisher*.
+Each connector will communicate the data received from its *reader* with its *writer*.
+If a *transformation function* was defined, the data will travel from the *reader* to the *transformation function*
+which will apply its transformations, and the result will go to the *writer*.
 
 .. image:: fullconnector.png
    :align: center
@@ -112,8 +112,8 @@ from an interface in our own :ref:`bridge libraries`.
 Or we can define custom data transformation making use of :ref:`transformation libraries`.
 Integration Service allow us to define and use our own **TopicDataTypes**
 through :ref:`types libraries` or  Fast-RTPS **XML Types**.
-Another interesting functionality is to replicate data from one subscriber to many publishers or listen from many
-subscriber while writing to one publisher, or just define an N to M relationship between publishers and subscribers.
+Another interesting functionality is to replicate data from one reader to many writers or listen from many
+readers while writing to one writer, or just define an N to M relationship between writers and readers.
 Finally, Integration Service is able to communicate two applications that belong to different subnetworks,
 or through the Internet and behind Firewalls and NAT using Fast-RTPS **TCP Transport**.
 And of course, we can use all of these features at the same time.

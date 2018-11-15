@@ -63,7 +63,7 @@ If **IS Types** is omitted, IS will use :class:`GenericPubSubType` to manage all
 Profiles
 --------
 
-The profiles define participants, subscribers, publishers, etc, following the format used by **FastRTPS XML configuration files**, with its configuration.
+The profiles section defines participants, subscribers, publishers, etc, following the format used by **FastRTPS XML configuration files**, with its configuration.
 
 .. code-block:: xml
 
@@ -106,12 +106,12 @@ Bridges
 
 Bridge sections allow us to define new endpoints and bridges to implement new protocols.
 Inside the bridge, a :ref:`bridge libraries` must be defined. It contains the methods to create the bridge (implementing
-:ref:`isbridge`), the publishers (implementing :ref:`ispublisher`) and the subscribers (implementing :ref:`issubscriber`).
+:ref:`isbridge`), the writers (implementing :ref:`iswriter`) and the readers (implementing :ref:`isreader`).
 If any of them uses the default implementation, its method can simply return :class:`nullptr`.
 
 A properties label with any number of property sections (which are pairs *name* and *value* as shown in the example)
 can be defined for the bridge.
-Properties that apply to participants, publishers and subscribers are defined directly inside their sections.
+Properties that apply to writers and readers are defined directly inside their sections.
 Each property set will be sent to its component as a vector of pairs of strings.
 
 If no properties are provided, then your :class:`create_` method will be called with :class:`nullptr` or an empty
@@ -132,7 +132,7 @@ vector as parameter config.
             </property>
         </properties>
 
-        <writer name="file_publisher">
+        <writer name="file_writer">
             <property>
                 <name>filename</name>
                 <value>output.txt</value>
@@ -148,17 +148,16 @@ vector as parameter config.
         </writer>
     </bridge>
 
-
 Connectors
 ----------
 
-The *connectors* are just relationships between subscribers and publishers, and optionally, a transformation function.
+The *connectors* are just relationships between readers and writers, and optionally, a transformation function.
 Any number of connectors can be defined in our XML configuration file,
 but at least one is needed to make IS perform any work.
-They must contain a subscriber and a publisher.
-Each of them is configured by a participant or bridge name and the subscriber's or publisher's name respectively.
+They must contain a reader and a writer.
+Each of them is configured by a participant or bridge name and the reader's or writer's name respectively.
 
-In the following example, we define a connector whose subscriber receives data from Fast-RTPS and its publisher
+In the following example, we define a connector whose subscriber receives data from Fast-RTPS and its writer
 writes that data to a text file.
 Also, there is defined a function of A :ref:`transformation libraries` that adds the timestamp before the data is written.
 
@@ -166,7 +165,7 @@ Also, there is defined a function of A :ref:`transformation libraries` that adds
 
     <connector name="dump_to_file">
         <reader participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
-        <writer bridge_name="file" writer_name="file_publisher"/>
+        <writer bridge_name="file" writer_name="file_writer"/>
         <transformation file="libfile.so" function="addTimestamp"/>
     </connector>
 
@@ -214,7 +213,7 @@ RTPS to Other protocol
 
 This connector will communicate an RTPS environment with another protocol. Just like our *shapes_protocol* connector.
 
-Your *Bridge Library* must define at least a publisher to your desired protocol and it is responsible to
+Your *Bridge Library* must define at least a writer to your desired protocol and it is responsible to
 communicate with it and follow the ISWriter interface. By default, the transformation function is applied after
 :class:`on_received_data` method calls to the instance of ISBridge.
 If you want to change this behaviour you will need to override the complete data flow.
@@ -257,7 +256,7 @@ Other procotol to RTPS
 This is a similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
 
 The same logic applies in this connectors as in the :ref:`rtps to other protocol` case,
-but in this case, the RTPS participant is the publisher. An example of this can be found on
+but in this case, the RTPS participant is the writer. An example of this can be found on
 `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2>`__.
 
 .. image:: IS-Other-to-RTPS.png
