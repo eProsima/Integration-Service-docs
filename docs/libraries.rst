@@ -1,17 +1,17 @@
 Libraries
 =========
 
-*Integration Service* has a builtin RTPS bridge, but you can specify any other procotol
+*Integration Service* has a builtin RTPS bridge, but you can specify any other protocol
 implementing your own libraries.
 
-There are three kind of libraries that the user can implement, **Bridge Library**, **Transformation Library**
+There are three kinds of libraries that the user can implement, **Bridge Library**, **Transformation Library**
 and **Data Types Library**.
 
 All these libraries can be mixed in the same library, including adding several libraries of the same kind
 (an example of several the transformation libraries
 can be found on `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__).
 
-May be necessary generate data types from IDL files to communicate with *Fast-RTPS*,
+May be necessary to generate data types from IDL files to communicate with *Fast-RTPS*,
 or make use of `Fast-RTPS dynamic types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__.
 
 The :ref:`Integration Service XML Configuration` file must be adapted to each protocol.
@@ -23,15 +23,15 @@ The same applies for each publisher and subscriber inside *bridge* node and its 
 Transformation Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Integration Service allows us to define transformation functions that will be applied on each :ref:`connector`.
-Transformation functions are static functions that receives the input data,
+Integration Service allows us to define transformation functions that will be applied to each :ref:`connector`.
+Transformation functions are static functions that receive the input data,
 apply some transformation and stores the result in the output data.
 The connector will be configured with the function to call in each case.
 There is a static data prototype in
 `resource/templatelib.cpp <https://github.com/eProsima/Integration-Service/blob/master/resource/templatelib.cpp>`__:
 
 
-These functions must have one of following interfaces:
+These functions must have one of the following interfaces:
 
 Static Data
 ~~~~~~~~~~~
@@ -86,7 +86,7 @@ These libraries must offer a function with the following declaration:
 
     extern "C" USER_LIB_EXPORT TopicDataType* GetTopicType(const char *name);
 
-It will be called with the TopicType name, and must return an instance of it (subclass of :class:`TopicDataType`).
+It will be called with the TopicType name and must return an instance of it (subclass of :class:`TopicDataType`).
 If the provided type is unknown, the function must return :class:`nullptr`.
 
 .. code-block:: cpp
@@ -100,7 +100,7 @@ If the provided type is unknown, the function must return :class:`nullptr`.
 		return nullptr;
 	}
 
-The returned type, can be built using dynamic data, using an already generated IDL statically or implementing it
+The returned type can be built using dynamic data, using an already generated IDL statically or implementing it
 directly as :class:`TopicDataType` subclass.
 
 .. code-block:: cpp
@@ -147,7 +147,7 @@ These libraries must offer the following function declarations:
 	}
 
 As you can see, the instantiated bridge must implement :ref:`isbridge`.
-Bridges are in charge of communicating subscribers with publisher and apply transformation functions as defined in
+Bridges are in charge of communicating subscribers with publishers and apply transformation functions as defined in
 the :ref:`connector`.
 
 * create_reader:
@@ -162,7 +162,7 @@ the :ref:`connector`.
 	}
 
 The subscriber returned must implement :ref:`issubscriber`.
-Subscribers must be able to receive data from the origin protocol.
+Subscribers must be able to receive data from the input protocol.
 
 
 * create_writer:
@@ -180,7 +180,7 @@ The publisher returned must implement :ref:`ispublisher`.
 Publishers must be able to send data to the destination protocol.
 
 
-In all functions, a vector of pairs of strings is provided if any property exists for each node in the xml
+In all functions, a vector of pairs of strings is provided if any property exists for each node in the XML
 configuration file (see :ref:`Integration Service XML Configuration` for more information).
 
 If some functions want to use the default implementation (RTPS), they must return :class:`nullptr`.
@@ -190,8 +190,8 @@ Integration Service will deallocate these objects from memory when the bridge is
 See :ref:`Integration Service architecture` section for more information about the interfaces that any *Bridge Library*
 must implement.
 
-The responsability of how to instantiate your bridge, publisher and/or subscriber is on your *Bridge Library*,
-but remember that "RTPS" publisher and subscribers will be filled automatically by ISManager with the configuration
+The responsibility of how to instantiate your bridge, publisher and/or subscriber is on your *Bridge Library*,
+but remember that "RTPS" publishers and subscribers will be filled automatically by ISManager with the configuration
 from the *participant* node of the :ref:`Integration Service XML Configuration`.
 
 See the :ref:`examples` for some already working implementations.

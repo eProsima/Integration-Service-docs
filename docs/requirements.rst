@@ -9,7 +9,7 @@ Mandatory Dependencies
 Fast-RTPS
 ^^^^^^^^^
 
-`Fast-RTPS <https://github.com/eProsima/Fast-RTPS>`__ is needed to allow communication with RTPS protocol, XML configuration parsing, and other core functionallity.
+`Fast-RTPS <https://github.com/eProsima/Fast-RTPS>`__ is needed to allow communication with RTPS protocol, XML configuration parsing, and other core functionality.
 
 Optional Dependencies
 ---------------------
@@ -22,7 +22,7 @@ Gtest is needed to compile the tests when building from sources.
 Java & Gradle
 ^^^^^^^^^^^^^
 
-Java & gradle is required to make use Fast-RTPS built-in code generation tool *fastrtpsgen*
+Java & gradle are required to make use Fast-RTPS built-in code generation tool *fastrtpsgen*
 (see `Introduction <http://docs.eprosima.com/en/v1.6.0/geninfo.html#fastrtpsgen-intro>`_).
 
 Windows 7 32-bit and 64-bit

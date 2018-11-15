@@ -1,7 +1,7 @@
 Integration Service XML Configuration
 ======================================
 
-Integration Service (IS) uses a XML configuration file to create its connectors.
+Integration Service (IS) uses an XML configuration file to create its connectors.
 
 This XML file can contain the following sections, all inside a root :class:`<is>` label.
 
@@ -18,7 +18,7 @@ This XML file can contain the following sections, all inside a root :class:`<is>
 IS Types
 --------
 
-IS Types section allows you to specify which topic data types will be loaded through :ref:`types libraries` and define
+IS Types section allows you to specify what topic data types will be loaded through :ref:`types libraries` and define
 topic data types with `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__.
 
 If a data type uses Keys or you want to define how to build them, you must use :ref:`types libraries` to
@@ -50,7 +50,7 @@ can use Fast-RTPS API in a :ref:`types libraries` or use
     </is_types>
 
 
-As you can see in the example xml code, you can define :ref:`types libraries` for each type like :class:`ShapeType` and
+As you can see in the example XML code, you can define :ref:`types libraries` for each type like :class:`ShapeType` and
 :class:`libshape.so`, or use a default library that will try to load the rest of types
 (:class:`libdefault.so` in the example).
 
@@ -158,9 +158,9 @@ but at least one is needed to make IS perform any work.
 They must contain a subscriber and a publisher.
 Each of them is configured by a participant or bridge name and the subscriber's or publisher's name respectively.
 
-In the following example, we define a connector whose subscriber receives data from Fast-RTPS, and its publisher
+In the following example, we define a connector whose subscriber receives data from Fast-RTPS and its publisher
 writes that data to a text file.
-A :ref:`transformation libraries`'s function that adds the timestamp before the data is wrote is defined too.
+Also, there is defined a function of A :ref:`transformation libraries` that adds the timestamp before the data is written.
 
 .. code-block:: xml
 
@@ -170,13 +170,13 @@ A :ref:`transformation libraries`'s function that adds the timestamp before the 
         <transformation file="libfile.so" function="addTimestamp"/>
     </connector>
 
-There are several possible types of connectors depending of the kind of its participants.
+There are several possible types of connectors depending on the kind of its participants.
 Each connector type will refer to the bottom :ref:`example`.
 
 RTPS Bridge
 ^^^^^^^^^^^
 
-In this kind of connector, both participant are RTPS compliant, like *shapes_projection* and *shapes_stereo* in our example file.
+In this kind of connector, both participants are RTPS compliant, like *shapes_projection* and *shapes_stereo* in our example file.
 
 .. image:: RTPS-bridge.png
     :align: center
@@ -212,7 +212,7 @@ In this kind of connector, both participant are RTPS compliant, like *shapes_pro
 RTPS to Other protocol
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This connector will communicate a RTPS environment with another protocol. Just like our *shapes_protocol* connector.
+This connector will communicate an RTPS environment with another protocol. Just like our *shapes_protocol* connector.
 
 Your *Bridge Library* must define at least a publisher to your desired protocol and it is responsible to
 communicate with it and follow the ISWriter interface. By default, the transformation function is applied after
@@ -257,7 +257,7 @@ Other procotol to RTPS
 This is a similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
 
 The same logic applies in this connectors as in the :ref:`rtps to other protocol` case,
-but in this case the RTPS participant is the publisher. An example of this can be found on
+but in this case, the RTPS participant is the publisher. An example of this can be found on
 `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2>`__.
 
 .. image:: IS-Other-to-RTPS.png
@@ -295,11 +295,11 @@ but in this case the RTPS participant is the publisher. An example of this can b
 Bidirectional bridge
 ^^^^^^^^^^^^^^^^^^^^
 
-This case is not a connector, but the consecuence of set two connectors with the correct parameters.
-In our example the combination of *shapes_projection* and *shapes_stereo* is a bidirectional bridge,
+This case is not a connector, but the consequence of set two connectors with the correct parameters.
+In our example, the combination of *shapes_projection* and *shapes_stereo* is a bidirectional bridge,
 as well as, *shapes_protocol* and *protocol_shapes*.
 
-A combination of both logics :ref:`rtps to other protocol` and :ref:`Other procotol to RTPS` applies here.
+A combination of both logics :ref:`rtps to other protocol` and :ref:`Other protocol to RTPS` applies here.
 The example `TIS_NGSIv2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__ of FIROS2 uses a
 bridge of this type.
 
@@ -352,7 +352,7 @@ bridge of this type.
 Example
 -------
 
-In this file there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
+In this file, there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
 The relationships between *participants* and *subscribers*/*publishers* defined in the *profiles* section are
 stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
 There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes_protocol* and *protocol_shapes*.

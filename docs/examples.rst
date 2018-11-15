@@ -1,17 +1,15 @@
 Examples
 ========
 
-Integration Service (IS) ships with a folder with examples. In addition, exists another project derived from IS
-named `FIROS2 <https://github.com/eProsima/FIROS2>`_ with more examples.
-
-All these examples suppose that you have IS already installed.
+Integration Service (IS) ships with a folder with examples and they suppose that you have IS already installed on your machine. 
+In addition, there is another project derived from IS named `FIROS2 <https://github.com/eProsima/FIROS2>`_ with more examples.
 In IS you can find the following examples:
 
 
 Domain Change
 ^^^^^^^^^^^^^
 
-This example shows how IS can communicate two participants that belongs to different domains.
+This example shows how IS can communicate two participants that belong to different domains.
 
 To execute the example properly, we must first compile the example itself, from the `domain_change example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change>`_.
 
@@ -33,9 +31,9 @@ Windows:
     $ cmake -G "Visual Studio 14 2015 Win64" ..
     $ cmake --build .
 
-The compilation will generate an example application named *DomainChange* in build directory.
-When we execute *DomainChange* as publisher, it will create its participant in the domain **0**.
-If we launch *DomainChange* as subscriber, it will create its participant in the domain **5** instead.
+The compilation will generate an example application named *DomainChange* in the build directory.
+When we execute *DomainChange* as a publisher, it will create its participant in the domain **0**.
+If we launch *DomainChange* as a subscriber, it will create its participant in the domain **5** instead.
 
 Now, we must launch *DomainChange* in both setups:
 
@@ -52,7 +50,7 @@ And in another terminal:
 As both instances are bound to different domains, the applications will not communicate.
 But once we launch IS with the `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/domain_change/config.xml>`__ that comes with the example, both *DomainChange* instances will begin to communicate.
 
-On another terminal:
+In another terminal:
 
 ::
 
@@ -70,18 +68,17 @@ Dynamic Types
 
 **Introduction**
 
-In this example, IS makes use of both, static and dynamic types, showing the different mechanism to define types
-supported by IS.
+In this example, IS makes use of static and dynamic types showing the different mechanism to define types supported by IS.
 
 In this case, there are two configuration files provided with the example, `static_static_config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/dynamic_types/static_static_config.xml>`_ and `dyn_dyn_config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/dynamic_types/dyn_dyn_config.xml>`_.
 
 *static_static_config.xml* uses the library `keyhelloworld_static_static_lib <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/dynamic_types/keyhelloworld_static_static_lib.cpp>`_ that allow us to instantiate and interact with static versions of HelloWorld and samples (from KeysExample of Fast-RTPS) data types.
 
-*dyn_dyn_config.xml* uses instead the library `keyhelloworld_dyn_dyn_lib <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/dynamic_types/keyhelloworld_dyn_dyn_lib.cpp>`_ that do the same, but with dynamic versions. In this library you can see how dynamic types can be defined programatically, and in the configuration file, how they can be defined through xml. For more information about DynamicTypes read the Fast-RTPS documentation.
+*dyn_dyn_config.xml* uses instead the library `keyhelloworld_dyn_dyn_lib <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/dynamic_types/keyhelloworld_dyn_dyn_lib.cpp>`_ that do the same but with dynamic versions. In this library, you can see how dynamic types can be defined programmatically, and in the configuration file, how they can be defined through XML. For more information about DynamicTypes read the Fast-RTPS documentation.
 
-HelloWorld and samples types are not directly compatible, so our library must apply a transformation function,
-in this case, to transforms from HelloWorld to samples. The other transformation is also implemented if you want to
-reverse the communication (remember to change the connector too and launch Keys as publisher and HelloWorldExample as subscriber).
+HelloWorld and sample types are not directly compatible, so our library must apply a transformation function,
+in this case, to transform from HelloWorld to the samples. The other transformation is also implemented if you want to
+reverse the communication (remember to change the connector in the XML file too and launch Keys as publisher and HelloWorldExample as a subscriber).
 
 .. code-block:: cpp
 
@@ -93,7 +90,7 @@ reverse the communication (remember to change the connector too and launch Keys 
         keysData->SetByteValue(temp % 256, 1);
     }
 
-Static versions (configuration file and library) are included to ease comparation with their dynamic counterpart, but the example will focus in the dynamic versions.
+Static versions (configuration file and library) are included to ease comparation with their dynamic counterpart, but the example will focus on the dynamic versions.
 
 **Preparation**
 
@@ -135,7 +132,7 @@ In another terminal, launch Keys example as subscriber:
 
     $ keys subscriber
 
-Finally, launch IS in another terminal with *dyn_dyn_config.xml* (*dyn_dyn_config_win.xml* if you are on Windows) file from the example folder:
+Finally, launch IS in a third terminal with *dyn_dyn_config.xml* (*dyn_dyn_config_win.xml* if you are on Windows) file from the example folder:
 
 Linux:
 
@@ -151,7 +148,7 @@ Windows:
     $ cd <path_to_is_source>/examples/dynamic_types
     $ integration_service dyn_dyn_config_win.xml
 
-Once IS is running, both examples will start to communicate.
+Once IS is running, both examples will start the communication.
 
 .. image:: DynamicTypes.png
     :align: center
@@ -161,12 +158,12 @@ HelloWorld to file
 
 **Introduction**
 
-In this example we create a new bridge to save all received data from the Fast-RTPS HelloWorldExample into a file.
+In this example, we create a new bridge to save all received data from the Fast-RTPS HelloWorldExample into a file.
 
 To achieve that target, we need the bridge library `isfile <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
 The library only instantiates `FilePublisher <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FilePublisher.cpp>`_ that implements the logic to save the data to a file.
 
-The `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ file of the example configures IS with the bridge library in a connector that receives data from HelloWorldExample.
+The file `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ of the example configures IS with the bridge library in a connector that receives data from HelloWorldExample.
 
 **Preparation**
 
@@ -229,7 +226,7 @@ Shapes Demo TCP
 
 **Introduction**
 
-In this example we configure IS to use a TCP tunnel to communicate two Fast-RTPS ShapesDemo in different ways.
+In this example, we configure IS to use a TCP tunnel to communicate two Fast-RTPS ShapesDemo in different ways.
 
 There are included several configuration files:
 
@@ -277,7 +274,7 @@ The build process will generate the binary of the types library.
 
 **Execution**
 
-In two different terminals, launch ShapesDemo:
+In two different terminals, launch two ShapesDemos:
 
 ::
 

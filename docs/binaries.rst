@@ -41,13 +41,13 @@ If you want to compile with debug symbols (which also enables verbose mode):
 
         $ ./configure CXXFLAGS="-g -D__DEBUG" --libdir=/usr/lib
 
-After configuring the project compile and install the library:
+After configuring the project, compile and install the library:
 
 ::
 
         $ sudo make install
 
-Once installed if you want to use Integration Service as a public shared library:
+Once installed, if you want to use Integration Service as a public shared library:
 
 ::
 
