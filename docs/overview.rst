@@ -15,7 +15,7 @@ IS provides three interfaces that must be implemented by any bridge that you wan
 :ref:`isbridge`, :ref:`iswriter` and :ref:`isreader`. There is an :ref:`rtps-bridge`
 implementation as default, that uses Fast-RTPS libraries.
 
-IS is intended to communicate Fast-RTPS with others protocols when using bridges, so any :ref:`connector` 
+IS is intended to communicate Fast-RTPS with others protocols when using bridges, so any :ref:`connector`
 must have at least one endpoint configured as a Fast-RTPS participant.
 
 When you implement your ISBridge derived class, you must take into account:
@@ -29,16 +29,17 @@ When you implement your ISBridge derived class, you must take into account:
 
 When the reader calls to its method :class:`on_received_data`, it will call all the *bridges* it belongs,
 calling the method :class:`on_received_data` of each bridge.
-Then the bridges will apply each respective transformation functions to the data and will call the :class:`write`
-method of each of their writers.
+Then the bridges will apply each respective :ref:`transformation functions <Transformation Libraries>`
+to the data and will call the :class:`write` method of each of their writers.
 Note that the flavour of these called methods will be always the same depending on the use of dynamic data or not.
 This behaviour will only occur with the declared connectors in the XML configuration file.
 
 Connector
 ---------
 
-A connector is a pair reader/writer with an optional transformation function. Internally represents a route
-that the data will follow. If a transformation function was defined, then it will be applied before the data is
+A connector is a pair reader/writer with an optional :ref:`transformation function <Transformation Libraries>`.
+Internally represents a route that the data will follow, applied by its bridge.
+If a transformation function was defined, then it will be applied before the data is
 sent to the writers.
 
 .. image:: fullconnector.png
@@ -46,8 +47,13 @@ sent to the writers.
 
 ISBridge
 ^^^^^^^^
-This component must communicate readers with writers, applying the transformation functions if any.
+This component must communicate readers with writers, applying the
+:ref:`transformation functions <Transformation Libraries>` if any.
 Its default implementation must be enough for the majority of cases.
+It can be seen as a **connector manager** as it is responsible to apply the data flow and the logic of each connector.
+A bridge can manage several **connectors** and it should reuse readers, transformation functions and writers if it's
+possible. In complex configurations, like in this :ref:`example`, several connectors can share the same readers,
+transformation functions, and writers.
 
 Custom bridges must inherit from it:
 
@@ -76,8 +82,8 @@ RTPS-Bridge
 ^^^^^^^^^^^
 
 Implements a full bridge using Fast-RTPS publisher and subscriber. Its bridge implementation is able to communicate
-several subscribers with several publishers, establishing routes and applying transformation functions depending 
-on each connector configuration.
+several subscribers with several publishers, establishing routes and applying
+:ref:`transformation functions <Transformation Libraries>` depending on each connector configuration.
 
 The connector :ref:`rtps bridge` uses this kind of bridge.
 
