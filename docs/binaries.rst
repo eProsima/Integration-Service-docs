@@ -21,7 +21,7 @@ These variables are set automatically by checking the corresponding box during t
 Installation for Linux
 ----------------------
 
-Extract the contents of the package. Fast-RTPS must be already installed.
+Extract the contents of the package. `Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`_ must be already installed. 
 
 Configure the compilation:
 
@@ -29,7 +29,7 @@ Configure the compilation:
 
         $ ./configure --libdir=/usr/lib
 
-If you didn't installed Fast-RTPS in the default path, you must provide to autotools the path of fastrtps and fastcdr libraries, for example:
+If you haven't installed Fast-RTPS in the default path, you must provide to autotools the path of fastrtps and fastcdr libraries, for example:
 
 ::
 

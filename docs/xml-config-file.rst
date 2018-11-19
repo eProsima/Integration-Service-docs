@@ -294,7 +294,7 @@ but in this case, the RTPS participant is the writer. An example of this can be 
 Bidirectional bridge
 ^^^^^^^^^^^^^^^^^^^^
 
-This case is not a connector, but the consequence of set two connectors with the correct parameters.
+This case is not a connector, but the consequence of setting two connectors with the correct parameters.
 In our example, the combination of *shapes_projection* and *shapes_stereo* is a bidirectional bridge,
 as well as, *shapes_protocol* and *protocol_shapes*.
 

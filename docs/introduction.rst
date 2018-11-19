@@ -81,7 +81,7 @@ If you didn't build the example yet execute the following commands in the exampl
     $ cmake ..
     $ make
 
-To test the example, you must execute the DomainExample application as a publisher a FastRTPS publisher at domain 0 will be created.
+To test the example, you must execute the DomainExample application as a publisher and it will create a FastRTPS publisher at domain 0.
 
 ::
 
@@ -93,7 +93,7 @@ And in the same way, execute DomainExample as a subscriber will create a FastRTP
 
     $ ./DomainExample subscriber
 
-This mechanism is very similar to the FastRTPS HelloWorldExample, but this publisher and subscriber didn't communicate
+This behavior is very similar to the FastRTPS HelloWorldExample, but this publisher and subscriber don't communicate
 because they belong to different domains. Keep both DomainExample instances running in different terminals.
 
 We can use Integration Service to allow communication between both DomainExample participants.

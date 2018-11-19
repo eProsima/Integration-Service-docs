@@ -31,7 +31,7 @@ When the reader calls to its method :class:`on_received_data`, it will call all 
 calling the method :class:`on_received_data` of each bridge.
 Then the bridges will apply each respective :ref:`transformation functions <Transformation Libraries>`
 to the data and will call the :class:`write` method of each of their writers.
-Note that the flavour of these called methods will be always the same depending on the use of dynamic data or not.
+Note that the flavor of these called methods will be always the same depending on the use of dynamic data or not.
 This behaviour will only occur with the declared connectors in the XML configuration file.
 
 Connector
@@ -76,7 +76,7 @@ ISBridge.h and ISBridge.cpp implement the default behaviour. There is no need to
 subclass, but all of the above could be implemented if needed. Be careful to implement the full functionality.
 It is recommended to copy the standard implementation and modify with your needs.
 After that, simply remove unmodified methods.
-:class:`addFunction` and :class:`on_received_data` methods have two flavours, with static and with dynamic data.
+:class:`addFunction` and :class:`on_received_data` methods have two flavors, with static and dynamic data.
 
 RTPS-Bridge
 ^^^^^^^^^^^
