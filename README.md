@@ -1,10 +1,12 @@
 # eProsima Integration Service
 ![http://www.eprosima.com](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ)
 
-*eProsima Integration Service* is a library based on *Fast RTPS* for creating parameterized 
-communication bridges between different systems, services and protocols. 
+*eProsima Integration Service* (IS) is a library based on *Fast RTPS* for creating parameterized
+communication bridges between different systems, services and protocols.
 It is also able to perform transformations over the messages such as customized routing and
 mapping between input and output attributes or data modification.
+
+
 
 The main features of *Integration Service* are:
 
@@ -28,16 +30,16 @@ The main features of *Integration Service* are:
 
 #### Installation
 
-Before compiling *eProsima Integration Service* you need to have installed *Fast RTPS* as described 
-in its [documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html). 
+Before compiling *eProsima Integration Service* you need to have installed *Fast RTPS* as described
+in its [documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html).
 To clone this project, just execute:
 
 ```bash
     $ git clone --recursive https://github.com/eProsima/integration-service
 ```
 
-IMPORTANT: *eProsima Integration Service* uses new features that aren't released 
-on the master branch of FastRTPS yet. 
+IMPORTANT: *eProsima Integration Service* uses new features that aren't released
+on the master branch of FastRTPS yet.
 To compile it you must switch to the *Develop* branch.
 
 Now, for compiling, if you are on Linux you must execute:
@@ -56,7 +58,7 @@ If you are on Windows you must choose a version of Visual Studio:
     > cmake --build .
 ```
 
-If you want to compile *eProsima Integration Service* without an installed version of *Fast RTPS* you can add 
+If you want to compile *eProsima Integration Service* without an installed version of *Fast RTPS* you can add
 an additional parameter that downloads it as a third party library.
 
 If you are on Linux you must execute:
