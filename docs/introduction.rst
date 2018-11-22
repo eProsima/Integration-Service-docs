@@ -108,10 +108,10 @@ Once Integration Service parses the configuration file and both participants mat
 
 But this is only a very simple example of what Integration Service can do.
 With Integration Service we can communicate different protocols and services just implementing a few methods
-from an interface in our own :ref:`bridge libraries`.
-Or we can define custom data transformation making use of :ref:`transformation libraries`.
+from an interface in our own :ref:`bridge library`.
+Or we can define custom data transformation making use of :ref:`transformation library`.
 Integration Service allow us to define and use our own **TopicDataTypes**
-through :ref:`types libraries` or  Fast-RTPS **XML Types**.
+through :ref:`types library` or  Fast-RTPS **XML Types**.
 Another interesting functionality is to replicate data from one reader to many writers or listen from many
 readers while writing to one writer, or just define an N to M relationship between writers and readers.
 Finally, Integration Service is able to communicate two applications that belong to different subnetworks,

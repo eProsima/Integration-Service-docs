@@ -18,7 +18,7 @@ eProsima Integration Service Documentation
 
 * Connects two different domains.
 * Mapping between different data types.
-* User-defined operations over the received messages (:ref:`transformation libraries`).
+* User-defined operations over the received messages (:ref:`transformation library`).
 * Communication with other environments, like *ROS2*.
 
 This documentation is organized into the following sections:

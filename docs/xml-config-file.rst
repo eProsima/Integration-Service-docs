@@ -18,15 +18,15 @@ This XML file can contain the following sections, all inside a root :class:`<is>
 IS Types
 --------
 
-IS Types section allows you to specify what topic data types will be loaded through :ref:`types libraries` and define
+IS Types section allows you to specify what topic data types will be loaded through :ref:`types library` and define
 topic data types with `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__.
 
-If a data type uses Keys or you want to define how to build them, you must use :ref:`types libraries` to
+If a data type uses Keys or you want to define how to build them, you must use :ref:`types library` to
 instantiate them. In most cases, you can ignore type details and IS will use :class:`GenericPubSubType` as default,
 which encapsulates any kind of type without keys defined.
 
 If you want to make use of `Fast-RTPS Dynamic Types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__ you
-can use Fast-RTPS API in a :ref:`types libraries` or use
+can use Fast-RTPS API in a :ref:`types library` or use
 `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__ as said before.
 
 .. code-block:: xml
@@ -50,7 +50,7 @@ can use Fast-RTPS API in a :ref:`types libraries` or use
     </is_types>
 
 
-As you can see in the example XML code, you can define :ref:`types libraries` for each type like :class:`ShapeType` and
+As you can see in the example XML code, you can define :ref:`types library` for each type like :class:`ShapeType` and
 :class:`libshape.so`, or use a default library that will try to load the rest of types
 (:class:`libdefault.so` in the example).
 
@@ -105,7 +105,7 @@ Bridges
 -------
 
 Bridge sections allow us to define new endpoints and bridges to implement new protocols.
-Inside the bridge, a :ref:`bridge libraries` must be defined. It contains the methods to create the bridge (implementing
+Inside the bridge, a :ref:`bridge library` must be defined. It contains the methods to create the bridge (implementing
 :ref:`isbridge`), the writers (implementing :ref:`iswriter`) and the readers (implementing :ref:`isreader`).
 If any of them uses the default implementation, its method can simply return :class:`nullptr`.
 
@@ -148,8 +148,8 @@ vector as parameter config.
         </writer>
     </bridge>
 
-Connectors
-----------
+Connectors OLD
+--------------
 
 The *connectors* are just relationships between readers and writers, and optionally, a transformation function.
 Any number of connectors can be defined in our XML configuration file,
@@ -159,7 +159,7 @@ Each of them is configured by a participant or bridge name and the reader's or w
 
 In the following example, we define a connector whose subscriber receives data from Fast-RTPS and its writer
 writes that data to a text file.
-Also, there is defined a function of A :ref:`transformation libraries` that adds the timestamp before the data is written.
+Also, there is defined a function of a :ref:`Transformation Library` that adds the timestamp before the data is written.
 
 .. code-block:: xml
 
@@ -348,8 +348,8 @@ bridge of this type.
         </connector>
     </is>
 
-Example
--------
+Example OLD
+-----------
 
 In this file, there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
 The relationships between *participants* and *subscribers*/*publishers* defined in the *profiles* section are
