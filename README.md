@@ -77,11 +77,9 @@ If you are on Windows you must choose your version of Visual Studio:
 
 <hr></hr>
 
-## Domain Change example
+#### Domain Change example
 
-In this example, we have generated a *Fast RTPS* example application using *fastrtpsgen* and then configured the publisher participant in the domain **0**, and the subscriber participant in the domain **5**.
-
-This means that if a subscriber and a publisher are executed, there will be no communication between them, even having the same topic and type. 
+In this example, we have generated a *Fast RTPS* example application using *fastrtpsgen* and then configured the publisher participant in the domain **0**, and the subscriber participant in the domain **5**. This means that if a subscriber and a publisher are executed, there will be no communication between them, even having the same topic and type. 
 
 Executing the *Integration Service* will create a bridge between the publisher (as a writer) and the subscriber (as a reader), and communicate both applications. The config file [config.xml](<https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change/config.xml>), provided in this example, defines a connector like this. 
 
@@ -127,15 +125,6 @@ And in another terminal:
 ```
 
 As both instances are bound to different domains, the applications will not communicate. But once we launch IS with the config.xml that comes with the example, both DomainChange instances will begin to communicate.
-
-In another terminal:
-
-```bash
-    $ cd <path_to_is_source>/examples/domain_change
-    $ integration_service config.xml
-```
-
-Here, we can see a schema that represents the internal flow in this example.
 
 <hr></hr>
 
