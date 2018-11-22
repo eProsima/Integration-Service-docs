@@ -1,7 +1,7 @@
 # eProsima Integration Service
 ![http://www.eprosima.com](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ)
 
-eProsima Integration Services is a library and an utility based on Fast RTPS for making communication bridges between different systems, services and protocols. With the Integration Services the user can create parametric communication bridges between applications. At the same time, it is able to perform some transformations over the messages such as customized routing, mapping between input and output attributes or data modification.
+eProsima Integration Services is a library and an utility based on Fast RTPS for making communication bridges between different systems, services and protocols. With the Integration Service the user can create parametric communication bridges between applications. At the same time, it is able to perform some transformations over the messages such as customized routing, mapping between input and output attributes or data modification.
 
 Some of the possibilities offered by the Integration Services are:
 
@@ -79,7 +79,7 @@ If you are on Windows you must choose your version of Visual Studio:
 
 ### Domain Change example
 
-In this example, we have generated a *Fast RTPS* example application using *fastrtpsgen* and then configured the publisher participant in the domain **0**, and the subscriber participant in the domain **5**. This means that if a subscriber and a publisher are executed, there will be no communication between them, even having the same topic and type. 
+In this example, we have generated a *Fast RTPS* example application using *fastrtpsgen* and then configured the publisher participant in domain **0**, and the subscriber participant in domain **5**. This means that if a subscriber and a publisher are executed, there will be no communication between them, even having the same topic and type. 
 
 Executing the *Integration Service* will create a bridge between the publisher (as a writer) and the subscriber (as a reader), and communicate both applications. The config file [config.xml](<https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change/config.xml>), provided in this example, defines a connector like this. 
 
@@ -110,7 +110,7 @@ Windows:
     > cmake --build .
 ```
 
-The compilation will generate an example application named DomainChange in the build directory. When we execute DomainChange as a publisher, it will create its participant in the domain 0. If we launch DomainChange as a subscriber, it will create its participant in the domain 5 instead.
+The compilation will generate an example application named DomainChange in the build directory. When we execute DomainChange as a publisher, it will create its participant in domain 0. If we launch DomainChange as a subscriber, it will create its participant in domain 5 instead.
 
 Now, we must launch DomainChange in both setups:
 
