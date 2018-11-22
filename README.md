@@ -96,7 +96,7 @@ file* as parameter.
 
 That *XML configuration file* is needed by *Integration Service* to create all the needed components to do its job.
 You should read the [documentation](https://integration-services.readthedocs.io/en/latest/xml-config-file.html)
-to know more about how to configurate *Integration Service*.
+to know more about how to configure *Integration Service*.
 
 ### **Example application**
 
