@@ -15,19 +15,19 @@ Some of the possibilities offered by the Integration Services are:
 
 <hr></hr>
 
-#### Table Of Contents
+### Table Of Contents
 
 [Installation](#installation)
 
-[Features](#features)
+[Example](#domain-change-example)
 
-[Documentation](#examples)
+[Documentation](#documentation)
 
 [Getting Help](#getting-help)
 
 <hr></hr>
 
-#### Installation
+### Installation
 
 Before compiling *eProsima Integration Service* you need to have installed *Fast RTPS* as described in its [features](http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html). 
 To clone this project, just execute:
@@ -77,7 +77,7 @@ If you are on Windows you must choose your version of Visual Studio:
 
 <hr></hr>
 
-#### Domain Change example
+### Domain Change example
 
 In this example, we have generated a *Fast RTPS* example application using *fastrtpsgen* and then configured the publisher participant in the domain **0**, and the subscriber participant in the domain **5**. This means that if a subscriber and a publisher are executed, there will be no communication between them, even having the same topic and type. 
 
@@ -126,14 +126,21 @@ And in another terminal:
 
 As both instances are bound to different domains, the applications will not communicate. But once we launch IS with the config.xml that comes with the example, both DomainChange instances will begin to communicate.
 
+In another terminal:
+
+```bash
+    $ cd <path_to_is_source>/examples/domain_change
+    $ integration_service config.xml
+```
+
 <hr></hr>
 
-## Documentation
+### Documentation
 
 You can access the documentation online, which is hosted on [Read the Docs](https://integration-services.readthedocs.io).
 
 <hr></hr>
 
-## Getting Help
+### Getting Help
 
 If you need support you can reach us by mail at `support@eProsima.com` or by phone at `+34 91 804 34 48`.
