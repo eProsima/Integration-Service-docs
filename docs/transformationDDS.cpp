@@ -45,7 +45,7 @@ extern "C" void USER_LIB_EXPORT transformA_to_B(
 	// Deserialization
 	input_pst.deserialize(serialized_input, &input_data);
 
-	// Custom routing
+	// Data transformation from A to B
 	output_data.sequenceNumber = input_data.index % 256;
 	output_data.message = input_data.category + ":" + input_data.info;
 
@@ -68,7 +68,7 @@ extern "C" void USER_LIB_EXPORT transformB_to_A(
 	// Deserialization
 	input_pst.deserialize(serialized_input, &input_data);
 
-	// Custom routing
+	// Data transformation from B to A
 	output_data.index = input_data.sequenceNumber;
 	std::istringstream iss(input.message);
 	std::string token;
