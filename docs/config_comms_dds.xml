@@ -1,0 +1,42 @@
+<is>
+    <!-- fast-rtps profiles -->
+    <profiles>
+        <participant profile_name="DDS World A">
+            <!-- DDS World A participant attributes -->
+        </participant>
+
+        <participant profile_name="DDS World B">
+            <!-- DDS World B participant attributes -->
+        </participant>
+
+        <subscriber profile_name="subscriber A">
+            <!-- DDS World A subscriber attributes -->
+        </subscriber>
+
+        <subscriber profile_name="subscriber B">
+            <!-- DDS World B subscriber attributes -->
+        </subscriber>
+
+        <publisher profile_name="publisher A">
+            <!-- DDS World A publisher attributes -->
+        </publisher>
+
+        <publisher profile_name="publisher B">
+            <!-- DDS World B publisher attributes -->
+        </publisher>
+    </profiles>
+    <!-- end fast-rtps profiles -->
+    <!-- connectors -->
+    <connector name="A_to_B">
+    <reader participant_profile="DDS World A" subscriber_profile="subscriber A"/>
+    <writer participant_profile="DDS World B" publisher_profile="publisher B"/>
+    <transformation file="libtransformationDDS.so" function="transformA_to_B"/>
+    </connector>
+
+    <connector name="B_to_A">
+    <reader participant_profile="DDS World B" subscriber_profile="subscriber B"/>
+    <writer participant_profile="DDS World A" publisher_profile="publisher A"/>
+    <transformation file="libtransformationDDS.so" function="transformB_to_A"/>
+    </connector>
+    <!-- end connectors -->
+</is>
