@@ -11,7 +11,7 @@ desired.
     :align: center
 
 With *Integration Service* we can configure two *endpoints* with a simple *transformation function* and our DDS world
-will communicate, directly and without change any of its configuration.
+will communicate, directly and without changing its configuration.
 
 .. image:: DDS_WITH_IS.png
     :align: center
@@ -20,7 +20,7 @@ Routing usage and configuration
 -------------------------------
 
 To solve our hypothetical problem we must configure *Integration Service* through its XML :ref:`configuration` file with
-one endpoint able to write and read to each *DDS world*. Depending of the *Topic Data Type* of each *DDS world* we
+one endpoint able to write and read to each *DDS world*. Depending on the *Topic Data Type* of each *DDS world* we
 also need a :ref:`Transformation Library` to provide *transformation functions* that will transform the data from
 *DDS World A* to *DDS World B* and vice versa.
 
@@ -47,9 +47,9 @@ You only must be careful to relate the correct *participant* with the correct *p
 To transform the data between the *DDS World A* data and the *DDS World B* data,
 we will use a *Transformation Library* named :class:`libtransformationDDS.so` that have two
 *transformation functions* implemented: :class:`transformA_to_B`, to perform the
-tranformation in one way, and  :class:`transformB_to_A` to perform the transformation in the other way.
+transformation in one way, and  :class:`transformB_to_A` to perform the transformation in the other way.
 
-Remember that the root tag of our :class:`config.xml` file must be ``<is>`` as describred in the :ref:`configuration`.
+Remember that the root tag of our :class:`config.xml` file must be ``<is>`` as described in the :ref:`configuration`.
 
 
 Routing with Integration Service
