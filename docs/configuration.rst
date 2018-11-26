@@ -94,7 +94,7 @@ RTPS Connector
 In this kind of *connector*, both *participants* are *RTPS* compliant,
 like *shapes_projection* and *shapes_stereo* in our :ref:`example` file.
 
-.. image:: RTPS-bridge.png
+.. image:: RTPS_connector.png
     :align: center
 
 .. literalinclude:: configuration.xml
@@ -115,7 +115,7 @@ communicate with it and follow the ``ISWriter`` interface. By default, the *tran
 :class:`on_received_data` method calls to the instance of ``ISBridge``.
 To change this behaviour it's mandatory to override the complete data flow.
 
-.. image:: IS-RTPS-to-Other.png
+.. image:: RTPS_other_connector.png
     :align: center
 
 .. literalinclude:: configuration.xml
@@ -134,7 +134,7 @@ The same logic applies in this *connectors* as in the :ref:`Connector from RTPS 
 but in this case, the RTPS participant is the *writer*. An example of this can be found on
 `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2>`__.
 
-.. image:: IS-Other-to-RTPS.png
+.. image:: Other_RTPS_connector.png
     :align: center
 
 .. literalinclude:: configuration.xml
@@ -154,7 +154,7 @@ A combination of both logics :ref:`Connector from RTPS to Other protocol` and :r
 The example `TIS_NGSIv2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__ of *FIROS2* uses a
 bridge of this type.
 
-.. image:: IS-RTPS-Other.png
+.. image:: Bidirectional_connector.png
     :align: center
 
 .. literalinclude:: configuration.xml
@@ -227,12 +227,8 @@ The relationships between *participants* and *subscribers*/*publishers* defined 
 stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
 There are four *connectors* defined: *shapes_projection*, *shapes_stereo*, *shapes_protocol* and *protocol_shapes*.
 
-.. figure:: Config.png
+.. figure:: Complete_example.png
     :align: center
-    :target: example_config.xml
-    :alt: Click on the image to open the code.
-
-    Click on the image to open the code.
 
 .. literalinclude:: configuration.xml
     :language: xml

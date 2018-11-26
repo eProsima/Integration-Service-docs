@@ -1,0 +1,1634 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="1550"
+   height="850"
+   viewBox="-0.5 -0.5 1550 850"
+   id="svg124"
+   sodipodi:docname="Complete_example.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="C:\git\Integration-Services-docs\docs\Complete_example.png"
+   inkscape:export-xdpi="54.072182"
+   inkscape:export-ydpi="54.072182">
+  <metadata
+     id="metadata128">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview126"
+     showgrid="true"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="842.12347"
+     inkscape:cy="460.69318"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg124"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4658" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <rect
+     x="9.4920778"
+     y="14.900878"
+     width="260"
+     height="390"
+     rx="39"
+     ry="39"
+     pointer-events="none"
+     id="rect6"
+     style="fill:#0895cd;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(105.32843,66.878258)"
+     id="g12">
+    <switch
+       id="switch10">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="61"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 62px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               color="#ffffff">
+              <xhtml:span
+                 style="font-size: 28px">
+                <xhtml:b>ROS</xhtml:b>
+              </xhtml:span>
+            </xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="31"
+         y="22"
+         font-size="12px"
+         id="text8"
+         style="font-size:24px;font-family:Helvetica;text-anchor:middle;fill:#ffffff">
+        <tspan
+           style="font-size:32px"
+           id="tspan3835">3DShapesRTPS</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="41.992077"
+     y="158.40088"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect14"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(69.668254,169.12409)"
+     id="g20"
+     style="fill:#ffffff">
+    <switch
+       id="switch18"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="136"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 137px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">PUBLISHER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="68"
+         y="20"
+         font-size="12px"
+         id="text16"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan82"
+           x="68"
+           y="20">3D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan84"
+           x="68"
+           y="50">PUBLISHER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="41.992077"
+     y="295.40088"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect22"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(59.992078,323.40088)"
+     id="g28">
+    <switch
+       id="switch26">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="156"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 157px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">SUBSCRIBER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="76.380882"
+         y="4.7802696"
+         font-size="12px"
+         id="text24"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan86"
+           x="76.380882"
+           y="4.7802696"
+           style="font-size:24px;fill:#ffffff">3D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan88"
+           x="76.380882"
+           y="34.78027"
+           style="font-size:24px;fill:#ffffff">SUBSCRIBER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="329.4921"
+     y="14.900878"
+     width="817.85107"
+     height="805.87115"
+     rx="58.5"
+     ry="58.5"
+     pointer-events="none"
+     id="rect30"
+     style="fill:#0895cd;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(585.99208,33.400877)"
+     id="g42">
+    <switch
+       id="switch40">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="321"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 322px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               color="#ffffff">
+              <xhtml:span
+                 style="font-size: 28px">
+                <xhtml:b>INTEGRATION SERVICE</xhtml:b>
+              </xhtml:span>
+            </xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="161"
+         y="22"
+         font-size="12px"
+         id="text38"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           style="font-size:29.33333397px;fill:#ffffff"
+           id="tspan3833">INTEGRATION SERVICE</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="354.31091"
+     y="121.66565"
+     width="773.34943"
+     height="127.34377"
+     rx="46.200001"
+     ry="46.200001"
+     pointer-events="none"
+     id="rect44"
+     style="fill:#ffc001;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(570.99208,126.40088)"
+     id="g50">
+    <switch
+       id="switch48">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="346"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 347px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:span
+               style="font-size: 28px">
+              <xhtml:b>PROTOCOL CONNECTOR</xhtml:b>
+            </xhtml:span>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="173"
+         y="22"
+         font-size="12px"
+         id="text46"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan187"
+           x="173"
+           y="22">SHAPES PROJECTION</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="389.4921"
+     y="158.40088"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect60"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(406.99208,170.40088)"
+     id="g66"
+     style="fill:#ffffff">
+    <switch
+       id="switch64"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="156"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 157px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">SUBSCRIBER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="78"
+         y="20"
+         font-size="12px"
+         id="text62"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan384"
+           x="78"
+           y="20">3D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan386"
+           x="78"
+           y="50">SUBSCRIBER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="899.49207"
+     y="156.40088"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect76"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(932.99208,168.40088)"
+     id="g82"
+     style="fill:#ffffff">
+    <switch
+       id="switch80"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="124"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 125px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">IS WRITER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="62"
+         y="20"
+         font-size="12px"
+         id="text78"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan400"
+           style="font-size:24px;fill:#ffffff"
+           x="62"
+           y="20">2D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan402"
+           style="font-size:24px;fill:#ffffff"
+           x="62"
+           y="50">PUBLISHER</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 370.78208,197.40088 h -133.79"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 382.78208,197.40088 -12,6 v -12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path98"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 602.78208,197.83088 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path100"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 614.78208,197.87088 -12.02,5.96 0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path102"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 877.78208,197.33088 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 889.78208,197.37088 -12.02,5.96 0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <rect
+     x="13.515705"
+     y="431.82901"
+     width="260"
+     height="390"
+     rx="39"
+     ry="39"
+     pointer-events="none"
+     id="rect6-1"
+     style="fill:#0895cd;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(109.35206,483.80641)"
+     id="g12-2">
+    <switch
+       id="switch10-1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="61"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 62px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               color="#ffffff">
+              <xhtml:span
+                 style="font-size: 28px">
+                <xhtml:b>ROS</xhtml:b>
+              </xhtml:span>
+            </xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="31"
+         y="22"
+         font-size="12px"
+         id="text8-6"
+         style="font-size:24px;font-family:Helvetica;text-anchor:middle;fill:#ffffff">
+        <tspan
+           style="font-size:32px"
+           id="tspan3835-8">PROTOCOL</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="46.640133"
+     y="556.9754"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect14-5"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(77.554547,582.91839)"
+     id="g20-6"
+     style="fill:#ffffff">
+    <switch
+       id="switch18-2"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="136"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 137px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">PUBLISHER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="68"
+         y="20"
+         font-size="12px"
+         id="text16-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan84-6"
+           x="68"
+           y="20">READER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="46.015709"
+     y="694.36707"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect14-5-5"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(76.930133,720.31009)"
+     id="g20-6-7"
+     style="fill:#ffffff">
+    <switch
+       id="switch18-2-7"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="136"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 137px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">PUBLISHER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="68"
+         y="20"
+         font-size="12px"
+         id="text16-3-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan84-6-8"
+           x="68"
+           y="20">WRITER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="622.76013"
+     y="158.66888"
+     width="232.99904"
+     height="77.463974"
+     rx="13.979942"
+     ry="11.619596"
+     pointer-events="none"
+     id="rect60-2"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6.53602362" />
+  <g
+     transform="translate(627.34443,166.91286)"
+     id="g74">
+    <switch
+       id="switch72">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="224"
+         height="56"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 224px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">TRANSFORMATION<xhtml:br />
+
+LIBRARY</xhtml:font>
+            <xhtml:br />
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="111.08408"
+         y="23.009048"
+         font-size="12px"
+         id="text70"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan396"
+           x="111.08408"
+           y="23.009048">TRANSFORM</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan398"
+           x="111.08408"
+           y="53.009048">3D_TO_2D</tspan>
+      </text>
+      <text
+         x="112"
+         y="34"
+         font-size="12px"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text3851">
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3853">LIBRARY</tspan>
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3849" />
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="1220.7317"
+     y="236.35342"
+     width="260"
+     height="390"
+     rx="39"
+     ry="39"
+     pointer-events="none"
+     id="rect6-9"
+     style="fill:#0895cd;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(1316.5681,288.33079)"
+     id="g12-8">
+    <switch
+       id="switch10-15">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="61"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 62px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               color="#ffffff">
+              <xhtml:span
+                 style="font-size: 28px">
+                <xhtml:b>ROS</xhtml:b>
+              </xhtml:span>
+            </xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="31"
+         y="22"
+         font-size="12px"
+         id="text8-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan267"
+           x="31"
+           y="22">2DShapesRTPS</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="1253.2317"
+     y="379.85339"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect14-8"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <rect
+     x="1253.2317"
+     y="492.85339"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect22-2"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(1271.2317,518.85341)"
+     id="g28-5">
+    <switch
+       id="switch26-0">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="156"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 157px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">SUBSCRIBER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="76.380882"
+         y="4.7802696"
+         font-size="12px"
+         id="text24-1"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan86-4"
+           x="76.380882"
+           y="4.7802696"
+           style="font-size:24px;fill:#ffffff">2D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan88-7"
+           x="76.380882"
+           y="34.78027"
+           style="font-size:24px;fill:#ffffff">PUBLISHER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="354.31091"
+     y="259.00943"
+     width="773.34943"
+     height="127.34377"
+     rx="46.200001"
+     ry="46.200001"
+     pointer-events="none"
+     id="rect44-6"
+     style="fill:#ffc001;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(570.99206,263.74466)"
+     id="g50-6">
+    <switch
+       id="switch48-9">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="346"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 347px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:span
+               style="font-size: 28px">
+              <xhtml:b>PROTOCOL CONNECTOR</xhtml:b>
+            </xhtml:span>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="173"
+         y="22"
+         font-size="12px"
+         id="text46-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan406"
+           x="173"
+           y="22">SHAPES STEREO</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="389.49207"
+     y="295.74466"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect60-24"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(406.99205,305.74466)"
+     id="g66-7">
+    <switch
+       id="switch64-1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="156"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 157px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">SUBSCRIBER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="78"
+         y="20"
+         font-size="12px"
+         id="text62-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan378"
+           x="78"
+           y="20">3D</tspan>
+        <tspan
+           sodipodi:role="line"
+           x="78"
+           y="50"
+           id="tspan388">PUBLISHER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="899.49207"
+     y="293.74466"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect76-0"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <path
+     d="m 896.9071,334.67466 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 865.4771,334.72966 12.02,5.96 -0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <rect
+     x="622.76013"
+     y="296.01266"
+     width="232.99904"
+     height="77.463974"
+     rx="13.979942"
+     ry="11.619596"
+     pointer-events="none"
+     id="rect60-2-7"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6.53602362" />
+  <g
+     transform="translate(627.3444,302.25664)"
+     id="g74-2">
+    <switch
+       id="switch72-2">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="224"
+         height="56"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 224px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">TRANSFORMATION<xhtml:br />
+
+
+LIBRARY</xhtml:font>
+            <xhtml:br />
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="111.08408"
+         y="23.009048"
+         font-size="12px"
+         id="text70-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan408"
+           x="111.08408"
+           y="23.009048">TRANSFORM</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan410"
+           x="111.08408"
+           y="53.009048">2D_TO_3D</tspan>
+      </text>
+      <text
+         x="112"
+         y="34"
+         font-size="12px"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text3851-3">
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3853-2">LIBRARY</tspan>
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3849-8" />
+      </text>
+    </switch>
+  </g>
+  <g
+     transform="translate(1279.5717,391.54288)"
+     id="g20-1-9"
+     style="fill:#ffffff">
+    <switch
+       id="switch18-8-6"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="136"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 137px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">PUBLISHER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="68"
+         y="20"
+         font-size="12px"
+         id="text16-5-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan269-6"
+           x="68"
+           y="20">2D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan271-4"
+           x="68"
+           y="50">SUBSCRIBER</tspan>
+      </text>
+    </switch>
+  </g>
+  <g
+     transform="translate(928.06165,305.72381)"
+     id="g20-1"
+     style="fill:#ffffff">
+    <switch
+       id="switch18-8"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="136"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 137px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">PUBLISHER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="68"
+         y="20"
+         font-size="12px"
+         id="text16-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan269"
+           x="68"
+           y="20">2D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan271"
+           x="68"
+           y="50">SUBSCRIBER</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 594.06663,331.90567 12.02,5.96 -0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-8"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 624.60501,331.93283 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-2"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 387.22343,335.92136 h -133.79"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96-6"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 246.50307,335.95087 12,6 v -12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path98-5"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <rect
+     x="352.45898"
+     y="524.24017"
+     width="773.34943"
+     height="127.34377"
+     rx="46.200001"
+     ry="46.200001"
+     pointer-events="none"
+     id="rect44-6-9"
+     style="fill:#ffc001;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(569.14013,528.97547)"
+     id="g50-6-8">
+    <switch
+       id="switch48-9-9">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="346"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 347px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:span
+               style="font-size: 28px">
+              <xhtml:b>PROTOCOL CONNECTOR</xhtml:b>
+            </xhtml:span>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="173"
+         y="22"
+         font-size="12px"
+         id="text46-2-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan601"
+           x="173"
+           y="22">SHAPES PROTOCOL</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="387.64014"
+     y="560.9754"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect60-24-3"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(405.14012,570.97547)"
+     id="g66-7-2">
+    <switch
+       id="switch64-1-1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="156"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 157px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">SUBSCRIBER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="78"
+         y="20"
+         font-size="12px"
+         id="text62-6-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan378-9"
+           x="78"
+           y="20">PROTOCOL</tspan>
+        <tspan
+           sodipodi:role="line"
+           x="78"
+           y="50"
+           id="tspan388-8">WRITER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="897.64014"
+     y="558.9754"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect76-0-8"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <path
+     d="m 895.05517,599.90547 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-9"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 863.62517,599.96047 12.02,5.96 -0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-4"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <rect
+     x="620.9082"
+     y="561.24341"
+     width="232.99904"
+     height="77.463974"
+     rx="13.979942"
+     ry="11.619596"
+     pointer-events="none"
+     id="rect60-2-7-8"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6.53602362" />
+  <g
+     transform="translate(625.49247,567.48745)"
+     id="g74-2-7">
+    <switch
+       id="switch72-2-1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="224"
+         height="56"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 224px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">TRANSFORMATION<xhtml:br />
+
+
+
+LIBRARY</xhtml:font>
+            <xhtml:br />
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="111.08408"
+         y="23.009048"
+         font-size="12px"
+         id="text70-2-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan408-2"
+           x="111.08408"
+           y="23.009048">TRANSFORM</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan410-8"
+           x="111.08408"
+           y="53.009048">FROM 2D</tspan>
+      </text>
+      <text
+         x="112"
+         y="34"
+         font-size="12px"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text3851-3-3">
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3853-2-3">LIBRARY</tspan>
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3849-8-5" />
+      </text>
+    </switch>
+  </g>
+  <g
+     transform="translate(926.20972,570.95462)"
+     id="g20-1-5"
+     style="fill:#ffffff">
+    <switch
+       id="switch18-8-0"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="136"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 137px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">PUBLISHER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="68"
+         y="20"
+         font-size="12px"
+         id="text16-5-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan269-5"
+           x="68"
+           y="20">2D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan271-41"
+           x="68"
+           y="50">SUBSCRIBER</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 592.2147,597.13648 12.02,5.96 -0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-8-7"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 622.75308,597.16364 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-2-3"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <rect
+     x="352.45898"
+     y="665.58392"
+     width="773.34943"
+     height="127.34377"
+     rx="46.200001"
+     ry="46.200001"
+     pointer-events="none"
+     id="rect44-7"
+     style="fill:#ffc001;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(569.14013,670.31918)"
+     id="g50-8">
+    <switch
+       id="switch48-2">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="346"
+         height="32"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 347px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:span
+               style="font-size: 28px">
+              <xhtml:b>PROTOCOL CONNECTOR</xhtml:b>
+            </xhtml:span>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="173"
+         y="22"
+         font-size="12px"
+         id="text46-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan708"
+           x="173"
+           y="22">PROTOCOL SHAPES</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="387.64014"
+     y="702.31915"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect60-5"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(405.14013,714.31918)"
+     id="g66-4"
+     style="fill:#ffffff">
+    <switch
+       id="switch64-8"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="156"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 157px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">SUBSCRIBER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="78"
+         y="20"
+         font-size="12px"
+         id="text62-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan384-0"
+           x="78"
+           y="20">PROTOCOL</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan386-0"
+           x="78"
+           y="50">READER</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="897.64008"
+     y="700.31915"
+     width="195"
+     height="78"
+     rx="11.7"
+     ry="11.7"
+     pointer-events="none"
+     id="rect76-5"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
+  <g
+     transform="translate(931.14015,712.31918)"
+     id="g82-3"
+     style="fill:#ffffff">
+    <switch
+       id="switch80-5"
+       style="fill:#ffffff">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="124"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 125px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">IS WRITER</xhtml:font>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="62"
+         y="20"
+         font-size="12px"
+         id="text78-3"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan400-9"
+           style="font-size:24px;fill:#ffffff"
+           x="62"
+           y="20">2D</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan402-7"
+           style="font-size:24px;fill:#ffffff"
+           x="62"
+           y="50">PUBLISHER</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 380.93013,737.31918 -12,6 v -12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path98-51"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 600.93013,741.74918 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path100-4"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 612.93015,741.78918 -12.02002,5.96 0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path102-3"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 875.93015,741.24918 -18.43,-0.07"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-1"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 887.93015,741.28918 -12.02,5.96 0.05,-12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-3"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <rect
+     x="620.90826"
+     y="702.58716"
+     width="232.99904"
+     height="77.463974"
+     rx="13.979942"
+     ry="11.619596"
+     pointer-events="none"
+     id="rect60-2-5"
+     style="fill:#88ce28;stroke:#09487e;stroke-width:6.53602362" />
+  <g
+     transform="translate(625.49245,710.83116)"
+     id="g74-7">
+    <switch
+       id="switch72-0">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="224"
+         height="56"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 224px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+            <xhtml:font
+               style="font-size: 24px">TRANSFORMATION<xhtml:br />
+
+
+LIBRARY</xhtml:font>
+            <xhtml:br />
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="111.08408"
+         y="23.009048"
+         font-size="12px"
+         id="text70-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan712"
+           x="111.08408"
+           y="23.009048">TRANSFORM</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan714"
+           x="111.08408"
+           y="53.009048">TO 2D</tspan>
+      </text>
+      <text
+         x="112"
+         y="34"
+         font-size="12px"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text3851-1">
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3853-6">LIBRARY</tspan>
+        <tspan
+           style="font-size:24px;fill:#ffffff"
+           id="tspan3849-6" />
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 368.93013,737.31918 h -130.04"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96-6-5"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:5.91531515;stroke-miterlimit:10" />
+  <path
+     d="m 386.32308,593.09364 h -130.04"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96-6-5-8"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:5.91531515;stroke-miterlimit:10" />
+  <path
+     d="m 250.70291,592.76873 12,6 v -12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path98-51-0"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
+  <path
+     d="m 1470.7047,419.25928 c 32.8399,0.26873 17.2934,0.005 32.8506,0.13267 11.2884,0.0924 9.2207,72.27946 8.1674,145.03512 -1.0748,74.23649 -1.258,149.10613 -1.7821,152.75071 -2.284,15.88083 2.1594,17.59251 -19.0655,18.47175 -89.3792,3.70257 -295.8828,2.87039 -396.0893,4.56748"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-0"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cssssc" />
+  <path
+     d="m 1252.8694,532.75116 -147.8306,57.91276"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-0-8"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 1100.5037,590.81739 13.2233,2.26951 -3.4833,-11.48345 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-4-9"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccc" />
+  <path
+     d="M 1252.8694,532.75116 1109.9408,348.99386"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-0-8-8"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 1101.3094,337.35282 1.8351,13.29055 9.8926,-6.7925 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-4-9-8"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccc" />
+  <path
+     d="M 1238.0289,374.90365 1095.1003,191.14635"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path108-4-0-8-8-8"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 1245.7223,383.4717 -3.3131,-13.00116 -9.069,7.85839 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-4-9-8-1"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccc" />
+  <path
+     d="m 1457.8576,418.85159 2.0391,1.0432 3.1728,1.62317 2.0459,1.04665 0.4256,0.21772 4.2608,2.17979 0.1007,-11.9997 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path110-7-4-9-2"
+     inkscape:connector-curvature="0"
+     style="fill:#09487e;stroke:#09487e;stroke-width:6;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccccccc" />
+</svg>
