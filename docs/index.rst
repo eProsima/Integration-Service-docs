@@ -1,56 +1,72 @@
-.. eProsima Integration Services documentation master file.
+.. eProsima Integration Service documentation master file.
 
-eProsima Integration Services Documentation
+eProsima Integration Service Documentation
 ===========================================
 
 .. image:: logo.png
-   :height: 80px
-   :width: 80px
-   :align: left
-   :alt: eProsima
-   :target: http://www.eprosima.com/
+    :height: 80px
+    :width: 80px
+    :align: left
+    :alt: eProsima
+    :target: http://www.eprosima.com/
 
-*eProsima Integration Services* is a library and an utility based on *Fast RTPS* for making communication bridges between different systems, services and protocols. With *Integration Services* the user can create parametric communication bridges between applications. At the same time, it is able to perform some transformations over the messages such as customized routing, mapping between input and output attributes or data modification.
+| *eProsima Integration Service* is a library based on *Fast RTPS* for creating parameterized communication bridges between different systems, services and protocols.
+| It is also able to perform transformations over the messages such as customized routing and mapping between input and output attributes or data modification.
 
-Some of the main features of *Integration Services* are:
+| 
+| The main features of *Integration Service* are:
 
 * Connects two different domains.
 * Mapping between different data types.
-* User-defined operations over the circulating messages (:ref:`transformation libraries`).
-* Communication with other environments, as *ROS2*.
-
+* User-defined operations over the received messages (:ref:`transformation library`).
+* Communication with other environments, like *ROS2*.
 
 This documentation is organized into the following sections:
 
-* :ref:`installation`
+* :ref:`relatedlinks`
 * :ref:`user`
 * :ref:`notes`
 
-.. _installation:
+.. _relatedlinks:
 
 .. toctree::
-   :caption: Installation manual
+    :caption: Related Links
 
-   requirements
-   binaries
-   sources
-
+    Getting started <https://github.com/eProsima/Integration-Service/blob/master/README.md>
 
 .. _user:
 
 .. toctree::
-   :caption: User Manual
+    :caption: User Manual
 
-   introduction
-   overview
-   xml-config-file
-   libraries
-   examples
+    concepts_terms
+    configuration
+    technical
 
+.. toctree::
+    :caption: Use cases
+
+    communicatedds
+    transformdata
+    dynamicdata
+    tcptunnel
+    newprotocol
+
+.. toctree::
+    :caption: OLD DOCUMENTATION TOC
+
+    requirements
+    binaries
+    sources
+    introduction
+    overview
+    xml-config-file
+    libraries
+    examples
 
 .. _notes:
 
 .. toctree::
-   :caption: Release Notes
+    :caption: Release Notes
 
-   notes
+    notes
