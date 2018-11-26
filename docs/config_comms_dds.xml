@@ -30,13 +30,11 @@
     <connector name="A_to_B">
     <reader participant_profile="DDS World A" subscriber_profile="subscriber A"/>
     <writer participant_profile="DDS World B" publisher_profile="publisher B"/>
-    <transformation file="libtransformationDDS.so" function="transformA_to_B"/>
     </connector>
 
     <connector name="B_to_A">
     <reader participant_profile="DDS World B" subscriber_profile="subscriber B"/>
     <writer participant_profile="DDS World A" publisher_profile="publisher A"/>
-    <transformation file="libtransformationDDS.so" function="transformB_to_A"/>
     </connector>
     <!-- end connectors -->
 </is>
