@@ -1,7 +1,7 @@
 Data transformation
 ===================
 
-There are situations where two independent RTPS systems need to share information. 
+There are situations where two independent RTPS systems need to share information.
 Maybe those RTPS systems use different data types so there is not possible a direct communication.
 In this scene is where *Integration Service*, and its ability transforming data, is useful and necessary.
 We can define a function to make possible the understanding between the RTPS systems.
@@ -24,7 +24,7 @@ The *endpoints* must be configured in the :ref:`Fast-RTPS profiles` section.
     :start-after: <!-- fast-rtps profiles -->
     :end-before: <!-- end fast-rtps profiles -->
 
-An our needed :ref:`Connectors` are declared below:
+And our needed :ref:`Connectors` are declared below:
 
 .. literalinclude:: config_comms_dds.xml
     :language: XML
@@ -36,7 +36,7 @@ You only must be careful to relate the correct *participant* with the correct *p
 :class:`publisher B` and :class:`subscriber B` *endpoints* belong to :class:`DDS World B` *participant*.
 
 To transform the data between the *DDS World A* data and the *DDS World B* data,
-we will use a *Transformation Library* named :class:`libtransformationData.so` that have 
+we will use a *Transformation Library* named :class:`libtransformationData.so` that have
 *transformation functions* implemented: :class:`transformA_to_B`, to perform the
 tranformation in one way.
 
@@ -114,7 +114,7 @@ We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists
     :lines: 1,2
 
 Do you remember the *definitions* section of our *transformation library* that could help us to make the library
-more portable. 
+more portable.
 This is where we set the values of these preprocesor definitions to build our library exporting symbols.
 
 .. literalinclude:: transform_data_CMake.txt
@@ -157,13 +157,14 @@ The steps needed to do it are:
 - Create the needed :ref:`Connectors` in your XML configuration file.
 - Implementing your custom :ref:`transformation functions <Transformation Library>`.
 - Generating your library binary.
-- Launching publisher and subscriber.
 - Executing *IS* with your XML configuration file.
 
 Transformation Data example
 ---------------------------
 
-There is an example implemented in `dynamic_types example <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/dynamic_types>`_ where you can see the use of a transformation function.
+There is an example implemented in
+`dynamic_types example <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/dynamic_types>`_
+where you can see the use of a transformation function.
 
 .. code-block:: bash
 
@@ -181,7 +182,9 @@ Windows:
     $ cmake -G "Visual Studio 14 2015 Win64" ..
     $ cmake --build .
 
-This example allow the communication between `HelloWorld <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and `Keys <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/Keys>`_ examples from FastRTPS. 
+This example allow the communication between
+`HelloWorld <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and
+`Keys <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/Keys>`_ examples from FastRTPS.
 The HelloWorld example must be started as a publisher and the Keys example as a subscriber.
 
 .. code-block:: bash
@@ -194,10 +197,10 @@ And in another terminal:
 
     $ ./Keys subscriber
 
-You will notice that there is no communication between both applications. 
-Run the Integration Service with one of the provided configuration files, and both applications will start to communicate.
+You will notice that there is no communication between both applications.
+Run the *Integration Service* with one of the provided configuration files,
+and both applications will start to communicate.
 
 .. code-block:: bash
 
     $ ./integration_service static_static_config_win.xml
-
