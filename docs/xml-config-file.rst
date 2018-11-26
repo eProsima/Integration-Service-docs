@@ -1,7 +1,7 @@
-Integration Services XML Configuration
+Integration Service XML Configuration
 ======================================
 
-Integration Services (IS) uses a XML configuration file to create its connectors.
+Integration Service (IS) uses an XML configuration file to create its connectors.
 
 This XML file can contain the following sections, all inside a root :class:`<is>` label.
 
@@ -18,15 +18,15 @@ This XML file can contain the following sections, all inside a root :class:`<is>
 IS Types
 --------
 
-IS Types section allows you to specify which topic data types will be loaded through :ref:`types libraries` and define
+IS Types section allows you to specify what topic data types will be loaded through :ref:`types library` and define
 topic data types with `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__.
 
-If a data type uses Keys or you want to define how to build them, you must use :ref:`types libraries` to
+If a data type uses Keys or you want to define how to build them, you must use :ref:`types library` to
 instantiate them. In most cases, you can ignore type details and IS will use :class:`GenericPubSubType` as default,
 which encapsulates any kind of type without keys defined.
 
 If you want to make use of `Fast-RTPS Dynamic Types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__ you
-can use Fast-RTPS API in a :ref:`types libraries` or use
+can use Fast-RTPS API in a :ref:`types library` or use
 `Fast-RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__ as said before.
 
 .. code-block:: xml
@@ -50,7 +50,7 @@ can use Fast-RTPS API in a :ref:`types libraries` or use
     </is_types>
 
 
-As you can see in the example xml code, you can define :ref:`types libraries` for each type like :class:`ShapeType` and
+As you can see in the example XML code, you can define :ref:`types library` for each type like :class:`ShapeType` and
 :class:`libshape.so`, or use a default library that will try to load the rest of types
 (:class:`libdefault.so` in the example).
 
@@ -63,7 +63,7 @@ If **IS Types** is omitted, IS will use :class:`GenericPubSubType` to manage all
 Profiles
 --------
 
-The profiles define participants, subscribers, publishers, etc, following the format used by **FastRTPS XML configuration files**, with its configuration.
+The profiles section defines participants, subscribers, publishers, etc, following the format used by **FastRTPS XML configuration files**, with its configuration.
 
 .. code-block:: xml
 
@@ -105,13 +105,13 @@ Bridges
 -------
 
 Bridge sections allow us to define new endpoints and bridges to implement new protocols.
-Inside the bridge, a :ref:`bridge libraries` must be defined. It contains the methods to create the bridge (implementing
-:ref:`isbridge`), the publishers (implementing :ref:`ispublisher`) and the subscribers (implementing :ref:`issubscriber`).
+Inside the bridge, a :ref:`bridge library` must be defined. It contains the methods to create the bridge (implementing
+:ref:`isbridge`), the writers (implementing :ref:`iswriter`) and the readers (implementing :ref:`isreader`).
 If any of them uses the default implementation, its method can simply return :class:`nullptr`.
 
 A properties label with any number of property sections (which are pairs *name* and *value* as shown in the example)
 can be defined for the bridge.
-Properties that apply to participants, publishers and subscribers are defined directly inside their sections.
+Properties that apply to writers and readers are defined directly inside their sections.
 Each property set will be sent to its component as a vector of pairs of strings.
 
 If no properties are provided, then your :class:`create_` method will be called with :class:`nullptr` or an empty
@@ -132,7 +132,7 @@ vector as parameter config.
             </property>
         </properties>
 
-        <publisher name="file_publisher">
+        <writer name="file_writer">
             <property>
                 <name>filename</name>
                 <value>output.txt</value>
@@ -145,38 +145,37 @@ vector as parameter config.
                 <name>append</name>
                 <value>true</value>
             </property>
-        </publisher>
+        </writer>
     </bridge>
 
+Connectors OLD
+--------------
 
-Connectors
-----------
-
-The *connectors* are just relationships between subscribers and publishers, and optionally, a transformation function.
+The *connectors* are just relationships between readers and writers, and optionally, a transformation function.
 Any number of connectors can be defined in our XML configuration file,
 but at least one is needed to make IS perform any work.
-They must contain a subscriber and a publisher.
-Each of them is configured by a participant or bridge name and the subscriber's or publisher's name respectively.
+They must contain a reader and a writer.
+Each of them is configured by a participant or bridge name and the reader's or writer's name respectively.
 
-In the following example, we define a connector whose subscriber receives data from Fast-RTPS, and its publisher
+In the following example, we define a connector whose subscriber receives data from Fast-RTPS and its writer
 writes that data to a text file.
-A :ref:`transformation libraries`'s function that adds the timestamp before the data is wrote is defined too.
+Also, there is defined a function of a :ref:`Transformation Library` that adds the timestamp before the data is written.
 
 .. code-block:: xml
 
     <connector name="dump_to_file">
-        <subscriber participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
-        <publisher bridge_name="file" publisher_name="file_publisher"/>
+        <reader participant_profile="rtps" subscriber_profile="fastrtps_subscriber"/>
+        <writer bridge_name="file" writer_name="file_writer"/>
         <transformation file="libfile.so" function="addTimestamp"/>
     </connector>
 
-There are several possible types of connectors depending of the kind of its participants.
+There are several possible types of connectors depending on the kind of its participants.
 Each connector type will refer to the bottom :ref:`example`.
 
 RTPS Bridge
 ^^^^^^^^^^^
 
-In this kind of connector, both participant are RTPS compliant, like *shapes_projection* and *shapes_stereo* in our example file.
+In this kind of connector, both participants are RTPS compliant, like *shapes_projection* and *shapes_stereo* in our example file.
 
 .. image:: RTPS-bridge.png
     :align: center
@@ -203,8 +202,8 @@ In this kind of connector, both participant are RTPS compliant, like *shapes_pro
         </profiles>
 
         <connector name="connector">
-            <subscriber participant_profile="RTPS-Subscriber" subscriber_profile="Subscriber"/>
-            <publisher participant_profile="RTPS-Publisher" publisher_profile="Publisher"/>
+            <reader participant_profile="RTPS-Subscriber" subscriber_profile="Subscriber"/>
+            <writer participant_profile="RTPS-Publisher" publisher_profile="Publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
         </connector>
     </is>
@@ -212,10 +211,10 @@ In this kind of connector, both participant are RTPS compliant, like *shapes_pro
 RTPS to Other protocol
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This connector will communicate a RTPS environment with another protocol. Just like our *shapes_protocol* connector.
+This connector will communicate an RTPS environment with another protocol. Just like our *shapes_protocol* connector.
 
-Your *Bridge Library* must define at least a publisher to your desired protocol and it is responsible to
-communicate with it and follow the ISPublisher interface. By default, the transformation function is applied after
+Your *Bridge Library* must define at least a writer to your desired protocol and it is responsible to
+communicate with it and follow the ISWriter interface. By default, the transformation function is applied after
 :class:`on_received_data` method calls to the instance of ISBridge.
 If you want to change this behaviour you will need to override the complete data flow.
 
@@ -239,25 +238,25 @@ If you want to change this behaviour you will need to override the complete data
             <library>/path/to/bridge/library/libprotocol.so</library>
             <!-- Other protocol properties -->
 
-            <publisher name="Other">
-                <!-- Other protocol publisher properties -->
-            </publisher>
+            <writer name="Other">
+                <!-- Other protocol writer properties -->
+            </writer>
         </bridge>
 
         <connector name="connector">
-            <subscriber participant_profile="RTPS" subscriber_profile="Subscriber"/>
-            <publisher bridge_name="Other protocol" publisher_name="Other"/>
+            <reader participant_profile="RTPS" subscriber_profile="Subscriber"/>
+            <writer bridge_name="Other protocol" writer_name="Other"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
         </connector>
     </is>
 
-Other procotol to RTPS
+Other protocol to RTPS
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This is a similar case as the previous one, but in the other way, as in the connector *protocol_shapes* of our example.
 
 The same logic applies in this connectors as in the :ref:`rtps to other protocol` case,
-but in this case the RTPS participant is the publisher. An example of this can be found on
+but in this case, the RTPS participant is the writer. An example of this can be found on
 `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2>`__.
 
 .. image:: IS-Other-to-RTPS.png
@@ -280,14 +279,14 @@ but in this case the RTPS participant is the publisher. An example of this can b
             <library>/path/to/bridge/library/libprotocol.so</library>
             <!-- Other protocol properties -->
 
-            <subscriber name="Other">
-                <!-- Other protocol subscriber properties -->
-            </subscriber>
+            <reader name="Other">
+                <!-- Other protocol reader properties -->
+            </reader>
         </bridge>
 
         <connector name="connector">
-            <subscriber bridge_name="Other protocol" subscriber_name="Other"/>
-            <publisher participant_profile="RTPS" publisher_profile="Publisher"/>
+            <reader bridge_name="Other protocol" reader_name="Other"/>
+            <writer participant_profile="RTPS" publisher_profile="Publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transformFromA"/>
         </connector>
     </is>
@@ -295,11 +294,11 @@ but in this case the RTPS participant is the publisher. An example of this can b
 Bidirectional bridge
 ^^^^^^^^^^^^^^^^^^^^
 
-This case is not a connector, but the consecuence of set two connectors with the correct parameters.
-In our example the combination of *shapes_projection* and *shapes_stereo* is a bidirectional bridge,
+This case is not a connector, but the consequence of setting two connectors with the correct parameters.
+In our example, the combination of *shapes_projection* and *shapes_stereo* is a bidirectional bridge,
 as well as, *shapes_protocol* and *protocol_shapes*.
 
-A combination of both logics :ref:`rtps to other protocol` and :ref:`Other procotol to RTPS` applies here.
+A combination of both logics :ref:`RTPS to Other protocol` and :ref:`Other protocol to RTPS` applies here.
 The example `TIS_NGSIv2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__ of FIROS2 uses a
 bridge of this type.
 
@@ -327,32 +326,32 @@ bridge of this type.
             <library>/path/to/bridge/library/libprotocol.so</library>
             <!-- Other protocol properties -->
 
-            <subscriber name="OtherSub">
-                <!-- Other protocol subscriber properties -->
-            </subscriber>
+            <reader name="OtherSub">
+                <!-- Other protocol reader properties -->
+            </reader>
 
-            <publisher name="OtherPub">
-                <!-- Other protocol publisher properties -->
-            </publisher>
+            <writer name="OtherPub">
+                <!-- Other protocol writer properties -->
+            </writer>
         </bridge>
 
         <connector name="connector">
-            <subscriber bridge_name="Other protocol" subscriber_name="OtherSub"/>
-            <publisher participant_profile="RTPS" publisher_profile="Publisher"/>
+            <reader bridge_name="Other protocol" reader_name="OtherSub"/>
+            <writer participant_profile="RTPS" publisher_profile="Publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transformFromA"/>
         </connector>
 
         <connector name="connector">
-            <subscriber participant_profile="RTPS" subscriber_profile="Subscriber"/>
-            <publisher bridge_name="Other protocol" publisher_name="OtherPub"/>
+            <reader participant_profile="RTPS" subscriber_profile="Subscriber"/>
+            <writer bridge_name="Other protocol" writer_name="OtherPub"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform"/>
         </connector>
     </is>
 
-Example
--------
+Example OLD
+-----------
 
-In this file there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
+In this file, there are defined two RTPS *participants*, and a *bridge*. All of them have a subscriber and a publisher.
 The relationships between *participants* and *subscribers*/*publishers* defined in the *profiles* section are
 stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
 There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes_protocol* and *protocol_shapes*.
@@ -411,7 +410,7 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                 </property>
             </properties>
 
-            <publisher name="protocol_publisher">
+            <writer name="protocol_publisher">
                 <property>
                     <name>property1</name>
                     <value>value1</value>
@@ -420,9 +419,9 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                     <name>property2</name>
                     <value>value2</value>
                 </property>
-            </publisher>
+            </writer>
 
-            <subscriber name="protocol_subscriber">
+            <reader name="protocol_subscriber">
                 <property>
                     <name>property1</name>
                     <value>value1</value>
@@ -431,30 +430,30 @@ There are four connectors defined: *shapes_projection*, *shapes_stereo*, *shapes
                     <name>property2</name>
                     <value>value2</value>
                 </property>
-            </subscriber>
+            </reader>
         </bridge>
 
         <connector name="shapes_projection">
-            <subscriber participant_profile="3Dshapes" subscriber_profile="3d_subscriber"/>
-            <publisher participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
+            <reader participant_profile="3Dshapes" subscriber_profile="3d_subscriber"/>
+            <writer participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform3D_to_2D"/>
         </connector>
 
         <connector name="shapes_stereo">
-            <subscriber participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
-            <publisher participant_profile="3Dshapes" publisher_profile="3d_publisher"/>
+            <reader participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
+            <writer participant_profile="3Dshapes" publisher_profile="3d_publisher"/>
             <transformation file="/path/to/transform/libuserlib.so" function="transform2D_to_3D"/>
         </connector>
 
         <connector name="shapes_protocol">
-            <subscriber participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
-            <publisher bridge_name="protocol" publisher_name="protocol_publisher"/>
+            <reader participant_profile="2Dshapes" subscriber_profile="2d_subscriber"/>
+            <writer bridge_name="protocol" writer_name="protocol_publisher"/>
             <transformation file="/path/to/transform/libprotocoltransf.so" function="transformFrom2D"/>
         </connector>
 
         <connector name="protocol_shapes">
-            <subscriber bridge_name="protocol" subscriber_name="protocol_subscriber"/>
-            <publisher participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
+            <reader bridge_name="protocol" reader_name="protocol_subscriber"/>
+            <writer participant_profile="2Dshapes" publisher_profile="2d_publisher"/>
             <transformation file="/path/to/transform/libprotocoltransf.so" function="transformTo2D"/>
         </connector>
     </is>
