@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,9 +43,9 @@
      inkscape:window-height="1017"
      id="namedview126"
      showgrid="true"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="842.12347"
-     inkscape:cy="460.69318"
+     inkscape:zoom="1"
+     inkscape:cx="577.38851"
+     inkscape:cy="425.86507"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -58,8 +58,8 @@
   <defs
      id="defs2" />
   <rect
-     x="9.4920778"
-     y="14.900878"
+     x="11.999997"
+     y="7.999999"
      width="260"
      height="390"
      rx="39"
@@ -68,7 +68,7 @@
      id="rect6"
      style="fill:#0895cd;stroke:#09487e;stroke-width:6" />
   <g
-     transform="translate(105.32843,66.878258)"
+     transform="translate(107.83635,59.977379)"
      id="g12">
     <switch
        id="switch10">
@@ -97,16 +97,23 @@
          y="22"
          font-size="12px"
          id="text8"
-         style="font-size:24px;font-family:Helvetica;text-anchor:middle;fill:#ffffff">
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
         <tspan
-           style="font-size:32px"
-           id="tspan3835">3DShapesRTPS</tspan>
+           sodipodi:role="line"
+           id="tspan203"
+           x="31"
+           y="22">3DShapes</tspan>
+        <tspan
+           sodipodi:role="line"
+           x="31"
+           y="62"
+           id="tspan209">RTPS</tspan>
       </text>
     </switch>
   </g>
   <rect
-     x="41.992077"
-     y="158.40088"
+     x="44.499996"
+     y="151.5"
      width="195"
      height="78"
      rx="11.7"
@@ -115,7 +122,7 @@
      id="rect14"
      style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
   <g
-     transform="translate(69.668254,169.12409)"
+     transform="translate(72.176173,162.22321)"
      id="g20"
      style="fill:#ffffff">
     <switch
@@ -156,8 +163,8 @@
     </switch>
   </g>
   <rect
-     x="41.992077"
-     y="295.40088"
+     x="44.499996"
+     y="288.5"
      width="195"
      height="78"
      rx="11.7"
@@ -166,7 +173,7 @@
      id="rect22"
      style="fill:#88ce28;stroke:#09487e;stroke-width:6" />
   <g
-     transform="translate(59.992078,323.40088)"
+     transform="translate(62.499997,316.5)"
      id="g28">
     <switch
        id="switch26">
@@ -448,8 +455,8 @@
   <rect
      x="13.515705"
      y="431.82901"
-     width="260"
-     height="390"
+     width="255.9843"
+     height="387.67099"
      rx="39"
      ry="39"
      pointer-events="none"
@@ -612,6 +619,7 @@
             <xhtml:font
                style="font-size: 24px">TRANSFORMATION<xhtml:br />
 
+
 LIBRARY</xhtml:font>
             <xhtml:br />
           </xhtml:div>
@@ -694,7 +702,14 @@ LIBRARY</xhtml:font>
            sodipodi:role="line"
            id="tspan267"
            x="31"
-           y="22">2DShapesRTPS</tspan>
+           y="22"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle">2DShapes</tspan>
+        <tspan
+           sodipodi:role="line"
+           x="31"
+           y="62"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"
+           id="tspan211">RTPS</tspan>
       </text>
     </switch>
   </g>
@@ -907,6 +922,7 @@ LIBRARY</xhtml:font>
                style="font-size: 24px">TRANSFORMATION<xhtml:br />
 
 
+
 LIBRARY</xhtml:font>
             <xhtml:br />
           </xhtml:div>
@@ -1048,7 +1064,7 @@ LIBRARY</xhtml:font>
      inkscape:connector-curvature="0"
      style="fill:none;stroke:#09487e;stroke-width:6;stroke-miterlimit:10" />
   <path
-     d="m 246.50307,335.95087 12,6 v -12 z"
+     d="m 248.5,335.5 12,6 v -12 z"
      stroke-miterlimit="10"
      pointer-events="none"
      id="path98-5"
@@ -1200,6 +1216,7 @@ LIBRARY</xhtml:font>
              style="display:inline-block;text-align:inherit;text-decoration:inherit;">
             <xhtml:font
                style="font-size: 24px">TRANSFORMATION<xhtml:br />
+
 
 
 
@@ -1507,6 +1524,7 @@ LIBRARY</xhtml:font>
              style="display:inline-block;text-align:inherit;text-decoration:inherit;">
             <xhtml:font
                style="font-size: 24px">TRANSFORMATION<xhtml:br />
+
 
 
 LIBRARY</xhtml:font>

@@ -23,14 +23,14 @@ eProsima Integration Service Documentation
 
 This documentation is organized into the following sections:
 
-* :ref:`otherdocumentation`
+* :ref:`relatedlinks`
 * :ref:`user`
 * :ref:`notes`
 
-.. _otherdocumentation:
+.. _relatedlinks:
 
 .. toctree::
-    :caption: Other Documentation
+    :caption: Related Links
 
     Getting started <https://github.com/eProsima/Integration-Service/blob/master/README.md>
 

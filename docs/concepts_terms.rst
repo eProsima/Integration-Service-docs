@@ -1,7 +1,7 @@
 Concepts and Terms
 ==================
 
-Before configuring and using *Integration Service* here you can find the concepts and terms you should know Before
+Before configuring and using *Integration Service* here you can find the concepts and terms you should know before
 reading the rest of the documentation.
 
 * **Integration Service**: *Integration Service* is often named as *IS*.
@@ -60,5 +60,5 @@ Internally represents a route that the data will follow, applied by its *bridge*
 If a *transformation function* was defined, then it will be applied before the data is
 sent to the *writers*.
 
-.. image:: fullconnector.png
+.. image:: RTPS_other_connector.png
    :align: center
