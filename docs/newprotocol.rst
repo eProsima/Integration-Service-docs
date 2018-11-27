@@ -1,8 +1,8 @@
 Adding new Bridges
 ==================
 
-*Integration Service* allows the to create their custom *readers* and *writers* for their any protocol.
-This is the more powerful feature of *IS*, as allows to communicate any *DDS* application with any other
+*Integration Service* allows the creation of custom *readers* and *writers* for their any protocol.
+This is the most powerful feature of *IS*, as allows to communicate any *DDS* application with any other
 protocol, for example, *NGSIv2* from *FIWARE Orion ContextBroker*, which is a protocol based on WebServices.
 
 .. image:: Bidirectional_connector.png
@@ -16,7 +16,7 @@ Bridge usage and configuration
 ------------------------------
 
 *Integration Service* must be configured through its XML :ref:`configuration` file.
-In this case is needed a :ref:`Bridge Library` to provide functions that will allow *IS* to create new instances
+In this case, is needed a :ref:`Bridge Library` to provide functions that will allow *IS* to create new instances
 of :ref:`ISBridge`, :ref:`ISWriter` and :ref:`ISReader`.
 All these components must be declared (and optionally configured) in the :ref:`Bridge configuration`.
 
@@ -58,7 +58,7 @@ with :class:`protocol_publisher` and :class:`protocol_subscriber` with :class:`2
 .. image:: NEW_BRIDGE.png
     :align: center
 
-Typically a *transformation function* will be useful to split responsabilities and allow *readers* and *writers*
+Typically a *transformation function* will be useful to split responsibilities and allow *readers* and *writers*
 to only worry about protocol details without data transformations. If you want to know more about
 *Transformation Libraries* you can see :ref:`Data Transformation` use case.
 
@@ -66,7 +66,7 @@ Integration Service's Bridges
 -----------------------------
 
 We should add our own :ref:`Bridge Library` to allow *IS* instantiate our :ref:`ISWriter` and :ref:`ISReader`.
-In this case, and typically, there is no need to override the default :ref:`ISBridge` behaviour
+In this case, and typically, there is no need to override the default :ref:`ISBridge` behavior
 (and normally isn't recommended).
 
 As we established before, the library will be named :class:`libprotocol.so`, so we will create a new
@@ -74,7 +74,7 @@ source file named :class:`protocol.cpp` that must implement the functions ``crea
 ``create_reader``.
 
 Starting out implementation from scratch, we need to include the needed libraries, in our case, simply the
-header file that give us access to the implementation of our :ref:`ISWriter` and :ref:`ISReader`,
+header file that gives us access to the implementation of our :ref:`ISWriter` and :ref:`ISReader`,
 ``ISBridgeProtocol.h``.
 
 .. literalinclude:: new_bridge.cpp
@@ -82,7 +82,7 @@ header file that give us access to the implementation of our :ref:`ISWriter` and
     :start-after: // Include start
     :end-before: // Include end
 
-The next part isn't mandatory, but we usually add it because it help us making the library portable between different
+The next part isn't mandatory, but we usually add it because it helps us make the library portable between different
 operating systems and keeps the source code clear to read.
 
 .. literalinclude:: new_bridge.cpp
@@ -94,7 +94,7 @@ If you decide to include this part as well, keep it in mind when we will create 
 
 Now, we are in condition to start with the implementation of each function.
 
-As we established before, our library doesn't need to override the default :ref:`ISBridge` behaviour,
+As we established before, our library doesn't need to override the default :ref:`ISBridge` behavior,
 so our ``create_bridge`` function will return ``nullptr``.
 
 .. literalinclude:: new_bridge.cpp
@@ -126,10 +126,10 @@ Bridge API
 ----------
 
 We can use the same source code file to implement the new :ref:`ISReader` and :ref:`ISWriter`, but usually we
-will prefer to split the code in several files, and these implementations are very likely to be written in a
+will prefer to split the code into several files, and these implementations are very likely to be written in a
 separated file.
 In our example, we will write them inside their own header files ``ProtocolWriter.h`` and ``ProtocolReader.h``,
-both included in ``ISBridgeProtocol.h``, but normally it will be splitted into source and header files instead
+both included in ``ISBridgeProtocol.h``, but normally it will be split into source and header files instead
 only use header files.
 
 ``ProtocolWriter.h`` will declare the class ``ProtocolWriter`` following the instructions of :ref:`ISWriter` section.
@@ -243,7 +243,7 @@ Putting all together
 
 After that, we have our *bridge library* implemented, but we still need to build it.
 Of course, you could use any build system at your wish, but *IS* provides a *CMakeLists.txt* template that we will use
-here as example.
+here as an example.
 
 First, we are going to rename the cmake project to *protocol*.
 
@@ -253,7 +253,7 @@ First, we are going to rename the cmake project to *protocol*.
 
 We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists.txt* from scratch remember that
 *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, so you must include both dependencies to your
-*CMakeLists.txt*. In this case we also use *cURLpp*.
+*CMakeLists.txt*. In this case, we also use *cURLpp*.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
@@ -262,14 +262,14 @@ We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists
 
 Do you remember the *definitions* section of our *transformation library* that could help us to make the library
 more portable.
-This is where we set the values of these preprocesor definitions to build our library exporting symbols.
+This is where we set the values of these preprocessor definitions to build our library exporting symbols.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
     :start-after: # definitions
     :lines: 1-4
 
-Finally we indicate to *CMake* our source code and the library we want to build, along with its dependencies.
+Finally, we indicate to *CMake* our source code and the library we want to build, along with its dependencies.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
@@ -380,5 +380,5 @@ Windows:
 Once *IS* is running, *HelloWorldExample* will match and a file named *output.txt* will be created with the
 received data from *HelloWorldExample*.
 
-.. image:: HelloWorldFile.png
+.. image:: HW_TO_FILE.png
     :align: center
