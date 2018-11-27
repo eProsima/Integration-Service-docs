@@ -2,8 +2,8 @@ Data transformation
 ===================
 
 One of the most common issues during the integration of new systems is making them compatible with
-the ones that have been implemented in the current environment. Even using RTPS systems there could
-be situations where two data types cause that a direct communication isn't possible. 
+the ones already implemented in the current environment. Even using RTPS systems there could
+be situations where two different data types cause direct communication impossible.
 In this scene is where *Integration Service*, and its ability to transform data, is useful to adapt different data types to be compatible.
 
 The following image shows the data flow throw transformation function.
@@ -15,7 +15,7 @@ Transformation usage and configuration
 --------------------------------------
 
 *Integration Service* must be configured through its XML :ref:`configuration` file.
-In this case, is needed a :ref:`Transformation Library` to provide *transformation functions* that will transform the data from *DDS World A* to *DDS World B* and vice versa.
+In this case, a :ref:`Transformation Library` is needed to provide *transformation functions* that will transform the data from *DDS World A* to *DDS World B* and vice versa.
 
 In this example, a file named :class:`config.xml` needs to be created.
 The *endpoints* must be configured in the :ref:`Fast-RTPS profiles` section.
@@ -34,7 +34,7 @@ And the needed :ref:`Connectors` are declared below:
     :end-before: <!-- end connectors -->
     :dedent: 4
 
-It's important to relate the correct *participant* with the correct *publisher* or *subscriber*, in this case:
+It's important to associate the correct *participant* with the correct *publisher* or *subscriber*, in this case:
 :class:`publisher A` and :class:`subscriber A` *endpoints* belong to :class:`DDS World A` *participant*, and
 :class:`publisher B` and :class:`subscriber B` *endpoints* belong to :class:`DDS World B` *participant*.
 
@@ -56,22 +56,25 @@ The implementation of both functions will be stored in a source file named :clas
 The first step of the implementation is including the *TopicDataTypes* involved. For our example, imagine we have an *IDL* file for
 each *DDS World* data type.
 
+For *DDS World A* data type:
+
 .. literalinclude:: transform_data.cpp
     :language: cpp
     :start-after: /* Type A
     :end-before: // End Type A */
 
-For *DDS World A* data type. After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate
+After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate
 a file named :class:`DDSTypeAPubSubTypes.h`. If you want to know more about *FastRTPSGen*, please go to
 `Fast RTPS documentation <http://docs.eprosima.com/en/latest/>`__.
+
+In the same way for *DDS World B* data type:
 
 .. literalinclude:: transform_data.cpp
     :language: cpp
     :start-after: /* Type B
     :end-before: // End Type B */
 
-In the same way for *DDS World B* data type, after generating the *C++* code of this *IDL* file,
-*FastRTPSGen* will generate a file named :class:`DDSTypeBPubSubTypes.h`.
+After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate a file named :class:`DDSTypeBPubSubTypes.h`.
 
 So with these types in mind, it's mandatory to include both *PubSubTypes* headers in our *transformation library*.
 
@@ -99,7 +102,7 @@ After these steps to set the workspace, this will be the code of ``transformA_to
     :end-before: // End A to B
 
 After writing this function and ``transformB_to_A`` with the opposite conversion, the *transformation library* has been implemented, but it needs to be built.
-*Integration Service* provides a *CMakeLists.txt* template that can be used like in this example.
+*Integration Service* provides a *CMakeLists.txt* template that can be used as in this example.
 
 The first step is renaming the cmake project to *transformationData*.
 
@@ -107,16 +110,16 @@ The first step is renaming the cmake project to *transformationData*.
     :language: cmake
     :lines: 1
 
-It's recommendable to keep all *C++11* and *CMake* version as it is, but to create the *CMakeLists.txt* from scratch 
-it's important to keep in mind that *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, 
-so they must be included as dependencies to the *CMakeLists.txt*.
+It's recommendable to keep all *C++11* and *CMake* version as it is, but to create the *CMakeLists.txt* from scratch
+it's important to keep in mind that *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*,
+so both libraries must be included as dependencies to the *CMakeLists.txt*.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake
     :start-after: # packages
     :lines: 1,2
 
-To make the library more portable the cmake file needs to add the :ref:`preprocesor definitions <cmake_definitions_code>` to build our library exporting symbols.
+To make the library more portable the cmake file needs to add the :ref:`preprocessor definitions <cmake_definitions_code>` to build our library exporting symbols.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake
@@ -137,11 +140,12 @@ After that, *CMake* will generate the library running these commands:
     $ cmake .
     $ make
 
-It should generate the file *libtransformationData.so* in the current directory and that's the library that
+It should generate the file *libtransformationData.so* in the current directory, and that's the library that
 *IS* expects when loads the :class:`config.xml` file.
 
 At this point, there is a configuration file :class:`config.xml` created, and a *transformation library*
-*libtransformationData.so* built. *Integration Service* is able to connect both *DDS Worlds* adapting their data types to be compatible.
+*libtransformationData.so* built.
+*Integration Service* now allows connecting both *DDS Worlds* adapting their data types to be compatible.
 
 .. code-block:: bash
 
@@ -184,21 +188,21 @@ Windows:
 This example creates the communication bridge between the
 `HelloWorld <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and the
 `Keys <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/Keys>`_ examples from FastRTPS.
-The HelloWorld example must be started as a publisher and the Keys example as a subscriber.
+HelloWorldExample must be started as a publisher and the Keys example as a subscriber.
 
 .. code-block:: bash
 
-    $ ./HelloWorld publisher
+    $ ./HelloWorldExample publisher
 
 And in another terminal:
 
 .. code-block:: bash
 
-    $ ./Keys subscriber
+    $ ./keys subscriber
 
-In this step, both applications don't have any communication between them, 
-and after starting the *Integration Service* with the provided configuration file,
-the communication will be started.
+In this step, the applications don’t communicate between them,
+but after starting the *Integration Service* with the provided configuration file,
+the communication starts.
 
 .. code-block:: bash
 
