@@ -2,10 +2,11 @@ Communicate two DDS applications
 ================================
 
 The domain field is used to define the local space where participants exist. With this information, several
-DDS applications that use different domains can't communicate between them, even if they use compatible types 
-and compatible configurations. To make this communication doable it could be possible to change the domain
-of one of the application and move all of them to the same domain, but if this modification is not desired,
-Integration Service can create a bridge between them.
+DDS applications that use different domains can't communicate between them, even if they use compatible types
+and configurations.
+To make this communication doable it could be possible to change the domain of one application to move all of
+them to the same domain, but this modification may be undesired.
+In these cases, Integration Service can create a bridge between them, keeping each application with its configuration.
 
 .. image:: DDS_NO_COMS.png
     :align: center
@@ -41,7 +42,7 @@ And the :ref:`Connectors` are declared below:
     :start-after: <!-- connectors -->
     :end-before: <!-- end connectors -->
 
-It's important to relate the correct *participant* with the correct *publisher* or *subscriber*, in this case:
+It's important to associate the correct *participant* with the correct *publisher* or *subscriber*, in this case:
 :class:`publisher A` and :class:`subscriber A` *endpoints* belong to :class:`DDS World A` *participant*, and
 :class:`publisher B` and :class:`subscriber B` *endpoints* belong to :class:`DDS World B` *participant*.
 
@@ -53,7 +54,7 @@ Routing with Integration Service
 As both *DDS Worlds* use the same protocol, and *Integration Service* supports it out-of-the-box,
 the protocol level doesn't need any change to perform the communication.
 
-Once the file :class:`config.xml` has been created, *IS* is able to run and start the communication of both *DDS Worlds*. 
+Once the file :class:`config.xml` has been created, *IS* is able to run and start the communication of both *DDS Worlds*.
 
 .. code-block:: bash
 
@@ -78,7 +79,7 @@ Domain Change Example
 
 This example shows how *IS* can communicate two *participants* that belong to different *domains*.
 
-To execute the example properly, it's mandatory to compile the example itself, from the `domain_change example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change>`_.
+To properly execute the example, it's mandatory to compile it from the `domain_change example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change>`_.
 
 Linux:
 
@@ -99,8 +100,8 @@ Windows:
     $ cmake --build .
 
 The compilation will generate an example application named *DomainChange* in the build directory.
-After executing *DomainChange* as a publisher, it will create its *participant* in *domain* **0**.
-and after launching *DomainChange* as a subscriber, it will create its *participant* in *domain* **5** instead.
+After executing *DomainChange* as a publisher, it will create its *participant* in *domain* **0**,
+and after launching *DomainChange* as a subscriber, it will create its *participant* in *domain* **5**.
 
 The command to launch *DomainChange* as a publisher is:
 
@@ -124,7 +125,7 @@ In another terminal:
     $ cd <path_to_is_source>/examples/domain_change
     $ integration_service config.xml
 
-This is the schema of the internal flow of this example:
+This schema shows the internal flow of this example:
 
 .. image:: DomainChange.png
     :align: center
