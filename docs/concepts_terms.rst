@@ -1,10 +1,10 @@
 Concepts and Terms
 ==================
 
-Before configuring and using *Integration Service* here you can find the concepts and terms you should know before
+Before configuring and using *Integration Service* some concepts and terms should be known before
 reading the rest of the documentation.
 
-* **Integration Service**: *Integration Service* is often named as *IS*.
+* **Integration Service**: *Integration Service* can be named as *IS*.
 * **ISWriter**: An ``ISWriter`` (or *Writer*) is a component able to write data to a destination protocol.
 * **ISReader**: An ``ISReader`` (or *Reader*) is a component able to read data from a source protocol.
 * **Transformation Function**: A *Transformation Function* is a function that converts between data types.
@@ -16,30 +16,30 @@ reading the rest of the documentation.
 
 .. TODO, change the URL to point to *Fast RTPS* Concepts and Terms.
 
-You should know `Fast-RTPS's Concepts and Terms <http://docs.eprosima.com/en/latest/introduction.html>`__ too.
+`Fast-RTPS's Concepts and Terms <http://docs.eprosima.com/en/latest/introduction.html>`__ should be known too.
 
-You can interact with *Integration Service* at two different levels:
+*Integration Service* allows user interaction at two different levels:
 
 * As a stand-alone application.
 * As a library.
 
-If you use *IS* as a library, you must provide the configuration XML file programmatically.
+When using *IS* as a library, a configuration XML file must be programmatically provided.
 
 Integration Service architecture
 ---------------------------------
 
-*IS* provides three interfaces that must be implemented by any *bridge* that you want to use. This classes are
-:ref:`isbridge`, :ref:`iswriter` and :ref:`isreader`. There is an :ref:`rtps-bridge`
-implementation as default, that uses *Fast RTPS* libraries.
+*IS* provides three interfaces that must be implemented by any new custom *bridge* to allow new protocols.
+These classes are :ref:`isbridge`, :ref:`iswriter`, and :ref:`isreader`.
+There is an :ref:`rtps-bridge` implementation as default, that uses *Fast RTPS* libraries.
 
 *IS* is intended to communicate *Fast RTPS* with others protocols when using *bridges*, so any :ref:`connector`
 must have at least one *endpoint* configured as a *Fast RTPS* participant.
 
-When you implement your ``ISBridge`` derived class, you must take into account:
+When implementing ``ISBridge`` derived classes, the following points must be taken into account:
 
 - Only :class:`ISWriter::write` is mandatory to implement.
-- When your *reader* receives data, you must call :class:`on_received_data` function with the data properly converted into :class:`SerializedPayload_t`.
-- You can override the default behaviour but isn't recommended in general. This behaviour follows this diagram:
+- When a *reader* receives data, its :class:`on_received_data` function must be called with the data properly converted into :class:`SerializedPayload_t`.
+- The default behavior can be overridden but isn't recommended in general. This behavior follows this diagram:
 
 .. image:: flow.png
     :align: center
@@ -50,7 +50,7 @@ Then the *bridges* will apply each respective :ref:`transformation functions <Tr
 to the data and will call the :class:`write` method of each of their *writers*.
 Note that there are two flavors of these called methods that must be coherent between them
 depending on the use of dynamic data or not.
-This behaviour will only occur with the declared *connectors* in the XML configuration file.
+This behavior will only occur with the declared *connectors* in the XML configuration file.
 
 Connector
 ---------
