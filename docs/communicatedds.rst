@@ -102,13 +102,13 @@ The compilation will generate an example application named *DomainChange* in the
 After executing *DomainChange* as a publisher, it will create its *participant* in *domain* **0**.
 and after launching *DomainChange* as a subscriber, it will create its *participant* in *domain* **5** instead.
 
-The command to launch *DomainChange* as publisher is:
+The command to launch *DomainChange* as a publisher is:
 
 .. code-block:: bash
 
     $ ./DomainChange publisher
 
-And to launch it as subscriber:
+And to launch it as a subscriber:
 
 .. code-block:: bash
 
