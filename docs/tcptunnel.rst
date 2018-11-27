@@ -2,7 +2,7 @@ TCP Communication
 =================
 
 *Integration Service* can take advantage of *Fast RTPS TCP Transport* to communicate through TCP protocol.
-This allows *IS* to solve some communication scenarios where traditional *DDS UDP communication* will fail.
+With *TCP Transport IS* allows solving some communication scenarios where traditional *UDP Transport* will fail.
 Here, there are some examples of these scenarios.
 
 TCP Communication Scenarios
@@ -12,7 +12,7 @@ Single LAN
 ^^^^^^^^^^
 
 Typical *DDS communication* uses *UDP* protocol, but in some cases, it's needed to connect through *TCP*.
-*IS* allows to communicate the transports, including one *participant UDP* with other *participant TCP*.
+*IS* allows communicating the transports, including one *participant UDP* with other *participant TCP*.
 
 .. image:: TCP_LAN.png
     :align: center
@@ -25,7 +25,7 @@ Across NAT
 
 There are situations where may be useful to communicate two *DDS Participants* that belong to different LANs,
 and this communication requires to create a connection over the Internet to get access from one LAN to the other.
-As *UDP* is usually blocked by network devices, *IS* should use a *TCP tunnel* to achieve the communication through
+As network devices block *UDP* communication usually, *IS* must use a *TCP tunnel* to achieve the communication within
 NAT, WLAN, etc.
 
 .. image:: TCP_NAT.png
@@ -43,7 +43,7 @@ security options in *Fast RTPS profiles* to be able to establish a secure *TCP t
 .. image:: TCP_SEC_NAT.png
     :align: center
 
-This scenario is equivalent to :ref:`Across NAT`, but includes *Fast RTPS security* attributes to get a secure
+This scenario is equivalent to :ref:`Across NAT` but includes *Fast RTPS security* attributes to get a secure
 *TCP Tunnel*.
 
 TCP Tunnel with Integration Service
@@ -59,7 +59,7 @@ Initial Peers and Listening Ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An *initial peer* is a *Locator* that points to where an *endpoint* is listening. In *TCP transports*,
-*initial peers* are mandatory to allow connections with the remote *endpoint*. 
+*initial peers* are mandatory to allow connections with the remote *endpoint*.
 Only one *endpoint* needs to configure its *initial peers*, but both may have them.
 
 In *TCP Transport*, there are two new roles related with which *endpoint* starts the *TCP* communication.
@@ -97,7 +97,7 @@ for complete information about *TCP transport* configuration.
 TCP Transport Descriptor
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*TCP Transport Descriptor* are used by *Fast RTPS* to configure the *TCP* parameters of the *transport* instance.
+*TCP Transport Descriptor* is used by *Fast RTPS* to configure the *TCP* parameters of the *transport* instance.
 A complete description of *transport descriptors* can be found in
 `Fast RTPS Transport descriptor section <http://docs.eprosima.com/en/latest/xmlprofiles.html#transport-descriptors>`__.
 
@@ -113,7 +113,7 @@ TCP Tunnel Example
 To illustrate the use cases, there is an example named *ShapesDemoTCP*.
 In this example, *IS* creates and uses a *TCP tunnel* to communicate two *Fast-RTPS ShapesDemo* in different ways.
 
-There are included several configuration files:
+Several configuration files are included:
 
 - `config_client.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config_client.xml>`__: Configures *IS* as a *TCP client* and acts as a shapes *publisher*.
 
@@ -126,7 +126,7 @@ to allow executions on different machines.
 
 This example will use *config.xml* to test it in one machine.
 
-The example uses a types library named `shapelib <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/shapelib.cpp>`__ that allows us to create the keyed type "shape", and ShapesDemo uses it to communicate.
+The example uses a types library named `shapelib <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/shapelib.cpp>`__ that allows us to create the keyed type :class:`shape`, and ShapesDemo uses it to communicate.
 
 To allow executing the example in the same machine, each ShapesDemo instance will be bound to different domains,
 allowing *IS* to do some useful work.
@@ -185,7 +185,7 @@ Windows:
     $ cd <path_to_is_source>/examples/shapes_demo_tcp
     $ integration_service config_win.xml
 
-Once *IS* is running, both ShapesDemo must start to communicate and the *subscriber* ShapesDemo should begin to receive
+Once *IS* is running, both ShapesDemo must start to communicate, and the *subscriber* ShapesDemo should begin to receive
 data from the *publisher*
 
 .. image:: TCP_SHAPES_DEMO.png
