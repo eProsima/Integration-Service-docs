@@ -98,7 +98,7 @@ After these steps to set the workspace, this will be the code of ``transformA_to
     :start-after: // A to B
     :end-before: // End A to B
 
-After writing this function and ``transformB_to_A`` with the opposite conversion, the *transformation library* has been implemented, but it needs to be compiled.
+After writing this function and ``transformB_to_A`` with the opposite conversion, the *transformation library* has been implemented, but it needs to be built.
 *Integration Service* provides a *CMakeLists.txt* template that can be used like in this example.
 
 The first step is renaming the cmake project to *transformationData*.
@@ -150,7 +150,7 @@ At this point, there is a configuration file :class:`config.xml` created, and a 
 Creating new transformations
 ----------------------------
 
-The steps needed to define *transformation functions* adapting data types between two different domains.
+The steps needed to define *transformation functions* adapting data types between two different domains are:
 
 - Create and configure the needed :ref:`Fast-RTPS profiles` in an XML configuration file.
 - Create the needed :ref:`Connectors` in the XML configuration file.
