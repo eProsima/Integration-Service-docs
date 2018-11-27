@@ -1,29 +1,28 @@
 User Libraries
 ==============
 
-*Integration Service* defines three types of libraries, *Bridge Library*, *Transformation Library*
-and *Types Library*. All of them can be implemented by the user.
-
+*Integration Service* defines three types of libraries, *Transformation Library*, *Bridge Library*
+and *Types Library*. All of them can be implemented by users.
 All these libraries can be mixed in the same library, including adding several libraries of the same kind
 (an example of several transformation libraries
 can be found on `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/TIS_NGSIv2>`__).
 
 See :ref:`Configuration format` for more information about how to indicate *Integration Service* which libraries use.
 
-* :ref:`Transformation Library`: Allows to create custom data transformations.
+* :ref:`Transformation Library`: Allows creating custom data transformations.
 
-* :ref:`Bridge Library`: Allows to implement new *Writers* and *Readers* to allow other protocols.
+* :ref:`Bridge Library`: Allows implementing new *Writers* and *Readers* to communicate with other protocols.
 
-* :ref:`Types Library`: Allows to define *TopicDataTypes*.
+* :ref:`Types Library`: Allows defining new *TopicDataTypes*.
 
 
 Transformation Library
 ----------------------
 
-*Integration Service* allows to define *transformation functions* that will be applied to each :ref:`connector`.
+*Integration Service* allows defining custom *transformation functions* that will be applied to a :ref:`connector`.
 *Transformation functions* are static functions that receive the input data,
-apply some transformation and stores the result in the output data.
-The *connector* will be configured with the function to call in each case.
+apply some transformation and store the result in the output data.
+The *connector* will be configured with the library and the function to call in each case.
 There is a static data prototype in
 `resource/templatelib.cpp <https://github.com/eProsima/Integration-Service/blob/master/resource/templatelib.cpp>`__:
 
@@ -46,15 +45,15 @@ Dynamic Data
     :start-after: // Dynamic Data Start
     :end-before: // Dynamic Data End
 
-In both cases, the transformation function will parse the :class:`inputData`,
-modify it at will and will store the result into :class:`outputData`.
+In both cases, the transformation function parses the :class:`inputData`,
+modifies it at will and stores the result into :class:`outputData`.
 See the :ref:`examples` for some already working implementations.
 
 Bridge Library
 --------------
 
-*Integration Service* allows defining *bridge libraries* to integrate new protocols.
-These libraries must offer the following function declarations:
+*Bridge libraries* are used to integrate new communication protocols. 
+They must offer the following function declarations:
 
 * **create_bridge**:
 
@@ -105,9 +104,8 @@ ISBridge
 ^^^^^^^^
 
 This component must communicate ``ISReaders`` with ``ISWriters``, applying the
-:ref:`transformation functions <Transformation Library>` if any.
-Its default implementation must be enough for the majority of cases.
-It can be seen as a **connector manager** as it is responsible to apply the data flow and the logic of each connector.
+:ref:`transformation functions <Transformation Library>` if any and its default implementation must be enough for the majority of cases.
+It can be seen as a **connector manager** as it is responsible for applying the data flow and the logic of each connector.
 A bridge can manage several *connectors* and it should reuse readers, transformation functions and writers if it's
 possible. In complex configurations, like in this :ref:`example`, several connectors can share the same readers,
 transformation functions, and writers.
@@ -129,8 +127,8 @@ After that, simply remove the unmodified methods.
 RTPS-Bridge
 ^^^^^^^^^^^
 
-*Integration Service* has a default builtin *RTPS-Bridge*, but you can specify any other protocol
-implementing your own libraries.
+*Integration Service* has a default built-in *RTPS-Bridge*, but it allows creating custom bridges
+to connect new protocols implementing your own libraries. 
 
 Implements a full ``ISBridge`` using *Fast-RTPS* *publisher* and *subscriber*.
 Its ``ISBridge`` implementation is able to communicate
@@ -138,7 +136,6 @@ several *subscribers* with several *publishers*, establishing routes and applyin
 :ref:`transformation functions <Transformation Library>` depending on each *connector* configuration.
 
 The *connector* :ref:`rtps bridge` uses this kind of bridge.
-
 
 ISWriter
 ^^^^^^^^
@@ -151,7 +148,7 @@ publisher*.
     :start-after: // Class Writer Start
     :end-before: // Class Writer End
 
-``ISWriter`` doesn't have a default implementation, so this default behaviour is provided by the builtin *RTPS-Bridge*.
+``ISWriter`` doesn't have a default implementation, so this default behavior is provided by the built-in *RTPS-Bridge*.
 Any custom *bridge* that needs to define its *writer*, must implement at least both :class:`write` methods.
 If one of them isn't needed, just implement as follows:
 
@@ -173,7 +170,7 @@ subscriber*.
     :start-after: // Class Reader Start
     :end-before: // Class Reader End
 
-``ISReader`` doesn't have a default implementation, so this default behaviour is provided by the builtin *RTPS-Bridge*.
+``ISReader`` doesn't have a default implementation, so this default behavior is provided by the built-in *RTPS-Bridge*.
 Any custom *bridge* that needs to define its *reader*, must implement at least both :class:`on_received_data` methods.
 If one of them isn't needed, just implement as follows:
 
@@ -186,7 +183,7 @@ If one of them isn't needed, just implement as follows:
 Types Library
 -------------
 
-*Integration Service* allows us to define types libraries to create custom data types.
+*Integration Service* allows defining types libraries to create custom data types.
 These libraries must offer a function with the following declaration:
 
 .. literalinclude:: technical.cpp
@@ -194,7 +191,7 @@ These libraries must offer a function with the following declaration:
     :start-after: // Topic Type 1 Start
     :end-before: // Topic Type 1 End
 
-It will be called with the TopicType ``name`` and must return an instance of it
+It receives the ``name`` of the TopicType and must return an instance of it
 (subclass of *Fast RTPS's* :class:`TopicDataType`).
 If the provided type is unknown, the function must return :class:`nullptr`.
 
