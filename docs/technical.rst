@@ -10,17 +10,17 @@ can be found on `FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples
 
 See :ref:`Configuration format` for more information about how to indicate *Integration Service* which libraries use.
 
-* :ref:`Transformation Library`: Allows you to create custom data transformations.
+* :ref:`Transformation Library`: Allows to create custom data transformations.
 
-* :ref:`Bridge Library`: Allows you to implement new *Writers* and *Readers* to allow other protocols.
+* :ref:`Bridge Library`: Allows to implement new *Writers* and *Readers* to allow other protocols.
 
-* :ref:`Types Library`: Allows you to define *TopicDataTypes*.
+* :ref:`Types Library`: Allows to define *TopicDataTypes*.
 
 
 Transformation Library
 ----------------------
 
-*Integration Service* allows you to define *transformation functions* that will be applied to each :ref:`connector`.
+*Integration Service* allows to define *transformation functions* that will be applied to each :ref:`connector`.
 *Transformation functions* are static functions that receive the input data,
 apply some transformation and stores the result in the output data.
 The *connector* will be configured with the function to call in each case.
@@ -53,7 +53,7 @@ See the :ref:`examples` for some already working implementations.
 Bridge Library
 --------------
 
-*Integration Service* allows us to define *bridge libraries* to integrate new protocols.
+*Integration Service* allows defining *bridge libraries* to integrate new protocols.
 These libraries must offer the following function declarations:
 
 * **create_bridge**:
@@ -63,7 +63,7 @@ These libraries must offer the following function declarations:
     :start-after: // Create Bridge Start
     :end-before: // Create Bridge End
 
-As you can see, the instantiated *bridge* must implement :ref:`isbridge`.
+As shown, the instantiated *bridge* must implement :ref:`isbridge`.
 ``ISBridges`` are in charge of communicating *readers* with *writers* and apply *transformation functions* as defined in
 the :ref:`connector`.
 
@@ -88,20 +88,17 @@ The *reader* returned must implement :ref:`isreader`.
 The *writer* returned must implement :ref:`iswriter`.
 ``ISWriters`` must be able to send data to the destination protocol.
 
+Integration Service will deallocate these objects from memory when the bridge is stopped.
 In all functions, a vector of pairs of strings is provided if any property exists for each node in the XML
 configuration file (see :ref:`Bridge configuration` for more information).
 
 If some functions want to use the default implementation (*RTPS-Bridge*), they must return :class:`nullptr`.
-
-Integration Service will deallocate these objects from memory when the bridge is stopped.
-
 See :ref:`Integration Service architecture` section for more information about the interfaces that any *Bridge Library*
 must implement.
 
-The responsibility of how to instantiate your *bridge*, *writer* and/or *reader* is on your *Bridge Library*,
-but remember that "RTPS" *publishers* and *subscribers* will be filled automatically by ``ISManager``
+The responsibility of how to instantiate the *bridge*, *writer* and/or *reader* is on the *Bridge Library*,
+but it's important to remark that "RTPS" *publishers* and *subscribers* will be filled automatically by ``ISManager``
 with the configuration from the ``<participant>`` node of the :ref:`Fast-RTPS profiles`.
-
 See the :ref:`Adding new Bridges` section for some already working implementations.
 
 ISBridge
@@ -163,7 +160,7 @@ If one of them isn't needed, just implement as follows:
     :start-after: // Writer Write Start
     :end-before: // Writer Write End
 
-This is useful if you're sure that version of the method will be never called.
+This is useful to be sure that version of the method will be never called.
 
 ISReader
 ^^^^^^^^
