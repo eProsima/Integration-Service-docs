@@ -28,13 +28,13 @@
     <!-- end fast-rtps profiles -->
     <!-- connectors -->
     <connector name="A_to_B">
-    <reader participant_profile="DDS World A" subscriber_profile="subscriber A"/>
-    <writer participant_profile="DDS World B" publisher_profile="publisher B"/>
+        <reader participant_profile="DDS World A" subscriber_profile="subscriber A"/>
+        <writer participant_profile="DDS World B" publisher_profile="publisher B"/>
     </connector>
 
     <connector name="B_to_A">
-    <reader participant_profile="DDS World B" subscriber_profile="subscriber B"/>
-    <writer participant_profile="DDS World A" publisher_profile="publisher A"/>
+        <reader participant_profile="DDS World B" subscriber_profile="subscriber B"/>
+        <writer participant_profile="DDS World A" publisher_profile="publisher A"/>
     </connector>
     <!-- end connectors -->
 </is>

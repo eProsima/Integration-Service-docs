@@ -1,12 +1,12 @@
 Data transformation
 ===================
 
-There are situations where two independent RTPS systems need to share information.
-Maybe those RTPS systems use different data types so there is not possible a direct communication.
-In this scene is where *Integration Service*, and its ability transforming data, is useful and necessary.
-We can define a function to make possible the understanding between the RTPS systems.
+One of the most common issues during the integration of new systems is making them compatible with
+the ones that have been implemented in the current environment. Even using RTPS systems there could
+be situations where two data types cause that a direct communication isn't possible. 
+In this scene is where *Integration Service*, and its ability to transform data, is useful to adapt different data types to be compatible.
 
-Follow image shows the data flow throw transformation function.
+The following image shows the data flow throw transformation function.
 
 .. image:: TRANF_CASE.png
     :align: center
@@ -15,42 +15,45 @@ Transformation usage and configuration
 --------------------------------------
 
 *Integration Service* must be configured through its XML :ref:`configuration` file.
-In this case is needed a :ref:`Transformation Library` to provide *transformation functions* that will transform the data from *DDS World A* to *DDS World B* and vice versa.
+In this case, is needed a :ref:`Transformation Library` to provide *transformation functions* that will transform the data from *DDS World A* to *DDS World B* and vice versa.
 
+In this example, a file named :class:`config.xml` needs to be created.
 The *endpoints* must be configured in the :ref:`Fast-RTPS profiles` section.
 
 .. literalinclude:: config_comms_dds.xml
     :language: XML
     :start-after: <!-- fast-rtps profiles -->
     :end-before: <!-- end fast-rtps profiles -->
+    :dedent: 4
 
-And our needed :ref:`Connectors` are declared below:
+And the needed :ref:`Connectors` are declared below:
 
 .. literalinclude:: config_comms_dds.xml
     :language: XML
     :start-after: <!-- connectors -->
     :end-before: <!-- end connectors -->
+    :dedent: 4
 
-You only must be careful to relate the correct *participant* with the correct *publisher* or *subscriber*, in this case:
+It's important to relate the correct *participant* with the correct *publisher* or *subscriber*, in this case:
 :class:`publisher A` and :class:`subscriber A` *endpoints* belong to :class:`DDS World A` *participant*, and
 :class:`publisher B` and :class:`subscriber B` *endpoints* belong to :class:`DDS World B` *participant*.
 
 To transform the data between the *DDS World A* data and the *DDS World B* data,
-we will use a *Transformation Library* named :class:`libtransformationData.so` that have
+Integration Service will use a *Transformation Library* named :class:`libtransformationData.so` that have
 *transformation functions* implemented: :class:`transformA_to_B`, to perform the
-tranformation in one way.
+transformation in one way, and :class:`transformB_to_A` to perform the other way.
 
 
 Data transformation with Integration Service
 --------------------------------------------
 
-We should add our own :ref:`transformation library` implementing two functions: :class:`transformA_to_B` to transform
+This example needs a custom :ref:`transformation library` implementing two functions: :class:`transformA_to_B` to transform
 the data from *DDS World A* to *DDS World B*, and :class:`transformB_to_A` to transform the data from *DDS World B*
-to *DDS World A*. We will name this library :class:`libtransformationData.so`.
+to *DDS World A*. The name of this library will be :class:`libtransformationData.so`.
 
-We are going to create a source file named :class:`transformationDDS.cpp` with the implementation of both functions.
+The implementation of both functions will be stored in a source file named :class:`transformationDDS.cpp`.
 
-The first we must do is to include the *TopicDataTypes* involved. For our example, imagine we have an *IDL* file for
+The first step of the implementation is including the *TopicDataTypes* involved. For our example, imagine we have an *IDL* file for
 each *DDS World* data type.
 
 .. literalinclude:: transform_data.cpp
@@ -58,7 +61,7 @@ each *DDS World* data type.
     :start-after: /* Type A
     :end-before: // End Type A */
 
-For *DDS World A* data type. After generate the *C++* code of this *IDL* file, *FastRTPSGen* should have generated
+For *DDS World A* data type. After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate
 a file named :class:`DDSTypeAPubSubTypes.h`. If you want to know more about *FastRTPSGen*, please go to
 `Fast RTPS documentation <http://docs.eprosima.com/en/latest/>`__.
 
@@ -67,17 +70,19 @@ a file named :class:`DDSTypeAPubSubTypes.h`. If you want to know more about *Fas
     :start-after: /* Type B
     :end-before: // End Type B */
 
-In the same way for *DDS World B* data type, after generate the *C++* code of this *IDL* file,
-*FastRTPSGen* should have generated a file named :class:`DDSTypeBPubSubTypes.h`.
+In the same way for *DDS World B* data type, after generating the *C++* code of this *IDL* file,
+*FastRTPSGen* will generate a file named :class:`DDSTypeBPubSubTypes.h`.
 
-So with these types in mind, we should include both *PubSubTypes* headers in our *transformation library*.
+So with these types in mind, it's mandatory to include both *PubSubTypes* headers in our *transformation library*.
 
 .. literalinclude:: transform_data.cpp
     :language: cpp
     :start-after: // Include
     :end-before: // End include
 
-The next part isn't mandatory, but we usually add it because it help us making the library portable between different
+.. _cmake_definitions_code:
+
+The next part is optional, but it helps to make the library portable between different
 operating systems and keeps the source code clear to read.
 
 .. literalinclude:: transform_data.cpp
@@ -85,63 +90,58 @@ operating systems and keeps the source code clear to read.
     :start-after: // Definitions
     :end-before: // End Definitions
 
-If you decide to include this part as well, keep it in mind when we will create the *CMakeLists.txt* file.
-
-Now, we are in condition to start with the implementation of each function. We will start with ``transformA_to_B``:
+This optional section should be taken in mind during the creation of the *CMakeLists.txt* file to configure the project.
+After these steps to set the workspace, this will be the code of ``transformA_to_B``:
 
 .. literalinclude:: transform_data.cpp
     :language: cpp
     :start-after: // A to B
     :end-before: // End A to B
 
-After that, we have our *transformation library* implemented, but we still need to build it.
-Of course, you could use any build system at your wish, but *IS* provides a *CMakeLists.txt* template that we will use
-here as example.
+After writing this function and ``transformB_to_A`` with the opposite conversion, the *transformation library* has been implemented, but it needs to be compiled.
+*Integration Service* provides a *CMakeLists.txt* template that can be used like in this example.
 
-First, we are going to rename the cmake project to *transformationData*.
+The first step is renaming the cmake project to *transformationData*.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake
     :lines: 1
 
-We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists.txt* from scratch remember that
-*FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, so you must include both dependencies to your
-*CMakeLists.txt*.
+It's recommendable to keep all *C++11* and *CMake* version as it is, but to create the *CMakeLists.txt* from scratch 
+it's important to keep in mind that *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, 
+so they must be included as dependencies to the *CMakeLists.txt*.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake
     :start-after: # packages
     :lines: 1,2
 
-Do you remember the *definitions* section of our *transformation library* that could help us to make the library
-more portable.
-This is where we set the values of these preprocesor definitions to build our library exporting symbols.
+To make the library more portable the cmake file needs to add the :ref:`preprocesor definitions <cmake_definitions_code>` to build our library exporting symbols.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake
     :start-after: # definitions
     :lines: 1-4
 
-Finally we indicate to *CMake* our source code and the library we want to build, along with its dependencies.
+The final step is indicating to *CMake* the source code files and the library to build, along with its dependencies.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake
     :start-after: # transformationData library
     :lines: 1-3
 
-After that, we can just generate our library using *CMake*.
+After that, *CMake* will generate the library running these commands:
 
 .. code-block:: bash
 
     $ cmake .
     $ make
 
-It should generate our *libtransformationData.so* in the current directory that is the library that
-*IS* expects when loads our :class:`config.xml` file.
+It should generate the file *libtransformationData.so* in the current directory and that's the library that
+*IS* expects when loads the :class:`config.xml` file.
 
-At this point, we have our configuration file :class:`config.xml` created, and our *transformation library*
-*libtransformationData.so* built. We are able to launch *IS* with our :class:`config.xml` and enjoy how both *DDS Worlds*
-start to communicate, applying our *transformation functions*.
+At this point, there is a configuration file :class:`config.xml` created, and a *transformation library*
+*libtransformationData.so* built. *Integration Service* is able to connect both *DDS Worlds* adapting their data types to be compatible.
 
 .. code-block:: bash
 
@@ -150,21 +150,20 @@ start to communicate, applying our *transformation functions*.
 Creating new transformations
 ----------------------------
 
-Now, we are able to define *transformation functions* to adapt data types between two different domains.
-The steps needed to do it are:
+The steps needed to define *transformation functions* adapting data types between two different domains.
 
-- Create and configure the needed :ref:`Fast-RTPS profiles` in your XML configuration file.
-- Create the needed :ref:`Connectors` in your XML configuration file.
-- Implementing your custom :ref:`transformation functions <Transformation Library>`.
-- Generating your library binary.
-- Executing *IS* with your XML configuration file.
+- Create and configure the needed :ref:`Fast-RTPS profiles` in an XML configuration file.
+- Create the needed :ref:`Connectors` in the XML configuration file.
+- Implementing custom :ref:`transformation functions <Transformation Library>`.
+- Generating the binary of the library.
+- Executing *Integration Service* with the XML configuration file.
 
 Transformation Data example
 ---------------------------
 
 There is an example implemented in
 `dynamic_types example <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/dynamic_types>`_
-where you can see the use of a transformation function.
+that shows the use of a transformation function.
 
 .. code-block:: bash
 
@@ -182,8 +181,8 @@ Windows:
     $ cmake -G "Visual Studio 14 2015 Win64" ..
     $ cmake --build .
 
-This example allow the communication between
-`HelloWorld <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and
+This example creates the communication bridge between the
+`HelloWorld <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and the
 `Keys <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/Keys>`_ examples from FastRTPS.
 The HelloWorld example must be started as a publisher and the Keys example as a subscriber.
 
@@ -197,9 +196,9 @@ And in another terminal:
 
     $ ./Keys subscriber
 
-You will notice that there is no communication between both applications.
-Run the *Integration Service* with one of the provided configuration files,
-and both applications will start to communicate.
+In this step, both applications don't have any communication between them, 
+and after starting the *Integration Service* with the provided configuration file,
+the communication will be started.
 
 .. code-block:: bash
 
