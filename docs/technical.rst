@@ -120,7 +120,7 @@ Custom ``ISBridges`` must inherit from it:
 :class:`ISBridge.h` and :class:`ISBridge.cpp` implement the default behaviour.
 There is no need to implement any function from any
 subclass, but all of the above could be implemented if needed. Be careful to implement the full functionality.
-It is recommended to copy the standard implementation and modify with your needs.
+It's recommended to copy the standard implementation and modify it with your needs.
 After that, simply remove the unmodified methods.
 :class:`addFunction` and :class:`on_received_data` methods have two flavors, with static and dynamic data.
 

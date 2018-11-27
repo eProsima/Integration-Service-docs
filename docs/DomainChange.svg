@@ -1,2 +1,652 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="781px" height="221px" viewBox="-0.5 -0.5 781 221"><defs><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="id1"><stop offset="0%" style="stop-color:#88CE28"/><stop offset="100%" style="stop-color:#FFC001"/></linearGradient><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="id2"><stop offset="0%" style="stop-color:#0895CD"/><stop offset="100%" style="stop-color:#88CE28"/></linearGradient></defs><path d="M 62.5 100 C 12.5 100 0 140 40 148 C 0 165.6 45 204 77.5 188 C 100 220 175 220 200 188 C 250 188 250 156 218.75 140 C 250 108 200 76 156.25 92 C 125 68 75 68 62.5 100 Z" fill="url(#id1)" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g transform="translate(90.5,103.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="83" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</div></div></foreignObject><text x="42" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">DomainChange</text></switch></g><rect x="73" y="130" width="115" height="40" rx="6" ry="6" fill="url(#id2)" stroke="#000000" pointer-events="none"/><g transform="translate(104.5,143.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="50" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 52px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publisher</div></div></foreignObject><text x="25" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Publisher</text></switch></g><path d="M 50 0 L 220 0 L 220 50 L 155 50 L 135 80 L 135 50 L 50 50 Z" fill="url(#id2)" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g transform="translate(75.5,18.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="118" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 120px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publishes at domain 0</div></div></foreignObject><text x="59" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Publishes at domain 0</text></switch></g><path d="M 592.5 100 C 542.5 100 530 140 570 148 C 530 165.6 575 204 607.5 188 C 630 220 705 220 730 188 C 780 188 780 156 748.75 140 C 780 108 730 76 686.25 92 C 655 68 605 68 592.5 100 Z" fill="url(#id1)" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g transform="translate(620.5,103.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="83" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</div></div></foreignObject><text x="42" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">DomainChange</text></switch></g><rect x="603" y="130" width="115" height="40" rx="6" ry="6" fill="url(#id2)" stroke="#000000" pointer-events="none"/><g transform="translate(630.5,143.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="58" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 58px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscriber</div></div></foreignObject><text x="29" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Subscriber</text></switch></g><path d="M 580 0 L 750 0 L 750 50 L 685 50 L 665 80 L 665 50 L 580 50 Z" fill="url(#id2)" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g transform="translate(601.5,18.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="126" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 128px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscribed to domain 5</div></div></foreignObject><text x="63" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Subscribed to domain 5</text></switch></g><rect x="260" y="39" width="270" height="170" rx="25.5" ry="25.5" fill="#88ce28" stroke="#000000" pointer-events="none"/><rect x="270" y="90" width="250" height="99" rx="14.85" ry="14.85" fill="url(#id2)" stroke="#000000" pointer-events="none"/><g transform="translate(349.5,55.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="100" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</div></div></foreignObject><text x="50" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Integration Service</text></switch></g><rect x="290" y="129" width="90" height="40" rx="6" ry="6" fill="url(#id2)" stroke="#000000" pointer-events="none"/><g transform="translate(304.5,135.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="58" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 58px; white-space: normal; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscriber 0</div></div></foreignObject><text x="29" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Subscriber 0</text></switch></g><rect x="409" y="129" width="90" height="40" rx="6" ry="6" fill="url(#id2)" stroke="#000000" pointer-events="none"/><g transform="translate(426.5,135.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="51" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 51px; white-space: normal; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publisher 5</div></div></foreignObject><text x="26" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Publisher 5</text></switch></g><g transform="translate(351.5,103.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="86" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 86px; white-space: nowrap; overflow-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">domain_change</div></div></foreignObject><text x="43" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">domain_change</text></switch></g><path d="M 188.53 155 L 188.47 145 L 270.47 144.44 L 270.4 133.94 L 289.5 149.31 L 270.61 164.94 L 270.53 154.44 Z" fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="none"/><path d="M 380.5 154 L 380.5 144 L 389.5 144 L 389.5 133.5 L 408.5 149 L 389.5 164.5 L 389.5 154 Z" fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="none"/><path d="M 499.45 154 L 499.55 144.01 L 583.55 144.81 L 583.65 134.31 L 602.5 150 L 583.35 165.31 L 583.45 154.81 Z" fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="none"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="781px"
+   height="221px"
+   viewBox="-0.5 -0.5 781 221"
+   id="svg100"
+   sodipodi:docname="DomainChange.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="C:\git\Integration-Services-docs\docs\DomainChange.png"
+   inkscape:export-xdpi="88.788734"
+   inkscape:export-ydpi="88.788734">
+  <metadata
+     id="metadata104">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview102"
+     showgrid="false"
+     inkscape:zoom="1.4699104"
+     inkscape:cx="270.33589"
+     inkscape:cy="49.556712"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg100" />
+  <defs
+     id="defs12">
+    <linearGradient
+       id="linearGradient979"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop977" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient973"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop971" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient967"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffc001;stop-opacity:1;"
+         offset="0"
+         id="stop965" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient961"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop959" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient955"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop953" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient949"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop947" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient943"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop941" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient925"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop923" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient919"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop917" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient913"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop911" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id1">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop2" />
+      <stop
+         offset="100%"
+         style="stop-color:#FFC001"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id2">
+      <stop
+         offset="0%"
+         style="stop-color:#0895CD"
+         id="stop7" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient925"
+       id="linearGradient927"
+       x1="72.5"
+       y1="150"
+       x2="188.5"
+       y2="150"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient925"
+       id="linearGradient945"
+       x1="408.5"
+       y1="149"
+       x2="499.5"
+       y2="149"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient925"
+       id="linearGradient951"
+       x1="602.5"
+       y1="150"
+       x2="718.5"
+       y2="150"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient955"
+       id="linearGradient957"
+       x1="289.5"
+       y1="149"
+       x2="380.5"
+       y2="149"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient949"
+       id="linearGradient963"
+       x1="259.5"
+       y1="124"
+       x2="530.5"
+       y2="124"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient967"
+       id="linearGradient969"
+       x1="265.41812"
+       y1="137.9693"
+       x2="525.60236"
+       y2="137.9693"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient949"
+       id="linearGradient975"
+       x1="15.74314"
+       y1="143.44614"
+       x2="240.7527"
+       y2="143.44614"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient949"
+       id="linearGradient981"
+       x1="545.74316"
+       y1="143.44614"
+       x2="770.75269"
+       y2="143.44614"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <path
+     d="M 62.5 100 C 12.5 100 0 140 40 148 C 0 165.6 45 204 77.5 188 C 100 220 175 220 200 188 C 250 188 250 156 218.75 140 C 250 108 200 76 156.25 92 C 125 68 75 68 62.5 100 Z"
+     fill="url(#id1)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path14"
+     style="fill:url(#linearGradient975);fill-opacity:1.0" />
+  <g
+     transform="translate(90.5,107.5)"
+     id="g20">
+    <switch
+       id="switch18">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="83"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="42"
+         y="12"
+         font-size="12px"
+         id="text16"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+        <tspan
+           sodipodi:role="line"
+           id="tspan987"
+           x="42"
+           y="12">DOMAIN CHANGE</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="73"
+     y="130"
+     width="115"
+     height="40"
+     rx="6"
+     ry="6"
+     fill="url(#id2)"
+     stroke="#000000"
+     pointer-events="none"
+     id="rect22"
+     style="fill:url(#linearGradient927);fill-opacity:1" />
+  <g
+     transform="translate(104.5,143.5)"
+     id="g28">
+    <switch
+       id="switch26">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="50"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 52px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publisher</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="25"
+         y="12"
+         fill="#000000"
+         text-anchor="middle"
+         font-size="12px"
+         font-family="Helvetica"
+         id="text24">Publisher</text>
+    </switch>
+  </g>
+  <path
+     d="M 50 0 L 220 0 L 220 50 L 155 50 L 135 80 L 135 50 L 50 50 Z"
+     fill="url(#id2)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path30"
+     style="fill:#ffffff;fill-opacity:0" />
+  <g
+     transform="translate(75.5,18.5)"
+     id="g36">
+    <switch
+       id="switch34">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="118"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 120px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publishes at domain 0</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="59"
+         y="12"
+         fill="#000000"
+         text-anchor="middle"
+         font-size="12px"
+         font-family="Helvetica"
+         id="text32">Publishes at domain 0</text>
+    </switch>
+  </g>
+  <path
+     d="M 592.5 100 C 542.5 100 530 140 570 148 C 530 165.6 575 204 607.5 188 C 630 220 705 220 730 188 C 780 188 780 156 748.75 140 C 780 108 730 76 686.25 92 C 655 68 605 68 592.5 100 Z"
+     fill="url(#id1)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path38"
+     style="fill:url(#linearGradient981);fill-opacity:1.0" />
+  <g
+     transform="translate(620.5,105.5)"
+     id="g44">
+    <switch
+       id="switch42">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="83"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="42"
+         y="12"
+         font-size="12px"
+         id="text40"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan991"
+           x="42"
+           y="12">
+          <tspan
+             style="font-size:16px;fill:#ffffff"
+             id="tspan993">DOMAIN CHANGE</tspan>
+        </tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="603"
+     y="130"
+     width="115"
+     height="40"
+     rx="6"
+     ry="6"
+     fill="url(#id2)"
+     stroke="#000000"
+     pointer-events="none"
+     id="rect46"
+     style="fill:url(#linearGradient951);fill-opacity:1.0" />
+  <g
+     transform="translate(630.5,143.5)"
+     id="g52">
+    <switch
+       id="switch50">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="58"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 58px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscriber</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="29"
+         y="12"
+         fill="#000000"
+         text-anchor="middle"
+         font-size="12px"
+         font-family="Helvetica"
+         id="text48">Subscriber</text>
+    </switch>
+  </g>
+  <path
+     d="M 580 0 L 750 0 L 750 50 L 685 50 L 665 80 L 665 50 L 580 50 Z"
+     fill="url(#id2)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path54"
+     style="fill:#ffffff;fill-opacity:0" />
+  <g
+     transform="translate(601.5,18.5)"
+     id="g60">
+    <switch
+       id="switch58">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="126"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 128px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscribed to domain 5</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="63"
+         y="12"
+         fill="#000000"
+         text-anchor="middle"
+         font-size="12px"
+         font-family="Helvetica"
+         id="text56">Subscribed to domain 5</text>
+    </switch>
+  </g>
+  <rect
+     x="260"
+     y="39"
+     width="270.68033"
+     height="166.59843"
+     rx="25.5"
+     ry="25.5"
+     pointer-events="none"
+     id="rect62"
+     style="fill:url(#linearGradient963);fill-opacity:1;stroke:#000000" />
+  <rect
+     x="265.91812"
+     y="75.37326"
+     width="259.18423"
+     height="125.19207"
+     rx="14.85"
+     ry="14.85"
+     pointer-events="none"
+     id="rect64"
+     style="fill:url(#linearGradient969);stroke:#000000;fill-opacity:1" />
+  <g
+     transform="translate(349.5,49.5)"
+     id="g70">
+    <switch
+       id="switch68">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="100"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="50"
+         y="12"
+         font-size="12px"
+         id="text66"
+         style="font-size:16px;font-family:Helvetica;text-anchor:middle;fill:#ffffff;-inkscape-font-specification:'Helvetica, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;">
+        <tspan
+           sodipodi:role="line"
+           id="tspan985">INTEGRATION SERVICE</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="290"
+     y="129"
+     width="90"
+     height="40"
+     rx="6"
+     ry="6"
+     fill="url(#id2)"
+     stroke="#000000"
+     pointer-events="none"
+     id="rect72"
+     style="fill:url(#linearGradient957);fill-opacity:1" />
+  <g
+     transform="translate(304.5,135.5)"
+     id="g78">
+    <switch
+       id="switch76">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="58"
+         height="26"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 58px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscriber 0</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="29"
+         y="19"
+         fill="#000000"
+         text-anchor="middle"
+         font-size="12px"
+         font-family="Helvetica"
+         id="text74">Subscriber 0</text>
+    </switch>
+  </g>
+  <rect
+     x="409"
+     y="129"
+     width="90"
+     height="40"
+     rx="6"
+     ry="6"
+     fill="url(#id2)"
+     stroke="#000000"
+     pointer-events="none"
+     id="rect80"
+     style="fill:url(#linearGradient945);fill-opacity:1.0" />
+  <g
+     transform="translate(426.5,135.5)"
+     id="g86">
+    <switch
+       id="switch84">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="51"
+         height="26"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 51px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publisher 5</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="26"
+         y="19"
+         fill="#000000"
+         text-anchor="middle"
+         font-size="12px"
+         font-family="Helvetica"
+         id="text82">Publisher 5</text>
+    </switch>
+  </g>
+  <g
+     transform="translate(351.5,97.5)"
+     id="g92">
+    <switch
+       id="switch90">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="86"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 86px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">domain_change</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="43"
+         y="12"
+         font-size="12px"
+         id="text88"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan997"
+           style="font-size:16px"
+           x="43"
+           y="12">DOMAIN CHANGE</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="M 188.53 155 L 188.47 145 L 270.47 144.44 L 270.4 133.94 L 289.5 149.31 L 270.61 164.94 L 270.53 154.44 Z"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path94" />
+  <path
+     d="M 380.5 154 L 380.5 144 L 389.5 144 L 389.5 133.5 L 408.5 149 L 389.5 164.5 L 389.5 154 Z"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96" />
+  <path
+     d="M 499.45 154 L 499.55 144.01 L 583.55 144.81 L 583.65 134.31 L 602.5 150 L 583.35 165.31 L 583.45 154.81 Z"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path98" />
+</svg>

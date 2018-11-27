@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="602px"
+   height="192px"
+   viewBox="-0.5 -0.5 602 192"
+   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot; version=&quot;9.4.6&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;5045e17e-9097-ab50-426e-f35888c9a6c5&quot; name=&quot;Page-1&quot;&gt;5VfLjpswFP2abBFgnsu8Ou2i0khZTLt0sQNWHRw5zqtf30uwAQMzE6nMdKTJgtjn+nXPOTZmhpa7y4PE++K7IJTPfJdcZmg1833PDXz4q5BrjQRpWgO5ZEQ3aoEN+0NNT40eGaEHq6ESgiu2t8FMlCXNlIVhKcXZbrYV3J51j3M6ADYZ5kP0iRFV1Gjixy3+lbK8MDN7kc5vh01jncmhwEScOxBaz9BSCqHq0u6ypLwiz/BS9/vyTLRZmKSluqeDFuKE+VHnptelriZZ6AC8QmUBi91XYMbFEfovzgVTdLPHWQWeQWrACrXjUPPq5nVuLlS2jPOl4ELeBkVukobLFeC5xITBYjuxJFmu/QRiw2R0ficqFb10IJ3cAxU7quQVmpiosYx2WqpHOLeyNVoUXckCDWJtlbwZumUTCprQcXLRfyK3IXCE3Ib4CcgNDJuGXPcdyQ0G5K5WGwCehITd7LvzmR9xmHDxS0IpV03KHfYhT9WjVUnxmxq+SlHSHr0awpzlZaUWsEcBX1SsMTgh5jqwY4RU04zqKMWxJJRo9aaweWLb3AuGPk9HlJhCiPAVIRafSYgw6gsx3BNvJYR3x3nTJuy93Rkz5QGOQuSEFqUjjHpjp0w0BaXDU+Yb+AxyVkyUENhQeWJA3yeyOIqSviLJ+3k8et3j5k265fQyr257kDctiS7CCxYfDiy7CYClGsIdiXqm395+/Z0BVMrrj27lZ1Vx4rCqX5i6xZwk0dU66pvoI5UMeKiUfVmigzjKjFr3Nkggp6aV3v6UWJfXoY4dmcIRmQwmKQeXn+wr75h2eoZHwWDBrU16r6SB/HU6ulf3itobKEC9IzXtDVSTMBjoZqUm7fvcFX9gd3kvustDvm2vJPoXf6GP7y8vcmIv8JOwfkax7RKEnE407o1/r/lQhBxwchr6+mlNkoaOG8QROFI/JzImVNtPwLp5+yGN1n8B&lt;/diagram&gt;&lt;/mxfile&gt;"
+   id="svg47"
+   sodipodi:docname="DDS_WITH_IS.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="C:\git\Integration-Services-docs\docs\DDS_WITH_IS.png"
+   inkscape:export-xdpi="107.71138"
+   inkscape:export-ydpi="107.71138">
+  <metadata
+     id="metadata51">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview49"
+     showgrid="false"
+     inkscape:zoom="2.6968724"
+     inkscape:cx="277.45325"
+     inkscape:cy="46.986948"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg47" />
+  <defs
+     id="defs17">
+    <linearGradient
+       id="linearGradient868"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop866" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient860"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop858" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id1">
+      <stop
+         offset="0%"
+         style="stop-color:#0895CD"
+         id="stop2" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id2"
+       osb:paint="gradient">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop7" />
+      <stop
+         offset="100%"
+         style="stop-color:#0895CD"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       x1="172.53552"
+       y1="-0.70420284"
+       x2="172.53552"
+       y2="85.208544"
+       id="id3"
+       gradientTransform="matrix(1.4084057,0,0,0.7100227,0,8.5283977)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop12" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient860"
+       id="linearGradient862"
+       x1="13.794802"
+       y1="124.01536"
+       x2="211.92231"
+       y2="124.01536"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient860"
+       id="linearGradient870"
+       x1="394.7948"
+       y1="123.01536"
+       x2="592.9223"
+       y2="123.01536"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <path
+     d="M 55 86 C 11 86 0 121 35.2 128 C 0 143.4 39.6 177 68.2 163 C 88 191 154 191 176 163 C 220 163 220 135 192.5 121 C 220 93 176 65 137.5 79 C 110 58 66 58 55 86 Z"
+     fill="url(#id1)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path19"
+     style="fill:url(#linearGradient862);fill-opacity:1" />
+  <path
+     d="M 436 85 C 392 85 381 120 416.2 127 C 381 142.4 420.6 176 449.2 162 C 469 190 535 190 557 162 C 601 162 601 134 573.5 120 C 601 92 557 64 518.5 78 C 491 57 447 57 436 85 Z"
+     fill="url(#id2)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path21"
+     style="fill-opacity:1.0;fill:url(#linearGradient870)" />
+  <g
+     transform="translate(79.5,114.5)"
+     id="g27">
+    <switch
+       id="switch25">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="70"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World A<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="35"
+         y="12"
+         font-size="12px"
+         id="text23"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           style="font-size:18.66666667px;fill:#ffffff"
+           id="tspan872">DDS World A</tspan>
+      </text>
+    </switch>
+  </g>
+  <g
+     transform="translate(459.5,113.5)"
+     id="g33">
+    <switch
+       id="switch31">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="70"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World B<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="35"
+         y="12"
+         font-size="12px"
+         id="text29"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           style="font-size:18.66666667px;fill:#ffffff"
+           id="tspan874">DDS World B</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="243.5"
+     y="8.5283976"
+     width="120"
+     height="60"
+     rx="9"
+     ry="9"
+     pointer-events="none"
+     id="rect35"
+     style="fill:url(#id3);stroke:#000000" />
+  <g
+     transform="translate(259.5,14.5)"
+     id="g41">
+    <switch
+       id="switch39">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="88"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 88px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="44"
+         y="20"
+         font-size="12px"
+         id="text37"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan878"
+           style="font-size:16px">Integration</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan880"
+           style="font-size:16px">Service</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="M 212.25 77.5 L 218.91 85.62 L 194.39 85.68 L 199.25 61.65 L 205.91 69.77 L 225.75 53.5 L 219.09 45.38 L 243.61 45.32 L 238.75 69.35 L 232.09 61.23 Z"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path43" />
+  <path
+     d="M 399.56 72.79 L 406.9 65.28 L 409.64 89.65 L 385.22 87.44 L 392.56 79.94 L 374.44 62.21 L 367.1 69.72 L 364.36 45.35 L 388.78 47.56 L 381.44 55.06 Z"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path45" />
+</svg>
