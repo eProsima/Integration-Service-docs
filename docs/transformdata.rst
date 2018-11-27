@@ -150,7 +150,7 @@ start to communicate, applying our *transformation functions*.
 Creating new transformations
 ----------------------------
 
-Now, we are able to define transformation functions to adapt data types between two different domains.
+Now, we are able to define *transformation functions* to adapt data types between two different domains.
 The steps needed to do it are:
 
 - Create and configure the needed :ref:`Fast-RTPS profiles` in your XML configuration file.

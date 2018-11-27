@@ -153,8 +153,8 @@ Once IS is running, both examples will start the communication.
 .. image:: DynamicTypes.png
     :align: center
 
-HelloWorld to file
-^^^^^^^^^^^^^^^^^^
+HelloWorld to file OLD
+^^^^^^^^^^^^^^^^^^^^^^
 
 **Introduction**
 

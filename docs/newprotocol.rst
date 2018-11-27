@@ -1,24 +1,384 @@
 Adding new Bridges
 ==================
 
-blah blah
+*Integration Service* allows the to create their custom *readers* and *writers* for their any protocol.
+This is the more powerful feature of *IS*, as allows to communicate any *DDS* application with any other
+protocol, for example, *NGSIv2* from *FIWARE Orion ContextBroker*, which is a protocol based on WebServices.
+
+.. image:: Bidirectional_connector.png
+    :align: center
+
+To allow new protocols, *IS* provides an intuitive interface in its classes :ref:`ISWriter` and :ref:`ISReader` that
+must be inherited by the new implementations, and a :ref:`Bridge Library` that will allow to load the new components
+into *IS* through a :ref:`Connector <Connectors>`.
 
 Bridge usage and configuration
 ------------------------------
 
-blah blah
+*Integration Service* must be configured through its XML :ref:`configuration` file.
+In this case is needed a :ref:`Bridge Library` to provide functions that will allow *IS* to create new instances
+of :ref:`ISBridge`, :ref:`ISWriter` and :ref:`ISReader`.
+All these components must be declared (and optionally configured) in the :ref:`Bridge configuration`.
+
+Our library will be named :class:`libprotocol.so`, so we must include its location path into the ``<bridge>``
+section:
+
+.. literalinclude:: config_new_bridge.xml
+    :language: XML
+    :start-after: <!-- bridge start -->
+    :end-before: <!-- bridge end -->
+
+If our library will accept configuration parameters, we can pass them through the ``<properties>`` tag.
+Now, we can declare the *readers* and *writers* configuration that will be available for the *connectors*:
+
+.. literalinclude:: config_new_bridge.xml
+    :language: XML
+    :start-after: <!-- reader start -->
+    :end-before: <!-- reader end -->
+
+
+.. literalinclude:: config_new_bridge.xml
+    :language: XML
+    :start-after: <!-- writer start -->
+    :end-before: <!-- writer end -->
+
+Both, again, can be configured using the ``<properties>`` tag.
+
+And our needed :ref:`Connectors` are declared below:
+
+.. literalinclude:: config_new_bridge.xml
+    :language: XML
+    :start-after: <!-- connectors start -->
+    :end-before: <!-- connectors end -->
+
+In this case, we have defined previously a *DDS participant* :class:`2Dshapes` with a *publisher*
+:class:`2d_publisher` and a *subscriber* :class:`2d_subscriber`. In out connectors, we bound :class:`2d_subscriber`
+with :class:`protocol_publisher` and :class:`protocol_subscriber` with :class:`2d_publisher`.
+
+.. image:: NEW_BRIDGE.png
+    :align: center
+
+Typically a *transformation function* will be useful to split responsabilities and allow *readers* and *writers*
+to only worry about protocol details without data transformations. If you want to know more about
+*Transformation Libraries* you can see :ref:`Data Transformation` use case.
 
 Integration Service's Bridges
 -----------------------------
 
-blah blah
+We should add our own :ref:`Bridge Library` to allow *IS* instantiate our :ref:`ISWriter` and :ref:`ISReader`.
+In this case, and typically, there is no need to override the default :ref:`ISBridge` behaviour
+(and normally isn't recommended).
+
+As we established before, the library will be named :class:`libprotocol.so`, so we will create a new
+source file named :class:`protocol.cpp` that must implement the functions ``create_bridge``, ``create_writer``, and
+``create_reader``.
+
+Starting out implementation from scratch, we need to include the needed libraries, in our case, simply the
+header file that give us access to the implementation of our :ref:`ISWriter` and :ref:`ISReader`,
+``ISBridgeProtocol.h``.
+
+.. literalinclude:: new_bridge.cpp
+    :language: cpp
+    :start-after: // Include start
+    :end-before: // Include end
+
+The next part isn't mandatory, but we usually add it because it help us making the library portable between different
+operating systems and keeps the source code clear to read.
+
+.. literalinclude:: new_bridge.cpp
+    :language: cpp
+    :start-after: // Define start
+    :end-before: // Define end
+
+If you decide to include this part as well, keep it in mind when we will create the *CMakeLists.txt* file.
+
+Now, we are in condition to start with the implementation of each function.
+
+As we established before, our library doesn't need to override the default :ref:`ISBridge` behaviour,
+so our ``create_bridge`` function will return ``nullptr``.
+
+.. literalinclude:: new_bridge.cpp
+    :language: cpp
+    :start-after: // create_bridge start
+    :end-before: // create_bridge end
+
+The function ``create_reader`` will call directly to the *constructor* that will return the
+configured instance of our :ref:`ISReader`.
+
+.. literalinclude:: new_bridge.cpp
+    :language: cpp
+    :start-after: // create_reader start
+    :end-before: // create_reader end
+
+In a similar way, the function ``create_writer`` will call directly to the *constructor* that will return the
+configured instance of our :ref:`ISWriter`.
+
+.. literalinclude:: new_bridge.cpp
+    :language: cpp
+    :start-after: // create_writer start
+    :end-before: // create_writer end
+
+These functions will be detailed in the next section :ref:`Bridge API`, along with the implementation of
+:ref:`ISReader` and :ref:`ISWriter`.
+
 
 Bridge API
 ----------
 
-blah blah
+We can use the same source code file to implement the new :ref:`ISReader` and :ref:`ISWriter`, but usually we
+will prefer to split the code in several files, and these implementations are very likely to be written in a
+separated file.
+In our example, we will write them inside their own header files ``ProtocolWriter.h`` and ``ProtocolReader.h``,
+both included in ``ISBridgeProtocol.h``, but normally it will be splitted into source and header files instead
+only use header files.
+
+``ProtocolWriter.h`` will declare the class ``ProtocolWriter`` following the instructions of :ref:`ISWriter` section.
+
+First, we make use of the typical idiogram to avoid include a header file multiple times:
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // Define start
+    :end-before: // Define end
+
+And... in the last line of the file
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // Endif start
+    :end-before: // Endif end
+
+Then, we include the needed headers. Our example will make use of the :class:`cURLpp` library.
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // Include start
+    :end-before: // Include end
+
+The next step is to declare our class ``ProtocolWriter`` that must inherit from :ref:`ISWriter`.
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // ProtocolWriter start
+    :end-before: // ProtocolWriter end
+
+Then the method's implementation must be defined.
+The *constructor* will receive the configuration parameters and will parse them in our example.
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // Constructor start
+    :end-before: // Constructor end
+
+The *destructor* will simply free any taken resource and memory allocation.
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // Destructor start
+    :end-before: // Destructor end
+
+Finally, our example ``write`` method implementation will update an entity using a WebService.
+
+.. literalinclude:: ProtocolWriter.h
+    :language: cpp
+    :start-after: // Write start
+    :end-before: // Write end
+
+Now, we implement ``ProtocolReader.h`` which will declare the class ``ProtocolReader`` following the instructions
+of :ref:`ISReader` section.
+
+Again, we make use of the typical idiogram to avoid include a header file multiple times:
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // Define start
+    :end-before: // Define end
+
+And... in the last line of the file
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // Endif start
+    :end-before: // Endif end
+
+Then, we include the needed headers. Our example will make use of the :class:`cURLpp` library.
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // Include start
+    :end-before: // Include end
+
+The next step is to declare our class ``ProtocolReader`` that must inherit from :ref:`ISReader`.
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // ProtocolReader start
+    :end-before: // ProtocolReader end
+
+Then the method's implementation must be defined.
+The *constructor* will receive the configuration parameters and will parse them in our example.
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // Constructor start
+    :end-before: // Constructor end
+
+The *destructor* will simply free any taken resource and memory allocation.
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // Destructor start
+    :end-before: // Destructor end
+
+Finally, our example ``checkUpdates`` method implements a query to a WebService.
+
+.. literalinclude:: ProtocolReader.h
+    :language: cpp
+    :start-after: // Read start
+    :end-before: // Read end
+
+
+Putting all together
+--------------------
+
+After that, we have our *bridge library* implemented, but we still need to build it.
+Of course, you could use any build system at your wish, but *IS* provides a *CMakeLists.txt* template that we will use
+here as example.
+
+First, we are going to rename the cmake project to *protocol*.
+
+.. literalinclude:: bridge_CMake.txt
+    :language: cmake
+    :lines: 1
+
+We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists.txt* from scratch remember that
+*FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, so you must include both dependencies to your
+*CMakeLists.txt*. In this case we also use *cURLpp*.
+
+.. literalinclude:: bridge_CMake.txt
+    :language: cmake
+    :start-after: # packages
+    :lines: 1-3
+
+Do you remember the *definitions* section of our *transformation library* that could help us to make the library
+more portable.
+This is where we set the values of these preprocesor definitions to build our library exporting symbols.
+
+.. literalinclude:: bridge_CMake.txt
+    :language: cmake
+    :start-after: # definitions
+    :lines: 1-4
+
+Finally we indicate to *CMake* our source code and the library we want to build, along with its dependencies.
+
+.. literalinclude:: bridge_CMake.txt
+    :language: cmake
+    :start-after: # protocol library
+    :lines: 1-3
+
+After that, we can just generate our library using *CMake*.
+
+.. code-block:: bash
+
+    $ cmake .
+    $ make
+
+It should generate our *libprotocol.so* in the current directory that is the library that
+*IS* expects when loads our :class:`config.xml` file.
+
+At this point, we have our configuration file :class:`config.xml` created, and our *bridge library*
+*libprotocol.so* built. We are able to launch *IS* with our :class:`config.xml` and enjoy how
+we are able to receive and send data to the new protocol thanks to our *bridge library*.
+
+.. code-block:: bash
+
+    $ integration_service config.xml
 
 Creating new Bridges
 --------------------
 
-blah blah
+Now, we are able to define *bridge libraries* to receive and send data to new protocols.
+The steps needed to do it are:
+
+- Create and configure the needed :ref:`Bridge configuration` in your XML configuration file.
+- Create the needed :ref:`Connectors` in your XML configuration file.
+- Implementing your custom :ref:`Bridge Library`.
+- Implementing your custom :ref:`ISReader`, :ref:`ISWriter`, and, optionally and not recommended, :ref:`ISBridge`.
+- Generating your library binary.
+- Executing *IS* with your XML configuration file.
+
+
+Bridge examples
+---------------
+
+FIROS2
+^^^^^^
+
+`FIROS2 <https://github.com/eProsima/FIROS2>`__ is the implementation of a :ref:`Bridge Library` that allows
+the intercommunication between *ROS2* and *Fiware Orion ContextBroker*.
+
+HelloWorld To File
+^^^^^^^^^^^^^^^^^^
+
+In this example, we create a new *bridge* to save all received data from the *Fast-RTPS HelloWorldExample* into a file.
+
+To achieve that target, we need the *bridge library* `isfile <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
+The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to save the data to a file.
+
+The file `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ of the example configures *IS* with the *bridge library* in a *connector* that receives data from *HelloWorldExample*.
+
+**Preparation**
+
+You need to have `HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C%2B%2B/HelloWorldExample>`_ from *Fast-RTPS* already compiled.
+
+Then, you must compile the example itself, from the `helloworld_to_file example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/helloworld_to_file>`_.
+
+Linux:
+
+.. code-block:: bash
+
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make
+
+Windows:
+
+.. code-block:: bash
+
+    $ mkdir build
+    $ cd build
+    $ cmake -G "Visual Studio 14 2015 Win64" ..
+    $ cmake --build .
+
+The build process will generate the binary of the *bridge library*.
+
+**Execution**
+
+In one terminal, launch *HelloWorldExample* as a publisher:
+
+.. code-block:: bash
+
+    $ HelloWorldExample publisher
+
+Launch *IS* in another terminal with the *config.xml* (*config_win.xml* if you are on Windows) file from the example folder:
+
+Linux:
+
+.. code-block:: bash
+
+    $ cd <path_to_is_source>/examples/helloworld_to_file
+    $ integration_service config.xml
+
+Windows:
+
+.. code-block:: bash
+
+    $ cd <path_to_is_source>/examples/helloworld_to_file
+    $ integration_service config_win.xml
+
+Once *IS* is running, *HelloWorldExample* will match and a file named *output.txt* will be created with the
+received data from *HelloWorldExample*.
+
+.. image:: HelloWorldFile.png
+    :align: center

@@ -170,9 +170,16 @@ subscriber*.
     :start-after: // Class Reader Start
     :end-before: // Class Reader End
 
-``ISReader`` doesn't have a default implementation, so this default behavior is provided by the built-in *RTPS-Bridge*.
-Any custom *bridge* that needs to define its *reader*, must implement at least both :class:`on_received_data` methods.
-If one of them isn't needed, just implement as follows:
+``ISReader`` doesn't have a default implementation, so this default behaviour is provided by the built-in *RTPS-Bridge*.
+Any custom *bridge* that needs to define its *reader*, must implement their own reading method that calls at
+least one of the :class:`on_received_data` methods.
+
+.. literalinclude:: technical.cpp
+    :language: cpp
+    :start-after: // Protocol reader start
+    :end-before: // Protocol reader end
+
+If one of them isn't needed, just implement it as follows:
 
 .. literalinclude:: technical.cpp
     :language: cpp
