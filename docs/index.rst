@@ -32,7 +32,7 @@ This documentation is organized into the following sections:
 .. toctree::
     :caption: Related Links
 
-    Getting started <https://github.com/eProsima/Integration-Service/blob/master/README.md>
+    getting_started
 
 .. _user:
 
