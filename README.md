@@ -14,7 +14,7 @@ The main features of *Integration Service* are:
 -   Communication with others environments, like *ROS2*.
 
 
-<p align="center"> <img src="docs/IS-main.png" alt="Default behaviour"/> </p>
+<p align="center"> <img src="docs/RTPS_other_connector.png" alt="Default behaviour"/> </p>
 
 <hr></hr>
 
@@ -95,12 +95,13 @@ file* as parameter.
 ```
 
 That *XML configuration file* is needed by *Integration Service* to create all the needed components to do its job.
-You should read the [documentation](https://integration-services.readthedocs.io/en/latest/xml-config-file.html)
+You should read the [documentation](https://integration-services.readthedocs.io/en/latest/configuration.html)
 to know more about how to configure *Integration Service*.
 
 ### **Example application**
 
-We will use [domain_change](<https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change>) as example.
+We will use
+[domain_change](<https://github.com/eProsima/Integration-Service/tree/master/examples/domain_change>) as example.
 In this example, we have generated a *Fast RTPS* example application using *fastrtpsgen* and then configured
 the publisher participant in domain **0**, and the subscriber participant in domain **5**.
 This means that if a subscriber and a publisher are executed, there will be no communication between them,
@@ -108,7 +109,7 @@ even having the same topic and type.
 
 Executing the *Integration Service* will create a bridge between the publisher (as a writer) and the subscriber
 (as a reader), and communicate both applications.
-The config file [config.xml](<https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change/config.xml>),
+The config file [config.xml](<https://github.com/eProsima/Integration-Service/tree/master/examples/domain_change/config.xml>),
 provided in this example, defines a connector like this.
 
 ```xml
@@ -118,7 +119,7 @@ provided in this example, defines a connector like this.
     </connector>
 ```
 
-To execute the example properly, we must first compile the example itself, from the [domain_change example location](<https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change>)
+To execute the example properly, we must first compile the example itself, from the [domain_change example location](<https://github.com/eProsima/Integration-Service/tree/master/examples/domain_change>)
 
 Linux:
 
