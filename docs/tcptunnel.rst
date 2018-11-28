@@ -111,30 +111,30 @@ TCP Tunnel Example
 ------------------
 
 To illustrate the use cases, there is an example named
-`ShapesDemoTCP <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp>`__.
+`ShapesDemoTCP <https://github.com/eProsima/Integration-Service/blob/master/examples/shapes_demo_tcp>`__.
 In this example, *IS* creates and uses a *TCP tunnel* to communicate two *Fast-RTPS ShapesDemo* in different ways.
 
 Several configuration files are included:
 
-- `config_client.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config_client.xml>`__: Configures *IS* as a *TCP client* and acts as a shapes *publisher*.
+- `config_client.xml <https://github.com/eProsima/Integration-Service/blob/master/examples/shapes_demo_tcp/config_client.xml>`__: Configures *IS* as a *TCP client* and acts as a shapes *publisher*.
 
-- `config_server.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config_server.xml>`__: Configures *IS* as a *TCP server* and acts as a shapes *subscriber*.
+- `config_server.xml <https://github.com/eProsima/Integration-Service/blob/master/examples/shapes_demo_tcp/config_server.xml>`__: Configures *IS* as a *TCP server* and acts as a shapes *subscriber*.
 
-- `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/config.xml>`__: Configures two IS connectors, one as a config_client and the other as a config_server.
+- `config.xml <https://github.com/eProsima/Integration-Service/blob/master/examples/shapes_demo_tcp/config.xml>`__: Configures two IS connectors, one as a config_client and the other as a config_server.
 
 *config.xml* is intended to execute this test using one machine, and *client* plus *server* versions,
 to allow executions on different machines.
 
 This example will use *config.xml* to test it in one machine.
 
-The example uses a types library named `shapelib <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp/shapelib.cpp>`__ that allows us to create the keyed type :class:`shape`, and ShapesDemo uses it to communicate.
+The example uses a types library named `shapelib <https://github.com/eProsima/Integration-Service/blob/master/examples/shapes_demo_tcp/shapelib.cpp>`__ that allows us to create the keyed type :class:`shape`, and ShapesDemo uses it to communicate.
 
 To allow executing the example in the same machine, each ShapesDemo instance will be bound to different domains,
 allowing *IS* to do some useful work.
 
 **Preparation**
 
-This example needs a `ShapesDemo <https://github.com/eProsima/ShapesDemo>`__ application working, to get it, you must compile the example itself, from the `shapes_demo_tcp example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/shapes_demo_tcp>`_.
+This example needs a `ShapesDemo <https://github.com/eProsima/ShapesDemo>`__ application working, to get it, you must compile the example itself, from the `shapes_demo_tcp example location <https://github.com/eProsima/Integration-Service/tree/master/examples/shapes_demo_tcp>`_.
 
 Linux:
 

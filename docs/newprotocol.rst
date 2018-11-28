@@ -324,19 +324,19 @@ the intercommunication between *ROS2* and *Fiware Orion ContextBroker*.
 HelloWorld To File
 ^^^^^^^^^^^^^^^^^^
 
-To illustrate this use case, there is an example named `Helloworld_to_file <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file>`__.
+To illustrate this use case, there is an example named `Helloworld_to_file <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file>`__.
 This example creates a new *bridge* to save all received data from the *Fast-RTPS HelloWorldExample* into a file.
 
-To achieve that target, it creates a *bridge library* named `isfile <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
-The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to save the data to a file.
+To achieve that target, it creates a *bridge library* named `isfile <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file/isfile.cpp>`_.
+The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to save the data to a file.
 
-The file `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ of the example configures *IS* with the *bridge library* in a *connector* that receives data from *HelloWorldExample*.
+The file `config.xml <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file/config.xml>`__ of the example configures *IS* with the *bridge library* in a *connector* that receives data from *HelloWorldExample*.
 
 **Preparation**
 
 The `HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C%2B%2B/HelloWorldExample>`_ from *Fast-RTPS* already must be compiled.
 
-The `helloworld_to_file <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/helloworld_to_file>`__
+The `helloworld_to_file <https://github.com/eProsima/Integration-Service/tree/master/examples/helloworld_to_file>`__
 example must be compiled too.
 
 Linux:

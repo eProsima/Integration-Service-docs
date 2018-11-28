@@ -181,7 +181,7 @@ Dynamic Types example
 ---------------------
 
 There is an example implemented in the
-`dynamic_types example  <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/dynamic_types>`_
+`dynamic_types example  <https://github.com/eProsima/Integration-Service/tree/master/examples/dynamic_types>`_
 where you can see the use of dynamic types.
 
 .. code-block:: bash

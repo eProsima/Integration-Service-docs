@@ -79,7 +79,7 @@ Domain Change Example
 
 This example shows how *IS* can communicate two *participants* that belong to different *domains*.
 
-To properly execute the example, it's mandatory to compile it from the `domain_change example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/domain_change>`_.
+To properly execute the example, it's mandatory to compile it from the `domain_change example location <https://github.com/eProsima/Integration-Service/tree/master/examples/domain_change>`_.
 
 Linux:
 
@@ -116,7 +116,7 @@ And to launch it as a subscriber:
     $ ./DomainChange subscriber
 
 As both instances are bound to different *domains*, the applications will not communicate.
-But once after launching IS with the `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/domain_change/config.xml>`__ that comes with the example, both *DomainChange* instances will begin to communicate.
+But once after launching IS with the `config.xml <https://github.com/eProsima/Integration-Service/blob/master/examples/domain_change/config.xml>`__ that comes with the example, both *DomainChange* instances will begin to communicate.
 
 In another terminal:
 

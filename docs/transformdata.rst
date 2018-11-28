@@ -167,7 +167,7 @@ Transformation Data example
 ---------------------------
 
 There is an example implemented in
-`dynamic_types example <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/dynamic_types>`_
+`dynamic_types example <https://github.com/eProsima/Integration-Service/tree/master/examples/dynamic_types>`_
 that shows the use of a transformation function.
 
 .. code-block:: bash
