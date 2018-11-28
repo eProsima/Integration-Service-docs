@@ -2,7 +2,7 @@ Adding new Bridges
 ==================
 
 *Integration Service* allows the creation of custom *readers* and *writers* for any protocol.
-This is the most powerful feature of *IS*, because it allows to communicate any *DDS* application with any other
+This feature is the most powerful of *IS*, because it allows communicating any *DDS* application with any other
 protocol, for example, *NGSIv2* from *FIWARE Orion ContextBroker*, which is a protocol based on WebServices.
 
 .. image:: Bidirectional_connector.png
@@ -15,9 +15,9 @@ into *IS* through a :ref:`Connector <Connectors>`.
 Bridge usage and configuration
 ------------------------------
 
-*Integration Service* must be configured through its XML :ref:`configuration` file.
+An XML :ref:`configuration` file configures *Integration Service*.
 In this case, is needed a :ref:`Bridge Library` to provide functions that will allow *IS* to create new instances
-of :ref:`ISBridge`, :ref:`ISWriter` and :ref:`ISReader`.
+of :ref:`ISBridge`, :ref:`ISWriter`, and :ref:`ISReader`.
 All these components must be declared (and optionally configured) in the :ref:`Bridge configuration`.
 
 The library of the example will be named :class:`libprotocol.so`, so it's necessary to include its location path into the ``<bridge>``
@@ -29,7 +29,7 @@ section:
     :end-before: <!-- bridge end -->
     :dedent: 4
 
-If the library will accept configuration parameters, they can be passed through the ``<properties>`` tag.
+The library can accept configuration parameters through the ``<properties>`` tag.
 In the next section, *readers* and *writers* must be declared to make them available for the *connectors*:
 
 .. literalinclude:: config_new_bridge.xml
@@ -54,7 +54,7 @@ And the :ref:`Connectors` are declared below:
     :end-before: <!-- connectors end -->
     :dedent: 4
 
-In the previous example there are defined a *DDS participant* :class:`2Dshapes` with a *publisher*
+In the previous example, there are defined a *DDS participant* :class:`2Dshapes` with a *publisher*
 :class:`2d_publisher` and a *subscriber* :class:`2d_subscriber`. In the connectors, we bound :class:`2d_subscriber`
 with :class:`protocol_publisher` and :class:`protocol_subscriber` with :class:`2d_publisher`.
 
@@ -62,8 +62,8 @@ with :class:`protocol_publisher` and :class:`protocol_subscriber` with :class:`2
     :align: center
 
 Typically a *transformation function* will be useful to split responsibilities and allow *readers* and *writers*
-to only worry about protocol details without data transformations. If you want to know more about
-*Transformation Libraries* you can see :ref:`Data Transformation` use case.
+to only worry about protocol details without data transformations.
+The :ref:`Data Transformation` use case focuses on the usage of *Transformation Libraries*.
 
 Integration Service's Bridges
 -----------------------------
@@ -72,12 +72,12 @@ To allow *IS* instantiate custom :ref:`ISWriter` and :ref:`ISReader`, it's neces
 In this case, and typically, there is no need to override the default :ref:`ISBridge` behavior
 (and normally isn't recommended).
 
-As explained previously, the name of the library will be :class:`libprotocol.so`.
-The next step in the creation process is to create a new source file named :class:`protocol.cpp` that 
+As previously explained, the name of the library will be :class:`libprotocol.so`.
+The next step in the creation process is to create a new source file named :class:`protocol.cpp` that
 must implement the functions ``create_bridge``, ``create_writer``, and ``create_reader``.
 
-Starting out implementation from scratch, we need to include the needed libraries, in our case, simply the
-header file that gives us access to the implementation of our :ref:`ISWriter` and :ref:`ISReader`,
+Starting the implementation from scratch, it needs to include the required libraries, in this case, the
+header file that gives access to the implementation of the :ref:`ISWriter` and the :ref:`ISReader`,
 ``ISBridgeProtocol.h``.
 
 .. literalinclude:: new_bridge.cpp
@@ -85,7 +85,7 @@ header file that gives us access to the implementation of our :ref:`ISWriter` an
     :start-after: // Include start
     :end-before: // Include end
 
-The next part isn't mandatory, but we usually add it because it helps us make the library portable between different
+The next part is optional, but it helps to make the library portable between different
 operating systems and keeps the source code clear to read.
 
 .. literalinclude:: new_bridge.cpp
@@ -93,12 +93,12 @@ operating systems and keeps the source code clear to read.
     :start-after: // Define start
     :end-before: // Define end
 
-If you decide to include this part as well, keep it in mind when we will create the *CMakeLists.txt* file.
+This optional section should be taken in mind during the creation of the *CMakeLists.txt* file to configure the project.
 
-Now, we are in condition to start with the implementation of each function.
+Now, the library is in condition to start with the implementation of each function.
 
-As we established before, our library doesn't need to override the default :ref:`ISBridge` behavior,
-so our ``create_bridge`` function will return ``nullptr``.
+As established before the library doesn't need to override the default :ref:`ISBridge` behavior,
+therefore, the ``create_bridge`` function will return ``nullptr``.
 
 .. literalinclude:: new_bridge.cpp
     :language: cpp
@@ -106,22 +106,22 @@ so our ``create_bridge`` function will return ``nullptr``.
     :end-before: // create_bridge end
 
 The function ``create_reader`` will call directly to the *constructor* that will return the
-configured instance of our :ref:`ISReader`.
+configured instance of the :ref:`ISReader`.
 
 .. literalinclude:: new_bridge.cpp
     :language: cpp
     :start-after: // create_reader start
     :end-before: // create_reader end
 
-In a similar way, the function ``create_writer`` will call directly to the *constructor* that will return the
-configured instance of our :ref:`ISWriter`.
+In the same way, the function ``create_writer`` will call directly to the *constructor* that will return the
+configured instance of the :ref:`ISWriter`.
 
 .. literalinclude:: new_bridge.cpp
     :language: cpp
     :start-after: // create_writer start
     :end-before: // create_writer end
 
-These functions will be detailed in the next section :ref:`Bridge API`, along with the implementation of
+The :ref:`Bridge API` section will detail these functions, along with the implementation of
 :ref:`ISReader` and :ref:`ISWriter`.
 
 
