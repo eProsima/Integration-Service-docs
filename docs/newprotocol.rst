@@ -1,8 +1,8 @@
 Adding new Bridges
 ==================
 
-*Integration Service* allows the creation of custom *readers* and *writers* for their any protocol.
-This is the most powerful feature of *IS*, as allows to communicate any *DDS* application with any other
+*Integration Service* allows the creation of custom *readers* and *writers* for any protocol.
+This is the most powerful feature of *IS*, because it allows to communicate any *DDS* application with any other
 protocol, for example, *NGSIv2* from *FIWARE Orion ContextBroker*, which is a protocol based on WebServices.
 
 .. image:: Bidirectional_connector.png
@@ -20,39 +20,42 @@ In this case, is needed a :ref:`Bridge Library` to provide functions that will a
 of :ref:`ISBridge`, :ref:`ISWriter` and :ref:`ISReader`.
 All these components must be declared (and optionally configured) in the :ref:`Bridge configuration`.
 
-Our library will be named :class:`libprotocol.so`, so we must include its location path into the ``<bridge>``
+The library of the example will be named :class:`libprotocol.so`, so it's necessary to include its location path into the ``<bridge>``
 section:
 
 .. literalinclude:: config_new_bridge.xml
     :language: XML
     :start-after: <!-- bridge start -->
     :end-before: <!-- bridge end -->
+    :dedent: 4
 
-If our library will accept configuration parameters, we can pass them through the ``<properties>`` tag.
-Now, we can declare the *readers* and *writers* configuration that will be available for the *connectors*:
+If the library will accept configuration parameters, they can be passed through the ``<properties>`` tag.
+In the next section, *readers* and *writers* must be declared to make them available for the *connectors*:
 
 .. literalinclude:: config_new_bridge.xml
     :language: XML
     :start-after: <!-- reader start -->
     :end-before: <!-- reader end -->
+    :dedent: 4
 
 
 .. literalinclude:: config_new_bridge.xml
     :language: XML
     :start-after: <!-- writer start -->
     :end-before: <!-- writer end -->
+    :dedent: 4
 
 Both, again, can be configured using the ``<properties>`` tag.
-
-And our needed :ref:`Connectors` are declared below:
+And the :ref:`Connectors` are declared below:
 
 .. literalinclude:: config_new_bridge.xml
     :language: XML
     :start-after: <!-- connectors start -->
     :end-before: <!-- connectors end -->
+    :dedent: 4
 
-In this case, we have defined previously a *DDS participant* :class:`2Dshapes` with a *publisher*
-:class:`2d_publisher` and a *subscriber* :class:`2d_subscriber`. In out connectors, we bound :class:`2d_subscriber`
+In the previous example there are defined a *DDS participant* :class:`2Dshapes` with a *publisher*
+:class:`2d_publisher` and a *subscriber* :class:`2d_subscriber`. In the connectors, we bound :class:`2d_subscriber`
 with :class:`protocol_publisher` and :class:`protocol_subscriber` with :class:`2d_publisher`.
 
 .. image:: NEW_BRIDGE.png
@@ -65,13 +68,13 @@ to only worry about protocol details without data transformations. If you want t
 Integration Service's Bridges
 -----------------------------
 
-We should add our own :ref:`Bridge Library` to allow *IS* instantiate our :ref:`ISWriter` and :ref:`ISReader`.
+To allow *IS* instantiate custom :ref:`ISWriter` and :ref:`ISReader`, it's necessary to add a custom :ref:`Bridge Library`.
 In this case, and typically, there is no need to override the default :ref:`ISBridge` behavior
 (and normally isn't recommended).
 
-As we established before, the library will be named :class:`libprotocol.so`, so we will create a new
-source file named :class:`protocol.cpp` that must implement the functions ``create_bridge``, ``create_writer``, and
-``create_reader``.
+As explained previously, the name of the library will be :class:`libprotocol.so`.
+The next step in the creation process is to create a new source file named :class:`protocol.cpp` that 
+must implement the functions ``create_bridge``, ``create_writer``, and ``create_reader``.
 
 Starting out implementation from scratch, we need to include the needed libraries, in our case, simply the
 header file that gives us access to the implementation of our :ref:`ISWriter` and :ref:`ISReader`,
