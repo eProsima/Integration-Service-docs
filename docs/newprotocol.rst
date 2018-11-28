@@ -125,37 +125,36 @@ These functions will be detailed in the next section :ref:`Bridge API`, along wi
 Bridge API
 ----------
 
-We can use the same source code file to implement the new :ref:`ISReader` and :ref:`ISWriter`, but usually we
-will prefer to split the code into several files, and these implementations are very likely to be written in a
-separated file.
-In our example, we will write them inside their own header files ``ProtocolWriter.h`` and ``ProtocolReader.h``,
+The same source code file can be used to implement the new :ref:`ISReader` and :ref:`ISWriter`, but it is preferable
+to split the code into several files, and these implementations are very likely to be written in a separated file.
+In the example, both implementations are written inside two header files ``ProtocolWriter.h`` and ``ProtocolReader.h``,
 both included in ``ISBridgeProtocol.h``, but normally it will be split into source and header files instead
 only use header files.
 
 ``ProtocolWriter.h`` will declare the class ``ProtocolWriter`` following the instructions of :ref:`ISWriter` section.
 
-First, we make use of the typical idiogram to avoid include a header file multiple times:
+First, the typical definitions must be used to avoid including a header file multiple times:
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
     :start-after: // Define start
     :end-before: // Define end
 
-And... in the last line of the file
+And, in the last line of the file
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
     :start-after: // Endif start
     :end-before: // Endif end
 
-Then, we include the needed headers. Our example will make use of the :class:`cURLpp` library.
+Then, the file must include the required headers. The example will make use of the :class:`cURLpp` library.
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
     :start-after: // Include start
     :end-before: // Include end
 
-The next step is to declare our class ``ProtocolWriter`` that must inherit from :ref:`ISWriter`.
+The next step is to declare the class ``ProtocolWriter`` that must inherit from :ref:`ISWriter`.
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
@@ -163,52 +162,52 @@ The next step is to declare our class ``ProtocolWriter`` that must inherit from 
     :end-before: // ProtocolWriter end
 
 Then the method's implementation must be defined.
-The *constructor* will receive the configuration parameters and will parse them in our example.
+The *constructor* will receive the configuration parameters and will parse them in the example.
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
     :start-after: // Constructor start
     :end-before: // Constructor end
 
-The *destructor* will simply free any taken resource and memory allocation.
+The *destructor* will free any taken resource and memory allocation.
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
     :start-after: // Destructor start
     :end-before: // Destructor end
 
-Finally, our example ``write`` method implementation will update an entity using a WebService.
+Finally, the example's ``write`` method implementation will update an entity using a WebService.
 
 .. literalinclude:: ProtocolWriter.h
     :language: cpp
     :start-after: // Write start
     :end-before: // Write end
 
-Now, we implement ``ProtocolReader.h`` which will declare the class ``ProtocolReader`` following the instructions
-of :ref:`ISReader` section.
+Now, ``ProtocolReader.h`` will declare the class ``ProtocolReader`` following the instructions of
+the :ref:`ISWriter` section.
 
-Again, we make use of the typical idiogram to avoid include a header file multiple times:
+Again, the typical definitions must be used to avoid including a header file multiple times:
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
     :start-after: // Define start
     :end-before: // Define end
 
-And... in the last line of the file
+And, in the last line of the file
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
     :start-after: // Endif start
     :end-before: // Endif end
 
-Then, we include the needed headers. Our example will make use of the :class:`cURLpp` library.
+Then, the file must include the required headers. The example will make use of the :class:`cURLpp` library.
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
     :start-after: // Include start
     :end-before: // Include end
 
-The next step is to declare our class ``ProtocolReader`` that must inherit from :ref:`ISReader`.
+The next step is to declare the class ``ProtocolReader`` that must inherit from :ref:`ISReader`.
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
@@ -216,21 +215,21 @@ The next step is to declare our class ``ProtocolReader`` that must inherit from 
     :end-before: // ProtocolReader end
 
 Then the method's implementation must be defined.
-The *constructor* will receive the configuration parameters and will parse them in our example.
+The *constructor* will receive the configuration parameters and will parse them in the example.
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
     :start-after: // Constructor start
     :end-before: // Constructor end
 
-The *destructor* will simply free any taken resource and memory allocation.
+The *destructor* will free any taken resource and memory allocation.
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
     :start-after: // Destructor start
     :end-before: // Destructor end
 
-Finally, our example ``checkUpdates`` method implements a query to a WebService.
+Finally, the example's ``checkUpdates`` method implements a query to a WebService.
 
 .. literalinclude:: ProtocolReader.h
     :language: cpp
