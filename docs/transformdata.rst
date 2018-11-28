@@ -64,8 +64,8 @@ For *DDS World A* data type:
     :end-before: // End Type A */
 
 After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate
-a file named :class:`DDSTypeAPubSubTypes.h`. If you want to know more about *FastRTPSGen*, please go to
-`Fast RTPS documentation <http://docs.eprosima.com/en/latest/>`__.
+a file named :class:`DDSTypeAPubSubTypes.h`. If you want to know more about *FastRTPSGen*,
+please go to `FastRTPSGen Documentation <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__.
 
 In the same way for *DDS World B* data type:
 
@@ -74,8 +74,9 @@ In the same way for *DDS World B* data type:
     :start-after: /* Type B
     :end-before: // End Type B */
 
-After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate a file named :class:`DDSTypeBPubSubTypes.h`.
-
+After generating the *C++* code of this *IDL* file, 
+`FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__ 
+will generate a file named :class:`DDSTypeBPubSubTypes.h`.
 So with these types in mind, it's mandatory to include both *PubSubTypes* headers in the *transformation library*.
 
 .. literalinclude:: transform_data.cpp
@@ -110,8 +111,10 @@ The first step is renaming the cmake project to *transformationData*.
     :language: cmake
     :lines: 1
 
-It's recommendable to keep all *C++11* and *CMake* version as it is, but to create the *CMakeLists.txt* from scratch
-it's important to keep in mind that *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*,
+It's recommendable to keep all *C++11* and *CMake* version as it is, 
+but to create the *CMakeLists.txt* from scratch it's important to keep in mind that
+`FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__
+generates files that depend on *Fast CDR* and *Fast RTPS*,
 so both libraries must be included as dependencies to the *CMakeLists.txt*.
 
 .. literalinclude:: transform_data_CMake.txt

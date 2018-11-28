@@ -123,8 +123,8 @@ The first step is renaming the cmake project to *typeatypeb*.
     :lines: 1
 
 It's recommendable to keep all *C++11* and *CMake* version as it is but to create the *CMakeLists.txt* from scratch,
-it's important to keep in mind that *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*,
-so they must be included as dependencies to the *CMakeLists.txt*.
+it's important to keep in mind that `FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__
+generates files that depend on *Fast CDR* and *Fast RTPS*, so they must be included as dependencies to the *CMakeLists.txt*.
 
 .. literalinclude:: dynamic_case_CMake.txt
     :language: cmake
