@@ -85,6 +85,8 @@ header file that gives access to the implementation of the :ref:`ISWriter` and t
     :start-after: // Include start
     :end-before: // Include end
 
+.. _cmake_definitions_code_newprotocol:
+
 The next part is optional, but it helps to make the library portable between different
 operating systems and keeps the source code clear to read.
 
@@ -243,54 +245,55 @@ Finally, the example's ``checkUpdates`` method implements a query to a WebServic
 Putting all together
 --------------------
 
-After that, we have our *bridge library* implemented, but we still need to build it.
-Of course, you could use any build system at your wish, but *IS* provides a *CMakeLists.txt* template that we will use
-here as an example.
+After that, the *bridge library* is implemented, but it still need to be built.
+Any build system can be used for this task, but *IS* provides a *CMakeLists.txt* template that will be used as
+starting point of an example.
 
-First, we are going to rename the cmake project to *protocol*.
+First, the cmake project will be named to *protocol*.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
     :lines: 1
 
-We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists.txt* from scratch remember that
-*FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, so you must include both dependencies to your
-*CMakeLists.txt*. In this case, we also use *cURLpp*.
+It's recommendable to keep all *C++11* and *CMake* version as it is but to create the *CMakeLists.txt* from scratch,
+it's important to keep in mind that *FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*,
+so they must be included as dependencies to the *CMakeLists.txt*.
+
+In this case, the example will use *cURLpp* also.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
     :start-after: # packages
     :lines: 1-3
 
-Do you remember the *definitions* section of our *transformation library* that could help us to make the library
-more portable.
-This is where we set the values of these preprocessor definitions to build our library exporting symbols.
+To make the library more portable the cmake file needs to add the
+:ref:`preprocessor definitions <cmake_definitions_code_newprotocol>` to build the library exporting symbols.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
     :start-after: # definitions
     :lines: 1-4
 
-Finally, we indicate to *CMake* our source code and the library we want to build, along with its dependencies.
+Finally, *CMake* needs the source code of the library to build, along with its dependencies.
 
 .. literalinclude:: bridge_CMake.txt
     :language: cmake
     :start-after: # protocol library
     :lines: 1-3
 
-After that, we can just generate our library using *CMake*.
+After that, the library will be generated using *CMake*.
 
 .. code-block:: bash
 
     $ cmake .
     $ make
 
-It should generate our *libprotocol.so* in the current directory that is the library that
-*IS* expects when loads our :class:`config.xml` file.
+It should generate the *libprotocol.so* file in the current directory that is the library that
+*IS* expects when loads the :class:`config.xml` file.
 
-At this point, we have our configuration file :class:`config.xml` created, and our *bridge library*
-*libprotocol.so* built. We are able to launch *IS* with our :class:`config.xml` and enjoy how
-we are able to receive and send data to the new protocol thanks to our *bridge library*.
+At this point, the configuration file :class:`config.xml` is created and the *bridge library* *libprotocol.so* built.
+*IS* can be launch with the :class:`config.xml` and will allow receiving
+and sending data to the new protocol thanks to the *bridge library*.
 
 .. code-block:: bash
 
@@ -299,15 +302,14 @@ we are able to receive and send data to the new protocol thanks to our *bridge l
 Creating new Bridges
 --------------------
 
-Now, we are able to define *bridge libraries* to receive and send data to new protocols.
-The steps needed to do it are:
+The steps needed to define *bridge libraries* to receive and send data to new protocols are:
 
-- Create and configure the needed :ref:`Bridge configuration` in your XML configuration file.
-- Create the needed :ref:`Connectors` in your XML configuration file.
-- Implementing your custom :ref:`Bridge Library`.
-- Implementing your custom :ref:`ISReader`, :ref:`ISWriter`, and, optionally and not recommended, :ref:`ISBridge`.
-- Generating your library binary.
-- Executing *IS* with your XML configuration file.
+- Create and configure the needed :ref:`Bridge configuration` in the XML configuration file.
+- Create the needed :ref:`Connectors` in the XML configuration file.
+- Implement the custom :ref:`Bridge Library`.
+- Implement the custom :ref:`ISReader`, :ref:`ISWriter`, and, optionally but not recommended, :ref:`ISBridge`.
+- Generate the library binary.
+- Executing *IS* with the XML configuration file.
 
 
 Bridge examples
@@ -322,18 +324,20 @@ the intercommunication between *ROS2* and *Fiware Orion ContextBroker*.
 HelloWorld To File
 ^^^^^^^^^^^^^^^^^^
 
-In this example, we create a new *bridge* to save all received data from the *Fast-RTPS HelloWorldExample* into a file.
+To illustrate this use case, there is an example named `Helloworld_to_file <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file>`__.
+This example creates a new *bridge* to save all received data from the *Fast-RTPS HelloWorldExample* into a file.
 
-To achieve that target, we need the *bridge library* `isfile <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
+To achieve that target, it creates a *bridge library* named `isfile <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/isfile.cpp>`_.
 The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to save the data to a file.
 
 The file `config.xml <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/helloworld_to_file/config.xml>`__ of the example configures *IS* with the *bridge library* in a *connector* that receives data from *HelloWorldExample*.
 
 **Preparation**
 
-You need to have `HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C%2B%2B/HelloWorldExample>`_ from *Fast-RTPS* already compiled.
+The `HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C%2B%2B/HelloWorldExample>`_ from *Fast-RTPS* already must be compiled.
 
-Then, you must compile the example itself, from the `helloworld_to_file example location <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/helloworld_to_file>`_.
+The `helloworld_to_file <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/helloworld_to_file>`__
+example must be compiled too.
 
 Linux:
 

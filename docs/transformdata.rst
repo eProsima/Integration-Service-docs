@@ -53,8 +53,8 @@ to *DDS World A*. The name of this library will be :class:`libtransformationData
 
 The implementation of both functions will be stored in a source file named :class:`transformationDDS.cpp`.
 
-The first step of the implementation is including the *TopicDataTypes* involved. For our example, imagine we have an *IDL* file for
-each *DDS World* data type.
+The first step of the implementation is including the *TopicDataTypes* involved.
+In the example, each *DDS World* data type is related to an *IDL* file.
 
 For *DDS World A* data type:
 
@@ -76,14 +76,14 @@ In the same way for *DDS World B* data type:
 
 After generating the *C++* code of this *IDL* file, *FastRTPSGen* will generate a file named :class:`DDSTypeBPubSubTypes.h`.
 
-So with these types in mind, it's mandatory to include both *PubSubTypes* headers in our *transformation library*.
+So with these types in mind, it's mandatory to include both *PubSubTypes* headers in the *transformation library*.
 
 .. literalinclude:: transform_data.cpp
     :language: cpp
     :start-after: // Include
     :end-before: // End include
 
-.. _cmake_definitions_code:
+.. _cmake_definitions_code_transformdata:
 
 The next part is optional, but it helps to make the library portable between different
 operating systems and keeps the source code clear to read.
@@ -119,7 +119,8 @@ so both libraries must be included as dependencies to the *CMakeLists.txt*.
     :start-after: # packages
     :lines: 1,2
 
-To make the library more portable the cmake file needs to add the :ref:`preprocessor definitions <cmake_definitions_code>` to build our library exporting symbols.
+To make the library more portable the cmake file needs to add the
+:ref:`preprocessor definitions <cmake_definitions_code_transformdata>` to build the library exporting symbols.
 
 .. literalinclude:: transform_data_CMake.txt
     :language: cmake

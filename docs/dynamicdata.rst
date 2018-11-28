@@ -76,6 +76,8 @@ Firstly it needs to include all required headers to use *Fast-RTPS Dynamic Types
     :start-after: // Include Start
     :end-before: // Include End
 
+.. _cmake_definitions_code_dynamicdata:
+
 The next part is optional, but it helps to make the library portable between different
 operating systems and keeps the source code clear to read.
 Additionally, in this case, may be useful to add some ``using namespaces``.
@@ -129,7 +131,8 @@ so they must be included as dependencies to the *CMakeLists.txt*.
     :start-after: # packages
     :lines: 1,2
 
-To make the library more portable the cmake file needs to add the :ref:`preprocessor definitions <cmake_definitions_code>` to build our library exporting symbols.
+To make the library more portable the cmake file needs to add the
+:ref:`preprocessor definitions <cmake_definitions_code_dynamicdata>` to build the library exporting symbols.
 
 .. literalinclude:: dynamic_case_CMake.txt
     :language: cmake

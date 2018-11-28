@@ -110,7 +110,8 @@ To get more information about *Fast-RTPS Security*, please read
 TCP Tunnel Example
 ------------------
 
-To illustrate the use cases, there is an example named *ShapesDemoTCP*.
+To illustrate the use cases, there is an example named
+`ShapesDemoTCP <https://github.com/eProsima/Integration-Service/blob/feature/TCP_DynTypes/examples/shapes_demo_tcp>`__.
 In this example, *IS* creates and uses a *TCP tunnel* to communicate two *Fast-RTPS ShapesDemo* in different ways.
 
 Several configuration files are included:
