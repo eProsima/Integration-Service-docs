@@ -1,4 +1,0 @@
-Integration Service Overview
-=============================
-
-Migrated!

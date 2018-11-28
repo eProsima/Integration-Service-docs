@@ -47,7 +47,7 @@ Dynamic Data
 
 In both cases, the transformation function parses the :class:`inputData`,
 modifies it at will and stores the result into :class:`outputData`.
-See the :ref:`examples` for some already working implementations.
+See the :ref:`Dynamic Types example` for some already working implementations.
 
 Bridge Library
 --------------
@@ -136,7 +136,7 @@ It implements a full ``ISBridge`` using *Fast-RTPS* *publisher* and *subscriber*
 It allows communicating several *subscribers* with several *publishers*, establishing routes and applying
 :ref:`transformation functions <Transformation Library>` depending on each *connector* configuration.
 
-The *connector* :ref:`rtps bridge` uses this kind of bridge.
+The *connector* :ref:`RTPS Connector` uses this kind of bridge.
 
 ISWriter
 ^^^^^^^^

@@ -52,18 +52,6 @@ This documentation is organized into the following sections:
     tcptunnel
     newprotocol
 
-.. toctree::
-    :caption: OLD DOCUMENTATION TOC
-
-    requirements
-    binaries
-    sources
-    introduction
-    overview
-    xml-config-file
-    libraries
-    examples
-
 .. _notes:
 
 .. toctree::
