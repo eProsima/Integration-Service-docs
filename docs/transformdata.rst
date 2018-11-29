@@ -17,7 +17,7 @@ Transformation usage and configuration
 *Integration Service* must be configured through its XML :ref:`configuration` file.
 In this case, a :ref:`Transformation Library` is needed to provide *transformation functions* that will transform the data from *DDS World A* to *DDS World B* and vice versa.
 
-In this example, a file named :class:`config.xml` needs to be created.
+This example supposes that all the configuration is stored in a file named :class:`config.xml`.
 The *endpoints* must be configured in the :ref:`Fast-RTPS profiles` section.
 
 .. literalinclude:: config_comms_dds.xml

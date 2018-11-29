@@ -63,12 +63,8 @@ Once the file :class:`config.xml` has been created, *IS* is able to run and star
 Creating new routes
 -------------------
 
-With the knowledge acquired after studying and solving this scenario, it could be possible to add new connectors between both
-*DDS Worlds* or other *DDS World* (like a new *DDS World C* for example) following this steps:
-
-- Create and configure the needed :ref:`Fast-RTPS profiles` in the XML configuration file.
-- Create the needed :ref:`Connectors` in the XML configuration file.
-- Executing *IS* with the XML configuration file.
+*Integration Service* supports several connectors at the same time, 
+so it could be possible to create connectors to bridge more than two *DDS Worlds*.
 
 .. image:: DDS_ROUTES.png
     :align: center
