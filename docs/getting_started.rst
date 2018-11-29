@@ -3,7 +3,7 @@ Getting Started
 
 **Table of Contents** 
 
-* :ref:`Installation`
+* :ref:`Installation Manual`
 
 * :ref:`Usage`
 
@@ -11,8 +11,8 @@ Getting Started
 
 * :ref:`Getting Help`
 
-Installation
-^^^^^^^^^^^^
+Installation Manual
+^^^^^^^^^^^^^^^^^^^
 
 Before compiling *eProsima Integration Service* you need to have installed *Fast RTPS* as described in its 
 `documentation <http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html>`__.
