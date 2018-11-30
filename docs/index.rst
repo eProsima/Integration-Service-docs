@@ -10,10 +10,10 @@ eProsima Integration Service Documentation
     :alt: eProsima
     :target: http://www.eprosima.com/
 
-| *eProsima Integration Service* is a library based on *Fast RTPS* for creating parameterized communication bridges between different systems, services and protocols.
+| *eProsima Integration Service* is a library based on *Fast RTPS* for creating parameterized communication bridges between different systems, services, and protocols.
 | It is also able to perform transformations over the messages such as customized routing and mapping between input and output attributes or data modification.
 
-| 
+|
 | The main features of *Integration Service* are:
 
 * Connects two different domains.
@@ -32,7 +32,7 @@ This documentation is organized into the following sections:
 .. toctree::
     :caption: Related Links
 
-    Getting started <https://github.com/eProsima/Integration-Service/blob/master/README.md>
+    getting_started
 
 .. _user:
 
@@ -51,18 +51,6 @@ This documentation is organized into the following sections:
     dynamicdata
     tcptunnel
     newprotocol
-
-.. toctree::
-    :caption: OLD DOCUMENTATION TOC
-
-    requirements
-    binaries
-    sources
-    introduction
-    overview
-    xml-config-file
-    libraries
-    examples
 
 .. _notes:
 

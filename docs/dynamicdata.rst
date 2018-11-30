@@ -2,13 +2,13 @@ Dynamic Data Integration
 ========================
 
 *Fast-RTPS 1.7.0* includes *Dynamic Data Types* and *XML Types* as new features.
-*Integration Service* benefits from these features allowing us to integrate *Dynamic Data Types*.
+*Integration Service* benefits from these features allowing to integrate *Dynamic Data Types* for the transformation of data types.
 
-In this *use case* we are going to illustrate a scenario using both types of *Dynamic Data* declararions
+This *use case* illustrates a scenario using both types of *Dynamic Data* declarations
 (*Dynamic Data Types* and *XML Types*) and a *transformation function*.
-For a full *use case* explaining *transformation functions* you can see :ref:`Data transformation`.
+For a full *use case* explaining *transformation functions*, you can see :ref:`Data transformation` section.
 
-The following image shows the data flow throw *transformation function*.
+The following image shows the data flow through a *transformation function*.
 
 .. image:: DYNAMIC_CASE.png
     :align: center
@@ -16,8 +16,8 @@ The following image shows the data flow throw *transformation function*.
 Dynamic Data usage and configuration
 ------------------------------------
 
-We have two ways to declare *Dynamic Data Types* in *Integration Service*.
-We can make use of a :ref:`IS Types Libraries <Types Library>` or we can declare them directly as
+There are two ways to declare *Dynamic Data Types* in *Integration Service*.
+They could be created using :ref:`IS Types Libraries <Types Library>`, or they can be declared directly as
 :ref:`Fast-RTPS XML Types <IS Types configuration>` in the :ref:`XML configuration file <configuration>`.
 
 .. literalinclude:: configuration.xml
@@ -26,70 +26,70 @@ We can make use of a :ref:`IS Types Libraries <Types Library>` or we can declare
     :end-before: <!-- IS Types End -->
     :dedent: 4
 
-As example, we are going to define two *Dynamic Data Types*: :class:`TypeA` and :class:`TypeB`.
-They will be used to communicate our *DDS World A* with *DDS World B*, applying a *transformation function*, that
-will be the typical scenario.
+This example needs to define two *Dynamic Data Types*: :class:`TypeA` and :class:`TypeB`, that will be used to
+communicate the *DDS World A* with *DDS World B*, applying a *transformation function*, that will be the typical scenario.
 
-As first step, we are going to define our library through the XML configuration file to indicate to *IS*
-which library implements each data type. In our case, both types :class:`TypeA` and :class:`TypeB` will be
-implemented in the same library.
+The first step is creating the XML configuration file to indicate which library implements each data type.
+In this case, both types :class:`TypeA` and :class:`TypeB` will be implemented in the same library.
 
 .. literalinclude:: dynamic_case.xml
     :language: xml
     :start-after: <!-- IS Types Start -->
     :end-before: <!-- IS Types End -->
 
-Then, in the :ref:`Fast-RTPS profiles` section the *publisher* and *subscriber* can refer our data types by their name.
+Then, in the :ref:`Fast-RTPS profiles` section, the *publisher* and *subscriber* can refer the data types by name.
 
 .. literalinclude:: dynamic_case.xml
     :language: xml
     :start-after: <!-- Profiles Start -->
     :end-before: <!-- Profiles End -->
 
-An our needed :ref:`Connector <Connectors>` are declared below:
+And finally it needs a :ref:`Connector <Connectors>` to relate all the components:
 
 .. literalinclude:: dynamic_case.xml
     :language: xml
     :start-after: <!-- Connector Start -->
     :end-before: <!-- Connector End -->
+    :dedent: 4
 
-As this scenario focus on *Dynamic Topic Data*, we are not going to explain how to create the
-:ref:`transformation library`, but you have a complete *use case* about it in :ref:`Data transformation` section.
+As this scenario focus on *Dynamic Topic Data*, it isn't going to explain how to create the
+:ref:`transformation library`, but there is a complete *use case* about it in :ref:`Data transformation` section.
 
 Dynamic Data with Integration Service
 -------------------------------------
 
-As we said in the previous section, there are two ways to declare *Dynamic Data Types* in *IS*.
-Is we prefer to use :ref:`Fast-RTPS XML Types <IS Types configuration>`, there is no need to perform any additional
-step, and our *Data Types* will be available to use directly. But, if we decide to use a :ref:`Types Library` we
-need to implement it and build it.
+As explained in the previous section, there are two ways to declare *Dynamic Data Types* in *IS*.
+Using :ref:`Fast-RTPS XML Types <IS Types configuration>`, there is no need to perform any additional
+step, and the *Data Types* will be available to use them directly.
+And using a :ref:`Types Library`, it's mandatory to implement the library and build it.
 
-We are going to call this library :class:`libtypeatypeb.so`.
-Remember we must implement the function ``GetTopicType``.
-There is a template file *typeslib.cpp* in resources folder in the *IS* repository.
+In this example, the name of the library is going to be :class:`libtypeatypeb.so`, and at least it must
+implement the function ``GetTopicType``. There is a template file *typeslib.cpp* in resources folder in the *IS* repository.
 
-We are going to start from scratch a new *Types Library* to show the full process.
-We will create a new file name *typeatypeb.cpp*.
+This part of the example shows the full process to create a *Types Library*.
+The source file is going to be named :class:`typeatypeb.cpp`.
 
-We start including all needed headers to use *Fast-RTPS Dynamic Types*.
+Firstly it needs to include all required headers to use *Fast-RTPS Dynamic Types*.
 
 .. literalinclude:: dynamic_case.cpp
     :language: cpp
     :start-after: // Include Start
     :end-before: // Include End
 
-The next part isn't mandatory, but we usually add it because it help us making the library portable between different
-operating systems and keeps the source code clear to read. Additionally, in this case, may be useful to add some
-``using namespaces``.
+.. _cmake_definitions_code_dynamicdata:
+
+The next part is optional, but it helps to make the library portable between different
+operating systems and keeps the source code clear to read.
+Additionally, in this case, may be useful to add some ``using namespaces``.
 
 .. literalinclude:: dynamic_case.cpp
     :language: cpp
     :start-after: // Define Start
     :end-before: // Define End
 
-If you decide to include this part as well, keep it in mind when we will create the *CMakeLists.txt* file.
+This optional section should be taken in mind during the creation of the *CMakeLists.txt* file to configure the project.
 
-Usually it is useful to create auxiliar functions to create each type of data.
+Usually, it's useful to create auxiliary functions to generate each type of data.
 
 To create DataTypeA:
 
@@ -105,64 +105,61 @@ To create DataTypeB:
     :start-after: // DataTypeB Start
     :end-before: // DataTypeB End
 
-Now, we can use these auxiliar functions to simplify the ``GetTopicType`` implementation:
+And after the creation of these functions, the next step is filling the ``GetTopicType`` function
+to return an instance of the declared types:
 
 .. literalinclude:: dynamic_case.cpp
     :language: cpp
     :start-after: // GetTopicType Start
     :end-before: // GetTopicType End
 
-After that, we have our *types library* implemented, but we still need to build it.
-Of course, you could use any build system at your wish, but *IS* provides a *CMakeLists.txt* template that we will use
-here as example.
+After that, the *types library* is implemented, but it needs to be built.
+*Integration Service* provides a *CMakeLists.txt* template that can be used as in this example.
 
-First, we are going to rename the cmake project to *typeatypeb*.
+The first step is renaming the cmake project to *typeatypeb*.
 
 .. literalinclude:: dynamic_case_CMake.txt
     :language: cmake
     :lines: 1
 
-We keep all *C++11* and *CMake* version as it is. If you create your *CMakeLists.txt* from scratch remember that
-*FastRTPSGen* generates files that depend on *Fast CDR* and *Fast RTPS*, so you must include both dependencies to your
-*CMakeLists.txt*.
+It's recommendable to keep all *C++11* and *CMake* version as it is but to create the *CMakeLists.txt* from scratch,
+it's important to keep in mind that `FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__
+generates files that depend on *Fast CDR* and *Fast RTPS*, so they must be included as dependencies to the *CMakeLists.txt*.
 
 .. literalinclude:: dynamic_case_CMake.txt
     :language: cmake
     :start-after: # packages
     :lines: 1,2
 
-Do you remember the *definitions* section of our *types library* that could help us to make the library
-more portable.
-This is where we set the values of these preprocesor definitions to build our library exporting symbols.
+To make the library more portable the cmake file needs to add the
+:ref:`preprocessor definitions <cmake_definitions_code_dynamicdata>` to build the library exporting symbols.
 
 .. literalinclude:: dynamic_case_CMake.txt
     :language: cmake
     :start-after: # definitions
     :lines: 1-4
 
-Finally we indicate to *CMake* our source code and the library we want to build, along with its dependencies.
+The final step is indicating to *CMake* the source code files and the library to build, along with its dependencies.
 
 .. literalinclude:: dynamic_case_CMake.txt
     :language: cmake
     :start-after: # typeatypeb library
     :lines: 1-3
 
-After that, we can just generate our library using *CMake*.
+After that, *CMake* will generate the library running these commands:
 
 .. code-block:: bash
 
     $ cmake .
     $ make
 
-It should generate our *libtypeatypeb.so* in the current directory that is the library that
-*IS* expects when loads our :class:`config.xml` file.
+It should generate the file *libtypeatypeb.so* in the current directory, and that's the library that
+*IS* expects when loads the :class:`config.xml` file.
 
-We should have created the :ref:`transformation library` too.
-You have a complete *use case* about *tranformation libraries* in :ref:`Data transformation` section.
+This example needs a :ref:`transformation library` too. There is a complete *use case* about *transformation libraries* in :ref:`Data transformation` section.
 
-At this point, we have our configuration file :class:`config.xml` created, and our *types library*
-*libtypeatypeb.so* built. We are able to launch *IS* with our :class:`config.xml` and enjoy how both types are being
-generated.
+At this point, there is a configuration file :class:`config.xml` created, and a *types library*
+*libtypeatypeb.so* built. *Integration Service* now allows generating both dynamic types and connect two *DDS Worlds* adapting their data types to be compatible.
 
 .. code-block:: bash
 
@@ -171,21 +168,20 @@ generated.
 Creating new Dynamic Data
 -------------------------
 
-Now, we are able to define *types libraries* to create *Dynamic Data Types* as well as define them through *XML Types*.
-The steps needed to do it are:
+The steps needed to define *types libraries* to create *Dynamic Data Types* are:
 
-- Create and configure the needed :ref:`IS Types configuration` in your XML configuration file.
-- Create and configure the needed :ref:`Fast-RTPS profiles` in your XML configuration file.
-- Create the needed :ref:`Connectors` in your XML configuration file.
-- Implementing your custom :ref:`Types Library`, if needed.
-- Generating your *types library* binary, if needed.
-- Executing *IS* with your XML configuration file.
+- Create and configure the needed :ref:`IS Types configuration` in an XML configuration file.
+- Create and configure the needed :ref:`Fast-RTPS profiles` in the XML configuration file.
+- Create the needed :ref:`Connectors` in the configuration file.
+- Implementing a custom :ref:`Types Library`, if needed.
+- Generating a *types library* binary, if needed.
+- Executing *IS* with the XML configuration file.
 
 Dynamic Types example
 ---------------------
 
-There is an example implemented in
-`dynamic_types example  <https://github.com/eProsima/Integration-Service/tree/feature/TCP_DynTypes/examples/dynamic_types>`_
+There is an example implemented in the
+`dynamic_types example  <https://github.com/eProsima/Integration-Service/tree/master/examples/dynamic_types>`_
 where you can see the use of dynamic types.
 
 .. code-block:: bash
@@ -204,24 +200,24 @@ Windows:
     $ cmake -G "Visual Studio 14 2015 Win64" ..
     $ cmake --build .
 
-This example allow the communication between
-`HelloWorld <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and
+This example allows the communication between the
+`HelloWorldExample <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/HelloWorldExample>`_ and the
 `Keys <https://github.com/eProsima/Fast-RTPS/tree/master/examples/C++/Keys>`_ examples from FastRTPS.
-The HelloWorld example must be started as a publisher and the Keys example as a subscriber.
+HelloWorldExample must be started as a publisher and the Keys example as a subscriber.
 
 .. code-block:: bash
 
-    $ ./HelloWorld publisher
+    $ ./HelloWorldExample publisher
 
 And in another terminal:
 
 .. code-block:: bash
 
-    $ ./Keys subscriber
+    $ ./keys subscriber
 
-You will notice that there is no communication between both applications.
-Run the *Integration Service* with one of the provided configuration files,
-and both applications will start to communicate. *dyn_dyn_config[_win].xml* uses *Dynamic Types* in both flavors.
+In this step, both applications don't have any communication between them,
+and after starting the *Integration Service* with the given configuration file,
+the communication will be started. *dyn_dyn_config[_win].xml* uses *Dynamic Types* in both flavors.
 
 .. code-block:: bash
 

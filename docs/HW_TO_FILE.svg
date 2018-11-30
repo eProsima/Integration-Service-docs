@@ -15,9 +15,9 @@
    height="221px"
    viewBox="-0.5 -0.5 781 221"
    id="svg100"
-   sodipodi:docname="TCP_LAN.svg"
+   sodipodi:docname="HW_TO_FILE.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   inkscape:export-filename="C:\git\Integration-Services-docs\docs\TCP_NAT.png"
+   inkscape:export-filename="C:\git\Integration-Services-docs\docs\HW_TO_FILE.png"
    inkscape:export-xdpi="92.0905"
    inkscape:export-ydpi="92.0905">
   <metadata
@@ -45,9 +45,9 @@
      inkscape:window-height="1017"
      id="namedview102"
      showgrid="true"
-     inkscape:zoom="1.0393836"
-     inkscape:cx="593.07155"
-     inkscape:cy="-83.935372"
+     inkscape:zoom="1.4699104"
+     inkscape:cx="541.21527"
+     inkscape:cy="-19.351145"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -58,6 +58,37 @@
   </sodipodi:namedview>
   <defs
      id="defs12">
+    <linearGradient
+       id="linearGradient975"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop973" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient904"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop902" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient898"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop896" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 110.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="781 : 110.5 : 1"
+       inkscape:persp3d-origin="390.5 : 73.666667 : 1"
+       id="perspective878" />
     <linearGradient
        id="linearGradient979"
        osb:paint="solid">
@@ -176,7 +207,8 @@
        y1="149"
        x2="499.5"
        y2="149"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,0.375)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient955"
@@ -185,7 +217,8 @@
        y1="149"
        x2="380.5"
        y2="149"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,0.375)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient949"
@@ -196,7 +229,7 @@
        y2="124"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       gradientTransform="matrix(0.6444978,0,0,0.60207516,-112.43001,69.310933)"
+       gradientTransform="matrix(0.6444978,0,0,0.60207516,-112.43001,59.310933)"
        inkscape:collect="always"
        xlink:href="#linearGradient949"
        id="linearGradient963-7"
@@ -206,18 +239,68 @@
        y2="124"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       gradientTransform="matrix(0.6444978,0,0,0.60207516,398.48547,74.073126)"
        inkscape:collect="always"
-       xlink:href="#linearGradient949"
-       id="linearGradient963-7-7"
-       x1="259.5"
-       y1="124"
-       x2="530.5"
-       y2="124"
+       xlink:href="#linearGradient967"
+       id="linearGradient900"
+       x1="599.33191"
+       y1="86.707588"
+       x2="709.33191"
+       y2="86.707588"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-44.378848,-21.166391)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient904"
+       id="linearGradient906"
+       x1="599.33191"
+       y1="86.707588"
+       x2="709.33191"
+       y2="86.707588"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-44.378848,-21.166391)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient898"
+       id="linearGradient900-0"
+       x1="599.33191"
+       y1="86.707588"
+       x2="709.33191"
+       y2="86.707588"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-44.378978,94.212523)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient967"
+       id="linearGradient969"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-44.378978,94.212523)"
+       x1="599.33191"
+       y1="86.707588"
+       x2="709.33191"
+       y2="86.707588" />
+    <linearGradient
+       gradientTransform="translate(155.95303,0.375)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient979"
+       id="linearGradient945-2"
+       x1="408.5"
+       y1="149"
+       x2="499.5"
+       y2="149"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient979"
+       id="linearGradient957-8"
+       x1="289.5"
+       y1="149"
+       x2="380.5"
+       y2="149"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-183.70121,1.5)" />
   </defs>
   <g
-     transform="translate(620.5,105.5)"
+     transform="translate(576.5,105.5)"
      id="g44">
     <switch
        id="switch42">
@@ -248,6 +331,57 @@
              style="font-size:16px;fill:#ffffff"
              id="tspan993">DOMAIN CHANGE</tspan>
         </tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     style="opacity:0.95;fill:url(#linearGradient969);fill-opacity:1;stroke:url(#linearGradient900-0)"
+     d="m 554.95303,65.5 v 115 h 0.11524 a 55,10 0 0 0 -0.11524,0.41992 55,10 0 0 0 55,10 55,10 0 0 0 55,-10 55,10 0 0 0 -0.082,-0.41992 h 0.082 v -115 z"
+     id="path894-6"
+     inkscape:connector-curvature="0" />
+  <ellipse
+     style="opacity:0.95;fill:url(#linearGradient900);fill-opacity:1;stroke:url(#linearGradient906)"
+     id="path894"
+     cx="609.953"
+     cy="65.541199"
+     rx="55"
+     ry="10" />
+  <rect
+     x="564.953"
+     y="129.375"
+     width="90"
+     height="40"
+     rx="6"
+     ry="6"
+     pointer-events="none"
+     id="rect80-6"
+     style="fill:url(#linearGradient945-2);fill-opacity:1;stroke:#000000" />
+  <g
+     transform="translate(583.96082,137)"
+     id="g86-4">
+    <switch
+       id="switch84-6">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="51"
+         height="26"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 51px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publisher 5</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="26"
+         y="19"
+         font-size="12px"
+         id="text82-6"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           style="font-size:16px"
+           id="tspan921-2">Output.txt</tspan>
       </text>
     </switch>
   </g>
@@ -294,16 +428,14 @@
   </g>
   <rect
      x="290"
-     y="129"
+     y="129.375"
      width="90"
      height="40"
      rx="6"
      ry="6"
      pointer-events="none"
      id="rect72"
-     style="fill:url(#linearGradient957);fill-opacity:1"
-     stroke="#000000"
-     fill="url(#id2)" />
+     style="fill:url(#linearGradient957);fill-opacity:1;stroke:#000000" />
   <g
      transform="translate(304.5,135.5)"
      id="g78">
@@ -335,16 +467,14 @@
   </g>
   <rect
      x="409"
-     y="129"
+     y="129.375"
      width="90"
      height="40"
      rx="6"
      ry="6"
      pointer-events="none"
      id="rect80"
-     style="fill:url(#linearGradient945);fill-opacity:1.0"
-     stroke="#000000"
-     fill="url(#id2)" />
+     style="fill:url(#linearGradient945);fill-opacity:1;stroke:#000000" />
   <g
      transform="translate(426.5,135.5)"
      id="g86">
@@ -383,7 +513,7 @@
      style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10" />
   <rect
      x="55.13942"
-     y="92.791862"
+     y="82.791862"
      width="174.45288"
      height="100.30478"
      rx="16.434694"
@@ -392,7 +522,7 @@
      id="rect62-6"
      style="fill:url(#linearGradient963-7);fill-opacity:1;stroke:#000000;stroke-width:0.62292546" />
   <g
-     transform="translate(99.912735,126.67081)"
+     transform="translate(99.912735,90.67081)"
      id="g20">
     <switch
        id="switch18">
@@ -416,65 +546,19 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
         <tspan
            sodipodi:role="line"
-           id="tspan915"
+           id="tspan1016"
            x="42"
-           y="12">PARTICIPANT</tspan>
+           y="12">HELLOWORLD</tspan>
         <tspan
            sodipodi:role="line"
-           id="tspan917"
+           id="tspan1018"
            x="42"
-           y="32">UDP</tspan>
-      </text>
-    </switch>
-  </g>
-  <rect
-     x="566.05493"
-     y="97.554054"
-     width="174.45288"
-     height="100.30478"
-     rx="16.434694"
-     ry="15.352918"
-     pointer-events="none"
-     id="rect62-6-6"
-     style="fill:url(#linearGradient963-7-7);fill-opacity:1;stroke:#000000;stroke-width:0.62292546" />
-  <g
-     transform="translate(610.82821,131.43301)"
-     id="g20-0">
-    <switch
-       id="switch18-8">
-      <foreignObject
-         style="overflow:visible;"
-         pointer-events="all"
-         width="83"
-         height="12"
-         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-        <xhtml:div
-           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
-          <xhtml:div
-             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</xhtml:div>
-        </xhtml:div>
-      </foreignObject>
-      <text
-         x="42"
-         y="12"
-         font-size="12px"
-         id="text16-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
-        <tspan
-           sodipodi:role="line"
-           id="tspan915-4"
-           x="42"
-           y="12">PARTICIPANT</tspan>
-        <tspan
-           sodipodi:role="line"
-           id="tspan917-7"
-           x="42"
-           y="32">TCP</tspan>
+           y="32">EXAMPLE</tspan>
       </text>
     </switch>
   </g>
   <path
-     d="m 229.5,155.5 v -10 h 40 V 135 l 19,15.5 -19,15.5 v -10.5 z"
+     d="m 189.5,155.5 v -10 h 80 V 135 l 19,15.5 -19,15.5 v -10.5 z"
      stroke-miterlimit="10"
      pointer-events="none"
      id="path96-7"
@@ -489,4 +573,43 @@
      inkscape:connector-curvature="0"
      style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10"
      sodipodi:nodetypes="cccccccc" />
+  <rect
+     x="88.43293"
+     y="130.5"
+     width="107.86586"
+     height="40"
+     rx="6"
+     ry="6"
+     pointer-events="none"
+     id="rect72-8"
+     style="fill:url(#linearGradient957-8);fill-opacity:1;stroke:#000000" />
+  <g
+     transform="translate(112.84242,136.625)"
+     id="g78-8">
+    <switch
+       id="switch76-6">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="58"
+         height="26"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 58px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Subscriber 0</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="29"
+         y="19"
+         font-size="12px"
+         id="text74-4"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           style="font-size:16px"
+           id="tspan919-6">PUBLISHER</tspan>
+      </text>
+    </switch>
+  </g>
 </svg>

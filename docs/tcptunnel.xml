@@ -1,0 +1,35 @@
+<xml>
+    <!-- Transport Descriptors Start -->
+    <transport_descriptors>
+        <transport_descriptor>
+            <transport_id>tcpTransport</transport_id>
+            <type>TCPv4</type>
+            <listening_ports>
+                <port>5100</port>
+            </listening_ports>
+        </transport_descriptor>
+    </transport_descriptors>
+    <!-- Transport Descriptors End -->
+
+    <!-- Initial Peers Start -->
+    <participant profile_name="TCPParticipant">
+        <rtps>
+            <userTransports>
+                <transport_id>tcpTransport</transport_id>
+            </userTransports>
+            <builtin>
+                <initialPeersList>
+                    <locator>
+                        <kind>TCPv4</kind>
+                        <address>192.168.1.55</address>
+                        <port>5100</port>
+                    </locator>
+                </initialPeersList>
+            </builtin>
+            <use_IP4_to_send>true</use_IP4_to_send>
+            <use_IP6_to_send>false</use_IP6_to_send>
+            <useBuiltinTransports>false</useBuiltinTransports>
+        </rtps>
+    </participant>
+    <!-- Initial Peers End -->
+</xml>
