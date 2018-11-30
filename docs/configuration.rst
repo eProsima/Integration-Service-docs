@@ -4,7 +4,7 @@ Configuration
 Load configuration
 ------------------
 
-*Integration Service* must receive an argument with the XML file with the configuration that is going to be loaded.
+*Integration Service* must receive an argument with the XML file with the configuration to load.
 
 .. code-block:: bash
 
@@ -29,9 +29,10 @@ IS Types configuration
 The *IS Types* section allows to specify what topic data types will be loaded through :ref:`types library` and define
 topic data types with `Fast RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__.
 
-To create data types that use Keys or to define how to build them, it's necessary to use :ref:`types library` to
-instantiate them. In most cases, the type details can be ignored and *IS* will use :class:`GenericPubSubType`
-as default, which encapsulates any kind of type without keys defined.
+A Data Type that uses Keys needs a :ref:`types library` to instantiate it.
+
+In most cases, there is no need to implement a :ref:`types library`.
+*IS* will use :class:`GenericPubSubType` by default which encapsulates any Data Type without Keys defined.
 
 This section uses `Fast RTPS Dynamic Types <http://docs.eprosima.com/en/latest/dynamictypes.html>`__ internally,
 but it's available to use them by code using the *Fast RTPS* API in a :ref:`types library` or using
@@ -47,16 +48,16 @@ This XML example shows how to define :ref:`types library` for each type like :cl
 :class:`libshape.so`, or use a default library that will try to load the rest of types
 (:class:`libdefault.so` in the example).
 
-If no library is defined by a type declared by a *participant* in :ref:`profiles`, and it wasn't declared through
-*Fast-RTPS XML Types*, then *IS* will use :class:`GenericPubSubType` to manage it.
+*IS* will use :class:`GenericPubSubType` to manage any Data Type that isn't declared through
+*Fast-RTPS XML Types* and can't instantiate from any :ref:`Types Library`.
 
-If ``<is_types>`` is omitted, *IS* will use :class:`GenericPubSubType` to manage all topic data types declared in the
-:ref:`Fast-RTPS profiles` section.
+If the ``<is_types>`` section doesn't exist *IS* will use :class:`GenericPubSubType` to manage all Data Types
+declared in the :ref:`Fast-RTPS profiles` section.
 
 Fast-RTPS profiles
 ------------------
 
-The profiles section defines *participants*, *subscribers*, *publishers*, etc, following the format used by
+The profiles section defines *participants*, *subscribers*, *publishers*, etc. following the format used by
 `Fast RTPS XML Types <http://docs.eprosima.com/en/latest/dynamictypes.html#xml-dynamic-types>`__,
 with its configuration.
 
@@ -70,14 +71,14 @@ Connectors
 ----------
 
 The *connectors* are just relationships between *readers* and *writers*, and optionally, a *transformation function*.
-Any number of *connectors* can be defined in our XML configuration file,
-but at least one is needed to make *IS* perform any work.
-They must contain a *reader* and a *writer*. 
+*IS* needs at least one *connector* to perform work, but the *XML configuration file* allows to define any
+number of *connectors*.
+They must contain a *reader* and a *writer*.
 Each of them is configured by a *participant* or *bridge* name and the *reader's* or *writer's* name respectively.
 
-In the following example, we define a *connector* whose *subscriber* receives data from Fast-RTPS and its *writer*
-writes that data to a text file.
-Also, there is defined a function of a :ref:`transformation library` that adds the timestamp before the data is written.
+The following example defines a *connector* whose reader is a *Fast-RTPS's subscriber* and whose *writer*
+prints the received data into a text file.
+Also, the connector defines a function from a :ref:`transformation library` that adds the timestamp to the data.
 
 .. literalinclude:: configuration.xml
     :language: xml
@@ -92,7 +93,7 @@ RTPS Connector
 ^^^^^^^^^^^^^^
 
 In this kind of *connector*, both *participants* are *RTPS* compliant,
-like *shapes_projection* and *shapes_stereo* in our :ref:`example` file.
+like *shapes_projection* and *shapes_stereo* in the :ref:`example` file.
 
 .. image:: RTPS_connector.png
     :align: center
@@ -108,12 +109,12 @@ Connector from RTPS to Other protocol
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This *connector* will communicate an *RTPS* environment with another protocol.
-Just like our *shapes_protocol* connector in the :ref:`example`.
+Just like the *shapes_protocol* connector in the :ref:`example`.
 
-The *Bridge Library* must define at least a *writer* to the desired protocol and it is responsible to
-communicate with it and follow the ``ISWriter`` interface. By default, the *transformation function* is applied after
-:class:`on_received_data` method calls to the instance of ``ISBridge``.
-To change this behaviour it's mandatory to override the complete data flow.
+The *Bridge Library* must define at least a *writer*, following the ``ISWriter`` interface, responsible for
+communicate with the desired protocol.
+By default, the ``ISBridge's`` :class:`on_received_data` method applies the *transformation function* internally.
+It's mandatory to override the complete data flow to change this behavior.
 
 .. image:: RTPS_other_connector.png
     :align: center
@@ -127,12 +128,12 @@ To change this behaviour it's mandatory to override the complete data flow.
 Connector from Other protocol to RTPS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is a similar case as the previous one, but in the other way,
-as in the *connector* *protocol_shapes* of our example.
+This case is the opposite *connector* that the previous one,
+as in the *connector* :class:`protocol_shapes` of the example.
 
 The same logic applies in this *connectors* as in the :ref:`Connector from RTPS to Other protocol` case,
-but in this case, the RTPS participant is the *writer*. An example of this can be found on
-`FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2>`__.
+but in this case, the RTPS participant is the *writer*.
+`FIROS2 <https://github.com/eProsima/FIROS2/tree/master/examples/helloworld_ros2>`__ has an example of this connector.
 
 .. image:: Other_RTPS_connector.png
     :align: center
@@ -147,7 +148,7 @@ Bidirectional connector
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 This case is not a *connector*, but the consequence of setting two *connectors* with the correct parameters.
-In our :ref:`example`, the combination of *shapes_projection* and *shapes_stereo* is a bidirectional *connector*,
+In the :ref:`example`, the combination of *shapes_projection* and *shapes_stereo* is a bidirectional *connector*,
 as well as, *shapes_protocol* and *protocol_shapes*.
 
 A combination of both logics :ref:`Connector from RTPS to Other protocol` and :ref:`Connector from Other protocol to RTPS` applies here.
@@ -166,7 +167,7 @@ bridge of this type.
 Bridge configuration
 --------------------
 
-Bridge sections allow to define new *endpoints* to implement new protocols.
+Bridge sections allow defining new *endpoints* to implement new protocols.
 Inside the tag ``<bridge>``, a :ref:`bridge library` must be defined.
 It contains the methods to create the *bridge* (implementing :ref:`isbridge`),
 *writers* (implementing :ref:`iswriter`) and *readers* (implementing :ref:`isreader`).
@@ -212,20 +213,20 @@ IS Libraries
 
 There are three different kind of libraries that *Integration Service* manages:
 
-- **Type Library**: Exposes types and the methods to create instances of them. The information about their configuration :ref:`here <IS Types configuration>` and a deeper explanation of them :ref:`here <Types library>`.
+- **Type Library**: It defines the types and the methods that allow creating these types. More details about *Types Library* configuration is available in the :ref:`IS Types configuration` section and a deeper explanation in the :ref:`Types library` section.
 
-- **Transformation Library**: *Transformation libraries* stores functions to manage the input and output data communicating a *reader* and a *writer* inside of a *connector*. These libraries are configured inside the :ref:`Connectors` section. A deeper explanation of this kind of library can be found :ref:`here <Transformation library>`.
+- **Transformation Library**: *Transformation libraries* stores functions to manage the input and output data communicating a *reader* and a *writer* of a :ref:`connector <Connectors>`. A deeper explanation is available in the :ref:`Transformation library` section.
 
-- **Bridge Library**: Includes the code to manage endpoints to implement new protocols. Their configuration is explained inside :ref:`Bridge configuration` and the complete description of *bridges* and their API is :ref:`here <ISBridge>`.
+- **Bridge Library**: It includes the code to manage *endpoints* to implement new protocols. Its configuration is explained inside :ref:`Bridge configuration` and the complete description of *bridges*, and their API is available in the :ref:`ISBridge` section.
 
 Example
 -------
 
-In this file, there are defined two RTPS *participants*, and a *bridge*.
-All of them have a *subscriber* and a *publisher*.
-The relationships between *participants* and *subscribers*/*publishers* defined in the *profiles* section are
-stablished by each *connector*. This allows to share *subscribers*/*publishers* configurations between *participants*.
-There are four *connectors* defined: *shapes_projection*, *shapes_stereo*, *shapes_protocol* and *protocol_shapes*.
+In this file, there are defined two RTPS *participants* and a *bridge*.
+Both *participants* and the *bridge* have a *subscriber* and a *publisher*.
+Each *connector*  defines the relationships between *participants* and *subscribers*/*publishers*,
+allowing sharing *subscribers*/*publishers* configurations between *participants*.
+There are four *connectors* defined: *shapes_projection*, *shapes_stereo*, *shapes_protocol*, and *protocol_shapes*.
 
 .. figure:: Complete_example.png
     :align: center
@@ -235,4 +236,3 @@ There are four *connectors* defined: *shapes_projection*, *shapes_stereo*, *shap
     :start-after: <!-- IS Libraries Start -->
     :end-before: <!-- IS Libraries End -->
     :dedent: 4
-
