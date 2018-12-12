@@ -180,6 +180,7 @@ The steps needed to define *types libraries* to create *Dynamic Data Types* are:
 Dynamic Types example
 ---------------------
 
+*IS* must be already :ref:`installed <installation manual>` to execute the example.
 There is an example implemented in the
 `dynamic_types example  <https://github.com/eProsima/Integration-Service/tree/master/examples/dynamic_types>`_
 where you can see the use of dynamic types.

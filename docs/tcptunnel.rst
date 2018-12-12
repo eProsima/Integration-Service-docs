@@ -113,6 +113,7 @@ TCP Tunnel Example
 To illustrate the use cases, there is an example named
 `ShapesDemoTCP <https://github.com/eProsima/Integration-Service/blob/master/examples/shapes_demo_tcp>`__.
 In this example, *IS* creates and uses a *TCP tunnel* to communicate two *Fast-RTPS ShapesDemo* in different ways.
+*IS* must be already :ref:`installed <installation manual>` to execute the example.
 
 Several configuration files are included:
 
