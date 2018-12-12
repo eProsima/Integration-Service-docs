@@ -74,8 +74,8 @@ In the same way for *DDS World B* data type:
     :start-after: /* Type B
     :end-before: // End Type B */
 
-After generating the *C++* code of this *IDL* file, 
-`FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__ 
+After generating the *C++* code of this *IDL* file,
+`FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__
 will generate a file named :class:`DDSTypeBPubSubTypes.h`.
 So with these types in mind, it's mandatory to include both *PubSubTypes* headers in the *transformation library*.
 
@@ -111,7 +111,7 @@ The first step is renaming the cmake project to *transformationData*.
     :language: cmake
     :lines: 1
 
-It's recommendable to keep all *C++11* and *CMake* version as it is, 
+It's recommendable to keep all *C++11* and *CMake* version as it is,
 but to create the *CMakeLists.txt* from scratch it's important to keep in mind that
 `FastRTPSGen <https://eprosima-fast-rtps.readthedocs.io/en/latest/geninfo.html>`__
 generates files that depend on *Fast CDR* and *Fast RTPS*,
@@ -172,6 +172,7 @@ Transformation Data example
 There is an example implemented in
 `dynamic_types example <https://github.com/eProsima/Integration-Service/tree/master/examples/dynamic_types>`_
 that shows the use of a transformation function.
+*IS* should be already :ref:`installed <installation manual>` to execute the example.
 
 .. code-block:: bash
 

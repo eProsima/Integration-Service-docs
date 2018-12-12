@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-**Table of Contents** 
+**Table of Contents**
 
 * :ref:`Installation Manual`
 
@@ -14,7 +14,7 @@ Getting Started
 Installation Manual
 ^^^^^^^^^^^^^^^^^^^
 
-Before compiling *eProsima Integration Service* you need to have installed *Fast RTPS* as described in its 
+Before compiling *eProsima Integration Service* you need to have installed *Fast RTPS* as described in its
 `documentation <http://eprosima-fast-rtps.readthedocs.io/en/latest/binaries.html>`__.
 You can use *Fast RTPS* as third party too, adding `-DTHIRDPARTY=ON` in the cmake command.
 
@@ -31,6 +31,7 @@ Now, for compiling, if you are on Linux you must execute:
     $ mkdir build && cd build
     $ cmake ..
     $ make
+    $ sudo make install
 
 If you are on Windows you must choose a version of Visual Studio:
 
@@ -38,7 +39,7 @@ If you are on Windows you must choose a version of Visual Studio:
 
     > mkdir build && cd build
     > cmake ..  -G "Visual Studio 14 2015 Win64"
-    > cmake --build .
+    > cmake --build . --target install
 
 If you want to compile *eProsima Integration Service* without an installed version of *Fast RTPS* you can add
 `-DTHIRDPARTY=ON` parameter that downloads it as a third party library. If you prefer to use an already installed
@@ -51,6 +52,7 @@ If you are on Linux you must execute:
     $ mkdir build && cd build
     $ cmake -DTHIRDPARTY=ON ..
     $ make
+    $ sudo make install
 
 If you are on Windows you must choose your version of Visual Studio:
 
@@ -58,7 +60,7 @@ If you are on Windows you must choose your version of Visual Studio:
 
     > mkdir build && cd build
     > cmake ..  -G "Visual Studio 14 2015 Win64" -DTHIRDPARTY=ON
-    > cmake --build .
+    > cmake --build . --target install
 
 
 Usage
@@ -98,7 +100,7 @@ The config file, provided in this example, defines a connector like this.
         <writer participant_profile="domain5" publisher_profile="is_publisher"/>
     </connector>
 
-To execute the example properly, we must first compile the example itself, from the 
+To execute the example properly, we must first compile the example itself, from the
 `domain_change example location <https://github.com/eProsima/Integration-Service/tree/master/examples/domain_change>`__.
 
 Linux:
@@ -149,5 +151,5 @@ In another terminal:
 Getting Help
 ^^^^^^^^^^^^
 
-If you need support you can reach us by mail at 
+If you need support you can reach us by mail at
 `support@eProsima.com <mailto:support@eProsima.com>`__ or by phone at `+34 91 804 34 48 <tel:+34918043448>`__.

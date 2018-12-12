@@ -63,7 +63,7 @@ Once the file :class:`config.xml` has been created, *IS* is able to run and star
 Creating new routes
 -------------------
 
-*Integration Service* supports several connectors at the same time, 
+*Integration Service* supports several connectors at the same time,
 so it could be possible to create connectors to bridge more than two *DDS Worlds*.
 
 .. image:: DDS_ROUTES.png
@@ -74,8 +74,10 @@ Domain Change Example
 ---------------------
 
 This example shows how *IS* can communicate two *participants* that belong to different *domains*.
+*IS* should be already :ref:`installed <installation manual>` to execute the example.
 
 To properly execute the example, it's mandatory to compile it from the `domain_change example location <https://github.com/eProsima/Integration-Service/tree/master/examples/domain_change>`_.
+
 
 Linux:
 

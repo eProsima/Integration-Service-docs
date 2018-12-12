@@ -326,6 +326,7 @@ HelloWorld To File
 
 To illustrate this use case, there is an example named `Helloworld_to_file <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file>`__.
 This example creates a new *bridge* to save all received data from the *Fast-RTPS HelloWorldExample* into a file.
+*IS* should be already :ref:`installed <installation manual>` to execute the example.
 
 To achieve that target, it creates a *bridge library* named `isfile <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file/isfile.cpp>`_.
 The library only instantiates `FileWriter <https://github.com/eProsima/Integration-Service/blob/master/examples/helloworld_to_file/FileWriter.cpp>`_ that implements the logic to save the data to a file.
