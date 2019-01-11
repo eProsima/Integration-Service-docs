@@ -1,12 +1,12 @@
-TCP Communication
-=================
+TCP WAN/LAN Communication
+=========================
 
 *Integration Service* can take advantage of *Fast RTPS TCP Transport* to communicate through TCP protocol.
 With *TCP Transport IS* allows solving some communication scenarios where traditional *UDP Transport* will fail.
 Here, there are some examples of these scenarios.
 
-TCP Communication Scenarios
----------------------------
+Communication Scenarios
+-----------------------
 
 Single LAN
 ^^^^^^^^^^
@@ -20,13 +20,14 @@ Typical *DDS communication* uses *UDP* protocol, but in some cases, it's needed 
 In this scenario, *IS* will communicate *Participant UDP* with *Participant TCP* thanks to a *Reader* configured
 to use *UDP transport* and a *Writer* configured to use *TCP transport*.
 
-Across NAT
-^^^^^^^^^^
+WAN Across NAT
+^^^^^^^^^^^^^^
 
-There are situations where may be useful to communicate two *DDS Participants* that belong to different LANs,
+There are situations where may be useful to communicate two *DDS Participants* that are geographycally distant,
 and this communication requires to create a connection over the Internet to get access from one LAN to the other.
-As network devices block *UDP* communication usually, *IS* must use a *TCP tunnel* to achieve the communication within
-NAT, WLAN, etc.
+As network devices such as routers and firewalls block *UDP* communication usually,
+*IS* must use a *TCP tunnel* to achieve the communication and the devices of our network must be configured to allow
+the TCP traffic reach the destination.
 
 .. image:: TCP_NAT.png
     :align: center
@@ -43,7 +44,7 @@ security options in *Fast RTPS profiles* to be able to establish a secure *TCP t
 .. image:: TCP_SEC_NAT.png
     :align: center
 
-This scenario is equivalent to :ref:`Across NAT` but includes *Fast RTPS security* attributes to get a secure
+This scenario is equivalent to :ref:`WAN Across NAT` but includes *Fast RTPS security* attributes to get a secure
 *TCP Tunnel*.
 
 TCP Tunnel with Integration Service
