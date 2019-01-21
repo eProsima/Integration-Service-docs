@@ -23,11 +23,10 @@ to use *UDP transport* and a *Writer* configured to use *TCP transport*.
 WAN Across NAT
 ^^^^^^^^^^^^^^
 
-There are situations where may be useful to communicate two *DDS Participants* that are geographycally distant,
+There are situations where may be useful to communicate two *DDS Participants* that are geographically distant,
 and this communication requires to create a connection over the Internet to get access from one LAN to the other.
-As network devices such as routers and firewalls block *UDP* communication usually,
-*IS* must use a *TCP tunnel* to achieve the communication and the devices of our network must be configured to allow
-the TCP traffic reach the destination.
+As network devices such as routers and firewalls block *UDP* communication usually must be configured to allow
+the TCP traffic reach the destination and *IS* must use a *TCP tunnel* to achieve the communication.
 
 .. image:: TCP_NAT.png
     :align: center
