@@ -12,10 +12,10 @@ eProsima Integration Service Documentation
 
 *eProsima Integration Service* is a library based on *Fast RTPS* for allowing integration of distant and incompatible
 systems. It allows to communicate RTPS applications across domains, and Local and Wide Area Networks, passing through
-firewall and NAT.
-*Integration Service* allows to apply custom data transformations and filtering between endpoints. With this feature
-*Integration Service* can communicate legacy and incompatible systems between them and even with new developed systems,
-without modifying a line of code.
+firewalls and NATs.
+*Integration Service* allows to apply custom data transformations and filtering between endpoints.
+With this feature *Integration Service* can communicate legacy and incompatible systems between
+them and even with new developed systems, without modifying a line of code.
 *Integration Service* provides an easy-to-use API that allows to add support to any protocol.
 *Integration Service* is able to create routing tables allowing to create filtering and complex communication
 diagrams, like a writer communicating with several readers, and one of that readers receiving information
@@ -27,9 +27,9 @@ The main features of *Integration Service* are:
 
 - Allowing to build modular systems, including existing systems as submodules.
 
-- Providing precise control over the flow of data, allows spliting networks and protect them with firewalls and NATs.
+- Providing precise control over the flow of data, allowing to split networks and protecting them with firewalls and NATs.
 
-- Transforming data, changing topic names, quality of services, filtering, even data types and custom operations over the data values, allows to integrate different versions of topic definitions.
+- Transforming data, changing topic names, quality of services, filtering, even data types and custom operations over the data values, allowing to integrate different versions of topic definitions.
 
 - Exposing selected topics and accepting data from remote locations it allows testing integration connectivity, topic compatibility and use-cases, easing development, integration and testing.
 
