@@ -1,6 +1,6 @@
-.. eProsima Integration Service documentation master file.
+.. eProsima Integration-Services documentation master file.
 
-eProsima Integration Service Documentation
+eProsima Integration-Services Documentation
 ===========================================
 
 .. image:: logo.png
@@ -10,22 +10,49 @@ eProsima Integration Service Documentation
     :alt: eProsima
     :target: http://www.eprosima.com/
 
-| *eProsima Integration Service* is a library based on *Fast RTPS* for creating parameterized communication bridges between different systems, services, and protocols.
-| It is also able to perform transformations over the messages such as customized routing and mapping between input and output attributes or data modification.
+*eProsima Integration-Services* is a tool based on `SOSS <https://github.com/eProsima/soss_v2>`__ and its
+**System-Handle** `SOSS-DDS <https://github.com/eProsima/SOSS-DDS>`__ to allow intercommunicating any
+*DDS* based system with any other protocol, including other *DDS* systems, integrate them into a larger system,
+even more complex system.
 
-|
-| The main features of *Integration Service* are:
+Here is the minimal example, which translates a single topic from ROS 2 to DDS:
 
-* Connects two different domains.
-* Mapping between different data types.
-* User-defined operations over the received messages (:ref:`transformation library`).
-* Communication with other environments, like *ROS2*.
+.. code-block:: yaml
+
+    systems:
+        ros2: { type: ros2 }
+        dds: { types-from: ros2 }
+    topics:
+        chatter: { type: std_msgs/String, route: {from: ros2, to: dds} }
+
+The intent is that different translations are possible by only changing the configuration file. For example, by changing
+the specified middlewares, we can obtain an instance which translates between WebSocket+JSON (as produced and consumed
+by a standard Web browser) and DDS:
+
+.. code-block:: yaml
+
+    types:
+        idls:
+            ->
+                module std_msgs
+                {
+                    struct String
+                    {
+                        string data;
+                    };
+                };
+    systems:
+        web: { type: websocket_client, types-from: robot, host: localhost, port: 12345 }
+        robot: { type: dds }
+    routes:
+        web2robot: {from: web, to: robot}
+    topics:
+        chatter: { type: "std_msgs/String", route: web2robot }
 
 This documentation is organized into the following sections:
 
 * :ref:`relatedlinks`
 * :ref:`user`
-* :ref:`notes`
 
 .. _relatedlinks:
 
@@ -39,22 +66,6 @@ This documentation is organized into the following sections:
 .. toctree::
     :caption: User Manual
 
-    concepts_terms
-    configuration
-    technical
+    use_cases
+    examples
 
-.. toctree::
-    :caption: Use cases
-
-    communicatedds
-    transformdata
-    dynamicdata
-    tcptunnel
-    newprotocol
-
-.. _notes:
-
-.. toctree::
-    :caption: Release Notes
-
-    notes
