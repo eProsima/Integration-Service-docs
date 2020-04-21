@@ -1,15 +1,16 @@
 Examples
 ========
 
-A compulsory prerequisite for running the examples below, is to have :code:`integration-service` correctly installed
+A compulsory prerequisite for running the examples below is to have :code:`integration-service` correctly installed
 as explained in the introductory section :ref:`Getting Started <getting started>`.
-Please be sure to follow all the necessary steps before proceeding.
+Please make sure to follow all the necessary steps before proceeding.
 
-Also notice that, for being able to run :code:`integration-service` with the :code:`soss` command by the end of each
-example, the shell must be fully overlaid with the sourcing of any colcon-built packages required by the specific
+Also notice that, for being able to execute :code:`integration-service` with the :code:`soss` command,
+the shell must be fully overlaid with the sourcing of any colcon-built package required by the specific
 use-case:
 
- - The :code:`soss` installation, if this has been made by following the installation manual.
+ - The :code:`soss` installation, if this has been made by following the installation manual (see the *Getting Started*
+   section of the :code:`soss` documentation).
  - The :code:`integration-service` installation, as explained in the :ref:`Getting Started <getting started>` section.
  - The specific **System-Handle** installation required by the example
    (e. g., :code:`SOSS-FIWARE`, :code:`SOSS-SOMPE/IP` ..)
@@ -73,18 +74,20 @@ This example integrates a :code:`DDS` application into a :code:`Orion Context-Br
 To make this example work, you will require:
 
 - An accesible :code:`contextBroker` service.
-- An installation of the :code:`SOSS-FIWARE` **System-Handle** (please refer to REF. for downloading the dedicated repo)
+- An installation of the :code:`SOSS-FIWARE` **System-Handle**, that you can download from the dedicated
+  `SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__).
 - An installation of :code:`Fast-RTPS` (at least v1.9.2) with the *HelloWorld* example working. Indeed, in order to feed
   the :code:`contextBroker`, the example will use a :code:`Fast-RTPS` HelloWorld *publisher*.
 
-The file :code:`soss-dds/examples/udp/dds_fiware.yaml` must be edited to match the :code:`contextBroker` configuration
-in the testing environment.
+The file :code:`soss-dds/examples/udp/dds_fiware.yaml` must be edited to match the IP address and port used by the
+:code:`contextBroker` configuration in the testing environment.
 
 **Note**: If you built the :code:`integration-service` and/or :code:`SOSS-FIWARE` packages with colcon, please make sure
 to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
 source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
-Open three terminals (replace <url> with the location of the :code:`contextBroker`):
+Open three terminals (replace <url> with the location of the :code:`contextBroker`, 
+following the format :code:`http://<ip>:<port>`):
 
 - In the first terminal, execute the HelloWorld *publisher*:
 
@@ -144,7 +147,8 @@ This example shows how to communicate a *radar/fusion* :code:`DDS` application w
 To execute this example you need to have installed:
 
 - :code:`vsomeip`.
-- The :code:`SOSS-SOME/IP` **System-Handle**, that you can download from the repo: REF.
+- The :code:`SOSS-SOME/IP` **System-Handle**, that you can download from the dedicated SOSS-SOMEIP repository
+  [TODO: add link, when public].
   Specifically, you will need the :code:`simple_radar_fusion_fastdds` and :code:`simple_radar_fusion_vsomeip` examples
   compiled. These examples are located in the :code:`examples/radar_fusion_dds` folder.
 

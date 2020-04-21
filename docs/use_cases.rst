@@ -55,7 +55,7 @@ bridge for each pair of communicating components.
 For a system made of *N* components, this means that the number of new software parts to add grows as *N*
 rather than *N²*.
 
-Notice that :code:`integration-service` already provides the **System-Handle** for most of the more common
+Notice that :code:`integration-service` already provides the **System-Handle** for some of the most common
 protocols.
 
 .. image:: LARGER_SYSTEM.png
@@ -80,7 +80,8 @@ essentially direct.
 However, the communication is straightforward enough even if a dedicated **System-Handle** doesn't exist yet, as
 the user can create his own **System-Handle**, thus becoming able to communicate with :code:`DDS` and
 any other protocol already supported by :code:`integration-service`.
-For more information regarding how to generate a **System-Handle** from scratch, please consult REF.
+For more information regarding how to generate a **System-Handle** from scratch, please consult the *System-Handle
+creation* [TODO: add link] section of the :code:`soss` documentation.
 
 .. image:: DDS_IS_SOMEIP.png
 

@@ -10,8 +10,6 @@ Getting Started
 Installation
 ^^^^^^^^^^^^
 
-..
- To build :code:`integration-service`, we recommend to use a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__.
 The :code:`integration-service` repository consists of many cmake packages which can be configured and built manually,
 but we recommend to use a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__,
 as it makes the job much smoother.
@@ -35,7 +33,8 @@ Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick
 :code:`git clone` command as an alternative to download the required :code:`Fast-RTPS` third-parties.
 
 Once :code:`integration-service` is in the `src` directory of your colcon workspace and you have sourced
-:code:`soss` as explained in REF., you can run :code:`colcon build`:
+:code:`soss` as explained here [TODO: add link to Getting Started section of soss documentation],
+you can run :code:`colcon build`:
 
 .. code-block:: bash
 
