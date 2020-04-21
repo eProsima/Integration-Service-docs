@@ -1,46 +1,65 @@
 Examples
 ========
 
+A compulsory prerequisite for running the examples below, is to have :code:`integration-service` correctly installed
+as explained in the introductory section :ref:`Getting Started <getting started>`.
+Please be sure to follow all the necessary steps before proceeding.
+
+Also notice that, for being able to run :code:`integration-service` with the :code:`soss` command by the end of each
+example, the shell must be fully overlaid with the sourcing of any colcon-built packages required by the specific
+use-case:
+
+ - The :code:`soss` installation, if this has been made by following the installation manual.
+ - The :code:`integration-service` installation, as explained in the :ref:`Getting Started <getting started>` section.
+ - The specific **System-Handle** installation required by the example
+   (e. g., :code:`SOSS-FIWARE`, :code:`SOSS-SOMPE/IP` ..)
+
 ROS2
 ^^^^
 
-This examples ties to illustrate the :ref:`DDS Bridge` use-case.
+This example is intended to illustrate the :ref:`DDS Bridge` use-case.
 
-In this example, `integration-service` is going to put into communication a `ROS 2` talker-listener example
-with `Fast-RTPS` HelloWorld example.
+In this example, :code:`integration-service` is going to put into communication a :code:`ROS2` *talker-listener*
+example with a :code:`Fast-RTPS` *HelloWorld* example.
 
-First of all, the following requirements must be met:
+To get it working, the following requirements must be met:
 
-- ROS 2 (Crystal or superior) with talker-listener example working.
-- Fast-RTPS (at least v1.9.2) with HelloWorld example.
-- `Integration-service` installed with `SOSS-ROS2`.
+- Having :code:`ROS2` (Crystal or superior) installed, with the *talker-listener* example working.
+- Having :code:`Fast-RTPS` installed (at least v1.9.2), with the *HelloWorld* example working.
+
+**Note**: If you built the :code:`integration-service` and/or :code:`ROS2` packages with colcon, please make sure
+to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
+source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
 Open three terminals:
 
-- In the first terminal, execute a `ROS 2` talker
+- In the first terminal, execute a :code:`ROS2` *talker*
 
 .. code-block:: bash
 
     ros2 run demo_nodes_cpp talker
 
-- In the second terminal, execute the `Fast-RTPS` HelloWorld subscriber
+- In the second terminal, execute the :code:`Fast-RTPS` HelloWorld *subscriber*
 
 .. code-block:: bash
 
     ./HelloWorldExample subscriber
 
-Both application don't communicate due to the incompatibility of their `DDS` configuration, **topic** and **type**.
+At this point, the two applications cannot communicate due to the incompatibility of
+their **topic** and **type** in their :code:`DDS` configuration. This is where :code:`integration-service` comes
+into play to make this communication possible.
 
-- In the third terminal, execute `integration-service` using the `dds_ros2_string.yaml` config file located in the
-  folder `soss-dds/examples/udp/`.
+- In the third terminal, execute :code:`integration-service` using the :code:`dds_ros2_string.yaml` configuration file
+  located in the :code:`soss-dds/examples/udp/` folder.
 
 .. code-block:: bash
 
     soss soss-dds/examples/udp/dds_ros2_string.yaml
 
-Once `integration-service` is executed, both `DDS` application will start communicating.
+Once the last command is executed, the two :code:`DDS` applications will start communicating.
 
-If you want to test the other way, launch `ROS 2` listener, HelloWorld publisher and the same `integration-service`
+To test the same communication the other way around,
+launch the :code:`ROS2` *listener*, the  HelloWorld *publisher* and the same :code:`soss`
 command.
 
 .. _comment_1: Currently, soss-ros2-test is failing to compile, so `std_msgs/String` isn't being generated.
@@ -49,26 +68,33 @@ command.
 Orion Context-Broker
 ^^^^^^^^^^^^^^^^^^^^
 
-This example integrates a `dds` application into a `Orion Context-Broker` system.
+This example integrates a :code:`DDS` application into a :code:`Orion Context-Broker` system.
 
-To work this example, it is required an accesible `contextBroker` service, and install `SOSS-FIWARE` along with
-`integration-service`. To feed the `contextBroker` the example will use a `Fast-RTPS` HelloWorld publisher,
-so this example is needed too.
+To make this example work, you will require:
 
-The file `soss-dds/examples/udp/dds_fiware.yaml` must be edited to match the `contextBroker` configuration
+- An accesible :code:`contextBroker` service.
+- An installation of the :code:`SOSS-FIWARE` **System-Handle** (please refer to REF. for downloading the dedicated repo)
+- An installation of :code:`Fast-RTPS` (at least v1.9.2) with the *HelloWorld* example working. Indeed, in order to feed
+  the :code:`contextBroker`, the example will use a :code:`Fast-RTPS` HelloWorld *publisher*.
+
+The file :code:`soss-dds/examples/udp/dds_fiware.yaml` must be edited to match the :code:`contextBroker` configuration
 in the testing environment.
 
-Open three terminals (replace <url> with the location of the `contextBroker`):
+**Note**: If you built the :code:`integration-service` and/or :code:`SOSS-FIWARE` packages with colcon, please make sure
+to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
+source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
-- In the first terminal, execute the HelloWorld publisher:
+Open three terminals (replace <url> with the location of the :code:`contextBroker`):
+
+- In the first terminal, execute the HelloWorld *publisher*:
 
 .. code-block:: bash
 
     ./HelloWorldExample publisher
 
-- In the second terminal, create/check the value of the `data` value in the `contextBroker`:
+- In the second terminal, create/check the value of the :code:`data` field in the :code:`contextBroker`:
 
-  - The first time testing, the structure for this test must be created in the `contextBroker`:
+  - When testing for the first time, the structure for this test must be created in the :code:`contextBroker`:
 
   .. code-block:: bash
 
@@ -78,7 +104,7 @@ Open three terminals (replace <url> with the location of the `contextBroker`):
           --data-binary "{ \"type\": \"String\", \"id\": \"String\", \"data\": { \"value\": \"\" } }" \
           '<url>/v2/entities?options='
 
-  - Check the value of the attribute if already exists:
+  - Check the value of the attribute if it already exists:
 
   .. code-block:: bash
 
@@ -90,7 +116,7 @@ Open three terminals (replace <url> with the location of the `contextBroker`):
 
       curl <url>/v2/entities/String/attrs/data/value -X PUT -s -S --header 'Content-Type: text/plain' --data-binary \"\"
 
-- Execute `integration-service` in the third terminal with the example YAML:
+- Execute :code:`integration-service` in the third terminal with the YAML example file:
 
 .. code-block:: bash
 
@@ -104,86 +130,101 @@ Open three terminals (replace <url> with the location of the `contextBroker`):
 
 Now, the value must contain information (normally, "HelloWorld").
 
-If you want to test the other way, launch Helloworld as subscriber and force an update in the `contextBroker` data while
-`integration-service` is executing with the same YAML file.
+If you want to test the communication the other way around, launch Helloworld as *subscriber* and force an update
+in the :code:`contextBroker` data while :code:`integration-service` is executing with the same YAML file.
 
 .. _comment_3: Maybe some changes must be done to allow the conversion between the struct types.
 
-Some/IP
+SOME/IP
 ^^^^^^^
 
-This example shows how to communicate a radar/fusion `dds` application with `someip` using `soss`.
+This example shows how to communicate a *radar/fusion* :code:`DDS` application with :code:`SOME/IP` using 
+:code:`integration-service`.
 
-To execute this example `SOSS-SOMEIP` and `vsomeip` must be installed.
-The `SOSS-SOMEIP` examples `simple_radar_fusion_fastdds` and `simple_radar_fusion_vsomeip` must be compiled.
-They are located in the `examples/radar_fusion_dds` folder of `SOSS-SOMEIP`.
+To execute this example you need to have installed:
+
+- :code:`vsomeip`.
+- The :code:`SOSS-SOME/IP` **System-Handle**, that you can download from the repo: REF.
+  Specifically, you will need the :code:`simple_radar_fusion_fastdds` and :code:`simple_radar_fusion_vsomeip` examples
+  compiled. These examples are located in the :code:`examples/radar_fusion_dds` folder.
+
+**Note**: If you built the :code:`integration-service` and/or :code:`SOSS-SOME/IP` packages with colcon, please make
+sure to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
+source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
 Open three terminals:
 
-- In the first terminal, launch the `radar` application:
+- In the first terminal, launch the :code:`radar` application:
 
 .. code-block:: bash
 
     radar
 
-- In the second terminal, execute `RadarExample` as subscriber:
+- In the second terminal, execute the :code:`RadarExample` as *subscriber*:
 
 .. code-block:: bash
 
     RadarExample subscriber
 
-- In the third terminal, execute `integration-service` with the `someip_dds.yaml` configuration file:
+- In the third terminal, execute :code:`integration-service` with the :code:`someip_dds.yaml` configuration file:
 
 .. code-block:: bash
 
     soss examples/radar_fusion_dds/someip_dds.yaml
 
-`radar` and `RadarExample` subscriber should start communicating.
+Once :code:`soss` is launched, you should see that the :code:`radar` and the :code:`RadarExample` *subscriber*
+will start communicating.
 
-If you want to test the other way, launc `fusion`, `RadarExample` as publisher, and `integration-service` with the file
-`dds_someip.yaml` instead.
-Take into account, that due to limitations in the **Some/IP** protocol, `radar` and `integration-service` with the
-file `dds_someip.yaml` cannot work together because both try to offer the same service.
+If you want to test it the other way around, launch :code:`fusion`, :code:`RadarExample` as *publisher*,
+and :code:`integration-service` with the file :code:`dds_someip.yaml` instead.
+
+Take into account that due to limitations in the :code:`SOME/IP` protocol,
+:code:`integration-service` doesn't work when executed with :code:`radar` and 
+with the file :code:`dds_someip.yaml`, because both try to offer the same service.
 
 WAN TCP Tunneling
 ^^^^^^^^^^^^^^^^^
 
-This example illustrates how to configure `integration-service` to achieve WAN communication.
+This example illustrates how to configure :code:`integration-service` to achieve WAN communication.
 
-To test this example properly, you need two separated subnets not connected but with internet access or a testing
-environment simulating this scenario (for example, two routers, with one of them acting as ISP of the second).
+To test this example properly, you need two separated subnets that are not connected but both with internet access,
+or a testing environment simulating this scenario (for example, two routers, with one of them acting as
+ISP of the second).
 
-Route tables and NAT must be configured to ensure proper port redirection before starting the test.
+Notice that route tables and NAT must be configured so as to ensure proper port redirection before starting the test.
 
 .. figure:: WAN_example.png
 
-    The IP addresses shown are only to illustrate the example, the important information is the **real** public IP of
-    the *server* machine, and that its router must enable NAT to forward the listening port to the *server*.
+    The IP addresses shown only serve the purpose of illustrating the example, but the important information is the
+    **real** public IP of the *server* machine. Also, its router must enable NAT to forward the listening port to
+    the *server*.
 
-Once the environment is prepared and tested (for example, using a port-scanner), modify the file `wan_config.xml` to
-match the IP address and port of with the WAN IP address and forwarded port of your environment.
+Once the environment is prepared and tested (for example, using a port-scanner), modify the file :code:`wan_config.xml`
+to match the IP address and port of with the WAN IP address and forwarded port of your environment.
 
 
-This test will launch a `ROS 2` talker in the *server* machine, and a `ROS 2` listener in the *client* machine.
-In both machines, an `integration-service` instance will communicate with the other using WAN-TCP communication
-capabilities of `Fast-RTPS`.
+This test will launch a :code:`ROS2` talker in the *server* machine, and a :code:`ROS2` listener in the *client*
+machine. In both machines, an :code:`integration-service` instance will communicate with the other using WAN-TCP
+communication capabilities of `Fast-RTPS`.
 
-So, the requirements in both machines are:
+So, the requirement in both machines is to have :code:`ROS2`(Crystal or superior) installed
+with a *talker-listener* example working.
 
-- ROS 2 (Crystal or superior) with talker-listener example working.
-- `Integration-service` installed with `SOSS-ROS2`.
+**Note**: If you built the :code:`integration-service` and/or :code:`ROS2` packages with colcon, please make
+sure to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
+source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
 Open 2 terminals in each machine:
 
 In the *server* side:
 
-- Launch `ROS 2` talker example:
+- Launch :code:`ROS2` talker example:
 
 .. code-block:: bash
 
     ros2 run demo_nodes_cpp talker
 
-- Launch `integration-service` with the server yaml:
+- Launch :code:`soss` with the *server* YAML:
 
 .. code-block:: bash
 
@@ -191,19 +232,19 @@ In the *server* side:
 
 In the *client* side:
 
-- Launch `ROS 2` listener example:
+- Launch :code:`ROS2` listener example:
 
 .. code-block:: bash
 
     ros2 run demo_nodes_cpp listener
 
-- Launch `integration-service` with the client yaml:
+- Launch :code:`soss` with the *client* YAML:
 
 .. code-block:: bash
 
     soss example/wan/client.yaml
 
-Once both `integration-service` instances match, the talker-listener example will start to communicate.
+Once the two :code:`integration-service` instances match, the talker-listener example will start to communicate.
 If the test doesn't work, review carefully your NAT configuration.
 
 .. _comment_4: wan_config.xml

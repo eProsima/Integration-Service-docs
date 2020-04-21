@@ -10,12 +10,18 @@ eProsima Integration-Services Documentation
     :alt: eProsima
     :target: http://www.eprosima.com/
 
-*eProsima Integration-Services* is a tool based on `SOSS <https://github.com/eProsima/soss_v2>`__ and its
-**System-Handle** `SOSS-DDS <https://github.com/eProsima/SOSS-DDS>`__ to allow intercommunicating any
-*DDS* based system with any other protocol, including other *DDS* systems, integrate them into a larger system,
-even more complex system.
+*eProsima Integration-Service* is a tool based on `SOSS <https://github.com/eProsima/soss_v2>`__ and its
+**System-Handle** `SOSS-DDS <https://github.com/eProsima/SOSS-DDS>`__ that allows intercommunicating any
+:code:`DDS`-based system with any other protocol, including other :code:`DDS` systems, integrating them into a larger,
+more complex system.
 
-Here is the minimal example, which translates a single topic from ROS 2 to DDS:
+*eProsima Integration-Service* can be configured with a YAML text file, through which the user can provide a mapping
+between the topics and services on the :code:`DDS`-based middleware and those on the system(s) to which the user
+wants to bridge it.
+
+
+Below you can find a minimal example of the information that the YAML configuration file should contain.
+In this example, a single topic is translated from :code:`ROS2` to :code:`DDS`:
 
 .. code-block:: yaml
 
@@ -25,9 +31,11 @@ Here is the minimal example, which translates a single topic from ROS 2 to DDS:
     topics:
         chatter: { type: std_msgs/String, route: {from: ros2, to: dds} }
 
-The intent is that different translations are possible by only changing the configuration file. For example, by changing
-the specified middlewares, we can obtain an instance which translates between WebSocket+JSON (as produced and consumed
-by a standard Web browser) and DDS:
+The versatility of *eProsima Integration-Services* is that it offers the possibilty to operate different translations
+by only changing the configuration file.
+For example, by changing
+the specified middlewares, one can obtain an instance which translates between :code:`WebSocket+JSON`
+(as produced and consumed by a standard Web browser) and :code:`DDS`:
 
 .. code-block:: yaml
 
