@@ -62,7 +62,7 @@ As an alternative, you can copy the source command with the full path of your lo
 
     source ~/PATH_TO_WORKSPACE/workspaces/is/install/setup.bash
 
-Where :code:`PATH_TO_WORKSPACE` is the path to you local :code:`integration-service` worskspace.
+Where :code:`PATH_TO_WORKSPACE` is the path to the local :code:`integration-service` worskspace.
 
 ..
  From now, :code:`soss` should be able to locate :code:`integration-service` (:code:`SOSS-DDS`) **System-Handle**.

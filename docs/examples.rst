@@ -211,7 +211,7 @@ This test will launch a :code:`ROS2` talker in the *server* machine, and a :code
 machine. In both machines, an :code:`integration-service` instance will communicate with the other using WAN-TCP
 communication capabilities of `Fast-RTPS`.
 
-So, the requirement in both machines is to have :code:`ROS2`(Crystal or superior) installed
+So, the requirement in both machines is to have :code:`ROS2` (Crystal or superior) installed
 with a *talker-listener* example working.
 
 **Note**: If you built the :code:`integration-service` and/or :code:`ROS2` packages with colcon, please make
