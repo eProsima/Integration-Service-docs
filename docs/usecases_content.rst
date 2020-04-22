@@ -9,17 +9,17 @@ installation protocol and environment preparation necessary to have the examples
 
 Namely, we will go through the following:
 
-+----------------------------------------------------------------------------------------------------+------------------------------+
-| Use-cases                                                                                          | Examples                     |
-+====================================================================================================+==============================+
-| :ref:`DDS bridge <dds bridge>`                                                                     | :code:`ROS2`                 |
-+----------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`Integrate a large system <integrate a large system>`                                         | :code:`Orion Context-Broker` |
-+----------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :code:`SOME/IP`              |
-+----------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`WAN communication <wan communication>`                                                       | WAN TCP tunneling            |
-+----------------------------------------------------------------------------------------------------+------------------------------+
++----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| Use-cases                                                                                          | Examples                                                             |
++====================================================================================================+======================================================================+
+| :ref:`DDS bridge <dds bridge>`                                                                     | :ref:`Example: ROS2 communication <example: ros2 communication>`     |
++----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`Example: Orion Context-Broker <example: orion context-broker>` |
++----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :ref:`Example: SOME/IP <example: some/ip>`                           |
++----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`WAN communication <wan communication>`                                                       | :ref:`Example: WAN TCP tunneling <example: wan tcp tunneling>`       |
++----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 
 Important reminders
@@ -43,7 +43,7 @@ use-case:
 
 As an alternative, you can install permanently the overlays relevant to your use-case system-wide,
 by adding the :code:`source` command of the the :code:`install/setup.bash` file of your local
-installations to the .bashrc file as:
+installations to the :code:`.bashrc` file as:
 
 .. code-block:: bash
 

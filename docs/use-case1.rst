@@ -18,8 +18,8 @@ example with a :code:`Fast-RTPS` *HelloWorld* example.
 
 .. image:: DDS_WITH_IS.png
 
-Example: DDS-ROS2 communication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example: ROS2 communication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To prepare the system and setup the environment correctly, please follow the introductory steps delined in
 :ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
