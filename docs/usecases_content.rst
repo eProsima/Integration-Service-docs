@@ -16,7 +16,7 @@ Namely, we will go through the following:
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`Example: Orion Context-Broker <example: orion context-broker>` |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :ref:`Example: SOME/IP <example: some/ip>`                           |
+| :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :ref:`Example: ROS1 communication <example: ros1 communication>`     |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`WAN communication <wan communication>`                                                       | :ref:`Example: WAN TCP tunneling <example: wan tcp tunneling>`       |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
