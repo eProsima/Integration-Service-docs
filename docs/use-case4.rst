@@ -18,7 +18,7 @@ The example below illustrates how to configure :code:`integration-service` to ac
 Example: WAN TCP tunneling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To prepare the system and setup the environment correctly, please follow the introductory steps delined in
+To prepare the deployment and setup the environment correctly, please follow the introductory steps delined in
 :ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
 section.
 

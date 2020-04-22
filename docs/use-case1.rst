@@ -21,7 +21,7 @@ example with a :code:`Fast-RTPS` *HelloWorld* example.
 Example: ROS2 communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To prepare the system and setup the environment correctly, please follow the introductory steps delined in
+To prepare the deployment and setup the environment correctly, please follow the introductory steps delined in
 :ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
 section.
 
