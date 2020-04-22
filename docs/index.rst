@@ -72,8 +72,11 @@ This documentation is organized into the following sections:
 .. _user:
 
 .. toctree::
-    :caption: User Manual
+    :caption: User manual
 
-    use_cases
-    examples
+    usecases_content
+    use-case1
+    use-case2
+    use-case3
+    use-case4
 

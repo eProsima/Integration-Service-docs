@@ -16,9 +16,9 @@
    viewBox="-0.5 -0.5 599 143"
    content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot; version=&quot;9.4.6&quot; editor=&quot;www.draw.io&quot; type=&quot;google&quot;&gt;&lt;diagram id=&quot;b1e04639-bcca-89a7-5e59-8aa8b869f462&quot; name=&quot;Page-1&quot;&gt;5VZNj9sgEP01PrbyZ4KPGyfZXiqtlMO2R9YQGxWbCJPE6a/v2OAPbK82ldL20FzieTAD894w4ARJUT9LfMq/CkK547ukdoKt4/ueG/rw1yA3jUQh0kAmGTGTBuDAftLO06BnRmhlTVRCcMVONpiKsqSpsjAspbja046C26uecEZnwCHFfI6+MqJyjSJ/PeBfKMvybmVvFeuRAneTTSZVjom4jqBg5wSJFELpr6JOKG/I63jRfvt3RvuNSVqqexyMEBfMzyY3sy9165IFB+AVjA1s9tSAKRdn8N9cc6bo4YTTBryC1IDlquBgeXq6zs0F48g4TwQXsg0auCiOki3gmcSEwWZHYwglOx/B2DwZk9+FSkXrEWSSe6aioEreYEo36gXaxVQaMoV2HWTrtcjHkoUGxKZUsj70wCZ8GEKXyQ3+Ebk9gQvk9sQ/gNww9ixyY/cvkhvOyN1uDwC8Cgmn2XefHH/FYcHNm4SvTPUpj9iHPNWEViXFD9rxVYqSTug1EOYsKxu1gD0K+KZhjUGHeDIDBSOkWWZRRynOJaHEqPeIMkd2mXvBvM7jBSUeIUT0gRCb/0mIaOXaQoTzM/GnhFh93G66JnPktH5qLkLImpbEfELvwVXF0pZ+LNUcHgk06TnH9teEq5n61hD6Ga0jY39v7c56oZJBco1aLe1WKwPq5U37u8jvAB0gjDt7GuJd5Spxlim17jrILKPK6tCUWPf9XN2RetGCeh0mKceKXexXwpKkZoUXwWC/ffEE4aR44klV6GyM1/hWnwQK13YgNImjKZjFaQusz/qumvPueED0N5sUVfWbN5sUChgVzUH+FEbzstvvE9ed9wsYeUNRGD3oVAfr0BbGm7dXtFAXU97vONVgDq8/Lcjwhg52vwA=&lt;/diagram&gt;&lt;/mxfile&gt;"
    id="svg136"
-   sodipodi:docname="DDS_NO_SOMEIP.svg"
+   sodipodi:docname="DDS_NO_ROS1.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   inkscape:export-filename="C:\git\Integration-Services-docs\docs\DDS_NO_COMS.png"
+   inkscape:export-filename="/home/lgasco/git/eProsima/doc/Integration-Service-docs/docs/DDS_NO_ROS1.png"
    inkscape:export-xdpi="108.30936"
    inkscape:export-ydpi="108.30936">
   <metadata
@@ -204,10 +204,10 @@
          y="12"
          font-size="12px"
          id="text126"
-         style="font-size:18.66666667px;font-family:Helvetica;text-anchor:middle;fill:#000000;-inkscape-font-specification:'Helvetica, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:none;stroke-opacity:1;fill-opacity:1">
+         style="font-size:18.66666667px;font-family:Helvetica;text-anchor:middle;fill:#000000;-inkscape-font-specification:'Helvetica, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:none;stroke-opacity:1;fill-opacity:1;">
         <tspan
            sodipodi:role="line"
-           id="tspan1626">Some/IP</tspan>
+           id="tspan845">ROS 1</tspan>
       </text>
     </switch>
   </g>
