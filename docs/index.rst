@@ -1,6 +1,6 @@
 .. eProsima Integration-Services documentation master file.
 
-eProsima Integration-Services Documentation
+eProsima Integration-Service Documentation
 ===========================================
 
 .. image:: logo.png
@@ -31,7 +31,7 @@ In this example, a single topic is translated from :code:`ROS2` to :code:`DDS`:
     topics:
         chatter: { type: std_msgs/String, route: {from: ros2, to: dds} }
 
-The versatility of *eProsima Integration-Services* is that it offers the possibilty to operate different translations
+The versatility of *eProsima Integration-Service* is that it offers the possibilty to operate different translations
 by only changing the configuration file.
 For example, by changing
 the specified middlewares, one can obtain an instance which translates between :code:`WebSocket+JSON`

@@ -19,7 +19,7 @@ Example: WAN TCP tunneling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To prepare the deployment and setup the environment correctly, please follow the introductory steps delined in
-:ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
+:ref:`Getting Started <getting started>` and read carefully the :ref:`Important remarks <important remarks>`
 section.
 
 Also, to test this example properly, you need two separated subnets that are not connected but both with internet access,
@@ -44,10 +44,6 @@ communication capabilities of `Fast-RTPS`.
 
 So, the requirement in both machines is to have :code:`ROS2` (Crystal or superior) installed
 with a *talker-listener* example working.
-
-**Note**: If you built the :code:`integration-service` and/or :code:`ROS2` packages with colcon, please make
-sure to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
-source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
 Open 2 terminals in each machine:
 
@@ -81,6 +77,21 @@ In the *client* side:
 
 Once the two :code:`integration-service` instances match, the talker-listener example will start to communicate.
 If the test doesn't work, review carefully your NAT configuration.
+
+**Note**: Each time you execute :code:`integration-service` with the :code:`soss` command in a new shell,
+please make sure to have done the sourcing of the colcon overlay with the command
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+Also, remember to source the :code:`ROS2` insallation in all shells
+
+.. code-block:: bash
+
+    source /opt/ros/$ROS2_DISTRO/setup.bash
+
+As an alternative, you can add the opportune source commands to the :code:`.bashrc` file.
 
 .. _comment_4: wan_config.xml
 .. _comment_5: create server.yaml and client.yaml both loading wan_config.xml, but different profiles

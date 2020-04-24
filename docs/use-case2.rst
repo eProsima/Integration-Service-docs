@@ -38,23 +38,40 @@ Example: Orion Context-Broker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To prepare the deployment and setup the environment correctly, please follow the introductory steps delined in
-:ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
+:ref:`Getting Started <getting started>` and read carefully the :ref:`Important remarks <important remarks>`
 section.
 
-Also, to make this example work, you will require:
+To make this example work, you will require to install the :code:`SOSS-FIWARE` **System-Handle**, that you can
+download from the dedicated
+`SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__. Clone it into the
+workspace where you have :code:`integration service` installed:
+
+.. code-block:: bash
+
+    cd is-workspace
+    git clone ssh://git@github.com/eProsima/SOSS-FIWARE src/soss-fiware -b feature/xtypes-support
+
+And then build the packages by running:
+
+.. code-block:: bash
+
+    colcon build
+
+Finally, source the new colcon overlay:
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+Additionally, you will require:
 
 - An accesible :code:`contextBroker` service.
-- An installation of the :code:`SOSS-FIWARE` **System-Handle**, that you can download from the dedicated
-  `SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__).
 - An installation of :code:`Fast-RTPS` (at least v1.9.2) with the *HelloWorld* example working. Indeed, in order to feed
   the :code:`contextBroker`, the example will use a :code:`Fast-RTPS` HelloWorld *publisher*.
 
-The file :code:`soss-dds/examples/udp/dds_fiware.yaml` must be edited to match the IP address and port used by the
-:code:`contextBroker` configuration in the testing environment.
-
-**Note**: If you built the :code:`integration-service` and/or :code:`SOSS-FIWARE` packages with colcon, please make sure
-to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
-source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
+Before proceeding, note that the file :code:`soss-dds/examples/udp/dds_fiware.yaml` in the :code:`src` folder of your
+workspace must be edited to match the IP address and port used by the :code:`contextBroker` configuration in the
+testing environment.
 
 Open three terminals (replace <url> with the location of the :code:`contextBroker`, 
 following the format :code:`http://<ip>:<port>`):
@@ -89,7 +106,7 @@ following the format :code:`http://<ip>:<port>`):
 
       curl <url>/v2/entities/String/attrs/data/value -X PUT -s -S --header 'Content-Type: text/plain' --data-binary \"\"
 
-- Execute :code:`integration-service` in the third terminal with the YAML example file:
+- Execute :code:`integration-service` in the third terminal with the YAML example file edited previously:
 
 .. code-block:: bash
 
@@ -105,5 +122,14 @@ Now, the value must contain information (normally, "HelloWorld").
 
 If you want to test the communication the other way around, launch Helloworld as *subscriber* and force an update
 in the :code:`contextBroker` data while :code:`integration-service` is executing with the same YAML file.
+
+**Note**: Each time you execute :code:`integration-service` with the :code:`soss` command in a new shell,
+please make sure to have done the sourcing of the colcon overlay with the command
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+or, in alternative, to have added it to the :code:`.bashrc` file.
 
 .. _comment_3: Maybe some changes must be done to allow the conversion between the struct types.

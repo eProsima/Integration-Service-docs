@@ -22,17 +22,13 @@ Example: ROS2 communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To prepare the deployment and setup the environment correctly, please follow the introductory steps delined in
-:ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
+:ref:`Getting Started <getting started>` and read carefully the :ref:`Important remarks <important remarks>`
 section.
 
 Also, to get this example working, the following additional requirements must be met:
 
 - Having :code:`ROS2` (Crystal or superior) installed, with the *talker-listener* example working.
 - Having :code:`Fast-RTPS` installed (at least v1.9.2), with the *HelloWorld* example working.
-
-**Note**: If you built the :code:`integration-service` and/or :code:`ROS2` packages with colcon, please make sure
-to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
-source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
 Open three terminals:
 
@@ -64,6 +60,21 @@ Once the last command is executed, the two :code:`DDS` applications will start c
 To test the same communication the other way around,
 launch the :code:`ROS2` *listener*, the  HelloWorld *publisher* and the same :code:`soss`
 command.
+
+**Note**: Each time you execute :code:`integration-service` with the :code:`soss` command in a new shell,
+please make sure to have done the sourcing of the colcon overlay with the command
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+Also, remember to source the :code:`ROS2` insallation in the first and third shells with the command
+
+.. code-block:: bash
+
+    source /opt/ros/$ROS2_DISTRO/setup.bash
+
+As an alternative, you can add the opportune source commands to the :code:`.bashrc` file.
 
 .. _comment_1: Currently, soss-ros2-test is failing to compile, so `std_msgs/String` isn't being generated.
 .. _comment_2: Maybe some changes must be done to allow the conversion between the struct types.

@@ -32,20 +32,36 @@ Example: ROS1 communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To prepare the deployment and setup the environment correctly, please follow the introductory steps delined in
-:ref:`Getting Started <getting started>` and read carefully the :ref:`Important reminders <important reminders>`
+:ref:`Getting Started <getting started>` and read carefully the :ref:`Important remarks <important remarks>`
 section.
+
+To make this example work, you will require to install the :code:`SOSS-ROS1` **System-Handle**, that you can
+download from the dedicated
+`SOSS-ROS1 repository <https://github.com/eProsima/soss-ros1/tree/feature/xtypes-support>`__. Clone it into the
+workspace where you have :code:`integration service` installed:
+
+.. code-block:: bash
+
+    cd is-workspace
+    git clone ssh://git@github.com/eProsima/SOSS-FIWARE src/soss-ros1 -b feature/xtypes-support
+
+And then build the packages by running:
+
+.. code-block:: bash
+
+    colcon build
+
+Finally, source the new colcon overlay:
+
+.. code-block:: bash
+
+    source install/setup.bash
 
 Also, to execute this example you need to have installed:
 
 - :code:`ROS1` melodic.
-- The :code:`SOSS-ROS1` **System-Handle**, that you can download from the dedicated
-  `SOSS-ROS1 repository <https://github.com/eProsima/soss-ros1>`__.
 - The `WritingPublisherSubscriber <http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29>`__
   tutorial compiled and working.
-
-**Note**: If you built the :code:`integration-service` and/or :code:`SOSS-ROS1` packages with colcon, please make
-sure to have done all the required sourcing of the colcon overlays or, in alternative, to have added the opportune
-source commands to the .bashrc file, as explained in the :ref:`Getting Started <getting started>` section.
 
 Open three terminals:
 
@@ -72,6 +88,21 @@ Once :code:`integration-service` is launched, you should see that the :code:`tal
 
 If you want to test it the other way around, launch :code:`ROS1 listener`, :code:`HelloWorldExample` as *publisher*,
 and :code:`integration-service` with the file :code:`dds_ros1.yaml` instead.
+
+**Note**: Each time you execute :code:`integration-service` with the :code:`soss` command in a new shell,
+please make sure to have done the sourcing of the colcon overlay with the command
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+Also, remember to source the :code:`ROS1` insallation in the first and third shells with the command
+
+.. code-block:: bash
+
+    source /opt/ros/melodic/setup.bash
+
+As an alternative, you can add the opportune source commands to the :code:`.bashrc` file.
 
 .. _comment_ros1_1: create the example so the user can test it and verify the ROS1 commands/environment.
     There exists an already created example which comes with a typical ROS1 installation?
