@@ -14,7 +14,6 @@ Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick
 
 .. code-block:: bash
 
-    cd
     mkdir -p is-workspace
     cd is-workspace
     git clone ssh://git@github.com/eProsima/soss_v2 src/soss --recursive -b feature/xtypes-dds
@@ -32,11 +31,12 @@ by running:
     colcon build
 
 If any package is missing dependencies **causing the compilation to fail**, you can add the flag
-:code:`--packages-up-to soss-dds-test` to make sure that you at least build :code:`soss-dds-test`:
+:code:`--packages-up-to soss-dds-test soss-ros2-test` to make sure that you at least build :code:`soss-dds-test` and
+:code:`soss-ros2-test`:
 
 .. code-block:: bash
 
-    colcon build --packages-up-to soss-dds-test
+    colcon build --packages-up-to soss-dds-test soss-ros2-test
 
 Once that's finished building, you can source the new colcon overlay:
 

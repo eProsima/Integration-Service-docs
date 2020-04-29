@@ -25,7 +25,7 @@ Main Features
 ^^^^^^^^^^^^^
 
 *eProsima Integration-Service* provides an easily and intuitively configurable platform that allows connecting any
-*DDS*-based system with any other protocol. This comes along with several appealing features.
+*DDS*-based system with any other protocol. This comes along with several appealing features:
 
 .. image:: SH_2.png
 

@@ -32,9 +32,16 @@ to have *eProsima Integration-Service* correctly installed as explained in detai
 in the introductory section :ref:`Getting Started <getting started>`.
 Please make sure to follow all the steps described in the document before proceeding.
 
+Whenever you run the :code:`colcon build` command in the examples provided, if any package is missing dependencies
+**causing the compilation to fail**, you can add the flag :code:`--packages-up-to soss-dds-test soss-ros2-test`
+as follows:
+
+.. code-block:: bash
+
+    colcon build --packages-up-to soss-dds-test soss-ros2-test
+
 Also notice that, for being able to execute *eProsima Integration-Service* with the :code:`soss` command at the end of
-each example,
-the shell must be fully overlaid with the sourcing of all colcon-built packages required by the specific
+each example, the shell must be fully overlaid with the sourcing of all colcon-built packages required by the specific
 use-case:
 
 - The *eProsima Integration-Service* installation, along with the installation of any possible **System-Handle** that
