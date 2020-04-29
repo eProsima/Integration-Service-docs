@@ -115,7 +115,7 @@ The *eProsima Integration-Service* core, and all **System-Handles** available to
 
 **Easily configurable.**
 
-Ad detailed above, an *eProsima Integration-Service* instance is easily configurable by means of a YAML file.
+As detailed above, an *eProsima Integration-Service* instance is easily configurable by means of a YAML file.
 For more information on how to do so, please consult the link: YAML configuration
 [TODO: link].
 

@@ -34,7 +34,7 @@ Please make sure to follow all the steps described in the document before procee
 
 Also notice that, for being able to execute *eProsima Integration-Service* with the :code:`soss` command at the end of
 each example,
-the shell must be fully overlaid with the sourcing of any colcon-built package required by the specific
+the shell must be fully overlaid with the sourcing of all colcon-built packages required by the specific
 use-case:
 
 - The *eProsima Integration-Service* installation, along with the installation of any possible **System-Handle** that

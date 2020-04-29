@@ -51,7 +51,7 @@ As an alternative, you can copy the source command with the full path of your lo
 
 .. code-block:: bash
 
-    source ~/PATH_TO_WORKSPACE/is-workspace/install/setup.bash
+    source PATH_TO_WORKSPACE/is-workspace/install/setup.bash
 
 Where :code:`PATH_TO_WORKSPACE` is the path to the local *eProsima Integration-Service* worskspace.
 
