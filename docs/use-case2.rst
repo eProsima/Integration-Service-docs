@@ -11,27 +11,27 @@ component quite unhandy.
 
 .. image:: LARGER_SYSTEM_BAD.png
 
-:code:`Integration-service` eases this process, allowing to integrate any :code:`DDS` system into an already
+*eProsima Integration-Service* eases this process, allowing to integrate any *DDS* system into an already
 existing system or viceversa, by providing an out-of-the-box bridge that straightforwardly allows to communicate the 
-:code:`DDS` and the non-:code:`DDS` protocols.
+*DDS* and the non-*DDS* protocols.
 
-Also, the core of :code:`integration-service` allows to centralise all the possible bridges among
+Also, the core of *eProsima Integration-Service* allows to centralise all the possible bridges among
 the subsystems by means of system-specific plugins, or **System-Handles**, that speak the same language as the core.
 
-Once all the protocols of interest are communicated with :code:`integration-service`,
+Once all the protocols of interest are communicated with *eProsima Integration-Service*,
 each via a dedicated **System-Handle**, the inter-components communication
 can be easily implemented by means of a YAML configuration file, rather than by creating a dedicated 
 bridge for each pair of communicating components.
 For a system made of *N* components, this means that the number of new software parts to add grows as *N*
 rather than *N²*.
 
-Notice that :code:`integration-service` already provides the **System-Handle** for some of the most common
+Notice that *eProsima Integration-Service* already provides the **System-Handle** for some of the most common
 protocols.
 
 .. image:: LARGER_SYSTEM.png
 
-This section is intented to illustrate an example of how :code:`integration-service` integrates a :code:`DDS`
-application into a :code:`Orion Context-Broker` system.
+This section is intented to illustrate an example of how *eProsima Integration-Service* integrates a *DDS*
+application into a *Orion Context-Broker* system.
 
 
 Example: Orion Context-Broker
@@ -41,10 +41,10 @@ To prepare the deployment and setup the environment correctly, please follow the
 :ref:`Getting Started <getting started>` and read carefully the :ref:`Important remarks <important remarks>`
 section.
 
-To make this example work, you will require to install the :code:`SOSS-FIWARE` **System-Handle**, that you can
+To make this example work, you will require to install the **SOSS-FIWARE** **System-Handle**, that you can
 download from the dedicated
 `SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__. Clone it into the
-workspace where you have :code:`integration service` installed:
+workspace where you have *eProsima Integration-Service* installed:
 
 .. code-block:: bash
 
@@ -65,26 +65,26 @@ Finally, source the new colcon overlay:
 
 Additionally, you will require:
 
-- An accesible :code:`contextBroker` service.
-- An installation of :code:`Fast-RTPS` (at least v1.9.2) with the *HelloWorld* example working. Indeed, in order to feed
-  the :code:`contextBroker`, the example will use a :code:`Fast-RTPS` HelloWorld *publisher*.
+- An accesible *contextBroker* service.
+- An installation of *Fast-RTPS* (at least v1.9.2) with the HelloWorld example working. Indeed, in order to feed
+  the *contextBroker*, the example will use a *Fast-RTPS* HelloWorld :code:`publisher` or :code:`subscriber`.
 
 Before proceeding, note that the file :code:`soss-dds/examples/udp/dds_fiware.yaml` in the :code:`src` folder of your
-workspace must be edited to match the IP address and port used by the :code:`contextBroker` configuration in the
+workspace must be edited to match the IP address and port used by the *contextBroker* configuration in the
 testing environment.
 
-Open three terminals (replace <url> with the location of the :code:`contextBroker`, 
+Open three terminals (replace <url> with the location of the *contextBroker*, 
 following the format :code:`http://<ip>:<port>`):
 
-- In the first terminal, execute the HelloWorld *publisher*:
+- In the first terminal, execute the Helloworld :code:`publisher`:
 
 .. code-block:: bash
 
     ./HelloWorldExample publisher
 
-- In the second terminal, create/check the value of the :code:`data` field in the :code:`contextBroker`:
+- In the second terminal, create/check the value of the :code:`data-binary` field in the *contextBroker*:
 
-  - When testing for the first time, the structure for this test must be created in the :code:`contextBroker`:
+  - When testing for the first time, the structure for this test must be created in the *contextBroker*:
 
   .. code-block:: bash
 
@@ -94,7 +94,7 @@ following the format :code:`http://<ip>:<port>`):
           --data-binary "{ \"type\": \"String\", \"id\": \"String\", \"data\": { \"value\": \"\" } }" \
           '<url>/v2/entities?options='
 
-  - Check the value of the attribute if it already exists:
+  - Check the value of the attribute, if it already exists:
 
   .. code-block:: bash
 
@@ -106,7 +106,8 @@ following the format :code:`http://<ip>:<port>`):
 
       curl <url>/v2/entities/String/attrs/data/value -X PUT -s -S --header 'Content-Type: text/plain' --data-binary \"\"
 
-- Execute :code:`integration-service` in the third terminal with the YAML example file edited previously:
+- Execute *eProsima Integration-Service* using the :code:`soss` command in the third terminal and with the YAML example
+  file edited previously:
 
 .. code-block:: bash
 
@@ -118,12 +119,12 @@ following the format :code:`http://<ip>:<port>`):
 
     curl <url>/v2/entities/String/attrs/data/value?type=String
 
-Now, the value must contain information (normally, "HelloWorld").
+Now, the value must contain information (normally, :code:`HelloWorld`).
 
-If you want to test the communication the other way around, launch Helloworld as *subscriber* and force an update
-in the :code:`contextBroker` data while :code:`integration-service` is executing with the same YAML file.
+If you want to test the communication the other way around, launch Helloworld as  :code:`subscriber` and force an update
+in the *contextBroker* data while *eProsima Integration-Service* is executing with the same YAML file.
 
-**Note**: Each time you execute :code:`integration-service` with the :code:`soss` command in a new shell,
+**Note**: Each time you execute *eProsima Integration-Service* with the :code:`soss` command in a new shell,
 please make sure to have done the sourcing of the colcon overlay with the command
 
 .. code-block:: bash

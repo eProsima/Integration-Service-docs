@@ -1,20 +1,20 @@
 DDS bridge
 ==========
 
-A typical scenario faced when bridging different :code:`DDS`-based systems is that these systems use incompatible
+A typical scenario faced when bridging different *DDS*-based systems is that these systems use incompatible
 configurations.
-This happens for example in the communication between :code:`DDS` and :code:`ROS2`.
+This happens for example in the communication between *DDS* and *ROS2*.
 
 .. image:: DDS_NO_COMS.png
 
-A user with knowledge of both systems may be aware that :code:`ROS2` uses :code:`DDS` as a middleware but hides some of 
-:code:`DDS`' configuration details, thus making a direct communication between the two difficult, if not impossible.
-By using :code:`integration-service`, this communication can be eased and achieved with minimal effort from the
+A user with knowledge of both systems may be aware that *ROS2* uses *DDS* as a middleware but hides some of 
+*DDS*' configuration details, thus making a direct communication between the two difficult, if not impossible.
+By using *eProsima Integration-Service*, this communication can be eased and achieved with minimal effort from the
 user's side.
 
-This section is intented to illustrate the :code:`DDS`-:code:`ROS2` communication as an example of this
-type of :code:`integration-service`-mediated bridge, by putting into communication a :code:`ROS2` *talker-listener*
-example with a :code:`Fast-RTPS` *HelloWorld* example.
+This section is intented to illustrate the *DDS*-*ROS2* communication as an example of this
+type of *eProsima Integration-Service*-mediated bridge, by putting into communication a *ROS2* *talker-listener*
+example with a *Fast-RTPS* HelloWorld example.
 
 .. image:: DDS_WITH_IS.png
 
@@ -27,48 +27,48 @@ section.
 
 Also, to get this example working, the following additional requirements must be met:
 
-- Having :code:`ROS2` (Crystal or superior) installed, with the *talker-listener* example working.
-- Having :code:`Fast-RTPS` installed (at least v1.9.2), with the *HelloWorld* example working.
+- Having *ROS2* (Crystal or superior) installed, with the *talker-listener* example working.
+- Having *Fast-RTPS* installed (at least v1.9.2), with the HelloWorld example working.
 
 Open three terminals:
 
-- In the first terminal, execute a :code:`ROS2` *talker*
+- In the first terminal, execute a *ROS2* :code:`talker`
 
 .. code-block:: bash
 
     ros2 run demo_nodes_cpp talker
 
-- In the second terminal, execute the :code:`Fast-RTPS` HelloWorld *subscriber*
+- In the second terminal, execute the *Fast-RTPS* HelloWorld :code:`subscriber`
 
 .. code-block:: bash
 
     ./HelloWorldExample subscriber
 
 At this point, the two applications cannot communicate due to the incompatibility of
-their **topic** and **type** in their :code:`DDS` configuration. This is where :code:`integration-service` comes
-into play to make this communication possible.
+their **topic** and **type** in their *DDS* configuration. This is where *eProsima Integration-Service* comes
+into play to make the communication possible.
 
-- In the third terminal, execute :code:`integration-service` using the :code:`dds_ros2_string.yaml` configuration file
-  located in the :code:`soss-dds/examples/udp/` folder.
+- In the third terminal, execute *eProsima Integration-Service* using the :code:`soss` command and with the
+  :code:`dds_ros2_string.yaml` configuration file located in the :code:`soss-dds/examples/udp/` folder.
 
 .. code-block:: bash
 
     soss soss-dds/examples/udp/dds_ros2_string.yaml
 
-Once the last command is executed, the two :code:`DDS` applications will start communicating.
+Once the last command is executed, the two *DDS* applications will start communicating.
 
 To test the same communication the other way around,
-launch the :code:`ROS2` *listener*, the  HelloWorld *publisher* and the same :code:`soss`
+launch the *ROS2* :code:`listener`, the  HelloWorld :code:`publisher` and the same :code:`soss`
 command.
 
-**Note**: Each time you execute :code:`integration-service` with the :code:`soss` command in a new shell,
+**Note**: Each time you execute *eProsima Integration-Service* with the :code:`soss` command in a new shell,
 please make sure to have done the sourcing of the colcon overlay with the command
 
 .. code-block:: bash
 
     source install/setup.bash
 
-Also, remember to source the :code:`ROS2` insallation in the first and third shells with the command
+Also, remember to source the *ROS2* insallation in the first and third shells with the command
 
 .. code-block:: bash
 

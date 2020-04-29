@@ -1,17 +1,13 @@
 Getting Started
 ===============
 
-**Table of Contents**
-
-* :ref:`Installation`
-
-* :ref:`Getting Help`
+This section is meant to provide the user with an easy-to-use installation guide.
 
 Installation
 ^^^^^^^^^^^^
 
-The :code:`integration-service` repository consists of many cmake packages which can be configured and built manually,
-but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__,
+The *eProsima Integration-Service* repository consists of many cmake packages which can be configured and built
+manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__,
 as it makes the job much smoother.
 
 Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__:
@@ -28,7 +24,7 @@ Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick
 required third-parties. The :code:`--recursive` flag in the second command can be omitted in the case you have
 `Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`__ already installed in your system.
 
-Once :code:`integration-service` is in the :code:`src` directory of your colcon workspace, you can build the packages
+Once *eProsima Integration-Service* is in the :code:`src` directory of your colcon workspace, you can build the packages
 by running:
 
 .. code-block:: bash
@@ -57,10 +53,10 @@ As an alternative, you can copy the source command with the full path of your lo
 
     source ~/PATH_TO_WORKSPACE/is-workspace/install/setup.bash
 
-Where :code:`PATH_TO_WORKSPACE` is the path to the local :code:`integration-service` worskspace.
+Where :code:`PATH_TO_WORKSPACE` is the path to the local *eProsima Integration-Service* worskspace.
 
 ..
- From now, :code:`soss` should be able to locate :code:`integration-service` (:code:`SOSS-DDS`) **System-Handle**.
+ From now, :code:`soss` should be able to locate *eProsima Integration-Service* (:code:`SOSS-DDS`) **System-Handle**.
 
 Getting Help
 ^^^^^^^^^^^^
