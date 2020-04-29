@@ -54,9 +54,13 @@ plus some optional ones.
 The most common fields required to configure a **System-Handle** are:
 
 * :code:`types`: specifies the IDL types used by *eProsima Integration-Service* to transmit messages.
+
 * :code:`systems`: specifies the middlewares involved in the communication.
+
   * :code:`types-from`: allows the middleware to inherit the type from another system.
+
 * :code:`routes`: specifies which bridges SOSS needs to create.
+
 * :code:`topics`/:code:`services`: specify the topics exchanged over the above bridges in either publisher/subscriber
   or client/server type communications.
 
