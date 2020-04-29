@@ -55,7 +55,10 @@ On the *server* side:
 
     ros2 run demo_nodes_cpp talker
 
-- Launch *eProsima Integration-Service* using the :code:`soss` command and with the *server* YAML:
+- Launch *eProsima Integration-Service* using the :code:`soss` command and with the
+  `server YAML <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/wan/server.yaml>`__:
+
+.. _TODO_YAML_LINK_3: Create and link properly the above YAML file.
 
 .. code-block:: bash
 
@@ -69,7 +72,10 @@ On the *client* side:
 
     ros2 run demo_nodes_cpp listener
 
-- Launch *eProsima Integration-Service* using the :code:`soss` command and with the *client* YAML:
+- Launch *eProsima Integration-Service* using the :code:`soss` command and with the
+  `client YAML <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/wan/client.yaml>`__:
+
+.. _TODO_YAML_LINK_4: Create and link properly the above YAML file.
 
 .. code-block:: bash
 

@@ -78,7 +78,10 @@ Open three terminals:
     ./HelloWorldExample subscriber
 
 - In the third terminal, execute *eProsima Integration-Service* using the :code:`soss` command and with the
-  :code:`ros1_dds.yaml` configuration file:
+  `ros1_dds_string.yaml <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/ros1/ros1_dds_string.yaml>`__
+  configuration file:
+
+.. _TODO_YAML_LINK_2: Create and link properly the above YAML file.
 
 .. code-block:: bash
 
