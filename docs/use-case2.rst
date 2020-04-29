@@ -12,7 +12,7 @@ component quite unhandy.
 .. image:: LARGER_SYSTEM_BAD.png
 
 *eProsima Integration-Service* eases this process, allowing to integrate any *DDS* system into an already
-existing system or viceversa, by providing an out-of-the-box bridge that straightforwardly allows to communicate the 
+existing system or viceversa, by providing an out-of-the-box bridge that straightforwardly allows to communicate the
 *DDS* and the non-*DDS* protocols.
 
 Also, the core of *eProsima Integration-Service* allows to centralise all the possible bridges among
@@ -20,7 +20,7 @@ the subsystems by means of system-specific plugins, or **System-Handles**, that 
 
 Once all the protocols of interest are communicated with *eProsima Integration-Service*,
 each via a dedicated **System-Handle**, the inter-components communication
-can be easily implemented by means of a YAML configuration file, rather than by creating a dedicated 
+can be easily implemented by means of a YAML configuration file, rather than by creating a dedicated
 bridge for each pair of communicating components.
 For a system made of *N* components, this means that the number of new software parts to add grows as *N*
 rather than *N²*.
@@ -73,7 +73,7 @@ Before proceeding, note that the file :code:`soss-dds/examples/udp/dds_fiware.ya
 workspace must be edited to match the IP address and port used by the *contextBroker* configuration in the
 testing environment.
 
-Open three terminals (replace <url> with the location of the *contextBroker*, 
+Open three terminals (replace <url> with the location of the *contextBroker*,
 following the format :code:`http://<ip>:<port>`):
 
 - In the first terminal, execute the Helloworld :code:`publisher`:
@@ -106,8 +106,11 @@ following the format :code:`http://<ip>:<port>`):
 
       curl <url>/v2/entities/String/attrs/data/value -X PUT -s -S --header 'Content-Type: text/plain' --data-binary \"\"
 
-- Execute *eProsima Integration-Service* using the :code:`soss` command in the third terminal and with the YAML example
-  file edited previously:
+- Execute *eProsima Integration-Service* using the :code:`soss` command in the third terminal and with the
+  `YAML <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/fiware/dds_ros2_fiware_string.yaml>`__
+  example file edited previously:
+
+.. _TODO_YAML_LINK_1: Create and link properly the above YAML file.
 
 .. code-block:: bash
 

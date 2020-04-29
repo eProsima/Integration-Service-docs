@@ -7,7 +7,7 @@ Installation
 ^^^^^^^^^^^^
 
 The *eProsima Integration-Service* repository consists of many cmake packages which can be configured and built
-manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__,
+manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/index.html>`__,
 as it makes the job much smoother.
 
 Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__:
@@ -46,7 +46,7 @@ Once that's finished building, you can source the new colcon overlay:
 
 **Note**: The sourcing of the local colcon overlay is required every time the colcon workspace is opened in
 a new shell environment.
-As an alternative, you can copy the source command with the full path of your local installation to your 
+As an alternative, you can copy the source command with the full path of your local installation to your
 :code:`.bashrc` file as:
 
 .. code-block:: bash

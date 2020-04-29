@@ -7,7 +7,7 @@ This happens for example in the communication between *DDS* and *ROS2*.
 
 .. image:: DDS_NO_COMS.png
 
-A user with knowledge of both systems may be aware that *ROS2* uses *DDS* as a middleware but hides some of 
+A user with knowledge of both systems may be aware that *ROS2* uses *DDS* as a middleware but hides some of
 *DDS*' configuration details, thus making a direct communication between the two difficult, if not impossible.
 By using *eProsima Integration-Service*, this communication can be eased and achieved with minimal effort from the
 user's side.
@@ -49,7 +49,8 @@ their **topic** and **type** in their *DDS* configuration. This is where *eProsi
 into play to make the communication possible.
 
 - In the third terminal, execute *eProsima Integration-Service* using the :code:`soss` command and with the
-  :code:`dds_ros2_string.yaml` configuration file located in the :code:`soss-dds/examples/udp/` folder.
+  `dds_ros2_string.yaml <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/udp/dds_ros2_string.yaml>`__
+  configuration file located in the :code:`soss-dds/examples/udp/` folder.
 
 .. code-block:: bash
 
