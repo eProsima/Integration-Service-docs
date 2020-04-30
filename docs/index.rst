@@ -32,6 +32,8 @@ System Handles
 
 An *eProsima Integration-Service* instance can connect *N* middlewares through dedicated plugins that speak the same
 language as the core.
+This common language is `eProsima xtypes <https://github.com/eProsima/xtypes>`__; a fast and lightweight
+`OMG DDS-XTYPES standard <https://www.omg.org/spec/DDS-XTypes>`__ C++11 header-only implementation.
 These plugins, or **System-Handles**, are discovered by *eProsima Integration-Service* at runtime
 after they have been installed.
 
