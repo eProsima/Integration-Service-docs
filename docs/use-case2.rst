@@ -63,8 +63,8 @@ Finally, source the new colcon overlay:
 
 Additionally, you will require:
 
-- *ROS1* melodic.
-- The `WritingPublisherSubscriber <http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29>`__
+- *ROS1* *Melodic*.
+- The *ROS1* `WritingPublisherSubscriber <http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29>`__
   tutorial compiled and working.
 - An accesible *contextBroker* service.
 - An installation of *Fast-RTPS* (at least v1.9.2) with the HelloWorld example working. Indeed, in order to feed
@@ -107,7 +107,7 @@ following the format :code:`http://<ip>:<port>`):
 
       curl <url>/v2/entities/String/attrs/data/value -X PUT -s -S --header 'Content-Type: text/plain' --data-binary \"\"
 
-- In the third terminal, execute the *ROS1* listener application:
+- In the third terminal, execute the *ROS1* :code:`listener` application:
 
   .. code-block:: bash
 
@@ -123,7 +123,7 @@ following the format :code:`http://<ip>:<port>`):
 
     soss soss-dds/examples/fiware/dds_fiware_ros1.yaml
 
-- Check again the value of the data in the `contextBroker`:
+- Check again the value of the :code:`data` in the *contextBroker*:
 
 .. code-block:: bash
 
@@ -131,12 +131,12 @@ following the format :code:`http://<ip>:<port>`):
 
 Now, the value must contain information (normally, :code:`HelloWorld`).
 
-The *ROS1* listener will shown the updated values as well.
+The *ROS1* :code:`listener` will show the updated values as well.
 
 If you want to test the communication the other way around, launch Helloworld as  :code:`subscriber` and force an update
-in the *contextBroker* data while *eProsima Integration-Service* is executing with the same YAML file.
-Keep the *ROS1* listener application to avoid having two publisher at the same time, while possible, it may make
-difficult to check the example behavior.
+in the *contextBroker* :code:`data` while *eProsima Integration-Service* is executing with the same YAML file.
+Keep the *ROS1* application in :code:`listener` mode in order to avoid having two publishers at the same time.
+Indeed, while being allowed, it may hinder probing the example behavior correctly.
 
 **Note**: Each time you execute *eProsima Integration-Service* with the :code:`soss` command in a new shell,
 please make sure to have done the sourcing of the colcon overlay with the command
@@ -145,6 +145,12 @@ please make sure to have done the sourcing of the colcon overlay with the comman
 
     source install/setup.bash
 
-or, in alternative, to have added it to the :code:`.bashrc` file.
+Also, remember to source the *ROS1* insallation in the third and fourth shells with the command
+
+.. code-block:: bash
+
+    source /opt/ros/melodic/setup.bash
+
+As an alternative, you can add the opportune source commands to the :code:`.bashrc` file.
 
 .. _comment_3: Maybe some changes must be done to allow the conversion between the struct types.
