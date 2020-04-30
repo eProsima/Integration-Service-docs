@@ -43,7 +43,7 @@ workspace where you have *eProsima Integration-Service* installed:
 .. code-block:: bash
 
     cd is-workspace
-    git clone ssh://git@github.com/eProsima/SOSS-FIWARE src/soss-ros1 -b feature/xtypes-support
+    git clone ssh://git@github.com/eProsima/soss-ros1 src/soss-ros1 -b feature/xtypes-support
 
 And then build the packages by running:
 

@@ -38,13 +38,16 @@ section.
 
 To make this example work, you will require to install the **SOSS-FIWARE** **System-Handle**, that you can
 download from the dedicated
-`SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__. Clone it into the
-workspace where you have *eProsima Integration-Service* installed:
+`SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__, and
+the **SOSS-ROS1** **System-Handle**, accesible from the
+`SOSS-ROS1 repository <https://github.com/eProsima/soss-ros1/tree/feature/xtypes-support>`__.
+Clone them into the workspace where you have *eProsima Integration-Service* installed:
 
 .. code-block:: bash
 
     cd is-workspace
     git clone ssh://git@github.com/eProsima/SOSS-FIWARE src/soss-fiware -b feature/xtypes-support
+    git clone ssh://git@github.com/eProsima/soss-ros1 src/soss-ros1 -b feature/xtypes-support
 
 And then build the packages by running:
 
@@ -60,15 +63,18 @@ Finally, source the new colcon overlay:
 
 Additionally, you will require:
 
+- *ROS1* melodic.
+- The `WritingPublisherSubscriber <http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29>`__
+  tutorial compiled and working.
 - An accesible *contextBroker* service.
 - An installation of *Fast-RTPS* (at least v1.9.2) with the HelloWorld example working. Indeed, in order to feed
   the *contextBroker*, the example will use a *Fast-RTPS* HelloWorld :code:`publisher` or :code:`subscriber`.
 
-Before proceeding, note that the file :code:`soss-dds/examples/udp/dds_fiware.yaml` in the :code:`src` folder of your
-workspace must be edited to match the IP address and port used by the *contextBroker* configuration in the
+Before proceeding, note that the file :code:`soss-dds/examples/fiware/dds_fiware_ros1.yaml` in the :code:`src` folder of
+your workspace must be edited to match the IP address and port used by the *contextBroker* configuration in the
 testing environment.
 
-Open three terminals (replace <url> with the location of the *contextBroker*,
+Open four terminals (replace <url> with the location of the *contextBroker*,
 following the format :code:`http://<ip>:<port>`):
 
 - In the first terminal, execute the Helloworld :code:`publisher`:
@@ -101,15 +107,21 @@ following the format :code:`http://<ip>:<port>`):
 
       curl <url>/v2/entities/String/attrs/data/value -X PUT -s -S --header 'Content-Type: text/plain' --data-binary \"\"
 
-- Execute *eProsima Integration-Service* using the :code:`soss` command in the third terminal and with the
-  `YAML <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/fiware/dds_ros2_fiware_string.yaml>`__
+- In the third terminal, execute the *ROS1* listener application:
+
+  .. code-block:: bash
+
+      listener
+
+- Execute *eProsima Integration-Service* using the :code:`soss` command in the fourth terminal and with the
+  `YAML <https://github.com/eProsima/SOSS-DDS/blob/feature/xtypes-dds/examples/fiware/dds_fiware_ros1.yaml>`__
   example file edited previously:
 
 .. _TODO_YAML_LINK_1: Create and link properly the above YAML file.
 
 .. code-block:: bash
 
-    soss soss-dds/examples/udp/dds_fiware.yaml
+    soss soss-dds/examples/fiware/dds_fiware_ros1.yaml
 
 - Check again the value of the data in the `contextBroker`:
 
@@ -119,8 +131,12 @@ following the format :code:`http://<ip>:<port>`):
 
 Now, the value must contain information (normally, :code:`HelloWorld`).
 
+The *ROS1* listener will shown the updated values as well.
+
 If you want to test the communication the other way around, launch Helloworld as  :code:`subscriber` and force an update
 in the *contextBroker* data while *eProsima Integration-Service* is executing with the same YAML file.
+Keep the *ROS1* listener application to avoid having two publisher at the same time, while possible, it may make
+difficult to check the example behavior.
 
 **Note**: Each time you execute *eProsima Integration-Service* with the :code:`soss` command in a new shell,
 please make sure to have done the sourcing of the colcon overlay with the command
