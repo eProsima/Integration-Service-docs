@@ -1,9 +1,18 @@
-
 Use-cases and Examples
 ======================
 
-In this part of the user-manual, the most representative use-cases demonstrating :code:`integration-service`
-functionalities are shown.
+Typical Use-cases
+^^^^^^^^^^^^^^^^^
+
+Typical scenarios in which *eProsima Integration-Service* is relevant are:
+
+* Communication of different *DDS*-based systems that use incompatible configurations.
+* Integrating *DDS* systems into arbitrarily complex systems using different protocols.
+* Communication of a *DDS* system with systems with incompatible protocols.
+* Communication between *DDS* systems located in different geographical regions through the Internet.
+
+In this user manual we discuss representative use-cases demonstrating these
+*eProsima Integration-Service*'s functionalities.
 For each use-case, a related example is presented and the user is guided step-by-step through the
 installation protocol and environment preparation necessary to have the examples set up and working.
 
@@ -22,31 +31,29 @@ Namely, we will go through the following:
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 
-Important reminders
-^^^^^^^^^^^^^^^^^^^
+Important remarks
+^^^^^^^^^^^^^^^^^
 
-A compulsory prerequisite for running the examples presented in the following sections is
-to have :code:`integration-service` correctly installed as explained in detail
+A compulsory prerequisite for running the examples of the following sections is
+to have *eProsima Integration-Service* correctly installed as explained in detail
 in the introductory section :ref:`Getting Started <getting started>`.
 Please make sure to follow all the steps described in the document before proceeding.
 
-Also notice that for being able to execute :code:`integration-service` with the :code:`soss` command at the end of
-each example,
-the shell must be fully overlaid with the sourcing of any colcon-built package required by the specific
-use-case:
-
- - The :code:`soss` installation, if this has been made by following the installation manual (see the *Getting Started*
-   section of the :code:`soss` documentation).
- - The :code:`integration-service` installation, as explained in the :ref:`Getting Started <getting started>` section.
- - The specific **System-Handle** installation required by the example
-   (e. g., :code:`SOSS-FIWARE`, :code:`SOSS-SOMPE/IP` ..)
-
-As an alternative, you can install permanently the overlays relevant to your use-case system-wide,
-by adding the :code:`source` command of the the :code:`install/setup.bash` file of your local
-installations to the :code:`.bashrc` file as:
+Whenever you run the :code:`colcon build` command in the examples provided, if any package is missing dependencies
+**causing the compilation to fail**, you can add the flag :code:`--packages-up-to soss-dds-test soss-ros2-test`
+as follows:
 
 .. code-block:: bash
 
-    source ~/PATH_TO_FOLDER/install/setup.bash
+    colcon build --packages-up-to soss-dds-test soss-ros2-test
 
-Where :code:`PATH_TO_FOLDER` is the path to the folder where the packages have been downloaded and built.
+Also notice that, for being able to execute *eProsima Integration-Service* with the :code:`soss` command at the end of
+each example, the shell must be fully overlaid with the sourcing of all colcon-built packages required by the specific
+use-case:
+
+- The *eProsima Integration-Service* installation, along with the installation of any possible **System-Handle** that
+  might be required by the specific example (e. g., **SOSS-FIWARE** and **SOSS-ROS1**).
+- The *ROS2* or *ROS1* installation, when needed.
+
+As an alternative, you can install permanently the overlays relevant to your use-case system-wide,
+by adding the opportune :code:`source` commands to your :code:`.bashrc` file.
