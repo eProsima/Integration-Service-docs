@@ -24,27 +24,34 @@ wants to bridge it.
 Main Features
 ^^^^^^^^^^^^^
 
-*eProsima Integration-Service* provides an easily and intuitively configurable platform that allows connecting any
-*DDS*-based system with any other protocol. This comes along with several appealing features:
-
-.. image:: SH_2.png
-
+*eProsima Integration-Service* provides a plugin-based platform that is easily and intuitively configurable.
+This section explains these key features.
 
 System Handles
 --------------
 
-The core of the *eProsima Integration-Service* library defines a set of abstract interfaces and provides some utility
-classes that form a plugin-based framework.
-An *eProsima Integration-Service* instance can connect *N* middlewares where each middleware has a plugin,
-or **System-Handle**, associated with it, that is discovered by *eProsima Integration-Service* at runtime after the
-**System-Handle** has been installed.
-Thanks to this, downstream users can extend *eProsima Integration-Service* to communicate any *DDS*-based system
+An *eProsima Integration-Service* instance can connect *N* middlewares through dedicated plugins that speak the same
+language as the core.
+These plugins, or **System-Handles**, are discovered by *eProsima Integration-Service* at runtime
+after they have been installed.
+
+Built-in **System-Handles** are provided for connecting *Orion ContextBroker*, *ROS*, *ROS2*, and *WebSocket* to the
+*DDS* world.
+New **System-Handles** for additional protocols can be easily created, automatically allowing communication of the
+new protocol with *DDS* and with the middlewares that are already supported
+(detailed information on how to create a **System-Handle** can be found here [TODO: link to soss documentation]).
+Thanks to this, downstream users can extend *eProsima Integration-Service* to communicate *DDS*-based systems
 with any middleware.
 
-*eProsima Integration-Service* provides built-in **System-Handles** for connecting *Orion ContextBroker*,
-*ROS*, *ROS2*, and *WebSocket* to the *DDS* world (and among them).
+The plugin-based framework is especially advantageous when it comes to integrating a new *DDS* component into a complex
+system where the rest of sub-systems use incompatible protocols, or viceversa.
+Indeed, once all protocols of interest are communicated with *eProsima Integration-Service*, each via a dedicated
+**System-Handle**, the integration is mediated by the core and relies on centralization rather than on the creation
+of dedicated bridges for each pair of components.
+For a system made of *N* components, this means that the number of new software parts to add grows as *N*
+rather than *N²*.
 
-Adding a new **System-Handle** automatically allows communication with the rest of these protocols.
+.. image:: SH_2.png
 
 YAML configuration files
 ------------------------
@@ -63,6 +70,9 @@ The most common fields required to configure a **System-Handle** are:
 
 * :code:`topics`/:code:`services`: specify the topics exchanged over the above bridges in either publisher/subscriber
   or client/server type communications.
+
+This configuration approach is profitable when *DDS* is integrated into complex systems, since a single YAML file
+is needed no matter how many protocols are being communicated.
 
 Below you can find a minimal example of the information that the YAML configuration file should contain.
 In this example, a single topic is translated from *ROS2* to *DDS*:

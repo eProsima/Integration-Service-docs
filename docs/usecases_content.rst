@@ -1,10 +1,17 @@
 Use-cases and Examples
 ======================
 
-User Manual organization
-^^^^^^^^^^^^^^^^^^^^^^^^
+Typical Use-cases
+^^^^^^^^^^^^^^^^^
 
-In this part of the user manual we discuss the most representative use-cases demonstrating
+Typical scenarios in which *eProsima Integration-Service* is relevant are:
+
+* Communication of different *DDS*-based systems that use incompatible configurations.
+* Integrating *DDS* systems into arbitrarily complex systems using different protocols.
+* Communication of a *DDS* system with systems with incompatible protocols.
+* Communication between *DDS* systems located in different geographical regions through the Internet.
+
+In this user manual we discuss representative use-cases demonstrating these
 *eProsima Integration-Service*'s functionalities.
 For each use-case, a related example is presented and the user is guided step-by-step through the
 installation protocol and environment preparation necessary to have the examples set up and working.

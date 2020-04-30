@@ -14,19 +14,14 @@ component quite unhandy.
 *eProsima Integration-Service* eases this process, allowing to integrate any *DDS* system into an already
 existing system or viceversa, by providing an out-of-the-box bridge that straightforwardly allows to communicate the
 *DDS* and the non-*DDS* protocols.
+Also, thanks, to its **System-Handle**-based structure, the core of *eProsima Integration-Service* allows to centralise
+all the possible bridges.
 
-Also, the core of *eProsima Integration-Service* allows to centralise all the possible bridges among
-the subsystems by means of system-specific plugins, or **System-Handles**, that speak the same language as the core.
+Once all protocols are communicated with *eProsima Integration-Service*, the inter-components
+communication can be easily implemented by means of an individual YAML configuration file.
 
-Once all the protocols of interest are communicated with *eProsima Integration-Service*,
-each via a dedicated **System-Handle**, the inter-components communication
-can be easily implemented by means of a YAML configuration file, rather than by creating a dedicated
-bridge for each pair of communicating components.
-For a system made of *N* components, this means that the number of new software parts to add grows as *N*
-rather than *N²*.
-
-Notice that *eProsima Integration-Service* already provides the **System-Handle** for some of the most common
-protocols.
+As explained in the :ref:`introductory section <main features>`, *eProsima Integration-Service* already provides the
+**System-Handle** for some common protocols.
 
 .. image:: LARGER_SYSTEM.png
 
