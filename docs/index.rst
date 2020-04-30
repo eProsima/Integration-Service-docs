@@ -34,7 +34,7 @@ An *eProsima Integration-Service* instance can connect *N* middlewares through d
 language as the core.
 This common language is `eProsima xtypes <https://github.com/eProsima/xtypes>`__; a fast and lightweight
 `OMG DDS-XTYPES standard <https://www.omg.org/spec/DDS-XTypes>`__ C++11 header-only implementation.
-These plugins, or **System-Handles**, are discovered by *eProsima Integration-Service* at runtime
+The plugins, or **System-Handles**, are discovered by *eProsima Integration-Service* at runtime
 after they have been installed.
 
 Built-in **System-Handles** are provided for connecting *Orion ContextBroker*, *ROS*, *ROS2*, and *WebSocket* to the
