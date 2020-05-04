@@ -68,7 +68,7 @@ The most common fields required to configure a **System-Handle** are:
 
   * :code:`types-from`: allows the middleware to inherit the type from another system.
 
-* :code:`routes`: specifies which bridges SOSS needs to create.
+* :code:`routes`: specifies which bridges *eProsima Integration-Service* needs to create.
 
 * :code:`topics`/:code:`services`: specify the topics exchanged over the above bridges in either publisher/subscriber
   or client/server type communications.
