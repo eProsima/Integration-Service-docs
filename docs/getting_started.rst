@@ -47,6 +47,44 @@ Once that's finished building, you can source the new colcon overlay:
 
     source install/setup.bash
 
+
+Deployment
+^^^^^^^^^^
+
+Once *eProsima Integration-Service* is installed, you can run it in order to bring a middleware into the *DDS*
+world.
+
+The workflow is dependent on the specific systems involved, given that each is communicated with
+*eProsima Integration-Service* via a dedicated **System-Handle**.
+
+First of all, you will have to clone the repositories of the **System-Handles** that your use-case requires
+into your :code:`is-workspace`.
+To find the **System-Handles** supported to date, refer to the :ref:`Related Links <related links>` section of this
+documentation.
+
+Once all the necessary packages have been cloned, you need to build them. To do so, run:
+
+.. code-block:: bash
+
+    colcon build
+
+with the possible addition of flags depending on the specific use-case. Once that's finished building, you can source
+the new colcon overlay:
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+The workspace is now prepared for running an *eProsima INtegration-Service* instance. From the fully overlaid shell,
+you will have to execute the :code:`soss` command, followed by the name of the YAML configuration file that describes 
+how messages should be passed among the middlewares involved:
+
+.. code-block:: bash
+    
+    soss <config.yaml>
+
+Once *eProsima INtegration-Service* is initiated, the user will be able to communicate the desired protocols.
+
 **Note**: The sourcing of the local colcon overlay is required every time the colcon workspace is opened in
 a new shell environment.
 As an alternative, you can copy the source command with the full path of your local installation to your
@@ -66,3 +104,4 @@ Getting Help
 
 If you need support you can reach us by mail at
 `support@eProsima.com <mailto:support@eProsima.com>`__ or by phone at `+34 91 804 34 48 <tel:+34918043448>`__.
+
