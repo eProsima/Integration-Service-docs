@@ -16,8 +16,8 @@ essentially direct.
 However, the communication is straightforward enough even if a dedicated **System-Handle** doesn't exist yet, as
 the user can create his own **System-Handle**, thus becoming able to communicate with *DDS* and
 any other protocol already supported by *eProsima Integration-Service*.
-For more information regarding how to generate a **System-Handle** from scratch, please consult the *System-Handle
-creation* [TODO: add link] section of the *SOSS* documentation.
+For more information regarding how to generate a **System-Handle** from scratch, please consult the `System-Handle
+Creation <https://soss.docs.eprosima.com/en/latest/sh_creation.html>`__ section of the *SOSS* documentation.
 
 .. image:: DDS_IS_ROS1.png
 

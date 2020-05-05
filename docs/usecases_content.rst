@@ -35,7 +35,7 @@ Important remarks
 ^^^^^^^^^^^^^^^^^
 
 A compulsory prerequisite for running the examples of the following sections is
-to have *eProsima Integration-Service* correctly installed as explained in detail
+to have *eProsima Integration-Service* correctly installed as explained
 in the introductory section :ref:`Getting Started <getting started>`.
 Please make sure to follow all the steps described in the document before proceeding.
 

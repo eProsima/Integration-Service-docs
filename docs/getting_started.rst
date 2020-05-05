@@ -10,7 +10,10 @@ The *eProsima Integration-Service* repository consists of many cmake packages wh
 manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/index.html>`__,
 as it makes the job much smoother.
 
-Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__:
+Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__ and clone the
+`SOSS <https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds>`__
+and the
+`SOSS-DDS <https://github.com/eProsima/SOSS-DDS/tree/feature/xtypes-dds>`__ repositories:
 
 .. code-block:: bash
 
