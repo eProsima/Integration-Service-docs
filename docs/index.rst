@@ -10,8 +10,8 @@ eProsima Integration-Service
     :alt: eProsima
     :target: http://www.eprosima.com/
 
-*eProsima Integration-Service* is a tool based on `SOSS <https://github.com/eProsima/soss_v2>`__ and its
-**System-Handle** `SOSS-DDS <https://github.com/eProsima/SOSS-DDS>`__ that allows intercommunicating any
+*eProsima Integration-Service* is a tool based on `SOSS <https://soss.docs.eprosima.com/en/latest/index.html>`__
+that allows intercommunicating any
 *DDS*-based system with any other protocol, including other *DDS* systems, integrating them into a larger,
 more complex system.
 
@@ -41,7 +41,8 @@ Built-in **System-Handles** are provided for connecting *Orion ContextBroker*, *
 *DDS* world.
 New **System-Handles** for additional protocols can be easily created, automatically allowing communication of the
 new protocol with *DDS* and with the middlewares that are already supported
-(detailed information on how to create a **System-Handle** can be found here [TODO: link to soss documentation]).
+(detailed information on how to create a **System-Handle** can be found
+`here <https://soss.docs.eprosima.com/en/latest/sh_creation.html>`__).
 Thanks to this, downstream users can extend *eProsima Integration-Service* to communicate *DDS*-based systems
 with any middleware.
 
@@ -113,25 +114,30 @@ the specified middlewares, one can obtain an instance which translates between *
     topics:
         chatter: { type: "std_msgs/String", route: web2robot }
 
+For more information on how to configure *eProsima Integration-Service* via YAML files, please refer to the
+following `link <https://soss.docs.eprosima.com/en/latest/yaml_config.html>`__.
+
 Additional features
 -------------------
 
 **Free and Open Source.**
 
 The *eProsima Integration-Service* core, and all **System-Handles** available to date are free and open source.
+Consult the :ref:`Related Links <related links>` section of the documentation to be redirected to the relevant
+repositories.
 
 **Easily configurable.**
 
 As detailed above, an *eProsima Integration-Service* instance is easily configurable by means of a YAML file.
-For more information on how to do so, please consult the link: YAML configuration
-[TODO: link].
+For more information on how to do so, please consult the link:
+`YAML Configuration <https://soss.docs.eprosima.com/en/latest/yaml_config.html>`__.
 
 **Easy to extend to new platforms.**
 
 New platforms can easily enter the *eProsima Integration-Service* world by generating the plugin, or **System-Handle**
 needed by the core to integrate them.
-For more information on **System-Handles**, please consult the link: System Handle Creation
-[TODO: link].
+For more information on **System-Handles**, please consult the link:
+`System-Handle Creation <https://soss.docs.eprosima.com/en/latest/sh_creation.html>`__.
 
 **Easy to use.**
 
