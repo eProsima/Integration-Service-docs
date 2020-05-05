@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="1100"
+   height="221"
+   viewBox="-0.5 -0.5 1100 221"
+   id="svg100"
+   sodipodi:docname="WAN.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="C:\git\Integration-Services-docs\docs\TCP_SEC_NAT.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata104">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1172"
+     id="namedview102"
+     showgrid="false"
+     inkscape:zoom="1.0393836"
+     inkscape:cx="473.58259"
+     inkscape:cy="40.2026"
+     inkscape:window-x="3200"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg100"
+     inkscape:measure-start="500,125"
+     inkscape:measure-end="660,120">
+    <inkscape:grid
+       type="xygrid"
+       id="grid975" />
+  </sodipodi:namedview>
+  <defs
+     id="defs12">
+    <linearGradient
+       id="linearGradient979"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop977" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient973"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop971" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient967"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffc001;stop-opacity:1;"
+         offset="0"
+         id="stop965" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient961"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop959" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient955"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop953" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient949"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop947" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient943"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop941" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient925"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop923" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient919"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop917" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient913"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop911" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1"
+       id="id1">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop2" />
+      <stop
+         offset="100%"
+         style="stop-color:#FFC001"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1"
+       id="id2">
+      <stop
+         offset="0%"
+         style="stop-color:#0895CD"
+         id="stop7" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(229.5,42.5)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient967"
+       id="linearGradient887-4"
+       x1="198.7948"
+       y1="73.015366"
+       x2="396.9223"
+       y2="73.015366"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="172.53552"
+       y1="-0.70420283"
+       x2="172.53552"
+       y2="85.208542"
+       id="id3"
+       gradientTransform="matrix(1.4084057,0,0,0.7100227,422.46784,106.49342)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop12" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(47.313588,-7.4231027)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient949"
+       id="linearGradient862"
+       x1="13.794802"
+       y1="124.01536"
+       x2="211.92232"
+       y2="124.01536"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       x1="172.53552"
+       y1="-0.70420283"
+       x2="172.53552"
+       y2="85.208542"
+       id="id3-0"
+       gradientTransform="matrix(1.4084057,0,0,0.7100227,63.525507,106.79658)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop12-9" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop14-0" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(803.53102,-5.4988848)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient949"
+       id="linearGradient862-1"
+       x1="13.794802"
+       y1="124.01536"
+       x2="211.92232"
+       y2="124.01536"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 469.5,77.5 c -44,0 -55,35 -19.8,42 -35.2,15.4 4.4,49 33,35 19.8,28 85.80001,28 107.80001,0 44,0 44,-28 16.5,-42 27.5,-28 -16.5,-56 -55,-42 C 524.5,49.5 480.5,49.5 469.5,77.5 Z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path47-2"
+     style="fill:url(#linearGradient887-4);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <rect
+     x="19.5"
+     y="10.5"
+     width="400"
+     height="190"
+     rx="40.799999"
+     ry="37.26923"
+     pointer-events="none"
+     id="rect62-3"
+     style="fill:#ffffd4;fill-opacity:1;stroke:#000000;stroke-width:1.52920294" />
+  <g
+     transform="translate(168.61523,34.439871)"
+     id="g70-3"
+     style="fill:#000000">
+    <switch
+       id="switch68-7"
+       style="fill:#000000">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="100"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="50"
+         y="12"
+         font-size="12px"
+         id="text66-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan1057"
+           style="font-size:24px"
+           x="50"
+           y="12">LAN A</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="645.5"
+     y="10.5"
+     width="400"
+     height="190"
+     rx="40.799999"
+     ry="37.26923"
+     pointer-events="none"
+     id="rect62-3-1"
+     style="fill:#ffffd4;fill-opacity:1;stroke:#000000;stroke-width:1.52920294" />
+  <g
+     transform="translate(794.61523,34.43987)"
+     id="g70-3-2"
+     style="fill:#000000">
+    <switch
+       id="switch68-7-3"
+       style="fill:#000000">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="100"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="50"
+         y="12"
+         font-size="12px"
+         id="text66-0-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan1057-8"
+           style="font-size:24px"
+           x="50"
+           y="12">LAN B</tspan>
+      </text>
+    </switch>
+  </g>
+  <g
+     transform="translate(490.38851,113.05963)"
+     id="g53-4">
+    <switch
+       id="switch51-8">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="72"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="36"
+         y="12"
+         font-size="12px"
+         id="text49-7"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           style="font-size:26.66666603px;fill:#000000"
+           id="tspan889-4">INTERNET</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 399.19806,146.95264 v -14 l 248.04283,0.48105 v -8.5 l 19,15.5 -19,15.5 v -8.5 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96-7-8"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccccccc" />
+  <g
+     transform="translate(444.46001,124.0972)"
+     id="g86-1">
+    <switch
+       id="switch84-2">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="51"
+         height="26"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 51px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Publisher 5</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="88.18914"
+         y="20.443163"
+         font-size="12px"
+         id="text82-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan934"
+           x="88.18914"
+           y="20.443163"
+           style="font-size:13.33333302px">SECURE TCP TUNNEL</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="665.96783"
+     y="106.49339"
+     width="120"
+     height="60"
+     rx="9"
+     ry="9"
+     pointer-events="none"
+     id="rect35"
+     style="fill:url(#id3);stroke:#000000" />
+  <g
+     transform="translate(681.96785,112.46502)"
+     id="g41">
+    <switch
+       id="switch39">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="88"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 88px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="44"
+         y="20"
+         font-size="12px"
+         id="text37"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           y="20"
+           x="44"
+           sodipodi:role="line"
+           id="tspan878"
+           style="font-size:16px">Integration</tspan>
+        <tspan
+           y="40"
+           x="44"
+           sodipodi:role="line"
+           id="tspan880"
+           style="font-size:16px">Service</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 102.31359,78.576897 c -44.000002,0 -55.000002,35.000003 -19.800002,42.000003 -35.2,15.4 4.4,49 33.000002,35 19.8,28 85.80001,28 107.80001,0 44,0 44,-28 16.5,-42 27.5,-28.000003 -16.5,-56.000003 -55,-42.000003 -27.50001,-21 -71.50001,-21 -82.50001,7 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path19"
+     style="fill:url(#linearGradient862);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <g
+     transform="translate(126.81359,107.0769)"
+     id="g27"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+    <switch
+       id="switch25"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="70"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World A<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="35"
+         y="12"
+         font-size="12px"
+         id="text23"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+        <tspan
+           sodipodi:role="line"
+           id="tspan4809"
+           x="35"
+           y="12">System A</tspan>
+      </text>
+    </switch>
+  </g>
+  <rect
+     x="307.02551"
+     y="106.79654"
+     width="120"
+     height="60"
+     rx="9"
+     ry="9"
+     pointer-events="none"
+     id="rect35-4"
+     style="fill:url(#id3-0);stroke:#000000" />
+  <g
+     transform="translate(323.02551,112.76818)"
+     id="g41-0">
+    <switch
+       id="switch39-1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="88"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 88px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="44"
+         y="20"
+         font-size="12px"
+         id="text37-3"
+         style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">
+        <tspan
+           y="20"
+           x="44"
+           sodipodi:role="line"
+           id="tspan878-7"
+           style="font-size:16px">Integration</tspan>
+        <tspan
+           y="40"
+           x="44"
+           sodipodi:role="line"
+           id="tspan880-4"
+           style="font-size:16px">Service</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 858.53102,80.501115 c -44,0 -55,35.000005 -19.8,42.000005 -35.2,15.4 4.4,49 33,35 19.8,28 85.80001,28 107.80001,0 43.99997,0 43.99997,-28 16.5,-42 27.49997,-28.000005 -16.5,-56.000005 -55,-42.000005 -27.50001,-21 -71.50001,-21 -82.50001,7 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path19-0"
+     style="fill:url(#linearGradient862-1);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <g
+     transform="translate(883.03102,109.00112)"
+     id="g27-3"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+    <switch
+       id="switch25-2"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="70"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World A<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="35"
+         y="12"
+         font-size="12px"
+         id="text23-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1;">
+        <tspan
+           sodipodi:role="line"
+           id="tspan4845">System B</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 257.01895,142.75866 v -10 h 29 v -10.5 l 19,15.5 -19,15.5 v -10.5 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccccccc" />
+  <path
+     d="m 786.43575,142.83444 v -10 h 29 v -10.5 l 19,15.5 -19,15.5 v -10.5 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path96-4"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10"
+     sodipodi:nodetypes="cccccccc" />
+</svg>

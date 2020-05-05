@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="274.97134mm"
+   height="103.76355mm"
+   viewBox="0 0 274.97134 103.76355"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="WAN_example.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="/home/lgasco/Imágenes/WAN_Environment.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2">
+    <linearGradient
+       osb:paint="solid"
+       id="linearGradient979">
+      <stop
+         id="stop977"
+         offset="0"
+         style="stop-color:#88ce28;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       osb:paint="solid"
+       id="linearGradient967">
+      <stop
+         id="stop965"
+         offset="0"
+         style="stop-color:#ffc001;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       osb:paint="solid"
+       id="linearGradient949">
+      <stop
+         id="stop947"
+         offset="0"
+         style="stop-color:#0895cd;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="id1"
+       y2="1"
+       x2="0"
+       y1="0"
+       x1="0">
+      <stop
+         id="stop2"
+         style="stop-color:#88CE28"
+         offset="0%" />
+      <stop
+         id="stop4"
+         style="stop-color:#FFC001"
+         offset="100%" />
+    </linearGradient>
+    <linearGradient
+       id="id2"
+       y2="1"
+       x2="0"
+       y1="0"
+       x1="0">
+      <stop
+         id="stop7"
+         style="stop-color:#0895CD"
+         offset="0%" />
+      <stop
+         id="stop9"
+         style="stop-color:#88CE28"
+         offset="100%" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-5"
+       xlink:href="#linearGradient949"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17046616,0,0,0.20968948,-51.178465,27.761959)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7"
+       xlink:href="#linearGradient949"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,-52.967615,83.2314)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-3-3-8"
+       xlink:href="#linearGradient979"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,89.034464,18.993709)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-5-8"
+       xlink:href="#linearGradient949"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,134.5796,26.813691)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-3-3-8-4"
+       xlink:href="#linearGradient979"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,136.97079,36.943749)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-4"
+       xlink:href="#linearGradient967"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,-52.967613,72.556056)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="73.015366"
+       x2="396.9223"
+       y1="73.015366"
+       x1="198.7948"
+       id="linearGradient887-4-9"
+       xlink:href="#linearGradient967"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,46.58234,29.921035)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-4-3"
+       xlink:href="#linearGradient967"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,145.66498,72.844548)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-6"
+       xlink:href="#linearGradient949"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,145.66497,83.519892)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="124"
+       x2="530.5"
+       y1="124"
+       x1="259.5"
+       id="linearGradient963-7-3-3-8-47"
+       xlink:href="#linearGradient979"
+       inkscape:collect="always"
+       gradientTransform="matrix(0.17052337,0,0,0.15929905,-22.950114,20.938477)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="445.12008"
+     inkscape:cy="24.110975"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1172"
+     inkscape:window-x="3200"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(11.092343,-3.719016)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="55.515129"
+       y="13.347367"
+       id="text755-3"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan13141"
+         x="55.515129"
+         y="13.347367">WAN Example Environment</tspan></text>
+    <rect
+       x="-10.7618"
+       y="24.723516"
+       width="87.589569"
+       height="80.643562"
+       rx="10.763482"
+       ry="26.402458"
+       pointer-events="none"
+       id="rect62-3-1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.66108668"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="-3.7007241"
+       y="34.789833"
+       width="71.985191"
+       height="35.601158"
+       rx="4.3468876"
+       ry="5.3470821"
+       pointer-events="none"
+       id="rect62-6-15"
+       style="fill:url(#linearGradient963-7-5);fill-opacity:1;stroke:#000000;stroke-width:0.18906339"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,9.7831263,47.284042)"
+       id="g20-9"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch18-8">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="83"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="46.810543"
+           y="-3.3937392"
+           font-size="12px"
+           id="text16-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13284"
+             x="46.810543"
+             y="-3.3937392">Router</tspan>
+          <tspan
+             sodipodi:role="line"
+             id="tspan13286"
+             x="46.810543"
+             y="26.60626">192.168.0.1</tspan>
+        </text>
+      </switch>
+    </g>
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,19.196828,29.951849)"
+       id="g70-3-1"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-0"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="50"
+           y="12"
+           font-size="12px"
+           id="text66-0-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13282"
+             x="50"
+             y="12">Subnet 192.168.0.0</tspan>
+        </text>
+      </switch>
+    </g>
+    <rect
+       x="7.2563515"
+       y="78.244865"
+       width="45.903675"
+       height="24.926044"
+       rx="10.799457"
+       ry="8.9553928"
+       pointer-events="none"
+       id="rect62-3"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.38565865"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="10.56224"
+       y="91.109497"
+       width="38.73439"
+       height="9.4329977"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6"
+       style="fill:url(#linearGradient963-7);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,17.345846,105.99068)"
+       id="g70-3-0"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.017723"
+           y="-29.631771"
+           font-size="12px"
+           id="text66-0-7"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13345"
+             x="59.017719"
+             y="-29.631771">192.168.0.42</tspan>
+        </text>
+      </switch>
+    </g>
+    <rect
+       x="174.96552"
+       y="22.040588"
+       width="88.640846"
+       height="85.16935"
+       rx="10.777899"
+       ry="17.936399"
+       pointer-events="none"
+       id="rect62-3-1-7"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.54524857"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="182.07231"
+       y="32.152699"
+       width="72.276711"
+       height="32.150902"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-15-7"
+       style="fill:url(#linearGradient963-7-5-8);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,213.22458,42.986244)"
+       id="g20-9-6"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch18-8-4">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="83"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 85px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">DomainChange</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="46.810543"
+           y="-3.3937392"
+           font-size="12px"
+           id="text16-4-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13288"
+             x="46.810543"
+             y="-3.3937392">Router</tspan>
+          <tspan
+             sodipodi:role="line"
+             id="tspan13290"
+             x="46.810543"
+             y="26.60626">10.0.1.1</tspan>
+        </text>
+      </switch>
+    </g>
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,204.98305,27.326838)"
+       id="g70-3-1-3"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-0-0"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="50"
+           y="12"
+           font-size="12px"
+           id="text66-0-3-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13278"
+             x="50"
+             y="12">Subnet 10.0.1.0</tspan>
+        </text>
+      </switch>
+    </g>
+    <rect
+       x="158.34851"
+       y="40.474976"
+       width="44.979168"
+       height="15.875"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-1-4-5"
+       style="fill:url(#linearGradient963-7-3-3-8);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,167.07451,44.10468)"
+       id="g70-3-0-44-4"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9-4-0"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.602673"
+           y="9.7641792"
+           font-size="12px"
+           id="text66-0-7-76-5"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13274"
+             x="59.602673"
+             y="9.7641792">WAN (Public) IP</tspan>
+          <tspan
+             sodipodi:role="line"
+             id="tspan13276"
+             x="59.602673"
+             y="39.764202">88.42.23.73</tspan>
+        </text>
+      </switch>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.41020244px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 91.087553,50.326703 13.754837,-0.03296 v 0 0"
+       id="path1239"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="206.28433"
+       y="58.425014"
+       width="44.979168"
+       height="15.875"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-1-4-5-9"
+       style="fill:url(#linearGradient963-7-3-3-8-4);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,214.87699,65.930126)"
+       id="g70-3-0-44-4-2"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9-4-0-2"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.602673"
+           y="9.7641792"
+           font-size="12px"
+           id="text66-0-7-76-5-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan1360"
+             x="59.602676"
+             y="9.7641792">Forwarded Port</tspan>
+        </text>
+      </switch>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 228.77498,74.380601 v 4.142677"
+       id="path1310"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="10.562242"
+       y="80.43412"
+       width="38.73439"
+       height="9.4329977"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-1"
+       style="fill:url(#linearGradient963-7-4);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,15.844465,94.590283)"
+       id="g70-3-0-2"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9-8"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.017723"
+           y="-29.631771"
+           font-size="12px"
+           id="text66-0-7-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan1358"
+             x="59.017723"
+             y="-29.631771">Client</tspan>
+        </text>
+      </switch>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       d="m 110.08239,39.181405 c -11.64167,0 -14.55208,9.260356 -5.23875,11.112435 -9.31333,4.074546 1.16416,12.964496 8.73125,9.260346 5.23875,7.408301 22.70124,7.408301 28.52207,0 11.64167,0 11.64167,-7.408276 4.36562,-11.112425 7.27605,-7.408291 -4.36562,-14.816577 -14.55208,-11.112437 -7.27604,-5.556218 -18.9177,-5.556218 -21.82811,1.852081 z"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path47-2-9"
+       style="fill:url(#linearGradient887-4-9);fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:10"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,117.19126,47.793392)"
+       id="g53-4-4"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch51-8-9">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="72"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="36"
+           y="12"
+           font-size="12px"
+           id="text49-7-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666794px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000"
+           inkscape:export-xdpi="47.400002"
+           inkscape:export-ydpi="47.400002">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13183"
+             x="36"
+             y="12">Internet</tspan>
+        </text>
+      </switch>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.36501244px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 31.22133,70.375245 v 7.88445"
+       id="path1310-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.37235516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 146.91385,48.477432 11.24841,-0.03321 v 0 0"
+       id="path1239-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="205.88899"
+       y="78.533356"
+       width="45.903675"
+       height="24.926044"
+       rx="10.799457"
+       ry="8.9553928"
+       pointer-events="none"
+       id="rect62-3-5"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.38565865"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       x="209.19487"
+       y="91.397964"
+       width="38.73439"
+       height="9.4329977"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-6"
+       style="fill:url(#linearGradient963-7-6);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,215.97843,106.27916)"
+       id="g70-3-0-1"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9-7"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.017723"
+           y="-29.631771"
+           font-size="12px"
+           id="text66-0-7-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             y="-29.631771"
+             x="59.017723"
+             sodipodi:role="line"
+             id="tspan1041-2">10.0.1.1</tspan>
+        </text>
+      </switch>
+    </g>
+    <rect
+       x="209.19487"
+       y="80.72261"
+       width="38.73439"
+       height="9.4329977"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-1-9"
+       style="fill:url(#linearGradient963-7-4-3);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,214.47705,94.878775)"
+       id="g70-3-0-2-2"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9-8-8"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.017723"
+           y="-29.631771"
+           font-size="12px"
+           id="text66-0-7-9-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13280"
+             x="59.017727"
+             y="-29.631771">Server</tspan>
+        </text>
+      </switch>
+    </g>
+    <rect
+       x="46.363895"
+       y="42.41975"
+       width="44.979168"
+       height="15.875"
+       rx="4.3483462"
+       ry="4.0621262"
+       pointer-events="none"
+       id="rect62-6-1-4-5-6"
+       style="fill:url(#linearGradient963-7-3-3-8-47);fill-opacity:1;stroke:#000000;stroke-width:0.16481569"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="matrix(0.22845515,0,0,0.26458333,55.089948,46.049445)"
+       id="g70-3-0-44-4-3"
+       style="fill:#000000"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <switch
+         id="switch68-7-9-4-0-7"
+         style="fill:#000000">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="100"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 102px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="59.602673"
+           y="9.7641792"
+           font-size="12px"
+           id="text66-0-7-76-5-7"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.00001907px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+          <tspan
+             sodipodi:role="line"
+             id="tspan13341"
+             x="59.602673"
+             y="9.7641792">WAN (Public) IP</tspan>
+          <tspan
+             sodipodi:role="line"
+             id="tspan13343"
+             x="59.602673"
+             y="39.764202">Any</tspan>
+        </text>
+      </switch>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot13347"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion13349"><rect
+           id="rect13351"
+           width="984.89874"
+           height="471.74124"
+           x="-83.842659"
+           y="-15.922225" /></flowRegion><flowPara
+         id="flowPara13353"></flowPara></flowRoot>  </g>
+</svg>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="602px"
+   height="382px"
+   viewBox="-0.5 -0.5 602 382"
+   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot; version=&quot;9.4.6&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;38e4e86c-7647-c73d-df29-9f5002fb4043&quot; name=&quot;Page-1&quot;&gt;5VjLcpswFP0aL8OAhHgsY5ykXXQmM16kXVIjY01l5JHlV7++FyMBAup4JsRNJ15gdK4e3HMOV7InOFkfn2S6WX0TGeUT5GbHCZ5NEPJcH8FXiZw0EgRRheSSZRprgDn7Tc1Qje5YRrdWRyUEV2xjgwtRFHShLCyVUhzsbkvB7VU3aU57wHyR8j76wjK1qtAIhQ3+hbJ8ZVb2griKrFPTWWeyXaWZOLQg/DDBiRRCVXfrY0J5yZ7hpRr3+Jdo/WCSFuqaAVqJfcp3Ojf9XOpkkoUBwCs0pvCwmxJccLGD8dPDiik636SLEjyA1oCt1JpDy6u6V7m50FgyzhPBhTxPit0oJskM8FymGYOHbcWiKHlAEcT6yej89lQqemxBOrknKtZUyRN0MVFjGW01hPUUh0a3WoxVWzNfg6n2Sl7P3dAJN5rRYXbxP2K3ZnCA3Zr5Edj1Y6/DrntDdv0eu7PZHIAXIeF9Ru79BAUcFpz+lHCXqzrnFv2QqOrwqqT4RQ1hhShoh18NpZzlRSkX0EcBn5a0MagR9zqwZllWLjMopBS7IqOZlm8Mo0cdo0d9o8cDSowhBHlFiOlnEoIEXSH678R7CeFdUXCahL13KjJaFwPPmIQ9mIlSCppu1Tg0Y4IdYhHtDRDtDRWfYAym+8XnK9gPcj5nitw5lXsGrH4i5+Mg6kkS3c77weveN1vsktPjfXkOhMRpkelb2HnT7ZYtzgqkUvXhlkadl2F5/nTfGOBSnr63Gz/KhhOSsn1k6hxzokg3qygy0WcqGfBQSntZo63YyQW1TnSQQE5NL10WaGYda/tCtmQiAzIZTFIONt/bh+Eh7fQKz4LBAzc+6WxVddtMUaWjR7UPr52JfNyZCHcmqkjoTXS2Up32de4KP7C7vIvu8jCy7RUFb/EX/vj+8gIn9HwUkeoahPaGHGKnFQ07819rPhxgB5wbE6Sv9iKYOK4fBl5sru/lzIFjcM+ZN/+R8fiYuK43zraCYntTufNu+SPj1cNt8qm2eBJbWpDbnW3Rh97fHYLCdhW+cx0XIYN0C21TnAmxanP8tq3f/w9q88WqGRKnHQw7VXOs2uw7TfX3URiNVJuh2fxzV3Vv/gDFD38A&lt;/diagram&gt;&lt;/mxfile&gt;"
+   id="svg57"
+   sodipodi:docname="CONCEPT.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata61">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1859"
+     inkscape:window-height="1025"
+     id="namedview59"
+     showgrid="false"
+     inkscape:zoom="1.3484362"
+     inkscape:cx="144.54313"
+     inkscape:cy="153.13006"
+     inkscape:window-x="61"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg57" />
+  <defs
+     id="defs17">
+    <linearGradient
+       id="linearGradient885"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop883" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient879"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#88ce28;stop-opacity:1;"
+         offset="0"
+         id="stop877" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient873"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0895cd;stop-opacity:1;"
+         offset="0"
+         id="stop871" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id1">
+      <stop
+         offset="0%"
+         style="stop-color:#0895CD"
+         id="stop2" />
+      <stop
+         offset="100%"
+         style="stop-color:#88CE28"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id2">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop7" />
+      <stop
+         offset="100%"
+         style="stop-color:#0895CD"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="id3">
+      <stop
+         offset="0%"
+         style="stop-color:#88CE28"
+         id="stop12" />
+      <stop
+         offset="100%"
+         style="stop-color:#FFC001"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient873"
+       id="linearGradient887"
+       x1="198.7948"
+       y1="73.015366"
+       x2="396.9223"
+       y2="73.015366"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(-185.63539,109.73589)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient873"
+       id="linearGradient887-4"
+       x1="198.7948"
+       y1="73.015366"
+       x2="396.9223"
+       y2="73.015366"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(-103.59,247.62)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient873"
+       id="linearGradient887-8"
+       x1="198.7948"
+       y1="73.015366"
+       x2="396.9223"
+       y2="73.015366"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(136.96052,248.41506)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient873"
+       id="linearGradient887-8-1"
+       x1="198.7948"
+       y1="73.015366"
+       x2="396.9223"
+       y2="73.015366"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(201.4797,109.7359)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient873"
+       id="linearGradient887-8-1-0"
+       x1="198.7948"
+       y1="73.015366"
+       x2="396.9223"
+       y2="73.015366"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <rect
+     x="248.69121"
+     y="172.20161"
+     width="120"
+     height="60"
+     rx="9"
+     ry="9"
+     pointer-events="none"
+     id="rect35"
+     style="fill:#88ce28;stroke:#000000" />
+  <g
+     transform="translate(264.6912,186.7016)"
+     id="g41">
+    <switch
+       id="switch39">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="88"
+         height="27"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 88px; white-space: normal; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">Integration Service<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="44"
+         y="10.359202"
+         font-size="12px"
+         id="text37"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
+        <tspan
+           sodipodi:role="line"
+           id="tspan959"
+           x="44"
+           y="10.359202"
+           style="font-size:16px">Integration</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan961"
+           x="44"
+           y="30.359203"
+           style="font-size:16px">Service</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="M 240 35 C 196 35 185 70 220.2 77 C 185 92.4 224.6 126 253.2 112 C 273 140 339 140 361 112 C 405 112 405 84 377.5 70 C 405 42 361 14 322.5 28 C 295 7 251 7 240 35 Z"
+     fill="url(#id3)"
+     stroke="#000000"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path47"
+     style="fill:url(#linearGradient887);fill-opacity:1.0" />
+  <g
+     transform="translate(263.5,65.5)"
+     id="g53">
+    <switch
+       id="switch51">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="72"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="36"
+         y="12"
+         font-size="12px"
+         id="text49"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
+        <tspan
+           sodipodi:role="line"
+           id="tspan3864"
+           x="36"
+           y="12">DDS</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     d="m 302.8332,137.01641 -10.5,0.18 15.16,-19.27 15.84,18.72 -10.5,0.19 0.3,17 10.5,-0.18 -15.16,19.27 -15.84,-18.72 10.5,-0.19 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path55"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10" />
+  <path
+     inkscape:connector-curvature="0"
+     d="m 54.364606,144.73589 c -44,0 -54.99999961,35 -19.8,42 -35.19999961,15.4 4.4,49 33,35 19.8,28 85.800014,28 107.800014,0 44,0 44,-28 16.5,-42 27.5,-28 -16.5,-56 -55,-42 -27.50001,-21 -71.500014,-21 -82.500014,7 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path47-2"
+     style="fill:url(#linearGradient887-4);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <g
+     transform="translate(77.864606,175.23589)"
+     id="g53-4">
+    <switch
+       id="switch51-8">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="72"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="36"
+         y="12"
+         font-size="12px"
+         id="text49-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
+        <tspan
+           sodipodi:role="line"
+           id="tspan3866"
+           x="36.000004"
+           y="12">Middleware A</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 136.41,282.62 c -44,0 -55,35 -19.8,42 -35.2,15.4 4.4,48.99999 33,34.99999 19.8,28 85.8,28 107.8,0 44,0 44,-27.99999 16.5,-41.99999 27.5,-28 -16.5,-56 -55,-42 -27.5,-21 -71.5,-21 -82.5,7 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path47-9"
+     style="fill:url(#linearGradient887-8);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <g
+     transform="translate(159.91,313.12)"
+     id="g53-6">
+    <switch
+       id="switch51-6">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="72"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="36"
+         y="12"
+         font-size="12px"
+         id="text49-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
+        <tspan
+           sodipodi:role="line"
+           id="tspan3868"
+           x="36.000004"
+           y="12">Middleware B</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 376.96052,283.41506 c -44,0 -55,35 -19.8,42 -35.2,15.4 4.4,48.99999 33,34.99999 19.8,28 85.8,28 107.8,0 44,0 44,-27.99999 16.5,-41.99999 27.5,-28 -16.5,-56 -55,-42 -27.5,-21 -71.5,-21 -82.5,7 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path47-9-0"
+     style="fill:url(#linearGradient887-8-1);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <g
+     transform="translate(400.46052,313.91506)"
+     id="g53-6-0">
+    <switch
+       id="switch51-6-6">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="72"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="36"
+         y="12"
+         font-size="12px"
+         id="text49-4-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
+        <tspan
+           sodipodi:role="line"
+           id="tspan3938"
+           x="36"
+           y="12">Middleware C</tspan>
+      </text>
+    </switch>
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 441.4797,144.7359 c -44,0 -55,35 -19.8,42 -35.2,15.4 4.4,48.99999 33,34.99999 19.8,28 85.8,28 107.8,0 44,0 44,-27.99999 16.5,-41.99999 27.5,-28 -16.5,-56 -55,-42 -27.5,-21 -71.5,-21 -82.5,7 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path47-9-0-3"
+     style="fill:url(#linearGradient887-8-1-0);fill-opacity:1;stroke:#000000;stroke-miterlimit:10" />
+  <g
+     transform="translate(464.9797,175.2359)"
+     id="g53-6-0-8">
+    <switch
+       id="switch51-6-6-7">
+      <foreignObject
+         style="overflow:visible;"
+         pointer-events="all"
+         width="72"
+         height="12"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <xhtml:div
+           style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 72px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+          <xhtml:div
+             style="display:inline-block;text-align:inherit;text-decoration:inherit;">DDS World C<xhtml:br />
+</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="36"
+         y="12"
+         font-size="12px"
+         id="text49-4-3-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
+        <tspan
+           sodipodi:role="line"
+           id="tspan3940"
+           x="36"
+           y="12">Middleware D</tspan>
+      </text>
+    </switch>
+  </g>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot3942"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+       id="flowRegion3944"><rect
+         id="rect3946"
+         width="187.62474"
+         height="111.23997"
+         x="222.47993"
+         y="419.07999" /></flowRegion><flowPara
+       id="flowPara3948" /></flowRoot>  <path
+     d="m 221.59879,263.05041 6.66,8.12 -24.52,0.06 4.86,-24.03 6.66,8.12 19.84,-16.27 -6.66,-8.12 24.52,-0.06 -4.86,24.03 -6.66,-8.12 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path43"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10" />
+  <path
+     d="m 398.63761,258.85721 7.34,-7.51 2.74,24.37 -24.42,-2.21 7.34,-7.5 -18.12,-17.73 -7.34,7.51 -2.74,-24.37 24.42,2.21 -7.34,7.5 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path45"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10" />
+  <path
+     d="m 404.67189,192.44306 -0.16775,-10.5002 19.2523,15.18246 -18.73846,15.81816 -0.17775,-10.50022 -17.00034,0.28018 0.16775,10.5002 -19.2523,-15.18246 18.73846,-15.81816 0.17775,10.50022 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path55-0"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10" />
+  <path
+     d="m 228.91274,193.92627 -0.16775,-10.5002 19.2523,15.18246 -18.73846,15.81816 -0.17775,-10.50022 -17.00034,0.28018 0.16775,10.5002 -19.2523,-15.18246 18.73846,-15.81816 0.17775,10.50022 z"
+     stroke-miterlimit="10"
+     pointer-events="none"
+     id="path55-0-5"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10" />
+</svg>
