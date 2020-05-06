@@ -1,7 +1,16 @@
 Getting Started
 ===============
 
-This section is meant to provide the user with an easy-to-use installation guide.
+**Table of Contents**
+
+* :ref:`Installation`
+
+* :ref:`Deployment`
+
+* :ref:`Getting Help`
+
+This section is meant to provide the user with an easy-to-use installation guide, and an explication of how to launch
+an *eProsima Integration-Service* instance.
 
 Installation
 ^^^^^^^^^^^^
@@ -34,12 +43,11 @@ by running:
     colcon build
 
 If any package is missing dependencies **causing the compilation to fail**, you can add the flag
-:code:`--packages-up-to soss-dds-test soss-ros2-test` to make sure that you at least build :code:`soss-dds-test` and
-:code:`soss-ros2-test`:
+:code:`--packages-up-to soss-dds-test` to make sure that you at least build :code:`soss-dds-test`:
 
 .. code-block:: bash
 
-    colcon build --packages-up-to soss-dds-test soss-ros2-test
+    colcon build --packages-up-to soss-dds-test
 
 Once that's finished building, you can source the new colcon overlay:
 
@@ -51,8 +59,8 @@ Once that's finished building, you can source the new colcon overlay:
 Deployment
 ^^^^^^^^^^
 
-Once *eProsima Integration-Service* is installed, you can run it in order to bring a middleware into the *DDS*
-world.
+You can now run an *eProsima Integration-Service* instance it in order to bring an arbitrary number of middlewares
+into the *DDS* world.
 
 The workflow is dependent on the specific systems involved, given that each is communicated with
 *eProsima Integration-Service* via a dedicated **System-Handle**.
@@ -75,15 +83,15 @@ the new colcon overlay:
 
     source install/setup.bash
 
-The workspace is now prepared for running an *eProsima INtegration-Service* instance. From the fully overlaid shell,
+The workspace is now prepared for running an *eProsima Integration-Service* instance. From the fully overlaid shell,
 you will have to execute the :code:`soss` command, followed by the name of the YAML configuration file that describes 
-how messages should be passed among the middlewares involved:
+how messages should be passed among *DDS* and the middlewares involved:
 
 .. code-block:: bash
     
     soss <config.yaml>
 
-Once *eProsima INtegration-Service* is initiated, the user will be able to communicate the desired protocols.
+Once *eProsima Integration-Service* is initiated, the user will be able to communicate the desired protocols.
 
 **Note**: The sourcing of the local colcon overlay is required every time the colcon workspace is opened in
 a new shell environment.
