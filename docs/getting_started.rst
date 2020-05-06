@@ -42,6 +42,38 @@ by running:
 
     colcon build
 
+.. note::
+
+    :code:`colcon build` will build the package :code:`soss-core` and all the built-in **System-Handles**.
+    If you don't want to build the built-in **System-Handles** you can execute
+    :code:`colcon build --packages-up-to soss-core`.
+    If you only want a to build a sub-set of built-in **System-Handles** you can use the same directive
+    with the name of the packages, for example:
+
+    .. code-block:: bash
+
+        colcon build --packages-up-to soss-ros2 soss-fiware
+
+    The built-in **System-Handles** packages are:
+
+    * :code:`soss-ros2`: ROS2 **System-Handle**.
+
+    * :code:`soss-websocket`: WebSocket **System-Handle**.
+
+    * :code:`soss-mock`: Mock **System-Handle** for testing purposes.
+
+    * :code:`soss-echo`: Echo **System-Handle** for example purposes.
+
+    Additional **System-Handles** in their own repositories:
+
+    * :code:`soss-fiware`: `Fiware Orion ContextBroker System-Handle <https://github.com/eProsima/SOSS-FIWARE>`__.
+
+    * :code:`soss-ros1`: `ROS System-Handle <https://github.com/eProsima/soss-ros1>`__.
+
+    * :code:`soss-dds`: `DDS System-Handle <https://github.com/eProsima/SOSS-DDS>`__.
+
+    Most of the **System-Handle** packages include a :code:`-test` package for testing purposes.
+
 If any package is missing dependencies **causing the compilation to fail**, you can add the flag
 :code:`--packages-up-to soss-dds-test` to make sure that you at least build :code:`soss-dds-test`:
 
