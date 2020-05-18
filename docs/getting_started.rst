@@ -42,6 +42,13 @@ by running:
 
     colcon build
 
+If any package is missing dependencies **causing the compilation to fail**, you can add the flag
+:code:`--packages-up-to soss-dds-test` to make sure that you at least build :code:`soss-dds-test`:
+
+.. code-block:: bash
+
+    colcon build --packages-up-to soss-dds-test
+
 .. note::
 
     :code:`colcon build` will build the package :code:`soss-core` and all the built-in **System-Handles**.
@@ -73,13 +80,6 @@ by running:
     * :code:`soss-dds`: `DDS System-Handle <https://github.com/eProsima/SOSS-DDS>`__.
 
     Most of the **System-Handle** packages include a :code:`-test` package for testing purposes.
-
-If any package is missing dependencies **causing the compilation to fail**, you can add the flag
-:code:`--packages-up-to soss-dds-test` to make sure that you at least build :code:`soss-dds-test`:
-
-.. code-block:: bash
-
-    colcon build --packages-up-to soss-dds-test
 
 Once that's finished building, you can source the new colcon overlay:
 

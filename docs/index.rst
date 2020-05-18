@@ -173,8 +173,6 @@ For each use-case, a related example is presented and the user is guided step-by
 installation protocol and environment preparation necessary to have the examples set up and working.
 It is organized as follows:
 
-.. _user_man:
-
 .. toctree::
     :caption: User Manual
 
