@@ -1,10 +1,10 @@
 External Dependencies
 =====================
 
-**eProsima Fast-RTPS**
+**eProsima Fast DDS**
 
-*eProsima Fast-RTPS* can be installed folowing the instructions at:
-`Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`__
+*eProsima Fast DDS* can be installed folowing the instructions at:
+`Fast DDS <https://fast-dds.docs.eprosima.com/en/latest/index.html>`__.
 
 Additional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^

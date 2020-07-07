@@ -177,9 +177,9 @@ It is organized as follows:
     :caption: User Manual
 
     usecases_content
-    use-case1
-    use-case2
-    use-case3
-    use-case4
+    ros2
+    ros1
+    fiware_ros1
+    wan
 
 

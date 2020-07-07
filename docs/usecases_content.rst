@@ -23,7 +23,7 @@ Namely, we will go through the following:
 +====================================================================================================+======================================================================+
 | :ref:`DDS bridge <dds bridge>`                                                                     | :ref:`Example: ROS2 communication <example: ros2 communication>`     |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`Example: Orion Context-Broker <example: orion context-broker>` |
+| :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`example_orion_context_broker`                                  |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :ref:`Example: ROS1 communication <example: ros1 communication>`     |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
