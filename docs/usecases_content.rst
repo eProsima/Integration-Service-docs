@@ -7,8 +7,8 @@ Typical Use-cases
 Typical scenarios in which *eProsima Integration-Service* is relevant are:
 
 * Communication of different *DDS*-based systems that use incompatible configurations.
-* Integrating *DDS* systems into arbitrarily complex systems using different protocols.
 * Communication of a *DDS* system with systems with incompatible protocols.
+* Integrating *DDS* systems into arbitrarily complex systems using different protocols.
 * Communication between *DDS* systems located in different geographical regions through the Internet.
 
 In this user manual we discuss representative use-cases demonstrating these
@@ -23,9 +23,9 @@ Namely, we will go through the following:
 +====================================================================================================+======================================================================+
 | :ref:`DDS bridge <dds bridge>`                                                                     | :ref:`Example: ROS2 communication <example: ros2 communication>`     |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`example_orion_context_broker`                                  |
-+----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :ref:`Example: ROS1 communication <example: ros1 communication>`     |
++----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`example_orion_context_broker`                                  |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`WAN communication <wan communication>`                                                       | :ref:`Example: WAN TCP tunneling <example: wan tcp tunneling>`       |
 +----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -40,18 +40,17 @@ in the introductory section :ref:`Getting Started <getting started>`.
 Please make sure to follow all the steps described in the document before proceeding.
 
 Whenever you run the :code:`colcon build` command in the examples provided, if any package is missing dependencies
-**causing the compilation to fail**, you can add the flag :code:`--packages-up-to soss-dds-test soss-ros2-test`
-as follows:
+**causing the compilation to fail**, you can add the flag :code:`--packages-up-to soss-dds-test as follows:
 
 .. code-block:: bash
 
-    colcon build --packages-up-to soss-dds-test soss-ros2-test
+    colcon build --packages-up-to soss-dds-test
 
 Also notice that, for being able to execute *eProsima Integration-Service* with the :code:`soss` command at the end of
 each example, the shell must be fully overlaid with the sourcing of all colcon-built packages required by the specific
 use-case:
 
-- The *eProsima Integration-Service* installation, along with the installation of any possible **System-Handle** that
+- The *eProsima Integration-Service* installation, along with that of any possible **System-Handle** that
   might be required by the specific example (e. g., **SOSS-FIWARE** and **SOSS-ROS1**).
 - The *ROS2* or *ROS1* installation, when needed.
 
