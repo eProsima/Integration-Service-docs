@@ -124,7 +124,7 @@ If you want to test it the other way around, launch the *ROS1* :code:`echo` with
     rostopic echo /chatter
 
 Then launch the HelloWorld as a :code:`publisher`, and *eProsima Integration-Service* using the :code:`soss` command
-followed by the `dds_ros1.yaml <https://github.com/eProsima/SOSS-DDS/blob/doc/examples/examples/ros1/dds_rps1.yaml>`__
+followed by the `dds_ros1.yaml <https://github.com/eProsima/SOSS-DDS/blob/doc/examples/examples/ros1/dds_ros1.yaml>`__
 configuration file located in the :code:`src/soss-dds/examples/ros1` folder instead:
 
 .. code-block:: bash

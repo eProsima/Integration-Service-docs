@@ -102,7 +102,7 @@ To get this example working, the following requirements must be met:
 Before proceeding, note that the
 `dds_fiware_ros1.yaml <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/fiware/dds_fiware_ros1.yaml>`__
 and the
-`fiware_dds_ros1.yaml <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/fiware/fiware_dds_sros1.yaml>`__
+`fiware_dds_ros1.yaml <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/fiware/fiware_dds_ros1.yaml>`__
 configuration files located in the :code:`~/is-workspace/src/soss-dds/examples/fiware` folder must be edited to match
 the IP
 address and port used by the *contextBroker* configuration in the testing environment.
