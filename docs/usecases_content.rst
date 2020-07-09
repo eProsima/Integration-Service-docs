@@ -40,7 +40,7 @@ in the introductory section :ref:`Getting Started <getting started>`.
 Please make sure to follow all the steps described in the document before proceeding.
 
 Whenever you run the :code:`colcon build` command in the examples provided, if any package is missing dependencies
-**causing the compilation to fail**, you can add the flag :code:`--packages-up-to soss-dds-test as follows:
+**causing the compilation to fail**, you can add the flag :code:`--packages-up-to soss-dds-test` as follows:
 
 .. code-block:: bash
 
