@@ -1,6 +1,8 @@
 Use-cases and Examples
 ======================
 
+.. _typical_use_cases:
+
 Typical Use-cases
 ^^^^^^^^^^^^^^^^^
 
@@ -18,25 +20,29 @@ installation protocol and environment preparation necessary to have the examples
 
 Namely, we will go through the following:
 
-+----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| Use-cases                                                                                          | Examples                                                             |
-+====================================================================================================+======================================================================+
-| :ref:`DDS bridge <dds bridge>`                                                                     | :ref:`Example: ROS2 communication <example: ros2 communication>`     |
-+----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Add compatibility to an unsupported protocol <add compatibility to an unsupported protocol>` | :ref:`Example: ROS1 communication <example: ros1 communication>`     |
-+----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Integrate a large system <integrate a large system>`                                         | :ref:`example_orion_context_broker`                                  |
-+----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`WAN communication <wan communication>`                                                       | :ref:`Example: WAN TCP tunneling <example: wan tcp tunneling>`       |
-+----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+   :align: left
 
+   * - Use-cases
+     - Examples
+   * - :ref:`dds_bridge`
+     - :ref:`ros2_comm`
+   * - :ref:`unsupp_protocol`
+     - :ref:`ros1_comm`
+   * - :ref:`integrate_large_system`
+     - :ref:`orion`
+   * - :ref:`wan_comm`
+     - :ref:`wan_tcp_tunneling`
+
+.. _important_remarks:
 
 Important remarks
 ^^^^^^^^^^^^^^^^^
 
 A compulsory prerequisite for running the examples of the following sections is
 to have *eProsima Integration-Service* correctly installed as explained
-in the introductory section :ref:`Getting Started <getting started>`.
+in the introductory section :ref:`Getting Started <getting_started>`.
 Please make sure to follow all the steps described in the document before proceeding.
 
 Whenever you run the :code:`colcon build` command in the examples provided, if any package is missing dependencies

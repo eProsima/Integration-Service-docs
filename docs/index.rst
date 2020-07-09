@@ -21,11 +21,15 @@ wants to bridge it.
 
 .. image:: CONCEPT.png
 
+.. _main_features:
+
 Main Features
 ^^^^^^^^^^^^^
 
 *eProsima Integration-Service* provides a plugin-based platform that is easily and intuitively configurable.
 This section explains these key features.
+
+.. _system_handles:
 
 System Handles
 --------------
@@ -55,6 +59,8 @@ For a system made of *N* components, this means that the number of new software 
 rather than *N²*.
 
 .. image:: SH_2.png
+
+.. _yaml_configuration_files:
 
 YAML configuration files
 ------------------------
@@ -88,7 +94,7 @@ In this example, a single topic is translated from *ROS2* to *DDS*:
     topics:
         chatter: { type: std_msgs/String, route: {from: ros2, to: dds} }
 
-The versatility of *eProsima Integration-Service* is that it offers the possibilty to operate different translations
+The versatility of *eProsima Integration-Service* is that it offers the possibility to operate different translations
 by only changing the configuration file.
 For example, by changing
 the specified middlewares, one can obtain an instance which translates between *WebSocket+JSON*
@@ -117,13 +123,15 @@ the specified middlewares, one can obtain an instance which translates between *
 For more information on how to configure *eProsima Integration-Service* via YAML files, please refer to the
 following `link <https://soss.docs.eprosima.com/en/latest/yaml_config.html>`__.
 
+.. _additional_features:
+
 Additional features
 -------------------
 
 **Free and Open Source.**
 
 The *eProsima Integration-Service* core, and all **System-Handles** available to date are free and open source.
-Consult the :ref:`Related Links <related links>` section of the documentation to be redirected to the relevant
+Consult the :ref:`Related Links <related_links>` section of the documentation to be redirected to the relevant
 repositories.
 
 **Easily configurable.**
@@ -142,7 +150,7 @@ For more information on **System-Handles**, please consult the link:
 **Easy to use.**
 
 Installing and running *eProsima Integration-Service* is intuitive and straightforward. Please refer to the
-:ref:`Getting Started <getting started>` section to be guided through the installation process.
+:ref:`Getting Started <getting_started>` section to be guided through the installation process.
 
 **Commercial support.**
 

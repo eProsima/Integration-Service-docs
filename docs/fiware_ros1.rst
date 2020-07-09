@@ -1,3 +1,5 @@
+.. _integrate_large_system:
+
 Integrate a large system
 ========================
 
@@ -20,15 +22,15 @@ all the possible bridges.
 Once all protocols are communicated with *eProsima Integration-Service*, the inter-components
 communication can be easily implemented by means of an individual YAML configuration file.
 
-As explained in the :ref:`introductory section <main features>`, *eProsima Integration-Service* already provides the
+As explained in the :ref:`introductory section <main_features>`, *eProsima Integration-Service* already provides the
 **System-Handle** for some common protocols.
 
 .. figure:: LARGER_SYSTEM.svg
 
-This section is intented to illustrate an example of how *eProsima Integration-Service* integrates a *DDS*
+This section is intended to illustrate an example of how *eProsima Integration-Service* integrates a *DDS*
 application into an *Orion Context-Broker* system.
 
-.. _example_orion_context_broker:
+.. _orion:
 
 Example: Integrate Orion Context-Broker and ROS1 into DDS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,8 +41,8 @@ Requirements
 ------------
 
 To prepare the deployment and setup the environment, you need to have *eProsima Integration-Service* correctly
-installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting started>` and
-read carefully the :ref:`Important remarks <important remarks>` section.
+installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting_started>` and
+read carefully the :ref:`Important remarks <important_remarks>` section.
 
 To get this example working, the following requirements must be met:
 
@@ -82,7 +84,7 @@ To get this example working, the following requirements must be met:
 
       colcon build
 
-- An accesible `Orion Context Broker <https://fiware-orion.readthedocs.io/en/master/>`__ service.
+- An accessible `Orion Context Broker <https://fiware-orion.readthedocs.io/en/master/>`__ service.
 - `Asio <https://think-async.com/Asio/>`__ and `cURLpp <https://github.com/jpbarrette/curlpp>`__ installed.
 - Having the **SOSS-FIWARE System-Handle** installed, that you can download from the dedicated
   `SOSS-FIWARE repository <https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support>`__.

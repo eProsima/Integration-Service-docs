@@ -1,3 +1,5 @@
+.. _dds_bridge:
+
 DDS bridge
 ==========
 
@@ -12,11 +14,13 @@ A user with knowledge of both systems may be aware that *ROS2* uses *DDS* as a m
 By using *eProsima Integration-Service*, this communication can be eased and achieved with minimal effort from the
 user's side.
 
-This section is intented to illustrate the *DDS*-*ROS2* communication as an example of this
+This section is intended to illustrate the *DDS*-*ROS2* communication as an example of this
 type of *eProsima Integration-Service*-mediated bridge, by putting into communication a *ROS2* *talker-listener*
 example with a *Fast-RTPS* HelloWorld example.
 
 .. image:: DDS_WITH_IS.png
+
+.. _ros2_comm:
 
 Example: ROS2 communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -27,8 +31,8 @@ Requirements
 ------------
 
 To prepare the deployment and setup the environment, you need to have *eProsima Integration-Service* correctly
-installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting started>` and
-read carefully the :ref:`Important remarks <important remarks>` section.
+installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting_started>` and
+read carefully the :ref:`Important remarks <important_remarks>` section.
 
 To get this example working, the following requirements must be met:
 

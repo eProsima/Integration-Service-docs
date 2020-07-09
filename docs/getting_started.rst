@@ -1,16 +1,20 @@
+.. _getting_started:
+
 Getting Started
 ===============
 
 **Table of Contents**
 
-* :ref:`Installation`
+* :ref:`installation`
 
-* :ref:`Deployment`
+* :ref:`deployment`
 
-* :ref:`Getting Help`
+* :ref:`getting_help`
 
 This section is meant to provide the user with an easy-to-use installation guide, and an explication of how to launch
 an *eProsima Integration-Service* instance.
+
+.. _installation:
 
 Installation
 ^^^^^^^^^^^^
@@ -95,6 +99,7 @@ command, you can source the new colcon overlay:
 
     source install/setup.bash
 
+.. _deployment:
 
 Deployment
 ^^^^^^^^^^
@@ -107,8 +112,8 @@ integrated into *eProsima Integration-Service* via a dedicated **System-Handle**
 
 First of all, you will have to clone the repositories of the **System-Handles** that your use-case requires
 into your :code:`is-workspace`.
-To know which are the **System-Handles** supported to date, refer to the :ref:`Related Links <related links>` section of this
-documentation.
+To know which are the **System-Handles** supported to date, refer to the :ref:`Related Links <related_links>` section
+of this documentation.
 
 Once all the necessary packages have been cloned, you need to build them. To do so, run:
 
@@ -145,6 +150,8 @@ Once *eProsima Integration-Service* is initiated, the user will be able to commu
 
 ..
  From now, :code:`soss` should be able to locate *eProsima Integration-Service* (:code:`SOSS-DDS`) **System-Handle**.
+
+.. _getting_help:
 
 Getting Help
 ^^^^^^^^^^^^

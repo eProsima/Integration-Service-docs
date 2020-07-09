@@ -1,3 +1,5 @@
+.. _wan_comm:
+
 WAN communication
 =================
 
@@ -14,6 +16,7 @@ In this case, we can see *eProsima Integration-Service* as a gateway to translat
 
 The example below illustrates how to configure *eProsima Integration-Service* to achieve WAN communication.
 
+.. _wan_tcp_tunneling:
 
 Example: WAN TCP tunneling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,8 +27,8 @@ Requirements
 ------------
 
 To prepare the deployment and setup the environment, you need to have *eProsima Integration-Service* correctly
-installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting started>` and
-read carefully the :ref:`Important remarks <important remarks>` section.
+installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting_started>` and
+read carefully the :ref:`Important remarks <important_remarks>` section.
 
 To test this example properly, you need two separated subnets that are not connected but both with internet
 access, or a testing environment simulating this scenario (for example, two routers, with one of them acting as

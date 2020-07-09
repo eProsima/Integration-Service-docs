@@ -84,7 +84,20 @@ script_path = os.path.dirname(os.path.abspath(__file__))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel']
+extensions = []
+try:
+    import sphinxcontrib.spelling  # noqa: F401
+    extensions.append('sphinxcontrib.spelling')
+
+    # spelling_word_list_filename = 'spelling_wordlist.txt'
+    spelling_word_list_filename = [
+        'spelling_wordlist.txt',
+    ]
+
+    from sphinxcontrib.spelling.filters import ContractionFilter
+    spelling_filters = [ContractionFilter]
+except ImportError:
+    pass
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -1,3 +1,5 @@
+.. _unsupp_protocol:
+
 Add compatibility to an unsupported protocol
 ============================================
 
@@ -24,6 +26,8 @@ Creation <https://soss.docs.eprosima.com/en/latest/sh_creation.html>`__ section 
 In the example below we show how *eProsima Integration-Service* bridges a *DDS* application
 with a *ROS1* application, by communicating a HelloWorld *DDS* application with a *talker-listener* example.
 
+.. _ros1_comm:
+
 Example: ROS1 communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -33,10 +37,10 @@ Requirements
 ------------
 
 To prepare the deployment and setup the environment, you need to have *eProsima Integration-Service* correctly
-installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting started>` and
-read carefully the :ref:`Important remarks <important remarks>` section.
+installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting_started>` and
+read carefully the :ref:`Important remarks <important_remarks>` section.
 
-To get this example working, the following equirements must be met:
+To get this example working, the following requirements must be met:
 
 - Having *ROS1* Melodic installed, with the *pub-echo* example working.
 - Having the `HelloWorldExample <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/common/HelloWorldExample>`_
