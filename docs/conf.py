@@ -20,6 +20,61 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
+
+import requests
+
+
+def download_css(html_css_dir):
+    """
+    Download the common theme of eProsima readthedocs documentation.
+    The theme is defined in a CSS file that is hosted in the eProsima GitHub
+    repository with the index of all eProsima product documentation
+    (https://github.com/eProsima/all-docs).
+    :param html_css_dir: The directory to save the CSS stylesheet.
+    :return: True if the file was downloaded and generated successfully.
+        False if not.
+    """
+    url = (
+        'https://raw.githubusercontent.com/eProsima/all-docs/'
+        'master/source/_static/css/fiware_readthedocs.css')
+    req = requests.get(url, allow_redirects=True)
+    if req.status_code != 200:
+        print(
+            'Failed to download the CSS with the eProsima rtd theme.'
+            'Return code: {}'.format(req.status_code))
+        return False
+    os.makedirs(
+        os.path.dirname('{}/_static/css/'.format(html_css_dir)),
+        exist_ok=True)
+    theme_path = '{}/_static/css/eprosima_rtd_theme.css'.format(html_css_dir)
+    with open(theme_path, 'wb') as f:
+        try:
+            f.write(req.content)
+        except OSError:
+            print('Failed to create the file: {}'.format(theme_path))
+            return False
+    return True
+
+
+def select_css(html_css_dir):
+    """
+    Select CSS file with the website's template.
+    :param html_css_dir: The directory to save the CSS stylesheet.
+    :return: Returns a list of CSS files to be imported.
+    """
+    common_css = '_static/css/eprosima_rtd_theme.css'
+    local_css = '_static/css/fiware_readthedocs.css'
+    if download_css(html_css_dir):
+        print('Appliying CSS style file: {}'.format(common_css))
+        return [common_css]
+    else:
+        print('Appliying CSS style file: {}'.format(local_css))
+        return [local_css]
+
+
+script_path = os.path.dirname(os.path.abspath(__file__))
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -29,7 +84,20 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel']
+extensions = []
+try:
+    import sphinxcontrib.spelling  # noqa: F401
+    extensions.append('sphinxcontrib.spelling')
+
+    # spelling_word_list_filename = 'spelling_wordlist.txt'
+    spelling_word_list_filename = [
+        'spelling_wordlist.txt',
+    ]
+
+    from sphinxcontrib.spelling.filters import ContractionFilter
+    spelling_filters = [ContractionFilter]
+except ImportError:
+    pass
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -156,9 +224,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 html_context = {
-        'css_files': [
-            '_static/css/fiware_readthedocs.css', #logo
-            ],
+        'css_files': select_css(script_path),
         }
 
 

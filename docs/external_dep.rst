@@ -1,10 +1,14 @@
+.. _external_dependencies:
+
 External Dependencies
 =====================
 
-**eProsima Fast-RTPS**
+**eProsima Fast DDS**
 
-*eProsima Fast-RTPS* can be installed folowing the instructions at:
-`Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`__
+*eProsima Fast DDS* can be installed following the instructions at:
+`Fast DDS <https://fast-dds.docs.eprosima.com/en/latest/index.html>`__.
+
+.. _additional_dependencies:
 
 Additional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -25,6 +29,8 @@ documentation at the following `link <https://soss.docs.eprosima.com/en/latest/i
 If installed using colcon, `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`__ becomes
 a dependency.
 
+.. _related_links:
+
 Related Links
 ^^^^^^^^^^^^^
 
@@ -33,14 +39,17 @@ Related Links
 * `Colcon Manual <https://colcon.readthedocs.io/en/released/user/installation.html>`__
 * **System-Handle** repositories
 
-  +-----------------------------------------------------------------+---------------------------------------------------------------------+
-  | **System-Handle**                                               | Repository                                                          |
-  +=================================================================+=====================================================================+
-  | **SOSS-ROS2**, **SOSS-WEBSOCKET**, **SOSS-MOCK**, **SOSS-ECHO** | https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds         |
-  +-----------------------------------------------------------------+---------------------------------------------------------------------+
-  | **SOSS-DDS**                                                    | https://github.com/eProsima/SOSS-DDS/tree/feature/xtypes-ddss       |
-  +-----------------------------------------------------------------+---------------------------------------------------------------------+
-  | **SOSS-ROS1**                                                   | https://github.com/eProsima/soss-ros1/tree/feature/xtypes-support   |
-  +-----------------------------------------------------------------+---------------------------------------------------------------------+
-  | **SOSS-FIWARE**                                                 | https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support |
-  +-----------------------------------------------------------------+---------------------------------------------------------------------+
+  .. list-table::
+     :header-rows: 1
+     :align: left
+
+     * - **System-Handle**
+       - Repository
+     * - **SOSS-ROS2**, **SOSS-WEBSOCKET**, **SOSS-MOCK**, **SOSS-ECHO**
+       - https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds
+     * - **SOSS-DDS**
+       - https://github.com/eProsima/SOSS-DDS/tree/feature/xtypes-ddss
+     * - **SOSS-ROS1**
+       - https://github.com/eProsima/soss-ros1/tree/feature/xtypes-support
+     * - **SOSS-FIWARE**
+       - https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support
