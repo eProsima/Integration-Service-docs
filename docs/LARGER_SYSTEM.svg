@@ -10,14 +10,17 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="96.373497"
+   inkscape:export-xdpi="96.373497"
+   inkscape:export-filename="/home/francesca/SOSS-newdocu/Integration-Service-docs/docs/LARGER_SYSTEM_new.png"
    version="1.1"
    width="602px"
    height="382px"
    viewBox="-0.5 -0.5 602 382"
    content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot; version=&quot;9.4.6&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;38e4e86c-7647-c73d-df29-9f5002fb4043&quot; name=&quot;Page-1&quot;&gt;5VjLcpswFP0aL8OAhHgsY5ykXXQmM16kXVIjY01l5JHlV7++FyMBAup4JsRNJ15gdK4e3HMOV7InOFkfn2S6WX0TGeUT5GbHCZ5NEPJcH8FXiZw0EgRRheSSZRprgDn7Tc1Qje5YRrdWRyUEV2xjgwtRFHShLCyVUhzsbkvB7VU3aU57wHyR8j76wjK1qtAIhQ3+hbJ8ZVb2griKrFPTWWeyXaWZOLQg/DDBiRRCVXfrY0J5yZ7hpRr3+Jdo/WCSFuqaAVqJfcp3Ojf9XOpkkoUBwCs0pvCwmxJccLGD8dPDiik636SLEjyA1oCt1JpDy6u6V7m50FgyzhPBhTxPit0oJskM8FymGYOHbcWiKHlAEcT6yej89lQqemxBOrknKtZUyRN0MVFjGW01hPUUh0a3WoxVWzNfg6n2Sl7P3dAJN5rRYXbxP2K3ZnCA3Zr5Edj1Y6/DrntDdv0eu7PZHIAXIeF9Ru79BAUcFpz+lHCXqzrnFv2QqOrwqqT4RQ1hhShoh18NpZzlRSkX0EcBn5a0MagR9zqwZllWLjMopBS7IqOZlm8Mo0cdo0d9o8cDSowhBHlFiOlnEoIEXSH678R7CeFdUXCahL13KjJaFwPPmIQ9mIlSCppu1Tg0Y4IdYhHtDRDtDRWfYAym+8XnK9gPcj5nitw5lXsGrH4i5+Mg6kkS3c77weveN1vsktPjfXkOhMRpkelb2HnT7ZYtzgqkUvXhlkadl2F5/nTfGOBSnr63Gz/KhhOSsn1k6hxzokg3qygy0WcqGfBQSntZo63YyQW1TnSQQE5NL10WaGYda/tCtmQiAzIZTFIONt/bh+Eh7fQKz4LBAzc+6WxVddtMUaWjR7UPr52JfNyZCHcmqkjoTXS2Up32de4KP7C7vIvu8jCy7RUFb/EX/vj+8gIn9HwUkeoahPaGHGKnFQ07819rPhxgB5wbE6Sv9iKYOK4fBl5sru/lzIFjcM+ZN/+R8fiYuK43zraCYntTufNu+SPj1cNt8qm2eBJbWpDbnW3Rh97fHYLCdhW+cx0XIYN0C21TnAmxanP8tq3f/w9q88WqGRKnHQw7VXOs2uw7TfX3URiNVJuh2fxzV3Vv/gDFD38A&lt;/diagram&gt;&lt;/mxfile&gt;"
    id="svg57"
-   sodipodi:docname="LARGER_SYSTEM.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   sodipodi:docname="LARGER_SYSTEM_new.svg"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)">
   <metadata
      id="metadata61">
     <rdf:RDF>
@@ -26,7 +29,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,16 +43,17 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1172"
+     inkscape:window-height="1052"
      id="namedview59"
      showgrid="false"
      inkscape:zoom="1.3484362"
      inkscape:cx="281.73909"
-     inkscape:cy="153.13006"
-     inkscape:window-x="3200"
+     inkscape:cy="181.68165"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg57" />
+     inkscape:current-layer="svg57"
+     inkscape:document-rotation="0" />
   <defs
      id="defs17">
     <linearGradient
@@ -204,20 +208,17 @@
          y="10.359202"
          font-size="12px"
          id="text37"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000">
-        <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000"><tspan
            sodipodi:role="line"
            id="tspan959"
            x="44"
            y="10.359202"
-           style="font-size:16px">Integration</tspan>
-        <tspan
+           style="font-size:16px">Integration</tspan><tspan
            sodipodi:role="line"
            id="tspan961"
            x="44"
            y="30.359203"
-           style="font-size:16px">Service</tspan>
-      </text>
+           style="font-size:16px">Service</tspan></text>
     </switch>
   </g>
   <path
@@ -251,11 +252,11 @@
          y="12"
          font-size="12px"
          id="text49"
-         style="font-size:18.66666667px;font-family:Helvetica;text-anchor:middle;fill:#ffffff;-inkscape-font-specification:'Helvetica, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;fill-opacity:1;">
-        <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1"><tspan
            sodipodi:role="line"
-           id="tspan3864">Component A</tspan>
-      </text>
+           id="tspan3864"
+           x="36"
+           y="12">DDS</tspan></text>
     </switch>
   </g>
   <path
@@ -295,13 +296,11 @@
          y="12"
          font-size="12px"
          id="text49-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
-        <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1"><tspan
            sodipodi:role="line"
            id="tspan3866"
            x="36"
-           y="12">Component B</tspan>
-      </text>
+           y="12">Component A</tspan></text>
     </switch>
   </g>
   <path
@@ -334,13 +333,11 @@
          y="12"
          font-size="12px"
          id="text49-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1">
-        <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1"><tspan
            sodipodi:role="line"
            id="tspan3868"
            x="36"
-           y="12">Component C</tspan>
-      </text>
+           y="12">Component B</tspan></text>
     </switch>
   </g>
   <path
@@ -373,11 +370,11 @@
          y="12"
          font-size="12px"
          id="text49-4-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;">
-        <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1"><tspan
            sodipodi:role="line"
-           id="tspan3938">Component D</tspan>
-      </text>
+           id="tspan3938"
+           x="36"
+           y="12">Component C</tspan></text>
     </switch>
   </g>
   <path
@@ -410,24 +407,25 @@
          y="12"
          font-size="12px"
          id="text49-4-3-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;">
-        <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1"><tspan
            sodipodi:role="line"
-           id="tspan3940">Component E</tspan>
-      </text>
+           id="tspan3940"
+           x="36"
+           y="12">Component D</tspan></text>
     </switch>
   </g>
   <flowRoot
      xml:space="preserve"
      id="flowRoot3942"
-     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
        id="flowRegion3944"><rect
          id="rect3946"
          width="187.62474"
          height="111.23997"
          x="222.47993"
          y="419.07999" /></flowRegion><flowPara
-       id="flowPara3948"></flowPara></flowRoot>  <path
+       id="flowPara3948" /></flowRoot>
+  <path
      d="m 221.59879,263.05041 6.66,8.12 -24.52,0.06 4.86,-24.03 6.66,8.12 19.84,-16.27 -6.66,-8.12 24.52,-0.06 -4.86,24.03 -6.66,-8.12 z"
      stroke-miterlimit="10"
      pointer-events="none"

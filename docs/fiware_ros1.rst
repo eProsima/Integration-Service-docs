@@ -26,7 +26,7 @@ communication can be easily implemented by means of an individual YAML configura
 As explained in the :ref:`introductory section <main_features>`, *eProsima Integration-Service* already provides the
 **System-Handle** for some common protocols.
 
-.. figure:: LARGER_SYSTEM_new.png
+.. figure:: LARGER_SYSTEM.png
 
 This section is intended to illustrate an example of how *eProsima Integration-Service* integrates a *DDS*
 application into a complex system comprising *Orion Context-Broker* and *ROS1*.
