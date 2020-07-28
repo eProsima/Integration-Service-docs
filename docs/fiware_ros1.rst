@@ -13,11 +13,12 @@ component unhandy.
 
 .. image:: LARGER_SYSTEM_BAD.png
 
-*eProsima Integration-Service* eases this process, allowing to integrate any *DDS* system into an already
-existing system or viceversa, by providing an out-of-the-box bridge that straightforwardly allows to communicate the
+*eProsima Integration-Service* and its core ease this process.
+Specifically, *eProsima Integration-Service* allows to integrate any *DDS* system into an already
+existing system or viceversa, by providing an out-of-the-box bridge that straightforwardly puts into communication the
 *DDS* and the non-*DDS* protocols.
 Also, thanks, to its **System-Handle**-based structure, the core of *eProsima Integration-Service* allows to centralise
-all the possible bridges.
+all the possible bridges between the rest of subsystems.
 
 Once all protocols are communicated with *eProsima Integration-Service*, the inter-components
 communication can be easily implemented by means of an individual YAML configuration file.
@@ -25,10 +26,10 @@ communication can be easily implemented by means of an individual YAML configura
 As explained in the :ref:`introductory section <main_features>`, *eProsima Integration-Service* already provides the
 **System-Handle** for some common protocols.
 
-.. figure:: LARGER_SYSTEM.svg
+.. figure:: LARGER_SYSTEM_new.png
 
 This section is intended to illustrate an example of how *eProsima Integration-Service* integrates a *DDS*
-application into an *Orion Context-Broker* system.
+application into a complex system comprising *Orion Context-Broker* and *ROS1*.
 
 .. _orion:
 
