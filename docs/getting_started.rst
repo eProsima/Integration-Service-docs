@@ -31,8 +31,8 @@ Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick
 
     mkdir ~/is-workspace
     cd ~/is-workspace
-    git clone ssh://git@github.com/eProsima/soss_v2 src/soss --recursive -b feature/xtypes-dds
-    git clone ssh://git@github.com/eProsima/SOSS-DDS src/soss-dds --recursive -b feature/xtypes-dds
+    git clone https://git@github.com/eProsima/soss_v2 src/soss --recursive -b feature/xtypes-dds
+    git clone https://git@github.com/eProsima/SOSS-DDS src/soss-dds --recursive -b feature/xtypes-dds
 
 .. note::
 
