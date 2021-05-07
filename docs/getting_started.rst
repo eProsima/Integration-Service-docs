@@ -5,138 +5,155 @@ Getting Started
 
 **Table of Contents**
 
-* :ref:`installation`
-
-* :ref:`deployment`
-
+* :ref:`core_installation`
+* :ref:`adding_shs`
+* :ref:`config_and_deploy`
 * :ref:`getting_help`
 
-This section is meant to provide the user with an easy-to-use installation guide, and an explication of how to launch
-an *eProsima Integration-Service* instance.
+This section provides the user with an easy-to-use installation guide of both the *Integration Service* and of the *System Handles*, and an explication of how to launch and deploy an *Integration Service* project.
 
-.. _installation:
 
-Installation
-^^^^^^^^^^^^
+.. _core_installation:
 
-The *eProsima Integration-Service* repository consists of many cmake packages which can be configured and built
-manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/index.html>`__,
+Core installation
+^^^^^^^^^^^^^^^^^
+
+The *Integration Service* core and the associated *System Handles* repositories consist of many CMake packages which can be configured and built manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/index.html>`_,
 as it makes the job much smoother.
 
-Create a `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__ and clone the
-`SOSS <https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds>`__ and the
-`SOSS-DDS <https://github.com/eProsima/SOSS-DDS/tree/feature/xtypes-dds>`__ repositories:
+The starting point of any *Integration Service*-mediated integration is to create a
+`colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`_ and clone the
+`Integration-Service <https://github.com/eProsima/Integration-Service>`_ repository, containing the core.
 
 .. code-block:: bash
 
     mkdir ~/is-workspace
     cd ~/is-workspace
-    git clone ssh://git@github.com/eProsima/soss_v2 src/soss --recursive -b feature/xtypes-dds
-    git clone ssh://git@github.com/eProsima/SOSS-DDS src/soss-dds --recursive -b feature/xtypes-dds
+    git clone https://github.com/eProsima/Integration-Service.git src/Integration-Service --recursive
+
+At this point, you have the *Integration Service* library correcly cloned into your :code:`is-workspace/src/Integration-Service` folder.
 
 .. note::
 
-    The :code:`--recursive` flag in the first :code:`git clone` command is mandatory to download some
-    required third-parties.
-    The :code:`--recursive` flag in the second command installs
-    `eProsima Fast DDS <https://fast-dds.docs.eprosima.com/en/latest/index.html>`__, which is a requirement of
-    *eProsima Integration Service*. In this way, both *eProsima Integration Service* and *eProsima Fast DDS*
-    will be installed in the same :code:`~/is-workspace/install` directory.
-    The use of this second :code:`--recursive` flag can be omitted in case you have *eProsima Fast DDS* already
-    installed in your system. Note that if your installation is local, you'll need to source it before running any
-    *eProsima Fast DDS* application and *eProsima Integration-Service* instance.
+    The :code:`--recursive` flag is needed for correclty installing the *XTypes* library as a submodule.
 
-Once *eProsima Integration-Service* is in the :code:`src` directory of your colcon workspace, you can build the packages
-by running:
+.. TODO: Check sentence above.
+.. TODO: When tool for automatically cloning the repos of the desired System Handles is ready, add a description of how to do so direclty from the core repo.
 
-.. code-block:: bash
 
-    colcon build
+.. _global_compilation_flags:
 
-If any package is missing dependencies **causing the compilation to fail**, you can add the flag
-:code:`--packages-up-to soss-dds-test` to make sure that you at least build :code:`soss-dds-test`:
+Global compilation flags
+------------------------
 
-.. code-block:: bash
+*Integration Service* uses CMake for building and packaging the project.
+There are several CMake flags, which can be tuned during the configuration step:
 
-    colcon build --packages-up-to soss-dds-test
+* :code:`BUILD_TESTS`: When compiling *Integration Service*, use the :code:`-DBUILD_TESTS=ON` CMake option
+    to compile both the unitary tests for the [Integration Service Core](core/) and the unitary
+    and integration tests for all the *System Handles* present in the :code:`colcon` workspace:
 
-.. note::
+    .. code-block:: bash
+    
+        ~/is_ws$ colcon build --cmake-args -DBUILD_TESTS=ON
 
-    :code:`colcon build` will build the package :code:`soss-core` and all the built-in **System-Handles**.
-    If you don't want to build the built-in **System-Handles** you can execute
-    :code:`colcon build --packages-up-to soss-core`.
-    If you only want a to build a sub-set of built-in **System-Handles** you can use the same directive
-    with the name of the packages, for example:
+* :code:`BUILD_EXAMPLES`: Allows to compile utilities that can be used for the several provided
+    usage examples for *Integration Service*, located under the `examples/utils <https://github.com/eProsima/Integration-Service/tree/main/examples/utils>`_ folder of the core repository.
+    These applications can be used to test the *Integration Service* with some of the provided YAML configuration
+    files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
 
     .. code-block:: bash
 
-        colcon build --packages-up-to soss-ros2 soss-fiware
+        ~/is_ws$ colcon build --cmake-args -DBUILD_EXAMPLES=ON
 
-    The built-in **System-Handles** packages are:
+To date, the following user application examples are available:
 
-    * :code:`soss-ros2`: ROS2 **System-Handle**.
+* :code:`DDSHelloWorld`: A simple publisher/subscriber application, running under `Fast DDS <https://fast-dds.docs.eprosima.com/>`_.
+  It publishes or subscribes to a simple string topic, named *HelloWorldTopic*.
+  As an alternative to `colcon`, in order to compile the `DDSHelloWorld` example, the following commands can be executed:
 
-    * :code:`soss-websocket`: WebSocket **System-Handle**.
+  .. code-block:: bash
 
-    * :code:`soss-mock`: Mock **System-Handle** for testing purposes.
+      ~/is_ws$ cd examples/utils/DDSHelloWorld
+      ~/is_ws/examples/utils/DDSHelloWorld$ mkdir build
+      ~/is_ws/examples/utils/DDSHelloWorld$ cd build
+      ~/is_ws/examples/utils/DDSHelloWorld/build$ cmake ..
+      ~/is_ws/examples/utils/DDSHelloWorld$ make
 
-    * :code:`soss-echo`: Echo **System-Handle** for example purposes.
+The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSHelloWorld`.
 
-    Additional **System-Handles** can be found in their own repositories:
+.. _adding_shs:
 
-    * :code:`soss-fiware`: `Fiware Orion ContextBroker System-Handle <https://github.com/eProsima/SOSS-FIWARE>`__.
+Adding System Handles
+^^^^^^^^^^^^^^^^^^^^^
 
-    * :code:`soss-ros1`: `ROS System-Handle <https://github.com/eProsima/soss-ros1>`__.
+As discussed in the :ref:`introductory section <intro>`, *Integration Service* allows
+to bring an arbitrary number of middlewares into communication, each integrated into the core with
+a dedicated *System Handle*.
 
-    * :code:`soss-dds`: `DDS System-Handle <https://github.com/eProsima/SOSS-DDS>`__.
+The workflow is thus dependent on the middlewares involved in the desired communication.
+The up-to-date list of the available *System Handles*
+and the repositories hosting them is provided in the :ref:`<external_dependencies>` page.
 
-    Most of the **System-Handle** packages include a :code:`-test` package for testing purposes.
+Depending on the use-case, you might need to have either one, two, or more *System Handles* installed. In the :ref:`use-cases_and_examples` section, you can find a collection of relevant examples clarifying how to use these plugins according to your needs.
 
-Once that's finished building, and before launching an *eProsima Integration-Service* instance with the :code:`soss`
-command, you can source the new colcon overlay:
+You will have to clone the repositories of the desired *System Handles* into the previously created :code:`is-workspace`:
 
 .. code-block:: bash
 
-    source install/setup.bash
+    cd ~/is-workspace
+    git clone https://github.com/eProsima/<middleware_1-SH>.git src/middleware_1-SH
+    ...
+    git clone https://github.com/eProsima/<middleware_N_SH>.git src/middleware_2-SH
 
-.. _deployment:
+Where :code:`<middleware_i-SH>`, with *i = 1, .., N* refers to the *i*-th *System Handle* needed for carrying out the integration, chosen among the ones listed in the :ref:`<useful_links>` section. Each such *System Handle* will be cloned in a dedicated :code:`src/middleware_i-SH` folder inside your :code:`is-workspace`.
 
-Deployment
-^^^^^^^^^^
+If using a custom *System Handle* which is not present in the
+*eProsima* GitHub organization, clone the dedicated repository into the :code:`is-workspace`.
 
-You can now run an *eProsima Integration-Service* instance it in order to bring an arbitrary number of middlewares
-into the *DDS* world.
-
-The workflow is dependent on the specific middlewares involved in the desired communication, given that each is
-integrated into *eProsima Integration-Service* via a dedicated **System-Handle**.
-
-First of all, you will have to clone the repositories of the **System-Handles** that your use-case requires
-into your :code:`is-workspace`.
-To know which are the **System-Handles** supported to date, refer to the :ref:`Related Links <related_links>` section
-of this documentation.
-
-Once all the necessary packages have been cloned, you need to build them. To do so, run:
+Once all the necessary packages have been cloned, they need to be built. To do so, execute from within the :code:`is-workspace`:
 
 .. code-block:: bash
 
     colcon build
 
-with the possible addition of flags depending on the specific use-case. Once that's finished building, you can source
-the new colcon overlay:
+Once that's finished building and before launching your *Integration Service* project, you need to source the new colcon overlay:
 
 .. code-block:: bash
 
     source install/setup.bash
 
-The workspace is now prepared for running an *eProsima Integration-Service* instance. From the fully overlaid shell,
-you will have to execute the :code:`soss` command, followed by the name of the YAML configuration file that describes
-how messages should be passed among *DDS* and the middlewares involved:
+.. important::
+
+    The *Integration Service System Handles* use CMake for building and packaging the project.
+    There are several CMake flags for each specific *System Handle*, which can be tuned during the configuration step. Find detailed information regarding the flags that can be used for each in the :ref:`existing_shs` page.
+
+
+.. _config_and_deploy:
+
+Configuration and Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :code:`is-workspace` is now prepared for running an *Integration Service* instance.
+
+However, before deploying an *Integration Service* project, the integration must be configured. This is done by means of a
+YAML file that describes how messages should be passed among the middlewares involved in the integration.
+To this aim, it needs to be filled out and prepared according to the systems, topics, services, routes
+and types that are needed by all the middlewares involved. To learn more on how to do so, please
+refer to the :ref:`yaml_config` section.
+
+Once the communication has been properly configured, *Integration Service* can be run.
+From the fully overlaid shell, execute the :code:`integration-service` command, followed by the name of the
+YAML configuration file:
 
 .. code-block:: bash
 
-    soss <config.yaml>
+    integration-service <config.yaml>
 
-Once *eProsima Integration-Service* is initiated, the user will be able to communicate the desired protocols.
+Once *Integration Service* is initiated, the desired protocols can be communicated by launching them
+in independent terminal windows. To get a better taste of how to do so,
+refer to the :ref:`use-cases-and-examples` section, which provides several examples on how to connect
+instances of systems which are already integrated into the *Integration Service* ecosystem.
 
 .. note::
 
@@ -146,10 +163,9 @@ Once *eProsima Integration-Service* is initiated, the user will be able to commu
 
     .. code-block:: bash
 
-        source ~/is-workspace/install/setup.bash
+        source /PATH-TO-YOUR-IS-WORKSPACE/is-workspace/install/setup.bash
 
-..
- From now, :code:`soss` should be able to locate *eProsima Integration-Service* (:code:`SOSS-DDS`) **System-Handle**.
+In this way, your local installation will be automatically sourced and made available everywhere in your system.
 
 .. _getting_help:
 
@@ -157,5 +173,5 @@ Getting Help
 ^^^^^^^^^^^^
 
 If you need support you can reach us by mail at
-`support@eProsima.com <mailto:support@eProsima.com>`__ or by phone at `+34 91 804 34 48 <tel:+34918043448>`__.
+`support@eProsima.com <mailto:support@eProsima.com>`_ or by phone at `+34 91 804 34 48 <tel:+34918043448>`_.
 

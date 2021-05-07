@@ -1,20 +1,24 @@
 .. _external_dependencies:
 
-External Dependencies
-=====================
+Useful Material
+===============
 
-**eProsima Fast DDS**
+In this page, we provide a compendium of relevant material useful for building and instantiating an *Integration Service* project.
 
-*eProsima Fast DDS* can be installed following the instructions at:
-`Fast DDS <https://fast-dds.docs.eprosima.com/en/latest/index.html>`__.
+First of all we list the dependencies required for an *Integration Service* instance to function. To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
+We also provide a list of links that may come in handy for developing and deploying an *eProsima Integration  Service* project.
 
-.. _additional_dependencies:
+- :ref:`core_deps`
+- :ref:`sh_deps`
+- :ref:`useful_links`
 
-Additional Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^
 
-Each **System-Handle** may have additional dependencies. Please refer to the concrete *SOSS*
-documentation at the following `link <https://soss.docs.eprosima.com/en/latest/index.html#>`__.
+.. _core_deps:
+
+Core Dependencies
+^^^^^^^^^^^^^^^^^
+
+The core needs the following to be installed:
 
 **CMake**
 
@@ -26,30 +30,65 @@ documentation at the following `link <https://soss.docs.eprosima.com/en/latest/i
 
 **colcon**
 
-If installed using colcon, `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`__ becomes
+If installed using colcon, `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_ becomes
 a dependency.
 
-.. _related_links:
 
-Related Links
-^^^^^^^^^^^^^
+.. _sh_deps:
 
-* `eProsima Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`__
-* `SOSS documentation <https://soss.docs.eprosima.com/en/latest/index.html>`__
-* `Colcon Manual <https://colcon.readthedocs.io/en/released/user/installation.html>`__
-* **System-Handle** repositories
+System Handles Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Beyond the dependencies of the core, each **System-Handle** has its own specific dependencies.
+Find them listed in the table below:
+
+.. list-table::
+    :header-rows: 1
+    :align: left
+
+    * - *System Handle*
+    - External Dependencies
+    * - **Fast DDS SH**
+    - `Fast DDS installation <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ (v2.0.0 or superior)
+    * - **ROS 2 SH**
+    - ROS 2 installation (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
+    * - **ROS 1 SH**
+    - `ROS 1 installation <http://wiki.ros.org/ROS/Installation>`_ (`Melodic <http://wiki.ros.org/melodic/Installation>`_ or `Noetic <http://wiki.ros.org/noetic/Installation>`_)
+    * - **WEBSOCKET SH**
+    - `OpenSSL <https://www.openssl.org/>`_, `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
+    * - **FIWARE SH**
+    - `Asio C++ Library <https://think-async.com/Asio/>`_, `cURLpp library <http://www.curlpp.org/>`_, `cURL library <https://curl.se/>`_
+
+  .. note::
+
+      The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, it downloads and installs its own version.
+
+.. _useful_links:
+
+Useful Links
+^^^^^^^^^^^^
+
+* `Integration Service core <https://github.com/eProsima/is-core>`_
+* `Colcon Manual <https://colcon.readthedocs.io/en/released/user/installation.html>`_
+* *System Handles* repositories
 
   .. list-table::
      :header-rows: 1
      :align: left
 
-     * - **System-Handle**
+     * - *System Handle*
        - Repository
-     * - **SOSS-ROS2**, **SOSS-WEBSOCKET**, **SOSS-MOCK**, **SOSS-ECHO**
-       - https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds
-     * - **SOSS-DDS**
-       - https://github.com/eProsima/SOSS-DDS/tree/feature/xtypes-ddss
-     * - **SOSS-ROS1**
-       - https://github.com/eProsima/soss-ros1/tree/feature/xtypes-support
-     * - **SOSS-FIWARE**
-       - https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support
+     * - **Fast DDS SH**
+       - https://github.com/eProsima/FastDDS-SH
+     * - **ROS 2 SH**
+       - https://github.com/eProsima/ROS2-SH
+     * - **ROS 1 SH**
+       - https://github.com/eProsima/ROS1-SH
+     * - **WEBSOCKET SH**
+       - https://github.com/eProsima/WebSocket-SH
+     * - **FIWARE SH**
+       - https://github.com/eProsima/SOSS-FIWARE
+* `eProsima Fast-DDS <https://github.com/eProsima/Fast-DDS/>`_
+* `ROS 2 <https://index.ros.org/doc/ros2/>`_
+* `ROS 1 <https://www.ros.org/>`_
+* `FIWARE Orion Context Broker <https://fiware-orion.readthedocs.io/en/master/>`_
