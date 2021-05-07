@@ -1,0 +1,29 @@
+@startuml
+
+
+group #transparent subscribe
+        IntegrationService -> "SystemHandle" as SH : subscribe(callback)
+        create Subscriber
+        SH -> Subscriber : new
+        SH -> Subscriber : subscribe(callback)
+        Subscriber -> middleware : subscribe
+end
+
+
+group #transparent notification
+        middleware -> Subscriber : on_message
+        Subscriber -> Subscriber : data = convert_to_dynamicdata(payload)
+        Subscriber -> IntegrationService : callback(data)
+end
+
+
+box "Generic System Handle" #LightBlue
+        participant SH
+        participant Subscriber
+end box
+
+
+participant middleware
+
+
+@enduml

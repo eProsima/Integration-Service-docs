@@ -1,0 +1,88 @@
+------------------------
+sh_hierarchy.png
+
+@startuml
+hide empty members
+
+
+package "Integration Service" {
+abstract "SystemHandle" as SH {
+    +bool configure(...)
+    +bool okay() const
+    +bool spin_once()
+}
+
+
+abstract "TopicPublisher" as TP {
+    +bool publish(...)
+}
+
+
+abstract "ServiceClient" as SC {
+    +void receive_response(...)
+}
+
+
+abstract "ServiceProvider" as SP {
+    +void call_service(...)
+}
+
+
+abstract "TopicSubscriberSystem" as TSS {
+    +bool subscribe(...,)
+}
+
+
+abstract "TopicPublisherSystem" as TPS {
+    +TopicPublisher* advertise(...)
+}
+
+
+abstract "ServiceClientSystem" as SCS {
+    +bool create_client_proxy(...)
+}
+
+
+abstract "ServiceProviderSystem" as SPS {
+    +ServiceProvider* create_service_provider(...)
+}
+
+
+abstract TopicSystem
+abstract ServiceSystem
+abstract FullSystem
+
+
+SH <|-- TPS
+SH <|-- TSS
+SH <|-- SCS
+SH <|-- SPS
+
+
+TSS <|-- TopicSystem
+TPS <|-- TopicSystem
+SCS <|-- ServiceSystem
+SPS <|-- ServiceSystem
+
+
+TopicSystem <|-- FullSystem
+ServiceSystem <|-- FullSystem
+
+
+TPS *-- TP
+SCS *-- SC
+SPS *-- SP
+}
+@enduml
+
+PlantUML version 1.2020.00(Sat Jan 11 13:30:53 CET 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_201-b09
+Operating System: Linux
+Default Encoding: UTF-8
+Language: es
+Country: ES
+
+------------------------

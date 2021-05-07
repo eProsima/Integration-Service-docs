@@ -1,0 +1,82 @@
+------------------------
+sh_impl.png
+
+@startuml
+hide empty members
+
+
+package "Integration Service" {
+
+
+abstract "TopicPublisher" as TP {
+    +bool publish(...)
+}
+
+
+abstract "ServiceClient" as SC {
+    +void receive_response(...)
+}
+
+
+abstract "ServiceProvider" as SP {
+    +void call_service(...)
+}
+
+
+abstract "FullSystem" as FS {
+    +bool configure(...)
+    +bool okay() const
+    +bool spin_once()
+    +bool subscribe(...,)
+    +TopicPublisher* advertise(...)
+    +bool create_client_proxy(...)
+    +ServiceProvider* create_service_provider(...)
+}
+
+
+FS *-up- TP
+FS *-up- SC
+FS *-up- SP
+
+
+package system {
+class SystemHandle
+
+
+class Publisher
+
+
+class Subscriber
+
+
+class Server
+
+
+class Client
+
+SystemHandle *-- Publisher
+SystemHandle *-- Subscriber
+SystemHandle *-- Server
+SystemHandle *-- Client
+
+
+FS <|-- SystemHandle
+TP <|-- Publisher
+SP <|-- Server
+SC <|-- Client
+
+
+}
+@enduml
+
+PlantUML version 1.2020.07beta9(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+
+------------------------

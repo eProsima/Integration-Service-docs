@@ -280,10 +280,8 @@ If :code:`type` is omitted, the key of the YAML entry will be used as :code:`typ
 
     systems:
         dds:
-        ros2_domain5: { type: ros2, domain: 5, node_name: "is_5" }
+        ros2_domain5: { type: ros2, domain: 5, node_name: "ros_node_5" }
         fiware: { host: 192.168.1.59, port: 1026 }
-
-.. TODO: Check if change above of soss_5 into is_5 is ok 
 
 The snippet above will create three *System Handles*:
 
