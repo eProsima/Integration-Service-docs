@@ -72,8 +72,7 @@ while others are optional. Both kinds are listed and reviewed below:
   In relation to the common parameters, their behaviour is explained in the following section:
 
     * :code:`type`: Middleware or protocol kind. To date, the supported middlewares are: *fastdds*, *ros1*, *ros2*, *fiware*, *websocket_server* and *websocket_client*.
-    There is also a *mock* option, mostly used
-    for testing purposes.
+      There is also a *mock* option, mostly used for testing purposes.
 
     * :code:`types-from` *(optional)*: Configures the types inheritance from a given system to another.
       This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware, without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
@@ -423,7 +422,7 @@ The snippet above will create three *System Handles*:
 * A *Fiware* *System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
 The *System Handles* currently available for *Integration Service* are listed in a table that you can find in the
-:ref:`related_links` section of this documentation.
+:ref:`doxygen_doc` section of this documentation.
 
 A new *System Handle* can be created by implementing the desired :code:`SystemHandle` subclasses to
 add support to any other protocol or system.
@@ -530,11 +529,9 @@ which :code:`system` acts as the server and which as the client(s).
 If a custom *System Handle* needs additional configuration regarding the :code:`services`, it can
 be added in the service definition as new map entries.
 
-.. note::
-
-If the :code:`type` field is defined, as in the example above, this :code:`type` will be taken into consideration
-as the **request type**. If a differentiation must be done for those services which allow to differenciate between
-**request** and **reply** types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
+.. note:: If the :code:`type` field is defined, as in the example above, this :code:`type` will be taken into consideration
+  as the **request type**. If a differentiation must be done for those services which allow to differenciate between
+  **request** and **reply** types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
 
 
 .. _remapping:
@@ -579,14 +576,14 @@ The table below provides the link to the Doxygen documentation of all the alread
     :align: left
 
     * - *System Handle*
-    - Doxygen docs
+      - Doxygen docs
     * - **Fast DDS SH**
-    - https://github.com/eProsima/FastDDS-SH
+      - https://github.com/eProsima/FastDDS-SH
     * - **ROS 2 SH**
-    - https://github.com/eProsima/ROS2-SH
+      - https://github.com/eProsima/ROS2-SH
     * - **ROS 1 SH**
-    - https://github.com/eProsima/ROS1-SH
+      - https://github.com/eProsima/ROS1-SH
     * - **WEBSOCKET SH**
-    - https://github.com/eProsima/WebSocket-SH
+      - https://github.com/eProsima/WebSocket-SH
     * - **FIWARE SH**
-    - https://github.com/eProsima/FIWARE-SH
+      - https://github.com/eProsima/FIWARE-SH
