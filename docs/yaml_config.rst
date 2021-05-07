@@ -20,35 +20,169 @@ The section is organized as follows:
 Common fields
 ^^^^^^^^^^^^^
 
-*Integration Service* is configured by means of a YAML file
-that specifies a set of compulsory fields, plus some optional ones.
-The most common fields required to configure a *System Handle* are:
+The *Integration Service* can be configured during runtime by means of a dedicated **YAML** file.
+This configuration file must follow a specific syntax, meaning that it is required that a number
+of compulsory section are opportunely filled for it to successfully configure and launch an *Integration Service* instance,
+while others are optional. Both kinds are listed and reviewed below:
 
-* :code:`types`: specifies the IDL types used by *Integration Service* to transmit messages.
+* :code:`types`: *(optional)*: It allows to list the `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL/>`_
+  types used by the *Integration Service* to later define the topics and services types which will
+  take part in the communication process.
 
-    * :code:`idl`: IDL content.
+  This field can be omitted for certain *Integration Service* instances where one or more *System
+  Handles* already include(s) static type definitions and their corresponding transformation libraries
+  (*Middleware Interface Extension* or *mix* files).
 
-* :code:`systems`: specifies the middlewares involved in the communication, allowing to configure them.
+  .. code-block:: yaml
 
-* :code:`routes`: specifies which bridges *Integration Service* needs to create.
+    types:
+      idls:
+        - >
+          #include <GoodbyeWorld.idl>
+          struct HelloWorld
+          {
+            string data;
+            GoodbyeWorld bye;
+          };
+      paths: [ "/home/idl_files/goodbyeworld/" ]
 
-    * :code:`from`-:code:`to`: publisher/subscriber communication.
+  Several parameters can be configured within this section:
 
-    * :code:`server`-:code:`clients`: server/client communication.
+    * :code:`idls`: List of IDL type definitions that can be directly embedded within the configuration file.
+      If the :code:`types` section is defined, this subsection is mandatory. The type can be entirely defined within the YAML file,
+      or can be included from a preexisting IDL file; for the latter, the system path containing where the IDL file is stored must be placed into the :code:`paths` section described below.
 
-* :code:`topics`/:code:`services`: specify the topics exchanged over the :code:`routes` above in either
-  publisher/subscriber or client/server type communications, allowing to configure them.
+    * :code:`paths` *(optional):* Using this parameter, an existing IDL type written in a separate file can be included within the *Integration Service* types section.
+      If the IDL path is not listed here, the previous subsection :code:`#include` preprocessor directive will fail.
 
-    * :code:`type`: type involved in the communication.
+* :code:`systems`: Specifies which middlewares will be involved in the communication process, allowing
+  to configure them individually.
 
-    * :code:`route`: communication bridge to apply.
+  Some configuration parameters are common for all the supported middlewares within the
+  *Integration Service* ecosystem; while others are specific of each middleware. To see which
+  parameters are relevant for a certain middleware, please refer to its dedicated *README* section
+  in its corresponding GitHub repository, under the name of :code:`https://github.com/eProsima/<MW_NAME>-SH`.
 
-    * :code:`remap`: allows to establish equivalences between :code:`topic` names, :code:`types`, and custom
-      configurations.
+  .. code-block:: yaml
 
-A comprehensive summary of the fields that need to be filled for each already existing *System Handles* when configuring it through a YAML file can be found in the Doxygen documentation for those *System Handles*. At the end of this section, a table is provided redirecting the interested reader to the dedicated documentation.
+    systems:
+      foo: { type: foo }
+      bar: { type: bar, types-from: foo }
 
-A generic YAML communicating two systems has the following structure:
+  In relation to the common parameters, their behaviour is explained in the following section:
+
+    * :code:`type`: Middleware or protocol kind. To date, the supported middlewares are: *fastdds*, *ros1*, *ros2*, *fiware*, *websocket_server* and *websocket_client*.
+    There is also a *mock* option, mostly used
+    for testing purposes.
+
+    * :code:`types-from` *(optional)*: Configures the types inheritance from a given system to another.
+      This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware, without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
+
+* :code:`routes`: In this section, a list must be introduced, corresponding to which bridges are needed by
+  *Integration Service* in order to fulfill the intercommunication requirements
+  for a specific use case.
+
+  At least one route is required; otherwise, running *Integration Service* would be useless.
+
+  .. code-block:: yaml
+
+    routes:
+      foo_to_bar: { from: foo, to: bar }
+      bar_to_foo: { from: bar, to: foo }
+      foo_server: { server: foo, clients: bar }
+      bar_server: { server: bar, clients: foo }
+
+  There are two kinds of routes, corresponding to either a publication/subscription paradigm or a
+  server/client paradigm:
+
+    * :code:`from`-:code:`to`: Defines a route **from** one (or several) system(s) **to** one (or several) system(s).
+      A :code:`from` system expects to connect a publisher user application with a subscriber user application in the :code:`to` system.
+
+    * :code:`server`-:code:`clients`: Defines a route for a request/reply architecture in which there are one or several
+      **clients** which forward request petitions and listen to responses coming from a **server**,
+      which must be unique for each service route.
+
+* :code:`topics`: Specifies the topics exchanged over the :code:`routes` listed above corresponding to the
+  publication-subscription paradigm. The topics must be specified in the form of a YAML dictionary,
+  meaning that two topics can never have the same name.
+
+  For each topic, some configuration parameters are common for all the supported middlewares within the
+  *Integration Service* ecosystem; while others are specific of each middleware. To see which topic
+  parameters must/can be configured for a certain middleware, please refer to its dedicated *README* section
+  in its corresponding GitHub repository, under the name of :code:`https://github.com/eProsima/<MW_NAME>-SH`.
+
+  .. code-block:: yaml
+
+    topics:
+      hello_foo:
+        type: HelloWorld
+        route: bar_to_foo
+      hello_bar:
+        type: HelloWorld
+        route: foo_to_bar
+        remap: { bar: { topic: HelloBar } }
+
+  In relation to the common parameters, their behaviour is explained below:
+
+  * :code:`type`: The topic type name. This type must be defined in the :code:`types` section of the YAML
+    configuration file, or it must be loaded by means of a :code:`Middleware Interface Extension` file
+    by any of the middleware plugins or *System Handles* involved in the communication process.
+
+  * :code:`route`: Communication bridge to be used for this topic. The route must be one among those defined in the
+    :code:`routes` section described above.
+
+  * :code:`remap` *(optional):* Allows to establish equivalences between the **topic** name and its **type**,
+    for any of the middlewares defined in the used route. This means that the topic name and
+    type name may vary in each user application endpoint that is being bridged, but,
+    as long as the type definition is equivalent, the communication will still be possible.
+
+* :code:`services`: Allows to define the services that *Integration Service* will be in charge of
+  bridging, according to the service :code:`routes` listed above for the client/server paradigm.
+  The services must be specified in the form of a YAML dictionary, meaning that two services can
+  never have the same name.
+
+  For each service, some configuration parameters are common for all of the supported middlewares
+  within the *Integration Service* ecosystem; while others are specific of each middleware.
+  To see which parameters must/can be configured for a certain middleware in the context of a service
+  definition, please refer to its dedicated *README* section in its corresponding GitHub repository,
+  under the name of :code:`https://github.com/eProsima/<MW_NAME>-SH`.
+
+  .. code-block:: yaml
+
+    services:
+      serve_foo:
+        request_type: FooRequest
+        reply_type: FooReply
+        route: foo_server
+      serve_bar:
+        request_type: BarRequest
+        reply_type: BarReply
+        route: bar_server
+        remap: { foo: { request_type: bar_req, reply_type: bar_repl, topic: ServeBar } }
+
+  Regarding the common parameters, they differ slightly from the :code:`topics` section:
+
+  * :code:`type` *(optional):* The service type. As services usually are composed of a request and a reply, this field
+    only makes sense for those services which consist solely of a request action with no reply.
+    Usually, within the :code:`services` context, it is not used at all.
+
+  * :code:`request_type`: The service request type. This type must be defined in the :code:`types` section of the YAML
+    configuration file, or must be loaded by means of a :code:`Middleware Interface Extension` file
+    by any of the middleware plugins, or *System Handles*, involved in the communication process.
+
+  * :code:`reply_type`: The service reply type. This type must be defined in the :code:`types` section of the YAML
+    configuration file, or must be loaded by means of a :code:`Middleware Interface Extension` file
+    by any of the middleware plugins, or *System Handles*, involved in the communication process.
+
+  * :code:`route`: Communication bridge to be used for this service. The route must be one among those defined in the
+    :code:`routes` section described above and must be a route composed of a *server* and one or more *clients*.
+
+  * :code:`remap` *(optional):* Allows to establish equivalences between the **service** name (*topic* field) and its
+    **request and reply type**, for any of the middlewares defined in the used route.
+    This means that the service name and types names may vary in each user application endpoint
+    that is being bridged, but, as long as the type definition is equivalent, the communication will still be possible.
+
+With this is mind, generic YAML communicating two systems has the following structure:
 
 .. code-block:: yaml
 
@@ -94,15 +228,13 @@ A generic YAML communicating two systems has the following structure:
             <custom_service_key>: <custom_service_config>
 
 Here is a nontrivial example, which translates a number of topics and some
-service clients between *WebSocket+Rosbridge_v2*, *ROS 2*, and a (fictitious) automated door-opening
+service clients between *WebSocket using the JSON encoding*, *ROS 2*, and a (fictitious) automated door-opening
 firmware:
-
-.. TODO: Change the name WebSocket+Rosbridge_v2
 
 .. code-block:: yaml
 
     systems:
-        web: { type: websocket_server_json, types-from: ros2, port: 12345 }
+        web: { type: websocket_server, types-from: ros2, port: 12345 }
         robot: { type: ros2 }
         door:
             type: veridian_dynamics_proprietary_door_firmware
@@ -397,6 +529,12 @@ which :code:`system` acts as the server and which as the client(s).
 
 If a custom *System Handle* needs additional configuration regarding the :code:`services`, it can
 be added in the service definition as new map entries.
+
+.. note::
+
+If the :code:`type` field is defined, as in the example above, this :code:`type` will be taken into consideration
+as the **request type**. If a differentiation must be done for those services which allow to differenciate between
+**request** and **reply** types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
 
 
 .. _remapping:
