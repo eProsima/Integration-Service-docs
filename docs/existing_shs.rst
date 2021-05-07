@@ -96,6 +96,7 @@ whole *Integration Service* product suite, there are some specific flags which a
       ~/is_ws$ colcon build --cmake-args -DBUILD_FASTDDS_TESTS=ON
 
 .. TODO: complete when it is uploaded to read the docs
+
 API Reference
 -------------
 
@@ -187,6 +188,7 @@ whole *Integration Service* product suite, there are some specific flags which a
       ~/is_ws$ colcon build --cmake-args -DMIX_ROS_PACKAGES="std_msgs geometry_msgs sensor_msgs nav_msgs"
 
 .. TODO: complete when it is uploaded to read the docs
+
 API Reference
 -------------
 
@@ -291,6 +293,7 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 
 .. TODO: complete when it is uploaded to read the docs
+
 API Reference
 -------------
 -------------
@@ -331,7 +334,7 @@ five sections:
 
   **TLS**
   
-  .. code-block:: yaml
+  .. code-block::yaml
   
       systems:
         websocket:
@@ -440,59 +443,59 @@ Several fields can be used in those messages, but not all of them are mandatory.
 * :code:`op`: The *Operation Code* is mandatory in every communication as it specifies the purpose of the message.
   This field can assume nine different values,   which are the ones detailed below.
   * :code:`advertise`: It notifies that there is a new publisher that is going to publish messages on a specific topic.
-    The fields that can be set for this operation are: :code:`topic`, :code:`type` and optionally the :code:`id`.
+  The fields that can be set for this operation are: :code:`topic`, :code:`type` and optionally the :code:`id`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "advertise", "topic": "helloworld", "type": "HelloWorld", "id": "1"}
 
   * :code:`unadvertise`: It states that a publisher is not going to publish any more messages on a specific topic.
     The fields that can be set for this operation are: :code:`topic` and optionally the :code:`id`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "unadvertise", "topic": "helloworld", "id": "1"}
 
   * :code:`publish`: It identifies a message that wants to be published over a specific topic.
     The fields that can be set for this operation are: :code:`topic` and :code:`msg`.
 
-    .. code-block:: json
+    .. code-block::JSON
 
         {"op": "publish", "topic": "helloworld", "msg": {"data": "Hello"}}
 
   * :code:`subscribe`: It notifies that a subscriber wants to receive the messages published under a specific topic.
     The fields that can be set for this operation are: :code:`topic` and optionally the :code:`id` and :code:`type`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "subscribe", "topic": "helloworld", "type": "HelloWorld", "id": "1"}
 
   * :code:`unsubscribe`: It states that a subscriber doesn't want to receive messages from a specific topic anymore.
     The fields that can be set for this operation are: :code:`topic` and optionally the :code:`id`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "unsubscribe", "topic": "helloworld", "id": "1"}
 
   * :code:`call_service`: It identifies a message request that wants to be published on a specific service.
     The fields that can be set for this operation are: :code:`service`, :code:`args` and optionally the :code:`id`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "call_service", "service": "hello_serv", "args": {"req": "req"}, "id": "1"}
 
   * :code:`advertise_service`: It notifies that a new server is going to attend to the requests done on a specific service.
     The fields that can be set for this operation are: :code:`request_type`, :code:`reply_type` and :code:`service`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "advertise_service", "service": "hello_serv", "request_type":
          "HelloRequest", "reply_type": "HelloReply"}
 
   * :code:`unadvertise_service`: It states that a server is not going to attend any more the requests done on a specific service.
     The fields that can be set for this operation are: :code:`type` and :code:`service`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "unadvertise_service", "service": "hello_serv", "type": "HelloReply"}
   
   * :code:`service_response`: It identifies a message reply that wants to be published as response to a specific request.
     The fields that can be set for this operation are: :code:`service`, :code:`values` and optionally the :code:`id`.
 
-    .. code-block:: json
+    .. code-block::JSON
         {"op": "service_response", "service": "hello_serv", "values": {"resp": "resp"}, 
          "id": "1"}
   
@@ -532,6 +535,7 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 
 .. TODO: complete when it is uploaded to read the docs
+
 API Reference
 -------------
 
@@ -605,5 +609,6 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 
 .. TODO: complete when it is uploaded to read the docs
+
 API Reference
 -------------
