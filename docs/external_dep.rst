@@ -47,21 +47,21 @@ Find them listed in the table below:
     :align: left
 
     * - *System Handle*
-    - External Dependencies
+      - External Dependencies
     * - **Fast DDS SH**
-    - `Fast DDS installation <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ (v2.0.0 or superior)
+      - `Fast DDS installation <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ (v2.0.0 or superior)
     * - **ROS 2 SH**
-    - ROS 2 installation (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
+      - ROS 2 installation (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
     * - **ROS 1 SH**
-    - `ROS 1 installation <http://wiki.ros.org/ROS/Installation>`_ (`Melodic <http://wiki.ros.org/melodic/Installation>`_ or `Noetic <http://wiki.ros.org/noetic/Installation>`_)
+      - `ROS 1 installation <http://wiki.ros.org/ROS/Installation>`_ (`Melodic <http://wiki.ros.org/melodic/Installation>`_ or `Noetic <http://wiki.ros.org/noetic/Installation>`_)
     * - **WEBSOCKET SH**
-    - `OpenSSL <https://www.openssl.org/>`_, `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
+      - `OpenSSL <https://www.openssl.org/>`_, `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
     * - **FIWARE SH**
-    - `Asio C++ Library <https://think-async.com/Asio/>`_, `cURLpp library <http://www.curlpp.org/>`_, `cURL library <https://curl.se/>`_
+      - `Asio C++ Library <https://think-async.com/Asio/>`_, `cURLpp library <http://www.curlpp.org/>`_, `cURL library <https://curl.se/>`_
 
-  .. note::
+.. note::
 
-      The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, it downloads and installs its own version.
+    The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, it downloads and installs its own version.
 
 .. _useful_links:
 
@@ -87,7 +87,7 @@ Useful Links
      * - **WEBSOCKET SH**
        - https://github.com/eProsima/WebSocket-SH
      * - **FIWARE SH**
-       - https://github.com/eProsima/SOSS-FIWARE
+       - https://github.com/eProsima/FIWARE-SH
 * `eProsima Fast-DDS <https://github.com/eProsima/Fast-DDS/>`_
 * `ROS 2 <https://index.ros.org/doc/ros2/>`_
 * `ROS 1 <https://www.ros.org/>`_

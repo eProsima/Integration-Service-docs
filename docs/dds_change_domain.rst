@@ -19,7 +19,8 @@ To do so, please follow the steps delineated in the :ref:`core_installation` sec
 Also, to get this example working, the following requirements must be met:
 
 - Having *Fast DDS* (v.2.0.0 or superior) installed, with the `DDSHelloWorld example <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>`_ working. This example can be found in the main *Integration Service* repository, under the `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/examples/utils/DDSHelloWorld>`_; to compile it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
-.. code-block:: bash
+
+  .. code-block:: bash
 
     cd ~/is-workspace/src/IS/examples/utils/DDSHelloWorld
     mkdir build && cd build
@@ -28,7 +29,7 @@ Also, to get this example working, the following requirements must be met:
 - Having the *Fast DDS System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
-  
+
       cd ~/is-workspace
       git clone https://github.com/eProsima/FastDDS-SH.git src/FastDDS-SH
 
@@ -45,13 +46,15 @@ Deployment
 Below we explain how to deploy an example of this use case. To do so, open three terminals:
 
 - In the first terminal, execute the :code:`DDSHelloWorld` example, as a subscriber running under DDS domain ID **3** and subscribed to the topic :code:`hello_domain_3`:
-..code-block:: bash
+
+  ..code-block:: bash
 
     cd ~/is-workspace/build/DDSHelloWorld
     ./DDSHelloWorld -m subscriber -n hello_domain_3 -d 3
 
 - In the second terminal, execute the :code:`DDSHelloWorld` example, as a publisher running under DDS domain ID **3** and publishing data to the topic :code:’hello_domain_3`:
-..code-block:: bash
+
+  ..code-block:: bash
 
     cd ~/is-workspace/build/DDSHelloWorld
     ./DDSHelloWorld -m publisher -n hello_domain_3 -d 5

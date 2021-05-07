@@ -30,24 +30,25 @@ Also, to get this example working, the following requirements must be met:
 
 - Having *ROS 2* (Foxy or superior) installed, with the :code:`talker-listener` example working.
 
-- Having the *ROS 2 System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+- Having the *ROS 2 System Handle* installed. You can download it from the `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
-  
+
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH src/ros2-sh
 
 - Having *Fast DDS* (v.2.0.0 or superior) installed, with the `DDSHelloWorld example <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>`_ working. This example can be found in the main *Integration Service* repository, under the `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/examples/utils/DDSHelloWorld>`_. To build it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
-.. code-block:: bash
+
+  .. code-block:: bash
 
     cd ~/is-workspace/src/IS/examples/utils/DDSHelloWorld
     mkdir build && cd build
     cmake .. && make
 
-- Having the *Fast DDS System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+- Having the *Fast DDS System Handle* installed. You can download it from the `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
-  
+
       cd ~/is-workspace
       git clone https://github.com/eProsima/FastDDS-SH.git src/FastDDS-SH
 
