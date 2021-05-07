@@ -28,7 +28,8 @@ System Handle hierarchy
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. TODO:
-* Rework this page to give more information that might be needed by the user.
+
+  * Rework this page to give more information that might be needed by the user.
 
 Here you can find a diagram of a *System Handle* class inheritance structure.
 

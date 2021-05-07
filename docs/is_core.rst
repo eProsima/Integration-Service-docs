@@ -16,12 +16,17 @@ middlewares.
 Because of this, downstream users can extend *Integration Service* to communicate with any middleware.
 
 This section explains the main aspects of this library, and it is organized as follows:
+
 .. add TOC.
 
 
 .. TODO:
-What I would put here:
-* A section (w/ eventual subsection and everything that might be needed) explaining the functioning of the core library
-  (classes, ..)
-* XTypes description (types inheritance and so on)
-* Useful diagrams based on those that were presented on December IS meetings
+
+    What I would put here:
+
+    * A section (w/ eventual subsection and everything that might be needed) explaining the functioning of the core library
+      (classes, ..)
+
+    * XTypes description (types inheritance and so on)
+
+    * Useful diagrams based on those that were presented on December IS meetings

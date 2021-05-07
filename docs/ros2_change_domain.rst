@@ -23,9 +23,9 @@ Also, to get this example working, the following requirements must be met:
 - Having the *ROS 2 System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
-  
-      cd ~/is-workspace
-      git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
+
+    cd ~/is-workspace
+    git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
 After you have everything correctly installed in your :code:`is-workspace`, build the packages by running:
 
@@ -40,12 +40,14 @@ Deployment
 Below we explain how to deploy an example of this use case. To do so, open three terminals:
 
 - In the first terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`pub` application, under domain ID **5**:
-..code-block:: bash
+
+  ..code-block:: bash
 
     ROS_DOMAIN_ID=5 ros2 topic pub -r 1 /string_topic std_msgs/String "{data: \"Hello, ROS 2 domain 10\"}"
 
 - In the second terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`echo` application, under domain ID **10**:
-..code-block:: bash
+
+  ..code-block:: bash
 
     ROS_DOMAIN_ID=10 ros2 topic echo /string_topic std_msgs/msg/String
 
@@ -55,6 +57,7 @@ Up to this point, no communication should be seen between the publisher and the 
   and execute *Integration Service* with the :code:`integration-service` command followed by the
   `ros2__domain_id_change.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros2__domain_id_change.yaml>`_
   configuration file located in the :code:`src/Integration-Service/basic` folder:
+
   .. code-block:: bash
 
       cd ~/is-workspace

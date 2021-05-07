@@ -23,7 +23,7 @@ Also, to get this example working, the following requirements must be met:
 
 - Having *ROS 2* (Foxy or superior) installed, with the :code:`talker-listener` example working.
 
-- Having the *ROS 2 System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+- Having the *ROS 2 System Handle* installed. You can download it from the `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
   
@@ -32,7 +32,7 @@ Also, to get this example working, the following requirements must be met:
 
 - `OpenSSL <https://www.openssl.org/>`_ and `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_ installed.
 
-- Having the *WebSocket System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+- Having the *WebSocket System Handle* installed. You can download it from the `WebSocket-SH dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
   

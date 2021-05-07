@@ -80,7 +80,7 @@ of dedicated bridges for each pair of components.
 For a system made of *N* components, this means that the number of new software parts to add grows as *N*
 rather than *N²*.
 
-.. image:: SH.png
+.. image:: images/SH.png
 
 
 .. _yaml_files:

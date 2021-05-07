@@ -20,41 +20,44 @@ Also, to get this example working, the following requirements must be met:
 
 - Having *ROS 2* (Foxy or superior) installed, with the :code:`talker-listener` example working.
 
-- Having the **ROS 2 System Handle** installed. You can download it from the `dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *eProsima Integration Service* installed:
+- Having the **ROS 2 System Handle** installed. You can download it from the `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *eProsima Integration Service* installed:
 
   .. code-block:: bash
-  
+
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
 - Having a *FIWARE’s Context Broker* correctly set up. To do so:
   - Set up a MongoDB database image:
-  .. code-block:: bash
 
-    docker run --rm --name mongodb -d mongo:3.4
+    .. code-block:: bash
+
+      docker run --rm --name mongodb -d mongo:3.4
 
   - Create a container for the *FIWARE’s Orion Context Broker*, linked to the previously created MongoDB docker:
-  .. code-block:: bash
 
-    docker run --rm -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
+    .. code-block:: bash
+
+      docker run --rm -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
 
 It is very important to retrieve the :code:`fiware/orion` docker container IP, because it will be later placed in the *Integration Service* YAML configuration file. To do so, simply check the output of the following command:
+
 .. code-block:: bash
 
   ifconfig docker0 | grep “inet “
 
-- Having the **FIWARE System Handle** installed. You can download it from the `dedicated repository <https://github.com/eProsima/FIWARE-SH>`_ into the :code:`is-workspace` where you have *eProsima Integration Service* installed:
+- Having the **FIWARE System Handle** installed. You can download it from the `FIWARE-SH dedicated repository <https://github.com/eProsima/FIWARE-SH>`_ into the :code:`is-workspace` where you have *eProsima Integration Service* installed:
 
   .. code-block:: bash
 
-      cd ~/dds-is-workspace
-      git clone https://github.com/eProsima/FIWARE-SH.git src/FIWARE-SH
+    cd ~/dds-is-workspace
+    git clone https://github.com/eProsima/FIWARE-SH.git src/FIWARE-SH
 
 After you have everything correctly installed, build the packages by running:
 
 .. code-block:: bash
 
-    colcon build
+  colcon build
 
 Deployment
 ^^^^^^^^^^
@@ -81,16 +84,16 @@ To enable communication from *ROS 2* to *FIWARE*, open three terminals:
 
   .. code-block:: bash
 
-curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
-{
-  "id": "hello_fiware",
-  "type": "HelloWorld",
-  "data": {
-    "value": "",
-    "type": "String"
-  }
-}
-EOF
+    curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
+    {
+    "id": "hello_fiware",
+    "type": "HelloWorld",
+    "data": {
+        "value": "",
+        "type": "String"
+    }
+    }
+    EOF
 
 Now, in your browser, go to `http://172.17.0.1:1026/v2/entities <http://172.17.0.1:1026/v2/entities>`_. You should see the context broker entity named **hello_fiware** previously created.
 
@@ -124,16 +127,16 @@ To enable communication from *FIWARE* to *ROS 2*, open three terminals:
 
   .. code-block:: bash
 
-curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
-{
-  "id": "hello_ros2",
-  "type": "HelloWorld",
-  "data": {
-    "value": "",
-    "type": "String"
-  }
-}
-EOF
+    curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
+    {
+    "id": "hello_ros2",
+    "type": "HelloWorld",
+    "data": {
+        "value": "",
+        "type": "String"
+    }
+    }
+    EOF
 
 Now, in your browser, go to `http://172.17.0.1:1026/v2/entities <http://172.17.0.1:1026/v2/entities>`_. You should see the context broker entity named **hello_fiware** previously created.
 
@@ -145,16 +148,17 @@ Now, in your browser, go to `http://172.17.0.1:1026/v2/entities <http://172.17.0
       ros2 topic echo /hello_ros2
 
 - Again in the second terminal, update the FIWARE entity hosted in the Context Broker:
+
   .. code-block:: bash
 
-curl 172.17.0.1:1026/v2/entities/hello_ros2/attrs?type=HelloWorld -s -S -H 'Content-Type: application/json' -X PUT -d @- <<EOF
-{
-  "data": {
-    "value": "Hello, ROS2",
-    "type": "String"
-  }
-}
-EOF
+    curl 172.17.0.1:1026/v2/entities/hello_ros2/attrs?type=HelloWorld -s -S -H 'Content-Type: application/json' -X PUT -d @- <<EOF
+    {
+    "data": {
+        "value": "Hello, ROS2",
+        "type": "String"
+    }
+    }
+    EOF
 
 
 You should see the message echoed in the ROS 2 terminal.

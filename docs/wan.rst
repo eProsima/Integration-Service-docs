@@ -34,7 +34,7 @@ an ISP for the second).
 Notice that both the route tables and the NAT must be configured so as to ensure proper port redirection
 before starting the test.
 
-.. figure:: WAN_example.png
+.. figure:: images/WAN.png
 
     The IP addresses shown only serve the purpose of illustrating the example. The important information is the
     **real** public IP of the *server* machine. Also, its router must enable the NAT to forward the listening port to
@@ -44,20 +44,20 @@ Also, to get this example working, the following requirements must be met in bot
 
 - Having *ROS 2* (Foxy or superior) installed, with the :code:`talker-listener` example working.
 
-- Having the *ROS 2 System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+- Having the *ROS 2 System Handle* installed. You can download it from the `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
-  
+
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
 - Having *Fast DDS* (v.2.0.0 or superior) installed, with the
   `:code:`DDSHelloWorld` example` <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>_ working.
 
-- Having the *Fast DDS System Handle* installed. You can download it from the `dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+- Having the *Fast DDS System Handle* installed. You can download it from the `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
-  
+
       cd ~/is-workspace
       git clone https://github.com/eProsima/FastDDS-SH.git src/FastDDS-SH
 
