@@ -1,13 +1,14 @@
-# eProsima Integration Service Documentation
+<a href="https://integration-service.docs.eprosima.com/"><img src="https://github.com/eProsima/Integration-Service/blob/main/docs/images/logo.png?raw=true" hspace="8" vspace="2" height="100" ></a>
+
+# Documentation
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Linux Build Status](http://jenkins.eprosima.com:8080/job/nightly_integration-service-docs_master/badge/icon)](http://jenkins.eprosima.com:8080/job/nightly_integration-service-docs_master)
 
 <a href="http://www.eprosima.com"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ" align="left" hspace="8" vspace="2" width="100" height="100" ></a>
 
-*eProsima Integration-Service* is a tool based on [SOSS](https://soss.docs.eprosima.com/en/latest/index.html)
-and [SOSS-DDS](https://github.com/eProsima/SOSS-DDS) that allows intercommunicating any *DDS*-based system with any
-other protocol, including other *DDS* systems, integrating them into a larger, more complex system.
+*eProsima Integration-Service* is a tool that allows intercommunicating an arbitrary number of protocols that
+speak different languages, integrating them into a larger, more complex system.
 
 *eProsima Integration-Service* can be configured with a YAML text file, through which the user can provide a mapping
 between the topics and services on the *DDS*-based middleware and those on the system(s) to which the user
@@ -15,13 +16,12 @@ wants to bridge it.
 
 For more information, check out the
 [eProsima Integration Service documentation](https://integration-service.docs.eprosima.com/en/latest/).
-You can find all the source code on our GitHub repositories: [SOSS](https://github.com/eProsima/soss_v2) and
-[SOSS-DDS](https://github.com/eProsima/SOSS-DDS).
+You can find all the source code on our [GitHub repository](https://github.com/eProsima/Integration-Service).
 
-1. [Installation Guide](#installation-guide)
-1. [Getting Started](#getting-started)
-1. [Generating documentation in other formats](#generating-documentation-in-other-formats)
-1. [Running documentation tests](#running-documentation-tests)
+* [Installation Guide](#installation-guide)
+* [Getting Started](#getting-started)
+* [Generating documentation in other formats](#generating-documentation-in-other-formats)
+* [Running documentation tests](#running-documentation-tests)
 
 ## Installation Guide
 
@@ -37,14 +37,14 @@ You can find all the source code on our GitHub repositories: [SOSS](https://gith
         python3-sphinxcontrib.spelling \
     ```
 
-1. Clone the repository
+2. Clone the repository:
 
     ```bash
     cd ~
     git clone https://github.com/eProsima/Integration-Service-docs integration-service-docs
     ```
 
-1. Create a virtual environment and install python3 dependencies
+3. Create a virtual environment and install `python3` dependencies:
 
     ```bash
     cd ~/integration-service-docs
