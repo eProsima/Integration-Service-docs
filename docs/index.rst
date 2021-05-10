@@ -100,8 +100,8 @@ can be found in the :ref:`yaml_config` section of this documentation.
 Main features
 ^^^^^^^^^^^^^
 
-#. **Free and Open Source:** The *Integration Service* Core, and all *System Handles* available to date are free and open source. Consult the :ref:`related_links` section of the documentation to be redirected to the relevant
-   repositories.
+#. **Free and Open Source:** The *Integration Service* Core, and all *System Handles* available to date are free and open source.
+   Consult the :ref:`useful_links` section of the documentation to be redirected to the relevant repositories.
 #. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable by means of a YAML file.
    For more information on how to do so, please consult the :ref:`yaml_config` section of this documentation.
 #. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service* world by generating the plugin, or *System Handle*
