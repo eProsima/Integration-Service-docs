@@ -34,9 +34,9 @@ mapping between the topics and services handled by the middlewares of the system
 
 *Integration Service* comprises the following elements:
 
-1) The :ref:`core` engine.
-2) The :ref:`shs` or plugins, for each supported protocol.
-3) A :ref:`yaml_files`, which follows a specific syntax.
+#. The :ref:`core` engine.
+#. The :ref:`shs` or plugins, for each supported protocol.
+#. A :ref:`yaml_files`, which follows a specific syntax.
 
 .. _core:
 
@@ -100,27 +100,15 @@ can be found in the :ref:`yaml_config` section of this documentation.
 Main features
 ^^^^^^^^^^^^^
 
-**Free and Open Source.**
-
-The *Integration Service* Core, and all *System Handles* available to date are free and open source.
-Consult the :ref:`related_links` section of the documentation to be redirected to the relevant
-repositories.
-
-**Easily configurable.**
-
-As detailed above, an *Integration Service* instance is easily configurable by means of a YAML file.
-For more information on how to do so, please consult the :ref:`yaml_config` section of this documentation.
-
-**Easy to extend to new platforms.**
-
-New platforms can easily enter the *Integration Service* world by generating the plugin, or *System Handle*
-needed by the core to integrate them.
-For more information on **System-Handles**, please consult the :ref:`sh` section of this documentation.
-
-**Easy to use.**
-
-Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
-:ref:`Getting Started <getting_started>` section to be guided through the installation process.
+#. **Free and Open Source:** The *Integration Service* Core, and all *System Handles* available to date are free and open source. Consult the :ref:`related_links` section of the documentation to be redirected to the relevant
+   repositories.
+#. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable by means of a YAML file.
+   For more information on how to do so, please consult the :ref:`yaml_config` section of this documentation.
+#. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service* world by generating the plugin, or *System Handle*
+   needed by the core to integrate them.
+   For more information on **System-Handles**, please consult the :ref:`sh` section of this documentation.
+#. **Easy to use:** Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
+   :ref:`Getting Started <getting_started>` section to be guided through the installation process.
 
 .. _structure_of_the_doc:
 
@@ -129,9 +117,9 @@ Structure of the Documentation
 
 This documentation is organized into the sections listed below:
 
-* :ref:`Installation Manual <installation_manual>`
-* :ref:`User Manual <user_manual>`
-* :ref:`Use-case and Examples <use_case_and_examples>`
+*  :ref:`Installation Manual <installation_manual>`
+*  :ref:`User Manual <user_manual>`
+*  :ref:`Use-case and Examples <use_case_and_examples>`
 
 .. toctree::
    :caption: Installation Manual
