@@ -122,10 +122,6 @@ For more information on **System-Handles**, please consult the :ref:`sh` section
 Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
 :ref:`Getting Started <getting_started>` section to be guided through the installation process.
 
-**Commercial support.**
-
-Available at support@eprosima.com
-
 .. _structure_of_the_doc:
 
 Structure of the Documentation
