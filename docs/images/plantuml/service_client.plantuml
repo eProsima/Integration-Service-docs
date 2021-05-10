@@ -1,0 +1,38 @@
+@startuml
+
+
+participant ServiceProvider
+
+
+group #transparent create_client
+    IntegrationService -> "SystemHandle" as SH : create_client_proxy(callback)
+    create ServiceClient
+    SH -> ServiceClient : new
+    ServiceClient -> middleware : offer_service
+end
+
+
+group #transparent request
+    middleware -> ServiceClient : on_request
+    ServiceClient -> ServiceClient : data = convert_to_dynamicdata(payload)
+    ServiceClient -> ServiceProvider : callback(data)
+end
+
+
+group #transparent response
+    ServiceProvider -> ServiceClient : receive_response(data)
+    ServiceClient -> ServiceClient : response = convert_from_dynamicdata(data)
+    ServiceClient -> middleware : send(response)
+end
+
+
+box "Generic System Handle" #LightBlue
+        participant SH
+        participant ServiceClient
+end box
+
+
+participant middleware
+
+
+@enduml

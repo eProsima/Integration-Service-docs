@@ -1,55 +1,43 @@
 .. _external_dependencies:
 
-External Dependencies
-=====================
+Dependencies
+============
 
-**eProsima Fast DDS**
+In this page, we provide a list of the dependencies required for an *Integration Service* instance to function. To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
 
-*eProsima Fast DDS* can be installed following the instructions at:
-`Fast DDS <https://fast-dds.docs.eprosima.com/en/latest/index.html>`__.
+.. _core_deps:
 
-.. _additional_dependencies:
+Core
+^^^^
 
-Additional Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^
+The core needs the following to be installed:
 
-Each **System-Handle** may have additional dependencies. Please refer to the concrete *SOSS*
-documentation at the following `link <https://soss.docs.eprosima.com/en/latest/index.html#>`__.
+* `CMake <https://cmake.org/>`_: At least version *3.5* is required to build the project files.
+* `C++ <https://isocpp.org/>`_: *eProsima Integration-Service* uses standard C++14.
+* `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_: If installed using colcon, it becomes
+  a dependency.
 
-**CMake**
+.. _sh_deps:
 
-*CMake 3.5* is required to build the project files.
+System Handles
+^^^^^^^^^^^^^^
 
-**C++**
+Beyond the dependencies of the core, each **System-Handle** has its own specific dependencies.
+Find them listed in the table below:
 
-*eProsima Integration-Service* uses standard C++14.
+.. list-table::
+    :header-rows: 1
+    :align: left
 
-**colcon**
-
-If installed using colcon, `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`__ becomes
-a dependency.
-
-.. _related_links:
-
-Related Links
-^^^^^^^^^^^^^
-
-* `eProsima Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`__
-* `SOSS documentation <https://soss.docs.eprosima.com/en/latest/index.html>`__
-* `Colcon Manual <https://colcon.readthedocs.io/en/released/user/installation.html>`__
-* **System-Handle** repositories
-
-  .. list-table::
-     :header-rows: 1
-     :align: left
-
-     * - **System-Handle**
-       - Repository
-     * - **SOSS-ROS2**, **SOSS-WEBSOCKET**, **SOSS-MOCK**, **SOSS-ECHO**
-       - https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds
-     * - **SOSS-DDS**
-       - https://github.com/eProsima/SOSS-DDS/tree/feature/xtypes-ddss
-     * - **SOSS-ROS1**
-       - https://github.com/eProsima/soss-ros1/tree/feature/xtypes-support
-     * - **SOSS-FIWARE**
-       - https://github.com/eProsima/SOSS-FIWARE/tree/feature/xtypes-support
+    * - *System Handle*
+      - External Dependencies
+    * - **Fast DDS SH**
+      - `Fast DDS installation <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ (v2.0.0 or superior)
+    * - **ROS 2 SH**
+      - `ROS 2 installation <https://docs.ros.org/en/foxy/Releases.html#list-of-distributions>`_ (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
+    * - **ROS 1 SH**
+      - `ROS 1 installation <http://wiki.ros.org/ROS/Installation>`_ (`Melodic <http://wiki.ros.org/melodic/Installation>`_ or `Noetic <http://wiki.ros.org/noetic/Installation>`_)
+    * - **WEBSOCKET SH**
+      - `OpenSSL <https://www.openssl.org/>`_, `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
+    * - **FIWARE SH**
+      - `Asio C++ Library <https://think-async.com/Asio/>`_, `cURLpp library <http://www.curlpp.org/>`_, `cURL library <https://curl.se/>`_

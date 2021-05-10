@@ -1,117 +1,128 @@
-.. _wan_comm:
-
-WAN communication
-=================
-
-One of the most critical and powerful use-cases is that of two systems located in different geographical regions
-which need to communicate through the Internet, using a *WAN* connection.
-
-Using a pair of *eProsima Integration-Service* instances, or **System-Handles**, one for each system,
-this scenario can be addressed with a **secure TCP tunnel** thanks to the **SSL TCP** capabilities of *Fast-RTPS*.
-
-.. image:: WAN.png
-
-In this case, we can see *eProsima Integration-Service* as a gateway to translate each system to *DDS* over
-*SSL-TCP*. A proper configuration of the destination router and firewalls will allow the communication.
-
-The example below illustrates how to configure *eProsima Integration-Service* to achieve WAN communication.
-
 .. _wan_tcp_tunneling:
 
-Example: WAN TCP tunneling
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+WAN-TCP tunneling
+=================
 
-.. _wan_requirements:
+One of the most critical and powerful use-cases of *Integration Service*
+is that of two systems located in different geographical regions
+which need to communicate through the Internet, using a *WAN* connection.
+
+Using a pair of *Integration Service* instances, one for each system,
+this scenario can be addressed with a secure TCP tunnel thanks to the *SSL-TCP* capabilities of *Fast DDS*.
+
+*Integration Service* acts as a gateway to translate each system to *DDS*, which then makes the tunneling over
+*SSL-TCP* possible. A proper configuration of the destination router and firewalls allows the communication.
+
+The example discussed here illustrates, specifically, how to configure *Integration Service* to achieve WAN communication between two separated *ROS 2* instances.
+Notice, however, that any other applications from systems integrated in the *Integration Service* ecosystem could be bridged across the *WAN*, thanks to the *Fast DDS System Handle* TCP tunneling capabilities.
+
+.. image:: images/WAN.png
+
+
+.. _wan-tcp_requirements:
 
 Requirements
-------------
+^^^^^^^^^^^^
 
-To prepare the deployment and setup the environment, you need to have *eProsima Integration-Service* correctly
-installed in your system. To do so, please follow the steps delined in :ref:`Getting Started <getting_started>` and
-read carefully the :ref:`Important remarks <important_remarks>` section.
+To prepare the deployment and setup the environment, you need to have *Integration Service* correctly
+installed in your system.
+To do so, please follow the steps delineated in the :ref:`installation` section.
 
-To test this example properly, you need two separated subnets that are not connected but both with internet
+Also, to test this example properly, you need two separate subnets that are not connected but both with internet
 access, or a testing environment simulating this scenario (for example, two routers, with one of them acting as
-ISP of the second).
+an ISP for the second).
 
-Note that route tables and NAT must be configured so as to ensure proper port redirection before starting the test.
+Notice that both the route tables and the NAT must be configured so as to ensure proper port redirection
+before starting the test.
 
-.. figure:: WAN_example.png
+.. note::
 
-    The IP addresses shown only serve the purpose of illustrating the example, but the important information is the
-    **real** public IP of the *server* machine. Also, its router must enable NAT to forward the listening port to
+    The IP addresses shown here only serve the purpose of illustrating the example. The important information is the
+    **real** public IP of the *server* machine. Also, its router must enable the NAT to forward the listening port to
     the *server*.
 
 Also, to get this example working, the following requirements must be met in both machines:
 
-- Having *ROS2* (Crystal or superior) installed, with the *talker-listener* example working.
-- Having the `ros2_std_msgs <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/common/ros2_std_msgs>`_
-  compiled.
-  To do so, go to the :code:`~/is-workspace/src/soss-dds/examples/common/ros2_std_msgs` folder and type:
+* Having **ROS 2** (*Foxy* or superior) installed, with the :code:`talker-listener` example working.
+
+* Having the **ROS 2 System Handle** installed. You can download it from the
+  `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
 
-      mkdir build
-      cd build
-      cmake ..
-      make
+      cd ~/is-workspace
+      git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
-- Having the **SOSS-ROS2 System-Handle** installed. Unless configured otherwise, this package is built automatically
-  when *eProsima Integration-Service* is installed.
+* Having **Fast DDS** (v.2.0.0 or superior) installed, with the
+  `:code:`DDSHelloWorld` example` <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>_ working.
 
-Once the environment is prepared and tested (for example, using a port-scanner), modify the file :code:`wan_config.xml`
-to match the IP address and port of with the WAN IP address and forwarded port of your environment.
+* Having the **Fast DDS System Handle** installed. You can download it from the
+  `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
-This test will launch a *ROS2* :code:`talker` in the *server* machine, and a *ROS2* :code:`listener` in the *client*
-machine. An *eProsima Integration-Service* instance will communicate each application with the one in the other machine
-using the WAN-TCP communication capabilities of *Fast-DDS*.
+  .. code-block:: bash
 
-Executing the WAN communication
--------------------------------
+      cd ~/is-workspace
+      git clone https://github.com/eProsima/FastDDS-SH.git src/FastDDS-SH
 
-Open 2 terminals in each machine:
+After you have everything correctly installed, build the packages by running:
 
-On the *server* side:
+.. code-block:: bash
 
-- In the first terminal, launch the *ROS2* :code:`talker` example:
+    colcon build
+
+Once the environment is prepared and tested (for example, using a port-scanner), modify the file :code:`wan_config.xml` inside the folder
+:code:`src/FastDDS-SH/examples/wan/` to match the IP address and port of with the WAN IP address and forwarded port of your environment.
+
+Deployment
+^^^^^^^^^^
+
+This examples launches a *ROS 2* :code:`talker` in the *server* machine, and a *ROS 2* :code:`listener` in the *client* machine.
+An *Integration Service* instance will communicate these two applications by translating the *types* and *topics* of *ROS 2*
+to those of *Fast DDS*, and then use the WAN-TCP communication capabilities of the latter to operate the tunneling.
+
+To test it, open two terminals in each machine.
+
+**On the server side:**
+
+* In the first terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`talker` example:
 
   .. code-block:: bash
 
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 run demo_nodes_cpp talker
 
-- In the second terminal, go to the :code:`is-workspace` folder where you have *eProsima Integration-Service* installed
-  and execute it using the :code:`soss` command followed by the
-  `server YAML <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/wan/wan_server_talker.yaml>`__
-  configuration file located in the :code:`src/soss-dds/examples/wan` folder:
+* In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
+  and execute *Integration Service* with the :code:`integration-service` command followed by the the `server YAML <https://github.com/eProsima/Integration-Service/blob/main/examples/wan_tunneling/ros2__wan_helloworld/wan_server_talker.yaml>`_ configuration file located in the :code:`src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld` folder:
 
   .. code-block:: bash
 
       cd ~/is-workspace
       source /opt/ros/$ROS2_DISTRO/setup.bash
       source install/setup.bash
-      soss src/soss-dds/examples/wan/wan_server_talker.yaml
+      integration-service src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld/wan_server_talker.yaml
 
-On the *client* side:
+**On the client side:**
 
-- In the first terminal, launch the *ROS2* :code:`listener` example:
+* In the first terminal, launch the *ROS 2* :code:`listener` example:
 
   .. code-block:: bash
 
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 run demo_nodes_cpp listener
 
-- In the second terminal, go to the :code:`is-workspace` folder where you have *eProsima Integration-Service* installed
-  and sourced, and execute it using the :code:`soss` command followed by the
-  `client YAML <https://github.com/eProsima/SOSS-DDS/tree/doc/examples/examples/wan/wan_client_listener.yaml>`__
-  configuration file located in the :code:`src/soss-dds/examples/wan` folder:
+* In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
+  and execute *Integration Service* with the :code:`integration-service` command followed by the the `client YAML <https://github.com/eProsima/Integration-Service/blob/main/examples/wan_tunneling/ros2__wan_helloworld/wan_client_listener.yaml>`_ configuration file located in the :code:`src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld` folder:
+
 
   .. code-block:: bash
 
-      cd ~/is-workspace
+      cd ~/dds-is-workspace
       source /opt/ros/$ROS2_DISTRO/setup.bash
       source install/setup.bash
-      soss src/soss-dds/examples/wan/wan_client_listener.yaml
+      integration-service src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld/wan_client_listener.yaml
 
-Once the two *eProsima Integration-Service* instances match, the *talker-listener* example will start to communicate.
-If the test doesn't work, review carefully your NAT configuration.
+Once the two *Integration Service* instances match, the *ROS 2* :code:`talker-listener` example will start to communicate.
+
+.. warning::
+
+    If the test doesn't work, review carefully your NAT configuration.
