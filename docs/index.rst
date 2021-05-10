@@ -186,49 +186,35 @@ Structure of the Documentation
 
 This documentation is organized into the following sections.
 
-
-Installation Manual
--------------------
-
-This section provides the user with an easy-to-use installation guide and is organized as follows:
+* :ref:`Installation Manual <installation_manual>`
+* :ref:`User Manual <user_manual>`
+* :ref:`Use-case and Examples <use_case_and_examples>`
 
 .. toctree::
-    :caption: Installation Manual
+   :caption: Installation Manual
+   :maxdepth: 2
+   :numbered:
+   :hidden:
 
-    external_dep
-    getting_started
-
-
-User Manual
------------
-
-This section provides the user with an in-depth knowledge of *Integration Service*'s main aspects. First,
-it provides an overview of the core structure.
-Then, it details the internal structure of a *System Handle* which serves a guide for users to
-create brand new *System Handles* for middlewares which are not integrated into the *Integration Service* ecosystem.
-Following, it discusses how to configure *Integration Service* by means of YAML files, explaining how to fill the required fields,
-depending on the needs of the specific use-case and middlewares involved in the communication.
-Finally, it provides an overview of the *System Handles* existing to date.
+   external_dep
+   getting_started
 
 .. toctree::
     :caption: User Manual
+    :maxdepth: 2
+    :numbered:
+    :hidden:
 
     is_core
     sh_creation
     yaml_config
     existing_shs
 
-
-Use-cases and Examples
-----------------------
-
-In this section we discuss a collection of useful use-cases leveraging the already existing *System Handles*, with the aim of providing examples of usage and showcasing *Integration Service*'s functionalities.
-For each use-case, a related example is presented and the user is guided step-by-step through the
-installation protocol and environment preparation necessary to have the examples set up and working.
-It is organized as follows:
-
 .. toctree::
     :caption: Use-cases and Examples
+    :maxdepth: 2
+    :numbered:
+    :hidden:
 
     usecases_content
     dds-ros2
@@ -238,5 +224,3 @@ It is organized as follows:
     ros2-websocket
     fiware-ros2
     wan
-
-.. TODO: check if toc is up to date with latest changes.
