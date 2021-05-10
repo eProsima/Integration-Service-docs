@@ -59,8 +59,26 @@ System Handles
 The plugins, or **System Handles**, are discovered by *Integration Service* at runtime
 after they have been installed.
 
-Built-in *System Handles* are provided for the following systems: *DDS*, *FIWARE's Orion ContextBroker*, *ROS 1*, *ROS2*, and
-*WebSocket*.
+Available *System Handles* up-to-date are listed below:
+
+.. list-table::
+    :name: available_shs
+    :header-rows: 1
+    :align: left
+
+    * - *System Handle*
+      - Repository
+    * - **Fast DDS System Handle**
+      - https://github.com/eProsima/FastDDS-SH
+    * - **ROS 2 System Handle**
+      - https://github.com/eProsima/ROS2-SH
+    * - **ROS 1 System Handle**
+      - https://github.com/eProsima/ROS1-SH
+    * - **WEBSOCKET System Handle**
+      - https://github.com/eProsima/WebSocket-SH
+    * - **FIWARE System Handle**
+      - https://github.com/eProsima/FIWARE-SH
+
 New *System Handles* for additional protocols can be easily created, automatically allowing communication of the
 new protocol with the middlewares that are already supported.
 Detailed information on how to create a *System Handle* can be found in the
@@ -100,7 +118,7 @@ can be found in the :ref:`yaml_config` section of this documentation.
 Main features
 ^^^^^^^^^^^^^
 
-#. **Free and Open Source:** The *Integration Service* Core, and all *System Handles* available to date are free and open source.
+#. **Free and Open Source:** The `Integration Service Core <https://github.com/eProsima/Integration-Service>`_, and all :ref:`System Handles available to date <available_shs>` are free and open source.
    Consult the :ref:`useful_links` section of the documentation to be redirected to the relevant repositories.
 #. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable by means of a YAML file.
    For more information on how to do so, please consult the :ref:`yaml_config` section of this documentation.
