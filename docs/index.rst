@@ -70,14 +70,15 @@ Available *System Handles* up-to-date are listed below:
       - Repository
     * - **Fast DDS System Handle**
       - https://github.com/eProsima/FastDDS-SH
-    * - **ROS 2 System Handle**
-      - https://github.com/eProsima/ROS2-SH
-    * - **ROS 1 System Handle**
-      - https://github.com/eProsima/ROS1-SH
-    * - **WEBSOCKET System Handle**
-      - https://github.com/eProsima/WebSocket-SH
     * - **FIWARE System Handle**
       - https://github.com/eProsima/FIWARE-SH
+    * - **ROS 1 System Handle**
+      - https://github.com/eProsima/ROS1-SH
+    * - **ROS 2 System Handle**
+      - https://github.com/eProsima/ROS2-SH
+    * - **WEBSOCKET System Handle**
+      - https://github.com/eProsima/WebSocket-SH
+
 
 New *System Handles* for additional protocols can be easily created, automatically allowing communication of the
 new protocol with the middlewares that are already supported.
@@ -168,7 +169,6 @@ This documentation is organized into the sections listed below:
     is_core
     sh
     yaml_config
-    existing_shs
 
 .. toctree::
     :caption: Examples

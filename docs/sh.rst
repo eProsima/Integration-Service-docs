@@ -3,33 +3,53 @@
 System Handle
 =============
 
-As explained in the :ref:`introductory section <intro>`, a single :code:`integration-service`
-executable can route any number of topics or services to/from any number of middlewares.
+As explained in the :ref:`Introduction <intro>`, a single :code:`integration-service`
+instance can route any number of topics or services to/from any number of middlewares.
 
-This happens via system-specific plugins that connect the core with the middlewares involved
-in the communication.
+This occurs through the use of *System Handles*, which are system-specific plugins that allows a certain middleware or communication protocol to speak the same language used by the *Integration Service*, that is, 
+Extensible and Dynamic Topic Types for DDS (`xTypes <https://github.com/eProsima/xtypes>`_).
 
-*Integration Service* provides built-in *System Handles*
-for connecting the core with *Fast DDS*, *FIWARE Orion Context Broker*, *ROS 1*, *ROS 2*, and *WebSocket*.
+.. image:: images/SH.png
+
+.. _built_in_sh:
+
+Built-in System Handles
+^^^^^^^^^^^^^^^^^^^^^^^
+
+This section provides an insight over the existing built-in *System Handles* provided along with *Integration Service*
+for connecting the core with the following middlewares or communication protocols:
+
+.. toctree::
+   :caption: Built-in System Handles
+   :maxdepth: 1
+   :hidden:
+
+   fastdds_sh
+   fiware_sh
+   ros1_sh
+   ros2_sh
+   websocket_sh
+   
+
+* **FastDDS**: :ref:`dds_sh`
+* **FIWARE Orion Context Broker**: :ref:`fiware_sh`
+* **ROS 1**: :ref:`ros1_sh`
+* **ROS 2**: :ref:`ros2_sh`
+* **WebSocket**: :ref:`websocket_sh`
+
 
 Additional *System Handles* can be implemented by users, in order to have the desired middlewares
 joining the *Integration Service* world. Adding a new *System Handle* automatically allows communication with the
 rest of the protocols already available in this ecosystem.
 
-This section provides an overview of the architecture of a *System Handle*, by depicting the class inheritance structure and specifying the methods which need to be implemented in order to create a custom *System Handle*. All these concepts are eventually summarized by means of illustrative sequence diagrams. The section is organized as follows:
+.. _sh_implementation:
 
-- :ref:`sh_hierarchy`
-- :ref:`sh_implementation`
-- :ref:`sequence_diagrams`
+Implementation
+^^^^^^^^^^^^^^
 
-.. _sh_hierarchy:
+This section provides an overview of the architecture of a *System Handle*, by depicting the class inheritance structure and specifying the methods which need to be implemented in order to create a custom *System Handle*. 
 
-System Handle hierarchy
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. TODO:
-
-  * Rework this page to give more information that might be needed by the user.
+.. TODO: Rework this page to give more information that might be needed by the user.
 
 Here you can find a diagram of a *System Handle* class inheritance structure.
 
@@ -41,12 +61,6 @@ from :code:`TopicSubscriberSystem`, :code:`TopicPublisherSystem`, :code:`Service
 and/or :code:`ServiceProviderSystem`.
 To simplify this inheritance, classes :code:`TopicSystem`, :code:`ServiceSystem`, and :code:`FullSystem`
 are available to inherit from.
-
-
-.. _sh_implementation:
-
-System Handle implementation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the diagram below, the architecture of a generic "Full" *System Handle* and its integration into *Integration Service*
 is shown.
@@ -63,8 +77,8 @@ and :code:`system::Server`. An additional class :code:`system::Subscriber` may b
 created. In the example shown in the diagram above, the :code:`system::SystemHandle`
 will contain the needed instances of these classes, but any approach may be valid if the interfaces are met.
 
-SystemHandle
-~~~~~~~~~~~~
+SystemHandle Class
+~~~~~~~~~~~~~~~~~~
 
 All *System Handles* must implement the :code:`configure`, :code:`okay`, and :code:`spin_once` methods that belong to
 the superclass:
@@ -90,8 +104,8 @@ verify internally if the middleware has any problem.
 
 The :code:`spin_once` method is called by *Integration Service* to allow spinning to those middlewares that need it.
 
-TopicSubscriberSystem
-~~~~~~~~~~~~~~~~~~~~~
+TopicSubscriberSystem Class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This kind of system must implement the :code:`subscribe` method:
 
@@ -110,8 +124,8 @@ This kind of system must implement the :code:`subscribe` method:
 the subscription, the message must be translated into the :code:`message_type` and the *System Handle* must invoke
 the :code:`callback` with the translated message.
 
-TopicPublisherSystem
-~~~~~~~~~~~~~~~~~~~~
+TopicPublisherSystem Class
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This kind of system must implement the :code:`advertise` method:
 
@@ -135,8 +149,8 @@ The :code:`TopicPublisher` is an interface that must be implemented by a :code:`
 When *Integration Service* needs to publish to the middleware system it will call the :code:`TopicPublisher::publish` method,
 with a message that must be translated from the :code:`message_type` parameter by the :code:`advertise` method above.
 
-ServiceClientSystem
-~~~~~~~~~~~~~~~~~~~
+ServiceClientSystem Class
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This kind of system must implement the :code:`create_client_proxy` method:
 
@@ -177,8 +191,8 @@ The :code:`receive_response`:
   middleware's request;
 - Replies to its middleware.
 
-ServiceProviderSystem
-~~~~~~~~~~~~~~~~~~~~~
+ServiceProviderSystem Class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This kind of system must implement the :code:`create_service_proxy` method:
 
