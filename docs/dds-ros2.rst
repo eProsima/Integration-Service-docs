@@ -24,20 +24,27 @@ Requirements
 ^^^^^^^^^^^^
 
 To prepare the deployment and setup the environment, you need to have *Integration Service* correctly installed in your system.
-To do so, please follow the steps delineated in the :ref:`core_installation` section.
+To do so, please follow the steps delineated in the :ref:`installation` section.
 
 Also, to get this example working, the following requirements must be met:
 
-- Having *ROS 2* (Foxy or superior) installed, with the :code:`talker-listener` example working.
+* Having **ROS 2** (*Foxy* or superior) installed, with the :code:`talker-listener` example working.
 
-- Having the *ROS 2 System Handle* installed. You can download it from the `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+* Having the **ROS 2 System Handle** installed. You can download it from the
+  `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace`
+  where you have *Integration Service* installed:
 
   .. code-block:: bash
 
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH src/ros2-sh
 
-- Having *Fast DDS* (v.2.0.0 or superior) installed, with the `DDSHelloWorld example <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>`_ working. This example can be found in the main *Integration Service* repository, under the `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/examples/utils/DDSHelloWorld>`_. To build it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
+* Having **Fast DDS** (v.2.0.0 or superior) installed, with the `DDSHelloWorld example
+  <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>`_ working.
+  An improved version of this example can be found in the main *Integration Service* repository, under the
+  `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/DDSHelloWorld>`_.
+  To build it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag
+  :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
 
   .. code-block:: bash
 
@@ -45,7 +52,9 @@ Also, to get this example working, the following requirements must be met:
     mkdir build && cd build
     cmake .. && make
 
-- Having the *Fast DDS System Handle* installed. You can download it from the `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+* Having the **Fast DDS System Handle** installed. You can download it from the
+  `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_
+  into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
 
@@ -71,15 +80,15 @@ ROS 2 talker to DDS subscriber
 
 To enable communication from *ROS 2* to *Fast DDS*, open three terminals:
 
-- In the first terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`talker`:
+* In the first terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`talker`:
 
   .. code-block:: bash
 
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 run demo_nodes_cpp talker
 
-- In the second terminal, execute a *Fast DDS* HelloWorld :code:`subscriber`
-  from within the :code:`is-workspace`.
+* In the second terminal, execute a *Fast DDS* HelloWorld :code:`subscriber`
+  from within the :code:`is-workspace`:
 
   .. code-block:: bash
 
@@ -87,12 +96,13 @@ To enable communication from *ROS 2* to *Fast DDS*, open three terminals:
       source install/setup.bash
       ./build/DDSHelloWorld/DDSHelloWorld -m subscriber
 
-At this point, the two applications cannot communicate due to the incompatibility of their *topics* and *types*. This is where *Integration Service* comes into play to make the communication possible.
+At this point, the two applications cannot communicate due to the incompatibility of their *topics* and *types*.
+This is where *Integration Service* comes into play to make the communication possible.
 
-- In the third terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
+* In the third terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
   and execute *Integration Service* with the :code:`integration-service` command followed by the
   `fastdds_ros2__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/fastdds_ros2__helloworld.yaml>`_
-  configuration file located in the :code:`src/Integration-Service/basic` folder:
+  configuration file located in the :code:`src/Integration-Service/examples/basic` folder:
 
   .. code-block:: bash
 
@@ -108,8 +118,8 @@ DDS publisher to ROS 2 listener
 
 To enable communication from *Fast DDS* to *ROS 2*, open three terminals:
 
-- In the first terminal, execute a *Fast DDS* HelloWorld :code:`publisher`
-  from within the :code:`is-workspace`.
+* In the first terminal, execute a *Fast DDS* HelloWorld :code:`publisher`
+  from within the :code:`is-workspace`:
 
   .. code-block:: bash
 
@@ -117,19 +127,20 @@ To enable communication from *Fast DDS* to *ROS 2*, open three terminals:
       source install/setup.bash
       ./build/DDSHelloWorld/DDSHelloWorld -m publisher
 
-- In the second terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`listener`:
+* In the second terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`listener`:
 
   .. code-block:: bash
 
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 run demo_nodes_cpp listener
 
-At this point, the two applications cannot communicate due to the incompatibility of their *topics* and *types*. This is where *Integration Service* comes into play to make the communication possible.
+At this point, the two applications cannot communicate due to the incompatibility of their *topics* and *types*.
+This is where *Integration Service* comes into play to make the communication possible.
 
-- In the third terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
+* In the third terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
   and execute *Integration Service* with the :code:`integration-service` command followed by the
   `fastdds_ros2__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/fastdds_ros2__helloworld.yaml>`_
-  configuration file located in the :code:`src/Integration-Service/basic` folder:
+  configuration file located in the :code:`src/Integration-Service/examples/basic` folder:
 
   .. code-block:: bash
 

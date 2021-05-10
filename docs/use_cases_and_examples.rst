@@ -14,7 +14,6 @@ It is organized as follows:
    :caption: Use-case and Examples
    :maxdepth: 2
 
-   usecases_content
    dds-ros2
    dds_change_domain
    ros1-ros2

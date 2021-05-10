@@ -128,6 +128,18 @@ Main features
 #. **Easy to use:** Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
    :ref:`Getting Started <getting_started>` section to be guided through the installation process.
 
+Typical use-cases
+^^^^^^^^^^^^^^^^^
+
+*Integration Service* comes in handy for a varied set of application scenarios, such as:
+
+* **Communication among systems** using different protocols which handle incompatible types, topics, and services.
+  A specific example that depicts this functionality would be the :ref:`ROS 1 to ROS 2 intercommunication example <ros1-ros2_bridge>`.
+* **Integration of systems under the same protocol** which are isolated per specific protocol features. The :ref:`DDS change of Domain ID <dds_change_of_domain>`
+  example falls into this category.
+* **Communication through the Internet** between systems hosted by logically separated LANs located in different geographical regions.
+  A specific example using *Fast DDS* WAN capabilities can be found :ref:`here <wan_tcp_tunneling>`.
+
 .. _structure_of_the_doc:
 
 Structure of the Documentation

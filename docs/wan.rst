@@ -13,7 +13,8 @@ this scenario can be addressed with a secure TCP tunnel thanks to the *SSL-TCP* 
 *Integration Service* acts as a gateway to translate each system to *DDS*, which then makes the tunneling over
 *SSL-TCP* possible. A proper configuration of the destination router and firewalls allows the communication.
 
-The example discussed here illustrates, specifically, how to configure *Integration Service* to achieve WAN communication between two separated *ROS 2* instances. Notice, however, that any other applications from systems integrated in the *Integration Service* ecosystem could be bridged across the *WAN*, thanks to the *Fast DDS System Handle* TCP tunneling capabilities.
+The example discussed here illustrates, specifically, how to configure *Integration Service* to achieve WAN communication between two separated *ROS 2* instances.
+Notice, however, that any other applications from systems integrated in the *Integration Service* ecosystem could be bridged across the *WAN*, thanks to the *Fast DDS System Handle* TCP tunneling capabilities.
 
 .. image:: images/WAN.png
 
@@ -25,7 +26,7 @@ Requirements
 
 To prepare the deployment and setup the environment, you need to have *Integration Service* correctly
 installed in your system.
-To do so, please follow the steps delineated in the :ref:`core_installation` section.
+To do so, please follow the steps delineated in the :ref:`installation` section.
 
 Also, to test this example properly, you need two separate subnets that are not connected but both with internet
 access, or a testing environment simulating this scenario (for example, two routers, with one of them acting as
@@ -34,27 +35,29 @@ an ISP for the second).
 Notice that both the route tables and the NAT must be configured so as to ensure proper port redirection
 before starting the test.
 
-.. figure:: images/WAN.png
+.. note::
 
-    The IP addresses shown only serve the purpose of illustrating the example. The important information is the
+    The IP addresses shown here only serve the purpose of illustrating the example. The important information is the
     **real** public IP of the *server* machine. Also, its router must enable the NAT to forward the listening port to
     the *server*.
 
 Also, to get this example working, the following requirements must be met in both machines:
 
-- Having *ROS 2* (Foxy or superior) installed, with the :code:`talker-listener` example working.
+* Having **ROS 2** (*Foxy* or superior) installed, with the :code:`talker-listener` example working.
 
-- Having the *ROS 2 System Handle* installed. You can download it from the `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+* Having the **ROS 2 System Handle** installed. You can download it from the
+  `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
 
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
-- Having *Fast DDS* (v.2.0.0 or superior) installed, with the
+* Having **Fast DDS** (v.2.0.0 or superior) installed, with the
   `:code:`DDSHelloWorld` example` <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>_ working.
 
-- Having the *Fast DDS System Handle* installed. You can download it from the `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+* Having the **Fast DDS System Handle** installed. You can download it from the
+  `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
 
@@ -73,21 +76,22 @@ Once the environment is prepared and tested (for example, using a port-scanner),
 Deployment
 ^^^^^^^^^^
 
-This examples launches a *ROS 2* :code:`talker` in the *server* machine, and a *ROS 2* :code:`listener` in the *client*
-machine. An *Integration Service* instance will communicate these two applications by translating the *types* and *topics* of *ROS 2* to those of *Fast DDS*, and then use the WAN-TCP communication capabilities of the latter to operate the tunneling.
+This examples launches a *ROS 2* :code:`talker` in the *server* machine, and a *ROS 2* :code:`listener` in the *client* machine.
+An *Integration Service* instance will communicate these two applications by translating the *types* and *topics* of *ROS 2*
+to those of *Fast DDS*, and then use the WAN-TCP communication capabilities of the latter to operate the tunneling.
 
-To test it, open 2 terminals in each machine:
+To test it, open two terminals in each machine.
 
-On the *server* side:
+**On the server side:**
 
-- In the first terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`talker` example:
+* In the first terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`talker` example:
 
   .. code-block:: bash
 
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 run demo_nodes_cpp talker
 
-- In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
+* In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
   and execute *Integration Service* with the :code:`integration-service` command followed by the the `server YAML <https://github.com/eProsima/Integration-Service/blob/main/examples/wan_tunneling/ros2__wan_helloworld/wan_server_talker.yaml>`_ configuration file located in the :code:`src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld` folder:
 
   .. code-block:: bash
@@ -97,16 +101,16 @@ On the *server* side:
       source install/setup.bash
       integration-service src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld/wan_server_talker.yaml
 
-On the *client* side:
+**On the client side:**
 
-- In the first terminal, launch the *ROS 2* :code:`listener` example:
+* In the first terminal, launch the *ROS 2* :code:`listener` example:
 
   .. code-block:: bash
 
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 run demo_nodes_cpp listener
 
-- In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
+* In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
   and execute *Integration Service* with the :code:`integration-service` command followed by the the `client YAML <https://github.com/eProsima/Integration-Service/blob/main/examples/wan_tunneling/ros2__wan_helloworld/wan_client_listener.yaml>`_ configuration file located in the :code:`src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld` folder:
 
 
@@ -120,5 +124,5 @@ On the *client* side:
 Once the two *Integration Service* instances match, the *ROS 2* :code:`talker-listener` example will start to communicate.
 
 .. warning::
-  
+
     If the test doesn't work, review carefully your NAT configuration.
