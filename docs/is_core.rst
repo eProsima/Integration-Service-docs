@@ -1,6 +1,6 @@
 .. _is_core:
 
-Integration Service core
+Integration Service Core
 ========================
 
 The :code:`is-core` library defines a set of abstract interfaces and provides some utility classes

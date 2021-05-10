@@ -1,4 +1,4 @@
-.. _use-cases_and_examples:
+.. _use_cases_and_examples:
 
 Use-cases and Examples
 ======================

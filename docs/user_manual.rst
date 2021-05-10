@@ -18,6 +18,6 @@ Finally, it provides an overview of the *System Handles* existing to date.
    :maxdepth: 2
 
    is_core
-   sh_creation
+   sh
    yaml_config
    existing_shs

@@ -1,3 +1,6 @@
+.. role:: raw-html(raw)
+    :format: html
+
 .. _yaml_config:
 
 YAML Configuration
@@ -426,7 +429,7 @@ The *System Handles* currently available for *Integration Service* are listed in
 
 A new *System Handle* can be created by implementing the desired :code:`SystemHandle` subclasses to
 add support to any other protocol or system.
-For more information consult the :ref:`sh_creation` section.
+For more information consult the :ref:`sh` section.
 
 
 .. _routes_definition:
@@ -560,7 +563,9 @@ used in the :code:`dds` system, instead of the ones defined by the service defin
 :code:`ros2_domain5` system.
 
 .. image:: images/remap.png
+    :align: center
 
+:raw-html:`<br />`
 
 .. _doxygen_doc:
 
@@ -568,8 +573,6 @@ Doxygen documentation
 ^^^^^^^^^^^^^^^^^^^^^
 
 The table below provides the link to the Doxygen documentation of all the already existing *System Handles*. For each, you will find a comprehensive description of all the fields that are required to be filled.
-
-.. TODO: add correct links to table below.
 
 .. list-table::
     :header-rows: 1

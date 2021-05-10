@@ -1,7 +1,7 @@
-.. _sh_creation:
+.. _sh:
 
-System Handle Creation
-======================
+System Handle
+=============
 
 As explained in the :ref:`introductory section <intro>`, a single :code:`integration-service`
 executable can route any number of topics or services to/from any number of middlewares.
