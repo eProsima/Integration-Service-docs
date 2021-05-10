@@ -119,14 +119,13 @@ Main features
 ^^^^^^^^^^^^^
 
 #. **Free and Open Source:** The `Integration Service Core <https://github.com/eProsima/Integration-Service>`_, and all :ref:`System Handles available to date <available_shs>` are free and open source.
-   Consult the :ref:`useful_links` section of the documentation to be redirected to the relevant repositories.
 #. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable by means of a YAML file.
    For more information on how to do so, please consult the :ref:`yaml_config` section of this documentation.
 #. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service* world by generating the plugin, or *System Handle*
    needed by the core to integrate them.
    For more information on **System-Handles**, please consult the :ref:`sh` section of this documentation.
 #. **Easy to use:** Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
-   :ref:`Getting Started <getting_started>` section to be guided through the installation process.
+   :ref:`Installation <installation>` section to be guided through the installation process.
 
 Typical use-cases
 ^^^^^^^^^^^^^^^^^
@@ -158,7 +157,7 @@ This documentation is organized into the sections listed below:
    :hidden:
 
    external_dep
-   getting_started
+   installation
 
 .. toctree::
     :caption: User Manual

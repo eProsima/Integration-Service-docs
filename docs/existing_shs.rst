@@ -3,10 +3,12 @@
 Existing System Handles
 =======================
 
-This section provides an insight over the *System Handles* existing and tested at the time of writing, and it is kept constantly up to date in order to include any new *System Handle* or new features of those already implemented (such as e.g. the extension of the types supported or the addition/removal of an external dependency).
+This section provides an insight over the *System Handles* existing and tested at the time of writing, and it is kept constantly up to date in order to include any new *System Handle* or new features of those already implemented 
+(such as e.g. the extension of the types supported or the addition/removal of an external dependency).
 
-For each, we detail the fields of the YAML configuration file which are compulsory to fill when the associated middleware is involved in an *Integration Service*-mediated communication. We also provide a list of the external dependencies, a step-by-step guide of how to compile tests and examples, and any other *System Handle*-specific configurational detail.
- It is organized as follows:
+For each, we detail the fields of the YAML configuration file which are compulsory to fill when the associated middleware is involved in an *Integration Service*-mediated communication. 
+We also provide a list of the external dependencies, a step-by-step guide of how to compile tests and examples, and any other *System Handle*-specific configurational detail.
+It is organized as follows:
 
 * :ref:`dds_sh`
 * :ref:`ros2_sh`
@@ -34,6 +36,12 @@ Dependencies
 ------------
 
 The only dependency of this *System Handle* is to have a `Fast DDS installation <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ (v2.0.0 or superior) in your system.
+
+.. note::
+
+    The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, 
+    it downloads and installs its own version.
+
 
 Configuration
 -------------

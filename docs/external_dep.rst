@@ -41,7 +41,3 @@ Find them listed in the table below:
       - `OpenSSL <https://www.openssl.org/>`_, `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
     * - **FIWARE SH**
       - `Asio C++ Library <https://think-async.com/Asio/>`_, `cURLpp library <http://www.curlpp.org/>`_, `cURL library <https://curl.se/>`_
-
-.. note::
-
-    The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, it downloads and installs its own version.
