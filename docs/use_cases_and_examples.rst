@@ -1,6 +1,6 @@
 :orphan:
 
-.. _use_case_and_examples:
+.. _use_cases_and_examples:
 
 Use-cases and Examples
 ======================

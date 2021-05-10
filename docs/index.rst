@@ -148,7 +148,7 @@ This documentation is organized into the sections listed below:
 
 *  :ref:`Installation Manual <installation_manual>`
 *  :ref:`User Manual <user_manual>`
-*  :ref:`Use-case and Examples <use_case_and_examples>`
+*  :ref:`Use-cases and Examples <use_cases_and_examples>`
 
 .. toctree::
    :caption: Installation Manual
@@ -176,7 +176,6 @@ This documentation is organized into the sections listed below:
     :numbered:
     :hidden:
 
-    usecases_content
     dds-ros2
     dds_change_domain
     ros1-ros2
