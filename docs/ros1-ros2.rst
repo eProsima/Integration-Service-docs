@@ -1,7 +1,7 @@
 .. _ros1-ros2_bridge:
 
-Example: ROS 1-ROS 2 bridge
-===========================
+ROS 1-ROS 2 bridge
+==================
 
 Another typical situation of systems using different protocols is that of
 *ROS 1* and *ROS 2*.

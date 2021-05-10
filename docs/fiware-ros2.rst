@@ -1,7 +1,7 @@
 .. _fiware-ros2_comm:
 
-Example: FIWARE-ROS 2 communication
-===================================
+FIWARE-ROS 2 communication
+==========================
 
 An interesting use case is the one of bringing information coming from the ROS 2 world into the FIWARE ecosystem,
 so that it can be used to translate information coming from physically operated ROS 2 robots into its FIWARE’s digital twin models.

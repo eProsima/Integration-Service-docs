@@ -148,7 +148,7 @@ This documentation is organized into the sections listed below:
 
 *  :ref:`Installation Manual <installation_manual>`
 *  :ref:`User Manual <user_manual>`
-*  :ref:`Use-cases and Examples <use_cases_and_examples>`
+*  :ref:`Examples <examples>`
 
 .. toctree::
    :caption: Installation Manual
@@ -171,7 +171,7 @@ This documentation is organized into the sections listed below:
     existing_shs
 
 .. toctree::
-    :caption: Use-cases and Examples
+    :caption: Examples
     :maxdepth: 2
     :numbered:
     :hidden:

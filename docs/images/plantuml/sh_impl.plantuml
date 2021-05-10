@@ -39,7 +39,7 @@ FS *-up- SC
 FS *-up- SP
 
 
-package system {
+package "Custom System Handle" {
 class SystemHandle
 
 

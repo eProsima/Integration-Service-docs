@@ -1,7 +1,7 @@
 .. _dds_change_of_domain:
 
-Example: Fast DDS change of domain
-==================================
+Fast DDS change of domain
+=========================
 
 A very typical scenario within the DDS ecosystem is that of two applications running under different DDS domain IDs,
 so that they are isolated from each other; however, it might be required to bridge some of the topics publisher by one of the applications,

@@ -5,7 +5,6 @@ sh_hierarchy.png
 hide empty members
 
 
-package "Integration Service" {
 abstract "SystemHandle" as SH {
     +bool configure(...)
     +bool okay() const
@@ -72,7 +71,6 @@ ServiceSystem <|-- FullSystem
 TPS *-- TP
 SCS *-- SC
 SPS *-- SP
-}
 @enduml
 
 PlantUML version 1.2020.00(Sat Jan 11 13:30:53 CET 2020)

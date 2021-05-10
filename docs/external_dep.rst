@@ -7,8 +7,8 @@ In this page, we provide a list of the dependencies required for an *Integration
 
 .. _core_deps:
 
-Core Dependencies
-^^^^^^^^^^^^^^^^^
+Core
+^^^^
 
 The core needs the following to be installed:
 
@@ -19,8 +19,8 @@ The core needs the following to be installed:
 
 .. _sh_deps:
 
-System Handles Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+System Handles
+^^^^^^^^^^^^^^
 
 Beyond the dependencies of the core, each **System-Handle** has its own specific dependencies.
 Find them listed in the table below:

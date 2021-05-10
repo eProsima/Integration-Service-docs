@@ -1,9 +1,9 @@
 :orphan:
 
-.. _use_cases_and_examples:
+.. _examples:
 
-Use-cases and Examples
-======================
+Examples
+========
 
 In this section we discuss a collection of useful use-cases leveraging the already existing *System Handles*, with the aim of providing examples of usage and showcasing *Integration Service*'s functionalities.
 For each use-case, a related example is presented and the user is guided step-by-step through the
@@ -11,7 +11,7 @@ installation protocol and environment preparation necessary to have the examples
 It is organized as follows:
 
 .. toctree::
-   :caption: Use-case and Examples
+   :caption: Examples
    :maxdepth: 2
 
    dds-ros2

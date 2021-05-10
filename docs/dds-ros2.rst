@@ -1,7 +1,7 @@
 .. _dds-ros2_bridge:
 
-Example: DDS-ROS 2 bridge
-=========================
+DDS-ROS 2 bridge
+================
 
 In this example we address a very common situation faced in the robotics world:
 that of bridging *DDS* and *ROS 2*. Specifically, we discuss how to do so with the

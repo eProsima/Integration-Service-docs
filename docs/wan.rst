@@ -1,7 +1,7 @@
 .. _wan_tcp_tunneling:
 
-Example: WAN-TCP tunneling
-==========================
+WAN-TCP tunneling
+=================
 
 One of the most critical and powerful use-cases of *Integration Service*
 is that of two systems located in different geographical regions
