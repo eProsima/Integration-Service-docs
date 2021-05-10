@@ -1,17 +1,9 @@
 .. _external_dependencies:
 
-Useful Material
-===============
+Dependencies
+============
 
-In this page, we provide a compendium of relevant material useful for building and instantiating an *Integration Service* project.
-
-First of all we list the dependencies required for an *Integration Service* instance to function. To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
-We also provide a list of links that may come in handy for developing and deploying an *eProsima Integration  Service* project.
-
-- :ref:`core_deps`
-- :ref:`sh_deps`
-- :ref:`useful_links`
-
+In this page, we provide a list of the dependencies required for an *Integration Service* instance to function. To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
 
 .. _core_deps:
 
@@ -20,19 +12,10 @@ Core Dependencies
 
 The core needs the following to be installed:
 
-**CMake**
-
-*CMake 3.5* is required to build the project files.
-
-**C++**
-
-*eProsima Integration-Service* uses standard C++14.
-
-**colcon**
-
-If installed using colcon, `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_ becomes
-a dependency.
-
+* `CMake <https://cmake.org/>`_: At least version *3.5* is required to build the project files.
+* `C++ <https://isocpp.org/>`_: *eProsima Integration-Service* uses standard C++14.
+* `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_: If installed using colcon, it becomes
+  a dependency.
 
 .. _sh_deps:
 
@@ -51,7 +34,7 @@ Find them listed in the table below:
     * - **Fast DDS SH**
       - `Fast DDS installation <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ (v2.0.0 or superior)
     * - **ROS 2 SH**
-      - ROS 2 installation (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
+      - `ROS 2 installation <https://docs.ros.org/en/foxy/Releases.html#list-of-distributions>`_ (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
     * - **ROS 1 SH**
       - `ROS 1 installation <http://wiki.ros.org/ROS/Installation>`_ (`Melodic <http://wiki.ros.org/melodic/Installation>`_ or `Noetic <http://wiki.ros.org/noetic/Installation>`_)
     * - **WEBSOCKET SH**
@@ -62,33 +45,3 @@ Find them listed in the table below:
 .. note::
 
     The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, it downloads and installs its own version.
-
-.. _useful_links:
-
-Useful Links
-^^^^^^^^^^^^
-
-* `Integration Service core <https://github.com/eProsima/is-core>`_
-* `Colcon Manual <https://colcon.readthedocs.io/en/released/user/installation.html>`_
-* *System Handles* repositories
-
-  .. list-table::
-     :header-rows: 1
-     :align: left
-
-     * - *System Handle*
-       - Repository
-     * - **Fast DDS SH**
-       - https://github.com/eProsima/FastDDS-SH
-     * - **ROS 2 SH**
-       - https://github.com/eProsima/ROS2-SH
-     * - **ROS 1 SH**
-       - https://github.com/eProsima/ROS1-SH
-     * - **WEBSOCKET SH**
-       - https://github.com/eProsima/WebSocket-SH
-     * - **FIWARE SH**
-       - https://github.com/eProsima/FIWARE-SH
-* `eProsima Fast-DDS <https://github.com/eProsima/Fast-DDS/>`_
-* `ROS 2 <https://index.ros.org/doc/ros2/>`_
-* `ROS 1 <https://www.ros.org/>`_
-* `FIWARE Orion Context Broker <https://fiware-orion.readthedocs.io/en/master/>`_
