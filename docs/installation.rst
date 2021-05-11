@@ -39,12 +39,12 @@ The starting point is to create a `colcon workspace` and clone the
     cd ~/is-workspace
     git clone https://github.com/eProsima/Integration-Service.git src/Integration-Service --recursive
 
-At this point, you have the *Integration Service* library correcly cloned into your
+At this point, you have the *Integration Service* library correctly cloned into your
 :code:`is-workspace/src/Integration-Service` folder.
 
 .. note::
 
-    The :code:`--recursive` flag is needed to correctly initialize the *XTypes* library as a submodule.
+    The :code:`--recursive` flag is needed to correctly initialize the *xTypes* library as a submodule.
 
 .. TODO: When tool for automatically cloning the repos of the desired System Handles is ready,
    add a description of how to do so direclty from the core repo.

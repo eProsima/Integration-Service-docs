@@ -79,7 +79,7 @@ According the diagram depicted above, the *Integration Service Core* executes th
 
 If all these steps are correctly fulfilled, an *Integration Service* instance is launched and starts
 listening for incoming messages to translate them into the specified protocols.
-The green arrow on the diagram depicts this behaviour. Notice that *xTypes* is the common language
+The green arrow on the diagram depicts this behavior. Notice that *xTypes* is the common language
 representation used for transmitting the data among *System Handles*, so we will introduce this library right away.
 
 .. _xtypes_library:

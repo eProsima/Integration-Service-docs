@@ -73,7 +73,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
       foo: { type: foo }
       bar: { type: bar, types-from: foo }
 
-  In relation to the common parameters, their behaviour is explained in the following section:
+  In relation to the common parameters, their behavior is explained in the following section:
 
     * :code:`type`: Middleware or protocol kind. To date, the supported middlewares are: *fastdds*, *ros1*, *ros2*, *fiware*, *websocket_server* and *websocket_client*.
       There is also a *mock* option, mostly used for testing purposes.
@@ -135,7 +135,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
         route: foo_to_bar
         remap: { bar: { topic: HelloBar } }
 
-  In relation to the common parameters, their behaviour is explained below:
+  In relation to the common parameters, their behavior is explained below:
 
   * :code:`type`: The topic type name. This type must be defined in the :code:`types` section of the YAML
     configuration file, or it must be loaded by means of a :code:`Middleware Interface Extension` file
@@ -209,7 +209,7 @@ Types definition
 ^^^^^^^^^^^^^^^^
 
 Some *System Handles* have the ability to inform *Integration Service* of the types definition
-(using `XTypes <https://github.com/eProsima/xtypes>`__) that they can use.
+(using `xTypes <https://github.com/eProsima/xtypes>`__) that they can use.
 The *System Handles* of *ROS 1* and *ROS 2* are examples of this.
 Nevertheless, there are cases where the *System Handle* is not able to retrieve the type specification
 (*websocket*, *mock*, *dds*, *fiware*, ...) that it needs for the communication.
@@ -321,10 +321,10 @@ If :code:`type` is omitted, the key of the YAML entry will be used as :code:`typ
 
 The snippet above will create three *System Handles*:
 
-* A *DDS* *System Handle* with default configuration.
-* A *ROS 2* *System Handle* named :code:`ros2_domain` with :code:`domain = 5` and
+* A *DDS System Handle* with default configuration.
+* A *ROS 2 System Handle* named :code:`ros2_domain` with :code:`domain = 5` and
   :code:`node_name = "is_5"`.
-* A *Fiware* *System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
+* A *FIWARE System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
 The *System Handles* currently available for *Integration Service* are listed in a table that you can find in the
 :ref:`shs` section of this documentation.
@@ -440,8 +440,8 @@ If a custom *System Handle* needs additional configuration regarding the :code:`
 be added in the service definition as new map entries.
 
 .. note:: If the :code:`type` field is defined, as in the example above, this :code:`type` will be taken into consideration
-  as the **request type**. If a differentiation must be done for those services which allow to differenciate between
-  **request** and **reply** types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
+  as the **request type**. If a certain service needs to distinguish between **request** and **reply**
+  types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
 
 
 .. _remapping:

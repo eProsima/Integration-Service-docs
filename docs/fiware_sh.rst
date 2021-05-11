@@ -1,6 +1,6 @@
 .. _fiware_sh:
 
-Fiware System Handle
+FIWARE System Handle
 ====================
 
 This repository contains the source code of the *Integration Service System Handle*

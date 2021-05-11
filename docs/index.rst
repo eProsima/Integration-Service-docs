@@ -46,9 +46,9 @@ Integration Service Core
 *Integration Service* provides a plugin-based platform that is easily and intuitively configurable.
 An *Integration Service* instance can connect *N* middlewares through dedicated plugins that speak the same
 language as the core.
-This common language is `eProsima xtypes <https://github.com/eProsima/xtypes>`_; a fast and lightweight
+This common language is `eProsima xTypes <https://github.com/eProsima/xtypes>`_; a fast and lightweight
 `OMG DDS-XTYPES standard <https://www.omg.org/spec/DDS-XTypes>`_ C++17 header-only implementation.
-Find more information on the core and on the *XTypes* representation language in the :ref:`is_core` section
+Find more information on the core and on the *xTypes* representation language in the :ref:`is_core` section
 of this documentation.
 
 .. _shs:
