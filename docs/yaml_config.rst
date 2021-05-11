@@ -21,8 +21,8 @@ please have a look at the list below:
 
 The *Integration Service* can be configured during runtime by means of a dedicated **YAML** file.
 This configuration file must follow a specific syntax, meaning that it is required that a number
-of compulsory section are opportunely filled for it to successfully configure and launch an *Integration Service* instance,
-while others are optional. Both kinds are listed and reviewed below:
+of compulsory section are opportunely filled for it to successfully configure and launch
+an *Integration Service* instance, while others are optional. Both kinds are listed and reviewed below:
 
 * :code:`types`: *(optional)*: It allows to list the `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL/>`_
   types used by the *Integration Service* to later define the topics and services types which will
@@ -49,7 +49,8 @@ while others are optional. Both kinds are listed and reviewed below:
 
     * :code:`idls`: List of IDL type definitions that can be directly embedded within the configuration file.
       If the :code:`types` section is defined, this subsection is mandatory. The type can be entirely defined within the YAML file,
-      or can be included from a preexisting IDL file; for the latter, the system path containing where the IDL file is stored must be placed into the :code:`paths` section described below.
+      or can be included from a preexisting IDL file; for the latter,
+      the system path containing where the IDL file is stored must be placed into the :code:`paths` section described below.
 
     * :code:`paths` *(optional):* Using this parameter, an existing IDL type written in a separate file can be included within the *Integration Service* types section.
       If the IDL path is not listed here, the previous subsection :code:`#include` preprocessor directive will fail.
@@ -72,13 +73,14 @@ while others are optional. Both kinds are listed and reviewed below:
       foo: { type: foo }
       bar: { type: bar, types-from: foo }
 
-  In relation to the common parameters, their behaviour is explained in the following section:
+  In relation to the common parameters, their behavior is explained in the following section:
 
     * :code:`type`: Middleware or protocol kind. To date, the supported middlewares are: *fastdds*, *ros1*, *ros2*, *fiware*, *websocket_server* and *websocket_client*.
       There is also a *mock* option, mostly used for testing purposes.
 
     * :code:`types-from` *(optional)*: Configures the types inheritance from a given system to another.
-      This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware, without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
+      This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware,
+      without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
 
   For more details on this section, please refer to the :ref:`systems_definition` subsection of this page.
 
@@ -133,7 +135,7 @@ while others are optional. Both kinds are listed and reviewed below:
         route: foo_to_bar
         remap: { bar: { topic: HelloBar } }
 
-  In relation to the common parameters, their behaviour is explained below:
+  In relation to the common parameters, their behavior is explained below:
 
   * :code:`type`: The topic type name. This type must be defined in the :code:`types` section of the YAML
     configuration file, or it must be loaded by means of a :code:`Middleware Interface Extension` file
@@ -207,7 +209,7 @@ Types definition
 ^^^^^^^^^^^^^^^^
 
 Some *System Handles* have the ability to inform *Integration Service* of the types definition
-(using `XTypes <https://github.com/eProsima/xtypes>`__) that they can use.
+(using `xTypes <https://github.com/eProsima/xtypes>`__) that they can use.
 The *System Handles* of *ROS 1* and *ROS 2* are examples of this.
 Nevertheless, there are cases where the *System Handle* is not able to retrieve the type specification
 (*websocket*, *mock*, *dds*, *fiware*, ...) that it needs for the communication.
@@ -319,10 +321,10 @@ If :code:`type` is omitted, the key of the YAML entry will be used as :code:`typ
 
 The snippet above will create three *System Handles*:
 
-* A *DDS* *System Handle* with default configuration.
-* A *ROS 2* *System Handle* named :code:`ros2_domain` with :code:`domain = 5` and
+* A *DDS System Handle* with default configuration.
+* A *ROS 2 System Handle* named :code:`ros2_domain` with :code:`domain = 5` and
   :code:`node_name = "is_5"`.
-* A *Fiware* *System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
+* A *FIWARE System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
 The *System Handles* currently available for *Integration Service* are listed in a table that you can find in the
 :ref:`shs` section of this documentation.
@@ -438,8 +440,8 @@ If a custom *System Handle* needs additional configuration regarding the :code:`
 be added in the service definition as new map entries.
 
 .. note:: If the :code:`type` field is defined, as in the example above, this :code:`type` will be taken into consideration
-  as the **request type**. If a differentiation must be done for those services which allow to differenciate between
-  **request** and **reply** types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
+  as the **request type**. If a certain service needs to distinguish between **request** and **reply**
+  types, the fields :code:`request_type` and :code:`reply_type` must be used instead.
 
 
 .. _remapping:

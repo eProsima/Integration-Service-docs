@@ -1,6 +1,6 @@
 .. _fiware_sh:
 
-Fiware System Handle
+FIWARE System Handle
 ====================
 
 This repository contains the source code of the *Integration Service System Handle*
@@ -39,14 +39,15 @@ five sections:
             port: 1026
 
 
-* :code:`port`: The specific port where the *FIWARE's Context Broker* will listen for incoming connections. This field is
-  required.
+* :code:`port`: The specific port where the *FIWARE's Context Broker* will listen for incoming connections.
+  This field is required.
 * :code:`host`: The IP address of the *FIWARE's Context Broker*. This field is required.
 
 Examples
 ^^^^^^^^
 
-There is one example that you can find in this documentation in which the *FIWARE System Handle* is employed in the communication:
+There is one example that you can find in this documentation in which the *FIWARE System Handle*
+is employed in the communication:
 
 * :ref:`fiware-ros2_comm`
 
@@ -59,11 +60,12 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 * :code:`BUILD_FIWARE_TESTS`: Allows to specifically compile the *FIWARE System Handle* unitary and
   integration tests. It is useful to avoid compiling each *System Handle*'section test suite present
-  in the :code:`colcon` workspace, which is what would happen if using the :code:`BUILD_TESTS` flag, with the objective of minimizing building time. To use it, after making sure that the *FIWARE System Handle*
+  in the :code:`colcon` workspace, which is what would happen if using the :code:`BUILD_TESTS` flag,
+  with the objective of minimizing building time. To use it, after making sure that the *FIWARE System Handle*
   is present in your :code:`colcon` workspace, execute the following command:
-  
+
   .. code-block:: bash
-  
+
       ~/is_ws$ colcon build --cmake-args -DBUILD_FIWARE_TESTS=ON
 
 

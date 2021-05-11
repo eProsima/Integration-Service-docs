@@ -13,8 +13,10 @@ this scenario can be addressed with a secure TCP tunnel thanks to the *SSL-TCP* 
 *Integration Service* acts as a gateway to translate each system to *DDS*, which then makes the tunneling over
 *SSL-TCP* possible. A proper configuration of the destination router and firewalls allows the communication.
 
-The example discussed here illustrates, specifically, how to configure *Integration Service* to achieve WAN communication between two separated *ROS 2* instances.
-Notice, however, that any other applications from systems integrated in the *Integration Service* ecosystem could be bridged across the *WAN*, thanks to the *Fast DDS System Handle* TCP tunneling capabilities.
+The example discussed here illustrates, specifically, how to configure *Integration Service*
+to achieve WAN communication between two separated *ROS 2* instances.
+Notice, however, that any other applications from systems integrated in the *Integration Service*
+ecosystem could be bridged across the *WAN*, thanks to the *Fast DDS System Handle* TCP tunneling capabilities.
 
 .. image:: images/WAN.png
 
@@ -70,15 +72,18 @@ After you have everything correctly installed, build the packages by running:
 
     colcon build
 
-Once the environment is prepared and tested (for example, using a port-scanner), modify the file :code:`wan_config.xml` inside the folder
-:code:`src/FastDDS-SH/examples/wan/` to match the IP address and port of with the WAN IP address and forwarded port of your environment.
+Once the environment is prepared and tested (for example, using a port-scanner),
+modify the file :code:`wan_config.xml` inside the folder :code:`src/FastDDS-SH/examples/wan/`
+to match the IP address and port of with the WAN IP address and forwarded port of your environment.
 
 Deployment
 ^^^^^^^^^^
 
-This examples launches a *ROS 2* :code:`talker` in the *server* machine, and a *ROS 2* :code:`listener` in the *client* machine.
-An *Integration Service* instance will communicate these two applications by translating the *types* and *topics* of *ROS 2*
-to those of *Fast DDS*, and then use the WAN-TCP communication capabilities of the latter to operate the tunneling.
+This examples launches a *ROS 2* :code:`talker` in the *server* machine,
+and a *ROS 2* :code:`listener` in the *client* machine.
+An *Integration Service* instance will communicate these two applications by translating
+the *types* and *topics* of *ROS 2* to those of *Fast DDS*,
+and then use the WAN-TCP communication capabilities of the latter to operate the tunneling.
 
 To test it, open two terminals in each machine.
 
@@ -121,7 +126,8 @@ To test it, open two terminals in each machine.
       source install/setup.bash
       integration-service src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld/wan_client_listener.yaml
 
-Once the two *Integration Service* instances match, the *ROS 2* :code:`talker-listener` example will start to communicate.
+Once the two *Integration Service* instances match,
+the *ROS 2* :code:`talker-listener` example will start to communicate.
 
 .. warning::
 
