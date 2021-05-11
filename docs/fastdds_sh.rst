@@ -20,7 +20,8 @@ The only dependency of this *System Handle* is to have a `Fast DDS installation 
 
 .. note::
 
-    The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle* first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one, 
+    The *Fast DDS System Handle* requires an installation of *Fast DDS* to work. The *System Handle*
+    first looks into the system for a previous installation of *Fast DDS* v2.0.0 or superior. If it doesn't find one,
     it downloads and installs its own version.
 
 
@@ -31,11 +32,12 @@ Regarding the *Fast DDS System Handle*, there are several specific parameters wh
 for the *DDS* middleware. All of these parameters are optional, and are suboptions of the main
 five sections:
 
-* :code:`systems`: The system :code:`type` must be :code:`fastdds`. In addition to the :code:`type` and :code:`types-from` fields,
-  the *Fast DDS System Handle*.
+* :code:`systems`: The system :code:`type` must be :code:`fastdds`.
+  In addition to the :code:`type` and :code:`types-from` fields,
+  the *Fast DDS System Handle* accepts the following specific configuration fields:
 
   .. code-block:: yaml
-  
+
       systems:
           dds:
           type: fastdds
@@ -44,8 +46,6 @@ five sections:
               file_path: <path_to_xml_profiles_file>.xml
               profile_name: fastdds-sh-participant-profile
 
-
-   This section accepts the following specific configuration fields for the *Fast DDS System Handle*:
 
   * :code:`participant`: Allows to add a specific configuration for the `Fast DDS DomainParticipant <https://fast-dds.docs.eprosima.com/en/latest/fastdds/dds_layer/domain/domainParticipant/domainParticipant.html>`_:
 
@@ -62,7 +62,8 @@ five sections:
 Examples
 ^^^^^^^^
 
-There are three examples that you can find in this documentation in which the *Fast DDS System Handle* is employed in the communication:
+There are three examples that you can find in this documentation in which the
+*Fast DDS System Handle* is employed in the communication:
 
 * :ref:`dds-ros2_bridge`
 * :ref:`dds_change_of_domain`
@@ -77,9 +78,10 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 * :code:`BUILD_FASTDDS_TESTS`: Allows to specifically compile the *Fast DDS System Handle* unitary and
   integration tests. It is useful to avoid compiling each *System Handle*'section test suite present
-  in the :code:`colcon` workspace, which is what would happen if using the :code:`BUILD_TESTS` flag, with the objective of minimizing building time. To use it, after making sure that the *Fast DDS System Handle*
+  in the :code:`colcon` workspace, which is what would happen if using the :code:`BUILD_TESTS` flag,
+  with the objective of minimizing building time. To use it, after making sure that the *Fast DDS System Handle*
   is present in your :code:`colcon` workspace, execute the following command:
-  
+
   .. code-block:: bash
 
       ~/is_ws$ colcon build --cmake-args -DBUILD_FASTDDS_TESTS=ON

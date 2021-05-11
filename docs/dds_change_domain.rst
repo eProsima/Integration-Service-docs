@@ -4,8 +4,8 @@ Fast DDS change of domain
 =========================
 
 A very typical scenario within the DDS ecosystem is that of two applications running under different DDS domain IDs,
-so that they are isolated from each other; however, it might be required to bridge some of the topics publisher by one of the applications,
-so that a subscriber on a different domain ID can consume this information.
+so that they are isolated from each other; however, it might be required to bridge some of the topics
+published by one of the applications, so that a subscriber on a different domain ID can consume this information.
 This is where the *Integration Service* plays a fundamental role, by allowing to bridge two DDS dataspaces easily.
 
 The steps described below allows a Fast DDS *HelloWorld* publisher  application,

@@ -6,8 +6,9 @@ System Handle
 As explained in the :ref:`Introduction <intro>`, a single :code:`integration-service`
 instance can route any number of topics or services to/from any number of middlewares.
 
-This occurs through the use of *System Handles*, which are system-specific plugins that allows a certain middleware or communication protocol to speak the same language used by the *Integration Service*, that is, 
-Extensible and Dynamic Topic Types for DDS (`xTypes <https://github.com/eProsima/xtypes>`_).
+This occurs through the use of *System Handles*, which are system-specific plugins that allows
+a certain middleware or communication protocol to speak the same language used by the *Integration Service*,
+that is, Extensible and Dynamic Topic Types for DDS (`xTypes <https://github.com/eProsima/xtypes>`_).
 
 .. image:: images/SH.png
 
@@ -29,7 +30,7 @@ for connecting the core with the following middlewares or communication protocol
    ros1_sh
    ros2_sh
    websocket_sh
-   
+
 
 * **FastDDS**: :ref:`dds_sh`
 * **FIWARE Orion Context Broker**: :ref:`fiware_sh`
@@ -47,7 +48,9 @@ rest of the protocols already available in this ecosystem.
 Implementation
 ^^^^^^^^^^^^^^
 
-This section provides an overview of the architecture of a *System Handle*, by depicting the class inheritance structure and specifying the methods which need to be implemented in order to create a custom *System Handle*. 
+This section provides an overview of the architecture of a *System Handle*,
+by depicting the class inheritance structure and specifying the methods which need to be implemented
+in order to create a custom *System Handle*.
 
 .. TODO: Rework this page to give more information that might be needed by the user.
 
@@ -62,8 +65,8 @@ and/or :code:`ServiceProviderSystem`.
 To simplify this inheritance, classes :code:`TopicSystem`, :code:`ServiceSystem`, and :code:`FullSystem`
 are available to inherit from.
 
-In the diagram below, the architecture of a generic "Full" *System Handle* and its integration into *Integration Service*
-is shown.
+In the diagram below, the architecture of a generic "Full" *System Handle* and its integration
+into *Integration Service* is shown.
 
 .. image:: images/sh_impl.png
 
@@ -136,18 +139,20 @@ This kind of system must implement the :code:`advertise` method:
         const xtypes::DynamicType& message_type,
         const YAML::Node& configuration);
 
-*Integration Service* will call this method in order to create a new :code:`TopicPublisher` to the topic :code:`topic_name`
-using :code:`message_type` type, and optional :code:`configuration`.
+*Integration Service* will call this method in order to create a new :code:`TopicPublisher`
+to the topic :code:`topic_name` using :code:`message_type` type, and optional :code:`configuration`.
 
 The :code:`TopicPublisher` is an interface that must be implemented by a :code:`Publisher` in order to allow
-*Integration Service* to publish messages to the target middleware. This interface defines a single method :code:`publish`:
+*Integration Service* to publish messages to the target middleware.
+This interface defines a single method :code:`publish`:
 
 .. code-block:: cpp
 
     bool publish(const xtypes::DynamicData& message);
 
-When *Integration Service* needs to publish to the middleware system it will call the :code:`TopicPublisher::publish` method,
-with a message that must be translated from the :code:`message_type` parameter by the :code:`advertise` method above.
+When *Integration Service* needs to publish to the middleware system it will call the
+:code:`TopicPublisher::publish` method, with a message that must be translated from the
+:code:`message_type` parameter by the :code:`advertise` method above.
 
 ServiceClientSystem Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,14 +173,15 @@ This kind of system must implement the :code:`create_client_proxy` method:
         RequestCallback callback,
         const YAML::Node& configuration);
 
-*Integration Service* will call this method in order to create a new :code:`ServiceClient` to the service :code:`service_name`
-using the :code:`service_type` type, plus an optional :code:`configuration`. This :code:`ServiceClient` will be provided
-as an argument in the :code:`callback` invocation when a response is received.
+*Integration Service* will call this method in order to create a new :code:`ServiceClient`
+to the service :code:`service_name` using the :code:`service_type` type, plus an optional
+:code:`configuration`. This :code:`ServiceClient` will be provided as an argument in the
+:code:`callback` invocation when a response is received.
 
-The :code:`ServiceClient` is an interface that must be implemented by a :code:`Client` in order to allow *Integration Service*
-to relate a *request* with its *reply*. This is done by providing a :code:`call_handle` both in the
-:code:`call_service` method from :code:`ServiceProvider` and in the :code:`callback` from :code:`create_client_proxy`
-method.
+The :code:`ServiceClient` is an interface that must be implemented by a :code:`Client` in order to allow
+*Integration Service* to relate a *request* with its *reply*.
+This is done by providing a :code:`call_handle` both in the :code:`call_service` method from
+:code:`ServiceProvider` and in the :code:`callback` from :code:`create_client_proxy` method.
 When the *reply* is received by another *System Handle*, its :code:`ServiceProvider` will call the
 :code:`receive_response` method from the :code:`Client`:
 
@@ -203,11 +209,11 @@ This kind of system must implement the :code:`create_service_proxy` method:
         const xtypes::DynamicType& service_type,
         const YAML::Node& configuration);
 
-*Integration Service* will call this method in order to create a new :code:`ServiceProvider` to the service :code:`service_name`
-using the :code:`service_type` type, plus an optional :code:`configuration`.
+*Integration Service* will call this method in order to create a new :code:`ServiceProvider` to the
+service :code:`service_name` using the :code:`service_type` type, plus an optional :code:`configuration`.
 
-The :code:`ServiceProvider` is and interface that must be implemented by a :code:`Server` in order to allow *Integration Service*
-to *request* (or call) a service from the target middleware.
+The :code:`ServiceProvider` is and interface that must be implemented by a :code:`Server`
+in order to allow *Integration Service* to *request* (or call) a service from the target middleware.
 
 .. code-block:: cpp
 

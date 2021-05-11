@@ -104,8 +104,8 @@ YAML configuration files
 *Integration Service* is configured by means of a **YAML** file that specifies a set of compulsory fields,
 plus some optional ones.
 
-This configuration approach is especially profitable when it comes to integrating large systems, since a single YAML file
-is needed no matter how many protocols are being communicated.
+This configuration approach is especially profitable when it comes to integrating large systems,
+since a single YAML file is needed no matter how many protocols are being communicated.
 
 The strength of this approach is that different translations are possible by only changing the configuration file.
 This means that no compilation steps are required between each *Integration Service* instantiation, as
@@ -119,11 +119,13 @@ can be found in the :ref:`yaml_config` section of this documentation.
 Main features
 ^^^^^^^^^^^^^
 
-#. **Free and Open Source:** The `Integration Service Core <https://github.com/eProsima/Integration-Service>`_, and all :ref:`System Handles available to date <available_shs>` are free and open source.
-#. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable by means of a YAML file.
+#. **Free and Open Source:** The `Integration Service Core <https://github.com/eProsima/Integration-Service>`_,
+   and all :ref:`System Handles available to date <available_shs>` are free and open source.
+#. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable
+   by means of a YAML file.
    For more information on how to do so, please consult the :ref:`yaml_config` section of this documentation.
-#. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service* world by generating the plugin, or *System Handle*
-   needed by the core to integrate them.
+#. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service*
+   world by generating the plugin, or *System Handle* needed by the core to integrate them.
    For more information on **System-Handles**, please consult the :ref:`sh` section of this documentation.
 #. **Easy to use:** Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
    :ref:`Installation <installation>` section to be guided through the installation process.
@@ -134,10 +136,12 @@ Typical use-cases
 *Integration Service* comes in handy for a varied set of application scenarios, such as:
 
 * **Communication among systems** using different protocols which handle incompatible types, topics, and services.
-  A specific example that depicts this functionality would be the :ref:`ROS 1 to ROS 2 intercommunication example <ros1-ros2_bridge>`.
-* **Integration of systems under the same protocol** which are isolated per specific protocol features. The :ref:`DDS change of Domain ID <dds_change_of_domain>`
-  example falls into this category.
-* **Communication through the Internet** between systems hosted by logically separated LANs located in different geographical regions.
+  A specific example that depicts this functionality would be the
+  :ref:`ROS 1 to ROS 2 intercommunication example <ros1-ros2_bridge>`.
+* **Integration of systems under the same protocol** which are isolated per specific protocol features.
+  The :ref:`DDS change of Domain ID <dds_change_of_domain>` example falls into this category.
+* **Communication through the Internet** between systems hosted by logically separated LANs
+  located in different geographical regions.
   A specific example using *Fast DDS* WAN capabilities can be found :ref:`here <wan_tcp_tunneling>`.
 
 .. _structure_of_the_doc:

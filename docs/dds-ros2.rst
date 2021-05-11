@@ -23,7 +23,8 @@ communication a *ROS 2* :code:`talker-listener` example with a *Fast DDS* :code:
 Requirements
 ^^^^^^^^^^^^
 
-To prepare the deployment and setup the environment, you need to have *Integration Service* correctly installed in your system.
+To prepare the deployment and setup the environment, you need to have *Integration Service*
+correctly installed in your system.
 To do so, please follow the steps delineated in the :ref:`installation` section.
 
 Also, to get this example working, the following requirements must be met:

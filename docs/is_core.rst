@@ -37,18 +37,21 @@ According the diagram depicted above, the *Integration Service Core* executes th
    required *topics* and *services* types that will take part in the intercommunication process.
 
    The *IDL* parsing procedure is fulfilled thanks to the built-in parser provided with the `xTypes <https://github.com/eProsima/xTypes.git>`_ library.
-   More information about how this library works and why it is extremely useful for *Integration Service* can be found in the section :ref:`below <xtypes_library>`.
+   More information about how this library works and why it is extremely useful for *Integration Service*
+   can be found in the section :ref:`below <xtypes_library>`.
 
    :raw-html:`<br />`
 
 #. According to the specified **systems**, the corresponding *System Handles* dynamic libraries are loaded.
 
    Please take into account that each *system* type must match on of those supported by *Integration Service*.
-   A table with every built-in provided *System Handle* and their corresponding source code GitHub repositories can be found :ref:`here <shs>`.
+   A table with every built-in provided *System Handle* and their corresponding source code
+   GitHub repositories can be found :ref:`here <shs>`.
 
    If a user wants to incorporate a new protocol into the *Integration Service* ecosystem to use it
    in his or her *Integration Service* application instance, the specific *System Handle* must be
-   implemented first. Please refer to the :ref:`System Handle implementation <sh_implementation>` section of the documentation.
+   implemented first. Please refer to the :ref:`System Handle implementation <sh_implementation>`
+   section of the documentation.
 
    :raw-html:`<br />`
 

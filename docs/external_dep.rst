@@ -3,7 +3,8 @@
 Dependencies
 ============
 
-In this page, we provide a list of the dependencies required for an *Integration Service* instance to function. To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
+In this page, we provide a list of the dependencies required for an *Integration Service* instance to function.
+To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
 
 .. _core_deps:
 

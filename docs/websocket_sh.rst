@@ -24,17 +24,18 @@ Regarding the *WebSocket System Handle*, there are several specific parameters w
 for the WebSocket middleware. All of these parameters are suboptions of the main
 five sections:
 
-* :code:`systems`: The system :code:`type` must be :code:`websocket_server` or :code:`websocket_client`. In addition to the
-  :code:`type` and :code:`types-from` fields, the *WebSocket System Handle* accepts a wide variety of specific
+* :code:`systems`: The system :code:`type` must be :code:`websocket_server` or :code:`websocket_client`.
+  In addition to the :code:`type` and :code:`types-from` fields,
+  the *WebSocket System Handle* accepts a wide variety of specific
   configuration fields, depending on the selected operation mode (*Client* or *Server*).
 
   For the :code:`websocket_server` *System Handle*, there are two possible configuration scenarios:
   the former one uses a TLS endpoint, and the latter uses a TCP endpoint.
 
   **TLS**
-  
+
     .. code-block:: yaml
-    
+
       systems:
         websocket:
           type: websocket_server
@@ -50,7 +51,7 @@ five sections:
   **TCP**
 
     .. code-block:: yaml
-    
+
       systems:
         websocket:
           type: websocket_server
@@ -89,7 +90,7 @@ five sections:
     using TLS or TCP.
 
     **TLS**
-    
+
       .. code-block:: yaml
 
         systems:
@@ -102,9 +103,9 @@ five sections:
                 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey...
 
     **TCP**
-    
+
       .. code-block:: yaml
-      
+
           systems:
             websocket:
               type: websocket_client
@@ -135,9 +136,13 @@ five sections:
 JSON encoding protocol
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In order to communicate with the *WebSocket System Handle* using the JSON encoding, the messages should follow a specific pattern. This pattern will be different depending on the paradigm used for the connection (*pub/sub* or *client/server*) and the communication purpose.
+In order to communicate with the *WebSocket System Handle* using the JSON encoding,
+the messages should follow a specific pattern.
+This pattern will be different depending on the paradigm used for the connection
+(*pub/sub* or *client/server*) and the communication purpose.
 
-Several fields can be used in those messages, but not all of them are mandatory. All of them will be described in this section, as well as in which cases they are optional:
+Several fields can be used in those messages, but not all of them are mandatory.
+All of them will be described in this section, as well as in which cases they are optional:
 
 * :code:`op`: The *Operation Code* is mandatory in every communication as it specifies the purpose of the message.
   This field can assume nine different values,   which are the ones detailed below.
@@ -196,14 +201,14 @@ Several fields can be used in those messages, but not all of them are mandatory.
     .. code-block:: JSON
 
         {"op": "unadvertise_service", "service": "hello_serv", "type": "HelloReply"}
-  
+
   * :code:`service_response`: It identifies a message reply that wants to be published as response to a specific request.
     The fields that can be set for this operation are: :code:`service`, :code:`values` and optionally the :code:`id`.
 
     .. code-block:: JSON
 
         {"op": "service_response", "service": "hello_serv", "values": {"resp": "resp"}, "id": "1"}
-  
+
 * :code:`id`: Code that identifies the message.
 * :code:`topic`: Name that identifies a specific topic.
 * :code:`type`: Name of the type that wants to be used for publishing messages on a specific topic.
@@ -218,7 +223,8 @@ Several fields can be used in those messages, but not all of them are mandatory.
 Examples
 ^^^^^^^^
 
-There is one example that you can find in this documentation in which the *WebSocket System Handle* is employed in the communication:
+There is one example that you can find in this documentation in which the *WebSocket System Handle*
+is employed in the communication:
 
 * :ref:`ros2-websocket_comm`
 
@@ -231,11 +237,12 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 * :code:`BUILD_WEBSOCKET_TESTS`: Allows to specifically compile the *WebSocket System Handle* unitary and
   integration tests. It is useful to avoid compiling each *System Handle*'section test suite present
-  in the :code:`colcon` workspace, which is what would happen if using the :code:`BUILD_TESTS` flag, with the objective of minimizing building time. To use it, after making sure that the *WebSocket System Handle*
-  is present in your :code:`colcon` workspace, execute the following command:
-  
+  in the :code:`colcon` workspace, which is what would happen if using the :code:`BUILD_TESTS` flag,
+  with the objective of minimizing building time. To use it, after making sure that the
+  *WebSocket System Handle* is present in your :code:`colcon` workspace, execute the following command:
+
   .. code-block:: bash
-      
+
       ~/is_ws$ colcon build --cmake-args -DBUILD_WEBSOCKET_TESTS=ON
 
 
@@ -243,4 +250,3 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 .. API Reference
 .. ^^^^^^^^^^^^^
-

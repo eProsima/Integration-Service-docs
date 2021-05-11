@@ -45,13 +45,15 @@ Deployment
 
 Below we explain how to deploy an example of this use case. To do so, open three terminals:
 
-* In the first terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`pub` application, under domain ID **5**:
+* In the first terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`pub` application,
+  under domain ID **5**:
 
   .. code-block:: bash
 
     ROS_DOMAIN_ID=5 ros2 topic pub -r 1 /string_topic std_msgs/String "{data: \"Hello, ROS 2 domain 10\"}"
 
-* In the second terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`echo` application, under domain ID **10**:
+* In the second terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`echo` application,
+  under domain ID **10**:
 
   .. code-block:: bash
 

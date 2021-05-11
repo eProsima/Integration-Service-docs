@@ -5,7 +5,8 @@ ROS 2 to WebSocket communication
 
 Another relevant use-case for *Integration Service* is that of connecting a *WebSocket* and a *ROS 2* application
 
-The examples detailed below addresses the situation of a *ROS 2* :code:`talker-listener` example communicating with a *WebSocket* :code:`client`.
+The examples detailed below addresses the situation of a *ROS 2* :code:`talker-listener` example
+communicating with a *WebSocket* :code:`client`.
 
 .. image:: images/ros2-websocket.png
 
@@ -77,15 +78,15 @@ To enable communication from *ROS2* to a *WebSocket client*, open two terminals:
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_websocket__helloworld.yaml
 
-Up to this point, the *Integration Service* should have created a *WebSocket server* application within the *WebSocket System Handle*,
-to listen and handle petitions coming from a *WebSocket client*.
+Up to this point, the *Integration Service* should have created a *WebSocket server* application
+within the *WebSocket System Handle*, to listen and handle petitions coming from a *WebSocket client*.
 
 We will now explain how to simply test the intercommunication between *ROS 2* and a demo *WebSocket client* application,
 which can be found in `websocket.org/echo <https://www.websocket.org/echo.html>`_ webpage:
 
 * First, under the **Location** section, connect to the *WebSocket server* automatically deployed by the *Integration Service*.
-  To do so, and since the example is being run without SSL security, copy and paste the following URL into the *Location* field text box,
-  and press **Connect**:
+  To do so, and since the example is being run without SSL security,
+  copy and paste the following URL into the *Location* field text box, and press **Connect**:
 
   .. code-block:: html
 
@@ -135,15 +136,15 @@ To enable communication from a *WebSocket client* to *ROS 2*, open two terminals
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_websocket__helloworld.yaml
 
-Up to this point, the *Integration Service* should have created a *WebSocket server* application within the *WebSocket System Handle*,
-to listen and handle petitions coming from a *WebSocket client*.
+Up to this point, the *Integration Service* should have created a *WebSocket server* application
+within the *WebSocket System Handle*, to listen and handle petitions coming from a *WebSocket client*.
 
 We will now explain how to simply test the intercommunication between *ROS 2* and a demo *WebSocket client* application,
 which can be found in `websocket.org/echo <https://www.websocket.org/echo.html>`_ webpage:
 
 * First, under the **Location** section, connect to the *WebSocket server* automatically deployed by the *Integration Service*.
-  To do so, and since the example is being run without SSL security, copy and paste the following URL into the *Location* field text box,
-  and press **Connect**:
+  To do so, and since the example is being run without SSL security,
+  copy and paste the following URL into the *Location* field text box, and press **Connect**:
 
   .. code-block:: html
 

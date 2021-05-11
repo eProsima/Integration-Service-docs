@@ -85,8 +85,8 @@ To enable communication from *ROS 1* to *ROS 2*, open four terminals:
       ros2 topic echo /hello_ros2 std_msgs/String
 
 * In the fourth terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, the
-  *ROS 1*, and local installations, and execute *Integration Service* with the :code:`integration-service` command followed by the
-  `ros1_ros2__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros1_ros2__helloworld.yaml>`_
+  *ROS 1*, and local installations, and execute *Integration Service* with the
+  :code:`integration-service` command followed by the `ros1_ros2__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros1_ros2__helloworld.yaml>`_
   configuration file located in the :code:`src/Integration-Service/examples/basic` folder:
 
   .. code-block:: bash
@@ -127,8 +127,8 @@ To enable communication from *ROS 2* to *ROS 1*, open four terminals:
       rostopic echo /hello_ros1
 
 * In the fourth terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, the
-  *ROS 1*, and local installations, and execute *Integration Service* with the :code:`integration-service` command followed by the
-  `ros1_ros2__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros1_ros2__helloworld.yaml>`_
+  *ROS 1*, and local installations, and execute *Integration Service* with the :code:`integration-service`
+  command followed by the `ros1_ros2__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros1_ros2__helloworld.yaml>`_
   configuration file located in the :code:`src/Integration-Service/examples/basic` folder:
 
   .. code-block:: bash

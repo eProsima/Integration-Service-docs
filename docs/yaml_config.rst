@@ -21,8 +21,8 @@ please have a look at the list below:
 
 The *Integration Service* can be configured during runtime by means of a dedicated **YAML** file.
 This configuration file must follow a specific syntax, meaning that it is required that a number
-of compulsory section are opportunely filled for it to successfully configure and launch an *Integration Service* instance,
-while others are optional. Both kinds are listed and reviewed below:
+of compulsory section are opportunely filled for it to successfully configure and launch
+an *Integration Service* instance, while others are optional. Both kinds are listed and reviewed below:
 
 * :code:`types`: *(optional)*: It allows to list the `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL/>`_
   types used by the *Integration Service* to later define the topics and services types which will
@@ -49,7 +49,8 @@ while others are optional. Both kinds are listed and reviewed below:
 
     * :code:`idls`: List of IDL type definitions that can be directly embedded within the configuration file.
       If the :code:`types` section is defined, this subsection is mandatory. The type can be entirely defined within the YAML file,
-      or can be included from a preexisting IDL file; for the latter, the system path containing where the IDL file is stored must be placed into the :code:`paths` section described below.
+      or can be included from a preexisting IDL file; for the latter,
+      the system path containing where the IDL file is stored must be placed into the :code:`paths` section described below.
 
     * :code:`paths` *(optional):* Using this parameter, an existing IDL type written in a separate file can be included within the *Integration Service* types section.
       If the IDL path is not listed here, the previous subsection :code:`#include` preprocessor directive will fail.
@@ -78,7 +79,8 @@ while others are optional. Both kinds are listed and reviewed below:
       There is also a *mock* option, mostly used for testing purposes.
 
     * :code:`types-from` *(optional)*: Configures the types inheritance from a given system to another.
-      This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware, without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
+      This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware,
+      without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
 
   For more details on this section, please refer to the :ref:`systems_definition` subsection of this page.
 
