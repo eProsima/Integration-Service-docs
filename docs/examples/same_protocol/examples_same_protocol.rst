@@ -5,7 +5,7 @@ Same Protocol
 
 This page gathers all the existing examples for *Integration Service* that connect applications
 written under the **same protocol**. They are not focused on showing how effective
-*Integration Service* is capable of translate one protocol's types into anothers (see
+*Integration Service* is capable of translate one protocol's types into another's (see
 :ref:`examples_different_protocols` for that purpose); instead, this section tries depicting how easy
 is for *Integration Service* to bridge logically isolated applications written under the same protocol.
 
