@@ -14,9 +14,8 @@ explaining how to fill the required fields,
 depending on the needs of the specific use-case and middlewares involved in the communication.
 
 .. toctree::
-   :caption: Installation Manual
    :maxdepth: 2
 
    is_core
-   sh
+   systemhandle/sh
    yaml_config

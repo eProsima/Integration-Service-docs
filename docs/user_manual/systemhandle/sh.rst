@@ -21,7 +21,6 @@ This section provides an insight over the existing built-in *System Handles* pro
 for connecting the core with the following middlewares or communication protocols:
 
 .. toctree::
-   :caption: Built-in System Handles
    :maxdepth: 1
    :hidden:
 

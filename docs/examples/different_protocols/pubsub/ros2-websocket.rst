@@ -1,7 +1,7 @@
-.. _ros2-websocket_comm:
+.. _ros2_websocket_bridge_pubsub:
 
-ROS 2 to WebSocket communication
-================================
+ROS 2 - WebSocket bridge
+========================
 
 Another relevant use-case for *Integration Service* is that of connecting a *WebSocket* and a *ROS 2* application
 

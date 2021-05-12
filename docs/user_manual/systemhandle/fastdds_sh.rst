@@ -65,9 +65,9 @@ Examples
 There are three examples that you can find in this documentation in which the
 *Fast DDS System Handle* is employed in the communication:
 
-* :ref:`dds-ros2_bridge`
+* :ref:`dds_ros2_bridge_pubsub`
 * :ref:`dds_change_of_domain`
-* :ref:`wan_tcp_tunneling`
+* :ref:`wan_tcp_tunneling_dds`
 
 Compilation flags
 ^^^^^^^^^^^^^^^^^

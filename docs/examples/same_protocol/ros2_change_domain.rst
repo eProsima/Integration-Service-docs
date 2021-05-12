@@ -1,6 +1,6 @@
 .. _ros2_change_of_domain:
 
-ROS 2 change of domain
+ROS 2 Domain ID change
 ======================
 
 A very typical scenario within the *ROS 2* ecosystem is that of two applications running

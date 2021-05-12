@@ -64,7 +64,7 @@ Examples
 There is one example that you can find in this documentation in which the *ROS 1 System Handle*
 is employed in the communication:
 
-* :ref:`ros1-ros2_bridge`
+* :ref:`ros1_ros2_bridge_pubsub`
 
 
 Compilation flags
