@@ -60,7 +60,7 @@ a dedicated *System Handle*.
 
 The workflow is thus dependent on the middlewares involved in the desired communication.
 The up-to-date list of the available *System Handles* and the repositories hosting them is provided
-in the :ref:`shs` section.
+in the :ref:`built_in_sh` section.
 
 Depending on the use-case, you might need to have either one, two, or more *System Handles* installed.
 In the :ref:`examples` section, you can find a collection of relevant examples clarifying how to use
@@ -77,7 +77,7 @@ into the previously created :code:`is-workspace`:
     git clone https://github.com/eProsima/<middleware_N_SH>.git src/middleware_2-SH
 
 Where :code:`<middleware_i-SH>`, with *i = 1, .., N* refers to the *i*-th *System Handle* needed
-for carrying out the integration, chosen among the ones listed in the :ref:`shs` section.
+for carrying out the integration, chosen among the ones listed in the :ref:`built_in_sh` section.
 Each such *System Handle* will be cloned in a dedicated :code:`src/middleware_i-SH` folder
 inside your :code:`is-workspace`.
 

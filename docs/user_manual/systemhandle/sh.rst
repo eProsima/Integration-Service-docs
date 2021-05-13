@@ -30,13 +30,23 @@ for connecting the core with the following middlewares or communication protocol
    ros2_sh
    websocket_sh
 
+.. list-table::
+    :name: available_shs
+    :header-rows: 1
+    :align: left
 
-* **FastDDS**: :ref:`dds_sh`
-* **FIWARE Orion Context Broker**: :ref:`fiware_sh`
-* **ROS 1**: :ref:`ros1_sh`
-* **ROS 2**: :ref:`ros2_sh`
-* **WebSocket**: :ref:`websocket_sh`
-
+    * - Protocol
+      - *System Handle* overview
+    * - **Fast DDS**
+      - :ref:`dds_sh`
+    * - **FIWARE**
+      - :ref:`fiware_sh`
+    * - **ROS 1**
+      - :ref:`ros1_sh`
+    * - **ROS 2**
+      - :ref:`ros2_sh`
+    * - **WebSocket**
+      - :ref:`websocket_sh`
 
 Additional *System Handles* can be implemented by users, in order to have the desired middlewares
 joining the *Integration Service* world. Adding a new *System Handle* automatically allows communication with the
