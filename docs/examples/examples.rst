@@ -12,13 +12,8 @@ installation protocol and environment preparation necessary to have the examples
 It is organized as follows:
 
 .. toctree::
-   :caption: Examples
    :maxdepth: 2
 
-   dds-ros2
-   dds_change_domain
-   ros1-ros2
-   ros2_change_domain
-   ros2-websocket
-   fiware-ros2
-   wan
+   different_protocols/examples_different_protocols
+   same_protocol/examples_same_protocol
+   wan_communication/wan_communication

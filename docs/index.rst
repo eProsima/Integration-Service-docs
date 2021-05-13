@@ -76,7 +76,7 @@ Available *System Handles* up-to-date are listed below:
       - https://github.com/eProsima/ROS1-SH
     * - **ROS 2 System Handle**
       - https://github.com/eProsima/ROS2-SH
-    * - **WEBSOCKET System Handle**
+    * - **WebSocket System Handle**
       - https://github.com/eProsima/WebSocket-SH
 
 
@@ -137,12 +137,12 @@ Typical use-cases
 
 * **Communication among systems** using different protocols which handle incompatible types, topics, and services.
   A specific example that depicts this functionality would be the
-  :ref:`ROS 1 to ROS 2 intercommunication example <ros1-ros2_bridge>`.
+  :ref:`ROS 1 to ROS 2 intercommunication example <ros1_ros2_bridge_pubsub>`.
 * **Integration of systems under the same protocol** which are isolated per specific protocol features.
   The :ref:`DDS change of Domain ID <dds_change_of_domain>` example falls into this category.
-* **Communication through the Internet** between systems hosted by logically separated LANs
+* **Communication through the Internet** between systems hosted by logically separated WANs
   located in different geographical regions.
-  A specific example using *Fast DDS* WAN capabilities can be found :ref:`here <wan_tcp_tunneling>`.
+  A specific example using *Fast DDS* WAN capabilities can be found :ref:`here <wan_tcp_tunneling_dds>`.
 
 .. _structure_of_the_doc:
 
@@ -161,8 +161,8 @@ This documentation is organized into the sections listed below:
    :numbered:
    :hidden:
 
-   external_dep
-   installation
+   installation_manual/external_dep
+   installation_manual/installation
 
 .. toctree::
     :caption: User Manual
@@ -170,9 +170,9 @@ This documentation is organized into the sections listed below:
     :numbered:
     :hidden:
 
-    is_core
-    sh
-    yaml_config
+    user_manual/is_core
+    user_manual/systemhandle/sh
+    user_manual/yaml_config
 
 .. toctree::
     :caption: Examples
@@ -180,13 +180,9 @@ This documentation is organized into the sections listed below:
     :numbered:
     :hidden:
 
-    dds-ros2
-    dds_change_domain
-    ros1-ros2
-    ros2_change_domain
-    ros2-websocket
-    fiware-ros2
-    wan
+    examples/different_protocols/examples_different_protocols
+    examples/same_protocol/examples_same_protocol
+    examples/wan_communication/wan_communication
 
 Contact and commercial support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

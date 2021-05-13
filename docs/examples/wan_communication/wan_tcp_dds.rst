@@ -1,7 +1,7 @@
-.. _wan_tcp_tunneling:
+.. _wan_tcp_tunneling_dds:
 
-WAN-TCP tunneling
-=================
+WAN-TCP tunneling over DDS
+==========================
 
 One of the most critical and powerful use-cases of *Integration Service*
 is that of two systems located in different geographical regions

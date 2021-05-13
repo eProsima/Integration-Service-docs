@@ -226,7 +226,7 @@ Examples
 There is one example that you can find in this documentation in which the *WebSocket System Handle*
 is employed in the communication:
 
-* :ref:`ros2-websocket_comm`
+* :ref:`ros2_websocket_bridge_pubsub`
 
 Compilation flags
 ^^^^^^^^^^^^^^^^^

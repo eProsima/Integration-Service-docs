@@ -1,7 +1,7 @@
-.. _dds-ros2_bridge:
+.. _dds_ros2_bridge_pubsub:
 
-DDS-ROS 2 bridge
-================
+DDS - ROS 2 bridge
+==================
 
 In this example we address a very common situation faced in the robotics world:
 that of bridging *DDS* and *ROS 2*. Specifically, we discuss how to do so with the
@@ -40,11 +40,11 @@ Also, to get this example working, the following requirements must be met:
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH src/ros2-sh
 
-* Having **Fast DDS** (v.2.0.0 or superior) installed, with the `DDSHelloWorld example
-  <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>`_ working.
-  An improved version of this example can be found in the main *Integration Service* repository, under the
-  `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/DDSHelloWorld>`_.
-  To build it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag
+* Having **Fast DDS** (*v.2.0.0* or superior) installed and the *Integration Service*
+  :code:`DDSHelloWorld` example working.
+  This example can be found in the main *Integration Service* repository, under the
+  `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/DDSHelloWorld>`_ folder;
+  to compile it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag
   :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
 
   .. code-block:: bash

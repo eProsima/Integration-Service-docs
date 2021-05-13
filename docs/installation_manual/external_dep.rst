@@ -38,7 +38,7 @@ Find them listed in the table below:
       - `ROS 2 installation <https://docs.ros.org/en/foxy/Releases.html#list-of-distributions>`_ (`Foxy <https://docs.ros.org/en/foxy/Installation.html>`_ or superior)
     * - **ROS 1 SH**
       - `ROS 1 installation <http://wiki.ros.org/ROS/Installation>`_ (`Melodic <http://wiki.ros.org/melodic/Installation>`_ or `Noetic <http://wiki.ros.org/noetic/Installation>`_)
-    * - **WEBSOCKET SH**
+    * - **WebSocket SH**
       - `OpenSSL <https://www.openssl.org/>`_, `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
     * - **FIWARE SH**
       - `Asio C++ Library <https://think-async.com/Asio/>`_, `cURLpp library <http://www.curlpp.org/>`_, `cURL library <https://curl.se/>`_

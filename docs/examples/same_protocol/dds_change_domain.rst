@@ -1,7 +1,7 @@
 .. _dds_change_of_domain:
 
-Fast DDS change of domain
-=========================
+DDS Domain ID change
+====================
 
 A very typical scenario within the DDS ecosystem is that of two applications running under different DDS domain IDs,
 so that they are isolated from each other; however, it might be required to bridge some of the topics
@@ -23,10 +23,10 @@ To do so, please follow the steps delineated in the :ref:`installation` section.
 
 Also, to get this example working, the following requirements must be met:
 
-* Having **Fast DDS** (*v.2.0.0* or superior) installed, with the
-  `DDSHelloWorld example <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>`_ working.
-  An improved version of this example can be found in the main *Integration Service* repository, under the
-  `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/DDSHelloWorld>`_;
+* Having **Fast DDS** (*v.2.0.0* or superior) installed and the *Integration Service*
+  :code:`DDSHelloWorld` example working.
+  This example can be found in the main *Integration Service* repository, under the
+  `examples/utils/DDSHelloWorld <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/DDSHelloWorld>`_ folder;
   to compile it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag
   :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
 

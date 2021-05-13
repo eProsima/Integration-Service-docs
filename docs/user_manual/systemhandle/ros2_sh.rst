@@ -45,11 +45,13 @@ five sections:
 Examples
 ^^^^^^^^
 
-There are three examples that you can find in this documentation in which the
+There are five examples that you can find in this documentation in which the
 *ROS 2 System Handle* is employed in the communication:
 
-* :ref:`ros1-ros2_bridge`
-* :ref:`dds-ros2_bridge`
+* :ref:`ros1_ros2_bridge_pubsub`
+* :ref:`dds_ros2_bridge_pubsub`
+* :ref:`ros2_websocket_bridge_pubsub`
+* :ref:`fiware_ros2_bridge_pubsub`
 * :ref:`ros2_change_of_domain`
 
 Compilation flags

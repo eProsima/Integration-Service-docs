@@ -49,7 +49,7 @@ Examples
 There is one example that you can find in this documentation in which the *FIWARE System Handle*
 is employed in the communication:
 
-* :ref:`fiware-ros2_comm`
+* :ref:`fiware_ros2_bridge_pubsub`
 
 Compilation flags
 ^^^^^^^^^^^^^^^^^
