@@ -21,6 +21,11 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import os
+import pathlib
+import shutil
+import subprocess
+
+import git
 
 import requests
 
@@ -38,7 +43,14 @@ def download_css(html_css_dir):
     url = (
         'https://raw.githubusercontent.com/eProsima/all-docs/'
         'master/source/_static/css/fiware_readthedocs.css')
-    req = requests.get(url, allow_redirects=True)
+    try:
+        req = requests.get(url, allow_redirects=True, timeout=10)
+    except requests.RequestException as e:
+        print(
+            'Failed to download the CSS with the eProsima rtd theme.'
+            'Request Error: {}'.format(e)
+        )
+        return False
     if req.status_code != 200:
         print(
             'Failed to download the CSS with the eProsima rtd theme.'
@@ -64,16 +76,149 @@ def select_css(html_css_dir):
     :return: Returns a list of CSS files to be imported.
     """
     common_css = '_static/css/eprosima_rtd_theme.css'
-    local_css = '_static/css/fiware_readthedocs.css'
-    if download_css(html_css_dir):
-        print('Appliying CSS style file: {}'.format(common_css))
-        return [common_css]
-    else:
-        print('Appliying CSS style file: {}'.format(local_css))
+    local_css = '_static/css/is_theme.css'
+    if os.path.isfile(local_css):
+        print('Appliying local CSS style file: {}'.format(local_css))
         return [local_css]
+    elif download_css(html_css_dir):
+        print('Appliying common CSS style file: {}'.format(common_css))
+        return [common_css]      
+
+def get_git_branch():
+    """Get the git branch this repository is currently on."""
+    path_to_here = os.path.abspath(os.path.dirname(__file__))
+
+    # Invoke git to get the current branch which we use to get the theme
+    try:
+        p = subprocess.Popen(
+            ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+            stdout=subprocess.PIPE,
+            cwd=path_to_here
+        )
+
+        return p.communicate()[0].decode().rstrip()
+
+    except Exception:
+        print('Could not get the branch')
+
+    # Couldn't figure out the branch probably due to an error
+    return None
 
 
-script_path = os.path.dirname(os.path.abspath(__file__))
+def configure_doxyfile(
+    doxyfile_in,
+    doxyfile_out,
+    input_dir,
+    output_dir,
+    project_binary_dir,
+    project_source_dir
+):
+    """
+    Configure Doxyfile in the CMake style.
+
+    :param doxyfile_in: Path to input Doxygen configuration file
+    :param doxyfile_out: Path to output Doxygen configuration file
+    :param input_dir: CMakeLists.txt value of DOXYGEN_INPUT_DIR
+    :param output_dir: CMakeLists.txt value of DOXYGEN_OUTPUT_DIR
+    :param project_binary_dir: CMakeLists.txt value of PROJECT_BINARY_DIR
+    :param project_source_dir: CMakeLists.txt value of PROJECT_SOURCE_DIR
+    """
+    print('Configuring Doxyfile')
+    with open(doxyfile_in, 'r') as file:
+        filedata = file.read()
+
+    filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
+    filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
+    filedata = filedata.replace('@PROJECT_BINARY_DIR@', project_binary_dir)
+    filedata = filedata.replace('@PROJECT_SOURCE_DIR@', project_source_dir)
+
+    os.makedirs(os.path.dirname(doxyfile_out), exist_ok=True)
+    with open(doxyfile_out, 'w') as file:
+        file.write(filedata)
+
+
+script_path = os.path.abspath(pathlib.Path(__file__).parent.absolute())
+# Project directories
+project_source_dir = os.path.abspath('{}/../api_reference'.format(script_path))
+project_binary_dir = os.path.abspath('{}/../../../build/integration-service-docs'.format(script_path))
+output_dir = os.path.abspath('{}/doxygen'.format(project_binary_dir))
+doxygen_html = os.path.abspath('{}/html/doxygen'.format(project_binary_dir))
+
+# Doxyfile
+doxyfile_in = os.path.abspath(
+    '{}/doxygen-config.in'.format(project_source_dir)
+)
+doxyfile_out = os.path.abspath('{}/doxygen-config'.format(project_binary_dir))
+
+# Header files
+input_dir = os.path.abspath(
+    '{}/core/include/is'.format(
+        project_binary_dir
+    )
+)
+
+# Check if we're running on Read the Docs' servers
+read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
+if read_the_docs_build:
+    print('Read the Docs environment detected!')
+
+    is_core_repo_name = os.path.abspath(
+        '{}/is-core'.format(
+            project_binary_dir
+        )
+    )
+
+    # Remove repository if exists
+    if os.path.isdir(is_core_repo_name):
+        print('Removing existing repository in {}'.format(is_core_repo_name))
+        shutil.rmtree(is_core_repo_name)
+
+    # Create necessary directory path
+    os.makedirs(os.path.dirname(is_core_repo_name), exist_ok=True)
+    # Create a COLCON_IGNORE file just in case
+    open(
+        os.path.abspath('{}/COLCON_IGNORE'.format(project_binary_dir)), 'w'
+    ).close()
+
+    # Clone repository
+    print('Cloning Integration Service')
+    integration_service = git.Repo.clone_from(
+        'https://github.com/eProsima/Integration-Service.git',
+        is_core_repo_name,
+        recursive=True
+    )
+
+    # Documentation repository branch
+    docs_branch = get_git_branch()
+    print('Current documentation branch is "{}"'.format(docs_branch))
+
+    is_branch = 'origin/main'
+
+    # Actual checkout
+    print('Checking out Integration Service branch "{}"'.format(is_branch))
+    integration_service.refs[is_branch].checkout()
+
+    os.makedirs(os.path.dirname(output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(doxygen_html), exist_ok=True)
+
+    # Configure Doxyfile
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        input_dir,
+        output_dir,
+        project_binary_dir,
+        project_source_dir
+    )
+    # Generate doxygen documentation
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+breathe_projects = {
+    'IntegrationService': os.path.abspath('{}/xml'.format(output_dir))
+}
+print(breathe_projects)
+breathe_default_project = 'IntegrationService'
+
 
 # -- General configuration ------------------------------------------------
 
@@ -84,7 +229,9 @@ script_path = os.path.dirname(os.path.abspath(__file__))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = [
+    'breathe',
+]
 try:
     import sphinxcontrib.spelling  # noqa: F401
     extensions.append('sphinxcontrib.spelling')
@@ -178,6 +325,11 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 # keep_warnings = False
 
+suppress_warnings = [
+    'cpp.duplicate_declaration',
+    'cpp.parse_function_declaration'
+]
+
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
@@ -213,7 +365,7 @@ html_theme = 'sphinx_rtd_theme'
 # html_logo = None
 
 # The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# the docs. This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #
 # html_favicon = None
