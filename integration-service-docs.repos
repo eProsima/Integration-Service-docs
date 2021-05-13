@@ -1,0 +1,13 @@
+repositories:
+    xtypes:
+        type: git
+        url: https://github.com/eProsima/xtypes.git
+        version: main
+    xtypes/thirdparty/cpp-peglib:
+        type: git
+        url: https://github.com/yhirose/cpp-peglib.git
+        version: v1.3.5
+    integration-service:
+        type: git
+        url: https://github.com/eProsima/Integration-Service.git
+        version: main

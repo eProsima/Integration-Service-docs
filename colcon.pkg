@@ -1,0 +1,5 @@
+{
+    "name": "integration-service-docs",
+    "type": "cmake",
+    "build-dependencies": ["is-core"]
+}

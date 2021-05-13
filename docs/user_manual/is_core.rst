@@ -118,3 +118,16 @@ information between each *System Handle* instance that is desired to establish a
 To do so, *System Handles* must provide a way to convert their specific data types instances into/from *xTypes*.
 An example on how this procedure would look like for a *System Handle*, that is, the *FastDDS System Handle*,
 can be found `here <https://github.com/eProsima/FastDDS-SH/blob/main/src/Conversion.cpp>`_.
+
+API Reference
+^^^^^^^^^^^^^
+
+.. toctree::
+   :titlesonly:
+
+   /api_reference/core/config
+   /api_reference/core/instance
+   /api_reference/core/runtime/fieldtostring
+   /api_reference/core/runtime/middlewareinterfaceextension
+   /api_reference/core/runtime/search
+   /api_reference/core/runtime/stringtemplate
