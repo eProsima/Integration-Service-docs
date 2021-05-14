@@ -105,7 +105,7 @@ src:url("Fonts/742885/39974d8a-38de-4853-a4d1-778234a08061.eot?#iefix") format("
 .rst-content p.rubric {
   margin-bottom: 12px;
   font-weight: bold;
-  font-size: large !important;
+  font-size: medium !important;
   margin-left: -15px;
   border-bottom: solid 3px #ccc;
   display: table;
@@ -123,4 +123,11 @@ src:url("Fonts/742885/39974d8a-38de-4853-a4d1-778234a08061.eot?#iefix") format("
   padding: 6px;
   position: relative;
   border-top: white;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+  display: block;
+  background: #bdbdbd;
+      background-color: rgb(189, 189, 189);
+  padding: .4045em 4.6em;
 }
