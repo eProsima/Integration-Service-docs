@@ -123,11 +123,7 @@ API Reference
 ^^^^^^^^^^^^^
 
 .. toctree::
-   :titlesonly:
 
-   /api_reference/core/config
-   /api_reference/core/instance
-   /api_reference/core/runtime/fieldtostring
-   /api_reference/core/runtime/middlewareinterfaceextension
-   /api_reference/core/runtime/search
-   /api_reference/core/runtime/stringtemplate
+   /api_reference/core/core/api_core
+   /api_reference/core/systemhandle/api_systemhandle
+   /api_reference/core/utils/api_utils

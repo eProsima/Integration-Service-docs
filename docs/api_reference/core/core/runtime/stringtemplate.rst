@@ -8,17 +8,14 @@ StringTemplate
 .. doxygenclass:: eprosima::is::core::StringTemplate
     :project: IntegrationService
     :members:
-
-InvalidTemplateFormat
----------------------
+    :no-link:
 
 .. doxygenclass:: eprosima::is::core::InvalidTemplateFormat
     :project: IntegrationService
     :members:
-
-UnavailableMessageField
------------------------
+    :no-link:
 
 .. doxygenclass:: eprosima::is::core::UnavailableMessageField
     :project: IntegrationService
     :members:
+    :no-link:

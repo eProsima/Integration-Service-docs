@@ -8,3 +8,4 @@ Search
 .. doxygenclass:: eprosima::is::core::Search
     :project: IntegrationService
     :members:
+    :no-link:

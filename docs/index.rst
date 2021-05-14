@@ -19,7 +19,6 @@
 
 .. toctree::
     :caption: User Manual
-    :maxdepth: 2
     :numbered:
     :hidden:
 
