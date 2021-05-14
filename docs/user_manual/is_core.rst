@@ -46,7 +46,7 @@ According the diagram depicted above, the *Integration Service Core* executes th
 
    Please take into account that each *system* type must match on of those supported by *Integration Service*.
    A table with every built-in provided *System Handle* and their corresponding source code
-   GitHub repositories can be found :ref:`here <shs>`.
+   GitHub repositories can be found :ref:`here <built_in_sh>`.
 
    If a user wants to incorporate a new protocol into the *Integration Service* ecosystem to use it
    in his or her *Integration Service* application instance, the specific *System Handle* must be

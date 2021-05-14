@@ -327,7 +327,7 @@ The snippet above will create three *System Handles*:
 * A *FIWARE System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
 The *System Handles* currently available for *Integration Service* are listed in a table that you can find in the
-:ref:`shs` section of this documentation.
+:ref:`built_in_sh` section of this documentation.
 
 A new *System Handle* can be created by implementing the desired :code:`SystemHandle` subclasses to
 add support to any other protocol or system.
