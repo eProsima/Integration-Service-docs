@@ -46,7 +46,7 @@ Also, to get this example working, the following requirements must be met:
       git clone https://github.com/eProsima/FastDDS-SH.git src/FastDDS-SH
 
 * Having **ROS 1** (*Melodic* or superior) installed and the *Integration Service*
-  :code:`example_interfaces` ROS 1 package compiled.
+  :code:`example_interfaces` *ROS 1* package compiled.
   This package can be found in the main *Integration Service* repository, under the
   `examples/utils/ros1/src/example_interfaces <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/ros1/src/example_interfaces>`_ folder.
   To compile and install it:
@@ -71,7 +71,7 @@ Also, to get this example working, the following requirements must be met:
 
   .. code-block:: bash
 
-      apt install ros-foxy-example-interfaces
+      apt install ros-$ROS2_DISTRO-example-interfaces
 
 * Having the **ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace`

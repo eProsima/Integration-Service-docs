@@ -1,19 +1,19 @@
-.. _ros2_server_bridge:
+.. _ros1_server_bridge:
 
-ROS 2 Service Server
+ROS 1 Service Server
 ====================
 
-This example tackles the task of bridging a *ROS 2* server with one or more client applications,
+This example tackles the task of bridging a *ROS 1* server with one or more client applications,
 implemented using a wide variety of protocols.
 
-Specifically, we discuss how to forward petitions coming from *Fast DDS*, *ROS 1* and a *WebSocket*
-service client applications to a *ROS 2* :code:`add_two_ints_server` server application,
-from the built-in *ROS 2* package :code:`demo_nodes_cpp`;
+Specifically, we discuss how to forward petitions coming from *Fast DDS*, *ROS 2* and a *WebSocket*
+service client applications to a *ROS 1* :code:`add_two_ints_server` server application,
+from a provided *Integration Service* custom *ROS 1* package called :code:`add_two_ints_server`;
 so that it can process them and fulfill each request with a proper answer message.
 
-.. image:: images/ros2-server.png
+.. image:: images/ros1-server.png
 
-.. _ros2-server_requirements:
+.. _ros1-server_requirements:
 
 Requirements
 ^^^^^^^^^^^^
@@ -47,10 +47,11 @@ Also, to get this example working, the following requirements must be met:
       git clone https://github.com/eProsima/FastDDS-SH.git src/FastDDS-SH
 
 * Having **ROS 1** (*Melodic* or superior) installed and the *Integration Service*
-  :code:`example_interfaces` *ROS 1* package compiled.
-  This package can be found in the main *Integration Service* repository, under the
-  `examples/utils/ros1/src/example_interfaces <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/ros1/src/example_interfaces>`_ folder.
-  To compile and install it:
+  :code:`example_interfaces` and :code:`add_two_ints_server` *ROS 1* packages compiled.
+  These package can be found in the main *Integration Service* repository, under the
+  `examples/utils/ros1 <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/ros1>`_ folder.
+  The former one needs to be compiled and installed before the whole the rest of the *ROS 1*-related
+  *Integration Service* packages; to do so:
 
   .. code-block:: bash
 
@@ -67,12 +68,12 @@ Also, to get this example working, the following requirements must be met:
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS1-SH.git src/ROS1-SH
 
-* Having **ROS 2** (*Foxy* or superior) installed, along with the :code:`demo_nodes_cpp` package.
+* Having **ROS 2** (*Foxy* or superior) installed, along with the :code:`example_interfaces` package.
   To install it:
 
   .. code-block:: bash
 
-      apt install ros-$ROS2_DISTRO-demo-nodes-cpp
+      apt install ros-$ROS2_DISTRO-example-interfaces
 
 * Having the **ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace`
@@ -105,23 +106,11 @@ After you have everything correctly installed in your :code:`is-workspace`, buil
 Deployment
 ^^^^^^^^^^
 
-Below we explain how to deploy a full example of this communication, calling the *ROS 2* service from
+Below we explain how to deploy a full example of this communication, calling the *ROS 1* service from
 each of the available clients.
 
-Launch the ROS 2 *demo_nodes_cpp* add_two_ints_server
------------------------------------------------------
-
-To do so, open a terminal and execute the following command:
-
-.. code-block:: bash
-
-    source /opt/ros/$ROS2_DISTRO/setup.bash
-    ros2 run demo_nodes_cpp add_two_ints_server
-
-The server will start running as an independent *ROS 2* node, listening for incoming petitions.
-
-Execute Integration Service
----------------------------
+Launch the ROS 1 *add_two_ints_server* node
+-------------------------------------------
 
 Open two terminals:
 
@@ -132,17 +121,31 @@ Open two terminals:
       source /opt/ros/$ROS1_DISTRO/setup.bash
       roscore
 
-* In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 1*, *ROS 2* and local installations, and execute
-  *Integration Service* with the :code:`integration-service` command followed by the
-  `ros2_server__addtwoints.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros2_server__addtwoints.yaml>`_
-  configuration file located in the :code:`src/Integration-Service/examples/basic` folder.
+* In the second terminal, go to the :code:`is-workspace` directory.
+  Then, source the *ROS 1* and local installations, and execute the :code:`add_two_ints_server` *ROS 1* node:
+
+.. code-block:: bash
+
+    source /opt/ros/$ROS1_DISTRO/setup.bash
+    rosrun add_two_ints_server add_two_ints_server_node
+
+The server will start running as an independent *ROS 1* node, listening for incoming petitions.
+
+Execute Integration Service
+---------------------------
+
+To launch *Integration Service* open a terminal and go to the :code:`is-workspace` folder.
+Then, source the *ROS 1*, *ROS 2* and local installations, and execute
+*Integration Service* with the :code:`integration-service` command followed by the
+`ros1_server__addtwoints.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros1_server__addtwoints.yaml>`_
+configuration file located in the :code:`src/Integration-Service/examples/basic` folder.
 
   .. code-block:: bash
 
       source /opt/ros/$ROS1_DISTRO/setup.bash
       source /opt/ros/$ROS2_DISTRO/setup.bash
       source install/setup.bash
-      integration-service src/Integration-Service/examples/basic/ros2_server__addtwoints.yaml
+      integration-service src/Integration-Service/examples/basic/ros1_server__addtwoints.yaml
 
 Call the service from Fast DDS
 ------------------------------
@@ -157,7 +160,7 @@ The *DDSAddTwoInts* example application will request to add two numbers an speci
 specified with the :code:`-c` flag; if not present, ten requests will be performed by default.
 
 For instance, if :code:`-c 4`, should see something like this in your screen,
-indicating that the *ROS 2* server is processing the requests:
+indicating that the *ROS 1* server is processing the requests:
 
 .. code-block:: bash
 
@@ -176,22 +179,26 @@ indicating that the *ROS 2* server is processing the requests:
             - Request 4 + 6
             - Received response: 10
 
-Call the service from ROS 1
+Call the service from ROS 2
 ---------------------------
 
-In a new terminal, source your *ROS 1* installation and invoke the service by executing the following
+In a new terminal, source your *ROS 2* installation and invoke the service by executing the following
 instructions:
 
 .. code-block:: bash
 
-    source /opt/ros/$ROS1_DISTRO/setup.bash
-    rosservice call /add_two_ints 3 4
+    source /opt/ros/$ROS2_DISTRO/setup.bash
+    ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 5, b: 17}"
 
-You should receive the following output from the *ROS 2* server processing the petition:
+You should receive the following output from the *ROS 1* server processing the petition:
 
 .. code-block:: bash
 
-    sum: 7
+    waiting for service to become available...
+    requester: making request: example_interfaces.srv.AddTwoInts_Request(a=5, b=17)
+
+    response:
+    example_interfaces.srv.AddTwoInts_Response(sum=22)
 
 Call the service from WebSocket
 -------------------------------
@@ -221,7 +228,7 @@ The *WebSocket client* demo application used for this example can be found in th
 
     {"op": "call_service", "service": "add_two_ints", "args": {"a": 14, "b": 25}}
 
-After this, in the *Log*, you should receive the following response from the *ROS 2* server:
+After this, in the *Log*, you should receive the following response from the *ROS 1* server:
 
 .. code-block:: yaml
 
