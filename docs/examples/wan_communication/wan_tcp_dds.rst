@@ -55,8 +55,7 @@ Also, to get this example working, the following requirements must be met in bot
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
-* Having **Fast DDS** (v.2.0.0 or superior) installed, with the
-  `:code:`DDSHelloWorld` example` <https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html>_ working.
+* Having **Fast DDS** (v.2.0.0 or superior) installed.
 
 * Having the **Fast DDS System Handle** installed. You can download it from the
   `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
