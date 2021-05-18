@@ -42,6 +42,8 @@ if(BUILD_API_REFERENCE)
 
     find_package(is-core REQUIRED)
     find_package(is-fastdds REQUIRED)
+    find_package(is-ros1 REQUIRED)
+    find_package(is-ros2 REQUIRED)
     find_package(is-websocket REQUIRED)
 endif()
 

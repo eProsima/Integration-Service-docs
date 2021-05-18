@@ -142,6 +142,9 @@ script_path = os.path.abspath(pathlib.Path(__file__).parent.absolute())
 project_source_dir = os.path.abspath('{}/../api_reference'.format(script_path))
 project_binary_dir = os.path.abspath('{}/../../../build/is-core'.format(script_path))
 fastdds_sh_output_dir = os.path.abspath('{}/../../../build/is-fastdds/doxygen'.format(script_path))
+ros1_sh_output_dir = os.path.abspath('{}/../../../build/is-ros1/doxygen'.format(script_path))
+ros2_sh_output_dir = os.path.abspath('{}/../../../build/is-ros2/doxygen'.format(script_path))
+websocket_sh_output_dir = os.path.abspath('{}/../../../build/is-websocket/doxygen'.format(script_path))
 output_dir = os.path.abspath('{}/doxygen'.format(project_binary_dir))
 doxygen_html = os.path.abspath('{}/html/doxygen'.format(project_binary_dir))
 
@@ -216,7 +219,10 @@ if read_the_docs_build:
 
 breathe_projects = {
     'IntegrationService': os.path.abspath('{}/xml'.format(output_dir)),
-    'FastDDS-SH' : os.path.abspath('{}/xml'.format(fastdds_sh_output_dir))
+    'FastDDS-SH' : os.path.abspath('{}/xml'.format(fastdds_sh_output_dir)),
+    'ROS1-SH': os.path.abspath('{}/xml'.format(ros1_sh_output_dir)),
+    'ROS2-SH': os.path.abspath('{}/xml'.format(ros2_sh_output_dir)),
+    'WebSocket-SH': os.path.abspath('{}/xml'.format(websocket_sh_output_dir))
 }
 print(breathe_projects)
 breathe_default_project = 'IntegrationService'
