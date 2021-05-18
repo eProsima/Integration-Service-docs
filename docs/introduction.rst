@@ -146,6 +146,7 @@ This documentation is organized into the sections listed below:
 
 *  :ref:`Installation Manual <installation_manual>`
 *  :ref:`User Manual <user_manual>`
+*  :ref:`API Reference <api_reference>`
 *  :ref:`Examples <examples>`
 
 Contact and commercial support

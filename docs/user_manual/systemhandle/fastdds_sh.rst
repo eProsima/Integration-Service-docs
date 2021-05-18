@@ -88,5 +88,8 @@ whole *Integration Service* product suite, there are some specific flags which a
 
 .. TODO: complete when it is uploaded to read the docs
 
-.. API Reference
-.. ^^^^^^^^^^^^^
+API Reference
+^^^^^^^^^^^^^
+
+The *Integration Service API Reference* constitutes an independent section within this documentation. 
+To access the *FastDDS System Handle* subsection use this :ref:`link <api_is_fastdds_sh>`.

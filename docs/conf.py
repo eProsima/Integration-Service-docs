@@ -140,7 +140,8 @@ def configure_doxyfile(
 script_path = os.path.abspath(pathlib.Path(__file__).parent.absolute())
 # Project directories
 project_source_dir = os.path.abspath('{}/../api_reference'.format(script_path))
-project_binary_dir = os.path.abspath('{}/../../../build/integration-service-docs'.format(script_path))
+project_binary_dir = os.path.abspath('{}/../../../build/is-core'.format(script_path))
+fastdds_sh_output_dir = os.path.abspath('{}/../../../build/is-fastdds/doxygen'.format(script_path))
 output_dir = os.path.abspath('{}/doxygen'.format(project_binary_dir))
 doxygen_html = os.path.abspath('{}/html/doxygen'.format(project_binary_dir))
 
@@ -214,7 +215,8 @@ if read_the_docs_build:
     subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
 
 breathe_projects = {
-    'IntegrationService': os.path.abspath('{}/xml'.format(output_dir))
+    'IntegrationService': os.path.abspath('{}/xml'.format(output_dir)),
+    'FastDDS-SH' : os.path.abspath('{}/xml'.format(fastdds_sh_output_dir))
 }
 print(breathe_projects)
 breathe_default_project = 'IntegrationService'
