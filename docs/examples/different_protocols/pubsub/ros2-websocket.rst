@@ -32,7 +32,7 @@ Also, to get this example working, the following requirements must be met:
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
-* Having `OpenSSL <https://www.openssl.org/>`_ and `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_ installed.
+* Having `OpenSSL <https://www.openssl.org/>`_ and `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_ installed:
 
   .. code-block:: bash
 
