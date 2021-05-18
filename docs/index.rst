@@ -27,6 +27,14 @@
     user_manual/yaml_config
 
 .. toctree::
+   :caption: API Reference
+   :numbered:
+   :hidden:
+
+   api_reference/core/api_is_core
+   api_reference/fastdds_sh/api_is_fastdds_sh
+
+.. toctree::
     :caption: Examples
     :maxdepth: 2
     :numbered:

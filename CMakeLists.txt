@@ -34,54 +34,16 @@ project(integration-service-docs VERSION "${LIB_VERSION_STR}" LANGUAGES C CXX)
 # Build Doxygen documentation
 ####################################################################################################
 
-# Integration Service and all the SHs are required for:
-#    * Generating the doxygen XML files that are then used for the API reference
+if(BUILD_API_REFERENCE)
+    find_package(Doxygen REQUIRED)
 
-find_package(is-core REQUIRED)
-get_target_property(IS_CORE_INCLUDE_DIR is::is-core INTERFACE_INCLUDE_DIRECTORIES)
+    # Integration Service and all the SHs are required for:
+    #    * Generating the doxygen XML files that are then used for the API reference
 
-message(STATUS "Integration Service include directories: ${IS_CORE_INCLUDE_DIR}")
-file(GLOB_RECURSE HPP_FILES "${IS_CORE_INCLUDE_DIR}/**/*.h*")
-
-find_package(Doxygen REQUIRED)
-# Create doxygen directories
-add_custom_target(doc-dirs
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/doxygen
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/html
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/html/doxygen
-    COMMENT "Creating documentation directories" VERBATIM)
-
-# Doxygen related variables
-set(DOXYGEN_INPUT_DIR "${IS_CORE_INCLUDE_DIR}/")
-set(DOXYGEN_OUTPUT_DIR "${PROJECT_BINARY_DIR}/doxygen")
-set(DOXYGEN_INDEX_FILE "${PROJECT_BINARY_DIR}/doxygen/xml/index.xml")
-set(DOXYFILE_IN "${CMAKE_CURRENT_SOURCE_DIR}/docs/api_reference/doxygen-config.in")
-set(DOXYFILE_OUT ${PROJECT_BINARY_DIR}/doxygen-config)
-
-# Configure doxygen
-configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
-
-# Doxygen command
-add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
-    COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
-    DEPENDS ${HPP_FILES}
-    MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
-    COMMENT "Generating doxygen documentation")
-
-# Generate API reference
-add_custom_target(doxygen ALL
-    DEPENDS ${DOXYGEN_INDEX_FILE}
-    COMMENT "Generated API documentation with doxygen" VERBATIM)
-add_dependencies(doxygen doc-dirs)
-
-# Install doxygen generated XML files
-install(DIRECTORY ${PROJECT_BINARY_DIR}/doxygen/xml
-    DESTINATION doxygen
-    COMPONENT doxygen)
-set(CPACK_COMPONENT_EXAMPLES_DISPLAY_NAME "Integration-Service-docs doxygen")
-set(CPACK_COMPONENT_EXAMPLES_DESCRIPTION
-    "eProsima Integration Service doxygen documentation")
-set(CPACK_COMPONENTS_ALL ${CPACK_COMPONENTS_ALL} doxygen)
+    find_package(is-core REQUIRED)
+    find_package(is-fastdds REQUIRED)
+    find_package(is-websocket REQUIRED)
+endif()
 
 ####################################################################################################
 # Build Sphinx documentation
@@ -102,12 +64,10 @@ add_custom_target(Sphinx ALL
     COMMAND
     ${SPHINX_EXECUTABLE} -b ${INTEGRATION_SERVICE_DOCS_BUILDER}
     # Tell Breathe where to find the Doxygen output
-    -D breathe_projects.Integration-Service=${DOXYGEN_OUTPUT_DIR}/xml
     -d "${PROJECT_BINARY_DIR}/doctrees"
     ${SPHINX_SOURCE}
     ${PROJECT_BINARY_DIR}/${INTEGRATION_SERVICE_DOCS_BUILDER}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    DEPENDS doxygen
     COMMENT "Generating documentation with Sphinx")
 
 # Install the generated docs
