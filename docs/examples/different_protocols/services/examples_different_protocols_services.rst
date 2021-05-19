@@ -12,4 +12,5 @@ This page gathers all the *Integration Service* existing examples based on the
    dds-server
    ros1-server
    ros2-server
+   websocket-server
 

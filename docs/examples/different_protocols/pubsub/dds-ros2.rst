@@ -49,7 +49,7 @@ Also, to get this example working, the following requirements must be met:
 
   .. code-block:: bash
 
-    cd ~/is-workspace/src/IS/examples/utils/dds/DDSHelloWorld
+    cd ~/is-workspace/src/Integration-Service/examples/utils/dds/DDSHelloWorld
     mkdir build && cd build
     cmake .. && make
 

@@ -1,19 +1,18 @@
-.. _ros2_server_bridge:
+.. _websocket_server_bridge:
 
-ROS 2 Service Server
-====================
+WebSocket Service Server
+========================
 
-This example tackles the task of bridging a *ROS 2* server with one or more client applications,
+This example tackles the task of bridging a *WebSocket* server with one or more client applications,
 implemented using a wide variety of protocols.
 
-Specifically, we discuss how to forward petitions coming from *Fast DDS*, *ROS 1* and a *WebSocket*
-service client applications to a *ROS 2* :code:`add_two_ints_server` server application,
-from the built-in *ROS 2* package :code:`demo_nodes_cpp`;
+Specifically, we discuss how to forward petitions coming from *Fast DDS*, *ROS 1* and *ROS 2*
+service client applications to a *WebSocket* :code:`WebSocketAddTwoInts` server application,
 so that it can process them and fulfill each request with a proper answer message.
 
-.. image:: images/ros2-server.png
+.. image:: images/websocket-server.png
 
-.. _ros2-server_requirements:
+.. _websocket-server_requirements:
 
 Requirements
 ^^^^^^^^^^^^
@@ -67,12 +66,12 @@ Also, to get this example working, the following requirements must be met:
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS1-SH.git src/ROS1-SH
 
-* Having **ROS 2** (*Foxy* or superior) installed, along with the :code:`demo_nodes_cpp` package.
+* Having **ROS 2** (*Foxy* or superior) installed, along with the :code:`example_interfaces` types package.
   To install it:
 
   .. code-block:: bash
 
-      apt install ros-$ROS2_DISTRO-demo-nodes-cpp
+      apt install ros-$ROS2_DISTRO-example-interfaces
 
 * Having the **ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace`
@@ -89,7 +88,20 @@ Also, to get this example working, the following requirements must be met:
 
       apt install libssl-dev libwebsocketpp-dev
 
-* Having the **WebSocket System Handle** installed. You can download it from the `WebSocket-SH dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
+  Also, the *Integration Service* :code:`WebSocketAddTwoInts` example will be needed for the tutorial.
+  This example application can be found in the main *Integration Service* repository, under the
+  `examples/utils/websocket/WebSocketAddTwoInts <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/websocket/WebSocketAddTwoInts>`_ folder.
+  To compile it, you can either compile the whole *Integration Service* project using :code:`colcon` with the CMake flag
+  :code:`BUILD_EXAMPLES` enabled; or execute the following steps:
+
+  .. code-block:: bash
+
+    cd ~/is-workspace/src/Integration-Service/examples/utils/websocket/WebSocketAddTwoInts
+    mkdir build && cd build
+    cmake .. && make
+
+* Having the **WebSocket System Handle** installed.
+  You can download it from the `WebSocket-SH dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
   .. code-block:: bash
 
@@ -105,20 +117,21 @@ After you have everything correctly installed in your :code:`is-workspace`, buil
 Deployment
 ^^^^^^^^^^
 
-Below we explain how to deploy a full example of this communication, calling the *ROS 2* service from
+Below we explain how to deploy a full example of this communication, calling the *WebSocket* service from
 each of the available clients.
 
-Launch the ROS 2 *demo_nodes_cpp* add_two_ints_server
------------------------------------------------------
+Launch the WebSocket AddTwoInts server
+--------------------------------------
 
-To do so, open a terminal and execute the following command:
+To do so, open a terminal, go to the :code:`is-workspace` folder and execute the following command:
 
 .. code-block:: bash
 
-    source /opt/ros/$ROS2_DISTRO/setup.bash
-    ros2 run demo_nodes_cpp add_two_ints_server
+    cd ~/is-workspace
+    ./build/WebSocketAddTwoInts/WebSocketAddTwoInts -m server
 
-The server will start running as an independent *ROS 2* node, listening for incoming petitions.
+The *WebSocket* server will start running, listening for incoming client connection petitions;
+after that, it will we able to dispatch service request petitions with a proper answer message.
 
 Execute Integration Service
 ---------------------------
@@ -134,7 +147,7 @@ Open two terminals:
 
 * In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 1*, *ROS 2* and local installations, and execute
   *Integration Service* with the :code:`integration-service` command followed by the
-  `ros2_server__addtwoints.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros2_server__addtwoints.yaml>`_
+  `websocket_server__addtwoints.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/websocket_server__addtwoints.yaml>`_
   configuration file located in the :code:`src/Integration-Service/examples/basic` folder.
 
   .. code-block:: bash
@@ -142,7 +155,7 @@ Open two terminals:
       source /opt/ros/$ROS1_DISTRO/setup.bash
       source /opt/ros/$ROS2_DISTRO/setup.bash
       source install/setup.bash
-      integration-service src/Integration-Service/examples/basic/ros2_server__addtwoints.yaml
+      integration-service src/Integration-Service/examples/basic/websocket_server__addtwoints.yaml
 
 Call the service from Fast DDS
 ------------------------------
@@ -157,7 +170,7 @@ The *DDSAddTwoInts* example application will request to add two numbers an speci
 specified with the :code:`-c` flag; if not present, ten requests will be performed by default.
 
 For instance, if :code:`-c 4`, should see something like this in your screen,
-indicating that the *ROS 2* server is processing the requests:
+indicating that the *WebSocket* server is processing the requests:
 
 .. code-block:: bash
 
@@ -187,42 +200,29 @@ instructions:
     source /opt/ros/$ROS1_DISTRO/setup.bash
     rosservice call /add_two_ints 3 4
 
-You should receive the following output from the *ROS 2* server processing the petition:
+You should receive the following output from the *WebSocket* server processing the petition:
 
 .. code-block:: bash
 
     sum: 7
 
-Call the service from WebSocket
--------------------------------
+Call the service from ROS 2
+---------------------------
 
-The *WebSocket client* demo application used for this example can be found in the
-`websocket.org/echo <https://www.websocket.org/echo.html>`_ webpage:
+In a new terminal, source your *ROS 2* installation and invoke the service by executing the following
+instruction:
 
-* First, under the **Location** section, connect to the *WebSocket server* automatically deployed by the *Integration Service*.
-  To do so, and since the example is being run without SSL security,
-  copy and paste the following URL into the *Location* field text box, and press **Connect**:
+.. code-block:: bash
 
-  .. code-block:: html
+    source /opt/ros/$ROS2_DISTRO/setup.bash
+    ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 5, b: 17}"
 
-    ws://localhost:80
+You should receive the following output from the *WebSocket* server processing the petition:
 
-* Now it is time to advertise the service we want to use; to do so,
-  under the *Message* text box, enter the following and press *Send*:
+.. code-block:: bash
 
-  .. code-block:: yaml
+    waiting for service to become available...
+    requester: making request: example_interfaces.srv.AddTwoInts_Request(a=5, b=17)
 
-    {"op": "advertise_service", "service": "add_two_ints", "request_type": "AddTwoInts_Request", "reply_type": "AddTwoInts_Response"}
-
-* Finally, after the service has been advertised, call it by sending the following message from the
-  *WebSocket* echo:
-
-  .. code-block:: yaml
-
-    {"op": "call_service", "service": "add_two_ints", "args": {"a": 14, "b": 25}}
-
-After this, in the *Log*, you should receive the following response from the *ROS 2* server:
-
-.. code-block:: yaml
-
-  RECEIVED: {"op":"service_response","result":true,"service":"add_two_ints","values":{"sum":39}}
+    response:
+    example_interfaces.srv.AddTwoInts_Response(sum=22)

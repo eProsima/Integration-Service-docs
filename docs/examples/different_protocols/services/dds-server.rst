@@ -32,7 +32,7 @@ Also, to get this example working, the following requirements must be met:
 
   .. code-block:: bash
 
-    cd ~/is-workspace/src/IS/examples/utils/DDSAddTwoInts
+    cd ~/is-workspace/src/Integration-Service/examples/utils/dds/DDSAddTwoInts
     mkdir build && cd build
     cmake .. && make
 

@@ -1,4 +1,4 @@
-.. _wan communication:
+.. _wan_communication:
 
 WAN Communication
 =================
