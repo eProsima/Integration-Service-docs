@@ -121,5 +121,5 @@ can be found `here <https://github.com/eProsima/FastDDS-SH/blob/main/src/Convers
 
 API Reference
 ^^^^^^^^^^^^^
-The *Integration Service API Reference* constitutes an independent section within this documentation. 
+The *Integration Service API Reference* constitutes an independent section within this documentation.
 To access the *Integration Service Core* subsection use this :ref:`link <api_is_core>`.
