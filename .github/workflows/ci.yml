@@ -16,15 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: src/integration-service-docs
+          path: .
 
       - name: Download required dependencies
         run: |
             apt update
             DEBIAN_FRONTEND=noninteractive apt install -y python3-pip python3-enchant git make
-            pip3 install -I -r src/integration-service-docs/docs/requirements.txt
+            pip3 install -I -r docs/requirements.txt
 
       - name: Build and test the documentation
         run: |
-            cd src/integration-service-docs/
             make test
