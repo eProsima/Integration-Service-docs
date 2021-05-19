@@ -1,0 +1,28 @@
+name: CI for eProsima Integration Service Docs
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  integration-service-docs_CI:
+    runs-on: ubuntu-20.04
+    container: readthedocs/build
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: src/integration-service-docs
+
+      - name: Download required dependencies
+        run: |
+	          pip3 install -I -r src/integration-service-docs/docs/requirements.txt
+
+      - name: Build and test the documentation
+        run: |
+            cd src/integration-service-docs/
+            make test
