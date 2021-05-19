@@ -5,7 +5,8 @@
 API Reference
 =============
 
-This section describes the *Integration Service Application Programming Interface*, which comprises :code:`classes`, :code:`methods`, :code:`data members`, etc.
+This section describes the *Integration Service Application Programming Interface*, which comprises
+:code:`classes`, :code:`methods`, :code:`data members`, etc.
 
 It follows the repositories structure, which means that will have a different subsection for the
 *Integration Service Core* and each of the currently supported *System Handles*.

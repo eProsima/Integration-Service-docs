@@ -11,14 +11,14 @@ Instance
 
 .. doxygentypedef:: eprosima::is::core::MiddlewarePrefixPathMap
     :project: IntegrationService
-    
+
 InstanceHandle
 --------------
 
 .. doxygenclass:: eprosima::is::core::InstanceHandle
     :project: IntegrationService
     :members:
-    
+
 .. doxygenfunction:: eprosima::is::run_instance(int argc, char *argv[])
     :project: IntegrationService
 
