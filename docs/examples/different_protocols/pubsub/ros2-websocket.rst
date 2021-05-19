@@ -32,7 +32,11 @@ Also, to get this example working, the following requirements must be met:
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
-* Having `OpenSSL <https://www.openssl.org/>`_ and `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_ installed.
+* Having `OpenSSL <https://www.openssl.org/>`_ and `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_ installed:
+
+  .. code-block:: bash
+
+      apt install libssl-dev libwebsocketpp-dev
 
 * Having the **WebSocket System Handle** installed. You can download it from the `WebSocket-SH dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
@@ -100,13 +104,13 @@ which can be found in `websocket.org/echo <https://www.websocket.org/echo.html>`
   operation request for the :code:`hello_websocket` topic.
   To do so, under the *Message* text box, enter the following and press *Send*:
 
-  .. code-block:: html
+  .. code-block:: yaml
 
     {"op": "subscribe", "topic": "hello_websocket", "type": "std_msgs/String"}
 
 After this, in the *Log* you should receive the following message from *ROS 2*:
 
-.. code-block:: html
+.. code-block:: yaml
 
   RECEIVED: {"msg":{"data":"Hello WebSocket"},"op":"publish","topic":"hello_websocket"}
 
