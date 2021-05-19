@@ -89,8 +89,9 @@ whole *Integration Service* product suite, there are some specific flags which a
   for which the required transformation library to convert the specific *ROS 1* type definitions into *xTypes*,
   and the other way around, will be built. This list is shared with the `ROS 2 System Handle <https://github.com/eProsima/ROS2-SH#compilation-flags>`,
   meaning that the ROS packages specified in the `MIX_ROS_PACKAGES` variable will also be built for *ROS 2*
-  if this *System Handle* is present within the *Integration Service* workspace.
-  If a certain package is only present in *ROS 1*, the `MIX_ROS1_PACKAGES` flag must be used instead.
+  if the corresponding *System Handle* is present within the *Integration Service* workspace.
+  To avoid possible errors, if a certain package is only present in *ROS 1*,
+  the `MIX_ROS1_PACKAGES` flag must be used instead.
 
   These transformation libraries are also known within the *Integration Service*
   context as :code:`Middleware Interface Extension` or :code:`mix` libraries.
@@ -99,7 +100,7 @@ whole *Integration Service* product suite, there are some specific flags which a
   or :code:`BUILD_ROS1_TESTS` is used, case in which some additional ROS 1 packages :code:`mix` files
   required for testing will be built.
 
-  If a user wants to compile some additional packages to use them with *Integration Service*,
+  If the user wants to compile some additional packages to use them with *Integration Service*,
   the following command must be launched to compile it, adding as much packages to the list as desired:
 
   .. code-block:: bash
@@ -107,7 +108,7 @@ whole *Integration Service* product suite, there are some specific flags which a
       ~/is_ws$ colcon build --cmake-args -DMIX_ROS_PACKAGES="std_msgs geometry_msgs sensor_msgs nav_msgs"
 
 * :code:`MIX_ROS1_PACKAGES`: It is used just as the `MIX_ROS_PACKAGES` flag, but will only affect *ROS 1*;
-  this means that the `mix` generation engine will not look for *ROS 2* packages present in this list,
+  this means that the `mix` generation engine will not search within the *ROS 2* packages,
   allowing to compile specific *ROS 1* packages independently.
 
   For example, if a user wants to compile a certain package `dummy_msgs` independently from *ROS 1*,
