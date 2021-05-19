@@ -26,5 +26,4 @@ jobs:
 
       - name: Build and test the documentation
         run: |
-            git init
             make test
