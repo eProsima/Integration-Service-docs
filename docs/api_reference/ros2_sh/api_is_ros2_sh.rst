@@ -3,7 +3,7 @@
 ROS 2 System Handle
 -------------------
 
-This section presents the API provided by *Integration Service* :code:`is-ros2` library.
+This section presents the API provided by the *Integration Service* :code:`is-ros2` library.
 
 .. toctree::
    :maxdepth: 1

@@ -3,7 +3,7 @@
 Integration Service Core
 ------------------------
 
-This section presents the API provided by *Integration Service* :code:`is-core` library.
+This section presents the API provided by the *Integration Service* :code:`is-core` library.
 
 .. toctree::
    :maxdepth: 1

@@ -3,7 +3,7 @@
 WebSocket System Handle
 -----------------------
 
-This section presents the API provided by *Integration Service* :code:`is-websocket` library.
+This section presents the API provided by the *Integration Service* :code:`is-websocket` library.
 
 .. toctree::
    :maxdepth: 1

@@ -113,4 +113,4 @@ API Reference
 ^^^^^^^^^^^^^
 
 The *Integration Service API Reference* constitutes an independent section within this documentation.
-To access the *ROS 2 System Handle* subsection use this :ref:`link <api_is_ros2_sh>`.
+To access the *ROS 2 System Handle* subsection, use this :ref:`link <api_is_ros2_sh>`.
