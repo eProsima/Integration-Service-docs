@@ -1,5 +1,5 @@
-sphinx==3.0.3
-breathe==4.19.0
+sphinx==4.0.0
+breathe==4.30.0
 doc8==0.8.0
 sphinx_rtd_theme==0.4.3
 sphinxcontrib.spelling==7.1.0
