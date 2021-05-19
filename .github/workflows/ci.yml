@@ -11,7 +11,7 @@ on:
 jobs:
   integration-service-docs_CI:
     runs-on: ubuntu-20.04
-    container: readthedocs/build
+    container: ubuntu:focal
 
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,8 @@ jobs:
 
       - name: Download required dependencies
         run: |
+            apt update
+            DEBIAN_FRONTEND=noninteractiveapt install -y python3-pip python3-enchants git make
             pip3 install -I -r src/integration-service-docs/docs/requirements.txt
 
       - name: Build and test the documentation
