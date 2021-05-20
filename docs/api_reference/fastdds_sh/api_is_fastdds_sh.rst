@@ -3,7 +3,7 @@
 FastDDS System Handle
 ---------------------
 
-This section presents the API provided by *Integration Service* :code:`is-fastdds` library.
+This section presents the API provided by the *Integration Service* :code:`is-fastdds` library.
 
 .. toctree::
    :maxdepth: 1

@@ -68,7 +68,6 @@ def download_css(html_css_dir):
             return False
     return True
 
-
 def select_css(html_css_dir):
     """
     Select CSS file with the website's template.
@@ -82,28 +81,7 @@ def select_css(html_css_dir):
         return [local_css]
     elif download_css(html_css_dir):
         print('Appliying common CSS style file: {}'.format(common_css))
-        return [common_css]      
-
-def get_git_branch():
-    """Get the git branch this repository is currently on."""
-    path_to_here = os.path.abspath(os.path.dirname(__file__))
-
-    # Invoke git to get the current branch which we use to get the theme
-    try:
-        p = subprocess.Popen(
-            ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
-            stdout=subprocess.PIPE,
-            cwd=path_to_here
-        )
-
-        return p.communicate()[0].decode().rstrip()
-
-    except Exception:
-        print('Could not get the branch')
-
-    # Couldn't figure out the branch probably due to an error
-    return None
-
+        return [common_css]
 
 def configure_doxyfile(
     doxyfile_in,
@@ -184,17 +162,13 @@ if read_the_docs_build:
         os.path.abspath('{}/COLCON_IGNORE'.format(project_binary_dir)), 'w'
     ).close()
 
-    # Clone repository
+    # Clone repositories
     print('Cloning Integration Service')
     integration_service = git.Repo.clone_from(
         'https://github.com/eProsima/Integration-Service.git',
         is_core_repo_name,
         recursive=True
     )
-
-    # Documentation repository branch
-    docs_branch = get_git_branch()
-    print('Current documentation branch is "{}"'.format(docs_branch))
 
     is_branch = 'origin/main'
 

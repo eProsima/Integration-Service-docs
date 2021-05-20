@@ -131,13 +131,15 @@ Typical use-cases
 *Integration Service* comes in handy for a varied set of application scenarios, such as:
 
 * **Communication among systems** using different protocols which handle incompatible types, topics, and services.
-  A specific example that depicts this functionality would be the
-  :ref:`ROS 1 to ROS 2 intercommunication example <ros1_ros2_bridge_pubsub>`.
+  A complete list of the available examples described for this use-case scenario
+  can be found :ref:`here <examples_different_protocols>`.
 * **Integration of systems under the same protocol** which are isolated per specific protocol features.
-  The :ref:`DDS change of Domain ID <dds_change_of_domain>` example falls into this category.
+  A complete list of the available examples described for this use-case scenario
+  can be found :ref:`here <examples_same_protocol>`.
 * **Communication through the Internet** between systems hosted by logically separated WANs
   located in different geographical regions.
-  A specific example using *Fast DDS* WAN capabilities can be found :ref:`here <wan_tcp_tunneling_dds>`.
+  A complete list of the available examples described for this use-case scenario
+  can be found :ref:`here <wan_communication>`.
 
 Structure of the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -40,11 +40,12 @@ if(BUILD_API_REFERENCE)
     # Integration Service and all the SHs are required for:
     #    * Generating the doxygen XML files that are then used for the API reference
 
-    find_package(is-core REQUIRED)
-    find_package(is-fastdds REQUIRED)
-    find_package(is-ros1 REQUIRED)
-    find_package(is-ros2 REQUIRED)
-    find_package(is-websocket REQUIRED)
+    find_path(CORE_API_REFERENCE index.xml PATHS ${CMAKE_INSTALL_PREFIX}/../is-core/doxygen/xml REQUIRED)
+    find_path(FASTDDS_API_REFERENCE index.xml PATHS ${CMAKE_INSTALL_PREFIX}/../is-fastdds/doxygen/xml REQUIRED)
+    find_path(ROS1_API_REFERENCE index.xml PATHS ${CMAKE_INSTALL_PREFIX}/../is-ros1/doxygen/xml REQUIRED)
+    find_path(ROS2_API_REFERENCE index.xml PATHS ${CMAKE_INSTALL_PREFIX}/../is-ros2/doxygen/xml REQUIRED)
+    find_path(WEBSOCKET_API_REFERENCE index.xml PATHS ${CMAKE_INSTALL_PREFIX}/../is-websocket/doxygen/xml REQUIRED)
+
 endif()
 
 ####################################################################################################
@@ -79,5 +80,5 @@ install(DIRECTORY ${PROJECT_BINARY_DIR}/${INTEGRATION_SERVICE_DOCS_BUILDER}
     PATTERN ".buildinfo" EXCLUDE)
 set(CPACK_COMPONENT_EXAMPLES_DISPLAY_NAME "Integration-Service-docs ${INTEGRATION_SERVICE_DOCS_BUILDER}")
 set(CPACK_COMPONENT_EXAMPLES_DESCRIPTION
-    "eProsima Integration Service documetation in ${INTEGRATION_SERVICE_DOCS_BUILDER} format")
+    "eProsima Integration Service documentation in ${INTEGRATION_SERVICE_DOCS_BUILDER} format")
 set(CPACK_COMPONENTS_ALL ${CPACK_COMPONENTS_ALL} ${INTEGRATION_SERVICE_DOCS_BUILDER})

@@ -138,11 +138,11 @@ There are several CMake flags, which can be tuned during the configuration step:
 
     .. code-block:: bash
 
-        ~/is_ws$ cd examples/utils/DDSHelloWorld
-        ~/is_ws/examples/utils/DDSHelloWorld$ mkdir build
-        ~/is_ws/examples/utils/DDSHelloWorld$ cd build
-        ~/is_ws/examples/utils/DDSHelloWorld/build$ cmake ..
-        ~/is_ws/examples/utils/DDSHelloWorld$ make
+        ~/is_ws$ cd examples/utils/dds/DDSHelloWorld
+        ~/is_ws/examples/utils/dds/DDSHelloWorld$ mkdir build
+        ~/is_ws/examples/utils/dds/DDSHelloWorld$ cd build
+        ~/is_ws/examples/utils/dds/DDSHelloWorld/build$ cmake ..
+        ~/is_ws/examples/utils/dds/DDSHelloWorld$ make
 
   The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSHelloWorld`.
 

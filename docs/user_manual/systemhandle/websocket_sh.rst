@@ -252,4 +252,4 @@ API Reference
 ^^^^^^^^^^^^^
 
 The *Integration Service API Reference* constitutes an independent section within this documentation.
-To access the *WebSocket System Handle* subsection use this :ref:`link <api_is_websocket_sh>`.
+To access the *WebSocket System Handle* subsection, use this :ref:`link <api_is_websocket_sh>`.

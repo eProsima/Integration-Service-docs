@@ -10,3 +10,4 @@ which handle incompatible types.
    :maxdepth: 2
 
    pubsub/examples_different_protocols_pubsub
+   services/examples_different_protocols_services
