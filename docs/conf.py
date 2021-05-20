@@ -89,7 +89,9 @@ def configure_doxyfile(
     input_dir,
     output_dir,
     project_binary_dir,
-    project_source_dir
+    doxygen_generate_tagfile,
+    doxygen_tagfiles,
+    doxygen_html
 ):
     """
     Configure Doxyfile in the CMake style.
@@ -99,7 +101,8 @@ def configure_doxyfile(
     :param input_dir: CMakeLists.txt value of DOXYGEN_INPUT_DIR
     :param output_dir: CMakeLists.txt value of DOXYGEN_OUTPUT_DIR
     :param project_binary_dir: CMakeLists.txt value of PROJECT_BINARY_DIR
-    :param project_source_dir: CMakeLists.txt value of PROJECT_SOURCE_DIR
+    :param doxygen_generate_tagfile: CMakeLists.txt value of DOXYGEN_GENERATE_TAGFILE
+    :param doxygen_tagfile: CMakeLists.txt value of DOXYGEN_TAGFILES
     """
     print('Configuring Doxyfile')
     with open(doxyfile_in, 'r') as file:
@@ -108,59 +111,87 @@ def configure_doxyfile(
     filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
     filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
     filedata = filedata.replace('@PROJECT_BINARY_DIR@', project_binary_dir)
-    filedata = filedata.replace('@PROJECT_SOURCE_DIR@', project_source_dir)
+    filedata = filedata.replace('@DOXYGEN_GENERATE_TAGFILE@', doxygen_generate_tagfile)
+    filedata = filedata.replace('@DOXYGEN_TAGFILES@', doxygen_tagfiles)
+    filedata = filedata.replace('@DOXYGEN_HTML_DIR@', doxygen_html)
 
     os.makedirs(os.path.dirname(doxyfile_out), exist_ok=True)
     with open(doxyfile_out, 'w') as file:
         file.write(filedata)
 
-
-script_path = os.path.abspath(pathlib.Path(__file__).parent.absolute())
-# Project directories
-project_source_dir = os.path.abspath('{}/../api_reference'.format(script_path))
-project_binary_dir = os.path.abspath('{}/../../../build/is-core'.format(script_path))
-fastdds_sh_output_dir = os.path.abspath('{}/../../../build/is-fastdds/doxygen'.format(script_path))
-ros1_sh_output_dir = os.path.abspath('{}/../../../build/is-ros1/doxygen'.format(script_path))
-ros2_sh_output_dir = os.path.abspath('{}/../../../build/is-ros2/doxygen'.format(script_path))
-websocket_sh_output_dir = os.path.abspath('{}/../../../build/is-websocket/doxygen'.format(script_path))
+# Project paths
+script_path = os.path.abspath(pathlib.Path(__file__).parent.absolute()) # PATH -> /Integration-Service-docs/docs
+project_binary_dir = os.path.abspath('{}/../build/'.format(script_path))
+# Doxygen output paths
 output_dir = os.path.abspath('{}/doxygen'.format(project_binary_dir))
-doxygen_html = os.path.abspath('{}/html/doxygen'.format(project_binary_dir))
+core_tag = os.path.abspath('{}/is_core.tag'.format(output_dir))
+shs_tagfiles = str(os.path.abspath('{}/is_core.tag'.format(output_dir)) + "=" +
+    os.path.abspath('{}/is-core/html'.format(output_dir)))
+core_output_dir = os.path.abspath('{}/is-core'.format(output_dir))
+fastdds_sh_output_dir = os.path.abspath('{}/is-fastdds'.format(output_dir))
+ros1_sh_output_dir = os.path.abspath('{}/is-ros1'.format(output_dir))
+ros2_sh_output_dir = os.path.abspath('{}/is-ros2'.format(output_dir))
+websocket_sh_output_dir = os.path.abspath('{}/is-websocket'.format(output_dir))
+core_doxygen_html = os.path.abspath('{}/html'.format(core_output_dir))
+fastdds_sh_doxygen_html = os.path.abspath('{}/html'.format(fastdds_sh_output_dir))
+ros1_sh_doxygen_html = os.path.abspath('{}/html'.format(ros1_sh_output_dir))
+ros2_sh_doxygen_html = os.path.abspath('{}/html'.format(ros2_sh_output_dir))
+websocket_sh_doxygen_html = os.path.abspath('{}/html'.format(websocket_sh_output_dir))
 
 # Doxyfile
 doxyfile_in = os.path.abspath(
-    '{}/doxygen-config.in'.format(project_source_dir)
-)
+    '{}/is-core/utils/api_reference/doxygen-config.in'.format(project_binary_dir))
+
 doxyfile_out = os.path.abspath('{}/doxygen-config'.format(project_binary_dir))
 
 # Header files
-input_dir = os.path.abspath(
-    '{}/core/include/is'.format(
-        project_binary_dir
-    )
-)
+core_input_dir = os.path.abspath('{}/is-core/core/include/is'.format(project_binary_dir))
+fastdds_sh_input_dir = os.path.abspath('{}/is-fastdds/src'.format(project_binary_dir))
+ros1_sh_input_dir = os.path.abspath('{}/is-ros1/ros1'.format(project_binary_dir))
+ros2_sh_input_dir = os.path.abspath('{}/is-ros2/ros2'.format(project_binary_dir))
+websocket_sh_input_dir = os.path.abspath('{}/is-websocket/src'.format(project_binary_dir))
 
 # Check if we're running on Read the Docs' servers
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 if read_the_docs_build:
     print('Read the Docs environment detected!')
 
-    is_core_repo_name = os.path.abspath(
-        '{}/is-core'.format(
-            project_binary_dir
-        )
-    )
+    is_core_repo_name = os.path.abspath('{}/is-core'.format(project_binary_dir))
+    is_fastdds_sh_repo_name = os.path.abspath('{}/is-fastdds'.format(project_binary_dir))
+    is_ros1_sh_repo_name = os.path.abspath('{}/is-ros1'.format(project_binary_dir))
+    is_ros2_sh_repo_name = os.path.abspath('{}/is-ros2'.format(project_binary_dir))
+    is_websocket_sh_repo_name = os.path.abspath('{}/is-websocket'.format(project_binary_dir))
 
-    # Remove repository if exists
+    # Remove repositories if exists
     if os.path.isdir(is_core_repo_name):
         print('Removing existing repository in {}'.format(is_core_repo_name))
         shutil.rmtree(is_core_repo_name)
 
-    # Create necessary directory path
+    if os.path.isdir(is_fastdds_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_fastdds_sh_repo_name))
+        shutil.rmtree(is_fastdds_sh_repo_name)
+
+    if os.path.isdir(is_ros1_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_ros1_sh_repo_name))
+        shutil.rmtree(is_ros1_sh_repo_name)
+
+    if os.path.isdir(is_ros2_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_ros2_sh_repo_name))
+        shutil.rmtree(is_ros2_sh_repo_name)
+
+    if os.path.isdir(is_websocket_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_websocket_sh_repo_name))
+        shutil.rmtree(is_websocket_sh_repo_name)
+
+    # Create necessary directory paths
     os.makedirs(os.path.dirname(is_core_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_fastdds_sh_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_ros1_sh_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_ros2_sh_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_websocket_sh_repo_name), exist_ok=True)
+
     # Create a COLCON_IGNORE file just in case
-    open(
-        os.path.abspath('{}/COLCON_IGNORE'.format(project_binary_dir)), 'w'
-    ).close()
+    #open(os.path.abspath('{}/COLCON_IGNORE'.format(project_binary_dir)), 'w').close()
 
     # Clone repositories
     print('Cloning Integration Service')
@@ -170,35 +201,120 @@ if read_the_docs_build:
         recursive=True
     )
 
-    is_branch = 'origin/main'
+    print('Cloning Fast DDS System Handle')
+    is_fastdds_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/FastDDS-SH.git',
+        is_fastdds_sh_repo_name
+    )
 
-    # Actual checkout
-    print('Checking out Integration Service branch "{}"'.format(is_branch))
-    integration_service.refs[is_branch].checkout()
+    print('Cloning ROS 1 System Handle')
+    is_ros1_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/ROS1-SH.git',
+        is_ros1_sh_repo_name
+    )
+
+    print('Cloning ROS 2 System Handle')
+    is_ros2_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/ROS2-SH.git',
+        is_ros2_sh_repo_name
+    )
+
+    print('Cloning WebSocket System Handle')
+    is_websocket_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/WebSocket-SH.git',
+        is_websocket_sh_repo_name
+    )
 
     os.makedirs(os.path.dirname(output_dir), exist_ok=True)
-    os.makedirs(os.path.dirname(doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(core_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(fastdds_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(ros1_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(ros2_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(websocket_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(core_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(fastdds_sh_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(ros1_sh_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(ros2_sh_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(websocket_sh_doxygen_html), exist_ok=True)
 
-    # Configure Doxyfile
+    # Configure Doxyfile for the Integration Service Core
     configure_doxyfile(
         doxyfile_in,
         doxyfile_out,
-        input_dir,
-        output_dir,
+        core_input_dir,
+        core_output_dir,
         project_binary_dir,
-        project_source_dir
+        core_tag,
+        "",
+        core_doxygen_html
     )
-    # Generate doxygen documentation
+    # Generate doxygen documentation for the Integration Service Core
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the FastDDS System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        fastdds_sh_input_dir,
+        fastdds_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        fastdds_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the FastDDS System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the ROS 1 System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        ros1_sh_input_dir,
+        ros1_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        ros1_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the ROS 1 System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the ROS 2 System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        ros2_sh_input_dir,
+        ros2_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        ros2_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the ROS 2 System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the WebSocket System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        websocket_sh_input_dir,
+        websocket_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        websocket_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the WebSocket System Handle
     subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
 
 breathe_projects = {
-    'IntegrationService': os.path.abspath('{}/xml'.format(output_dir)),
+    'IntegrationService': os.path.abspath('{}/xml'.format(core_output_dir)),
     'FastDDS-SH' : os.path.abspath('{}/xml'.format(fastdds_sh_output_dir)),
     'ROS1-SH': os.path.abspath('{}/xml'.format(ros1_sh_output_dir)),
     'ROS2-SH': os.path.abspath('{}/xml'.format(ros2_sh_output_dir)),
     'WebSocket-SH': os.path.abspath('{}/xml'.format(websocket_sh_output_dir))
 }
-print(breathe_projects)
+
 breathe_default_project = 'IntegrationService'
 
 
