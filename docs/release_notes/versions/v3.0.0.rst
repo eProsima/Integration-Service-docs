@@ -1,17 +1,19 @@
 v3.0.0
 ^^^^^^
 
-This release comprises a whole restructuring and renaming of the project, formerly known as *SOSS*,
-into *Integration Service*.
+This release comprises a whole restructuring and renaming of the project, formerly known as SOSS,
+into **Integration Service**.
 
 The *ROS 2* and *WebSocket System Handles*, which were previously included as subfolders of the main
 project, have been separated into independent repositories.
 
-**Previous** versions are considered **deprecated**, and it is not recommended to use them from now on.
+.. important::
+
+  **Previous** versions are considered **deprecated**, and it is not recommended to use them from now on.
 
 There are some global changes that affect to all repositories; they are listed here:
 
-* Completed migration from *SOSS* to *Integration Service*. This, code wise, included changing the
+* Completed migration from SOSS to **Integration Service**. This, code wise, included changing the
   **C++** namespace convention of the whole project, from :code:`soss::core` to :code:`eprosima::is::core`
   and from :code:`soss::<SH_NAME>` to :code:`eprosima::is::sh::<SH_NAME>`.
 
@@ -27,16 +29,16 @@ There are some global changes that affect to all repositories; they are listed h
 
 * Add much more traces and unify the logging style.
 
-* Full API reference documentation using *Doxygen*.
+* Full `API reference <https://integration-service.docs.eprosima.com/en/latest/api_reference/api_reference.html>`_ documentation using *Doxygen*.
 
 * Migrated whole test suite from :code:`Catch` to :code:`Google Test`.
 
 * Applied uncrustify rules.
 
-* Added brand new README section, with detailed information about the project status and features.
+* Added brand new *README* section for each repository, with detailed information about the project status and features.
 
 * Added :ref:`global compilation flags <global_compilation_flags>` for building tests,
-  examples, libraries and the API reference.
+  examples, libraries and the `API reference <https://integration-service.docs.eprosima.com/en/latest/api_reference/api_reference.html>`_.
 
 In relation to each repository, these are the most relevant changes for this major release:
 
@@ -56,9 +58,11 @@ In relation to each repository, these are the most relevant changes for this maj
 
 * Skip blank services names.
 
-* JSON conversion library: handle special double/float values (:code:`Inf`, :code:`NaN`...).
+* *JSON* conversion library: handle special double/float values (:code:`Inf`, :code:`NaN`...).
 
-* JSON conversion library: boolean type support.
+* *JSON* conversion library: boolean type support.
+
+* *JSON* conversion library: sequences and arrays.
 
 * Moved all example configuration files into a `common folder <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_.
 
@@ -70,14 +74,18 @@ In relation to each repository, these are the most relevant changes for this maj
 
 **Fast DDS System Handle**
 
-* Migrated from *Fast RTPS* to *Fast DDS*. From now on, `2.X.X` versions of *Fast DDS* will be supported.
+* Migrated from *Fast RTPS* to *Fast DDS*.
 
-* Got rid of separate *CMake* project into the same project as the SystemHandle, under a :code:`test` folder.
+  .. important::
+
+    From now on, only `2.X.X` versions of *Fast DDS* will be supported.
+
+* Got rid of separate *CMake* testing project; now, it is included in the same project as the SystemHandle, under the :code:`test` folder.
 
 * Created a `FastDDS-SH GitHub action <https://github.com/eProsima/FastDDS-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
 
-* Added support for setting a custom *DDS* participant *domain ID* in the *YAML* specific configuration section
-  for the `fastdds` middleware.
+* Added support for setting a custom *DDS* participant *domain ID*.
+  This option can be set in the *YAML* specific configuration section for the :code:`fastdds` middleware.
 
 * Added the possibility of creating the *Fast DDS DomainParticipant* entity with a custom
   `XML profile <https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/xml_configuration.html>`_.
@@ -134,7 +142,7 @@ In relation to each repository, these are the most relevant changes for this maj
 
 * Add :ref:`specific compilation flags <websocket_compilation_flags>`.
 
-* Added support for non-secure (*TCP*) connections.
+* Added support for *TCP* (non-secure) connections.
 
 * Add the option in the *YAML* configuration file to :ref:`disable security <websocket_sh_config>`.
 
@@ -142,5 +150,5 @@ In relation to each repository, these are the most relevant changes for this maj
 
 * Fixed concurrency problem when handling connections.
 
-* Add more information about the connection ID.
-  Keep track of all the opened connections and tag them with a unique ID number.
+* Add specific traces with more information about the connection ID.
+  Keep track of all the opened connections and tag them with a unique ID.

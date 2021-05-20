@@ -8,11 +8,11 @@ This release includes the following *bugfixes* and *improvements*:
 
 * Fix segfault when converting integer types to/from the *Core* language to the specific protocol.
 
-* JSON conversion library: fix vector-of-bool conversions.
+* *JSON* conversion library: fix vector-of-bool conversions.
 
-* JSON conversion library: allow more flexibility in converting JSON values into strings.
+* *JSON* conversion library: allow more flexibility in converting JSON values into strings.
 
-* Support for *ROS 1* boolean type being casted as uint8_t.
+* Support for *ROS 1* boolean type being cast as uint8_t.
 
 * Fix template substitution for string templates that have an ending substring.
 
