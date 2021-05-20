@@ -63,7 +63,7 @@ Available *System Handles* up-to-date are listed below:
 .. list-table::
     :name: available_shs
     :header-rows: 1
-    :align: left
+    :width: 100%
 
     * - *System Handle*
       - Repository

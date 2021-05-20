@@ -28,7 +28,7 @@ Find them listed in the table below:
 
 .. list-table::
     :header-rows: 1
-    :align: left
+    :width: 100%
 
     * - *System Handle*
       - External Dependencies
