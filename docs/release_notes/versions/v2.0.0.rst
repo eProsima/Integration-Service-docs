@@ -1,2 +1,42 @@
 v2.0.0
 ^^^^^^
+
+This release includes the following *bugfixes* and *improvements*:
+
+**Core**
+
+* Fix segfault when converting integer types to/from the *Core* language to the specific protocol.
+* Add Windows compatibility.
+* JSON conversion library: fix vector-of-bool conversions.
+* JSON conversion library: allow more flexibility in converting JSON values into strings.
+* Support for *ROS 1* boolean type being casted as uint8_t.
+* Fix template substitution for string templates that have an ending substring.
+* Support dispatch templates for topic names.
+
+**Fast DDS System Handle**
+
+* Added *Fast DDS System Handle*, with complete support for publication/subscription and services.
+
+**ROS 1 System Handle**
+
+* Fixed file separator for Windows compatibility purposes.
+* Add Windows compatibility.
+* Include the *Core* as a dependency of the *genmsg* package.
+* Allow, via YAML configuration parameters, to specify custom names for *ROS 1* nodes.
+* Remove `package.xml` files, because they confuse `colcon`.
+* Added latching and queue_size specific topic configuration parameters.
+
+**ROS 2 System Handle**
+
+* Include the *Core* as a dependency of the *rosidl* package.
+* Add Windows compatibility.
+* Support for both *ROS 2 Crystal* and *Dashing*.
+* Have CMake throw a fatal error when dependencies are missing.
+* Corrected format.
+* Support for *ROS 2* domain change.
+
+**WebSocket System Handle**
+
+* Update *WebSocket System Handle* tests, so the TLS handshake works.
+* Add Windows compatibility.
+* Have CMake throw a fatal error when dependencies are missing.

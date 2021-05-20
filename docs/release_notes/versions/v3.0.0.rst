@@ -1,2 +1,22 @@
 v3.0.0
 ^^^^^^
+
+This release comprises a whole restructuring and renaming of the project, formerly known as *SOSS*,
+into *Integration Service*.
+
+The *ROS 2* and *WebSocket System Handles*, which were previously included as subfolders of the main
+project, have been separated into independent repositories.
+
+In relation to each repository, these are the most relevant changes for this major release:
+
+**Core**
+
+**Fast DDS System Handle**
+
+**FIWARE System Handle**
+
+**ROS 1 System Handle**
+
+**ROS 2 System Handle**
+
+**WebSocket System Handle**
