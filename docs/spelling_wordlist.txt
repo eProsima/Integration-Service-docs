@@ -31,6 +31,7 @@ instantiation
 middleware
 middlewares
 msg
+namespace
 nullptr
 ostream
 parameterizable
@@ -47,12 +48,16 @@ Subclassed
 subclasses
 subdirectory
 subfolder
+subfolders
 submodule
 subnets
 suboptions
+substring
 superclass
 th
+uint
 unadvertisement
+uncrustify
 Unregister
 unregister
 Utils
