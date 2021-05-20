@@ -210,7 +210,7 @@ There are several CMake flags, which can be tuned during the configuration step:
   * :code:`example_interfaces`: *ROS 1* package containing the service type definitions for the
     `AddTwoInts` services examples, for which the *ROS 1* type support files will be automatically generated.
     As specified in the :ref:`services examples tutorials <examples_different_protocols_services>`,
-    it must be compilled and installed in the system, using `catkin`:
+    it must be compiled and installed in the system, using `catkin`:
 
     .. code-block:: bash
 
