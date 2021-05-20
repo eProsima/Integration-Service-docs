@@ -46,6 +46,7 @@ Struct
 Subclassed
 subclasses
 subdirectory
+subfolder
 submodule
 subnets
 suboptions

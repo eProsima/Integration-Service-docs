@@ -46,3 +46,10 @@
     examples/different_protocols/examples_different_protocols
     examples/same_protocol/examples_same_protocol
     examples/wan_communication/wan_communication
+
+.. toctree::
+    :caption: Release Notes
+    :maxdepth: 2
+    :hidden:
+
+    release_notes/release_notes.rst

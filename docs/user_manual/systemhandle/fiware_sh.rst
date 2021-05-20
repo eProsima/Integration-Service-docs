@@ -51,6 +51,8 @@ is employed in the communication:
 
 * :ref:`fiware_ros2_bridge_pubsub`
 
+.. _fiware_compilation_flags:
+
 Compilation flags
 ^^^^^^^^^^^^^^^^^
 

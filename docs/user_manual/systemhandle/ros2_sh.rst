@@ -54,6 +54,8 @@ There are five examples that you can find in this documentation in which the
 * :ref:`fiware_ros2_bridge_pubsub`
 * :ref:`ros2_change_of_domain`
 
+.. _ros2_compilation_flags:
+
 Compilation flags
 ^^^^^^^^^^^^^^^^^
 
@@ -72,10 +74,10 @@ whole *Integration Service* product suite, there are some specific flags which a
 
       ~/is_ws$ colcon build --cmake-args -DBUILD_ROS2_TESTS=ON
 
-* :code:`MIX_ROS_PACKAGES`: It accepts as an argument a list of `ROS packages <https://index.ros.org/packages/>`,
+* :code:`MIX_ROS_PACKAGES`: It accepts as an argument a list of `ROS packages <https://index.ros.org/packages/>`_,
   such as :code:`std_msgs`, :code:`geometry_msgs`, :code:`sensor_msgs`, :code:`nav_msgs`...
   for which the required transformation library to convert the specific *ROS 2* type definitions into *xTypes*,
-  and the other way around, will be built. This list is shared with the `ROS 1 System Handle <https://github.com/eProsima/ROS1-SH#compilation-flags>`,
+  and the other way around, will be built. This list is shared with the `ROS 1 System Handle <https://github.com/eProsima/ROS1-SH#compilation-flags>`_,
   meaning that the ROS packages specified in the `MIX_ROS_PACKAGES` variable will also be built for *ROS 1*
   if the corresponding *System Handle* is present within the *Integration Service* workspace.
   To avoid possible errors, if a certain package is only present in *ROS 2*,

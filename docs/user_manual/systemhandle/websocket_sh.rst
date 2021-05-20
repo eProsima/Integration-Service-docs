@@ -17,6 +17,8 @@ The dependencies of the *WebSocket System Handle* are:
 * `OpenSSL <https://www.openssl.org/>`_
 * `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
 
+.. _websocket_sh_config:
+
 Configuration
 ^^^^^^^^^^^^^
 
@@ -227,6 +229,8 @@ There is one example that you can find in this documentation in which the *WebSo
 is employed in the communication:
 
 * :ref:`ros2_websocket_bridge_pubsub`
+
+.. _websocket_compilation_flags:
 
 Compilation flags
 ^^^^^^^^^^^^^^^^^
