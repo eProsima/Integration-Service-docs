@@ -122,8 +122,6 @@ whole *Integration Service* product suite, there are some specific flags which a
       ~/is_ws$ colcon build --cmake-args -DMIX_ROS_PACKAGES="std_msgs geometry_msgs" -DMIX_ROS2_PACKAGES="dummy_msgs"
 
 
-.. TODO: complete when it is uploaded to read the docs
-
 API Reference
 ^^^^^^^^^^^^^
 

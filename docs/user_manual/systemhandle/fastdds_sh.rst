@@ -89,7 +89,6 @@ whole *Integration Service* product suite, there are some specific flags which a
 
       ~/is_ws$ colcon build --cmake-args -DBUILD_FASTDDS_TESTS=ON
 
-.. TODO: complete when it is uploaded to read the docs
 
 API Reference
 ^^^^^^^^^^^^^

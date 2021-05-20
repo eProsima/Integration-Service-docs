@@ -23,13 +23,13 @@ There are some global changes that affect to all repositories; they are listed h
   Prior to this version, they were being copied multiple among the *Core* and involved *System Handles*,
   leading to unnecessary copies and entities destruction problems.
 
-* Added new :code:`Logger` class, with different logging levels: `DEBUG`, `INFO`, `WARN`, `ERROR`.
+* Added new :ref:`Logger <api_core_utils_log>` class, with different logging levels: `DEBUG`, `INFO`, `WARN`, `ERROR`.
 
 * Debug logging traces are automatically enabled if the project is compiled in debug mode.
 
 * Add much more traces and unify the logging style.
 
-* Full `API reference <https://integration-service.docs.eprosima.com/en/latest/api_reference/api_reference.html>`_ documentation using *Doxygen*.
+* Full `API reference <api_reference>` documentation using *Doxygen*.
 
 * Migrated whole test suite from :code:`Catch` to :code:`Google Test`.
 
@@ -41,8 +41,6 @@ There are some global changes that affect to all repositories; they are listed h
   examples, libraries and the `API reference <https://integration-service.docs.eprosima.com/en/latest/api_reference/api_reference.html>`_.
 
 In relation to each repository, these are the most relevant changes for this major release:
-
-.. TODO: add crossed ref to the API sections when ready. Also for logger class.
 
 
 **Core**
