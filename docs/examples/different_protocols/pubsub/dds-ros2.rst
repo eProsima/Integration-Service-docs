@@ -51,7 +51,7 @@ Also, to get this example working, the following requirements must be met:
 
     cd ~/is-workspace/src/Integration-Service/examples/utils/dds/DDSHelloWorld
     mkdir build && cd build
-    cmake .. && make
+    cmake .. -DBUILD_EXAMPLES=ON && make
 
 * Having the **Fast DDS System Handle** installed. You can download it from the
   `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_

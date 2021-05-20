@@ -34,7 +34,7 @@ Also, to get this example working, the following requirements must be met:
 
     cd ~/is-workspace/src/Integration-Service/examples/utils/dds/DDSAddTwoInts
     mkdir build && cd build
-    cmake .. && make
+    cmake .. -DBUILD_EXAMPLES=ON && make
 
 * Having the **Fast DDS System Handle** installed. You can download it from the
   `FastDDS-SH dedicated repository <https://github.com/eProsima/FastDDS-SH>`_
@@ -55,7 +55,7 @@ Also, to get this example working, the following requirements must be met:
 
       source /opt/ros/$ROS1_DISTRO/setup.bash
       cd ~/is-workspace/src/Integration-Service/example/utils/ros1
-      catkin_make -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
+      catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
 
 * Having the **ROS 1 System Handle** installed. You can download it from the
   `ROS1-SH dedicated repository <https://github.com/eProsima/ROS1-SH>`_ into the
@@ -98,7 +98,7 @@ Also, to get this example working, the following requirements must be met:
 
     cd ~/is-workspace/src/Integration-Service/examples/utils/websocket/WebSocketAddTwoInts
     mkdir build && cd build
-    cmake .. && make
+    cmake .. -DBUILD_EXAMPLES=ON && make
 
 * Having the **WebSocket System Handle** installed.
   You can download it from the `WebSocket-SH dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
@@ -128,7 +128,7 @@ To do so, open a terminal, go to the :code:`is-workspace` folder and execute the
 .. code-block:: bash
 
     cd ~/is-workspace
-    ./build/WebSocketAddTwoInts/WebSocketAddTwoInts -m server
+    ./build/WebSocketAddTwoInts/WebSocketAddTwoInts
 
 The *WebSocket* server will start running, listening for incoming client connection petitions;
 after that, it will we able to dispatch service request petitions with a proper answer message.
