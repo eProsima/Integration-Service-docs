@@ -225,10 +225,11 @@ All of them will be described in this section, as well as in which cases they ar
 Examples
 ^^^^^^^^
 
-There is one example that you can find in this documentation in which the *WebSocket System Handle*
-is employed in the communication:
+There are several examples that you can find in this documentation in which the
+*WebSocket System Handle* is employed in the communication process. Some of them are presented here:
 
 * :ref:`ros2_websocket_bridge_pubsub`
+* :ref:`websocket_server_bridge`
 
 .. _websocket_compilation_flags:
 

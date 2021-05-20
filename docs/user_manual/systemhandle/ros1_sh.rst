@@ -61,10 +61,11 @@ five sections:
 Examples
 ^^^^^^^^
 
-There is one example that you can find in this documentation in which the *ROS 1 System Handle*
-is employed in the communication:
+There are several examples that you can find in this documentation in which the
+*ROS 1 System Handle* is employed in the communication process. Some of them are presented here:
 
 * :ref:`ros1_ros2_bridge_pubsub`
+* :ref:`ros1_server_bridge`
 
 .. _ros1_compilation_flags:
 

@@ -13,6 +13,13 @@ so that it can process them and fulfill each request with a proper answer messag
 
 .. image:: images/ros2-server.png
 
+.. note::
+
+    If you are looking for an example on how to perform a service request from a *ROS 2* client
+    to another protocol, please refer to any of the remaining examples in the
+    :ref:`server/client examples <examples_different_protocols_services>` section.
+
+
 .. _ros2-server_requirements:
 
 Requirements
