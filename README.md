@@ -52,8 +52,6 @@ It is recommended to use `colcon` to generate the documentation, but you can als
 
 ```bash
     git clone https://github.com/eProsima/Integration-Service-docs integration-service-docs
-    mkdir integration-service-docs/build
-    cd integration-service-docs/build
     READTHEDOCS=True sphinx-build -b html -d build/doctrees docs build/html
 ```
 

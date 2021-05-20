@@ -62,10 +62,11 @@ five sections:
 Examples
 ^^^^^^^^
 
-There are three examples that you can find in this documentation in which the
-*Fast DDS System Handle* is employed in the communication:
+There are several examples that you can find in this documentation in which the
+*Fast DDS System Handle* is employed in the communication process. Some of them are presented here:
 
 * :ref:`dds_ros2_bridge_pubsub`
+* :ref:`dds_server_bridge`
 * :ref:`dds_change_of_domain`
 * :ref:`wan_tcp_tunneling_dds`
 
@@ -88,7 +89,6 @@ whole *Integration Service* product suite, there are some specific flags which a
 
       ~/is_ws$ colcon build --cmake-args -DBUILD_FASTDDS_TESTS=ON
 
-.. TODO: complete when it is uploaded to read the docs
 
 API Reference
 ^^^^^^^^^^^^^

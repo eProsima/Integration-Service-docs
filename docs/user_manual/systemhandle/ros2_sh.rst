@@ -45,13 +45,14 @@ five sections:
 Examples
 ^^^^^^^^
 
-There are five examples that you can find in this documentation in which the
-*ROS 2 System Handle* is employed in the communication:
+There are several examples that you can find in this documentation in which the
+*ROS 2 System Handle* is employed in the communication process. Some of them are presented here:
 
 * :ref:`ros1_ros2_bridge_pubsub`
 * :ref:`dds_ros2_bridge_pubsub`
 * :ref:`ros2_websocket_bridge_pubsub`
 * :ref:`fiware_ros2_bridge_pubsub`
+* :ref:`ros2_server_bridge`
 * :ref:`ros2_change_of_domain`
 
 .. _ros2_compilation_flags:
@@ -109,7 +110,6 @@ whole *Integration Service* product suite, there are some specific flags which a
 
       ~/is_ws$ colcon build --cmake-args -DMIX_ROS_PACKAGES="std_msgs geometry_msgs" -DMIX_ROS2_PACKAGES="dummy_msgs"
 
-.. TODO: complete when it is uploaded to read the docs
 
 API Reference
 ^^^^^^^^^^^^^
