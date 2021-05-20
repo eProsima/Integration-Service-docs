@@ -113,9 +113,9 @@ Global compilation flags
 *Integration Service* uses CMake for building and packaging the project.
 There are several CMake flags, which can be tuned during the configuration step:
 
-* :code:`BUILD_LIBRARY`: This compilation flag can be used for completely disable the compilation of
-  the *Integration Service* libraries set, that is, the *Integration Service Core* and all the
-  existing *System Handles* in the `colcon` workspace. It is enabled by default.
+* :code:`BUILD_LIBRARY`: This compilation flag can be used to completely disable the compilation of
+  the *Integration Service* set of libraries, that is, the *Integration Service Core* and all the
+  existing *System Handles* existing in the `colcon` workspace. It is enabled by default.
 
   This flag is useful, for example, to speed up the documentation generation process, when building the
   :ref:`api_reference` from the *Doxygen* source code comments.
@@ -169,8 +169,8 @@ There are several CMake flags, which can be tuned during the configuration step:
     Please execute :code:`DDSHelloWorld -h` to see a full list of supported input parameters.
 
   * :code:`DDSAddTwoInts`: A simple server/client C++ application, running under *Fast DDS*.
-    It allows to perform service requests and replies to a service named *AddTwoIntsService*,
-    which consists of two integer numbers as a request type and answers with a single value,
+    It allows performing service requests and replies to a service named *AddTwoIntsService*,
+    which consists of two integer numbers as request type and answers with a single value,
     indicating the sum of them.
     As an alternative to `colcon`, in order to compile the `DDSAddTwoInts` example, the following commands can be executed:
 
@@ -190,7 +190,7 @@ There are several CMake flags, which can be tuned during the configuration step:
   * :code:`add_two_ints_server`: A simple C++ server application, running under *ROS 1*.
     It listens to requests coming from *ROS 1* clients and produces an appropriate answer for them;
     specifically, it is capable of listening to a *ROS 1* service called :code:`add_two_ints`,
-    which consists of two integer numbers as a request type and answers with a single value,
+    which consists of two integer numbers as request type and answers with a single value,
     indicating the sum of them.
     As an alternative to `colcon`, in order to compile the `add_two_ints_server` example, the following commands can be executed:
 
@@ -220,8 +220,8 @@ There are several CMake flags, which can be tuned during the configuration step:
   **WebSocket**
 
   * :code:`WebSocketAddTwoInts`: A simple server/client C++ application, running under *WebSocket++*.
-    It allows to perform service requests and replies to a service named *add_two_ints*,
-    which consists of two integer numbers as a request type and answers with a single value,
+    It allows performing service requests and replies to a service named *add_two_ints*,
+    which consists of two integer numbers as request type and answers with a single value,
     indicating the sum of them.
     As an alternative to `colcon`, in order to compile the `WebSocketAddTwoInts` example, the following commands can be executed:
 
