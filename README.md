@@ -2,100 +2,70 @@
 
 # Documentation
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Linux Build Status](http://jenkins.eprosima.com:8080/job/nightly_integration-service-docs_master/badge/icon)](http://jenkins.eprosima.com:8080/job/nightly_integration-service-docs_master)
+[![Integration Service CI Status](https://github.com/eProsima/Integration-Service-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/eProsima/Integration-Service-docs/actions)
 
-<a href="http://www.eprosima.com"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSd0PDlVz1U_7MgdTe0FRIWD0Jc9_YH-gGi0ZpLkr-qgCI6ZEoJZ5GBqQ" align="left" hspace="8" vspace="2" width="100" height="100" ></a>
 
-*eProsima Integration-Service* is a tool that allows intercommunicating an arbitrary number of protocols that
-speak different languages, integrating them into a larger, more complex system.
+[*eProsima Integration Service*](https://github.com/eProsima/Integration-Service) is a Linux tool that enables communication among an arbitrary number of protocols that speak different languages.
 
-*eProsima Integration-Service* can be configured with a YAML text file, through which the user can provide a mapping
-between the topics and services on the *DDS*-based middleware and those on the system(s) to which the user
-wants to bridge it.
+If one has a number of complex systems and wills to combine them to create a larger, even more complex system, Integration Service can act as an intermediate message-passing tool that, by speaking a common language, centralizes and mediates the integration.
 
-For more information, check out the
-[eProsima Integration Service documentation](https://integration-service.docs.eprosima.com/en/latest/).
-You can find all the source code on our [GitHub repository](https://github.com/eProsima/Integration-Service).
-
-* [Installation Guide](#installation-guide)
-* [Getting Started](#getting-started)
-* [Generating documentation in other formats](#generating-documentation-in-other-formats)
-* [Running documentation tests](#running-documentation-tests)
+*Integration Service* is configured by means of a *YAML* text file, through which the user can provide a mapping between the topics and services handled by the middlewares of the systems involved.
 
 ## Installation Guide
 
-1. In order to build and test the documentation, some dependencies must be installed beforehand:
+To generate the *eProsima Integration Service* documentation you need to install some dependencies:
 
-    ```bash
+```bash
     sudo apt update
-    sudo apt install -y \
-        git \
-        python3 \
-        python3-pip \
-        python3-venv \
-        python3-sphinxcontrib.spelling \
-    ```
+    sudo apt install -y git python3 python3-pip python3-sphinxcontrib.spelling doxygen
+```
 
-2. Clone the repository:
+Once the requirements are fulfilled, you can generate the documentation with `colcon` following the next steps:
+
+1. Clone the repository:
 
     ```bash
-    cd ~
+        mkdir ~/is_docs_ws
+        cd ~/is_docs_ws
+        git clone https://github.com/eProsima/Integration-Service-docs src/integration-service-docs
+    ```
+
+2. Install the `python3` dependencies:
+
+    ```bash
+        pip3 install -r src/integration-service-docs/docs/requirements.txt
+    ```
+
+3. Use the `repos` file to download *Integration Service* and all the *System Handles*:
+
+    ```bash
+        vcs import src < src/integration-service-docs/integration-service-docs.repos
+    ```
+
+4. Use `colcon` to compile and generate the documentation:
+
+    ```bash
+        colcon build --cmake-args -DBUILD_LIBRARY=OFF -DBUILD_API_REFERENCE=ON
+    ```
+
+It is recommended to use `colcon` to generate the documentation, but you can also create it using `sphinx` by following the next instructions:
+
+```bash
     git clone https://github.com/eProsima/Integration-Service-docs integration-service-docs
-    ```
-
-3. Create a virtual environment and install `python3` dependencies:
-
-    ```bash
-    cd ~/integration-service-docs
-    python3 -m venv integration-service-docs-venv
-    source integration-service-docs-venv/bin/activate
-    pip3 install -r docs/requirements.txt
-    ```
-
-## Getting Started
-
-To generate the documentation in a HTML format for a specific branch of eProsima Integration Service run:
-
-```bash
-cd ~/integration-service-docs
-source integration-service-docs-venv/bin/activate
-make html
+    mkdir integration-service-docs/build
+    cd integration-service-docs/build
+    READTHEDOCS=True sphinx-build -b html -d build/doctrees docs build/html
 ```
 
-## Generating documentation in other formats
 
-The documentation can be generated in several formats such as HTML, PDF, LaTex, etc. For a complete list of targets run:
+## Read the Docs
 
-```bash
-cd ~/integration-service-docs
-make help
-```
+The official documentation for the *eProsima Integration Service* can be accessed on [Read the Docs](https://integration-service.docs.eprosima.com/en/latest/).
 
-Once you have selected a format, generate the documentation with:
+## License
 
-```bash
-cd ~/integration-service-docs
-source integration-service-docs-venv/bin/activate
-make <output_format>
-```
+This repository is open-sourced under the *Apache-2.0* license. See the [LICENSE](LICENSE) file for more details.
 
-## Running documentation tests
+## Getting help
 
-This repository provides a set of tests that verify that:
-
-1. The RST follows the style guidelines
-1. There are no spelling errors
-1. The HTML is built correctly
-
-Run the tests by:
-
-```bash
-cd ~/integration-service-docs
-source integration-service-docs-venv/bin/activate
-make test
-```
-## Contributing
-
-If you are interested in making some contributions, either in the form of an issue or a pull request, please refer to
-our [Contribution Guidelines](https://github.com/eProsima/all-docs/blob/master/CONTRIBUTING.md).
+If you need support you can reach us by mail at `support@eProsima.com` or by phone at `+34 91 804 34 48`.
