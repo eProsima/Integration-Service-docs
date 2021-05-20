@@ -13,7 +13,7 @@ If one has a number of complex systems and wills to combine them to create a lar
 
 ## Installation Guide
 
-To generate the *eProsima Integration Service* documentation you need to install some dependencies:
+To generate the *eProsima Integration Service* documentation, you need to install some dependencies:
 
 ```bash
     sudo apt update
