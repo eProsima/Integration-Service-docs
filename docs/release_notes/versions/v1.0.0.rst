@@ -1,0 +1,15 @@
+v1.0.0
+^^^^^^
+
+Initial version:
+
+* Developed basic *Core* structure and support for *Middleware Interface Extension* files.
+
+* Developed initial version of *ROS 1*, *ROS 2* and *WebSocket System Handles* with publisher/subscriber
+  and server/client support; and *FIWARE System Handle*, with publisher/subscriber support.
+
+* Created custom dynamic type :code:`Message` class for handling content exchange among *System Handles*.
+
+* Created *mock System Handle*, for testing purposes.
+
+* Support for basic types: ints, floats, strings...
