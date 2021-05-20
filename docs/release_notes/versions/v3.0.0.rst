@@ -35,7 +35,8 @@ There are some global changes that affect to all repositories; they are listed h
 
 * Added brand new README section, with detailed information about the project status and features.
 
-* Added :ref:`global compilation flags <global_compilation_flags>` for building tests, examples, libraries and the API reference.
+* Added :ref:`global compilation flags <global_compilation_flags>` for building tests,
+  examples, libraries and the API reference.
 
 In relation to each repository, these are the most relevant changes for this major release:
 
