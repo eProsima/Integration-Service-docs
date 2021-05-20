@@ -21,6 +21,11 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import os
+import pathlib
+import shutil
+import subprocess
+
+import git
 
 import requests
 
@@ -38,7 +43,14 @@ def download_css(html_css_dir):
     url = (
         'https://raw.githubusercontent.com/eProsima/all-docs/'
         'master/source/_static/css/fiware_readthedocs.css')
-    req = requests.get(url, allow_redirects=True)
+    try:
+        req = requests.get(url, allow_redirects=True, timeout=10)
+    except requests.RequestException as e:
+        print(
+            'Failed to download the CSS with the eProsima rtd theme.'
+            'Request Error: {}'.format(e)
+        )
+        return False
     if req.status_code != 200:
         print(
             'Failed to download the CSS with the eProsima rtd theme.'
@@ -56,7 +68,6 @@ def download_css(html_css_dir):
             return False
     return True
 
-
 def select_css(html_css_dir):
     """
     Select CSS file with the website's template.
@@ -64,16 +75,248 @@ def select_css(html_css_dir):
     :return: Returns a list of CSS files to be imported.
     """
     common_css = '_static/css/eprosima_rtd_theme.css'
-    local_css = '_static/css/fiware_readthedocs.css'
-    if download_css(html_css_dir):
-        print('Appliying CSS style file: {}'.format(common_css))
-        return [common_css]
-    else:
-        print('Appliying CSS style file: {}'.format(local_css))
+    local_css = '_static/css/is_theme.css'
+    if os.path.isfile(local_css):
+        print('Appliying local CSS style file: {}'.format(local_css))
         return [local_css]
+    elif download_css(html_css_dir):
+        print('Appliying common CSS style file: {}'.format(common_css))
+        return [common_css]
 
+def configure_doxyfile(
+    doxyfile_in,
+    doxyfile_out,
+    input_dir,
+    output_dir,
+    project_binary_dir,
+    doxygen_generate_tagfile,
+    doxygen_tagfiles,
+    doxygen_html
+):
+    """
+    Configure Doxyfile in the CMake style.
 
-script_path = os.path.dirname(os.path.abspath(__file__))
+    :param doxyfile_in: Path to input Doxygen configuration file
+    :param doxyfile_out: Path to output Doxygen configuration file
+    :param input_dir: CMakeLists.txt value of DOXYGEN_INPUT_DIR
+    :param output_dir: CMakeLists.txt value of DOXYGEN_OUTPUT_DIR
+    :param project_binary_dir: CMakeLists.txt value of PROJECT_BINARY_DIR
+    :param doxygen_generate_tagfile: CMakeLists.txt value of DOXYGEN_GENERATE_TAGFILE
+    :param doxygen_tagfile: CMakeLists.txt value of DOXYGEN_TAGFILES
+    """
+    print('Configuring Doxyfile')
+    with open(doxyfile_in, 'r') as file:
+        filedata = file.read()
+
+    filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
+    filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
+    filedata = filedata.replace('@PROJECT_BINARY_DIR@', project_binary_dir)
+    filedata = filedata.replace('@DOXYGEN_GENERATE_TAGFILE@', doxygen_generate_tagfile)
+    filedata = filedata.replace('@DOXYGEN_TAGFILES@', doxygen_tagfiles)
+    filedata = filedata.replace('@DOXYGEN_HTML_DIR@', doxygen_html)
+
+    os.makedirs(os.path.dirname(doxyfile_out), exist_ok=True)
+    with open(doxyfile_out, 'w') as file:
+        file.write(filedata)
+
+# Project paths
+script_path = os.path.abspath(pathlib.Path(__file__).parent.absolute()) # PATH -> /Integration-Service-docs/docs
+project_binary_dir = os.path.abspath('{}/../build/'.format(script_path))
+# Doxygen output paths
+output_dir = os.path.abspath('{}/doxygen'.format(project_binary_dir))
+core_tag = os.path.abspath('{}/is_core.tag'.format(output_dir))
+shs_tagfiles = str(os.path.abspath('{}/is_core.tag'.format(output_dir)) + "=" +
+    os.path.abspath('{}/is-core/html'.format(output_dir)))
+core_output_dir = os.path.abspath('{}/is-core'.format(output_dir))
+fastdds_sh_output_dir = os.path.abspath('{}/is-fastdds'.format(output_dir))
+ros1_sh_output_dir = os.path.abspath('{}/is-ros1'.format(output_dir))
+ros2_sh_output_dir = os.path.abspath('{}/is-ros2'.format(output_dir))
+websocket_sh_output_dir = os.path.abspath('{}/is-websocket'.format(output_dir))
+core_doxygen_html = os.path.abspath('{}/html'.format(core_output_dir))
+fastdds_sh_doxygen_html = os.path.abspath('{}/html'.format(fastdds_sh_output_dir))
+ros1_sh_doxygen_html = os.path.abspath('{}/html'.format(ros1_sh_output_dir))
+ros2_sh_doxygen_html = os.path.abspath('{}/html'.format(ros2_sh_output_dir))
+websocket_sh_doxygen_html = os.path.abspath('{}/html'.format(websocket_sh_output_dir))
+
+# Doxyfile
+doxyfile_in = os.path.abspath(
+    '{}/is-core/utils/api_reference/doxygen-config.in'.format(project_binary_dir))
+
+doxyfile_out = os.path.abspath('{}/doxygen-config'.format(project_binary_dir))
+
+# Header files
+core_input_dir = os.path.abspath('{}/is-core/core/include/is'.format(project_binary_dir))
+fastdds_sh_input_dir = os.path.abspath('{}/is-fastdds/src'.format(project_binary_dir))
+ros1_sh_input_dir = os.path.abspath('{}/is-ros1/ros1'.format(project_binary_dir))
+ros2_sh_input_dir = os.path.abspath('{}/is-ros2/ros2'.format(project_binary_dir))
+websocket_sh_input_dir = os.path.abspath('{}/is-websocket/src'.format(project_binary_dir))
+
+# Check if we're running on Read the Docs' servers
+read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
+if read_the_docs_build:
+    print('Read the Docs environment detected!')
+
+    is_core_repo_name = os.path.abspath('{}/is-core'.format(project_binary_dir))
+    is_fastdds_sh_repo_name = os.path.abspath('{}/is-fastdds'.format(project_binary_dir))
+    is_ros1_sh_repo_name = os.path.abspath('{}/is-ros1'.format(project_binary_dir))
+    is_ros2_sh_repo_name = os.path.abspath('{}/is-ros2'.format(project_binary_dir))
+    is_websocket_sh_repo_name = os.path.abspath('{}/is-websocket'.format(project_binary_dir))
+
+    # Remove repositories if exists
+    if os.path.isdir(is_core_repo_name):
+        print('Removing existing repository in {}'.format(is_core_repo_name))
+        shutil.rmtree(is_core_repo_name)
+
+    if os.path.isdir(is_fastdds_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_fastdds_sh_repo_name))
+        shutil.rmtree(is_fastdds_sh_repo_name)
+
+    if os.path.isdir(is_ros1_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_ros1_sh_repo_name))
+        shutil.rmtree(is_ros1_sh_repo_name)
+
+    if os.path.isdir(is_ros2_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_ros2_sh_repo_name))
+        shutil.rmtree(is_ros2_sh_repo_name)
+
+    if os.path.isdir(is_websocket_sh_repo_name):
+        print('Removing existing repository in {}'.format(is_websocket_sh_repo_name))
+        shutil.rmtree(is_websocket_sh_repo_name)
+
+    # Create necessary directory paths
+    os.makedirs(os.path.dirname(is_core_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_fastdds_sh_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_ros1_sh_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_ros2_sh_repo_name), exist_ok=True)
+    os.makedirs(os.path.dirname(is_websocket_sh_repo_name), exist_ok=True)
+
+    # Create a COLCON_IGNORE file just in case
+    #open(os.path.abspath('{}/COLCON_IGNORE'.format(project_binary_dir)), 'w').close()
+
+    # Clone repositories
+    print('Cloning Integration Service')
+    integration_service = git.Repo.clone_from(
+        'https://github.com/eProsima/Integration-Service.git',
+        is_core_repo_name,
+        recursive=True
+    )
+
+    print('Cloning Fast DDS System Handle')
+    is_fastdds_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/FastDDS-SH.git',
+        is_fastdds_sh_repo_name
+    )
+
+    print('Cloning ROS 1 System Handle')
+    is_ros1_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/ROS1-SH.git',
+        is_ros1_sh_repo_name
+    )
+
+    print('Cloning ROS 2 System Handle')
+    is_ros2_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/ROS2-SH.git',
+        is_ros2_sh_repo_name
+    )
+
+    print('Cloning WebSocket System Handle')
+    is_websocket_sh = git.Repo.clone_from(
+        'https://github.com/eProsima/WebSocket-SH.git',
+        is_websocket_sh_repo_name
+    )
+
+    os.makedirs(os.path.dirname(output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(core_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(fastdds_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(ros1_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(ros2_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(websocket_sh_output_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(core_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(fastdds_sh_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(ros1_sh_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(ros2_sh_doxygen_html), exist_ok=True)
+    os.makedirs(os.path.dirname(websocket_sh_doxygen_html), exist_ok=True)
+
+    # Configure Doxyfile for the Integration Service Core
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        core_input_dir,
+        core_output_dir,
+        project_binary_dir,
+        core_tag,
+        "",
+        core_doxygen_html
+    )
+    # Generate doxygen documentation for the Integration Service Core
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the FastDDS System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        fastdds_sh_input_dir,
+        fastdds_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        fastdds_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the FastDDS System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the ROS 1 System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        ros1_sh_input_dir,
+        ros1_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        ros1_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the ROS 1 System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the ROS 2 System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        ros2_sh_input_dir,
+        ros2_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        ros2_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the ROS 2 System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+    # Configure Doxyfile for the WebSocket System Handle
+    configure_doxyfile(
+        doxyfile_in,
+        doxyfile_out,
+        websocket_sh_input_dir,
+        websocket_sh_output_dir,
+        project_binary_dir,
+        "",
+        shs_tagfiles,
+        websocket_sh_doxygen_html
+    )
+    # Generate doxygen documentation for the WebSocket System Handle
+    subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
+
+breathe_projects = {
+    'IntegrationService': os.path.abspath('{}/xml'.format(core_output_dir)),
+    'FastDDS-SH' : os.path.abspath('{}/xml'.format(fastdds_sh_output_dir)),
+    'ROS1-SH': os.path.abspath('{}/xml'.format(ros1_sh_output_dir)),
+    'ROS2-SH': os.path.abspath('{}/xml'.format(ros2_sh_output_dir)),
+    'WebSocket-SH': os.path.abspath('{}/xml'.format(websocket_sh_output_dir))
+}
+
+breathe_default_project = 'IntegrationService'
+
 
 # -- General configuration ------------------------------------------------
 
@@ -84,7 +327,9 @@ script_path = os.path.dirname(os.path.abspath(__file__))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = [
+    'breathe',
+]
 try:
     import sphinxcontrib.spelling  # noqa: F401
     extensions.append('sphinxcontrib.spelling')
@@ -178,6 +423,11 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 # keep_warnings = False
 
+suppress_warnings = [
+    'cpp.duplicate_declaration',
+    'cpp.parse_function_declaration'
+]
+
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
@@ -213,7 +463,7 @@ html_theme = 'sphinx_rtd_theme'
 # html_logo = None
 
 # The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# the docs. This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #
 # html_favicon = None

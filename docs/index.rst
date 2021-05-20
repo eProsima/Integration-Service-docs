@@ -19,13 +19,23 @@
 
 .. toctree::
     :caption: User Manual
-    :maxdepth: 2
     :numbered:
     :hidden:
 
     user_manual/is_core
     user_manual/systemhandle/sh
     user_manual/yaml_config
+
+.. toctree::
+   :caption: API Reference
+   :numbered:
+   :hidden:
+
+   api_reference/core/api_is_core
+   api_reference/fastdds_sh/api_is_fastdds_sh
+   api_reference/ros1_sh/api_is_ros1_sh
+   api_reference/ros2_sh/api_is_ros2_sh
+   api_reference/websocket_sh/api_is_websocket_sh
 
 .. toctree::
     :caption: Examples

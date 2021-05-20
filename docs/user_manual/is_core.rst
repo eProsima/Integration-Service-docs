@@ -118,3 +118,8 @@ information between each *System Handle* instance that is desired to establish a
 To do so, *System Handles* must provide a way to convert their specific data types instances into/from *xTypes*.
 An example on how this procedure would look like for a *System Handle*, that is, the *FastDDS System Handle*,
 can be found `here <https://github.com/eProsima/FastDDS-SH/blob/main/src/Conversion.cpp>`_.
+
+API Reference
+^^^^^^^^^^^^^
+The *Integration Service API Reference* constitutes an independent section within this documentation.
+To access the *Integration Service Core* subsection, use this :ref:`link <api_is_core>`.

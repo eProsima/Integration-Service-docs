@@ -21,9 +21,11 @@ jobs:
       - name: Download required dependencies
         run: |
             apt update
-            DEBIAN_FRONTEND=noninteractive apt install -y python3-pip python3-enchant git make
+            DEBIAN_FRONTEND=noninteractive apt install -y python3-pip python3-enchant git make doxygen
             pip3 install -I -r docs/requirements.txt
 
       - name: Build and test the documentation
         run: |
-            make test
+            READTHEDOCS=True sphinx-build -b html -d build/doctrees docs build/html
+            READTHEDOCS=True doc8 --max-line-length 200 docs
+            READTHEDOCS=True sphinx-build -W --keep-going -b spelling -d build/doctrees docs build/spelling

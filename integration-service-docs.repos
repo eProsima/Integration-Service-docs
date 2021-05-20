@@ -1,0 +1,29 @@
+repositories:
+    xtypes:
+        type: git
+        url: https://github.com/eProsima/xtypes.git
+        version: main
+    xtypes/thirdparty/cpp-peglib:
+        type: git
+        url: https://github.com/yhirose/cpp-peglib.git
+        version: v1.3.5
+    integration-service:
+        type: git
+        url: https://github.com/eProsima/Integration-Service.git
+        version: main
+    FastDDS-SH:
+        type: git
+        url: https://github.com/eProsima/FastDDS-SH.git
+        version: main
+    ROS1-SH:
+        type: git
+        url: https://github.com/eProsima/ROS1-SH.git
+        version: main
+    ROS2-SH:
+        type: git
+        url: https://github.com/eProsima/ROS2-SH.git
+        version: main
+    WebSocket-SH:
+        type: git
+        url: https://github.com/eProsima/WebSocket-SH.git
+        version: main
