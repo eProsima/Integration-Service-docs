@@ -9,7 +9,7 @@
 
 If one has a number of complex systems and wills to combine them to create a larger, even more complex system, Integration Service can act as an intermediate message-passing tool that, by speaking a common language, centralizes and mediates the integration.
 
-Integration Service is configured by means of a YAML text file, through which the user can provide a mapping between the topics and services handled by the middlewares of the systems involved.
+*Integration Service* is configured by means of a *YAML* text file, through which the user can provide a mapping between the topics and services handled by the middlewares of the systems involved.
 
 ## Installation Guide
 
