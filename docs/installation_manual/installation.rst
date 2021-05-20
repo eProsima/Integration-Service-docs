@@ -7,12 +7,6 @@ This section provides the user with an easy-to-use installation guide of both
 the *Integration Service* and of the *System Handles*,
 and an explanation of how to launch and deploy an *Integration Service* project.
 
-**Table of Contents**
-
-* :ref:`workspace_setup`
-* :ref:`build`
-* :ref:`deployment`
-
 .. _workspace_setup:
 
 Workspace Setup

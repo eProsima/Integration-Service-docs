@@ -130,4 +130,4 @@ the *ROS 2* :code:`talker-listener` example will start to communicate.
 
 .. warning::
 
-    If the test doesn't work, review carefully your NAT configuration.
+    If the example doesn't work, review carefully your NAT configuration.

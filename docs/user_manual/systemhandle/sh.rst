@@ -33,7 +33,7 @@ for connecting the core with the following middlewares or communication protocol
 .. list-table::
     :name: available_shs
     :header-rows: 1
-    :align: left
+    :width: 100%
 
     * - Protocol
       - *System Handle* overview
