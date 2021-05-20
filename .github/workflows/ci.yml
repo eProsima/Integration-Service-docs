@@ -21,7 +21,7 @@ jobs:
       - name: Download required dependencies
         run: |
             apt update
-            DEBIAN_FRONTEND=noninteractive apt install -y python3-pip python3-enchant git make
+            DEBIAN_FRONTEND=noninteractive apt install -y python3-pip python3-enchant git make doxygen
             pip3 install -I -r docs/requirements.txt
 
       - name: Build and test the documentation
