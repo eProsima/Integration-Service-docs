@@ -26,4 +26,6 @@ jobs:
 
       - name: Build and test the documentation
         run: |
-            make test
+            sphinx-build -b html -d build/doctrees docs build/html
+            doc8 --max-line-length 200 docs
+            sphinx-build -W --keep-going -b spelling -d build/doctrees docs build/spelling
