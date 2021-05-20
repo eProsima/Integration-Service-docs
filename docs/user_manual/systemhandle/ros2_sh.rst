@@ -54,6 +54,8 @@ There are five examples that you can find in this documentation in which the
 * :ref:`fiware_ros2_bridge_pubsub`
 * :ref:`ros2_change_of_domain`
 
+.. _ros2_compilation_flags:
+
 Compilation flags
 ^^^^^^^^^^^^^^^^^
 

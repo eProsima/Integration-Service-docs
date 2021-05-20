@@ -69,6 +69,8 @@ There are three examples that you can find in this documentation in which the
 * :ref:`dds_change_of_domain`
 * :ref:`wan_tcp_tunneling_dds`
 
+.. _dds_compilation_flags:
+
 Compilation flags
 ^^^^^^^^^^^^^^^^^
 

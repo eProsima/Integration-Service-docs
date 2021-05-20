@@ -7,16 +7,139 @@ into *Integration Service*.
 The *ROS 2* and *WebSocket System Handles*, which were previously included as subfolders of the main
 project, have been separated into independent repositories.
 
+**Previous** versions are considered **deprecated**, and it is not recommended to use them from now on.
+
+There are some global changes that affect to all repositories; they are listed here:
+
+* Completed migration from *SOSS* to *Integration Service*. This, code wise, included changing the
+  **C++** namespace convention of the whole project, from :code:`soss::core` to :code:`eprosima::is::core`
+  and from :code:`soss::<SH_NAME>` to :code:`eprosima::is::sh::<SH_NAME>`.
+
+* Used :ref:`eProsima xTypes <xtypes_library>` as the common language for the *Core* to speak to each *System Handle*.
+
+* Created unique pool for :code:`SubscriptionCallback` and :code:`RequestCallback` lambda functions.
+  Prior to this version, they were being copied multiple among the *Core* and involved *System Handles*,
+  leading to unnecessary copies and entities destruction problems.
+
+* Added new :code:`Logger` class, with different logging levels: `DEBUG`, `INFO`, `WARN`, `ERROR`.
+
+* Debug logging traces are automatically enabled if the project is compiled in debug mode.
+
+* Add much more traces and unify the logging style.
+
+* Full API reference documentation using *Doxygen*.
+
+* Migrated whole test suite from :code:`Catch` to :code:`Google Test`.
+
+* Applied uncrustify rules.
+
+* Added brand new README section, with detailed information about the project status and features.
+
+* Added :ref:`global compilation flags <global_compilation_flags>` for building tests, examples, libraries and the API reference.
+
 In relation to each repository, these are the most relevant changes for this major release:
+
+.. TODO: add crossed ref to the API sections when ready. Also for logger class.
+
 
 **Core**
 
+* Add an optional *YAML* configuration file :ref:`types <types_definition>` section,
+  with an :code:`idl` subsection. This allows users to introduce their own data type definitions
+  at runtime, following the `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL>`_ specification.
+
+* Inclusion of a :ref:`types-from <types_definition>` option in the *YAML* configuration file,
+  to allow type inheritance among *System Handles*.
+
+* Created a `Core GitHub action <https://github.com/eProsima/Integration-Service/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
+
+* Skip blank services names.
+
+* JSON conversion library: handle special double/float values (:code:`Inf`, :code:`NaN`...).
+
+* JSON conversion library: boolean type support.
+
+* Moved all example configuration files into a `common folder <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_.
+
+* Created `utility packages and applications <https://github.com/eProsima/Integration-Service/tree/main/examples/utils>`_
+  for testing all the :ref:`examples tutorials <examples>` available in the documentation.
+
+* Fix non-resizable containers for conversion to/from *ROS 1* and *ROS 2* static types definitions.
+
+
 **Fast DDS System Handle**
+
+* Migrated from *Fast RTPS* to *Fast DDS*. From now on, `2.X.X` versions of *Fast DDS* will be supported.
+
+* Got rid of separate *CMake* project into the same project as the SystemHandle, under a :code:`test` folder.
+
+* Created a `FastDDS-SH GitHub action <https://github.com/eProsima/FastDDS-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
+
+* Added support for setting a custom *DDS* participant *domain ID* in the *YAML* specific configuration section
+  for the `fastdds` middleware.
+
+* Added the possibility of creating the *Fast DDS DomainParticipant* entity with a custom
+  `XML profile <https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/xml_configuration.html>`_.
+
+* Added :ref:`specific compilation flags <dds_compilation_flags>`.
+
+* *UDPv4* is now used as default transport if the user does not set a custom one.
+
+* Treat services request and reply types properly, even if no remap if present.
+
+* Fix concurrency problem detected in the client/server integration tests.
+
 
 **FIWARE System Handle**
 
+* Created a `FIWARE-SH GitHub action <https://github.com/eProsima/FIWARE-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
+
+* Added :ref:`specific compilation flags <fiware_compilation_flags>`.
+
+
 **ROS 1 System Handle**
+
+* Created a `ROS1-SH GitHub action <https://github.com/eProsima/ROS1-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
+
+* Added :ref:`specific compilation flags <ros1_compilation_flags>`.
+
+* Fixed :code:`SystemHandle::configure` return value logic.
+
+* Rearranged project folders with a more consistent structure.
+
+* Created a new **MIX generator** project to ease users the task of compiling custom
+  *ROS 1 packages* transformation libraries.
+
+* Fixed service server/client not taking into account request and reply types separately.
+
 
 **ROS 2 System Handle**
 
+* Created a `ROS2-SH GitHub action <https://github.com/eProsima/ROS2-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
+
+* Added :ref:`specific compilation flags <ros2_compilation_flags>`.
+
+* Rearranged project folders to a more consistent structure.
+
+* Created a new **MIX generator** project to ease users the task of compiling custom
+  *ROS 2 packages* transformation libraries.
+
+* Fixed service server/client not taking into account request and reply types separately.
+
+
 **WebSocket System Handle**
+
+* Created a `WebSocket-SH GitHub action <https://github.com/eProsima/WebSocket-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
+
+* Add :ref:`specific compilation flags <websocket_compilation_flags>`.
+
+* Added support for non-secure (*TCP*) connections.
+
+* Add the option in the *YAML* configuration file to :ref:`disable security <websocket_sh_config>`.
+
+* Add tests for server/client interaction.
+
+* Fixed concurrency problem when handling connections.
+
+* Add more information about the connection ID.
+  Keep track of all the opened connections and tag them with a unique ID number.

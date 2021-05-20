@@ -3,9 +3,11 @@ v2.1.0
 
 This release includes the following *bugfixes* and *improvements*:
 
+
 **ROS 2 System Handle**
 
 * Cross-compatibility with *ROS 2 Eloquent* and *Foxy*.
+
 
 **WebSocket System Handle**
 

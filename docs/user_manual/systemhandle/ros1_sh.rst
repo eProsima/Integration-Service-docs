@@ -66,6 +66,7 @@ is employed in the communication:
 
 * :ref:`ros1_ros2_bridge_pubsub`
 
+.. _ros1_compilation_flags:
 
 Compilation flags
 ^^^^^^^^^^^^^^^^^
