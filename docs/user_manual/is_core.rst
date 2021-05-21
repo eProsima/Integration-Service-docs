@@ -23,7 +23,7 @@ Because of this, downstream users can extend *Integration Service* to communicat
 
 .. image:: images/is_core.png
 
-According the diagram depicted above, the *Integration Service Core* executes the following steps:
+According to the diagram depicted above, the *Integration Service Core* executes the following steps:
 
 #. **Parse** the *YAML* configuration file. This file must contain everything needed to successfully
    launch an *Integration Service* instance.

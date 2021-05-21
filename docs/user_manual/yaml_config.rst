@@ -21,7 +21,7 @@ please have a look at the list below:
 
 The *Integration Service* can be configured during runtime by means of a dedicated **YAML** file.
 This configuration file must follow a specific syntax, meaning that it is required that a number
-of compulsory section are opportunely filled for it to successfully configure and launch
+of compulsory sections are opportunely filled for it to successfully configure and launch
 an *Integration Service* instance, while others are optional. Both kinds are listed and reviewed below:
 
 * :code:`types`: *(optional)*: It allows to list the `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL/>`_
@@ -64,8 +64,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
 
   Some configuration parameters are common for all the supported middlewares within the
   *Integration Service* ecosystem; while others are specific of each middleware. To see which
-  parameters are relevant for a certain middleware, please refer to its dedicated *README* section
-  in its corresponding GitHub repository, under the name of :code:`https://github.com/eProsima/<MW_NAME>-SH`.
+  parameters are relevant for a certain middleware, please refer to its dedicated subsection in the :ref:`built_in_sh` page.
 
   .. code-block:: yaml
 
@@ -121,8 +120,8 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
 
   For each topic, some configuration parameters are common for all the supported middlewares within the
   *Integration Service* ecosystem; while others are specific of each middleware. To see which topic
-  parameters must/can be configured for a certain middleware, please refer to its dedicated *README* section
-  in its corresponding GitHub repository, under the name of :code:`https://github.com/eProsima/<MW_NAME>-SH`.
+  parameters must/can be configured for a certain middleware,
+  please refer to its dedicated subsection in the :ref:`built_in_sh` page.
 
   .. code-block:: yaml
 
@@ -161,8 +160,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
   For each service, some configuration parameters are common for all of the supported middlewares
   within the *Integration Service* ecosystem; while others are specific of each middleware.
   To see which parameters must/can be configured for a certain middleware in the context of a service
-  definition, please refer to its dedicated *README* section in its corresponding GitHub repository,
-  under the name of :code:`https://github.com/eProsima/<MW_NAME>-SH`.
+  definition, please refer to its dedicated subsection in the :ref:`built_in_sh` page.
 
   .. code-block:: yaml
 
@@ -254,8 +252,8 @@ The name for each type can be whatever the user wants, with the two following ru
 
 Note: a minimum of a structure type is required for the communication.
 
-For more details about *IDL* definition, please refer to
-`IDL documentation <https://www.omg.org/spec/IDL/4.2/PDF>`__.
+For more details about *IDL* definition, please refer to the
+`IDL specification documentation <https://www.omg.org/spec/IDL/4.2/PDF>`__.
 
 The following is an example of a full configuration defining a :code:`dds`-:code:`fiware` communication using the types
 definition contained in the :code:`idls` block.
@@ -319,12 +317,12 @@ If :code:`type` is omitted, the key of the *YAML* entry will be used as :code:`t
         ros2_domain5: { type: ros2, domain: 5, node_name: "ros_node_5" }
         fiware: { host: 192.168.1.59, port: 1026 }
 
-The snippet above will create three *System Handles*:
+The snippet above will create three *System Handles* instances:
 
-* A *DDS System Handle* with default configuration.
-* A *ROS 2 System Handle* named :code:`ros2_domain` with :code:`domain = 5` and
+* A *DDS System Handle* instance, with default configuration.
+* A *ROS 2 System Handle* instance, named :code:`ros2_domain` with :code:`domain = 5` and
   :code:`node_name = "is_5"`.
-* A *FIWARE System Handle* with :code:`host = 192.168.1.59` and :code:`port = 1026`.
+* A *FIWARE System Handle* instance, with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
 The *System Handles* currently available for *Integration Service* are listed in a table that you can find in the
 :ref:`built_in_sh` section of this documentation.
