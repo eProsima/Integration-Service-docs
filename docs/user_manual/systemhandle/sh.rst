@@ -107,7 +107,7 @@ the superclass:
     bool spin_once();
 
 The :code:`configure` method is called to setup the *System Handle* with the associated :code:`configuration`,
-defined in the YAML file that is passed to it.
+defined in the *YAML* file that is passed to it.
 The types that the SH needs to manage to implement the communication are passed to this method via the :code:`types`
 argument, whereas the new types created by the *System Handle* are expected to be filled in the :code:`type_registry`.
 

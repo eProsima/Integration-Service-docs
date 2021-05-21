@@ -13,7 +13,7 @@ A single :code:`integration-service` executable instance can connect `N` middlew
 where each middleware has a plugin, or *System Handle* associated with it.
 
 The *System Handle* for a middleware is a lightweight wrapper around that middleware (e.g. a *ROS* node or a *WebSocket*
-server/client). The :code:`is-core` library provides CMake functions that allow these middleware
+server/client). The :code:`is-core` library provides *CMake* functions that allow these middleware
 *System Handles* to be discovered by the :code:`integration-service` executable at runtime after the *System Handle*
 has been installed.
 
@@ -92,7 +92,7 @@ The xTypes library
 
 This library allows to create *Dynamic Type* representations at runtime, by means of feeding the
 provided parser with an `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL/>`_ type definition.
-For example, given the following IDL:
+For example, given the following *IDL*:
 
 .. code-block:: idl
 

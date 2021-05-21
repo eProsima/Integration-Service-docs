@@ -48,7 +48,7 @@ Also, to get this example working, the following requirements must be met:
       docker run --rm -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
 
   It is very important to retrieve the :code:`fiware/orion` docker container IP, because it will be later placed
-  in the *Integration Service* YAML configuration file. To do so, simply check the output of the following command:
+  in the *Integration Service YAML* configuration file. To do so, simply check the output of the following command:
 
   .. code-block:: bash
 
@@ -86,7 +86,7 @@ To enable communication from *ROS 2* to *FIWARE*, open three terminals:
 
   .. important::
 
-    **Please notice** that the YAML may have a different IP address for the :code:`host` file
+    **Please notice** that the *YAML* may have a different IP address for the :code:`host` file
     that the one you retrieved from your docker container bridge, if so, replace it properly.
     From now on, in this example, the host will be located at IP address :code:`172.17.0.1`:
 
@@ -137,7 +137,7 @@ To enable communication from *FIWARE* to *ROS 2*, open three terminals:
 
   .. important::
 
-    **Please notice** that the YAML may have a different IP address for the :code:`host` file
+    **Please notice** that the *YAML* may have a different IP address for the :code:`host` file
     that the one you retrieved from your docker container bridge, if so, replace it properly.
     From now on, in this example, the host will be located at IP address :code:`172.17.0.1`:
 

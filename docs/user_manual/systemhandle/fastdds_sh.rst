@@ -52,11 +52,11 @@ five sections:
     * :code:`domain_id`: Provides an easy way to change the *Domain ID* of the DDS entities created
       by the *Fast DDS System Handle*.
 
-    * :code:`file_path`: Path to an XML file, containing a configuration profile for the System Handle
-      participant. More information about Fast DDS XML profiles and how to fully customize the
+    * :code:`file_path`: Path to an *XML* file, containing a configuration profile for the *System Handle*
+      participant. More information about Fast DDS *XML* profiles and how to fully customize the
       properties of DDS entities through them is available `here <https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/xml_configuration.html>`_.
 
-    * :code:`profile_name`: Within the provided XML file, the name of the XML profile associated to the
+    * :code:`profile_name`: Within the provided *XML* file, the name of the *XML* profile associated to the
       *Integration Service Fast DDS System Handle* participant.
 
 Examples

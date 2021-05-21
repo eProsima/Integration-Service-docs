@@ -47,13 +47,13 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
 
   Several parameters can be configured within this section:
 
-    * :code:`idls`: List of IDL type definitions that can be directly embedded within the configuration file.
-      If the :code:`types` section is defined, this subsection is mandatory. The type can be entirely defined within the YAML file,
-      or can be included from a preexisting IDL file; for the latter,
-      the system path containing where the IDL file is stored must be placed into the :code:`paths` section described below.
+    * :code:`idls`: List of *IDL* type definitions that can be directly embedded within the configuration file.
+      If the :code:`types` section is defined, this subsection is mandatory. The type can be entirely defined within the *YAML* file,
+      or can be included from a preexisting *IDL* file; for the latter,
+      the system path containing where the *IDL* file is stored must be placed into the :code:`paths` section described below.
 
-    * :code:`paths` *(optional):* Using this parameter, an existing IDL type written in a separate file can be included within the *Integration Service* types section.
-      If the IDL path is not listed here, the previous subsection :code:`#include` preprocessor directive will fail.
+    * :code:`paths` *(optional):* Using this parameter, an existing *IDL* type written in a separate file can be included within the *Integration Service* types section.
+      If the *IDL* path is not listed here, the previous subsection :code:`#include` preprocessor directive will fail.
 
   For more details on this section, please refer to the :ref:`types_definition` subsection of this page.
 
@@ -80,7 +80,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
 
     * :code:`types-from` *(optional)*: Configures the types inheritance from a given system to another.
       This allows to use types defined within *Middleware Interface Extension* files for a certain middleware into another middleware,
-      without the need of duplicating them or writing an equivalent IDL type for the rest of systems.
+      without the need of duplicating them or writing an equivalent *IDL* type for the rest of systems.
 
   For more details on this section, please refer to the :ref:`systems_definition` subsection of this page.
 
@@ -116,7 +116,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
   :raw-html:`<br />`
 
 * :code:`topics`: Specifies the topics exchanged over the :code:`routes` listed above corresponding to the
-  publication-subscription paradigm. The topics must be specified in the form of a YAML dictionary,
+  publication-subscription paradigm. The topics must be specified in the form of a *YAML* dictionary,
   meaning that two topics can never have the same name.
 
   For each topic, some configuration parameters are common for all the supported middlewares within the
@@ -155,7 +155,7 @@ an *Integration Service* instance, while others are optional. Both kinds are lis
 
 * :code:`services`: Allows to define the services that *Integration Service* will be in charge of
   bridging, according to the service :code:`routes` listed above for the client/server paradigm.
-  The services must be specified in the form of a YAML dictionary, meaning that two services can
+  The services must be specified in the form of a *YAML* dictionary, meaning that two services can
   never have the same name.
 
   For each service, some configuration parameters are common for all of the supported middlewares
@@ -217,9 +217,9 @@ Nevertheless, there are cases where the *System Handle* is not able to retrieve 
 In those cases, there are two ways to pass this information to the *System Handle*:
 
 - Using the :code:`types-from` property, that *imports* the types specification from another system.
-- Specifying the type yourself by embedding an IDL into the YAML.
+- Specifying the type yourself by embedding an *IDL* into the YAML.
 
-Regarding the second option, the IDL content can be provided in the YAML either directly, as follows:
+Regarding the second option, the *IDL* content can be provided in the *YAML* either directly, as follows:
 
 .. code-block:: yaml
 
@@ -233,7 +233,7 @@ Regarding the second option, the IDL content can be provided in the YAML either 
                 };
 
 or by inclusion of a :code:`paths` field, that can be used to provide the preprocessor with a list of paths where
-to search for IDL files to include into the IDL content. The syntax in this case would be:
+to search for *IDL* files to include into the *IDL* content. The syntax in this case would be:
 
 .. code-block:: yaml
 
@@ -254,7 +254,7 @@ The name for each type can be whatever the user wants, with the two following ru
 
 Note: a minimum of a structure type is required for the communication.
 
-For more details about IDL definition, please refer to
+For more details about *IDL* definition, please refer to
 `IDL documentation <https://www.omg.org/spec/IDL/4.2/PDF>`__.
 
 The following is an example of a full configuration defining a :code:`dds`-:code:`fiware` communication using the types
@@ -293,7 +293,7 @@ definition contained in the :code:`idls` block.
             type: "Header"
             route: dds_to_fiware
 
-.. TODO_1: Note that the publisher and subscriber in the DDS world need to be configured with a compatible IDL.
+.. TODO_1: Note that the publisher and subscriber in the DDS world need to be configured with a compatible *IDL*.
     That means that the type definition may differ between them.
 
 .. TODO_2: In that case, some `QoS policies <https://github.com/eProsima/xtypes#type-consistency-qos-policies>`__ will
@@ -306,11 +306,11 @@ definition contained in the :code:`idls` block.
 Systems definition
 ^^^^^^^^^^^^^^^^^^
 
-A *System Handle* may need additional configuration that should be defined in its :code:`systems` entry as a YAML map.
+A *System Handle* may need additional configuration that should be defined in its :code:`systems` entry as a *YAML* map.
 Each entry of this section represents a middleware involved in the communication, and corresponds to an instance of
 a *System Handle*.
 All *System Handles* accept the :code:`type` and :code:`types-from` options in their :code:`systems` entry.
-If :code:`type` is omitted, the key of the YAML entry will be used as :code:`type`.
+If :code:`type` is omitted, the key of the *YAML* entry will be used as :code:`type`.
 
 .. code-block:: yaml
 
@@ -354,7 +354,7 @@ path (:code:`server`-:code:`client`). For example:
         dds_server: { server: dds, clients: ros2_domain5 }
         fiware_server: { server: fiware, clients: [ dds, ros2_domain5 ] }
 
-This YAML defines the following routes:
+This *YAML* defines the following routes:
 
 .. image:: images/routes.png
    :align: center

@@ -19,7 +19,7 @@ This folder contains several files that can be divided into two different catego
 * Those located in the :code:`include/is/core/runtime` folder, which corresponds with the runtime
   necessary tools. To date, these include the search tool to load the .mix associated with the
   *System Handles* that will be used during execution and the tool that allows accessing the fields
-  specified in the YAML configuration file.
+  specified in the *YAML* configuration file.
 
    .. toctree::
 

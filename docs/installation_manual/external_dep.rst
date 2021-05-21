@@ -15,7 +15,7 @@ The core needs the following to be installed:
 
 * `CMake <https://cmake.org/>`_: At least version *3.5* is required to build the project files.
 * `C++ <https://isocpp.org/>`_: *eProsima Integration-Service* uses standard C++14.
-* `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_: If installed using colcon, it becomes
+* `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_: If installed using *colcon*, it becomes
   a dependency.
 
 .. _sh_deps:

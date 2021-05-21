@@ -102,13 +102,13 @@ YAML configuration files
 plus some optional ones.
 
 This configuration approach is especially profitable when it comes to integrating large systems,
-since a single YAML file is needed no matter how many protocols are being communicated.
+since a single *YAML* file is needed no matter how many protocols are being communicated.
 
 The strength of this approach is that different translations are possible by only changing the configuration file.
 This means that no compilation steps are required between each *Integration Service* instantiation, as
 it is configured at runtime.
 
-Detailed information on how to configure an *Integration Service*-mediated communication via a YAML file
+Detailed information on how to configure an *Integration Service*-mediated communication via a *YAML* file
 can be found in the :ref:`yaml_config` user manual of this documentation.
 
 Main features
@@ -117,7 +117,7 @@ Main features
 #. **Free and Open Source:** The `Integration Service Core <https://github.com/eProsima/Integration-Service>`_,
    and all :ref:`System Handles available to date <available_shs>` are free and open source.
 #. **Easily configurable:** As detailed above, an *Integration Service* instance is easily configurable
-   by means of a YAML file.
+   by means of a *YAML* file.
    For more information on how to do so, please consult the :ref:`yaml_config` user manual of this documentation.
 #. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service*
    world by generating the plugin, or *System Handle* needed by the core to integrate them.

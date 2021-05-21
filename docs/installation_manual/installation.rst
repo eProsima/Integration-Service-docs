@@ -92,7 +92,7 @@ To do so, execute from the :code:`is-workspace`:
 .. note:: :code:`<COMPILATION_FLAGS>` refers to the optional flags used to configure *Integration Service*. For further details refers to the :ref:`global_compilation_flags` section.
 
 Once that's finished building and before launching your *Integration Service* project,
-you need to source the new colcon overlay:
+you need to source the new *colcon* overlay:
 
 .. code-block:: bash
 
@@ -104,7 +104,7 @@ you need to source the new colcon overlay:
 Global compilation flags
 ------------------------
 
-*Integration Service* uses CMake for building and packaging the project.
+*Integration Service* uses *CMake* for building and packaging the project.
 There are several CMake flags, which can be tuned during the configuration step:
 
 * :code:`BUILD_LIBRARY`: This compilation flag can be used to completely disable the compilation of
@@ -127,7 +127,7 @@ There are several CMake flags, which can be tuned during the configuration step:
     ~/is_ws$ colcon build --cmake-args -DBUILD_API_REFERENCE=ON
 
 * :code:`BUILD_TESTS`: When compiling *Integration Service*, use the :code:`-DBUILD_TESTS=ON` CMake option
-  to compile both the unitary tests for the Integration Service Core and the unitary
+  to compile both the unitary tests for the *Integration Service Core* and the unitary
   and integration tests for all the *System Handles* present in the `colcon` workspace:
 
   .. code-block:: bash
@@ -136,7 +136,7 @@ There are several CMake flags, which can be tuned during the configuration step:
 
 * :code:`BUILD_EXAMPLES`: Allows to compile utilities that can be used for the several provided
   usage examples for *Integration Service*, located under the `examples/utils <https://github.com/eProsima/Integration-Service/tree/main/examples/utils>`_ folder of the core repository.
-  These applications can be used to test the *Integration Service* with some of the provided YAML configuration
+  These applications can be used to test the *Integration Service* with some of the provided *YAML* configuration
   files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
 
   .. code-block:: bash
@@ -248,7 +248,7 @@ Deployment
 
 The :code:`is-workspace` is now prepared for running an *Integration Service* instance.
 
-The communication can be configured using a YAML file as explained in section :ref:`yaml_config`.
+The communication can be configured using a *YAML* file as explained in section :ref:`yaml_config`.
 Once created, it is passed to *Integration Service* with the following instruction:
 
 .. code-block:: bash
@@ -263,7 +263,7 @@ into the *Integration Service* ecosystem.
 
 .. note::
 
-    The sourcing of the local colcon overlay is required every time the colcon workspace is opened in a new shell
+    The sourcing of the local *colcon* overlay is required every time the *colcon* workspace is opened in a new shell
     environment. As an alternative, you can copy the source command with the full path of your local installation to
     your :code:`.bashrc` file as:
 
