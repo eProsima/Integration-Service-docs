@@ -116,7 +116,7 @@ There are several CMake flags, which can be tuned during the configuration step:
 
   .. code-block:: bash
 
-    ~/is_ws$ colcon build --cmake-args -DBUILD_LIBRARY=ON
+    ~/is_ws$ colcon build --cmake-args -DBUILD_LIBRARY=OFF
 
 * :code:`BUILD_API_REFERENCE`: It is used to generate all the necessary files for building the
   :ref:`api_reference` section of this documentation, starting from the source code comments written
