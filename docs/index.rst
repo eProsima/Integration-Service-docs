@@ -40,7 +40,7 @@
 .. toctree::
     :caption: Examples
     :maxdepth: 2
-    :numbered:
+    :numbered: 4
     :hidden:
 
     examples/different_protocols/examples_different_protocols

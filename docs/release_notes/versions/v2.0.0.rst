@@ -32,7 +32,7 @@ This release includes the following *bugfixes* and *improvements*:
 
 * Include the *Core* as a dependency of the *genmsg* package.
 
-* Allow, via YAML configuration parameters, to specify custom names for *ROS 1* nodes.
+* Allow, via *YAML* configuration parameters, to specify custom names for *ROS 1* nodes.
 
 * Remove `package.xml` files, because they confuse `colcon`.
 
@@ -49,7 +49,7 @@ This release includes the following *bugfixes* and *improvements*:
 
 * Support for both *ROS 2 Crystal* and *Dashing*.
 
-* Have CMake throw a fatal error when dependencies are missing.
+* Have *CMake* throw a fatal error when dependencies are missing.
 
 * Corrected format.
 
@@ -60,4 +60,4 @@ This release includes the following *bugfixes* and *improvements*:
 
 * Update *WebSocket System Handle* tests, so the TLS handshake works.
 
-* Have CMake throw a fatal error when dependencies are missing.
+* Have *CMake* throw a fatal error when dependencies are missing.

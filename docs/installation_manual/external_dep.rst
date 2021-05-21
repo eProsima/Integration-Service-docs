@@ -4,7 +4,7 @@ Dependencies
 ============
 
 In this page, we provide a list of the dependencies required for an *Integration Service* instance to function.
-To do so, we distinguish between the dependencies of the core and those of the *System Handles*.
+To do so, we distinguish between the dependencies of the *Integration Service Core* and those of the *System Handles*.
 
 .. _core_deps:
 
@@ -15,8 +15,11 @@ The core needs the following to be installed:
 
 * `CMake <https://cmake.org/>`_: At least version *3.5* is required to build the project files.
 * `C++ <https://isocpp.org/>`_: *eProsima Integration-Service* uses standard C++14.
-* `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_: If installed using colcon, it becomes
+* `colcon <https://colcon.readthedocs.io/en/released/user/installation.html>`_: If installed using *colcon*, it becomes
   a dependency.
+* `YAML-cpp <https://packages.ubuntu.com/search?keywords=libyaml-cpp-dev>`_: *YAML* parser and emitter in C++.
+* `Boost program options <https://packages.ubuntu.com/search?keywords=libboost-program-options-dev>`_: Library that allows
+  obtaining name-value pairs from the config file.
 
 .. _sh_deps:
 

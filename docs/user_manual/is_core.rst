@@ -13,7 +13,7 @@ A single :code:`integration-service` executable instance can connect `N` middlew
 where each middleware has a plugin, or *System Handle* associated with it.
 
 The *System Handle* for a middleware is a lightweight wrapper around that middleware (e.g. a *ROS* node or a *WebSocket*
-server/client). The :code:`is-core` library provides CMake functions that allow these middleware
+server/client). The :code:`is-core` library provides *CMake* functions that allow these middleware
 *System Handles* to be discovered by the :code:`integration-service` executable at runtime after the *System Handle*
 has been installed.
 
@@ -23,7 +23,7 @@ Because of this, downstream users can extend *Integration Service* to communicat
 
 .. image:: images/is_core.png
 
-According the diagram depicted above, the *Integration Service Core* executes the following steps:
+According to the diagram depicted above, the *Integration Service Core* executes the following steps:
 
 #. **Parse** the *YAML* configuration file. This file must contain everything needed to successfully
    launch an *Integration Service* instance.
@@ -57,18 +57,18 @@ According the diagram depicted above, the *Integration Service Core* executes th
 
 #. Next, the **routes** are processed, and links between the routed *systems* are established.
 
-   For example, if a route consists on establishing a link :code:`from` *Middleware_A* :code:`to` *Middleware_B*,
+   For example, if a route consists on establishing a link :code:`from` *Middleware_1* :code:`to` *Middleware_2*,
    the *Integration Service Core* will internally register:
 
-     * A *Middleware_A* **TopicSubscriber**.
+     * A *Middleware_1* **TopicSubscriber**.
 
-     * A *Middleware_B* **TopicPublisher**.
+     * A *Middleware_2* **TopicPublisher**.
 
-   The *Middleware_A TopicSubscriber* will be listening to a certain *Middleware_A topic publisher*.
+   The *Middleware_1 TopicSubscriber* will be listening to a certain *Middleware_1 topic publisher*.
    This subscriber registers a callback that internally converts
    the middleware-specific data type instance into a *Dynamic Data*, using *xTypes* for that purpose,
-   and forwards the converted data instance to the *Middleware_B TopicPublisher*, which will then publish
-   it so that it can be consumed by the final endpoint destination, that is, a *Middleware_B subscriber*.
+   and forwards the converted data instance to the *Middleware_2 TopicPublisher*, which will then publish
+   it so that it can be consumed by the final endpoint destination, that is, a *Middleware_2 subscriber*.
 
    :raw-html:`<br />`
 
@@ -92,7 +92,7 @@ The xTypes library
 
 This library allows to create *Dynamic Type* representations at runtime, by means of feeding the
 provided parser with an `IDL <https://www.omg.org/spec/IDL/4.2/About-IDL/>`_ type definition.
-For example, given the following IDL:
+For example, given the following *IDL*:
 
 .. code-block:: idl
 

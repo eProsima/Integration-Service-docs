@@ -5,7 +5,7 @@ ROS 1 System Handle
 
 The main purpose of the *ROS 1 System Handle* is that of establishing a connection between a
 *ROS 1* application and an application running over a different middleware implementation.
-This is the classic use-case for Integration Service.
+This is the classic use-case for *Integration Service*.
 
 Dependencies
 ^^^^^^^^^^^^
