@@ -57,18 +57,18 @@ According to the diagram depicted above, the *Integration Service Core* executes
 
 #. Next, the **routes** are processed, and links between the routed *systems* are established.
 
-   For example, if a route consists on establishing a link :code:`from` *Middleware_A* :code:`to` *Middleware_B*,
+   For example, if a route consists on establishing a link :code:`from` *Middleware_1* :code:`to` *Middleware_2*,
    the *Integration Service Core* will internally register:
 
-     * A *Middleware_A* **TopicSubscriber**.
+     * A *Middleware_1* **TopicSubscriber**.
 
-     * A *Middleware_B* **TopicPublisher**.
+     * A *Middleware_2* **TopicPublisher**.
 
-   The *Middleware_A TopicSubscriber* will be listening to a certain *Middleware_A topic publisher*.
+   The *Middleware_1 TopicSubscriber* will be listening to a certain *Middleware_1 topic publisher*.
    This subscriber registers a callback that internally converts
    the middleware-specific data type instance into a *Dynamic Data*, using *xTypes* for that purpose,
-   and forwards the converted data instance to the *Middleware_B TopicPublisher*, which will then publish
-   it so that it can be consumed by the final endpoint destination, that is, a *Middleware_B subscriber*.
+   and forwards the converted data instance to the *Middleware_2 TopicPublisher*, which will then publish
+   it so that it can be consumed by the final endpoint destination, that is, a *Middleware_2 subscriber*.
 
    :raw-html:`<br />`
 
