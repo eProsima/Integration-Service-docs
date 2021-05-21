@@ -3,13 +3,13 @@
 DDS Domain ID change
 ====================
 
-A very typical scenario within the DDS ecosystem is that of two applications running under different DDS domain IDs,
+A very typical scenario within the *DDS* ecosystem is that of two applications running under different *DDS* domain IDs,
 so that they are isolated from each other; however, it might be required to bridge some of the topics
 published by one of the applications, so that a subscriber on a different domain ID can consume this information.
-This is where the *Integration Service* plays a fundamental role, by allowing to bridge two DDS dataspaces easily.
+This is where the *Integration Service* plays a fundamental role, by allowing to bridge two *DDS* dataspaces easily.
 
-The steps described below allows a Fast DDS *HelloWorld* publisher  application,
-running under a certain domain ID, to communicate with a Fast DDS *HelloWorld* subscriber application,
+The steps described below allows a *Fast DDS HelloWorld* publisher  application,
+running under a certain domain ID, to communicate with a *Fast DDS HelloWorld* subscriber application,
 which is running under a different domain ID.
 
 .. image:: images/dds_domains.png
@@ -59,7 +59,7 @@ Deployment
 Below we explain how to deploy an example of this use case. To do so, open three terminals:
 
 * In the first terminal, execute the :code:`DDSHelloWorld` example, as a subscriber running under
-  DDS domain ID **3** and subscribed to the topic :code:`hello_domain_3`:
+  *DDS* domain ID **3** and subscribed to the topic :code:`hello_domain_3`:
 
   .. code-block:: bash
 
@@ -67,7 +67,7 @@ Below we explain how to deploy an example of this use case. To do so, open three
       ./DDSHelloWorld -m subscriber -n hello_domain_3 -d 3
 
 * In the second terminal, execute the :code:`DDSHelloWorld` example, as a publisher running under
-  DDS domain ID **5** and publishing data to the topic :code:`hello_domain_3`:
+  *DDS* domain ID **5** and publishing data to the topic :code:`hello_domain_3`:
 
   .. code-block:: bash
 

@@ -4,10 +4,10 @@ ROS 2 Domain ID change
 ======================
 
 A very typical scenario within the *ROS 2* ecosystem is that of two applications running
-under different ROS 2 domain IDs, so that they are isolated from each other;
+under different *ROS 2* domain IDs, so that they are isolated from each other;
 however, it might be required to bridge some of the published topics by the first application,
 so that a subscriber on the second application, running on a different domain ID can consume this information.
-This is where the *Integration Service* plays a fundamental role, by allowing to bridge two ROS 2 dataspaces easily.
+This is where the *Integration Service* plays a fundamental role, by allowing to bridge two *ROS 2* dataspaces easily.
 
 The steps described below allow a *ROS 2* publisher application, running under a certain domain ID,
 to communicate with a *ROS 2* subscriber (echo) application, which is running under a different domain ID.

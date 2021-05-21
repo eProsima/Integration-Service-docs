@@ -3,12 +3,12 @@
 FIWARE - ROS 2 bridge
 =====================
 
-An interesting use case is the one of bringing information coming from the ROS 2 world into the FIWARE ecosystem,
-so that it can be used to translate information coming from physically operated ROS 2 robots
-into its FIWARE’s digital twin models.
+An interesting use case is the one of bringing information coming from the *ROS 2* world into the *FIWARE* ecosystem,
+so that it can be used to translate information coming from physically operated *ROS 2* robots
+into its *FIWARE's* digital twin models.
 
-The steps described below aim to provide an easy way to translate the information coming from a ROS 2 publisher
-into the FIWARE’s Orion Context Broker; and viceversa.
+The steps described below aim to provide an easy way to translate the information coming from a *ROS 2* publisher
+into the *FIWARE’s Orion Context Broker*; and viceversa.
 
 .. image:: images/fiware-ros2.png
 
@@ -35,13 +35,13 @@ Also, to get this example working, the following requirements must be met:
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
 * Having a **FIWARE’s Context Broker** correctly set up. To do so:
-  * Set up a MongoDB database image:
+  * Set up a *MongoDB* database image:
 
     .. code-block:: bash
 
       docker run --rm --name mongodb -d mongo:3.4
 
-  * Create a container for the *FIWARE’s Orion Context Broker*, linked to the previously created MongoDB docker:
+  * Create a container for the *FIWARE’s Orion Context Broker*, linked to the previously created *MongoDB* docker:
 
     .. code-block:: bash
 
@@ -173,7 +173,7 @@ You should see the context broker entity named **hello_fiware** previously creat
       source /opt/ros/$ROS2_DISTRO/setup.bash
       ros2 topic echo /hello_ros2
 
-* Again in the second terminal, update the FIWARE entity hosted in the Context Broker:
+* Again in the second terminal, update the *FIWARE* entity hosted in the *Context Broker*:
 
   .. code-block:: bash
 
