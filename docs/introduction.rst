@@ -26,7 +26,7 @@ The communication between the different protocols is made possible by system-spe
 *System Handles*.
 These provide the necessary conversion between the target protocols and the common representation
 language spoken by *Integration Service*, based on an implementation of the
-`xTypes <https://www.omg.org/spec/DDS-XTypes/About-DDS-XTypes/>`_.
+`xTypes <https://www.omg.org/spec/DDS-XTypes/About-DDS-XTypes/>`_ specification.
 Once a system is communicated with the core, it enters the *Integration Service* world and can
 straightforwardly reach out to any other system that already exists in this world.
 
@@ -39,7 +39,7 @@ mapping between the topics and services handled by the middlewares of the system
 
 #. The :ref:`is_core` engine.
 #. The :ref:`System Handles <sh>` or plugins, for each supported protocol.
-#. A :ref:`yaml_config`, which follows a specific syntax.
+#. A :ref:`yaml_config` file, which follows a specific syntax.
 
 Integration Service Core
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,8 +81,6 @@ Available *System Handles* up-to-date are listed below:
 
 New *System Handles* for additional protocols can be easily created, automatically allowing communication of the
 new protocol with the middlewares that are already supported.
-Detailed information on how to create a *System Handle* can be found in the
-:ref:`sh` user manual of this documentation.
 
 The plugin-based framework is specially advantageous when it comes to integrating a new component into a complex
 system where the rest of sub-systems use incompatible protocols.
@@ -109,7 +107,7 @@ This means that no compilation steps are required between each *Integration Serv
 it is configured at runtime.
 
 Detailed information on how to configure an *Integration Service*-mediated communication via a *YAML* file
-can be found in the :ref:`yaml_config` user manual of this documentation.
+can be found in the :ref:`YAML configuration user manual <yaml_config>` of this documentation.
 
 Main features
 ^^^^^^^^^^^^^
@@ -121,9 +119,9 @@ Main features
    For more information on how to do so, please consult the :ref:`yaml_config` user manual of this documentation.
 #. **Easy to extend to new platforms:** New platforms can easily enter the *Integration Service*
    world by generating the plugin, or *System Handle* needed by the core to integrate them.
-   For more information on **System-Handles**, please consult the :ref:`sh` user manual of this documentation.
+   For more information on **System-Handles**, please consult the :ref:`System Handle user manual <sh>` of this documentation.
 #. **Easy to use:** Installing and running *Integration Service* is intuitive and straightforward. Please refer to the
-   :ref:`Installation <installation>` manual to be guided through the installation process.
+   :ref:`installation manual <installation>` to be guided through the installation process.
 
 Typical use-cases
 ^^^^^^^^^^^^^^^^^
