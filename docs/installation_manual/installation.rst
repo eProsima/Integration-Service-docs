@@ -3,7 +3,7 @@
 Installation
 ============
 
-This section provides the user with an easy-to-use installation guide of both
+This section provides the user with an easy-to-follow installation guide of both
 the *Integration Service* and of the *System Handles*,
 and an explanation of how to launch and deploy an *Integration Service* project.
 
@@ -21,7 +21,7 @@ and the *System Handles* respectively.
 Core
 ----
 
-The *Integration Service* core consist of many CMake packages which can be configured and built manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/index.html>`_,
+The *Integration Service* core consist of many *CMake* packages which can be configured and built manually, but we recommend to use `colcon <https://colcon.readthedocs.io/en/released/index.html>`_,
 as it makes the job much smoother.
 
 The starting point is to create a `colcon workspace` and clone the
@@ -105,7 +105,7 @@ Global compilation flags
 ------------------------
 
 *Integration Service* uses *CMake* for building and packaging the project.
-There are several CMake flags, which can be tuned during the configuration step:
+There are several *CMake* flags, which can be tuned during the configuration step:
 
 * :code:`BUILD_LIBRARY`: This compilation flag can be used to completely disable the compilation of
   the *Integration Service* set of libraries, that is, the *Integration Service Core* and all the
