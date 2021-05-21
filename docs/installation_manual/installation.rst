@@ -179,6 +179,9 @@ There are several CMake flags, which can be tuned during the configuration step:
     The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSAddTwoInts`.
     Please execute :code:`DDSAddTwoInts -h` to see a full list of supported input parameters.
 
+    .. note::
+      In order to compile these examples you need to have *FastDDS* (v.2.0.0 or superior) and its dependencies installed.
+
   **ROS 1**
 
   * :code:`add_two_ints_server`: A simple C++ server application, running under *ROS 1*.
@@ -211,6 +214,10 @@ There are several CMake flags, which can be tuned during the configuration step:
         ~/is_ws$ cd examples/utils/ros1/
         ~/is_ws/examples/utils/ros1$ catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
 
+    .. note::
+      In order to compile this example you need to have *ROS 1* (Melodic or superior) installed and sourced,
+      and the *Integration Service* :code:`example_interfaces` ROS 1 package compiled.
+
   **WebSocket**
 
   * :code:`WebSocketAddTwoInts`: A simple server/client C++ application, running under *WebSocket++*.
@@ -229,6 +236,9 @@ There are several CMake flags, which can be tuned during the configuration step:
 
     The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSAddTwoInts`.
     Please execute :code:`WebSocketAddTwoInts -h` to see a full list of supported input parameters.
+
+    .. note::
+      In order to compile this example you need to have *OpenSSL* and *WebSocket++* installed.
 
 
 .. _deployment:
