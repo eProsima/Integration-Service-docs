@@ -1,6 +1,3 @@
-.. role:: raw-html(raw)
-    :format: html
-
 .. _installation:
 
 Installation
@@ -177,7 +174,6 @@ There are several *CMake* flags, which can be tuned during the configuration ste
 
     The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSHelloWorld`.
     Please execute :code:`DDSHelloWorld -h` to see a full list of supported input parameters.
-    :raw-html:`<br />`
 
   * :code:`DDSAddTwoInts`: A simple server/client C++ application, running under *Fast DDS*.
     It allows performing service requests and replies to a service named *AddTwoIntsService*,
@@ -195,7 +191,6 @@ There are several *CMake* flags, which can be tuned during the configuration ste
 
     The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSAddTwoInts`.
     Please execute :code:`DDSAddTwoInts -h` to see a full list of supported input parameters.
-    :raw-html:`<br />`
 
 * :code:`BUILD_ROS1_EXAMPLES`: Allows to compile the *ROS 1* utilities that can be used for several
   of the provided usage examples for *Integration Service*, located under the `examples/utils/ros1 <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/ros1>`_ folder.
