@@ -50,6 +50,10 @@ The *Integration Service Core* has the following requirements:
     - Allows obtaining name-value pairs from the config file.
     - :code:`apt install libboost-program-options-dev`
 
+.. note::
+  `eProsima xTypes <https://github.com/eProsima/xtypes>`_ is an additional dependency
+  but it is not necessary to install it, since if the `Integration Service Core <https://github.com/eProsima/Integration-Service>`_
+  repository is cloned using the :code:`--recursive` option, it is downloaded automatically.
 
 .. _sh_deps:
 
