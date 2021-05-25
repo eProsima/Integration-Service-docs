@@ -89,10 +89,10 @@ The *FIWARE System Handle* has the following requirements:
     - C++ library for network and low-level I/O programming.
     - :code:`apt install libasio-dev`
   * - `cURLpp library <http://www.curlpp.org/>`_
-    - C++ wrapper for libcURL.
+    - C++ wrapper for *libcURL*.
     - :code:`apt install libcurlpp-dev`
   * - `cURL library <https://curl.se/>`_
-    - Command-line tool for getting or sending data using URL syntax.
+    - Command-line tool for getting or sending data using *URL* syntax.
     - :code:`apt install libcurl4-openssl-dev`
 
 :raw-html:`<h4>ROS 1 System Handle</h4>`
@@ -107,7 +107,7 @@ The *ROS 1 System Handle* has the following requirements:
     - Description
     - Installation
   * - `ROS 1 <http://wiki.ros.org/Distributions>`_
-    - Melodic/Noetic ROS 1 distribution.
+    - *Melodic/Noetic ROS 1* distribution.
     - `Melodic installation guide <http://wiki.ros.org/melodic/Installation>`_ :raw-html:`<br />`
       `Noetic installation guide <http://wiki.ros.org/noetic/Installation>`_
 
@@ -123,7 +123,7 @@ The *ROS 2 System Handle* has the following requirements:
     - Description
     - Installation
   * - `ROS 2 <https://docs.ros.org/en/foxy/Releases.html#list-of-distributions>`_
-    - Foxy/Galactic ROS 1 distribution.
+    - *Foxy/Galactic ROS 2* distribution.
     - `Foxy installation guide <https://docs.ros.org/en/foxy/Installation.html>`_ :raw-html:`<br />`
       `Galactic installation guide <https://docs.ros.org/en/galactic/Installation.html>`_
 
@@ -140,8 +140,8 @@ The *WebSocket System Handle* has the following requirements:
     - Description
     - Installation
   * - `OpenSSL <https://www.openssl.org/>`_
-    - Toolkit for TLS and SSL protocols.
+    - Toolkit for *TLS* and *SSL* protocols.
     - :code:`apt install libssl-dev`
   * - `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_
-    - WebSocket Protocol C++ library implementation.
+    - *WebSocket* Protocol C++ library implementation.
     - :code:`apt install libwebsocketpp-dev`
