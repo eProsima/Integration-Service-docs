@@ -28,6 +28,7 @@ Getter
 Helloworld
 idl
 instantiation
+latests
 libcURL
 middleware
 middlewares
