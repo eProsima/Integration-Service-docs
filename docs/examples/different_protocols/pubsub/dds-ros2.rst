@@ -67,9 +67,7 @@ After you have everything correctly installed in your :code:`is-workspace`, buil
 
 .. code-block:: bash
 
-    colcon build --packages-skip WebSocketAddTwoInts example_interfaces add_two_ints_server --cmake-args -DBUILD_EXAMPLES=ON
-
-.. TODO: do the command above right once specific BUILD_<MW>_EXAMPLES flags are available
+    colcon build --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON
 
 
 Deployment

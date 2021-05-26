@@ -134,7 +134,7 @@ There are several *CMake* flags, which can be tuned during the configuration ste
 
     ~/is_ws$ colcon build --cmake-args -DBUILD_TESTS=ON
 
-* :code:`BUILD_EXAMPLES`: Allows to compile utilities that can be used for the several provided
+* :code:`BUILD_EXAMPLES`: Allows to compile all the utilities that can be used for the several provided
   usage examples for *Integration Service*, located under the `examples/utils <https://github.com/eProsima/Integration-Service/tree/main/examples/utils>`_ folder of the core repository.
   These applications can be used to test the *Integration Service* with some of the provided *YAML* configuration
   files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
@@ -143,13 +143,26 @@ There are several *CMake* flags, which can be tuned during the configuration ste
 
     ~/is_ws$ colcon build --cmake-args -DBUILD_EXAMPLES=ON
 
-  To date, the following user application examples and utility packages are available:
+  .. note::
+    To use this flag, all the examples dependencies need to be installed.
 
-  **DDS**
+* :code:`BUILD_FASTDDS_EXAMPLES`: Allows to compile the *FastDDS* utilities that can be used for several
+  of the provided usage examples for *Integration Service*, located under the `examples/utils/dds <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/dds>`_ folder.
+  These applications can be used to test the *Integration Service* with some of the provided *YAML* configuration
+  files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
+
+  .. code-block:: bash
+
+    ~/is_ws$ colcon build --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON
+
+  .. note::
+    To compile these examples you need to have FastDDS (v.2.0.0 or superior) and its dependencies installed.
+
+  To date, the following *FastDDS* user application examples and utility packages are available:
 
   * :code:`DDSHelloWorld`: A simple publisher/subscriber C++ application, running under *Fast DDS*.
     It publishes or subscribes to a simple string topic, named *HelloWorldTopic*.
-    As an alternative to `colcon`, in order to compile the `DDSHelloWorld` example, the following commands can be executed:
+    As an alternative to :code:`colcon`, in order to compile the :code:`DDSHelloWorld` example, the following commands can be executed:
 
     .. code-block:: bash
 
@@ -166,7 +179,7 @@ There are several *CMake* flags, which can be tuned during the configuration ste
     It allows performing service requests and replies to a service named *AddTwoIntsService*,
     which consists of two integer numbers as request type and answers with a single value,
     indicating the sum of them.
-    As an alternative to `colcon`, in order to compile the `DDSAddTwoInts` example, the following commands can be executed:
+    As an alternative to :code:`colcon`, in order to compile the :code:`DDSAddTwoInts` example, the following commands can be executed:
 
     .. code-block:: bash
 
@@ -179,17 +192,27 @@ There are several *CMake* flags, which can be tuned during the configuration ste
     The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSAddTwoInts`.
     Please execute :code:`DDSAddTwoInts -h` to see a full list of supported input parameters.
 
-    .. note::
-      In order to compile these examples you need to have *FastDDS* (v.2.0.0 or superior) and its dependencies installed.
+* :code:`BUILD_ROS1_EXAMPLES`: Allows to compile the *ROS 1* utilities that can be used for several
+  of the provided usage examples for *Integration Service*, located under the `examples/utils/ros1 <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/ros1>`_ folder.
+  These applications can be used to test the *Integration Service* with some of the provided *YAML* configuration
+  files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
 
-  **ROS 1**
+  .. code-block:: bash
+
+    ~/is_ws$ colcon build --cmake-args -DBUILD_ROS1_EXAMPLES=ON
+
+  .. note::
+    In order to compile this example you need to have *ROS 1* (Melodic or superior) installed and sourced,
+    and the *Integration Service* :code:`example_interfaces` ROS 1 package compiled.
+
+  To date, the following *ROS 1* user application examples and utility packages are available:
 
   * :code:`add_two_ints_server`: A simple C++ server application, running under *ROS 1*.
     It listens to requests coming from *ROS 1* clients and produces an appropriate answer for them;
     specifically, it is capable of listening to a *ROS 1* service called :code:`add_two_ints`,
     which consists of two integer numbers as request type and answers with a single value,
     indicating the sum of them.
-    As an alternative to `colcon`, in order to compile the `add_two_ints_server` example, the following commands can be executed:
+    As an alternative to :code:`colcon`, in order to compile the :code:`add_two_ints_server` example, the following commands can be executed:
 
     .. code-block:: bash
 
@@ -202,23 +225,29 @@ There are several *CMake* flags, which can be tuned during the configuration ste
     The resulting executable will be located inside the :code:`build/devel/lib/add_two_ints_server`
     folder, and named :code:`add_two_ints_server_node`.
 
-
-
   * :code:`example_interfaces`: *ROS 1* package containing the service type definitions for the
     `AddTwoInts` services examples, for which the *ROS 1* type support files will be automatically generated.
     As specified in the :ref:`services examples tutorials <examples_different_protocols_services>`,
-    it must be compiled and installed in the system, using `catkin`:
+    it must be compiled and installed in the system, using :code:`catkin`:
 
     .. code-block:: bash
 
         ~/is_ws$ cd examples/utils/ros1/
         ~/is_ws/examples/utils/ros1$ catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
 
-    .. note::
-      In order to compile this example you need to have *ROS 1* (Melodic or superior) installed and sourced,
-      and the *Integration Service* :code:`example_interfaces` ROS 1 package compiled.
+* :code:`BUILD_WEBSOCKET_EXAMPLES`: Allows to compile the *WebSocket* utilities that can be used for several
+  of the provided usage examples for *Integration Service*, located under the `examples/utils/websocket <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/websocket>`_ folder.
+  These applications can be used to test the *Integration Service* with some of the provided *YAML* configuration
+  files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
 
-  **WebSocket**
+  .. code-block:: bash
+
+    ~/is_ws$ colcon build --cmake-args -DBUILD_WEBSOCKET_EXAMPLES=ON
+
+  .. note::
+    In order to compile this example you need to have *OpenSSL* and *WebSocket++* installed.
+
+  To date, the following *WebSocket* user application examples and utility packages are available:
 
   * :code:`WebSocketAddTwoInts`: A simple server/client C++ application, running under *WebSocket++*.
     It allows performing service requests and replies to a service named *add_two_ints*,
@@ -234,11 +263,8 @@ There are several *CMake* flags, which can be tuned during the configuration ste
         ~/is_ws/examples/utils/websocket/WebSocketAddTwoInts/build$ cmake .. -DBUILD_EXAMPLES=ON
         ~/is_ws/examples/utils/websocket/WebSocketAddTwoInts/build$ make
 
-    The resulting executable will be located inside the :code:`build` folder, and named :code:`DDSAddTwoInts`.
+    The resulting executable will be located inside the :code:`build` folder, and named :code:`WebSocketAddTwoInts`.
     Please execute :code:`WebSocketAddTwoInts -h` to see a full list of supported input parameters.
-
-    .. note::
-      In order to compile this example you need to have *OpenSSL* and *WebSocket++* installed.
 
 
 .. _deployment:
