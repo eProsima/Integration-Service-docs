@@ -19,6 +19,7 @@ datawriter
 delined
 Destructor
 destructor
+distro
 endl
 env
 eProsima
