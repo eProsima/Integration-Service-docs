@@ -83,6 +83,26 @@ def select_css(html_css_dir):
         print('Appliying common CSS style file: {}'.format(common_css))
         return [common_css]
 
+def get_git_branch():
+    """Get the git branch this repository is currently on."""
+    path_to_here = os.path.abspath(os.path.dirname(__file__))
+
+    # Invoke git to get the current branch which we use to get the theme
+    try:
+        p = subprocess.Popen(
+            ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+            stdout=subprocess.PIPE,
+            cwd=path_to_here
+        )
+
+        return p.communicate()[0].decode().rstrip()
+
+    except Exception:
+        print('Could not get the branch')
+
+    # Couldn't figure out the branch probably due to an error
+    return None
+
 def configure_doxyfile(
     doxyfile_in,
     doxyfile_out,
@@ -193,6 +213,13 @@ if read_the_docs_build:
     # Create a COLCON_IGNORE file just in case
     #open(os.path.abspath('{}/COLCON_IGNORE'.format(project_binary_dir)), 'w').close()
 
+    # Documentation repository branch
+    docs_branch = get_git_branch()
+    print('Current documentation branch is "{}"'.format(docs_branch))
+
+    # User specified branch/tag
+    is_branch = os.environ.get('IS_BRANCH', None)
+
     # Clone repositories
     print('Cloning Integration Service')
     integration_service = git.Repo.clone_from(
@@ -201,11 +228,55 @@ if read_the_docs_build:
         recursive=True
     )
 
+    # First try to checkout to ${IS_BRANCH}
+    # Else try with current documentation branch
+    # Else checkout to main
+    if (is_branch and
+            integration_service.refs.__contains__('origin/{}'.format(is_branch))):
+        is_branch = 'origin/{}'.format(is_branch)
+    elif (docs_branch and
+            integration_service.refs.__contains__('origin/{}'.format(docs_branch))):
+        is_branch = 'origin/{}'.format(docs_branch)
+    else:
+        print(
+            'Integration Service does not have either "{}" or "{}" branches'.format(
+                is_branch,
+                docs_branch
+            )
+        )
+        is_branch = 'origin/main'
+
+    # Actual checkout
+    print('Checking out Integration Service branch "{}"'.format(is_branch))
+    integration_service.refs[is_branch].checkout()
+
     print('Cloning Fast DDS System Handle')
     is_fastdds_sh = git.Repo.clone_from(
         'https://github.com/eProsima/FastDDS-SH.git',
         is_fastdds_sh_repo_name
     )
+
+    # First try to checkout to ${IS_BRANCH}
+    # Else try with current documentation branch
+    # Else checkout to main
+    if (is_branch and
+            is_fastdds_sh.refs.__contains__('origin/{}'.format(is_branch))):
+        is_branch = 'origin/{}'.format(is_branch)
+    elif (docs_branch and
+            is_fastdds_sh.refs.__contains__('origin/{}'.format(docs_branch))):
+        is_branch = 'origin/{}'.format(docs_branch)
+    else:
+        print(
+            'FastDDS System Handle does not have either "{}" or "{}" branches'.format(
+                is_branch,
+                docs_branch
+            )
+        )
+        is_branch = 'origin/main'
+
+    # Actual checkout
+    print('Checking out FastDDS System Handle branch "{}"'.format(is_branch))
+    is_fastdds_sh.refs[is_branch].checkout()
 
     print('Cloning ROS 1 System Handle')
     is_ros1_sh = git.Repo.clone_from(
@@ -213,17 +284,83 @@ if read_the_docs_build:
         is_ros1_sh_repo_name
     )
 
+    # First try to checkout to ${IS_BRANCH}
+    # Else try with current documentation branch
+    # Else checkout to main
+    if (is_branch and
+            is_ros1_sh.refs.__contains__('origin/{}'.format(is_branch))):
+        is_branch = 'origin/{}'.format(is_branch)
+    elif (docs_branch and
+            is_ros1_sh.refs.__contains__('origin/{}'.format(docs_branch))):
+        is_branch = 'origin/{}'.format(docs_branch)
+    else:
+        print(
+            'ROS 1 System Handle does not have either "{}" or "{}" branches'.format(
+                is_branch,
+                docs_branch
+            )
+        )
+        is_branch = 'origin/main'
+
+    # Actual checkout
+    print('Checking out ROS 1 System Handle branch "{}"'.format(is_branch))
+    is_ros1_sh.refs[is_branch].checkout()
+
     print('Cloning ROS 2 System Handle')
     is_ros2_sh = git.Repo.clone_from(
         'https://github.com/eProsima/ROS2-SH.git',
         is_ros2_sh_repo_name
     )
 
+    # First try to checkout to ${IS_BRANCH}
+    # Else try with current documentation branch
+    # Else checkout to main
+    if (is_branch and
+            is_ros2_sh.refs.__contains__('origin/{}'.format(is_branch))):
+        is_branch = 'origin/{}'.format(is_branch)
+    elif (docs_branch and
+            is_ros2_sh.refs.__contains__('origin/{}'.format(docs_branch))):
+        is_branch = 'origin/{}'.format(docs_branch)
+    else:
+        print(
+            'ROS 2 System Handle does not have either "{}" or "{}" branches'.format(
+                is_branch,
+                docs_branch
+            )
+        )
+        is_branch = 'origin/main'
+
+    # Actual checkout
+    print('Checking out ROS 2 System Handle branch "{}"'.format(is_branch))
+    is_ros2_sh.refs[is_branch].checkout()
+
     print('Cloning WebSocket System Handle')
     is_websocket_sh = git.Repo.clone_from(
         'https://github.com/eProsima/WebSocket-SH.git',
         is_websocket_sh_repo_name
     )
+
+    # First try to checkout to ${IS_BRANCH}
+    # Else try with current documentation branch
+    # Else checkout to main
+    if (is_branch and
+            is_websocket_sh.refs.__contains__('origin/{}'.format(is_branch))):
+        is_branch = 'origin/{}'.format(is_branch)
+    elif (docs_branch and
+            is_websocket_sh.refs.__contains__('origin/{}'.format(docs_branch))):
+        is_branch = 'origin/{}'.format(docs_branch)
+    else:
+        print(
+            'WebSocket System Handle does not have either "{}" or "{}" branches'.format(
+                is_branch,
+                docs_branch
+            )
+        )
+        is_branch = 'origin/main'
+
+    # Actual checkout
+    print('Checking out WebSocket System Handle branch "{}"'.format(is_branch))
+    is_websocket_sh.refs[is_branch].checkout()
 
     os.makedirs(os.path.dirname(output_dir), exist_ok=True)
     os.makedirs(os.path.dirname(core_output_dir), exist_ok=True)
