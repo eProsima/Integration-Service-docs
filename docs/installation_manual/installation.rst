@@ -7,6 +7,9 @@ This section provides the user with an easy-to-follow installation guide of both
 the *Integration Service* and of the *System Handles*,
 and an explanation of how to launch and deploy an *Integration Service* project.
 
+.. important::
+  Before following the installation steps, check that you have all the necessary :ref:`dependencies <external_dependencies>` installed.
+
 .. _workspace_setup:
 
 Workspace Setup
