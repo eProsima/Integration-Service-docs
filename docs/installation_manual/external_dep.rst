@@ -3,8 +3,6 @@
 
 .. _external_dependencies:
 
-.. rst-class:: bignums
-
 Dependencies
 ============
 
