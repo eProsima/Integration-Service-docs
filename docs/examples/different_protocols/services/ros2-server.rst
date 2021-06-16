@@ -61,9 +61,9 @@ Also, to get this example working, the following requirements must be met:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       cd ~/is-workspace/src/Integration-Service/example/utils/ros1/catkin_ws
-      catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
+      catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$<ROS1_DISTRO> install
 
 * Having the **ROS 1 System Handle** installed. You can download it from the
   `ROS1-SH dedicated repository <https://github.com/eProsima/ROS1-SH>`_ into the
@@ -79,7 +79,7 @@ Also, to get this example working, the following requirements must be met:
 
   .. code-block:: bash
 
-      apt install ros-$ROS2_DISTRO-demo-nodes-cpp
+      apt install ros-$<ROS2_DISTRO>-demo-nodes-cpp
 
 * Having the **ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace`
@@ -107,6 +107,9 @@ After you have everything correctly installed in your :code:`is-workspace`, buil
 
 .. code-block:: bash
 
+    source /opt/ros/$<ROS2_DISTRO>/setup.bash
+    colcon build --packages-skip-regex is-ros1 -DMIX_ROS_PACKAGES="example_interfaces"
+    source /opt/ros/$<ROS1_DISTRO>/setup.bash
     colcon build --cmake-args -DBUILD_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces"
 
 Deployment
@@ -122,7 +125,7 @@ To do so, open a terminal and execute the following command:
 
 .. code-block:: bash
 
-    source /opt/ros/$ROS2_DISTRO/setup.bash
+    source /opt/ros/$<ROS2_DISTRO>/setup.bash
     ros2 run demo_nodes_cpp add_two_ints_server
 
 The server will start running as an independent *ROS 2* node, listening for incoming petitions.
@@ -136,7 +139,7 @@ Open two terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       roscore
 
 * In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 1*, *ROS 2* and local installations, and execute
@@ -146,8 +149,8 @@ Open two terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_server__addtwoints.yaml
 
@@ -191,7 +194,7 @@ instructions:
 
 .. code-block:: bash
 
-    source /opt/ros/$ROS1_DISTRO/setup.bash
+    source /opt/ros/$<ROS1_DISTRO>/setup.bash
     rosservice call /add_two_ints 3 4
 
 You should receive the following output from the *ROS 2* server processing the petition:

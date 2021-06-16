@@ -85,7 +85,7 @@ To enable communication from *ROS 2* to *Fast DDS*, open three terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 run demo_nodes_cpp talker
 
 * In the second terminal, execute a *Fast DDS* HelloWorld :code:`subscriber`
@@ -108,7 +108,7 @@ This is where *Integration Service* comes into play to make the communication po
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/fastdds_ros2__helloworld.yaml
 
@@ -132,7 +132,7 @@ To enable communication from *Fast DDS* to *ROS 2*, open three terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 run demo_nodes_cpp listener
 
 At this point, the two applications cannot communicate due to the incompatibility of their *topics* and *types*.
@@ -146,7 +146,7 @@ This is where *Integration Service* comes into play to make the communication po
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/fastdds_ros2__helloworld.yaml
 

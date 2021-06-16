@@ -51,6 +51,9 @@ After you have everything correctly installed, build the packages by running:
 
 .. code-block:: bash
 
+    source /opt/ros/$<ROS2_DISTRO>/setup.bash
+    colcon build --packages-skip-regex is-ros1
+    source /opt/ros/$<ROS1_DISTRO>/setup.bash
     colcon build
 
 Deployment
@@ -67,21 +70,21 @@ To enable communication from *ROS 1* to *ROS 2*, open four terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       roscore
 
 * In the second terminal, source the *ROS 1* installation and launch the *ROS 1* :code:`pub`:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       rostopic pub -r 1 /hello_ros2 std_msgs/String "Hello, ros2"
 
 * In the third terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`echo`:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic echo /hello_ros2 std_msgs/String
 
 * In the fourth terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, the
@@ -92,8 +95,8 @@ To enable communication from *ROS 1* to *ROS 2*, open four terminals:
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros1_ros2__helloworld.yaml
 
@@ -109,21 +112,21 @@ To enable communication from *ROS 2* to *ROS 1*, open four terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       roscore
 
 * In the second terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`pub`:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic pub -r 1 /hello_ros1 std_msgs/String "{data: \"Hello, ros1\"}"
 
 * In the third terminal, source the *ROS 1* installation and launch the *ROS 1* :code:`echo`:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS1_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
       rostopic echo /hello_ros1
 
 * In the fourth terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, the
@@ -134,8 +137,8 @@ To enable communication from *ROS 2* to *ROS 1*, open four terminals:
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS1_DISTRO/setup.bash
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS1_DISTRO>/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros1_ros2__helloworld.yaml
 

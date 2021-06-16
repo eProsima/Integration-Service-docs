@@ -119,11 +119,11 @@ The :code:`spin_once` method is called by *Integration Service* to allow spinnin
 TopicSubscriberSystem Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This kind of system must implement the :code:`subscribe` method:
+This kind of system must implement the :code:`subscribe` and the :code:`is_internal_message` method:
 
 .. code-block:: cpp
 
-    using SubscriptionCallback = std::function<void(const xtypes::DynamicData& message)>;
+    using SubscriptionCallback = std::function<void(const xtypes::DynamicData& message, void* filter_handle)>;
 
     bool subscribe(
         const std::string& topic_name,
@@ -131,10 +131,20 @@ This kind of system must implement the :code:`subscribe` method:
         SubscriptionCallback callback,
         const YAML::Node& configuration);
 
-*Integration Service* will call this method in order to create a new subscriber to the topic :code:`topic_name` using
-:code:`message_type` type, plus an optional :code:`configuration`. Once the middleware system receives a message from
-the subscription, the message must be translated into the :code:`message_type` and the *System Handle* must invoke
-the :code:`callback` with the translated message.
+    bool is_internal_message(
+        void* filter_handle);
+
+*Integration Service* will call the :code:`subscribe` method in order to create a new subscriber
+to the topic :code:`topic_name` using :code:`message_type` type, plus an optional :code:`configuration`.
+Once the middleware system receives a message from the subscription, the message must be translated
+into the :code:`message_type` and the *System Handle* must invoke the :code:`callback` with the translated message.
+
+The :code:`callback` will be called only if the :code:`is_internal_message` method returns :code:`false`.
+This prevents *Integration Service* from recursively send messages within itself, for example,
+if a publisher and a subscriber are created pointing to the same topic. Users must define,
+for each middleware, the type of the *filter_handle* parameter, and cast it accordingly.
+Some protcols, such as *WebSocket*, might not need to filter its messages at all; in that case,
+this method can be simply implemented as a :code:`return false;` clause.
 
 TopicPublisherSystem Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

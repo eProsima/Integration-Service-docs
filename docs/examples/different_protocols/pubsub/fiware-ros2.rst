@@ -93,7 +93,7 @@ To enable communication from *ROS 2* to *FIWARE*, open three terminals:
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_fiware__helloworld.yaml
 
@@ -119,7 +119,7 @@ You should see the context broker entity named **hello_fiware** previously creat
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic pub /hello_fiware std_msgs/msg/String “{data: Hello FIWARE}”
 
 Now, if you press `F5` in the browser, you should see that the entity has been correctly updated.
@@ -144,7 +144,7 @@ To enable communication from *FIWARE* to *ROS 2*, open three terminals:
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_fiware__helloworld.yaml
 
@@ -170,7 +170,7 @@ You should see the context broker entity named **hello_fiware** previously creat
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic echo /hello_ros2
 
 * Again in the second terminal, update the *FIWARE* entity hosted in the *Context Broker*:

@@ -101,6 +101,19 @@ you need to source the new *colcon* overlay:
 
     source install/setup.bash
 
+.. warning::
+
+    If the *ROS 1* and *ROS 2 System Handles* coexist in your *Integration Service* workspace,
+    please notice that the building process must be splitted into two steps, due to incompatibility
+    between *ROS* distros:
+
+    .. code-block:: bash
+
+        source /opt/ros/$<ROS2_DISTRO>/setup.bash
+        colcon build --packages-skip-regex is-ros1 <COMPILATION_FLAGS>
+        source /opt/ros/$<ROS1_DISTRO>/setup.bash
+        colcon build <COMPILATION_FLAGS>
+
 
 .. _global_compilation_flags:
 
@@ -210,7 +223,7 @@ There are several *CMake* flags, which can be tuned during the configuration ste
     .. code-block:: bash
 
         ~/is_ws$ cd examples/utils/ros1/catkin_ws/
-        ~/is_ws/examples/utils/ros1/catkin_ws$ catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
+        ~/is_ws/examples/utils/ros1/catkin_ws$ catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$<ROS1_DISTRO> install
 
 * :code:`BUILD_WEBSOCKET_EXAMPLES`: Allows to compile the *WebSocket* utilities that can be used for several
   of the provided usage examples for *Integration Service*, located under the `examples/utils/websocket <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/websocket>`_ folder.

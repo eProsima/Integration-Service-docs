@@ -92,7 +92,7 @@ To test it, open two terminals in each machine.
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 run demo_nodes_cpp talker
 
 * In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
@@ -101,7 +101,7 @@ To test it, open two terminals in each machine.
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld/wan_server_talker.yaml
 
@@ -111,7 +111,7 @@ To test it, open two terminals in each machine.
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 run demo_nodes_cpp listener
 
 * In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2*, *Fast DDS*, and local installations,
@@ -121,7 +121,7 @@ To test it, open two terminals in each machine.
   .. code-block:: bash
 
       cd ~/dds-is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/wan_tunneling/ros2__wan_helloworld/wan_client_listener.yaml
 
