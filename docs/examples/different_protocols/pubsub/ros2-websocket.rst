@@ -67,7 +67,7 @@ To enable communication from *ROS2* to a *WebSocket client*, open two terminals:
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic pub /hello_websocket std_msgs/msg/String “{data: Hello WebSocket}”
 
 * In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
@@ -78,7 +78,7 @@ To enable communication from *ROS2* to a *WebSocket client*, open two terminals:
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_websocket__helloworld.yaml
 
@@ -125,7 +125,7 @@ To enable communication from a *WebSocket client* to *ROS 2*, open two terminals
 
   .. code-block:: bash
 
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic echo /hello_ros2 std_msgs/msg/String
 
 * In the second terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
@@ -136,7 +136,7 @@ To enable communication from a *WebSocket client* to *ROS 2*, open two terminals
   .. code-block:: bash
 
       cd ~/is-workspace
-      source /opt/ros/$ROS2_DISTRO/setup.bash
+      source /opt/ros/$<ROS2_DISTRO>/setup.bash
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_websocket__helloworld.yaml
 
