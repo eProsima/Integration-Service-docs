@@ -104,7 +104,7 @@ you need to source the new *colcon* overlay:
 .. warning::
 
     If the *ROS 1* and *ROS 2 System Handles* coexist in your *Integration Service* workspace,
-    please notice that the building process must be splitted into two steps, due to incompatibility
+    please notice that the building process must be split into two steps, due to incompatibility
     between *ROS* distros:
 
     .. code-block:: bash

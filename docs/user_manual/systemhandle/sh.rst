@@ -143,7 +143,7 @@ The :code:`callback` will be called only if the :code:`is_internal_message` meth
 This prevents *Integration Service* from recursively send messages within itself, for example,
 if a publisher and a subscriber are created pointing to the same topic. Users must define,
 for each middleware, the type of the *filter_handle* parameter, and cast it accordingly.
-Some protcols, such as *WebSocket*, might not need to filter its messages at all; in that case,
+Some protocols, such as *WebSocket*, might not need to filter its messages at all; in that case,
 this method can be simply implemented as a :code:`return false;` clause.
 
 TopicPublisherSystem Class
