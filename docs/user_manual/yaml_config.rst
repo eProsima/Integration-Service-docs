@@ -250,7 +250,7 @@ The name for each type can be whatever the user wants, with the two following ru
     1. The name cannot have spaces in it.
     2. The name must be formed only by letters, numbers and underscores.
 
-Note: a minimum of a structure type is required for the communication.
+.. note:: A minimum of a structure type is required for the communication.
 
 For more details about *IDL* definition, please refer to the
 `IDL specification documentation <https://www.omg.org/spec/IDL/4.2/PDF>`__.

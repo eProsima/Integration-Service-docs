@@ -61,7 +61,7 @@ Also, to get this example working, the following requirements must be met:
   .. code-block:: bash
 
       source /opt/ros/$ROS1_DISTRO/setup.bash
-      cd ~/is-workspace/src/Integration-Service/example/utils/ros1
+      cd ~/is-workspace/src/Integration-Service/example/utils/ros1/catkin_ws
       catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
 
 * Having the **ROS 1 System Handle** installed. You can download it from the
@@ -135,7 +135,7 @@ To do so, open a terminal, go to the :code:`is-workspace` folder and execute the
 .. code-block:: bash
 
     cd ~/is-workspace
-    ./build/WebSocketAddTwoInts/WebSocketAddTwoInts
+    ./build/is-examples/websocket/WebSocketAddTwoInts/WebSocketAddTwoInts
 
 The *WebSocket* server will start running, listening for incoming client connection petitions;
 after that, it will we able to dispatch service request petitions with a proper answer message.
@@ -171,7 +171,7 @@ In a new terminal, go to the :code:`is-workspace` folder and execute the followi
 
 .. code-block:: bash
 
-    ./build/DDSAddTwoInts/DDSAddTwoInts -m client -c <number_of_requests>
+    ./build/is-examples/dds/DDSAddTwoInts/DDSAddTwoInts -m client -c <number_of_requests>
 
 The *DDSAddTwoInts* example application will request to add two numbers an specific amount of times,
 specified with the :code:`-c` flag; if not present, ten requests will be performed by default.

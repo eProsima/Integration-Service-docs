@@ -61,7 +61,7 @@ Also, to get this example working, the following requirements must be met:
   .. code-block:: bash
 
       source /opt/ros/$ROS1_DISTRO/setup.bash
-      cd ~/is-workspace/src/Integration-Service/example/utils/ros1
+      cd ~/is-workspace/src/Integration-Service/example/utils/ros1/catkin_ws
       catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS1_DISTRO install
 
 * Having the **ROS 1 System Handle** installed. You can download it from the
@@ -122,7 +122,7 @@ To do so, open a terminal, go to the :code:`is-workspace` folder and execute the
 .. code-block:: bash
 
     cd ~/is-workspace
-    ./build/DDSAddTwoInts/DDSAddTwoInts -m server
+    ./build/is-examples/dds/DDSAddTwoInts/DDSAddTwoInts -m server
 
 The server will start running under the default *DDS* domain ID 0 listening for incoming petitions.
 
