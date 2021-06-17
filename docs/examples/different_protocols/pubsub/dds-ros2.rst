@@ -95,7 +95,7 @@ To enable communication from *ROS 2* to *Fast DDS*, open three terminals:
 
       cd ~/is-workspace
       source install/setup.bash
-      ./build/DDSHelloWorld/DDSHelloWorld -m subscriber
+      ./build/is-examples/dds/DDSHelloWorld/DDSHelloWorld -m subscriber
 
 At this point, the two applications cannot communicate due to the incompatibility of their *topics* and *types*.
 This is where *Integration Service* comes into play to make the communication possible.
@@ -126,7 +126,7 @@ To enable communication from *Fast DDS* to *ROS 2*, open three terminals:
 
       cd ~/is-workspace
       source install/setup.bash
-      ./build/DDSHelloWorld/DDSHelloWorld -m publisher
+      ./build/is-examples/dds/DDSHelloWorld/DDSHelloWorld -m publisher
 
 * In the second terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`listener`:
 
