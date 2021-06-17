@@ -8,6 +8,3 @@ Encoding
 .. doxygenclass:: eprosima::is::sh::websocket::Encoding
     :project: WebSocket-SH
     :members:
-
-.. doxygenclass:: eprosima::is::sh::websocket::JsonEncoding
-    :project: WebSocket-SH

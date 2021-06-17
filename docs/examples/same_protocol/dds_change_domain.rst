@@ -61,7 +61,7 @@ Below we explain how to deploy an example of this use case. To do so, open three
 
   .. code-block:: bash
 
-      cd ~/is-workspace/build/DDSHelloWorld
+      cd ~/is-workspace/build/is-examples/dds/DDSHelloWorld
       ./DDSHelloWorld -m subscriber -n hello_domain_3 -d 3
 
 * In the second terminal, execute the :code:`DDSHelloWorld` example, as a publisher running under
@@ -69,7 +69,7 @@ Below we explain how to deploy an example of this use case. To do so, open three
 
   .. code-block:: bash
 
-      cd ~/is-workspace/build/DDSHelloWorld
+      cd ~/is-workspace/build/is-examples/dds/DDSHelloWorld
       ./DDSHelloWorld -m publisher -n hello_domain_3 -d 5
 
 Up to this point, no communication should be seen between the publisher and the subscriber, due to the domain ID change.
