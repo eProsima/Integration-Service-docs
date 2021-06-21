@@ -1,0 +1,30 @@
+v3.1.0
+^^^^^^
+
+This release includes the following *bugfixes* and *improvements*:
+
+**Common**
+
+* Added :ref:`new compilation flags <global_compilation_flags>` to compile each middleware examples independently.
+
+* Document in more detail the :ref:`dependencies <external_dependencies>` required for the *Integration Service Core* and each
+  *System Handle*.
+
+* Fixed infinite loop problem produced when there are internal publishers and subscribers over the same topic.
+
+* Avoid creation of empty folders when compiling using *colcon*.
+
+**ROS 1 System Handle**
+
+* Fixed bug producing a high CPU usage.
+
+**ROS 2 System Handle**
+
+* Cross-compatibility with *ROS 2 Galactic*.
+
+* Added :ref:`new compilation flag <ros2_compilation_flags>` to select which ROS 2 version will be used.
+
+**WebSocket System Handle**
+
+* Handle properly *asio* and *websocketpp* exceptions.
+
