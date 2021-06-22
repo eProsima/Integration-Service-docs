@@ -162,7 +162,7 @@ There are several *CMake* flags, which can be tuned during the configuration ste
   .. note::
     To use this flag, all the examples dependencies need to be installed.
 
-* :code:`BUILD_FASTDDS_EXAMPLES`: Allows to compile the *FastDDS* utilities that can be used for several
+* :code:`BUILD_FASTDDS_EXAMPLES`: Allows to compile the *Fast DDS* utilities that can be used for several
   of the provided usage examples for *Integration Service*, located under the `examples/utils/dds <https://github.com/eProsima/Integration-Service/tree/main/examples/utils/dds>`_ folder.
   These applications can be used to test the *Integration Service* with some of the provided *YAML* configuration
   files, which are located under the `examples/basic <https://github.com/eProsima/Integration-Service/tree/main/examples/basic>`_ directory of the core repository:
@@ -172,9 +172,9 @@ There are several *CMake* flags, which can be tuned during the configuration ste
     ~/is_ws$ colcon build --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON
 
   .. note::
-    To compile these examples you need to have FastDDS (v.2.0.0 or superior) and its dependencies installed.
+    To compile these examples you need to have Fast DDS (v.2.0.0 or superior) and its dependencies installed.
 
-  To date, the following *FastDDS* user application examples and utility packages are available:
+  To date, the following *Fast DDS* user application examples and utility packages are available:
 
   * :code:`DDSHelloWorld`: A simple publisher/subscriber C++ application, running under *Fast DDS*.
     It publishes or subscribes to a simple string topic, named *HelloWorldTopic*.

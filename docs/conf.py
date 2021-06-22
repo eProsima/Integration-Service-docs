@@ -267,7 +267,7 @@ if read_the_docs_build:
         final_branch = 'origin/{}'.format(docs_branch)
     else:
         print(
-            'FastDDS System Handle does not have either "{}" or "{}" branches'.format(
+            'Fast DDS System Handle does not have either "{}" or "{}" branches'.format(
                 is_branch,
                 docs_branch
             )
@@ -275,7 +275,7 @@ if read_the_docs_build:
         final_branch = 'origin/main'
 
     # Actual checkout
-    print('Checking out FastDDS System Handle branch "{}"'.format(final_branch))
+    print('Checking out Fast DDS System Handle branch "{}"'.format(final_branch))
     is_fastdds_sh.refs[final_branch].checkout()
 
     print('Cloning ROS 1 System Handle')
@@ -388,7 +388,7 @@ if read_the_docs_build:
     # Generate doxygen documentation for the Integration Service Core
     subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
 
-    # Configure Doxyfile for the FastDDS System Handle
+    # Configure Doxyfile for the Fast DDS System Handle
     configure_doxyfile(
         doxyfile_in,
         doxyfile_out,
@@ -399,7 +399,7 @@ if read_the_docs_build:
         shs_tagfiles,
         fastdds_sh_doxygen_html
     )
-    # Generate doxygen documentation for the FastDDS System Handle
+    # Generate doxygen documentation for the Fast DDS System Handle
     subprocess.call('doxygen {}'.format(doxyfile_out), shell=True)
 
     # Configure Doxyfile for the ROS 1 System Handle

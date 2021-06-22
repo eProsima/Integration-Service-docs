@@ -94,4 +94,4 @@ API Reference
 ^^^^^^^^^^^^^
 
 The *Integration Service API Reference* constitutes an independent section within this documentation.
-To access the *FastDDS System Handle* subsection, use this :ref:`link <api_is_fastdds_sh>`.
+To access the *Fast DDS System Handle* subsection, use this :ref:`link <api_is_fastdds_sh>`.

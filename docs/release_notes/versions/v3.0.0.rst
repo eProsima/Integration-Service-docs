@@ -78,7 +78,7 @@ In relation to each repository, these are the most relevant changes for this maj
 
     From now on, only `2.X.X` versions of *Fast DDS* will be supported.
 
-* Got rid of separate *CMake* testing project; now, it is included in the same project as the SystemHandle, under the :code:`test` folder.
+* Got rid of separate *CMake* testing project; now, it is included in the same project as the System Handle, under the :code:`test` folder.
 
 * Created a `FastDDS-SH GitHub action <https://github.com/eProsima/FastDDS-SH/actions/workflows/ci.yml>`_ automated task for unitary and integration tests.
 
