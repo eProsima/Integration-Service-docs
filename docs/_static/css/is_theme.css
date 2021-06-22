@@ -71,6 +71,10 @@ src:url("Fonts/742885/39974d8a-38de-4853-a4d1-778234a08061.eot?#iefix") format("
   text-align: justify !important;
 }
 
+.wy-menu-vertical {
+  width: 320px;
+}
+
 /* Centering figures captions */
 .figure.align-center .caption{
   text-align: center !important;

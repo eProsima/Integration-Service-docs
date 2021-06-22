@@ -115,7 +115,7 @@ The *ROS 1 System Handle* has the following requirements:
 
 :raw-html:`<h4>ROS 2 System Handle</h4>`
 
-The *ROS 2 System Handle* has the following requirements:
+The *Static ROS 2 System Handle* has the following requirements:
 
 .. list-table::
   :header-rows: 1
@@ -129,6 +129,19 @@ The *ROS 2 System Handle* has the following requirements:
     - `Foxy installation guide <https://docs.ros.org/en/foxy/Installation.html>`_ :raw-html:`<br />`
       `Galactic installation guide <https://docs.ros.org/en/galactic/Installation.html>`_
 
+The *Dynamic ROS 2 System Handle* has the following requirements:
+
+.. list-table::
+  :header-rows: 1
+  :width: 100%
+
+  * - Dependency
+    - Description
+    - Installation
+  * - `FastDDS (v2.0.0 or superior) <https://github.com/eProsima/Fast-DDS>`_
+    - eProsima C++ implementation for *DDS*.
+    - `Binaries installation guide <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ :raw-html:`<br />`
+      `Sources installation guide <https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html>`_
 
 :raw-html:`<h4>WebSocket System Handle</h4>`
 

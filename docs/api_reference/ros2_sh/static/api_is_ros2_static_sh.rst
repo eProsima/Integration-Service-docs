@@ -1,0 +1,14 @@
+.. _api_is_ros2_static_sh:
+
+Static ROS 2 System Handle
+--------------------------
+
+This section presents the API provided by the *Integration Service* :code:`is-ros2` library when the
+*Static ROS 2 System Handle* is used.
+
+.. toctree::
+   :maxdepth: 1
+
+   factory
+   metapublisher
+   systemhandle

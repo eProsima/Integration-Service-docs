@@ -89,7 +89,7 @@ whole *Integration Service* product suite, there are some specific flags which a
 * :code:`MIX_ROS_PACKAGES`: It accepts as an argument a list of `ROS packages <https://index.ros.org/packages/>`_,
   such as :code:`std_msgs`, :code:`geometry_msgs`, :code:`sensor_msgs`, :code:`nav_msgs`...
   for which the required transformation library to convert the specific *ROS 1* type definitions into *xTypes*,
-  and the other way around, will be built. This list is shared with the `ROS 2 System Handle <https://github.com/eProsima/ROS2-SH#compilation-flags>`_,
+  and the other way around, will be built. This list is shared with the `Static ROS 2 System Handle <https://github.com/eProsima/ROS2-SH#compilation-flags>`_,
   meaning that the ROS packages specified in the `MIX_ROS_PACKAGES` variable will also be built for *ROS 2*
   if the corresponding *System Handle* is present within the *Integration Service* workspace.
   To avoid possible errors, if a certain package is only present in *ROS 1*,
@@ -114,7 +114,7 @@ whole *Integration Service* product suite, there are some specific flags which a
   allowing to compile specific *ROS 1* packages independently.
 
   For example, if a user wants to compile a certain package `dummy_msgs` independently from *ROS 1*,
-  but compiling `std_msgs` and `geometry_msgs` for both the *ROS 1* and *ROS 2 System Handles*,
+  but compiling `std_msgs` and `geometry_msgs` for both the *ROS 1* and *Static ROS 2 System Handle*,
   the following command should be executed:
 
   .. code-block:: bash
