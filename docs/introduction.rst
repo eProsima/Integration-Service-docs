@@ -73,7 +73,7 @@ Available *System Handles* up-to-date are listed below:
       - https://github.com/eProsima/FIWARE-SH
     * - **ROS 1 System Handle**
       - https://github.com/eProsima/ROS1-SH
-    * - **ROS 2 System Handle**
+    * - **ROS 2 System Handles**
       - https://github.com/eProsima/ROS2-SH
     * - **WebSocket System Handle**
       - https://github.com/eProsima/WebSocket-SH

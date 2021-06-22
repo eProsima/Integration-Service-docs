@@ -81,7 +81,7 @@ Also, to get this example working, the following requirements must be met:
 
       apt install ros-$<ROS2_DISTRO>-demo-nodes-cpp
 
-* Having the **ROS 2 System Handle** installed. You can download it from the
+* Having the **Static ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace`
   where you have *Integration Service* installed:
 

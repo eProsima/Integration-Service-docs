@@ -7,7 +7,7 @@ Another typical situation of systems using different protocols is that of
 *ROS 1* and *ROS 2*.
 
 By using *Integration Service*, this communication can be achieved with minimum user's effort.
-As both a **ROS 1 System Handle** and a *ROS 2 System Handle* already exist, the communication is straightforward.
+As both a **ROS 1 System Handle** and a *Static ROS 2 System Handle* already exist, the communication is straightforward.
 
 In the example below, we show how *Integration Service* puts into communication two :code:`pub-echo` examples, one from
 *ROS 2*, and the other from *ROS 1*.
@@ -27,7 +27,7 @@ Also, to get this example working, the following requirements must be met:
 
 * Having **ROS 2** (*Foxy* or superior) installed, with the :code:`talker-listener` example working.
 
-* Having the **ROS 2 System Handle** installed. You can download it from the
+* Having the **Static ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the
   :code:`is-workspace` where you have *Integration Service* installed:
 
