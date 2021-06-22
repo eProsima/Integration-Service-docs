@@ -233,10 +233,10 @@ if read_the_docs_build:
     # Else checkout to main
     if (is_branch and
             integration_service.refs.__contains__('origin/{}'.format(is_branch))):
-        is_branch = 'origin/{}'.format(is_branch)
+        final_branch = 'origin/{}'.format(is_branch)
     elif (docs_branch and
             integration_service.refs.__contains__('origin/{}'.format(docs_branch))):
-        is_branch = 'origin/{}'.format(docs_branch)
+        final_branch = 'origin/{}'.format(docs_branch)
     else:
         print(
             'Integration Service does not have either "{}" or "{}" branches'.format(
@@ -244,11 +244,11 @@ if read_the_docs_build:
                 docs_branch
             )
         )
-        is_branch = 'origin/main'
+        final_branch = 'origin/main'
 
     # Actual checkout
-    print('Checking out Integration Service branch "{}"'.format(is_branch))
-    integration_service.refs[is_branch].checkout()
+    print('Checking out Integration Service branch "{}"'.format(final_branch))
+    integration_service.refs[final_branch].checkout()
 
     print('Cloning Fast DDS System Handle')
     is_fastdds_sh = git.Repo.clone_from(
@@ -261,10 +261,10 @@ if read_the_docs_build:
     # Else checkout to main
     if (is_branch and
             is_fastdds_sh.refs.__contains__('origin/{}'.format(is_branch))):
-        is_branch = 'origin/{}'.format(is_branch)
+        final_branch = 'origin/{}'.format(is_branch)
     elif (docs_branch and
             is_fastdds_sh.refs.__contains__('origin/{}'.format(docs_branch))):
-        is_branch = 'origin/{}'.format(docs_branch)
+        final_branch = 'origin/{}'.format(docs_branch)
     else:
         print(
             'FastDDS System Handle does not have either "{}" or "{}" branches'.format(
@@ -272,11 +272,11 @@ if read_the_docs_build:
                 docs_branch
             )
         )
-        is_branch = 'origin/main'
+        final_branch = 'origin/main'
 
     # Actual checkout
-    print('Checking out FastDDS System Handle branch "{}"'.format(is_branch))
-    is_fastdds_sh.refs[is_branch].checkout()
+    print('Checking out FastDDS System Handle branch "{}"'.format(final_branch))
+    is_fastdds_sh.refs[final_branch].checkout()
 
     print('Cloning ROS 1 System Handle')
     is_ros1_sh = git.Repo.clone_from(
@@ -289,10 +289,10 @@ if read_the_docs_build:
     # Else checkout to main
     if (is_branch and
             is_ros1_sh.refs.__contains__('origin/{}'.format(is_branch))):
-        is_branch = 'origin/{}'.format(is_branch)
+        final_branch = 'origin/{}'.format(is_branch)
     elif (docs_branch and
             is_ros1_sh.refs.__contains__('origin/{}'.format(docs_branch))):
-        is_branch = 'origin/{}'.format(docs_branch)
+        final_branch = 'origin/{}'.format(docs_branch)
     else:
         print(
             'ROS 1 System Handle does not have either "{}" or "{}" branches'.format(
@@ -300,11 +300,11 @@ if read_the_docs_build:
                 docs_branch
             )
         )
-        is_branch = 'origin/main'
+        final_branch = 'origin/main'
 
     # Actual checkout
-    print('Checking out ROS 1 System Handle branch "{}"'.format(is_branch))
-    is_ros1_sh.refs[is_branch].checkout()
+    print('Checking out ROS 1 System Handle branch "{}"'.format(final_branch))
+    is_ros1_sh.refs[final_branch].checkout()
 
     print('Cloning ROS 2 System Handle')
     is_ros2_sh = git.Repo.clone_from(
@@ -317,10 +317,10 @@ if read_the_docs_build:
     # Else checkout to main
     if (is_branch and
             is_ros2_sh.refs.__contains__('origin/{}'.format(is_branch))):
-        is_branch = 'origin/{}'.format(is_branch)
+        final_branch = 'origin/{}'.format(is_branch)
     elif (docs_branch and
             is_ros2_sh.refs.__contains__('origin/{}'.format(docs_branch))):
-        is_branch = 'origin/{}'.format(docs_branch)
+        final_branch = 'origin/{}'.format(docs_branch)
     else:
         print(
             'ROS 2 System Handle does not have either "{}" or "{}" branches'.format(
@@ -328,11 +328,11 @@ if read_the_docs_build:
                 docs_branch
             )
         )
-        is_branch = 'origin/main'
+        final_branch = 'origin/main'
 
     # Actual checkout
-    print('Checking out ROS 2 System Handle branch "{}"'.format(is_branch))
-    is_ros2_sh.refs[is_branch].checkout()
+    print('Checking out ROS 2 System Handle branch "{}"'.format(final_branch))
+    is_ros2_sh.refs[final_branch].checkout()
 
     print('Cloning WebSocket System Handle')
     is_websocket_sh = git.Repo.clone_from(
@@ -345,10 +345,10 @@ if read_the_docs_build:
     # Else checkout to main
     if (is_branch and
             is_websocket_sh.refs.__contains__('origin/{}'.format(is_branch))):
-        is_branch = 'origin/{}'.format(is_branch)
+        final_branch = 'origin/{}'.format(is_branch)
     elif (docs_branch and
             is_websocket_sh.refs.__contains__('origin/{}'.format(docs_branch))):
-        is_branch = 'origin/{}'.format(docs_branch)
+        final_branch = 'origin/{}'.format(docs_branch)
     else:
         print(
             'WebSocket System Handle does not have either "{}" or "{}" branches'.format(
@@ -356,11 +356,11 @@ if read_the_docs_build:
                 docs_branch
             )
         )
-        is_branch = 'origin/main'
+        final_branch = 'origin/main'
 
     # Actual checkout
-    print('Checking out WebSocket System Handle branch "{}"'.format(is_branch))
-    is_websocket_sh.refs[is_branch].checkout()
+    print('Checking out WebSocket System Handle branch "{}"'.format(final_branch))
+    is_websocket_sh.refs[final_branch].checkout()
 
     os.makedirs(os.path.dirname(output_dir), exist_ok=True)
     os.makedirs(os.path.dirname(core_output_dir), exist_ok=True)
