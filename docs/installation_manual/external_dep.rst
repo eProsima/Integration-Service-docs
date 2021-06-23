@@ -60,9 +60,9 @@ System Handles
 
 Beyond the dependencies of the core, each **System Handle** has its own specific dependencies.
 
-:raw-html:`<h4>FastDDS System Handle</h4>`
+:raw-html:`<h4>Fast DDS System Handle</h4>`
 
-The *FastDDS System Handle* has the following requirements:
+The *Fast DDS System Handle* has the following requirements:
 
 .. list-table::
   :header-rows: 1
@@ -71,7 +71,7 @@ The *FastDDS System Handle* has the following requirements:
   * - Dependency
     - Description
     - Installation
-  * - `FastDDS (v2.0.0 or superior) <https://github.com/eProsima/Fast-DDS>`_
+  * - `Fast DDS (v2.0.0 or superior) <https://github.com/eProsima/Fast-DDS>`_
     - eProsima C++ implementation for *DDS*.
     - `Binaries installation guide <https://fast-dds.docs.eprosima.com/en/latest/installation/binaries/binaries_linux.html>`_ :raw-html:`<br />`
       `Sources installation guide <https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html>`_

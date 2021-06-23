@@ -2,8 +2,8 @@
 
 .. rst-class:: api-ref
 
-SystemHandle
-------------
+System Handle
+-------------
 
 .. doxygenclass:: eprosima::is::SystemHandle
     :project: IntegrationService

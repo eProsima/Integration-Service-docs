@@ -1,7 +1,7 @@
 .. _api_is_fastdds_sh:
 
-FastDDS System Handle
----------------------
+Fast DDS System Handle
+----------------------
 
 This section presents the API provided by the *Integration Service* :code:`is-fastdds` library.
 

@@ -180,7 +180,7 @@ You should see the context broker entity named **hello_fiware** previously creat
     curl 172.17.0.1:1026/v2/entities/hello_ros2/attrs?type=HelloWorld -s -S -H 'Content-Type: application/json' -X PUT -d @- <<EOF
     {
     "data": {
-        "value": "Hello, ROS2",
+        "value": "Hello, ROS 2",
         "type": "String"
     }
     }

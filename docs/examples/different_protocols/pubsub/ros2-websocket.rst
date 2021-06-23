@@ -61,7 +61,7 @@ Below we explain how to deploy an example of this communication in both directio
 ROS 2 pub to WebSocket client
 -----------------------------
 
-To enable communication from *ROS2* to a *WebSocket client*, open two terminals:
+To enable communication from *ROS 2* to a *WebSocket client*, open two terminals:
 
 * In the first terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`pub`:
 
