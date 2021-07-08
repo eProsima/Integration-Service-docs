@@ -41,6 +41,61 @@ five sections:
 
   * :code:`domain`: Provides with an easy way to change the *Domain ID* of the ROS 2 entities created
     by the *ROS 2 System Handle*.
+    
+* :code:`topics`: The topic :code:`route` must contain :code:`ros2` within its :code:`from` or :code:`to` fields. Additionally,
+  the *ROS 2 System Handle* accepts the following topic specific configuration parameters, within the
+  :code:`ros2` specific middleware configuration tag:
+
+  .. code-block:: yaml
+  
+        routes:
+          ros2_to_ros1: { from: ros2, to: ros1 }
+
+        topics:
+          hello_ros1:
+            type: std_msgs/String
+            route: ros2_to_ros1
+            ros2: { qos: { 
+                deadline: { sec: 1, nanosec: 10},
+                durability: VOLATILE,
+                history: { kind: KEEP_LAST, depth: 10 }, 
+                lifespan: { sec: 2, nanosec: 20 },
+                liveliness: { kind: AUTOMATIC, sec: 2, nanosec: 0 }, 
+                reliability: RELIABLE
+              }}
+
+  * :code:`qos`: The Quality of Service policies that are going to be applied to the ROS 2 entity involved in the pub-sub operation (in this case the publisher).
+    This parameter accepts any of the QoS available for ROS 2:
+    
+    * :code:`deadline`: This QoS policy raises an alarm when the frequency of new samples falls below a certain threshold, which can be defined by means of the 
+      :code:`sec` and :code:`nanosec` tags. On the publishing side, the deadline defines the maximum period in which the application is expected to supply a new
+      sample. On the subscribing side, it defines the maximum period in which new samples should be received.
+      
+    * :code:`durability`: A Publisher can send messages throughout a Topic even if there are no Subscribers on the network. This QoS defines how the system will 
+      behave regarding those samples that existed on the Topic before the Subscriber joins. There are two possible values: :code:`VOLATILE` and
+      :code:`TRANSIENT_LOCAL`.
+      
+    * :code:`history`: This QoS controls the behavior of the system when the value of an instance changes one or more times before it can be successfully 
+      communicated to the existing Subscriber entities. 
+      
+      * :code:`kind`: Controls if the service should deliver only the most recent values, all the intermediate values or do something in between. There are two 
+        possible values: :code:`KEEP_LAST` and :code:`KEEP_ALL`.
+        
+      * :code:`depth`: Establishes the maximum number of samples that must be kept on the history. It only has effect if the kind is set to :code:`KEEP_LAST`.
+      
+    * :code:`lifespan`: Each data sample written by a Publisher has an associated expiration time beyond which the data is removed from the Publisher and 
+      Subscriber history. That expiration time can be defined by means of the :code:`sec` and :code:`nanosec` tags.
+      
+    * :code:`liveliness`: This QoS controls the mechanism used by the service to ensure that a particular entity on the network is still alive. 
+    
+      * :code:`kind`: Establishes if the service needs to assert the liveliness automatically or if it needs to wait until the liveliness is asserted by the 
+        publishing side. There are two possible values: :code:`AUTOMATIC` and :code:`MANUAL_BY_TOPIC`.
+        
+      * :code:`lease_duration`: Amount of time to wait since the last time the Publisher asserts its liveliness to consider that it is no longer alive. It can be 
+        defined by means of the :code:`sec` and :code:`nanosec` tags.
+        
+    * :code:`reliability`: This QoS indicates the level of reliability offered and requested by the service. 
+      There are two possible values: :code:`RELIABLE` and :code:`BEST_EFFORT`.
 
 Examples
 ^^^^^^^^
