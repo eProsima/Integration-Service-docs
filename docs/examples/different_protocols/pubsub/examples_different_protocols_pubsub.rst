@@ -10,6 +10,7 @@ This page gathers all the *Integration Service* existing examples based on the
    :maxdepth: 1
 
    dds-ros2
+   dds-ros2-qos
    fiware-ros2
    ros1-ros2
    ros2-websocket
