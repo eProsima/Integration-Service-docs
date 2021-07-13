@@ -14,9 +14,6 @@ made effective in the internal entities of *Integration Service*.
 The steps described below address such a situation, by putting into communication a *ROS 2 CLI* publisher,
 using compatible and incompatible QoS on each case, with the *Fast DDS* :code:`DDSHelloWorld` example.
 
-.. image:: images/dds-ros2.png
-
-
 .. _dds-ros2-qos_requirements:
 
 Requirements
@@ -80,8 +77,8 @@ Depending on its durability kind that messages are redirected using *Integration
 compatible with :code:`transient_local` subscribers.
 
 
-ROS 2 CLI publisher to DDS subscriber with compatible QoS
----------------------------------------------------------
+ROS 2 transient local CLI publisher to DDS subscribers
+------------------------------------------------------
 
 To enable communication from *ROS 2* to *Fast DDS*, open four terminals:
 
@@ -116,7 +113,7 @@ This is where *Integration Service* comes into play to make the communication po
 
 * In the third terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
   and execute *Integration Service* with the :code:`integration-service` command followed by the
-  `fastdds_ros2__qos_helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/feature/ros2_qos_example/examples/basic/fastdds_ros2__qos_helloworld.yaml>`_
+  `fastdds_ros2__qos_helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/fastdds_ros2__qos_helloworld.yaml>`_
   configuration file located in the :code:`src/Integration-Service/examples/basic` folder:
 
   .. code-block:: bash
@@ -128,10 +125,13 @@ This is where *Integration Service* comes into play to make the communication po
 
 Once the last command is executed, the three applications will start communicating, since the :code:`transient_local`
 durability defined for the *ROS 2* publisher is compatible with :code:`volatile` and :code:`transient_local` subscribers.
+The following diagram describes the data flow between all the involved applications.
+
+.. image:: images/ros2_qos_transient_local.png
 
 
-ROS 2 CLI publisher to DDS subscriber with incompatible QoS
------------------------------------------------------------
+ROS 2 volatile CLI publisher to DDS subscriber
+----------------------------------------------
 
 To enable communication from *Fast DDS* to *ROS 2*, open four terminals:
 
@@ -166,7 +166,7 @@ This is where *Integration Service* comes into play to make the communication po
 
 * In the third terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations,
   and execute *Integration Service* with the :code:`integration-service` command followed by the
-  `fastdds_ros2__qos_helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/feature/ros2_qos_example/examples/basic/fastdds_ros2__qos_helloworld.yaml>`_
+  `fastdds_ros2__qos_helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/fastdds_ros2__qos_helloworld.yaml>`_
   configuration file located in the :code:`src/Integration-Service/examples/basic` folder:
 
   .. code-block:: bash
@@ -178,3 +178,6 @@ This is where *Integration Service* comes into play to make the communication po
 
 Once the last command is executed, the two volatile applications will start communicating, since the :code:`volatile`
 durability defined for the *ROS 2* publisher is only compatible with :code:`volatile` subscribers.
+The following diagram describes the data flow between all the involved applications.
+
+.. image:: images/ros2_qos_volatile.png
