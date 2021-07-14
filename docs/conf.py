@@ -466,6 +466,7 @@ breathe_default_project = 'IntegrationService'
 # ones.
 extensions = [
     'breathe',
+    'sphinx_copybutton'
 ]
 try:
     import sphinxcontrib.spelling  # noqa: F401

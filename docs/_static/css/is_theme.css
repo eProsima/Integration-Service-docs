@@ -145,8 +145,18 @@ src:url("Fonts/742885/39974d8a-38de-4853-a4d1-778234a08061.eot?#iefix") format("
 .rst-content div[class^="highlight"] pre{
   background: #F0F8FF !important;
   font-size: 11.9px !important;
+  display: inline-table;
+}
+
+.rst-content div[class^="highlight"]{
+  background: #F0F8FF !important;
 }
 
 .rst-content .section ul li p:last-child {
   margin-bottom: 10px;
+}
+
+.rst-content div[class^="highlight"] button {
+  scale: 0.5;
+  float: inline-end;
 }
