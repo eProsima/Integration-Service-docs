@@ -27,20 +27,20 @@ Also, to get this example working, the following requirements must be met:
 * Having the **ROS 2 System Handle** installed. You can download it from the
   `ROS2-SH dedicated repository <https://github.com/eProsima/ROS2-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       cd ~/is-workspace
       git clone https://github.com/eProsima/ROS2-SH.git src/ROS2-SH
 
 * Having `OpenSSL <https://www.openssl.org/>`_ and `WebSocket++ <https://github.com/zaphoyd/websocketpp>`_ installed:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       apt install libssl-dev libwebsocketpp-dev
 
 * Having the **WebSocket System Handle** installed. You can download it from the `WebSocket-SH dedicated repository <https://github.com/eProsima/WebSocket-SH>`_ into the :code:`is-workspace` where you have *Integration Service* installed:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       cd ~/is-workspace
       git clone https://github.com/eProsima/WebSocket-SH.git src/WebSocket-SH
@@ -48,7 +48,7 @@ Also, to get this example working, the following requirements must be met:
 
 After you have everything correctly installed in your :code:`is-workspace`, build the packages by running:
 
-.. code-block:: bash
+ .. code-block:: bash
 
     colcon build
 
@@ -65,7 +65,7 @@ To enable communication from *ROS 2* to a *WebSocket client*, open two terminals
 
 * In the first terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`pub`:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic pub /hello_websocket std_msgs/msg/String “{data: Hello WebSocket}”
@@ -75,7 +75,7 @@ To enable communication from *ROS 2* to a *WebSocket client*, open two terminals
   `ros2_websocket__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros2_websocket__helloworld.yaml>`_
   configuration file located in the :code:`src/Integration-Service/basic` folder:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       cd ~/is-workspace
       source /opt/ros/$<ROS2_DISTRO>/setup.bash
@@ -85,36 +85,34 @@ To enable communication from *ROS 2* to a *WebSocket client*, open two terminals
 Up to this point, the *Integration Service* should have created a *WebSocket server* application
 within the *WebSocket System Handle*, to listen and handle petitions coming from a *WebSocket client*.
 
-We will now explain how to simply test the intercommunication between *ROS 2* and a demo *WebSocket client* application,
-which can be found in `websocket.org/echo <https://www.websocket.org/echo.html>`_ webpage:
+In order to test the intercommunication between a **ROS 2** publisher and a demo *WebSocket client* subscriber application
+`click here <../../../ws_client_sub.html>`_.
+The hyperlink leads to a webpage that creates a *WebSocket* connection to
+:code:`ws://localhost:80` where the *Integration-Server* has created the
+*WebSocket Server* according with the **yaml** file.
 
-* First, under the **Location** section, connect to the *WebSocket server* automatically deployed by the *Integration Service*.
-  To do so, and since the example is being run without SSL security,
-  copy and paste the following URL into the *Location* field text box, and press **Connect**:
+The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.
+Basically once the connection is established the server will send and advertise
+message reporting which topics and types are available:
 
-  .. code-block:: html
+ .. code-block:: JavaScript
 
-    ws://localhost:80
+    {"op": "advertise", "topic": "hello_websocket”, "type": "std_msgs/String"}
 
-  After this, you should see two WebSocket messages received automatically,
-  due to the fact that the *WebSocket Server* hosted in the *Integration Service* detected an incoming connection:
-  a *subscribe* operation message for the :code:`hello_ros2` topic; and an *advertise* operation for the :code:`hello_websocket` topic.
+The webpage answers by requesting a subscription to the advertised topic:
 
-* Since the ROS 2 talker to WebSocket client example is being tested, we must first send a subscribe
-  operation request for the :code:`hello_websocket` topic.
-  To do so, under the *Message* text box, enter the following and press *Send*:
+ .. code-block:: JavaScript
 
-  .. code-block:: yaml
+    {"op": "subscriber", "topic": "hello_websocket", "msg": {"data": "Hello WebSocket"}}
 
-    {"op": "subscribe", "topic": "hello_websocket", "type": "std_msgs/String"}
+The server will proceed to relay all messages available on the requested topic
+in the format:
 
-After this, in the *Log* you should receive the following message from *ROS 2*:
+ .. code-block:: JavaScript
 
-.. code-block:: yaml
+    {"msg":{"data":"Hello WebSocket"},"op":"publish","topic":"hello_websocket"}
 
-  RECEIVED: {"msg":{"data":"Hello WebSocket"},"op":"publish","topic":"hello_websocket"}
-
-
+The webpage will add a new line for each **ROS2** message received.
 
 WebSocket client to ROS 2 echo
 ----------------------------------------
@@ -123,7 +121,7 @@ To enable communication from a *WebSocket client* to *ROS 2*, open two terminals
 
 * In the first terminal, source your *ROS 2* installation and execute a *ROS 2* :code:`echo`:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       source /opt/ros/$<ROS2_DISTRO>/setup.bash
       ros2 topic echo /hello_ros2 std_msgs/msg/String
@@ -133,7 +131,7 @@ To enable communication from a *WebSocket client* to *ROS 2*, open two terminals
   `ros2_websocket__helloworld.yaml <https://github.com/eProsima/Integration-Service/blob/main/examples/basic/ros2_websocket__helloworld.yaml>`_
   configuration file located in the :code:`src/Integration-Service/basic` folder:
 
-  .. code-block:: bash
+ .. code-block:: bash
 
       cd ~/is-workspace
       source /opt/ros/$<ROS2_DISTRO>/setup.bash
@@ -143,32 +141,23 @@ To enable communication from a *WebSocket client* to *ROS 2*, open two terminals
 Up to this point, the *Integration Service* should have created a *WebSocket server* application
 within the *WebSocket System Handle*, to listen and handle petitions coming from a *WebSocket client*.
 
-We will now explain how to simply test the intercommunication between *ROS 2* and a demo *WebSocket client* application,
-which can be found in `websocket.org/echo <https://www.websocket.org/echo.html>`_ webpage:
+In order to test the intercommunication between *WebSocket client* publisher
+application and a **ROS 2** subscriber `click here <../../../ws_client_pub.html>`_.
+The hyperlink leads to a webpage that creates a *WebSocket* connection to
+:code:`ws://localhost:80` where the *Integration-Server* has created the
+*WebSocket Server* according with the **yaml** file.
 
-* First, under the **Location** section, connect to the *WebSocket server* automatically deployed by the *Integration Service*.
-  To do so, and since the example is being run without SSL security,
-  copy and paste the following URL into the *Location* field text box, and press **Connect**:
+The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.
+Basically once the connection is established the client must advertise the new
+topic available by sending the following message to the server:
 
-  .. code-block:: html
-
-    ws://localhost:80
-
-  After this, you should see two WebSocket messages received automatically,
-  due to the fact that the *WebSocket Server* hosted in the *Integration Service* detected an incoming connection:
-  a *subscribe* operation message for the :code:`hello_ros2` topic; and an *advertise* operation for the :code:`hello_websocket` topic.
-
-* Since the WebSocket client to ROS 2 echo example is being tested, we must first send an advertise
-  operation request for the :code:`hello_ros2` topic.
-  To do so, under the *Message* text box, enter the following and press *Send*:
-
-  .. code-block:: html
+ .. code-block:: JavaScript
 
     {"op": "advertise", "topic": "hello_ros2”, "type": "std_msgs/String"}
 
 After this, we can send individual messages from the *WebSocket client*, using the *publish* operation:
 
-.. code-block:: html
+ .. code-block:: JavaScript
 
     {"op": "publish", "topic": "hello_ros2", "msg": {"data": "Hello ROS 2"}}
 
