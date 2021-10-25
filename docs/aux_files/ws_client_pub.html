@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            var socket = null;
+            var timer = null;
+
+            function connect() {
+
+                var pubTimer = null;
+
+                if(!socket)
+                {
+                    var socket = new WebSocket("ws://localhost:80");
+                }
+
+                function restart() {
+                    // reset state
+                    if(socket)
+                    {
+                        socket.close();
+                        socket = null;
+                    }
+                    // reset messages
+                    document.getElementById("server_message").innerHTML = 'failed to establish connection';
+                    if(!timer)
+                    {
+                        // launch timer
+                        timer = setInterval(connect, 1000);
+                    }
+
+                    if(pubTimer)
+                    {
+                        clearInterval(pubTimer);
+                        pubTimer = null;
+                    }
+                }
+
+                socket.onerror = restart;
+                socket.onclose = restart;
+
+                socket.onopen = function() {
+                    document.getElementsByTagName("h1")[0].innerText = "websocket connection established."
+                    // remove the timer
+                    if (timer)
+                    {
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                    // advertise the new topic
+                    var sub_msg = '{"op":"advertise","topic": "hello_ros2", "type": "std_msgs/String"}';
+                    socket.send(sub_msg);
+
+                    if(!pubTimer)
+                    {
+                        pubTimer = setInterval(publish, 1000);
+                    }
+                }
+
+                function publish() {
+                    var msg = "Hello ROS 2";
+                    var sub_msg = '{"op":"publish","topic": "hello_ros2", "msg": {"data": "' + msg + '"}}';
+                    socket.send(sub_msg);
+                    
+                    // Update GUI
+                    document.getElementById("server_header").style.display = "block";
+                    // show the message
+                    var node = document.createElement('li');
+                    node.appendChild(document.createTextNode(msg));
+                    let panel = document.getElementById("server_message");
+                    if( panel.children.length == 0 || panel.children[0].tagName != 'LI')
+                        panel.innerHTML = '';
+                    panel.appendChild(node);
+                }
+            }
+        </script>
+        <title>Simple Websocket Client</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body onLoad="connect()">
+        <p>
+            <img src="https://www.eprosima.com/images/logos/eprosima/logo.png" alt="eProsima">
+        </p>
+        <h1>waiting for socket connection</h1>
+        <h2 id="server_header" hidden>Client says:</h2>
+        <ul id="server_message">
+        </ul>
+        <script>
+    </body>
+</html>
