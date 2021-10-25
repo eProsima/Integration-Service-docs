@@ -58,6 +58,8 @@ Deployment
 
 Below we explain how to deploy an example of this communication in both directions allowed.
 
+.. _ros_2_pub_to_websocket_client:
+
 ROS 2 pub to WebSocket client
 -----------------------------
 
