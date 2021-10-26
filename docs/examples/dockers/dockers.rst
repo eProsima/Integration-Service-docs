@@ -118,7 +118,7 @@ finally launch the integration service to provide a bridge:
 ROS 2 pub to WebSocket client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The example explanation is available :ref:`here <_ros_2_pub_to_websocket_client>`.
+The example explanation is available :ref:`here <ros_2_pub_to_websocket_client>`.
 
 In one terminal launch the **ROS2** publisher:
 
@@ -152,3 +152,61 @@ in another terminal launch *Integration-Service* to bridge **ROS2** to *Websocke
     $ docker exec -t ws_ros2 /is_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2_websocket__helloworld.yaml
 
 launch the *Websocket client* publisher in the browser `clicking here <../../ws_client_pub.html>`_.
+
+DDS Domain ID change
+^^^^^^^^^^^^^^^^^^^^
+
+The example explanation is available :ref:`here <dds_change_of_domain>`.
+
+In a terminal launch a **DDS** subscriber on domain 3:
+
+ .. code-block:: bash
+
+    $ docker run -t --name domain_bridge is:samples /home/DDSHelloWorld -m subscriber -n hello_domain_3 -d 3
+
+In another terminal launch a **DDS** publisher on domain 5:
+
+ .. code-block:: bash
+
+    $ docker exec -t domain_bridge /home/DDSHelloWorld -m publisher -n hello_domain_3 -d 5
+
+Finally launch *Integration-Service* in a another terminal as bridge:
+
+ .. code-block:: bash
+
+    $ docker exec -t domain_bridge /is_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/fastdds__domain_id_change.yaml
+
+
+ROS 2 Domain ID change
+^^^^^^^^^^^^^^^^^^^^^^
+
+The example explanation is available :ref:`here <ros2_change_of_domain>`.
+
+In a terminal launch a **ROS2** publisher under domain 5:
+
+ .. code-block:: bash
+
+    $ docker run -t --name ros2_domain_bridge -e "ROS_DOMAIN_ID=5" is:samples /ros2_entrypoint.sh ros2 topic pub -r 1 /string_topic std_msgs/String "{data: 'Hello, ros1'}"
+
+In another terminal launch a **ROS2** subscriber under domain 10:
+
+ .. code-block:: bash
+
+    $ docker exec -t -e "ROS_DOMAIN_ID=10" ros2_domain_bridge /ros2_entrypoint.sh ros2 topic echo /string_topic std_msgs/String
+
+Finally launch *Integration-Service* in a another terminal as bridge:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros2_domain_bridge /is_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2__domain_id_change.yaml
+
+
+
+
+
+
+
+
+
+
+

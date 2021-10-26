@@ -116,8 +116,10 @@ in the format:
 
 The webpage will add a new line for each **ROS2** message received.
 
+.. _websocket_client_to_ros_2_echo:
+
 WebSocket client to ROS 2 echo
-----------------------------------------
+------------------------------
 
 To enable communication from a *WebSocket client* to *ROS 2*, open two terminals:
 
