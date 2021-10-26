@@ -200,13 +200,39 @@ Finally launch *Integration-Service* in a another terminal as bridge:
 
     $ docker exec -t ros2_domain_bridge /is_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2__domain_id_change.yaml
 
+DDS Service Server
+^^^^^^^^^^^^^^^^^^
 
+The example explanation is available :ref:`here <dds_server_bridge>`.
 
+In a terminal launch the **DDSAddTwoInts** server example:
 
+ .. code-block:: bash
 
+    $ docker run -ti -p 80:80 --name dds_server is:samples /home/DDSAddTwoInts -m server
 
+Launch the **ROS1** master node:
 
+ .. code-block:: bash
 
+    $ docker exec -d dds_server /ros1_entrypoint.sh roscore
 
+Launch the *Integration-Service* in another terminal as bridge:
 
+ .. code-block:: bash
 
+    $ docker exec -t dds_server /is_entrypoint.sh /ros2_entrypoint.sh /ros1_entrypoint.sh integration-service /home/basic/fastdds_server__addtwoints.yaml
+
+In another terminal call the server from **ROS1**:
+
+ .. code-block:: bash
+
+    $ docker exec -t dds_server /ros1_entrypoint.sh rosservice call /add_two_ints 3 4
+
+In order to call the server from **ROS2** do:
+
+ .. code-block:: bash
+
+    $ docker exec -t dds_server /ros2_entrypoint.sh ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
+
+In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.

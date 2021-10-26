@@ -11,7 +11,7 @@ FROM ros:foxy AS foxy_overlay
 
 # Install the examples
 RUN apt-get update;
-RUN apt-get install ros-foxy-demo-nodes-cpp -y
+RUN apt-get install ros-foxy-demo-nodes-cpp ros-foxy-example-interfaces -y
 
 # Fix the script
 RUN sed -i -e "s?\$ROS_DISTRO?$ROS_DISTRO?g" -e "s?setup?local_setup?g" /ros_entrypoint.sh
@@ -52,15 +52,16 @@ RUN mkdir -p /is_ws/src \
 
 # Compile the Integration Service
 WORKDIR /is_ws
+
+RUN cd src/is/examples/utils/ros1/catkin_ws && \
+    /ros1_entrypoint.sh catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/noetic install
 RUN /ros2_entrypoint.sh \
     colcon build --packages-skip-regex is-ros1 \
     --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON \
-    -DBUILD_WEBSOCKET_EXAMPLES=ON --install-base /opt/is
-RUN cd src/is/examples/utils/ros1/catkin_ws && \
-    /ros1_entrypoint.sh catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/noetic install
+    -DBUILD_WEBSOCKET_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
 RUN /ros1_entrypoint.sh \
     colcon build --packages-up-to-regex is-examples is-ros1 \
-    --cmake-args -DBUILD_EXAMPLES=ON --install-base /opt/is
+    --cmake-args -DBUILD_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
 RUN sed -e 's?ros/noetic?is?g' /ros1_entrypoint.sh > /is_entrypoint.sh && \
     chmod +x /is_entrypoint.sh
 
