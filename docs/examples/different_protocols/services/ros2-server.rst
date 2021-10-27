@@ -206,33 +206,27 @@ You should receive the following output from the *ROS 2* server processing the p
 Call the service from WebSocket
 -------------------------------
 
-The *WebSocket client* demo application used for this example can be found in the
-`websocket.org/echo <https://www.websocket.org/echo.html>`_ webpage:
+In order to call the server from a *WebSocket client*  `click here <../../../ws_client_svr.html>`_.
+The hyperlink leads to a webpage that creates a *WebSocket* connection to 
+:code:`ws://localhost:80` where the *Integration-Server* has created the
+*WebSocket Server* according with the **yaml** file.
 
-* First, under the **Location** section, connect to the *WebSocket server* automatically deployed by the *Integration Service*.
-  To do so, and since the example is being run without SSL security,
-  copy and paste the following URL into the *Location* field text box, and press **Connect**:
-
-  .. code-block:: html
-
-    ws://localhost:80
-
-* Now it is time to advertise the service we want to use; to do so,
-  under the *Message* text box, enter the following and press *Send*:
+The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.
+Basically once the connection is established the client will send a message to advertise the service it wants to use.
+The message syntax is like:
 
   .. code-block:: yaml
 
     {"op": "advertise_service", "service": "add_two_ints", "request_type": "AddTwoInts_Request", "reply_type": "AddTwoInts_Response"}
 
-* Finally, after the service has been advertised, call it by sending the following message from the
-  *WebSocket* echo:
+Once the service has been advertised, the request is send using a message format like:
 
   .. code-block:: yaml
 
     {"op": "call_service", "service": "add_two_ints", "args": {"a": 14, "b": 25}}
 
-After this, in the *Log*, you should receive the following response from the *ROS 2* server:
+Once the server has met the request it sends back the answer formatted as: 
 
-.. code-block:: yaml
+  .. code-block:: yaml
 
-  RECEIVED: {"op":"service_response","result":true,"service":"add_two_ints","values":{"sum":39}}
+    {"op":"service_response","result":true,"service":"add_two_ints","values":{"sum":39}}
