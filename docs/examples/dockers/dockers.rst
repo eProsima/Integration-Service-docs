@@ -3,8 +3,8 @@
 Running samples on docker
 =========================
 
-A dockerfile is provided in `eProsima website <www.eprosima.com>`_ to simplify running the examples.
-The docker image is loaded decompressing the provided `is_samples.tar.gz` and
+The docker image required to run the examples is provided in `eProsima website <www.eprosima.com/index.php/downloads-all>`_.
+The image is loaded decompressing the provided `is_samples.tar.gz` and
 importing it using the docker cli.
 
  .. code-block:: bash
@@ -236,3 +236,113 @@ In order to call the server from **ROS2** do:
     $ docker exec -t dds_server /ros2_entrypoint.sh ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
 
 In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.
+
+ROS 1 Service Server
+^^^^^^^^^^^^^^^^^^^^
+
+The example explanation is available :ref:`here <ros1_server_bridge>`.
+
+In a terminal launch the **ROS1** server example:
+
+ .. code-block:: bash
+
+    $ docker run -d -p 80:80 --name ros1_server is:samples /ros1_entrypoint.sh roscore
+    $ docker exec -t ros1_server /ros1_entrypoint.sh rosrun add_two_ints_server add_two_ints_server_node
+
+Launch the *Integration-Service* in another terminal as bridge:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros1_server /is_entrypoint.sh /ros1_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros1_server__addtwoints.yaml
+
+In order to call the server from **DDS**:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros1_server /home/DDSAddTwoInts -m client -c 5
+
+In order to call the server from **ROS2** do:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros1_server /ros2_entrypoint.sh ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
+
+In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.
+
+ROS 1 Service Server
+^^^^^^^^^^^^^^^^^^^^
+
+The example explanation is available :ref:`here <ros2_server_bridge>`.
+
+In a terminal launch the **ROS2** server example:
+
+ .. code-block:: bash
+
+    $ docker run -t -p 80:80 --name ros2_server is:samples /ros2_entrypoint.sh ros2 run demo_nodes_cpp add_two_ints_server
+
+Launch the **ROS1** master node:
+
+ .. code-block:: bash
+
+    $ docker exec -d ros2_server /ros1_entrypoint.sh roscore
+
+Launch the *Integration-Service* in another terminal as bridge:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros2_server /is_entrypoint.sh /ros1_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2_server__addtwoints.yaml
+
+In order to call the server from **DDS**:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros2_server /home/DDSAddTwoInts -m client -c 5
+
+In order to call the server from **ROS1**:
+
+ .. code-block:: bash
+
+    $ docker exec -t ros2_server /ros1_entrypoint.sh rosservice call /add_two_ints 3 4
+
+In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.
+
+WebSocket Service Server
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The example explanation is available :ref:`here <websocket_server_bridge>`.
+
+In a terminal launch the *WebSocket* server example:
+
+ .. code-block:: bash
+
+    $ docker run -t --name ws_server is:samples /home/WebSocketAddTwoInts
+
+Launch the **ROS1** master node:
+
+ .. code-block:: bash
+
+    $ docker exec -d ws_server /ros1_entrypoint.sh roscore
+
+Launch the *Integration-Service* in another terminal as bridge:
+
+ .. code-block:: bash
+
+    $ docker exec -t ws_server /is_entrypoint.sh /ros1_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/websocket_server__addtwoints.yaml
+
+In order to call the server from **DDS**:
+
+ .. code-block:: bash
+
+    $ docker exec -t ws_server /home/DDSAddTwoInts -m client -c 5
+
+In order to call the server from **ROS1**:
+
+ .. code-block:: bash
+
+    $ docker exec -t ws_server /ros1_entrypoint.sh rosservice call /add_two_ints 3 4
+
+In order to call the server from **ROS2** do:
+
+ .. code-block:: bash
+
+    $ docker exec -t ws_server /ros2_entrypoint.sh ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"

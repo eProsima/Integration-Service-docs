@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -f -y git \
 # Prepare Integration Service workspace
 RUN mkdir -p /is_ws/src \
     && cd /is_ws/src \
-    && git clone https://github.com/eProsima/Integration-Service.git is \
+    && git clone https://github.com/eProsima/Integration-Service.git is -b bugfix/ros1_examples_installation \
     && git clone https://github.com/eProsima/xtypes.git --recursive xtypes \
     && git clone https://github.com/eProsima/WebSocket-SH.git \
     && git clone https://github.com/eProsima/ROS1-SH.git \ 
@@ -53,15 +53,17 @@ RUN mkdir -p /is_ws/src \
 # Compile the Integration Service
 WORKDIR /is_ws
 
-RUN cd src/is/examples/utils/ros1/catkin_ws && \
-    /ros1_entrypoint.sh catkin_make -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/opt/ros/noetic install
-RUN /ros2_entrypoint.sh \
-    colcon build --packages-skip-regex is-ros1 \
-    --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON \
-    -DBUILD_WEBSOCKET_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
 RUN /ros1_entrypoint.sh \
-    colcon build --packages-up-to-regex is-examples is-ros1 \
-    --cmake-args -DBUILD_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
+    colcon build --event-handler=console_direct+ \
+    --packages-up-to-regex is-examples is-ros1 \
+    --cmake-args -DBUILD_ROS1_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
+
+RUN /ros2_entrypoint.sh \
+    colcon build --event-handler=console_direct+ \
+    --packages-skip-regex is-ros1 \
+    --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON -DBUILD_ROS1_EXAMPLES=OFF \
+    -DBUILD_WEBSOCKET_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
+
 RUN sed -e 's?ros/noetic?is?g' /ros1_entrypoint.sh > /is_entrypoint.sh && \
     chmod +x /is_entrypoint.sh
 
