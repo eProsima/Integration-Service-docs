@@ -88,7 +88,7 @@ Up to this point, the *Integration Service* should have created a *WebSocket ser
 within the *WebSocket System Handle*, to listen and handle petitions coming from a *WebSocket client*.
 
 In order to test the intercommunication between a **ROS 2** publisher and a demo *WebSocket client* subscriber application
-`click here <../../../ws_client_sub.html>`_.
+`click here <../../../ws_client_sub.html>`__.
 The hyperlink leads to a webpage that creates a *WebSocket* connection to
 :code:`ws://localhost:80` where the *Integration-Server* has created the
 *WebSocket Server* according with the **yaml** file.
@@ -146,7 +146,7 @@ Up to this point, the *Integration Service* should have created a *WebSocket ser
 within the *WebSocket System Handle*, to listen and handle petitions coming from a *WebSocket client*.
 
 In order to test the intercommunication between *WebSocket client* publisher
-application and a **ROS 2** subscriber `click here <../../../ws_client_pub.html>`_.
+application and a **ROS 2** subscriber `click here <../../../ws_client_pub.html>`__.
 The hyperlink leads to a webpage that creates a *WebSocket* connection to
 :code:`ws://localhost:80` where the *Integration-Server* has created the
 *WebSocket Server* according with the **yaml** file.

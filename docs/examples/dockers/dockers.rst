@@ -4,12 +4,11 @@ Running samples on docker
 =========================
 
 The docker image required to run the examples is provided in `eProsima website <www.eprosima.com/index.php/downloads-all>`_.
-The image is loaded decompressing the provided `is_samples.tar.gz` and
-importing it using the docker cli.
+The image can be loaded using the docker command line:
 
  .. code-block:: bash
 
-    $ unzip -p is_samples.tar.gz | docker import - is:samples 
+    $ docker load --input is_samples.tgz
 
 ROS 2 talker to DDS subscriber
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,7 +131,7 @@ in another terminal launch *Integration-Service* to bridge **ROS2** to *Websocke
 
     $ docker exec -t ros2_ws /is_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2_websocket__helloworld.yaml
 
-launch the *Websocket client* subscriber in the browser `clicking here <../../ws_client_sub.html>`_.
+launch the *Websocket client* subscriber in the browser `clicking here <../../ws_client_sub.html>`__.
 
 WebSocket client to ROS 2 echo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -151,7 +150,7 @@ in another terminal launch *Integration-Service* to bridge **ROS2** to *Websocke
 
     $ docker exec -t ws_ros2 /is_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2_websocket__helloworld.yaml
 
-launch the *Websocket client* publisher in the browser `clicking here <../../ws_client_pub.html>`_.
+launch the *Websocket client* publisher in the browser `clicking here <../../ws_client_pub.html>`__.
 
 DDS Domain ID change
 ^^^^^^^^^^^^^^^^^^^^
@@ -235,7 +234,7 @@ In order to call the server from **ROS2** do:
 
     $ docker exec -t dds_server /ros2_entrypoint.sh ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
 
-In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.
+In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`__.
 
 ROS 1 Service Server
 ^^^^^^^^^^^^^^^^^^^^
@@ -267,7 +266,7 @@ In order to call the server from **ROS2** do:
 
     $ docker exec -t ros1_server /ros2_entrypoint.sh ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
 
-In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.
+In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`__.
 
 ROS 1 Service Server
 ^^^^^^^^^^^^^^^^^^^^
@@ -304,7 +303,7 @@ In order to call the server from **ROS1**:
 
     $ docker exec -t ros2_server /ros1_entrypoint.sh rosservice call /add_two_ints 3 4
 
-In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`_.
+In order to call the server using *WebSockets* from a browser `click here <../../ws_client_svr.html>`__.
 
 WebSocket Service Server
 ^^^^^^^^^^^^^^^^^^^^^^^^

@@ -214,7 +214,7 @@ Call the service from WebSocket
 -------------------------------
 
 In order to call the server from a *WebSocket client*  `click here <../../../ws_client_svr.html>`_.
-The hyperlink leads to a webpage that creates a *WebSocket* connection to 
+The hyperlink leads to a webpage that creates a *WebSocket* connection to
 :code:`ws://localhost:80` where the *Integration-Server* has created the
 *WebSocket Server* according with the **yaml** file.
 
@@ -232,7 +232,7 @@ Once the service has been advertised, the request is send using a message format
 
     {"op": "call_service", "service": "add_two_ints", "args": {"a": 14, "b": 25}}
 
-Once the server has met the request it sends back the answer formatted as: 
+Once the server has met the request it sends back the answer formatted as:
 
   .. code-block:: yaml
 
