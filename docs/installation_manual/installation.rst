@@ -10,6 +10,9 @@ and an explanation of how to launch and deploy an *Integration Service* project.
 .. important::
   Before following the installation steps, check that you have all the necessary :ref:`dependencies <external_dependencies>` installed.
 
+.. note::
+  *Integration Service* installation can be avoided for testing purposes using our :ref:`docker image <docker_samples>`.
+
 .. _workspace_setup:
 
 Workspace Setup
