@@ -46,6 +46,7 @@
     examples/different_protocols/examples_different_protocols
     examples/same_protocol/examples_same_protocol
     examples/wan_communication/wan_communication
+    examples/dockers/dockers
 
 .. toctree::
     :caption: Release Notes

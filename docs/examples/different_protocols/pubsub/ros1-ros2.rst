@@ -61,6 +61,8 @@ Deployment
 
 Below we explain how to deploy an example of this communication in both directions allowed.
 
+.. _ros_1_pub_to_ros_2_echo:
+
 ROS 1 pub to ROS 2 echo
 -----------------------
 
@@ -102,6 +104,8 @@ To enable communication from *ROS 1* to *ROS 2*, open four terminals:
 
 Once *Integration Service* is launched, the *ROS 1* :code:`pub` and the
 *ROS 2* :code:`echo` will start communicating.
+
+.. _ros_2_pub_to_ros_1_echo:
 
 ROS 2 pub to ROS 1 echo
 --------------------------

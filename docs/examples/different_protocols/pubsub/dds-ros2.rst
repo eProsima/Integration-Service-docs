@@ -75,6 +75,7 @@ Deployment
 
 Below we explain how to deploy an example of this communication in both directions allowed.
 
+.. _ros_2_talker_to_dds_subscriber:
 
 ROS 2 talker to DDS subscriber
 ------------------------------
@@ -113,6 +114,8 @@ This is where *Integration Service* comes into play to make the communication po
       integration-service src/Integration-Service/examples/basic/fastdds_ros2__helloworld.yaml
 
 Once the last command is executed, the two applications will start communicating.
+
+.. _dds-publisher_to_ros_2_listener:
 
 DDS publisher to ROS 2 listener
 -------------------------------
