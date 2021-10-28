@@ -3,7 +3,7 @@
 Running samples on docker
 =========================
 
-The docker image required to run the examples is provided in `eProsima website <www.eprosima.com/index.php/downloads-all>`_.
+The docker image required to run the examples is provided in `eProsima website <https://www.eprosima.com/index.php/downloads-all>`_.
 The image can be loaded using the docker command line:
 
  .. code-block:: bash
