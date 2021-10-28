@@ -196,7 +196,7 @@ Call the service from WebSocket
 
 In order to call the server from a *WebSocket client*  `click here <../../../ws_client_svr.html>`_.
 The hyperlink leads to a webpage that creates a *WebSocket* connection to
-:code:`ws://localhost:80` where the *Integration-Server* has created the
+:code:`ws://localhost:80` where the *Integration-Service* has created the
 *WebSocket Server* according with the **yaml** file.
 
 The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.
@@ -207,7 +207,7 @@ The message syntax is like:
 
     {"op": "advertise_service", "service": "add_two_ints", "request_type": "AddTwoInts_Request", "reply_type": "AddTwoInts_Response"}
 
-Once the service has been advertised, the request is send using a message format like:
+Once the service has been advertised, the request is sent using a message format like:
 
   .. code-block:: yaml
 

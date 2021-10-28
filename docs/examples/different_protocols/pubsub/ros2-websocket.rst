@@ -90,12 +90,12 @@ within the *WebSocket System Handle*, to listen and handle petitions coming from
 In order to test the intercommunication between a **ROS 2** publisher and a demo *WebSocket client* subscriber application
 `click here <../../../ws_client_sub.html>`__.
 The hyperlink leads to a webpage that creates a *WebSocket* connection to
-:code:`ws://localhost:80` where the *Integration-Server* has created the
+:code:`ws://localhost:80` where the *Integration-Service** has created the
 *WebSocket Server* according with the **yaml** file.
 
 The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.
-Basically once the connection is established the server will send and advertise
-message reporting which topics and types are available:
+Basically once the connection is established the server will send messages to advertise which topics and types are
+available:
 
  .. code-block:: JavaScript
 
@@ -148,7 +148,7 @@ within the *WebSocket System Handle*, to listen and handle petitions coming from
 In order to test the intercommunication between *WebSocket client* publisher
 application and a **ROS 2** subscriber `click here <../../../ws_client_pub.html>`__.
 The hyperlink leads to a webpage that creates a *WebSocket* connection to
-:code:`ws://localhost:80` where the *Integration-Server* has created the
+:code:`ws://localhost:80` where the *Integration-Service** has created the
 *WebSocket Server* according with the **yaml** file.
 
 The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.

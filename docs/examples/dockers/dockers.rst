@@ -61,16 +61,11 @@ ROS 1 pub to ROS 2 echo
 
 The example explanation is available :ref:`here <ros_1_pub_to_ros_2_echo>`.
 
-In one terminal launch the **ROS1** master node:
+In one terminal launch the **ROS1** master node and **ROS1** publisher:
 
  .. code-block:: bash
 
-     docker run -t --name ros1_ros2 is:samples /ros1_entrypoint.sh roscore
-
-in another terminal launch the **ROS1** publisher:
-
- .. code-block:: bash
-
+     docker run -d --name ros1_ros2 is:samples /ros1_entrypoint.sh roscore
      docker exec -t ros1_ros2 /ros1_entrypoint.sh rostopic pub /hello_ros2 std_msgs/String "Hello, ros2"
 
 in another terminal launch the **ROS2** listener:
@@ -90,16 +85,11 @@ ROS 2 pub to ROS 1 echo
 
 The example explanation is available :ref:`here <ros_2_pub_to_ros_1_echo>`.
 
-In one terminal launch the **ROS1** master node:
+In one terminal launch the **ROS1** master and **ROS1** subscriber:
 
  .. code-block:: bash
 
-     docker run -t --name ros2_ros1 is:samples /ros1_entrypoint.sh roscore
-
-in another terminal launch the **ROS1** subscriber:
-
- .. code-block:: bash
-
+     docker run -d --name ros2_ros1 is:samples /ros1_entrypoint.sh roscore
      docker exec -t ros2_ros1 /ros1_entrypoint.sh rostopic echo /hello_ros1
 
 in another terminal launch the **ROS2** publisher:
@@ -208,18 +198,13 @@ In a terminal launch the **DDSAddTwoInts** server example:
 
  .. code-block:: bash
 
-     docker run -ti -p 80:80 --name dds_server is:samples /home/DDSAddTwoInts -m server
+     docker run -t -p 80:80 --name dds_server is:samples /home/DDSAddTwoInts -m server
 
-Launch the **ROS1** master node:
+Launch the **ROS1** master node and the *Integration-Service* as bridge:
 
  .. code-block:: bash
 
      docker exec -d dds_server /ros1_entrypoint.sh roscore
-
-Launch the *Integration-Service* in another terminal as bridge:
-
- .. code-block:: bash
-
      docker exec -t dds_server /is_entrypoint.sh /ros2_entrypoint.sh /ros1_entrypoint.sh integration-service /home/basic/fastdds_server__addtwoints.yaml
 
 In another terminal call the server from **ROS1**:
@@ -279,16 +264,11 @@ In a terminal launch the **ROS2** server example:
 
      docker run -t -p 80:80 --name ros2_server is:samples /ros2_entrypoint.sh ros2 run demo_nodes_cpp add_two_ints_server
 
-Launch the **ROS1** master node:
+Launch the **ROS1** master node and the *Integration-Service* as bridge:
 
  .. code-block:: bash
 
      docker exec -d ros2_server /ros1_entrypoint.sh roscore
-
-Launch the *Integration-Service* in another terminal as bridge:
-
- .. code-block:: bash
-
      docker exec -t ros2_server /is_entrypoint.sh /ros1_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/ros2_server__addtwoints.yaml
 
 In order to call the server from **DDS**:
@@ -316,16 +296,11 @@ In a terminal launch the *WebSocket* server example:
 
      docker run -t --name ws_server is:samples /home/WebSocketAddTwoInts
 
-Launch the **ROS1** master node:
+Launch the **ROS1** master node and the *Integration-Service* as bridge:
 
  .. code-block:: bash
 
      docker exec -d ws_server /ros1_entrypoint.sh roscore
-
-Launch the *Integration-Service* in another terminal as bridge:
-
- .. code-block:: bash
-
      docker exec -t ws_server /is_entrypoint.sh /ros1_entrypoint.sh /ros2_entrypoint.sh integration-service /home/basic/websocket_server__addtwoints.yaml
 
 In order to call the server from **DDS**:

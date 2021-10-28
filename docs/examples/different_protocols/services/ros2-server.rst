@@ -208,7 +208,7 @@ Call the service from WebSocket
 
 In order to call the server from a *WebSocket client*  `click here <../../../ws_client_svr.html>`_.
 The hyperlink leads to a webpage that creates a *WebSocket* connection to
-:code:`ws://localhost:80` where the *Integration-Server* has created the
+:code:`ws://localhost:80` where the *Integration-Service** has created the
 *WebSocket Server* according with the **yaml** file.
 
 The *WebSocket System Handle* uses this `handshake protocol <https://github.com/RobotWebTools/rosbridge_suite>`_.
