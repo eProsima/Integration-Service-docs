@@ -99,16 +99,16 @@ To enable communication from *ROS 2* to *FIWARE*, open three terminals:
 
 * In the second terminal, create the corresponding entities in the *FIWARE’s Context Broker*:
 
-  .. code-block:: bash
+  .. code-block:: json
 
-    curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @* <<EOF
+    curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
     {
-    "id": "hello_fiware",
-    "type": "HelloWorld",
-    "data": {
-        "value": "",
-        "type": "String"
-    }
+        "id": "hello_fiware",
+        "type": "HelloWorld",
+        "data": {
+            "value": "",
+            "type": "String"
+        }
     }
     EOF
 
@@ -150,16 +150,16 @@ To enable communication from *FIWARE* to *ROS 2*, open three terminals:
 
 * In the second terminal, create the corresponding entities in the *FIWARE’s Context Broker*:
 
-  .. code-block:: bash
+  .. code-block:: json
 
     curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
     {
-    "id": "hello_ros2",
-    "type": "HelloWorld",
-    "data": {
-        "value": "",
-        "type": "String"
-    }
+        "id": "hello_ros2",
+        "type": "HelloWorld",
+        "data": {
+            "value": "",
+            "type": "String"
+        }
     }
     EOF
 
@@ -175,14 +175,14 @@ You should see the context broker entity named **hello_fiware** previously creat
 
 * Again in the second terminal, update the *FIWARE* entity hosted in the *Context Broker*:
 
-  .. code-block:: bash
+  .. code-block:: json
 
     curl 172.17.0.1:1026/v2/entities/hello_ros2/attrs?type=HelloWorld -s -S -H 'Content-Type: application/json' -X PUT -d @- <<EOF
     {
-    "data": {
-        "value": "Hello, ROS 2",
-        "type": "String"
-    }
+        "data": {
+            "value": "Hello, ROS 2",
+            "type": "String"
+        }
     }
     EOF
 
