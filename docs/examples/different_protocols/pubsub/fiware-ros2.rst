@@ -77,7 +77,7 @@ Below we explain how to deploy an example of this communication in both directio
 ROS 2 pub to FIWARE
 -----------------------
 
-To enable communication from *ROS 2* to *FIWARE*, open three terminals:
+To enable communication from *ROS 2* to *FIWARE*, open two terminals:
 
 * In the first terminal, go to the :code:`is-workspace` folder, source the *ROS 2* and local installations, and execute
   *eProsima Integration Service* with the :code:`integration-service` command followed by the
@@ -97,32 +97,16 @@ To enable communication from *ROS 2* to *FIWARE*, open three terminals:
       source install/setup.bash
       integration-service src/Integration-Service/examples/basic/ros2_fiware__helloworld.yaml
 
-* In the second terminal, create the corresponding entities in the *FIWARE’s Context Broker*:
-
-  .. code-block:: json
-
-    curl 172.17.0.1:1026/v2/entities -s -S -H 'Content-Type: application/json' -d @- <<EOF
-    {
-        "id": "hello_fiware",
-        "type": "HelloWorld",
-        "data": {
-            "value": "",
-            "type": "String"
-        }
-    }
-    EOF
-
-Now, in your browser, go to `http://172.17.0.1:1026/v2/entities <http://172.17.0.1:1026/v2/entities>`_.
-You should see the context broker entity named **hello_fiware** previously created.
-
-* In the third terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`pub`:
+* In the second terminal, source the *ROS 2* installation and launch the *ROS 2* :code:`pub`:
 
   .. code-block:: bash
 
       source /opt/ros/$<ROS2_DISTRO>/setup.bash
-      ros2 topic pub /hello_fiware std_msgs/msg/String “{data: Hello FIWARE}”
+      ros2 topic pub /hello_fiware std_msgs/msg/String "{data: Hello FIWARE}"
 
-Now, if you press `F5` in the browser, you should see that the entity has been correctly updated.
+Now, in your browser, go to `http://172.17.0.1:1026/v2/entities <http://172.17.0.1:1026/v2/entities>`_.
+You should see a context broker entity named **hello_fiware**.
+Now, if you press `F5` in the browser, you should see that the entity is updated with the ROS provided values.
 
 
 FIWARE to ROS 2 echo
