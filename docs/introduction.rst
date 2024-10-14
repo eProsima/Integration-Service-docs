@@ -30,6 +30,16 @@ language spoken by *Integration Service*, based on an implementation of the
 Once a system is communicated with the core, it enters the *Integration Service* world and can
 straightforwardly reach out to any other system that already exists in this world.
 
+Commercial support
+^^^^^^^^^^^^^^^^^^
+
+Looking for commercial support? Write us to info@eprosima.com
+
+Find more about us at `eProsima's webpage <https://eprosima.com/>`__.
+
+Overview
+^^^^^^^^
+
 *Integration Service* is configured by means of a **YAML** text file, through which the user can provide a
 mapping between the topics and services handled by the middlewares of the systems involved.
 
@@ -149,13 +159,3 @@ This documentation is organized into the sections listed below:
 *  :ref:`API Reference <api_reference>`
 *  :ref:`Examples <examples>`
 *  :ref:`Release Notes <release_notes>`
-
-Contact and commercial support
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Find more about us at `eProsima's webpage <https://eprosima.com/>`_.
-
-Support available at:
-
-* Email: support@eprosima.com
-* Phone: +34 91 804 34 48
