@@ -11,6 +11,12 @@ If one has a number of complex systems and wills to combine them to create a lar
 
 *Integration Service* is configured by means of a *YAML* text file, through which the user can provide a mapping between the topics and services handled by the middlewares of the systems involved.
 
+## Commercial support
+
+Looking for commercial support? Write us to info@eprosima.com
+
+Find more about us at [eProsima’s webpage](https://eprosima.com/).
+
 ## Installation Guide
 
 To generate the *eProsima Integration Service* documentation, you need to install some dependencies:
@@ -63,7 +69,3 @@ The official documentation for the *eProsima Integration Service* can be accesse
 ## License
 
 This repository is open-sourced under the *Apache-2.0* license. See the [LICENSE](LICENSE) file for more details.
-
-## Getting help
-
-If you need support you can reach us by mail at `support@eProsima.com` or by phone at `+34 91 804 34 48`.
