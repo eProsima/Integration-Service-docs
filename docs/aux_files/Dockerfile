@@ -38,17 +38,19 @@ COPY --from=foxy_overlay /ros_entrypoint.sh /ros2_entrypoint.sh
 RUN apt-get update && apt-get install -f -y git \
     libyaml-cpp-dev \
     libboost-program-options-dev libboost-system-dev \
-    libwebsocketpp-dev
+    libwebsocketpp-dev \
+    libcurlpp-dev libasio-dev libcurl4-openssl-dev
 
 # Prepare Integration Service workspace
 RUN mkdir -p /is_ws/src \
     && cd /is_ws/src \
-    && git clone https://github.com/eProsima/Integration-Service.git is -b bugfix/ros1_examples_installation \
-    && git clone https://github.com/eProsima/xtypes.git --recursive xtypes \
+    && git clone https://github.com/eProsima/Integration-Service.git is \
+    && git clone https://github.com/eProsima/xtypes.git -b feature/cross_platform --recursive xtypes \
     && git clone https://github.com/eProsima/WebSocket-SH.git \
     && git clone https://github.com/eProsima/ROS1-SH.git \ 
     && git clone https://github.com/eProsima/ROS2-SH.git \
-    && git clone https://github.com/eProsima/FastDDS-SH.git
+    && git clone https://github.com/eProsima/FastDDS-SH.git \
+    && git clone https://github.com/eProsima/FIWARE-SH.git
 
 # Compile the Integration Service
 WORKDIR /is_ws
@@ -62,7 +64,8 @@ RUN /ros2_entrypoint.sh \
     colcon build --event-handler=console_direct+ \
     --packages-skip-regex is-ros1 \
     --cmake-args -DBUILD_FASTDDS_EXAMPLES=ON -DBUILD_ROS1_EXAMPLES=OFF \
-    -DBUILD_WEBSOCKET_EXAMPLES=ON -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
+    -DBUILD_WEBSOCKET_EXAMPLES=ON \
+    -DMIX_ROS_PACKAGES="example_interfaces" --install-base /opt/is
 
 RUN sed -e 's?ros/noetic?is?g' /ros1_entrypoint.sh > /is_entrypoint.sh && \
     chmod +x /is_entrypoint.sh
